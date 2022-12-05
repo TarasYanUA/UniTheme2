@@ -5,15 +5,28 @@ import taras.DriverProvider;
 import taras.workPages.AdminPanel;
 import taras.workPages.StorefrontMainPage;
 
+import java.sql.Driver;
+
 public class GeneralSettings_ProductListsTest extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() {
         AdminPanel adminPanel = new AdminPanel();
+        //Работаем с CS-Cart настройками
+        adminPanel.navigateToAppearanceSettingsOfCsCart();
+        WebElement checkboxSettingQuickView = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___enable_quick_view']"));
+        if(!checkboxSettingQuickView.isSelected()){
+            checkboxSettingQuickView.click();
+        }
+        WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
+        if(checkboxThumbnailsGallery.isSelected()){
+            checkboxThumbnailsGallery.click();
+        }
+        adminPanel.clickSaveButtonOfSettings();
+        //Работаем с настройками темы - Вариант "По умолчанию"
         adminPanel.navigateToAddonsPage(adminPanel);
         adminPanel.clickThemeSectionsOnManagementPage();
         adminPanel.navigateToThemeSettings();
         adminPanel.clickTabProductLists();
-        //Работаем с настройками темы - Вариант "По умолчанию"
         WebElement checkboxMiniIconsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id='settings.abt__ut2.product_list.show_gallery']"));
         if(checkboxMiniIconsGallery.isSelected()){
             checkboxMiniIconsGallery.click();

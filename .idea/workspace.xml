@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Created project!">
-      <change afterPath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/StorefrontMainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/data.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Theme settings are ready.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/BrowserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" beforeDir="false" afterPath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/ProductPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,14 +36,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Idea Projects/Sample/pom.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Sample/pom.xml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
@@ -117,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670234570547</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Theme settings are ready.">
+      <created>1670250631602</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670250631602</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Created project!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created project!" />
+    <MESSAGE value="Theme settings are ready." />
+    <option name="LAST_COMMIT_MESSAGE" value="Theme settings are ready." />
   </component>
 </project>

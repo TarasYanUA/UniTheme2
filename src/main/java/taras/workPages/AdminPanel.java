@@ -20,6 +20,13 @@ public class AdminPanel extends AbstractPage {
         hoverAddonsDropDown.perform();
         navigateToAddonsManagementPage();
     }
+    public void navigateToAppearanceSettingsOfCsCart(){
+        WebElement mainRightNavBar = hoverSettingsOfCsCart();
+        Actions hoverSettingsOfCsCart = new Actions(DriverProvider.getDriver());
+        hoverSettingsOfCsCart.moveToElement(mainRightNavBar);
+        hoverSettingsOfCsCart.perform();
+        clickAppearanceSettingsOfCsCart();
+    }
     public void hoverToProductPage(){
         WebElement elementOfMenuProducts = hoverMenuProducts();
         Actions hoverMenuProducts = new Actions(DriverProvider.getDriver());
@@ -59,6 +66,10 @@ public class AdminPanel extends AbstractPage {
     private WebElement saveButtonOfSettings;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
     private WebElement storefrontMainPage;
+    @FindBy(css = "#mainrightnavbar")
+    private WebElement settingsOfCsCart;
+    @FindBy(css = "#elm_menu_settings_Appearance")
+    private WebElement appearanceSettingsOfCsCart;
 
     
     public void clickButtonAuthorization(){
@@ -66,6 +77,9 @@ public class AdminPanel extends AbstractPage {
     }
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
+    }
+    public WebElement hoverSettingsOfCsCart(){
+        return settingsOfCsCart;
     }
     public void navigateToAddonsManagementPage(){
         addonsManagementPage.click();
@@ -95,5 +109,8 @@ public class AdminPanel extends AbstractPage {
     }
     public void clickSaveButtonOfSettings(){
         saveButtonOfSettings.click();
+    }
+    public void clickAppearanceSettingsOfCsCart(){
+        appearanceSettingsOfCsCart.click();
     }
 }

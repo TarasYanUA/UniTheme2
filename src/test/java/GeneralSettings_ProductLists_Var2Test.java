@@ -111,7 +111,9 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("ty-icon icon-right-open-thin ty-icon-right-open-thin")));
+        //Проверка, что присутствуют мини-иконки в виде галереи
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("ty-icon icon-right-open-thin ty-icon-right-open-thin")).isEnabled());
         takeScreenShot("240 Var2_QuickView");
         categoryPage.clickCloseQuickView();
         mainPage.selectLanguageByIndex(1);

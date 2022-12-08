@@ -11,11 +11,11 @@ public class CategoryPage extends AbstractPage {
         super();
     }
 
-    @FindBy(css = "form[name='product_form_239'] div[class='ut2-gl__buttons']")
+    @FindBy(css = "form[name='product_form_74'] div[class='ut2-gl__buttons']")
     private WebElement phoneProduct;
     @FindBy(css = "a[href*='nike']")
     private WebElement clothProduct;
-    @FindBy(xpath = "//form[@name=\"product_form_239\"]//a[@data-ca-target-id=\"product_quick_view\"]")
+    @FindBy(xpath = "//form[@name='product_form_74']//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfPhoneProduct;
     @FindBy(css = ".ui-button-icon.ui-icon")
     private WebElement closeQuickView;

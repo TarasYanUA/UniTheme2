@@ -23,7 +23,7 @@ import static taras.Constants.BASIC_URL;
 
 public class TestRunner {
 
-    @BeforeTest
+    @BeforeMethod
     public void prepareBrowser() {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
@@ -39,12 +39,14 @@ public class TestRunner {
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
-    }
-    @AfterTest
-    public void closeBrowser(){
         DriverProvider.getDriver().quit();
         DriverProvider.destroyDriver();
     }
+/*    @AfterMethod
+    public void closeBrowser(){
+        DriverProvider.getDriver().quit();
+        DriverProvider.destroyDriver();
+    }*/
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());

@@ -15,7 +15,7 @@ import java.time.Duration;
 Проверка следующих настроек:
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
-Показывать мини-иконки в виде галереи -- n
+Показывать мини-иконки в виде галереи -- y
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Показывать галерею мини-иконок товара в товарном списке --	y
@@ -43,7 +43,7 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
             checkboxSettingQuickView.click();
         }
         WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
-        if(checkboxThumbnailsGallery.isSelected()){
+        if(!checkboxThumbnailsGallery.isSelected()){
             checkboxThumbnailsGallery.click();
         }
         adminPanel.clickSaveButtonOfSettings();
@@ -87,8 +87,6 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
         //Категория "Женская одежда"
         mainPage.navigateToMenuWomanCloth();
         CategoryPage categoryPage = new CategoryPage();
-        //Проверка, что на странице нет обесцвеченных товаров.
-        Assert.assertFalse(DriverProvider.getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
         categoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
         mainPage.selectLanguageByIndex(1);
@@ -98,8 +96,6 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
         mainPage.selectLanguageByIndex(2);
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
-        //Проверка, что у товаров отсутствуют пустые звёздочки рейтинга
-        Assert.assertFalse(DriverProvider.getDriver().findElement(By.cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         categoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
         mainPage.selectLanguageByIndex(1);
@@ -111,16 +107,16 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("ty-icon icon-right-open-thin ty-icon-right-open-thin")));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("ty-icon icon-right-open-thin ty-icon-right-open-thin")).isEnabled());
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")).isEnabled());
         takeScreenShot("240 Var2_QuickView");
         categoryPage.clickCloseQuickView();
         mainPage.selectLanguageByIndex(1);
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")));
         takeScreenShot("241 Var2_QuickViewRTL");
         categoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории

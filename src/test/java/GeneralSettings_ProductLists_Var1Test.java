@@ -15,7 +15,7 @@ import java.time.Duration;
 Проверка следующих настроек:
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
-Показывать мини-иконки в виде галереи -- y
+Показывать мини-иконки в виде галереи -- n
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Показывать галерею мини-иконок товара в товарном списке --	n
@@ -43,7 +43,7 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
             checkboxSettingQuickView.click();
         }
         WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
-        if(!checkboxThumbnailsGallery.isSelected()){
+        if(checkboxThumbnailsGallery.isSelected()){
             checkboxThumbnailsGallery.click();
         }
         adminPanel.clickSaveButtonOfSettings();
@@ -110,14 +110,14 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
         categoryPage.clickCloseQuickView();
         mainPage.selectLanguageByIndex(1);
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("141 Var1_QuickViewRTL");
         categoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории

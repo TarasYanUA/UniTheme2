@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added asserts to both test-cases.">
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Idea Projects/Motivation_block/pom.xml"
+    "last_opened_file_path": "C:/Idea Projects/UniTheme2/TestNG.xml"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -53,6 +55,25 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_Var2Test">
+    <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeneralSettings_ProductLists_Var1Test" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -75,9 +96,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2Test" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1Test" />
+      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2Test" />
+        <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1Test" />
       </list>
     </recent_temporary>
@@ -189,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670510745435</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added asserts to both test-cases.">
+      <created>1670512166425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670512166425</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Theme settings are ready.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="CS-Cart settings are added.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" beforeDir="false" afterPath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/StorefrontMainPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +47,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Sample/pom.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Product-sets/pom.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -114,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670250631602</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CS-Cart settings are added.">
+      <created>1670254273246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670254273246</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +145,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Created project!" />
     <MESSAGE value="Theme settings are ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="Theme settings are ready." />
+    <MESSAGE value="CS-Cart settings are added." />
+    <option name="LAST_COMMIT_MESSAGE" value="CS-Cart settings are added." />
   </component>
 </project>

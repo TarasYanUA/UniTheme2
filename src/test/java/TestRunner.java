@@ -30,25 +30,34 @@ public class TestRunner {
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
         AdminPanel adminPanel = new AdminPanel();
         adminPanel.clickButtonAuthorization();
+        adminPanel.closeBottomAdminPanel();
     }
     @AfterMethod
     public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             File scrFile = ((TakesScreenshot)DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + testResult.getName() + "-"
+            FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
     }
-/*    @AfterTest
+    @AfterTest
     public void closeBrowser(){
         DriverProvider.getDriver().quit();
         DriverProvider.destroyDriver();
-    }*/
-
+    }
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
-        for(int ii = 0; ii <= tabNum; ii++) {
-            DriverProvider.getDriver().switchTo().window(tabs.get(ii).toString());
+        DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
+    }
+    public void takeScreenShot(String testName) throws IOException {
+        File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + testName + ".jpg"));
+    }
+    public void makePause(){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

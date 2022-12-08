@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.AbstractPage;
 import taras.DriverProvider;
-import java.util.ArrayList;
 
 public class AdminPanel extends AbstractPage {
     public AdminPanel(){
@@ -37,13 +36,15 @@ public class AdminPanel extends AbstractPage {
         categoryPage.click();
         return new CategoryPage();
     }
-    public StorefrontMainPage navigateToStorefrontMainPage(){
+    public MainPage navigateToStorefrontMainPage(){
         storefrontMainPage.click();
-        return new StorefrontMainPage();
+        return new MainPage();
     }
 
     @FindBy(css = ".btn.btn-primary")
     private WebElement buttonAuthorization;
+    @FindBy(css = "#bp_off_bottom_panel")
+    private WebElement bottomAdminPanel;
     @FindBy(xpath = "(//a[@class=\"dropdown-toggle addons\"])[1]")
     private WebElement addonsDropDown;
     @FindBy(css = "a[id='elm_menu_addons_manage_addons'][class='dropdown-submenu__link ']")
@@ -52,8 +53,6 @@ public class AdminPanel extends AbstractPage {
     private WebElement themeSectionsOnManagementPage;
     @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.settings']")
     private WebElement themeSettings;
-    @FindBy(xpath = "//button[@class=\"close cm-notification-close cm-notification-close-ajax\"]")
-    private WebElement closeWarning;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
@@ -75,6 +74,9 @@ public class AdminPanel extends AbstractPage {
     public void clickButtonAuthorization(){
         buttonAuthorization.click();
     }
+    public void closeBottomAdminPanel(){
+        bottomAdminPanel.click();
+    }
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
     }
@@ -83,9 +85,6 @@ public class AdminPanel extends AbstractPage {
     }
     public void navigateToAddonsManagementPage(){
         addonsManagementPage.click();
-    }
-    public void clickCloseWarning(){
-        closeWarning.click();
     }
     public WebElement hoverMenuProducts(){
         return menuProducts;
@@ -107,6 +106,10 @@ public class AdminPanel extends AbstractPage {
         getSettingPriceDisplayFormat().selectByValue(value);
         return value;
     }
+public int selectSettingByIndex(int num){
+    getSettingPriceDisplayFormat().selectByIndex(num);
+    return num;
+}
     public void clickSaveButtonOfSettings(){
         saveButtonOfSettings.click();
     }

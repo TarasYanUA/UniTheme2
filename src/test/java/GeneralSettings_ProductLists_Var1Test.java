@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.DriverProvider;
 import taras.workPages.AdminPanel;
@@ -69,6 +70,7 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
             checkboxProductRating.click();
         }
         adminPanel.clickSaveButtonOfSettings();
+
         //Работаем с витриной
         MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
         focusBrowserTab(1);
@@ -84,6 +86,8 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
         //Категория "Женская одежда"
         mainPage.navigateToMenuWomanCloth();
         CategoryPage categoryPage = new CategoryPage();
+        //Проверка, что на странице присутствует обесцвеченный товар.
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
         categoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
         mainPage.selectLanguageByIndex(1);
@@ -93,6 +97,8 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
         mainPage.selectLanguageByIndex(2);
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
+        //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         categoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
         mainPage.selectLanguageByIndex(1);

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-case #1 is totally ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-case #2 is totally ready!">
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductListsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670499660860</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test-case #2 is totally ready!">
+      <created>1670502796812</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670502796812</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,6 +181,7 @@
     <MESSAGE value="Theme settings are ready." />
     <MESSAGE value="CS-Cart settings are added." />
     <MESSAGE value="Test-case #1 is totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case #1 is totally ready!" />
+    <MESSAGE value="Test-case #2 is totally ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case #2 is totally ready!" />
   </component>
 </project>

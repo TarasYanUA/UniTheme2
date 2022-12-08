@@ -10,6 +10,27 @@ import taras.workPages.MainPage;
 import java.io.IOException;
 import java.time.Duration;
 
+/*
+Проверка следующих настроек:
+1) "Настройки -- Внешний вид":
+Включить быстрый просмотр -- y
+Показывать мини-иконки в виде галереи -- y
+
+2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
+Показывать галерею мини-иконок товара в товарном списке --	y
+Обесцвечивать товары, которых нет в наличии --	n
+Формат отображения цен --	Вариант 1
+Отображать цену вверху --	y
+Отображать рейтинг товара --	n
+
+Проверка проходит на следующих страницах:
+Блок товаров на Главной странице + RTL
+Женская одежда + RTL
+Телефоны + RTL
+Быстрый просмотр + RTL
+Все шаблоны категории + RTL
+*/
+
 public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_ChangedValues() throws IOException {

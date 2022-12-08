@@ -12,6 +12,8 @@ public class MainPage extends AbstractPage {
         super();
     }
 
+    @FindBy(css = "div.ty-mainbox-container.clearfix")
+    private WebElement blockWithProducts;
     @FindBy(css = "li[class$='ty-menu-item__electronics']")
     private WebElement menuElectronic;
     @FindBy(xpath = "//bdi[text()='Телефоны']")
@@ -26,6 +28,15 @@ public class MainPage extends AbstractPage {
     private List<WebElement> languageSelection;
 
 
+    public WebElement hoverBlockWithProducts(){
+        return blockWithProducts;
+    }
+    public void scrollToBlockWithProducts(){
+        WebElement elementForScroll = hoverBlockWithProducts();
+        Actions scrollToBlock = new Actions(DriverProvider.getDriver());
+        scrollToBlock.moveToElement(elementForScroll).scrollByAmount(0,800);
+        scrollToBlock.perform();
+    }
     public WebElement hoverMenuElectronic(){
         return menuElectronic;
     }
@@ -45,6 +56,12 @@ public class MainPage extends AbstractPage {
         hoverMenuApparel.moveToElement(elementOfMenu);
         hoverMenuApparel.perform();
         menuWomanCloth.click();
+    }
+    public void scrollToMenuApparel(){
+        WebElement elementOfMenu = hoverMenuApparel();
+        Actions scrollToMenuApparel = new Actions(DriverProvider.getDriver());
+        scrollToMenuApparel.scrollToElement(elementOfMenu);
+        scrollToMenuApparel.perform();
     }
     public List<WebElement> getLanguageSelection(){
         return languageSelection;

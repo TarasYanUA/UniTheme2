@@ -14,7 +14,7 @@ import java.time.Duration;
 Проверка следующих настроек:
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
-Показывать мини-иконки в виде галереи -- y
+Показывать мини-иконки в виде галереи -- n
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Показывать галерею мини-иконок товара в товарном списке --	y
@@ -35,6 +35,17 @@ public class GeneralSettings_ProductLists_Var2Test extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_ChangedValues() throws IOException {
         AdminPanel adminPanel = new AdminPanel();
+        //Работаем с CS-Cart настройками
+        adminPanel.navigateToAppearanceSettingsOfCsCart();
+        WebElement checkboxSettingQuickView = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___enable_quick_view']"));
+        if(!checkboxSettingQuickView.isSelected()){
+            checkboxSettingQuickView.click();
+        }
+        WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
+        if(checkboxThumbnailsGallery.isSelected()){
+            checkboxThumbnailsGallery.click();
+        }
+        adminPanel.clickSaveButtonOfSettings();
         //Работаем с настройками темы - Вариант с изменениями
         adminPanel.navigateToAddonsPage();
         adminPanel.clickThemeSectionsOnManagementPage();

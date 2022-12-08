@@ -42,7 +42,7 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
             checkboxSettingQuickView.click();
         }
         WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
-        if(checkboxThumbnailsGallery.isSelected()){
+        if(!checkboxThumbnailsGallery.isSelected()){
             checkboxThumbnailsGallery.click();
         }
         adminPanel.clickSaveButtonOfSettings();

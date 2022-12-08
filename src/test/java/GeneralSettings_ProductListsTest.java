@@ -1,7 +1,5 @@
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -9,7 +7,6 @@ import taras.DriverProvider;
 import taras.workPages.AdminPanel;
 import taras.workPages.CategoryPage;
 import taras.workPages.MainPage;
-import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -18,7 +15,7 @@ public class GeneralSettings_ProductListsTest extends TestRunner {
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
         AdminPanel adminPanel = new AdminPanel();
         //Работаем с CS-Cart настройками
-/*        adminPanel.navigateToAppearanceSettingsOfCsCart();
+        adminPanel.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___enable_quick_view']"));
         if(!checkboxSettingQuickView.isSelected()){
             checkboxSettingQuickView.click();
@@ -51,7 +48,6 @@ public class GeneralSettings_ProductListsTest extends TestRunner {
             checkboxProductRating.click();
         }
         adminPanel.clickSaveButtonOfSettings();
- */
         //Работаем с витриной
         MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
         focusBrowserTab(1);

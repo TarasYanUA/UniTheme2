@@ -12,7 +12,7 @@ public class AdminPanel extends AbstractPage {
         super();
     }
 
-    public void navigateToAddonsPage(AdminPanel adminPanel) {
+    public void navigateToAddonsPage() {
         WebElement elementOfAddonsDropDown = hoverAddonsDropDown();
         Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
         hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);

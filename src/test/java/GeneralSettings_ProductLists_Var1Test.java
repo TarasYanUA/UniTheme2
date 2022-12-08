@@ -10,7 +10,7 @@ import taras.workPages.MainPage;
 import java.io.IOException;
 import java.time.Duration;
 
-public class GeneralSettings_ProductListsTest extends TestRunner {
+public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
         AdminPanel adminPanel = new AdminPanel();
@@ -26,7 +26,7 @@ public class GeneralSettings_ProductListsTest extends TestRunner {
         }
         adminPanel.clickSaveButtonOfSettings();
         //Работаем с настройками темы - Вариант "По умолчанию"
-        adminPanel.navigateToAddonsPage(adminPanel);
+        adminPanel.navigateToAddonsPage();
         adminPanel.clickThemeSectionsOnManagementPage();
         adminPanel.navigateToThemeSettings();
         adminPanel.clickTabProductLists();
@@ -53,59 +53,58 @@ public class GeneralSettings_ProductListsTest extends TestRunner {
         focusBrowserTab(1);
         //Блок товаров на главной странице
         mainPage.scrollToBlockWithProducts();
-        takeScreenShot("090 Var1_BlockWithProducts");
+        takeScreenShot("110 Var1_BlockWithProducts");
         mainPage.scrollToMenuApparel();
         mainPage.selectLanguageByIndex(1);
         makePause();
         mainPage.scrollToBlockWithProducts();
-        takeScreenShot("091 Var1_BlockWithProductsRTL");
+        takeScreenShot("111 Var1_BlockWithProductsRTL");
         mainPage.selectLanguageByIndex(2);
         //Категория "Женская одежда"
         mainPage.navigateToMenuWomanCloth();
         CategoryPage categoryPage = new CategoryPage();
         categoryPage.hoverToClothProduct();
-        takeScreenShot("110 Var1_WomanClothCategory");
+        takeScreenShot("120 Var1_WomanClothCategory");
         mainPage.selectLanguageByIndex(1);
         makePause();
         categoryPage.hoverToClothProduct();
-        takeScreenShot("111 Var1_WomanClothCategoryRTL");
+        takeScreenShot("121 Var1_WomanClothCategoryRTL");
         mainPage.selectLanguageByIndex(2);
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
         categoryPage.hoverToPhoneProduct();
-        takeScreenShot("120 Var1_PhonesCategory");
+        takeScreenShot("130 Var1_PhonesCategory");
         mainPage.selectLanguageByIndex(1);
         makePause();
         categoryPage.hoverToPhoneProduct();
-        takeScreenShot("121 Var1_PhonesCategoryRTL");
+        takeScreenShot("131 Var1_PhonesCategoryRTL");
         mainPage.selectLanguageByIndex(2);
         //Быстрый просмотр в категории "Телефоны"
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        takeScreenShot("130 Var1_QuickView");
+        takeScreenShot("140 Var1_QuickView");
         categoryPage.clickCloseQuickView();
         mainPage.selectLanguageByIndex(1);
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        takeScreenShot("131 Var1_QuickViewRTL");
+        takeScreenShot("141 Var1_QuickViewRTL");
         categoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории
         categoryPage.clickListWithoutOptions_ProductListView();
         makePause();
-        takeScreenShot("140 Var1_Category_ListWithoutOptionsRTL");
+        takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
         mainPage.selectLanguageByIndex(2);
         makePause();
-        takeScreenShot("141 Var1_Category_ListWithoutOptions");
+        takeScreenShot("151 Var1_Category_ListWithoutOptions");
         categoryPage.clickCompactList_ProductListView();
         makePause();
-        takeScreenShot("150 Var1_Category_CompactList_ProductListView");
+        takeScreenShot("160 Var1_Category_CompactList_ProductListView");
         mainPage.selectLanguageByIndex(1);
         makePause();
-        takeScreenShot("151 Var1_Category_CompactList_ProductListViewRTL");
+        takeScreenShot("161 Var1_Category_CompactList_ProductListViewRTL");
     }
-
 }

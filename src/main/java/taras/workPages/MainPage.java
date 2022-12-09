@@ -4,7 +4,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.AbstractPage;
 import taras.DriverProvider;
-
 import java.util.List;
 
 public class MainPage extends AbstractPage {
@@ -12,6 +11,8 @@ public class MainPage extends AbstractPage {
         super();
     }
 
+    @FindBy(css = ".cm-btn.cm-btn-success")
+    private WebElement cookieNoticeOnStorefront;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     private WebElement blockWithProducts;
     @FindBy(css = "li[class$='ty-menu-item__electronics']")
@@ -28,6 +29,9 @@ public class MainPage extends AbstractPage {
     private List<WebElement> languageSelection;
 
 
+    public void closeCookieNoticeOnStorefront(){
+        cookieNoticeOnStorefront.click();
+    }
     public WebElement hoverBlockWithProducts(){
         return blockWithProducts;
     }
@@ -66,7 +70,7 @@ public class MainPage extends AbstractPage {
     public List<WebElement> getLanguageSelection(){
         return languageSelection;
     }
-    public void selectLanguageByIndex (int langCode){
+    public void changeLanguageByIndex (int langCode){
         languageButton.click();
         WebElement listOfLanguages = getLanguageSelection().get(langCode);
         listOfLanguages.click();

@@ -33,7 +33,7 @@ public class TestRunner {
         adminPanel.closeBottomAdminPanel();
     }
     @AfterMethod
-    public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
+    public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             File scrFile = ((TakesScreenshot)DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
@@ -42,11 +42,6 @@ public class TestRunner {
         DriverProvider.getDriver().quit();
         DriverProvider.destroyDriver();
     }
-/*    @AfterMethod
-    public void closeBrowser(){
-        DriverProvider.getDriver().quit();
-        DriverProvider.destroyDriver();
-    }*/
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());

@@ -1,8 +1,8 @@
 <suite name="UniTheme2">
     <test name="Test suite">
         <classes>
-            <class name="GeneralSettings_ProductLists_Var1Test" />
-            <class name="GeneralSettings_ProductLists_Var2Test" />
+            <class name="GeneralSettings_ProductLists_Var1" />
+            <class name="GeneralSettings_ProductLists_Var2" />
         </classes>
     </test>
 </suite>

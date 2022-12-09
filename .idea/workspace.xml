@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added asserts to both test-cases.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Relocated setting to Class Page. Added one more setting of the theme.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_Var2Test">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView">
     <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <shortenClasspath name="NONE" />
@@ -72,10 +76,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_Var1Test" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var1Test" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -83,10 +87,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_Var2Test" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var2Test" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -95,12 +110,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2Test" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1Test" />
       <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2Test" />
         <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1Test" />
@@ -228,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670514650310</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Relocated setting to Class Page. Added one more setting of the theme.">
+      <created>1670582719229</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670582719229</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +276,7 @@
     <MESSAGE value="Added comments to two test-cases." />
     <MESSAGE value="Added testNG.xml file." />
     <MESSAGE value="Added asserts to both test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added asserts to both test-cases." />
+    <MESSAGE value="Relocated setting to Class Page. Added one more setting of the theme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Relocated setting to Class Page. Added one more setting of the theme." />
   </component>
 </project>

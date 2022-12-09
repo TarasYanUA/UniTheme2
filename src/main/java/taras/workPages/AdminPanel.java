@@ -80,6 +80,24 @@ public class AdminPanel extends AbstractPage {
     public WebElement settingProductRating;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHoveringMousePointer;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_height.desktop']")
+    private WebElement settingMinHeightForProductCell;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_width.desktop']")
+    private WebElement settingProductIconWidth;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_height.desktop']")
+    private WebElement settingProductIconHeight;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_sku.desktop']")
+    public WebElement settingShowProductCode;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_amount.desktop']")
+    public WebElement settingDisplayAvailabilityStatus;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_qty.desktop']")
+    public WebElement settingShowQuantityChanger;
+    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.show_button_add_to_cart.desktop']")
+    private WebElement settingShowAddToCartButton;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop']")
+    public WebElement settingShowBrandLogo;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
+    public WebElement settingShowYouSave;
 
 
     public void clickButtonAuthorization(){
@@ -113,26 +131,41 @@ public class AdminPanel extends AbstractPage {
     public Select getSettingPriceDisplayFormat(){
         return new Select(settingPriceDisplayFormat);
     }
-    public String selectSettingPriceDisplayFormat(String value){
+    public void selectSettingPriceDisplayFormat(String value){
         getSettingPriceDisplayFormat().selectByValue(value);
-        return value;
     }
     public Select getSettingSwitchProductImageWhenHoveringMousePointer(){
         return new Select(settingSwitchProductImageWhenHoveringMousePointer);
     }
-    public String selectSettingSwitchProductImageWhenHoveringMousePointer(String value){
+    public void selectSettingSwitchProductImageWhenHoveringMousePointer(String value){
         getSettingSwitchProductImageWhenHoveringMousePointer().selectByValue(value);
-        return value;
     }
-
-public int selectSettingByIndex(int num){
-    getSettingPriceDisplayFormat().selectByIndex(num);
-    return num;
-}
     public void clickSaveButtonOfSettings(){
         saveButtonOfSettings.click();
     }
     public void clickAppearanceSettingsOfCsCart(){
         appearanceSettingsOfCsCart.click();
+    }
+    public void clickAndTypeSettingMinHeightForProductCell(String value){
+        settingMinHeightForProductCell.click();
+        settingMinHeightForProductCell.clear();
+        settingMinHeightForProductCell.sendKeys(value);
+    }
+    public void clickAndTypeSettingProductIconWidth(String value){
+        settingProductIconWidth.click();
+        settingProductIconWidth.clear();
+        settingProductIconWidth.sendKeys(value);
+    }
+    public void clickAndTypeSettingProductIconHeight(String value){
+        settingProductIconHeight.click();
+        settingProductIconHeight.clear();
+        settingProductIconHeight.sendKeys(value);
+    }
+
+    public Select getSettingShowAddToCartButton(){
+        return new Select(settingShowAddToCartButton);
+    }
+    public void selectSettingShowAddToCartButton(String value){
+        getSettingShowAddToCartButton().selectByValue(value);
     }
 }

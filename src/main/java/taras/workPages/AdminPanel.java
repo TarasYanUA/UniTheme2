@@ -32,10 +32,6 @@ public class AdminPanel extends AbstractPage {
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
         hoverMenuProducts.perform();
     }
-    public CategoryPage navigateToCategoryPage(){
-        categoryPage.click();
-        return new CategoryPage();
-    }
     public MainPage navigateToStorefrontMainPage(){
         storefrontMainPage.click();
         return new MainPage();
@@ -55,12 +51,6 @@ public class AdminPanel extends AbstractPage {
     private WebElement themeSettings;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
-    @FindBy(css = ".cs-icon.icon-shopping-cart")
-    private WebElement categoryPage;
-    @FindBy(css = "#product_list")
-    private WebElement tabProductLists;
-    @FindBy(id = "settings.abt__ut2.product_list.price_display_format")
-    private WebElement settingPriceDisplayFormat;
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
@@ -69,8 +59,29 @@ public class AdminPanel extends AbstractPage {
     private WebElement settingsOfCsCart;
     @FindBy(css = "#elm_menu_settings_Appearance")
     private WebElement appearanceSettingsOfCsCart;
+    //Настройки CS-Cart вкладки "Внешний вид"
+    @FindBy(css = "input[id*='field___enable_quick_view']")
+    public WebElement settingQuickView;
+    @FindBy(css = "input[id*='field___thumbnails_gallery']")
+    public WebElement settingThumbnailsGallery;
 
-    
+    //Настройки вкладки "Списки товаров"
+    @FindBy(css = "#product_list")
+    private WebElement tabProductLists;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.show_gallery']")
+    public WebElement settingMiniIconsGallery;
+    @FindBy(css = "input[id=\"settings.abt__ut2.product_list.decolorate_out_of_stock_products\"]")
+    public WebElement settingOutOfStockProducts;
+    @FindBy(id = "settings.abt__ut2.product_list.price_display_format")
+    private WebElement settingPriceDisplayFormat;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.price_position_top']")
+    public WebElement settingPriceAtTheTop;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating']")
+    public WebElement settingProductRating;
+    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
+    private WebElement settingSwitchProductImageWhenHoveringMousePointer;
+
+
     public void clickButtonAuthorization(){
         buttonAuthorization.click();
     }
@@ -106,6 +117,14 @@ public class AdminPanel extends AbstractPage {
         getSettingPriceDisplayFormat().selectByValue(value);
         return value;
     }
+    public Select getSettingSwitchProductImageWhenHoveringMousePointer(){
+        return new Select(settingSwitchProductImageWhenHoveringMousePointer);
+    }
+    public String selectSettingSwitchProductImageWhenHoveringMousePointer(String value){
+        getSettingSwitchProductImageWhenHoveringMousePointer().selectByValue(value);
+        return value;
+    }
+
 public int selectSettingByIndex(int num){
     getSettingPriceDisplayFormat().selectByIndex(num);
     return num;

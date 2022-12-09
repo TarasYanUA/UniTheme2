@@ -19,6 +19,7 @@ import java.time.Duration;
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Показывать галерею мини-иконок товара в товарном списке --	n
+Переключать изображение товара при движении мышки -- с полосками (нужно для настройки выше)
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
@@ -38,34 +39,35 @@ public class GeneralSettings_ProductLists_Var1Test extends TestRunner {
         AdminPanel adminPanel = new AdminPanel();
         //Работаем с CS-Cart настройками
         adminPanel.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxSettingQuickView = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___enable_quick_view']"));
+        WebElement checkboxSettingQuickView = adminPanel.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
             checkboxSettingQuickView.click();
         }
-        WebElement checkboxThumbnailsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id*='field___thumbnails_gallery']"));
+        WebElement checkboxThumbnailsGallery = adminPanel.settingThumbnailsGallery;
         if(checkboxThumbnailsGallery.isSelected()){
             checkboxThumbnailsGallery.click();
         }
         adminPanel.clickSaveButtonOfSettings();
-        //Работаем с настройками темы - Вариант "По умолчанию"
+        //Работаем с настройками темы (идут по умолчанию)
         adminPanel.navigateToAddonsPage();
         adminPanel.clickThemeSectionsOnManagementPage();
         adminPanel.navigateToThemeSettings();
         adminPanel.clickTabProductLists();
-        WebElement checkboxMiniIconsGallery = DriverProvider.getDriver().findElement(By.cssSelector("input[id='settings.abt__ut2.product_list.show_gallery']"));
+        WebElement checkboxMiniIconsGallery = adminPanel.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
             checkboxMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStickProducts = DriverProvider.getDriver().findElement(By.cssSelector("input[id=\"settings.abt__ut2.product_list.decolorate_out_of_stock_products\"]"));
+        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
+        WebElement checkboxOutOfStickProducts = adminPanel.settingOutOfStockProducts;
         if (!checkboxOutOfStickProducts.isSelected()){
             checkboxOutOfStickProducts.click();
         }
         adminPanel.selectSettingPriceDisplayFormat("row-mix");
-        WebElement checkboxPriceAtTheTop = DriverProvider.getDriver().findElement(By.cssSelector("input[id='settings.abt__ut2.product_list.price_position_top']"));
+        WebElement checkboxPriceAtTheTop = adminPanel.settingPriceAtTheTop;
         if(checkboxPriceAtTheTop.isSelected()){
             checkboxPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = DriverProvider.getDriver().findElement(By.cssSelector("input[id='settings.abt__ut2.product_list.show_rating']"));
+        WebElement checkboxProductRating = adminPanel.settingProductRating;
         if(!checkboxProductRating.isSelected()){
             checkboxProductRating.click();
         }

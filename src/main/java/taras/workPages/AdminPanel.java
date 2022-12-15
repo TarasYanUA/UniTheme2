@@ -26,7 +26,7 @@ public class AdminPanel extends AbstractPage {
         hoverSettingsOfCsCart.perform();
         clickAppearanceSettingsOfCsCart();
     }
-    public void hoverToProductPage(){
+    public void hoverToProductMenu(){
         WebElement elementOfMenuProducts = hoverMenuProducts();
         Actions hoverMenuProducts = new Actions(DriverProvider.getDriver());
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
@@ -51,6 +51,12 @@ public class AdminPanel extends AbstractPage {
     private WebElement themeSettings;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
+    @FindBy(css = "a[href$='product_features.manage']")
+    private WebElement menuFeatures;
+    @FindBy(css = "a[href$='feature_id=18'][data-ca-external-click-id]")
+    private WebElement featureBrand;
+    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
+    public WebElement showInProductList;
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
@@ -78,6 +84,8 @@ public class AdminPanel extends AbstractPage {
     public WebElement settingPriceAtTheTop;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating']")
     public WebElement settingProductRating;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating_num']")
+    public WebElement settingCommonValueOfProductRating;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHoveringMousePointer;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_height.desktop']")
@@ -94,10 +102,16 @@ public class AdminPanel extends AbstractPage {
     public WebElement settingShowQuantityChanger;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.show_button_add_to_cart.desktop']")
     private WebElement settingShowAddToCartButton;
+    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_bottom_content.desktop']")
+    private WebElement settingAdditionalProductInformation;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_content_on_hover.desktop']")
+    public WebElement settingShowAdditionalInformationOnHover;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop']")
     public WebElement settingShowBrandLogo;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
     public WebElement settingShowYouSave;
+    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
+    private WebElement settingSwitchProductImageWhenHovering;
 
 
     public void clickButtonAuthorization(){
@@ -117,6 +131,12 @@ public class AdminPanel extends AbstractPage {
     }
     public WebElement hoverMenuProducts(){
         return menuProducts;
+    }
+    public void navigateMenuFeatures(){
+        menuFeatures.click();
+    }
+    public void clickFeatureBrand(){
+        featureBrand.click();
     }
     public void clickThemeSectionsOnManagementPage(){
         themeSectionsOnManagementPage.click();
@@ -167,5 +187,19 @@ public class AdminPanel extends AbstractPage {
     }
     public void selectSettingShowAddToCartButton(String value){
         getSettingShowAddToCartButton().selectByValue(value);
+    }
+
+    public Select getSettingAdditionalProductInformation(){
+        return new Select(settingAdditionalProductInformation);
+    }
+    public void selectSettingAdditionalProductInformation(String value){
+        getSettingAdditionalProductInformation().selectByValue(value);
+    }
+
+    public Select getSettingSwitchProductImageWhenHovering(){
+        return new Select(settingSwitchProductImageWhenHovering);
+    }
+    public void selectSettingSwitchProductImageWhenHovering(String value){
+        getSettingSwitchProductImageWhenHovering().selectByValue(value);
     }
 }

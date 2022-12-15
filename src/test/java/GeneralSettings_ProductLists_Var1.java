@@ -23,7 +23,8 @@ import java.time.Duration;
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
-Отображать рейтинг товара --	y
+Отображать пустые звёзды рейтинга товара --	y
+Отображать общее значение рейтинга товара -- n
 
 Проверка проходит на следующих страницах:
 Блок товаров на Главной странице + RTL
@@ -71,6 +72,10 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         if(!checkboxProductRating.isSelected()){
             checkboxProductRating.click();
         }
+        WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
+        if(checkboxSettingCommonValueOfProductRating.isSelected()){
+            checkboxProductRating.click();
+        }
         adminPanel.clickSaveButtonOfSettings();
 
         //Работаем с витриной
@@ -81,6 +86,9 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         mainPage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         mainPage.scrollToBlockWithProducts();
+        //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By
+                .cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
         mainPage.scrollToMenuApparel();
         mainPage.changeLanguageByIndex(1);
@@ -103,7 +111,8 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By
+                .cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         categoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
         mainPage.changeLanguageByIndex(1);

@@ -23,7 +23,8 @@ import java.time.Duration;
 Обесцвечивать товары, которых нет в наличии --	n
 Формат отображения цен --	Вариант 1
 Отображать цену вверху --	y
-Отображать рейтинг товара --	n
+Отображать пустые звёзды рейтинга товара --	n
+Отображать общее значение рейтинга товара -- y
 
 Проверка проходит на следующих страницах:
 Блок товаров на Главной странице + RTL
@@ -69,6 +70,10 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         }
         WebElement checkboxProductRating = adminPanel.settingProductRating;
         if(checkboxProductRating.isSelected()){
+            checkboxProductRating.click();
+        }
+        WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
+        if(!checkboxSettingCommonValueOfProductRating.isSelected()){
             checkboxProductRating.click();
         }
         adminPanel.clickSaveButtonOfSettings();

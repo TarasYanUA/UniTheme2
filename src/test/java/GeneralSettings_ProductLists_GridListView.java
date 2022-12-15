@@ -126,6 +126,5 @@ public class GeneralSettings_ProductLists_GridListView extends TestRunner {
 
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
-
     }
 }

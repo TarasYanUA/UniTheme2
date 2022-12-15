@@ -102,17 +102,27 @@ public class GeneralSettings_ProductLists_GridListView extends TestRunner {
         //Проверяем, что статус наличия присутствует
         int sizeOfAvailabilityStatus = DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).size();
         Assert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product block!");
+        //Проверяем, что модификатор количества присутствует
+        int sizeOfQuantityChanger = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-center ty-value-changer cm-value-changer']")).size();
+        Assert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the product block!");
+        //Проверяем, что дополнительная информация отображается при наведении
+        int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
+        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
         //Проверяем, что логотип присутствует
-        int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector("")).size();
-        Assert.assertTrue(sizeOfLogo > 1, "There is no product logo on the product block!");
-
+        int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
+        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        //Проверяем, что текст "Вы экономите" присутствует
+        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
+        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        //Проверяем, что переключатель изображений товара с полосками
+        int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
+        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         takeScreenShot("310 GridListView_BlockWithProducts");
         mainPage.changeLanguageByIndex(1);
         makePause();
         mainPage.scrollToBlockWithProducts();
         takeScreenShot("311 GridListView_BlockWithProductsRTL");
         mainPage.changeLanguageByIndex(2);
-
 
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();

@@ -108,8 +108,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         takeScreenShot("411 GridListView_BlockWithProductsRTL");
         mainPage.changeLanguageByIndex(2);
 
-        //Категория "Телефоны"
-        mainPage.navigateToMenuPhones();
+        //Категория "Мужская одежда"
+        mainPage.navigateToMenuMenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
         Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
         //Проверяем, что логотип присутствует
@@ -119,20 +119,20 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         CategoryPage categoryPage = new CategoryPage();
-        categoryPage.hoverToPhoneProduct();
-        takeScreenShot("420 GridListView_PhoneCategory");
+        categoryPage.hoverToMenClothProduct();
+        takeScreenShot("420 GridListView_MenClothCategory");
         mainPage.changeLanguageByIndex(1);
         makePause();
-        categoryPage.hoverToPhoneProduct();
-        takeScreenShot("421 GridListView_PhoneCategoryRTL");
-        categoryPage.clickQuickViewOfPhoneProduct();
+        categoryPage.hoverToMenClothProduct();
+        takeScreenShot("421 GridListView_MenClothCategoryRTL");
+        categoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("430 GridListView_QuickViewRTL");
         categoryPage.clickCloseQuickView();
         mainPage.changeLanguageByIndex(2);
-        categoryPage.hoverToPhoneProduct();
-        categoryPage.clickQuickViewOfPhoneProduct();
+        categoryPage.hoverToMenClothProduct();
+        categoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("431 GridListView_QuickView");

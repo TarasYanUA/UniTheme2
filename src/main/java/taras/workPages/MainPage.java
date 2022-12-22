@@ -23,6 +23,8 @@ public class MainPage extends AbstractPage {
     private WebElement menuApparel;
     @FindBy(xpath = "//bdi[text()='Женская одежда']")
     private WebElement menuWomanCloth;
+    @FindBy(xpath = "//bdi[text()='Мужская одежда']")
+    private WebElement menuMenCloth;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;
     @FindBy(css = "ul[class^='cm-select-list'] li")
@@ -49,9 +51,9 @@ public class MainPage extends AbstractPage {
     }
     public void navigateToMenuPhones(){
         WebElement elementOfMenu = hoverMenuElectronic();
-        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
-        hoverMenuApparel.moveToElement(elementOfMenu);
-        hoverMenuApparel.perform();
+        Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
+        hoverMenuPhones.moveToElement(elementOfMenu);
+        hoverMenuPhones.perform();
         menuPhones.click();
     }
     public void navigateToMenuWomanCloth(){
@@ -61,6 +63,15 @@ public class MainPage extends AbstractPage {
         hoverMenuApparel.perform();
         menuWomanCloth.click();
     }
+
+    public void navigateToMenuMenCloth(){
+        WebElement elementOfMenu = hoverMenuApparel();
+        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
+        hoverMenuApparel.moveToElement(elementOfMenu);
+        hoverMenuApparel.perform();
+        menuMenCloth.click();
+    }
+
     public void scrollToMenuApparel(){
         WebElement elementOfMenu = hoverMenuApparel();
         Actions scrollToMenuApparel = new Actions(DriverProvider.getDriver());

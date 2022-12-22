@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Third test-case is totally ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fourth test-case is totally ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671714325682</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fourth test-case is totally ready!">
+      <created>1671717854741</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1671717854741</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,6 +333,7 @@
     <MESSAGE value="settings in admin panel are ready! Start working with asserts on HomePage." />
     <MESSAGE value="Asserts on HomePage are ready!" />
     <MESSAGE value="Third test-case is totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third test-case is totally ready!" />
+    <MESSAGE value="Fourth test-case is totally ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth test-case is totally ready!" />
   </component>
 </project>

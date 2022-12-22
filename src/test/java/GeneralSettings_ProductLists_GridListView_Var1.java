@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.DriverProvider;
 import taras.workPages.AdminPanel;
+import taras.workPages.CategoryPage;
 import taras.workPages.MainPage;
 import java.io.IOException;
 import java.time.Duration;
@@ -31,9 +32,9 @@ import java.time.Duration;
 Переключать изображение товара при движении мышки -- с полосками
  */
 
-public class GeneralSettings_ProductLists_GridListView extends TestRunner {
+public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
     @Test
-    public void checkGridListView_BigProductCell() throws IOException {
+    public void checkGeneralSettings_ProductLists_GridListView_Var1() throws IOException {
         AdminPanel adminPanel = new AdminPanel();
         //Работаем с настройками характеристики Бренд
         adminPanel.hoverToProductMenu();
@@ -114,7 +115,7 @@ public class GeneralSettings_ProductLists_GridListView extends TestRunner {
         //Проверяем, что текст "Вы экономите" присутствует
         int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
         Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара с полосками
+        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         takeScreenShot("310 GridListView_BlockWithProducts");
@@ -126,5 +127,51 @@ public class GeneralSettings_ProductLists_GridListView extends TestRunner {
 
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
+        //Проверяем, что код товара присутствует
+        Assert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product block!");
+        //Проверяем, что статус наличия присутствует
+        Assert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product block!");
+        //Проверяем, что модификатор количества присутствует
+        Assert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the product block!");
+        //Проверяем, что дополнительная информация отображается при наведении
+        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        //Проверяем, что логотип присутствует
+        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        //Проверяем, что текст "Вы экономите" присутствует
+        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
+        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        CategoryPage categoryPage = new CategoryPage();
+        categoryPage.hoverToPhoneProduct();
+        takeScreenShot("320 GridListView_PhoneCategory");
+        mainPage.changeLanguageByIndex(1);
+        makePause();
+        categoryPage.hoverToPhoneProduct();
+        takeScreenShot("321 GridListView_PhoneCategoryRTL");
+        categoryPage.clickQuickViewOfPhoneProduct();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
+        takeScreenShot("330 GridListView_QuickViewRTL");
+        categoryPage.clickCloseQuickView();
+        mainPage.changeLanguageByIndex(2);
+        categoryPage.hoverToPhoneProduct();
+        categoryPage.clickQuickViewOfPhoneProduct();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
+        takeScreenShot("331 GridListView_QuickView");
+        categoryPage.clickCloseQuickView();
+        //Других два шаблона страницы категории
+        categoryPage.clickListWithoutOptions_ProductListView();
+        makePause();
+        takeScreenShot("340 GridListView_ListWithoutOptions");
+        mainPage.changeLanguageByIndex(1);
+        makePause();
+        takeScreenShot("341 GridListView_ListWithoutOptionsRTL");
+        categoryPage.clickCompactList_ProductListView();
+        makePause();
+        takeScreenShot("350 GridListView_CompactListRTL");
+        mainPage.changeLanguageByIndex(2);
+        makePause();
+        takeScreenShot("351 GridListView_CompactList");
     }
 }

@@ -40,13 +40,13 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         AdminPanel adminPanel = new AdminPanel();
         //Работаем с CS-Cart настройками
         adminPanel.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxSettingQuickView = adminPanel.settingQuickView;
-        if(!checkboxSettingQuickView.isSelected()){
-            checkboxSettingQuickView.click();
-        }
         WebElement checkboxThumbnailsGallery = adminPanel.settingThumbnailsGallery;
         if(!checkboxThumbnailsGallery.isSelected()){
-            checkboxThumbnailsGallery.click();
+            adminPanel.settingThumbnailsGallery.click();
+        }
+        WebElement checkboxSettingQuickView = adminPanel.settingQuickView;
+        if(!checkboxSettingQuickView.isSelected()){
+            adminPanel.settingQuickView.click();
         }
         adminPanel.clickSaveButtonOfSettings();
         //Работаем с настройками темы
@@ -56,25 +56,25 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         adminPanel.clickTabProductLists();
         WebElement checkboxMiniIconsGalleryOne = adminPanel.settingMiniIconsGallery;
         if(!checkboxMiniIconsGalleryOne.isSelected()){
-            checkboxMiniIconsGalleryOne.click();
+            adminPanel.settingMiniIconsGallery.click();
         }
-        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
         WebElement checkboxOutOfStockProducts = adminPanel.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()){
-            checkboxOutOfStockProducts.click();
+            adminPanel.settingOutOfStockProducts.click();
         }
+        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
         adminPanel.selectSettingPriceDisplayFormat("col");
         WebElement checkboxPriceAtTheTop = adminPanel.settingPriceAtTheTop;
         if(!checkboxPriceAtTheTop.isSelected()){
-            checkboxPriceAtTheTop.click();
+            adminPanel.settingPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = adminPanel.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            checkboxProductRating.click();
+            adminPanel.settingProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            checkboxProductRating.click();
+            adminPanel.settingCommonValueOfProductRating.click();
         }
         adminPanel.clickSaveButtonOfSettings();
 
@@ -82,7 +82,7 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className(".cookie-notice")));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
         mainPage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         mainPage.scrollToBlockWithProducts();

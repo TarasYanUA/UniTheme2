@@ -4,12 +4,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.DriverProvider;
 import taras.workPages.AdminPanel;
 import taras.workPages.CategoryPage;
 import taras.workPages.MainPage;
 import java.io.IOException;
 import java.time.Duration;
+import static taras.DriverProvider.getDriver;
 
 /*
 Проверка следующих настроек:
@@ -42,11 +42,11 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         adminPanel.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = adminPanel.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            checkboxSettingQuickView.click();
+            adminPanel.settingQuickView.click();
         }
         WebElement checkboxThumbnailsGallery = adminPanel.settingThumbnailsGallery;
         if(checkboxThumbnailsGallery.isSelected()){
-            checkboxThumbnailsGallery.click();
+            adminPanel.settingThumbnailsGallery.click();
         }
         adminPanel.clickSaveButtonOfSettings();
         //Работаем с настройками темы (идут по умолчанию)
@@ -56,39 +56,39 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         adminPanel.clickTabProductLists();
         WebElement checkboxMiniIconsGallery = adminPanel.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
-            checkboxMiniIconsGallery.click();
+            adminPanel.settingMiniIconsGallery.click();
         }
-        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         WebElement checkboxOutOfStickProducts = adminPanel.settingOutOfStockProducts;
         if (!checkboxOutOfStickProducts.isSelected()){
-            checkboxOutOfStickProducts.click();
+            adminPanel.settingOutOfStockProducts.click();
         }
         adminPanel.selectSettingPriceDisplayFormat("row-mix");
         WebElement checkboxPriceAtTheTop = adminPanel.settingPriceAtTheTop;
         if(checkboxPriceAtTheTop.isSelected()){
-            checkboxPriceAtTheTop.click();
+            adminPanel.settingPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = adminPanel.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            checkboxProductRating.click();
+            adminPanel.settingProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            checkboxProductRating.click();
+            adminPanel.settingCommonValueOfProductRating.click();
         }
+        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         adminPanel.clickSaveButtonOfSettings();
 
         //Работаем с витриной
         MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className(".cookie-notice")));
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
         mainPage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         mainPage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By
-                .cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
+        Assert.assertTrue(getDriver().findElement(By
+                .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
         mainPage.scrollToMenuApparel();
         mainPage.changeLanguageByIndex(1);
@@ -100,7 +100,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         mainPage.navigateToMenuWomanCloth();
         CategoryPage categoryPage = new CategoryPage();
         //Проверка, что на странице присутствует обесцвеченный товар.
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
         categoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
         mainPage.changeLanguageByIndex(1);
@@ -111,8 +111,8 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         //Категория "Телефоны"
         mainPage.navigateToMenuPhones();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By
-                .cssSelector("div[class='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
+        Assert.assertTrue(getDriver().findElement(By
+                .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         categoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
         mainPage.changeLanguageByIndex(1);
@@ -123,14 +123,14 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         //Быстрый просмотр в категории "Телефоны"
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
         categoryPage.clickCloseQuickView();
         mainPage.changeLanguageByIndex(1);
         categoryPage.hoverToPhoneProduct();
         categoryPage.clickQuickViewOfPhoneProduct();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("141 Var1_QuickViewRTL");
         categoryPage.clickCloseQuickView();

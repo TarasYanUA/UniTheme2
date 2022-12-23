@@ -44,6 +44,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         if(!checkboxShowInProductList.isSelected()){
             adminPanel.showInProductList.click();
         }
+        adminPanel.clickSaveButtonOfSettings();
         //Работаем с настройками темы
         adminPanel.navigateToAddonsPage();
         adminPanel.clickThemeSectionsOnManagementPage();
@@ -93,7 +94,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cookie-notice")));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
         mainPage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         mainPage.scrollToBlockWithProducts();

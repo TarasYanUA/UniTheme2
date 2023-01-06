@@ -4,10 +4,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.DriverProvider;
-import taras.workPages.AdminPanel;
-import taras.workPages.CategoryPage;
-import taras.workPages.MainPage;
+import taras.constants.DriverProvider;
+import taras.adminPanel.AdmHomePage;
+import taras.storefront.StCategoryPage;
+import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -35,60 +35,60 @@ import java.time.Duration;
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test
     public void checkGeneralSettings_ProductLists_GridListView_Var2() throws IOException {
-        AdminPanel adminPanel = new AdminPanel();
+        AdmHomePage admHomePage = new AdmHomePage();
         //Работаем с настройками темы
-        adminPanel.navigateToAddonsPage();
-        adminPanel.clickThemeSectionsOnManagementPage();
-        adminPanel.navigateToThemeSettings();
-        adminPanel.clickTabProductLists();
-        WebElement checkboxProductRating = adminPanel.settingProductRating;
+        admHomePage.navigateToAddonsPage();
+        admHomePage.clickThemeSectionsOnManagementPage();
+        admHomePage.navigateToThemeSettings();
+        admHomePage.clickTabProductLists();
+        WebElement checkboxProductRating = admHomePage.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            adminPanel.settingProductRating.click();
+            admHomePage.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = admHomePage.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            adminPanel.settingCommonValueOfProductRating.click();
+            admHomePage.settingCommonValueOfProductRating.click();
         }
-        adminPanel.clickAndTypeSettingMinHeightForProductCell("300");
-        adminPanel.clickAndTypeSettingProductIconWidth("400");
-        adminPanel.clickAndTypeSettingProductIconHeight("200");
-        WebElement checkboxSettingShowProductCode = adminPanel.settingShowProductCode;
+        admHomePage.clickAndTypeSettingMinHeightForProductCell("300");
+        admHomePage.clickAndTypeSettingProductIconWidth("400");
+        admHomePage.clickAndTypeSettingProductIconHeight("200");
+        WebElement checkboxSettingShowProductCode = admHomePage.settingShowProductCode;
         if(checkboxSettingShowProductCode.isSelected()){
-            adminPanel.settingShowProductCode.click();
+            admHomePage.settingShowProductCode.click();
         }
-        WebElement checkboxSettingDisplayAvailabilityStatus = adminPanel.settingDisplayAvailabilityStatus;
+        WebElement checkboxSettingDisplayAvailabilityStatus = admHomePage.settingDisplayAvailabilityStatus;
         if(checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            adminPanel.settingDisplayAvailabilityStatus.click();
+            admHomePage.settingDisplayAvailabilityStatus.click();
         }
-        WebElement checkboxSettingShowQuantityChanger = adminPanel.settingShowQuantityChanger;
+        WebElement checkboxSettingShowQuantityChanger = admHomePage.settingShowQuantityChanger;
         if(checkboxSettingShowQuantityChanger.isSelected()){
-            adminPanel.settingShowQuantityChanger.click();
+            admHomePage.settingShowQuantityChanger.click();
         }
-        adminPanel.selectSettingShowAddToCartButton("icon");
-        adminPanel.selectSettingAdditionalProductInformation("features_and_variations");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = adminPanel.settingShowAdditionalInformationOnHover;
+        admHomePage.selectSettingShowAddToCartButton("icon");
+        admHomePage.selectSettingAdditionalProductInformation("features_and_variations");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = admHomePage.settingShowAdditionalInformationOnHover;
         if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            adminPanel.settingShowAdditionalInformationOnHover.click();
+            admHomePage.settingShowAdditionalInformationOnHover.click();
         }
-        WebElement checkboxSettingShowBrandLogo = adminPanel.settingShowBrandLogo;
+        WebElement checkboxSettingShowBrandLogo = admHomePage.settingShowBrandLogo;
         if(!checkboxSettingShowBrandLogo.isSelected()){
-            adminPanel.settingShowBrandLogo.click();
+            admHomePage.settingShowBrandLogo.click();
         }
-        WebElement checkboxSettingShowYouSave = adminPanel.settingShowYouSave;
+        WebElement checkboxSettingShowYouSave = admHomePage.settingShowYouSave;
         if(!checkboxSettingShowYouSave.isSelected()){
-            adminPanel.settingShowYouSave.click();
+            admHomePage.settingShowYouSave.click();
         }
-        adminPanel.selectSettingSwitchProductImageWhenHovering("points");
-        adminPanel.clickSaveButtonOfSettings();
+        admHomePage.selectSettingSwitchProductImageWhenHovering("points");
+        admHomePage.clickSaveButtonOfSettings();
 
         //Работаем с витриной
-        MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
+        StHomePage stHomePage = admHomePage.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        mainPage.closeCookieNoticeOnStorefront();
+        stHomePage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
-        mainPage.scrollToBlockWithProducts();
+        stHomePage.scrollToBlockWithProducts();
         //Проверяем, что дополнительная информация отображается при наведении
         int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
         Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
@@ -102,14 +102,14 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
         takeScreenShot("410 GridListView_BlockWithProducts");
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
-        mainPage.scrollToBlockWithProducts();
+        stHomePage.scrollToBlockWithProducts();
         takeScreenShot("411 GridListView_BlockWithProductsRTL");
-        mainPage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(2);
 
         //Категория "Мужская одежда"
-        mainPage.navigateToMenuMenCloth();
+        stHomePage.navigateToMenuMenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
         Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
         //Проверяем, что логотип присутствует
@@ -118,24 +118,24 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
-        CategoryPage categoryPage = new CategoryPage();
-        categoryPage.hoverToMenClothProduct();
+        StCategoryPage stCategoryPage = new StCategoryPage();
+        stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("420 GridListView_MenClothCategory");
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
-        categoryPage.hoverToMenClothProduct();
+        stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("421 GridListView_MenClothCategoryRTL");
-        categoryPage.clickQuickViewOfMenClothProduct();
+        stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("430 GridListView_QuickViewRTL");
-        categoryPage.clickCloseQuickView();
-        mainPage.changeLanguageByIndex(2);
-        categoryPage.hoverToMenClothProduct();
-        categoryPage.clickQuickViewOfMenClothProduct();
+        stCategoryPage.clickCloseQuickView();
+        stHomePage.changeLanguageByIndex(2);
+        stCategoryPage.hoverToMenClothProduct();
+        stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("431 GridListView_QuickView");
-        categoryPage.clickCloseQuickView();
+        stCategoryPage.clickCloseQuickView();
     }
 }

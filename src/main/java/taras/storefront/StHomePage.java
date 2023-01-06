@@ -1,13 +1,13 @@
-package taras.workPages;
+package taras.storefront;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import taras.AbstractPage;
-import taras.DriverProvider;
+import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 import java.util.List;
 
-public class MainPage extends AbstractPage {
-    public MainPage(){
+public class StHomePage extends AbstractPage {
+    public StHomePage(){
         super();
     }
 

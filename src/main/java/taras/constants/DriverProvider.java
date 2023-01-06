@@ -1,4 +1,4 @@
-package taras;
+package taras.constants;
 
 import org.openqa.selenium.WebDriver;
 

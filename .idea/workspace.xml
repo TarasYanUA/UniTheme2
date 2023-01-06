@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fourth test-case is totally ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Some very important bug fixes at my test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/AbstractPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/BrowserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/DriverProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/DriverProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/AdmHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/workPages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +51,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/TestNG.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -57,7 +65,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_Var1">
     <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <shortenClasspath name="NONE" />
@@ -130,10 +138,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
         <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
       </list>
     </recent_temporary>
@@ -315,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671718892308</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Some very important bug fixes at my test-cases.">
+      <created>1671791835662</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671791835662</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,6 +360,7 @@
     <MESSAGE value="Asserts on HomePage are ready!" />
     <MESSAGE value="Third test-case is totally ready!" />
     <MESSAGE value="Fourth test-case is totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth test-case is totally ready!" />
+    <MESSAGE value="Some very important bug fixes at my test-cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some very important bug fixes at my test-cases." />
   </component>
 </project>

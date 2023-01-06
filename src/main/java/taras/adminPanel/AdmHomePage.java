@@ -1,14 +1,15 @@
-package taras.workPages;
+package taras.adminPanel;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import taras.AbstractPage;
-import taras.DriverProvider;
+import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
+import taras.storefront.StHomePage;
 
-public class AdminPanel extends AbstractPage {
-    public AdminPanel(){
+public class AdmHomePage extends AbstractPage {
+    public AdmHomePage(){
         super();
     }
 
@@ -32,9 +33,9 @@ public class AdminPanel extends AbstractPage {
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
         hoverMenuProducts.perform();
     }
-    public MainPage navigateToStorefrontMainPage(){
+    public StHomePage navigateToStorefrontMainPage(){
         storefrontMainPage.click();
-        return new MainPage();
+        return new StHomePage();
     }
 
     @FindBy(css = ".btn.btn-primary")
@@ -65,13 +66,14 @@ public class AdminPanel extends AbstractPage {
     private WebElement settingsOfCsCart;
     @FindBy(css = "#elm_menu_settings_Appearance")
     private WebElement appearanceSettingsOfCsCart;
-    //Настройки CS-Cart вкладки "Внешний вид"
+
+    //Настройки CS-Cart, вкладка "Внешний вид"
     @FindBy(css = "input[id*='field___enable_quick_view']")
     public WebElement settingQuickView;
     @FindBy(css = "input[id*='field___thumbnails_gallery']")
     public WebElement settingThumbnailsGallery;
 
-    //Настройки вкладки "Списки товаров"
+    //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
     private WebElement tabProductLists;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_gallery']")

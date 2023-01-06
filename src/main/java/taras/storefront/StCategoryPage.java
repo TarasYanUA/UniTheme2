@@ -1,13 +1,13 @@
-package taras.workPages;
+package taras.storefront;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import taras.AbstractPage;
-import taras.DriverProvider;
+import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
-public class CategoryPage extends AbstractPage {
-    public CategoryPage(){
+public class StCategoryPage extends AbstractPage {
+    public StCategoryPage(){
         super();
     }
 

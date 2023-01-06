@@ -4,12 +4,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.workPages.AdminPanel;
-import taras.workPages.CategoryPage;
-import taras.workPages.MainPage;
+import taras.adminPanel.AdmHomePage;
+import taras.storefront.StCategoryPage;
+import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
-import static taras.DriverProvider.getDriver;
+import static taras.constants.DriverProvider.getDriver;
 
 /*
 Проверка следующих настроек:
@@ -19,7 +19,7 @@ import static taras.DriverProvider.getDriver;
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Показывать галерею мини-иконок товара в товарном списке --	n
-Переключать изображение товара при движении мышки -- с полосками (нужно для настройки выше)
+Переключать изображение товара при движении мышки -- с полосками
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
@@ -27,124 +27,124 @@ import static taras.DriverProvider.getDriver;
 Отображать общее значение рейтинга товара -- n
 
 Проверка проходит на следующих страницах:
-Блок товаров на Главной странице + RTL
-Женская одежда + RTL
-Телефоны + RTL
-Быстрый просмотр + RTL
-Все шаблоны категории + RTL
+- Блок товаров на Главной странице + RTL
+- Женская одежда + RTL
+- Телефоны + RTL
+- Быстрый просмотр + RTL
+- Все шаблоны категории + RTL
 */
 
 public class GeneralSettings_ProductLists_Var1 extends TestRunner {
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
-        AdminPanel adminPanel = new AdminPanel();
+        AdmHomePage admHomePage = new AdmHomePage();
         //Работаем с CS-Cart настройками
-        adminPanel.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxSettingQuickView = adminPanel.settingQuickView;
-        if(!checkboxSettingQuickView.isSelected()){
-            adminPanel.settingQuickView.click();
-        }
-        WebElement checkboxThumbnailsGallery = adminPanel.settingThumbnailsGallery;
+        admHomePage.navigateToAppearanceSettingsOfCsCart();
+        WebElement checkboxThumbnailsGallery = admHomePage.settingThumbnailsGallery;
         if(checkboxThumbnailsGallery.isSelected()){
-            adminPanel.settingThumbnailsGallery.click();
+            admHomePage.settingThumbnailsGallery.click();
         }
-        adminPanel.clickSaveButtonOfSettings();
+        WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
+        if(!checkboxSettingQuickView.isSelected()){
+            admHomePage.settingQuickView.click();
+        }
+        admHomePage.clickSaveButtonOfSettings();
         //Работаем с настройками темы (идут по умолчанию)
-        adminPanel.navigateToAddonsPage();
-        adminPanel.clickThemeSectionsOnManagementPage();
-        adminPanel.navigateToThemeSettings();
-        adminPanel.clickTabProductLists();
-        WebElement checkboxMiniIconsGallery = adminPanel.settingMiniIconsGallery;
+        admHomePage.navigateToAddonsPage();
+        admHomePage.clickThemeSectionsOnManagementPage();
+        admHomePage.navigateToThemeSettings();
+        admHomePage.clickTabProductLists();
+        WebElement checkboxMiniIconsGallery = admHomePage.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
-            adminPanel.settingMiniIconsGallery.click();
+            admHomePage.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStickProducts = adminPanel.settingOutOfStockProducts;
+        WebElement checkboxOutOfStickProducts = admHomePage.settingOutOfStockProducts;
         if (!checkboxOutOfStickProducts.isSelected()){
-            adminPanel.settingOutOfStockProducts.click();
+            admHomePage.settingOutOfStockProducts.click();
         }
-        adminPanel.selectSettingPriceDisplayFormat("row-mix");
-        WebElement checkboxPriceAtTheTop = adminPanel.settingPriceAtTheTop;
+        admHomePage.selectSettingPriceDisplayFormat("row-mix");
+        WebElement checkboxPriceAtTheTop = admHomePage.settingPriceAtTheTop;
         if(checkboxPriceAtTheTop.isSelected()){
-            adminPanel.settingPriceAtTheTop.click();
+            admHomePage.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = adminPanel.settingProductRating;
+        WebElement checkboxProductRating = admHomePage.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            adminPanel.settingProductRating.click();
+            admHomePage.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = adminPanel.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = admHomePage.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            adminPanel.settingCommonValueOfProductRating.click();
+            admHomePage.settingCommonValueOfProductRating.click();
         }
-        adminPanel.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
-        adminPanel.clickSaveButtonOfSettings();
+        admHomePage.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
+        admHomePage.clickSaveButtonOfSettings();
 
         //Работаем с витриной
-        MainPage mainPage = adminPanel.navigateToStorefrontMainPage();
+        StHomePage stHomePage = admHomePage.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        mainPage.closeCookieNoticeOnStorefront();
+        stHomePage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
-        mainPage.scrollToBlockWithProducts();
+        stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
-        mainPage.scrollToMenuApparel();
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.scrollToMenuApparel();
+        stHomePage.changeLanguageByIndex(1);
         makePause();
-        mainPage.scrollToBlockWithProducts();
+        stHomePage.scrollToBlockWithProducts();
         takeScreenShot("111 Var1_BlockWithProductsRTL");
-        mainPage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(2);
         //Категория "Женская одежда"
-        mainPage.navigateToMenuWomanCloth();
-        CategoryPage categoryPage = new CategoryPage();
+        stHomePage.navigateToMenuWomanCloth();
+        StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице присутствует обесцвеченный товар.
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
-        categoryPage.hoverToClothProduct();
+        stCategoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
-        categoryPage.hoverToClothProduct();
+        stCategoryPage.hoverToClothProduct();
         takeScreenShot("121 Var1_WomanClothCategoryRTL");
-        mainPage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(2);
         //Категория "Телефоны"
-        mainPage.navigateToMenuPhones();
+        stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
-        categoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
-        categoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("131 Var1_PhonesCategoryRTL");
-        mainPage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(2);
         //Быстрый просмотр в категории "Телефоны"
-        categoryPage.hoverToPhoneProduct();
-        categoryPage.clickQuickViewOfPhoneProduct();
+        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
-        categoryPage.clickCloseQuickView();
-        mainPage.changeLanguageByIndex(1);
-        categoryPage.hoverToPhoneProduct();
-        categoryPage.clickQuickViewOfPhoneProduct();
+        stCategoryPage.clickCloseQuickView();
+        stHomePage.changeLanguageByIndex(1);
+        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("141 Var1_QuickViewRTL");
-        categoryPage.clickCloseQuickView();
+        stCategoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории
-        categoryPage.clickListWithoutOptions_ProductListView();
+        stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
-        mainPage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");
-        categoryPage.clickCompactList_ProductListView();
+        stCategoryPage.clickCompactList_ProductListView();
         makePause();
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
-        mainPage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
         takeScreenShot("161 Var1_Category_CompactList_ProductListViewRTL");
     }

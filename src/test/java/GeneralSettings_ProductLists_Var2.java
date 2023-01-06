@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import taras.adminPanel.ThemeSettings;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
@@ -38,6 +39,7 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_ChangedValues() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
+        ThemeSettings themeSettings = new ThemeSettings();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
@@ -53,28 +55,28 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         csCartSettings.navigateToThemeSettings();
-        csCartSettings.clickTabProductLists();
-        WebElement checkboxMiniIconsGalleryOne = csCartSettings.settingMiniIconsGallery;
+        themeSettings.clickTabProductLists();
+        WebElement checkboxMiniIconsGalleryOne = themeSettings.settingMiniIconsGallery;
         if(!checkboxMiniIconsGalleryOne.isSelected()){
-            csCartSettings.settingMiniIconsGallery.click();
+            themeSettings.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStockProducts = csCartSettings.settingOutOfStockProducts;
+        WebElement checkboxOutOfStockProducts = themeSettings.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()){
-            csCartSettings.settingOutOfStockProducts.click();
+            themeSettings.settingOutOfStockProducts.click();
         }
-        csCartSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
-        csCartSettings.selectSettingPriceDisplayFormat("col");
-        WebElement checkboxPriceAtTheTop = csCartSettings.settingPriceAtTheTop;
+        themeSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
+        themeSettings.selectSettingPriceDisplayFormat("col");
+        WebElement checkboxPriceAtTheTop = themeSettings.settingPriceAtTheTop;
         if(!checkboxPriceAtTheTop.isSelected()){
-            csCartSettings.settingPriceAtTheTop.click();
+            themeSettings.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = csCartSettings.settingProductRating;
+        WebElement checkboxProductRating = themeSettings.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            csCartSettings.settingProductRating.click();
+            themeSettings.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = csCartSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            csCartSettings.settingCommonValueOfProductRating.click();
+            themeSettings.settingCommonValueOfProductRating.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 

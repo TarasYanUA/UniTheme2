@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import taras.adminPanel.ThemeSettings;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
@@ -36,49 +37,50 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test
     public void checkGeneralSettings_ProductLists_GridListView_Var2() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
+        ThemeSettings themeSettings = new ThemeSettings();
         //Работаем с настройками темы
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         csCartSettings.navigateToThemeSettings();
-        csCartSettings.clickTabProductLists();
-        WebElement checkboxProductRating = csCartSettings.settingProductRating;
+        themeSettings.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettings.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            csCartSettings.settingProductRating.click();
+            themeSettings.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = csCartSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            csCartSettings.settingCommonValueOfProductRating.click();
+            themeSettings.settingCommonValueOfProductRating.click();
         }
-        csCartSettings.clickAndTypeSettingMinHeightForProductCell("300");
-        csCartSettings.clickAndTypeSettingProductIconWidth("400");
-        csCartSettings.clickAndTypeSettingProductIconHeight("200");
-        WebElement checkboxSettingShowProductCode = csCartSettings.settingShowProductCode;
+        themeSettings.clickAndTypeSettingMinHeightForProductCell("300");
+        themeSettings.clickAndTypeSettingProductIconWidth("400");
+        themeSettings.clickAndTypeSettingProductIconHeight("200");
+        WebElement checkboxSettingShowProductCode = themeSettings.settingShowProductCode;
         if(checkboxSettingShowProductCode.isSelected()){
-            csCartSettings.settingShowProductCode.click();
+            themeSettings.settingShowProductCode.click();
         }
-        WebElement checkboxSettingDisplayAvailabilityStatus = csCartSettings.settingDisplayAvailabilityStatus;
+        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettings.settingDisplayAvailabilityStatus;
         if(checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            csCartSettings.settingDisplayAvailabilityStatus.click();
+            themeSettings.settingDisplayAvailabilityStatus.click();
         }
-        WebElement checkboxSettingShowQuantityChanger = csCartSettings.settingShowQuantityChanger;
+        WebElement checkboxSettingShowQuantityChanger = themeSettings.settingShowQuantityChanger;
         if(checkboxSettingShowQuantityChanger.isSelected()){
-            csCartSettings.settingShowQuantityChanger.click();
+            themeSettings.settingShowQuantityChanger.click();
         }
-        csCartSettings.selectSettingShowAddToCartButton("icon");
-        csCartSettings.selectSettingAdditionalProductInformation("features_and_variations");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = csCartSettings.settingShowAdditionalInformationOnHover;
+        themeSettings.selectSettingShowAddToCartButton("icon");
+        themeSettings.selectSettingAdditionalProductInformation("features_and_variations");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettings.settingShowAdditionalInformationOnHover;
         if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            csCartSettings.settingShowAdditionalInformationOnHover.click();
+            themeSettings.settingShowAdditionalInformationOnHover.click();
         }
-        WebElement checkboxSettingShowBrandLogo = csCartSettings.settingShowBrandLogo;
+        WebElement checkboxSettingShowBrandLogo = themeSettings.settingShowBrandLogo;
         if(!checkboxSettingShowBrandLogo.isSelected()){
-            csCartSettings.settingShowBrandLogo.click();
+            themeSettings.settingShowBrandLogo.click();
         }
-        WebElement checkboxSettingShowYouSave = csCartSettings.settingShowYouSave;
+        WebElement checkboxSettingShowYouSave = themeSettings.settingShowYouSave;
         if(!checkboxSettingShowYouSave.isSelected()){
-            csCartSettings.settingShowYouSave.click();
+            themeSettings.settingShowYouSave.click();
         }
-        csCartSettings.selectSettingSwitchProductImageWhenHovering("points");
+        themeSettings.selectSettingSwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной

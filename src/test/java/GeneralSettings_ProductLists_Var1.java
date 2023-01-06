@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.ThemeSettings;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
@@ -38,6 +39,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
+        ThemeSettings themeSettings = new ThemeSettings();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
@@ -53,29 +55,29 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         csCartSettings.navigateToThemeSettings();
-        csCartSettings.clickTabProductLists();
-        WebElement checkboxMiniIconsGallery = csCartSettings.settingMiniIconsGallery;
+        themeSettings.clickTabProductLists();
+        WebElement checkboxMiniIconsGallery = themeSettings.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
-            csCartSettings.settingMiniIconsGallery.click();
+            themeSettings.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStickProducts = csCartSettings.settingOutOfStockProducts;
+        WebElement checkboxOutOfStickProducts = themeSettings.settingOutOfStockProducts;
         if (!checkboxOutOfStickProducts.isSelected()){
-            csCartSettings.settingOutOfStockProducts.click();
+            themeSettings.settingOutOfStockProducts.click();
         }
-        csCartSettings.selectSettingPriceDisplayFormat("row-mix");
-        WebElement checkboxPriceAtTheTop = csCartSettings.settingPriceAtTheTop;
+        themeSettings.selectSettingPriceDisplayFormat("row-mix");
+        WebElement checkboxPriceAtTheTop = themeSettings.settingPriceAtTheTop;
         if(checkboxPriceAtTheTop.isSelected()){
-            csCartSettings.settingPriceAtTheTop.click();
+            themeSettings.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = csCartSettings.settingProductRating;
+        WebElement checkboxProductRating = themeSettings.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            csCartSettings.settingProductRating.click();
+            themeSettings.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = csCartSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            csCartSettings.settingCommonValueOfProductRating.click();
+            themeSettings.settingCommonValueOfProductRating.click();
         }
-        csCartSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
+        themeSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной

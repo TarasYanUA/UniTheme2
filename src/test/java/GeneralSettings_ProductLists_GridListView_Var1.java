@@ -42,9 +42,9 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateMenuFeatures();
         csCartSettings.clickFeatureBrand();
-        WebElement checkboxShowInProductList = themeSettings.showInProductList;
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){
-            themeSettings.showInProductList.click();
+            csCartSettings.showInProductList.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы

@@ -8,8 +8,6 @@ import taras.constants.AbstractPage;
 public class ThemeSettings extends AbstractPage {
     public ThemeSettings(){super();}
 
-    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
-    public WebElement showInProductList;
     //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
     private WebElement tabProductLists;
@@ -52,6 +50,7 @@ public class ThemeSettings extends AbstractPage {
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHovering;
 
+
     public void clickTabProductLists(){
         tabProductLists.click();
     }
@@ -91,18 +90,59 @@ public class ThemeSettings extends AbstractPage {
     public void selectSettingShowAddToCartButton(String value){
         getSettingShowAddToCartButton().selectByValue(value);
     }
-
     public Select getSettingAdditionalProductInformation(){
         return new Select(settingAdditionalProductInformation);
     }
     public void selectSettingAdditionalProductInformation(String value){
         getSettingAdditionalProductInformation().selectByValue(value);
     }
-
     public Select getSettingSwitchProductImageWhenHovering(){
         return new Select(settingSwitchProductImageWhenHovering);
     }
     public void selectSettingSwitchProductImageWhenHovering(String value){
         getSettingSwitchProductImageWhenHovering().selectByValue(value);
+    }
+
+    //Настройки для вида списка товаров "Список без опций"
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_without_options.image_width.desktop']")
+    private WebElement withoutOptionsIconWidth;
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_without_options.image_height.desktop']")
+    private WebElement withoutOptionsIconHeight;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_sku.desktop")
+    public WebElement withoutOptionsProductCode;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_amount.desktop")
+    public WebElement withoutOptionsAmountStatus;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_qty.desktop")
+    public WebElement withoutOptionsShowQuantity;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.grid_item_bottom_content.desktop")
+    private WebElement withoutOptionsContentUnderDescription;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_options.desktop")
+    public WebElement withoutOptionsShowProductOptions;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
+    public WebElement withoutOptionsBrandLogo;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
+    private WebElement withoutOptionsHoverGallery;
+
+    public void clickAndTypeWithoutOptionsIconWidth (String value){
+        withoutOptionsIconWidth.click();
+        withoutOptionsIconWidth.clear();
+        withoutOptionsIconWidth.sendKeys(value);
+    }
+    public void clickAndTypeWithoutOptionsIconHeight (String value){
+        withoutOptionsIconHeight.click();
+        withoutOptionsIconHeight.clear();
+        withoutOptionsIconHeight.sendKeys(value);
+    }
+    public Select getWithoutOptionsContentUnderDescription(){
+        return new Select(withoutOptionsContentUnderDescription);
+    }
+    public void selectWithoutOptionsContentUnderDescription(String value){
+        getWithoutOptionsContentUnderDescription().selectByValue(value);
+    }
+    public Select getWithoutOptionsHoverGallery(){
+        return new Select(withoutOptionsHoverGallery);
+    }
+    public void selectWithoutOptionsHoverGallery(String value){
+        getWithoutOptionsHoverGallery().selectByValue(value);
     }
 }

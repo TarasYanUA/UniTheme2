@@ -64,6 +64,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement settingsOfCsCart;
     @FindBy(css = "#elm_menu_settings_Appearance")
     private WebElement appearanceSettingsOfCsCart;
+    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
+    public WebElement showInProductList;
 
     //Настройки CS-Cart, вкладка "Внешний вид"
     @FindBy(css = "input[id*='field___enable_quick_view']")

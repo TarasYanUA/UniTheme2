@@ -4,8 +4,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import taras.adminPanel.ThemeSettings;
 import taras.constants.DriverProvider;
-import taras.adminPanel.AdmHomePage;
+import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
@@ -35,63 +36,64 @@ import java.time.Duration;
 public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
     @Test
     public void checkGeneralSettings_ProductLists_GridListView_Var1() throws IOException {
-        AdmHomePage admHomePage = new AdmHomePage();
+        CsCartSettings csCartSettings = new CsCartSettings();
+        ThemeSettings themeSettings = new ThemeSettings();
         //Работаем с настройками характеристики Бренд
-        admHomePage.hoverToProductMenu();
-        admHomePage.navigateMenuFeatures();
-        admHomePage.clickFeatureBrand();
-        WebElement checkboxShowInProductList = admHomePage.showInProductList;
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateMenuFeatures();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = themeSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){
-            admHomePage.showInProductList.click();
+            themeSettings.showInProductList.click();
         }
-        admHomePage.clickSaveButtonOfSettings();
+        csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
-        admHomePage.navigateToAddonsPage();
-        admHomePage.clickThemeSectionsOnManagementPage();
-        admHomePage.navigateToThemeSettings();
-        admHomePage.clickTabProductLists();
-        WebElement checkboxProductRating = admHomePage.settingProductRating;
+        csCartSettings.navigateToAddonsPage();
+        csCartSettings.clickThemeSectionsOnManagementPage();
+        csCartSettings.navigateToThemeSettings();
+        themeSettings.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettings.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            admHomePage.settingProductRating.click();
+            themeSettings.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = admHomePage.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            admHomePage.settingCommonValueOfProductRating.click();
+            themeSettings.settingCommonValueOfProductRating.click();
         }
-        admHomePage.clickAndTypeSettingMinHeightForProductCell("490");
-        admHomePage.clickAndTypeSettingProductIconWidth("200");
-        admHomePage.clickAndTypeSettingProductIconHeight("350");
-        WebElement checkboxSettingShowProductCode = admHomePage.settingShowProductCode;
+        themeSettings.clickAndTypeSettingMinHeightForProductCell("490");
+        themeSettings.clickAndTypeSettingProductIconWidth("200");
+        themeSettings.clickAndTypeSettingProductIconHeight("350");
+        WebElement checkboxSettingShowProductCode = themeSettings.settingShowProductCode;
         if(!checkboxSettingShowProductCode.isSelected()){
-            admHomePage.settingShowProductCode.click();
+            themeSettings.settingShowProductCode.click();
         }
-        WebElement checkboxSettingDisplayAvailabilityStatus = admHomePage.settingDisplayAvailabilityStatus;
+        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettings.settingDisplayAvailabilityStatus;
         if(!checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            admHomePage.settingDisplayAvailabilityStatus.click();
+            themeSettings.settingDisplayAvailabilityStatus.click();
         }
-        WebElement checkboxSettingShowQuantityChanger = admHomePage.settingShowQuantityChanger;
+        WebElement checkboxSettingShowQuantityChanger = themeSettings.settingShowQuantityChanger;
         if(!checkboxSettingShowQuantityChanger.isSelected()){
-            admHomePage.settingShowQuantityChanger.click();
+            themeSettings.settingShowQuantityChanger.click();
         }
-        admHomePage.selectSettingShowAddToCartButton("icon_and_text");
-        admHomePage.selectSettingAdditionalProductInformation("features_and_description");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = admHomePage.settingShowAdditionalInformationOnHover;
+        themeSettings.selectSettingShowAddToCartButton("icon_and_text");
+        themeSettings.selectSettingAdditionalProductInformation("features_and_description");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettings.settingShowAdditionalInformationOnHover;
         if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            admHomePage.settingShowAdditionalInformationOnHover.click();
+            themeSettings.settingShowAdditionalInformationOnHover.click();
         }
-        WebElement checkboxSettingShowBrandLogo = admHomePage.settingShowBrandLogo;
+        WebElement checkboxSettingShowBrandLogo = themeSettings.settingShowBrandLogo;
         if(!checkboxSettingShowBrandLogo.isSelected()){
-            admHomePage.settingShowBrandLogo.click();
+            themeSettings.settingShowBrandLogo.click();
         }
-        WebElement checkboxSettingShowYouSave = admHomePage.settingShowYouSave;
+        WebElement checkboxSettingShowYouSave = themeSettings.settingShowYouSave;
         if(!checkboxSettingShowYouSave.isSelected()){
-            admHomePage.settingShowYouSave.click();
+            themeSettings.settingShowYouSave.click();
         }
-        admHomePage.selectSettingSwitchProductImageWhenHovering("lines");
-        admHomePage.clickSaveButtonOfSettings();
+        themeSettings.selectSettingSwitchProductImageWhenHovering("lines");
+        csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной
-        StHomePage stHomePage = admHomePage.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));

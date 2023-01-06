@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.constants.DriverProvider;
-import taras.adminPanel.AdmHomePage;
+import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
@@ -37,49 +37,49 @@ import java.time.Duration;
 public class GeneralSettings_ProductLists_Var2 extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_ChangedValues() throws IOException {
-        AdmHomePage admHomePage = new AdmHomePage();
+        CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с CS-Cart настройками
-        admHomePage.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxThumbnailsGallery = admHomePage.settingThumbnailsGallery;
+        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
         if(!checkboxThumbnailsGallery.isSelected()){
-            admHomePage.settingThumbnailsGallery.click();
+            csCartSettings.settingThumbnailsGallery.click();
         }
-        WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
+        WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            admHomePage.settingQuickView.click();
+            csCartSettings.settingQuickView.click();
         }
-        admHomePage.clickSaveButtonOfSettings();
+        csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
-        admHomePage.navigateToAddonsPage();
-        admHomePage.clickThemeSectionsOnManagementPage();
-        admHomePage.navigateToThemeSettings();
-        admHomePage.clickTabProductLists();
-        WebElement checkboxMiniIconsGalleryOne = admHomePage.settingMiniIconsGallery;
+        csCartSettings.navigateToAddonsPage();
+        csCartSettings.clickThemeSectionsOnManagementPage();
+        csCartSettings.navigateToThemeSettings();
+        csCartSettings.clickTabProductLists();
+        WebElement checkboxMiniIconsGalleryOne = csCartSettings.settingMiniIconsGallery;
         if(!checkboxMiniIconsGalleryOne.isSelected()){
-            admHomePage.settingMiniIconsGallery.click();
+            csCartSettings.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStockProducts = admHomePage.settingOutOfStockProducts;
+        WebElement checkboxOutOfStockProducts = csCartSettings.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()){
-            admHomePage.settingOutOfStockProducts.click();
+            csCartSettings.settingOutOfStockProducts.click();
         }
-        admHomePage.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
-        admHomePage.selectSettingPriceDisplayFormat("col");
-        WebElement checkboxPriceAtTheTop = admHomePage.settingPriceAtTheTop;
+        csCartSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
+        csCartSettings.selectSettingPriceDisplayFormat("col");
+        WebElement checkboxPriceAtTheTop = csCartSettings.settingPriceAtTheTop;
         if(!checkboxPriceAtTheTop.isSelected()){
-            admHomePage.settingPriceAtTheTop.click();
+            csCartSettings.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = admHomePage.settingProductRating;
+        WebElement checkboxProductRating = csCartSettings.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            admHomePage.settingProductRating.click();
+            csCartSettings.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = admHomePage.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = csCartSettings.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            admHomePage.settingCommonValueOfProductRating.click();
+            csCartSettings.settingCommonValueOfProductRating.click();
         }
-        admHomePage.clickSaveButtonOfSettings();
+        csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной
-        StHomePage stHomePage = admHomePage.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));

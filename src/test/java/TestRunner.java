@@ -4,7 +4,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import taras.constants.DriverProvider;
-import taras.adminPanel.AdmHomePage;
+import taras.adminPanel.CsCartSettings;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -28,9 +28,9 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        AdmHomePage admHomePage = new AdmHomePage();
-        admHomePage.clickButtonAuthorization();
-        admHomePage.closeBottomAdminPanel();
+        CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.clickButtonAuthorization();
+        csCartSettings.closeBottomAdminPanel();
     }
     @AfterMethod
     public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {

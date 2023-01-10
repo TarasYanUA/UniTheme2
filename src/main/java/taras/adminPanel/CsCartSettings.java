@@ -3,7 +3,6 @@ package taras.adminPanel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
@@ -107,8 +106,9 @@ public class CsCartSettings extends AbstractPage {
     public void clickThemeSectionsOnManagementPage(){
         themeSectionsOnManagementPage.click();
     }
-    public void navigateToThemeSettings(){
+    public ThemeSettings navigateToThemeSettings(){
         themeSettings.click();
+        return new ThemeSettings();
     }
 
 }

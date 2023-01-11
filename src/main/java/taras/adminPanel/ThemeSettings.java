@@ -1,9 +1,11 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
 public class ThemeSettings extends AbstractPage {
     public ThemeSettings(){super();}
@@ -43,7 +45,7 @@ public class ThemeSettings extends AbstractPage {
     private WebElement settingAdditionalProductInformation;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_content_on_hover.desktop']")
     public WebElement settingShowAdditionalInformationOnHover;
-    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop']")
+    @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
     public WebElement settingShowYouSave;
@@ -122,6 +124,9 @@ public class ThemeSettings extends AbstractPage {
     public WebElement withoutOptionsBrandLogo;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
     private WebElement withoutOptionsHoverGallery;
+    @FindBy(css = "#product_list_products_without_options_group")
+    private WebElement tableWithoutOptionsList;
+
 
     public void clickAndTypeWithoutOptionsIconWidth (String value){
         withoutOptionsIconWidth.click();
@@ -144,6 +149,15 @@ public class ThemeSettings extends AbstractPage {
     }
     public void selectWithoutOptionsHoverGallery(String value){
         getWithoutOptionsHoverGallery().selectByValue(value);
+    }
+    public WebElement moveToTableWithoutOptionsList(){
+        return tableWithoutOptionsList;
+    }
+    public void scrollToTableWithoutOptionsList(){
+        WebElement elementOfTable = moveToTableWithoutOptionsList();
+        Actions scrollToElement = new Actions(DriverProvider.getDriver());
+        scrollToElement.moveToElement(elementOfTable);
+        scrollToElement.perform();
     }
 
     //Настройки для вида списка товаров "Компактный список"

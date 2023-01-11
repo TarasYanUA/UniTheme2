@@ -50,7 +50,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         if(checkboxShowProductOptions.isSelected()){
             themeSettings.withoutOptionsShowProductOptions.click();
         }
-        //themeSettings.scrollToTableWithoutOptionsList();
         WebElement checkboxBrandLogo = themeSettings.withoutOptionsBrandLogo;
         if(checkboxBrandLogo.isSelected()){
             themeSettings.withoutOptionsBrandLogo.click();

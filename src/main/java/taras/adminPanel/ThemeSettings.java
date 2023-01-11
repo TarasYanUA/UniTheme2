@@ -124,8 +124,6 @@ public class ThemeSettings extends AbstractPage {
     public WebElement withoutOptionsBrandLogo;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
     private WebElement withoutOptionsHoverGallery;
-    @FindBy(css = "#product_list_products_without_options_group")
-    private WebElement tableWithoutOptionsList;
 
 
     public void clickAndTypeWithoutOptionsIconWidth (String value){
@@ -149,15 +147,6 @@ public class ThemeSettings extends AbstractPage {
     }
     public void selectWithoutOptionsHoverGallery(String value){
         getWithoutOptionsHoverGallery().selectByValue(value);
-    }
-    public WebElement moveToTableWithoutOptionsList(){
-        return tableWithoutOptionsList;
-    }
-    public void scrollToTableWithoutOptionsList(){
-        WebElement elementOfTable = moveToTableWithoutOptionsList();
-        Actions scrollToElement = new Actions(DriverProvider.getDriver());
-        scrollToElement.moveToElement(elementOfTable);
-        scrollToElement.perform();
     }
 
     //Настройки для вида списка товаров "Компактный список"

@@ -1,14 +1,3 @@
-/*
-UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
-Отображать код товара   -- нет
-Отображать статус наличия   -- нет
-Отображать модификатор количества   -- да
-Содержимое под описанием    -- Список вариаций
-Отображать опции товара -- нет
-Отображать логотип бренда   -- нет
-Переключать изображение товара при движении мышки   -- с точками
-*/
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,6 +12,17 @@ import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
 import static taras.constants.DriverProvider.getDriver;
+
+/*
+UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
+Отображать код товара   -- нет
+Отображать статус наличия   -- нет
+Отображать модификатор количества   -- да
+Содержимое под описанием    -- Список вариаций
+Отображать опции товара -- нет
+Отображать логотип бренда   -- нет
+Переключать изображение товара при движении мышки   -- с точками
+*/
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
     @Test

@@ -1,3 +1,18 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.ThemeSettings;
+import taras.constants.DriverProvider;
+import taras.storefront.StCategoryPage;
+import taras.storefront.StHomePage;
+import java.io.IOException;
+import java.time.Duration;
+import static taras.constants.DriverProvider.getDriver;
+
 /*
 1) "Товары -- Характеристики -- Бренд":
 - включаем "Показывать в списке товаров"
@@ -13,21 +28,6 @@
 Отображать логотип бренда   -- да
 Переключать изображение товара при движении мышки   -- с полосками
 */
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings;
-import taras.constants.DriverProvider;
-import taras.storefront.StCategoryPage;
-import taras.storefront.StHomePage;
-import java.io.IOException;
-import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRunner {
     @Test

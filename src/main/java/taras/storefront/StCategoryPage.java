@@ -27,13 +27,26 @@ public class StCategoryPage extends AbstractPage {
     private WebElement grid_ProductListView;
     @FindBy(css = ".ty-icon.ty-icon-products-without-options")
     private WebElement listWithoutOptions_ProductListView;
+    @FindBy(css = "div[class*='ut2-show-rating-num']")
+    public WebElement commonValueOfProductRating;
+    @FindBy(css = ".ut2-rating-stars-empty")
+    public WebElement emptyRatingStars;
     @FindBy(css = "div[class='ut2-sorting-wrap'] span[class='ty-icon ty-icon-short-list']")
     private WebElement compactList_ProductListView;
-    @FindBy(css = "button[id*='button_cart']")
-    private WebElement compactList_buttonAddToCart;
     @FindBy(css = "a[class*='ut2-quick-view-button']")
-    private WebElement compactList_buttonQuickView;
-
+    public WebElement buttonQuickView;
+    @FindBy(css = "span[id*='product_code']")
+    public WebElement productCode;
+    @FindBy(css = ".ty-compact-list__amount")
+    public WebElement availabilityStatus;
+    @FindBy(css = "button[id*='button_cart']")
+    public WebElement buttonAddToCart;
+    @FindBy(css = "div[class*='cm-value-changer']")
+    public WebElement quantityCharger;
+    @FindBy(css = "div.ut2-cl-bt .ut2-icon-baseline-favorite-border")
+    public WebElement iconWishList;
+    @FindBy(css = ".ut2-icon-addchart")
+    public WebElement iconComparisonList;
 
     public WebElement hoverPhoneProduct(){
         return phoneProduct;
@@ -74,14 +87,14 @@ public class StCategoryPage extends AbstractPage {
     public void clickGrid_ProductListView(){grid_ProductListView.click();}
     public void clickListWithoutOptions_ProductListView(){listWithoutOptions_ProductListView.click();}
     public void clickCompactList_ProductListView(){compactList_ProductListView.click();}
-    public WebElement moveToButtonAddToCart(){return compactList_buttonAddToCart;}
+    public WebElement moveToButtonAddToCart(){return buttonAddToCart;}
     public void hoverToButtonAddToCart(){
         WebElement elementOfButtonAddToCart = moveToButtonAddToCart();
         Actions hoverToElement = new Actions(DriverProvider.getDriver());
         hoverToElement.moveToElement(elementOfButtonAddToCart);
         hoverToElement.perform();
     }
-    public void clickCompactList_buttonQuickView(){
-        compactList_buttonQuickView.click();
+    public void clickButtonQuickView(){
+        buttonQuickView.click();
     }
 }

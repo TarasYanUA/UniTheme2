@@ -89,7 +89,7 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("210 Var2_BlockWithProducts");
-        stHomePage.scrollToMenuApparel();
+        stHomePage.navigateToMenuApparel();
         stHomePage.changeLanguageByIndex(1);
         makePause();
         stHomePage.scrollToBlockWithProducts();

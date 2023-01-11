@@ -7,6 +7,7 @@
             <class name="GeneralSettings_ProductLists_GridListView_Var2" />
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+            <class name="GeneralSettings_ProductLists_CompactList_Var1" />
         </classes>
     </test>
 </suite>

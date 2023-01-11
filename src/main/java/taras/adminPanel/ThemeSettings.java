@@ -145,4 +145,24 @@ public class ThemeSettings extends AbstractPage {
     public void selectWithoutOptionsHoverGallery(String value){
         getWithoutOptionsHoverGallery().selectByValue(value);
     }
+
+    //Настройки для вида списка товаров "Компактный список"
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.image_width.desktop")
+    private WebElement  compactList_productIconWidth;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.image_height.desktop")
+    private WebElement compactList_productIconHeight;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_sku.desktop")
+    public WebElement compactList_productCode;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_amount.desktop")
+    public WebElement compactList_availabilityStatus;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_qty.desktop")
+    public WebElement compactList_quantityCharger;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button.desktop")
+    public WebElement compactList_buttonAddToCart;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_quick_view.desktop")
+    public WebElement compactList_quickView;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_wishlist.desktop")
+    public WebElement compactList_buttonWishList;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_compare.desktop")
+    public WebElement compactList_buttonComparisonList;
 }

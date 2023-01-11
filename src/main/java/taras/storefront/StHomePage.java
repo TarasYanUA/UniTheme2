@@ -25,6 +25,8 @@ public class StHomePage extends AbstractPage {
     private WebElement menuWomanCloth;
     @FindBy(xpath = "//bdi[text()='Мужская одежда']")
     private WebElement menuMenCloth;
+    @FindBy(xpath = "//bdi[text()='Игровые приставки']")
+    private WebElement menuGameConsoles;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;
     @FindBy(css = "ul[class^='cm-select-list'] li")
@@ -72,11 +74,19 @@ public class StHomePage extends AbstractPage {
         menuMenCloth.click();
     }
 
-    public void scrollToMenuApparel(){
+    public void navigateToMenuApparel(){
         WebElement elementOfMenu = hoverMenuApparel();
         Actions scrollToMenuApparel = new Actions(DriverProvider.getDriver());
         scrollToMenuApparel.scrollToElement(elementOfMenu);
         scrollToMenuApparel.perform();
+    }
+
+    public void navigateToMenuGameConsoles(){
+        WebElement elementOfMenu = hoverMenuElectronic();
+        Actions hoverMenu = new Actions(DriverProvider.getDriver());
+        hoverMenu.moveToElement(elementOfMenu);
+        hoverMenu.perform();
+        menuGameConsoles.click();
     }
     public List<WebElement> getLanguageSelection(){
         return languageSelection;

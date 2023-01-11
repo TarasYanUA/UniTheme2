@@ -13,7 +13,6 @@ import java.time.Duration;
 import static taras.constants.DriverProvider.getDriver;
 
 /*
-Проверка следующих настроек:
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
 Показывать мини-иконки в виде галереи -- n
@@ -39,7 +38,6 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings themeSettings = new ThemeSettings();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
@@ -54,7 +52,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         //Работаем с настройками темы (идут по умолчанию)
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
-        csCartSettings.navigateToThemeSettings();
+        ThemeSettings themeSettings = csCartSettings.navigateToThemeSettings();
         themeSettings.clickTabProductLists();
         WebElement checkboxMiniIconsGallery = themeSettings.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
@@ -92,7 +90,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
-        stHomePage.scrollToMenuApparel();
+        stHomePage.navigateToMenuApparel();
         stHomePage.changeLanguageByIndex(1);
         makePause();
         stHomePage.scrollToBlockWithProducts();

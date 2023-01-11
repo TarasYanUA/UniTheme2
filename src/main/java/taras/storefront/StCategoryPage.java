@@ -29,6 +29,10 @@ public class StCategoryPage extends AbstractPage {
     private WebElement listWithoutOptions_ProductListView;
     @FindBy(css = "div[class='ut2-sorting-wrap'] span[class='ty-icon ty-icon-short-list']")
     private WebElement compactList_ProductListView;
+    @FindBy(css = "button[id*='button_cart']")
+    private WebElement compactList_buttonAddToCart;
+    @FindBy(css = "a[class*='ut2-quick-view-button']")
+    private WebElement compactList_buttonQuickView;
 
 
     public WebElement hoverPhoneProduct(){
@@ -70,4 +74,14 @@ public class StCategoryPage extends AbstractPage {
     public void clickGrid_ProductListView(){grid_ProductListView.click();}
     public void clickListWithoutOptions_ProductListView(){listWithoutOptions_ProductListView.click();}
     public void clickCompactList_ProductListView(){compactList_ProductListView.click();}
+    public WebElement moveToButtonAddToCart(){return compactList_buttonAddToCart;}
+    public void hoverToButtonAddToCart(){
+        WebElement elementOfButtonAddToCart = moveToButtonAddToCart();
+        Actions hoverToElement = new Actions(DriverProvider.getDriver());
+        hoverToElement.moveToElement(elementOfButtonAddToCart);
+        hoverToElement.perform();
+    }
+    public void clickCompactList_buttonQuickView(){
+        compactList_buttonQuickView.click();
+    }
 }

@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!">
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var1-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +24,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,14 +36,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Idea Projects/UniTheme2/TestNG.xml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
@@ -58,7 +55,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1">
     <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <shortenClasspath name="NONE" />
@@ -123,16 +120,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
+      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+        <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />

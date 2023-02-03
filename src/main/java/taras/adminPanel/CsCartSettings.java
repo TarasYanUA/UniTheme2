@@ -41,9 +41,9 @@ public class CsCartSettings extends AbstractPage {
     private WebElement buttonAuthorization;
     @FindBy(css = "#bp_off_bottom_panel")
     private WebElement bottomAdminPanel;
-    @FindBy(css = "#elm_menu_addons")
+    @FindBy(xpath = "(//a[@class=\"dropdown-toggle addons\"])[1]")
     private WebElement addonsDropDown;
-    @FindBy(css = "#elm_menu_addons_downloaded_add_ons")
+    @FindBy(css = "a[id='elm_menu_addons_manage_addons'][class='dropdown-submenu__link ']")
     private WebElement addonsManagementPage;
     @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
     private WebElement themeSectionsOnManagementPage;

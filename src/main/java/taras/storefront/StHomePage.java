@@ -15,17 +15,17 @@ public class StHomePage extends AbstractPage {
     private WebElement cookieNoticeOnStorefront;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     private WebElement blockWithProducts;
-    @FindBy(css = "li[class$='ty-menu-item__electronics']")
-    private WebElement menuElectronic;
-    @FindBy(xpath = "//bdi[text()='Телефоны']")
-    private WebElement menuPhones;
     @FindBy(css = "li[class$='ty-menu-item__apparel']")
     private WebElement menuApparel;
+    @FindBy(css = "li[class$='ty-menu-item__electronics']")
+    private WebElement menuElectronic;
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
+    private WebElement menuPhones;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item-header'])[2]")
     private WebElement menuWomanCloth;
-    @FindBy(xpath = "//bdi[text()='Мужская одежда']")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item-header'])[1]")
     private WebElement menuMenCloth;
-    @FindBy(xpath = "//bdi[text()='Игровые приставки']")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[7]")
     private WebElement menuGameConsoles;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;
@@ -48,15 +48,15 @@ public class StHomePage extends AbstractPage {
     public WebElement hoverMenuElectronic(){
         return menuElectronic;
     }
-    public WebElement hoverMenuApparel(){
-        return menuApparel;
-    }
     public void navigateToMenuPhones(){
         WebElement elementOfMenu = hoverMenuElectronic();
         Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
         hoverMenuPhones.moveToElement(elementOfMenu);
         hoverMenuPhones.perform();
         menuPhones.click();
+    }
+    public WebElement hoverMenuApparel(){
+        return menuApparel;
     }
     public void navigateToMenuWomanCloth(){
         WebElement elementOfMenu = hoverMenuApparel();

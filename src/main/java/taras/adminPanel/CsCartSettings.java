@@ -59,7 +59,7 @@ public class CsCartSettings extends AbstractPage {
     private WebElement saveButtonOfSettings;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
     private WebElement storefrontMainPage;
-    @FindBy(css = "#mainrightnavbar")
+    @FindBy(css = "#elm_menu_settings")
     private WebElement settingsOfCsCart;
     @FindBy(css = "#elm_menu_settings_Appearance")
     private WebElement appearanceSettingsOfCsCart;

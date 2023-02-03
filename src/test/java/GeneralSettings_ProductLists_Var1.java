@@ -42,11 +42,11 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
         if(checkboxThumbnailsGallery.isSelected()){
-            csCartSettings.settingThumbnailsGallery.click();
+            checkboxThumbnailsGallery.click();
         }
         WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            csCartSettings.settingQuickView.click();
+            checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы (идут по умолчанию)

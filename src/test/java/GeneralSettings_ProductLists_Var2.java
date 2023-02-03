@@ -118,16 +118,16 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")).isEnabled());
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")).isEnabled());
         takeScreenShot("240 Var2_QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.changeLanguageByIndex(1);
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='ty-icon icon-right-open-thin ty-icon-right-open-thin']")));
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")));
         takeScreenShot("241 Var2_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории

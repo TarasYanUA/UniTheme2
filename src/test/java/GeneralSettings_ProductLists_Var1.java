@@ -90,7 +90,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
-        stHomePage.navigateToMenuApparel();
+        //stHomePage.navigateToMenuApparel();
         stHomePage.changeLanguageByIndex(1);
         makePause();
         stHomePage.scrollToBlockWithProducts();

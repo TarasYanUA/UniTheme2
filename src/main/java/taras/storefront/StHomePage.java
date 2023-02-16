@@ -21,9 +21,9 @@ public class StHomePage extends AbstractPage {
     private WebElement menuElectronic;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
     private WebElement menuPhones;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item-header'])[2]")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item'])[2]")
     private WebElement menuWomanCloth;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item-header'])[1]")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item'])[1]")
     private WebElement menuMenCloth;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[7]")
     private WebElement menuGameConsoles;
@@ -79,6 +79,7 @@ public class StHomePage extends AbstractPage {
         Actions scrollToMenuApparel = new Actions(DriverProvider.getDriver());
         scrollToMenuApparel.scrollToElement(elementOfMenu);
         scrollToMenuApparel.perform();
+        menuApparel.click();
     }
 
     public void navigateToMenuGameConsoles(){

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adaptation to CS-Cart 4.16.1">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adaptation to CS-Cart 4.16.1. Two test-cases are ready 001.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var1-[].jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/TestNG.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -61,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_Var2">
+  <component name="RunManager" selected="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml">
     <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <shortenClasspath name="NONE" />
@@ -92,10 +88,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -103,10 +99,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -126,19 +122,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
         <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -411,7 +407,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

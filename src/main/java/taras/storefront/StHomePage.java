@@ -76,7 +76,7 @@ public class StHomePage extends AbstractPage {
     public void navigateToMenuApparel(){
         WebElement elementOfMenu = hoverMenuApparel();
         Actions scrollToMenuApparel = new Actions(DriverProvider.getDriver());
-        scrollToMenuApparel.scrollToElement(elementOfMenu);
+        scrollToMenuApparel.scrollToElement(elementOfMenu).scrollByAmount(0, -100);
         scrollToMenuApparel.perform();
         menuApparel.click();
     }

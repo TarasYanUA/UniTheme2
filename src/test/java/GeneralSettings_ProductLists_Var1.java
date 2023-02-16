@@ -88,9 +88,9 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         Assert.assertTrue(getDriver().findElement(By
-                .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
+                .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
+                "There is no empty stars at a product!");
         takeScreenShot("110 Var1_BlockWithProducts");
-        //stHomePage.navigateToMenuApparel();
         stHomePage.changeLanguageByIndex(2);
         makePause();
         stHomePage.scrollToBlockWithProducts();
@@ -100,7 +100,8 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице присутствует обесцвеченный товар.
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled(),
+                "There is no decolorized product on the category page!");
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
         stHomePage.changeLanguageByIndex(2);

@@ -89,58 +89,58 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("210 Var2_BlockWithProducts");
-        stHomePage.navigateToMenuApparel();
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("211 Var2_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("221 Var2_WomanClothCategoryRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("231 Var2_PhonesCategoryRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("span.ty-icon-right-open-thin")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")).isEnabled());
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector("span.ty-icon-right-open-thin")).isEnabled(),
+                "Mini icons are not as a gallery!");
         takeScreenShot("240 Var2_QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon-right-open-thin ty-icon-right-open-thin']")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("span.ty-icon-right-open-thin")));
         takeScreenShot("241 Var2_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
         takeScreenShot("251 Var2_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         takeScreenShot("261 Var2_Category_CompactList_ProductListViewRTL");
     }

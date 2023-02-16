@@ -14,7 +14,7 @@ import static taras.constants.Constants.BASIC_URL;
 
 /*
 Данный проект разработан для проверки отображения витрины с различными комбинациями настроек Юни темы.
-Актуальная версия Юни темы 4.15.2e. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
+Актуальная версия Юни темы 4.16.1b. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
 
 Рекомендуется запускать проект через файл TestNG.xml. Но можно также через Surefire отчёт:
 перейти в "Терминал" и ввести "mvn clean test". После этого в папке "target -> surefire reports"
@@ -52,7 +52,7 @@ public class TestRunner {
     }
     public void makePause(){
         try {
-            Thread.sleep(1500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

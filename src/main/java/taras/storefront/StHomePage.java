@@ -10,7 +10,6 @@ public class StHomePage extends AbstractPage {
     public StHomePage(){
         super();
     }
-
     @FindBy(css = ".cm-btn.cm-btn-success")
     private WebElement cookieNoticeOnStorefront;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
@@ -21,11 +20,11 @@ public class StHomePage extends AbstractPage {
     private WebElement menuElectronic;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
     private WebElement menuPhones;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item'])[2]")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[3]")
     private WebElement menuWomanCloth;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[@class='ty-menu__submenu-item'])[1]")
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
     private WebElement menuMenCloth;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[7]")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
     private WebElement menuGameConsoles;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;

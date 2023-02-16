@@ -1,11 +1,9 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
-import taras.constants.DriverProvider;
 
 public class ThemeSettings extends AbstractPage {
     public ThemeSettings(){super();}
@@ -47,6 +45,8 @@ public class ThemeSettings extends AbstractPage {
     public WebElement settingShowAdditionalInformationOnHover;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
+    public WebElement settingShowBrandLogo_ListWithoutOptions;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
     public WebElement settingShowYouSave;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
@@ -162,10 +162,5 @@ public class ThemeSettings extends AbstractPage {
     public WebElement compactList_quantityCharger;
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button.desktop")
     public WebElement compactList_buttonAddToCart;
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_quick_view.desktop")
-    public WebElement compactList_quickView;
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_wishlist.desktop")
-    public WebElement compactList_buttonWishList;
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_compare.desktop")
-    public WebElement compactList_buttonComparisonList;
+
 }

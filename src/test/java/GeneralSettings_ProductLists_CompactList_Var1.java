@@ -24,9 +24,6 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать статус наличия	-- нет
 Отображать модификатор количества	-- да
 Отображать кнопку "Купить"	-- да
-Отображать кнопку "Быстрый просмотр"	-- да
-Отображать кнопку "Добавить в избранное"	-- да
-Отображать кнопку "Добавить к сравнению"	-- да
 
 3) Проверка проходит на странице категории "Игровые приставки"
 */
@@ -71,18 +68,6 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         if(!checkboxButtonAddToCart.isSelected()){
             themeSettings.compactList_buttonAddToCart.click();
         }
-        WebElement checkboxQuickView = themeSettings.compactList_quickView;
-        if(!checkboxQuickView.isSelected()){
-            themeSettings.compactList_quickView.click();
-        }
-        WebElement checkboxWishList = themeSettings.compactList_buttonWishList;
-        if(!checkboxWishList.isSelected()){
-            themeSettings.compactList_buttonWishList.click();
-        }
-        WebElement checkboxComparisonList = themeSettings.compactList_buttonComparisonList;
-        if(!checkboxComparisonList.isSelected()){
-            themeSettings.compactList_buttonComparisonList.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной
@@ -101,10 +86,6 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         Assert.assertTrue(stCategoryPage.quantityCharger.isEnabled(), "There is no quantity charger!");
         //Проверяем, что Быстрый просмотр присутствует
         Assert.assertTrue(stCategoryPage.buttonQuickView.isEnabled(), "There is no button 'Quick view'!");
-        //Проверяем, что кнопка "Избранное" присутствует
-        Assert.assertTrue(stCategoryPage.iconWishList.isEnabled(), "There is no button 'Wish list'!");
-        //Проверяем, что кнопка "Сравнение" присутствует
-        Assert.assertTrue(stCategoryPage.iconComparisonList.isEnabled(), "There is no button 'Comparison list'!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("710 ProductLists_CompactLists_Var1");
         stCategoryPage.clickButtonQuickView();

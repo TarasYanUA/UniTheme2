@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_CompactList_Var1-[].jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var2-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,26 +60,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2">
-    <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_CompactList_Var2">
     <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -88,10 +72,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -110,10 +94,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -122,19 +117,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
-        <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -420,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676559060848</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676561586111</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1676561586111</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,7 +450,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created project!" />
     <MESSAGE value="Theme settings are ready." />
     <MESSAGE value="CS-Cart settings are added." />
     <MESSAGE value="Test-case #1 is totally ready!" />
@@ -473,7 +474,8 @@
     <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
     <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
     <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

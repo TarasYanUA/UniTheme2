@@ -24,7 +24,7 @@ public class StHomePage extends AbstractPage {
     private WebElement menuWomanCloth;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
     private WebElement menuMenCloth;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']//bdi")
     private WebElement menuGameConsoles;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;

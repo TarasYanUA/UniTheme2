@@ -40,8 +40,8 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){
             csCartSettings.showInProductList.click();
+            csCartSettings.clickSaveButtonOfSettings();
         }
-        csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
@@ -66,9 +66,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         if(!checkboxShowProductOptions.isSelected()){
             themeSettings.withoutOptionsShowProductOptions.click();
         }
-        WebElement checkboxBrandLogo = themeSettings.settingShowBrandLogo;
+        WebElement checkboxBrandLogo = themeSettings.settingShowBrandLogo_ListWithoutOptions;
         if(!checkboxBrandLogo.isSelected()){
-            themeSettings.settingShowBrandLogo.click();
+            checkboxBrandLogo.click();
         }
         themeSettings.selectWithoutOptionsHoverGallery("lines");
         csCartSettings.clickSaveButtonOfSettings();

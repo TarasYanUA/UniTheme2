@@ -60,18 +60,6 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         if(!checkboxButtonAddToCart.isSelected()){
             themeSettings.compactList_buttonAddToCart.click();
         }
-        WebElement checkboxQuickView = themeSettings.compactList_quickView;
-        if(checkboxQuickView.isSelected()){
-            themeSettings.compactList_quickView.click();
-        }
-        WebElement checkboxWishList = themeSettings.compactList_buttonWishList;
-        if(checkboxWishList.isSelected()){
-            themeSettings.compactList_buttonWishList.click();
-        }
-        WebElement checkboxComparisonList = themeSettings.compactList_buttonComparisonList;
-        if(checkboxComparisonList.isSelected()){
-            themeSettings.compactList_buttonComparisonList.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной

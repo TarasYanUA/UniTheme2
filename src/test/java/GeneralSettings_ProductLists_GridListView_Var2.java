@@ -104,11 +104,11 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
         takeScreenShot("410 GridListView_BlockWithProducts");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("411 GridListView_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
 
         //Категория "Мужская одежда"
         stHomePage.navigateToMenuMenCloth();
@@ -123,7 +123,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("420 GridListView_MenClothCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("421 GridListView_MenClothCategoryRTL");
@@ -132,7 +132,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("430 GridListView_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

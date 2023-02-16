@@ -15,7 +15,7 @@ public class StCategoryPage extends AbstractPage {
     private WebElement phoneProduct;
     @FindBy(css = "a[href*='nike']")
     private WebElement clothProduct;
-    @FindBy(css = "form[name='product_form_280'] div[class='ut2-gl__buttons']")
+    @FindBy(css = "form[name='product_form_280'] div[class*='__buttons']")
     private WebElement menClothProduct;
     @FindBy(xpath = "//form[@name='product_form_74']//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfPhoneProduct;

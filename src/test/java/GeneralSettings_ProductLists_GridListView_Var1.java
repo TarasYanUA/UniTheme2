@@ -122,11 +122,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         takeScreenShot("310 GridListView_BlockWithProducts");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("311 GridListView_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
 
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
@@ -147,7 +147,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("320 GridListView_PhoneCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("321 GridListView_PhoneCategoryRTL");
@@ -156,7 +156,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("330 GridListView_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

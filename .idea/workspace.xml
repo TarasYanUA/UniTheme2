@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_Var2">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2">
     <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <shortenClasspath name="NONE" />
@@ -98,10 +99,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -121,19 +122,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_Var2" />
         <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -412,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676555634691</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676559060848</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1676559060848</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -464,7 +472,8 @@
     <MESSAGE value="Adaptation to CS-Cart 4.16.1" />
     <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
     <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
+    <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

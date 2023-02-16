@@ -91,11 +91,11 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         takeScreenShot("110 Var1_BlockWithProducts");
         //stHomePage.navigateToMenuApparel();
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("111 Var1_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
@@ -103,11 +103,11 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled());
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("121 Var1_WomanClothCategoryRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
@@ -115,11 +115,11 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled());
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("131 Var1_PhonesCategoryRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
@@ -127,7 +127,7 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
@@ -138,13 +138,13 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.changeLanguageByIndex(1);
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.changeLanguageByIndex(2);
         makePause();
         takeScreenShot("161 Var1_Category_CompactList_ProductListViewRTL");
     }

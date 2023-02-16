@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adaptation to CS-Cart 4.16.1. Two test-cases are ready 001.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_DefaultValues-[].jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/TestNG.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -399,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675335704963</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
+      <created>1676535334164</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1676535334164</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +457,8 @@
     <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!" />
     <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!" />
     <MESSAGE value="Adaptation to CS-Cart 4.16.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaptation to CS-Cart 4.16.1" />
+    <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

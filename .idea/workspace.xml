@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Work with my PC to continue adaptation. New chromedriver.">
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_CompactList_Var1-[].jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var2-[].jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="New chromedriver and adaptation for the second test platform." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -448,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676628531639</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="New chromedriver and adaptation for the second test platform.">
+      <created>1676630079092</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1676630079093</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +477,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test-case #2 is totally ready!" />
     <MESSAGE value="Added comments to two test-cases." />
     <MESSAGE value="Added testNG.xml file." />
     <MESSAGE value="Added asserts to both test-cases." />
@@ -501,7 +501,8 @@
     <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Work with my PC to continue adaptation." />
     <MESSAGE value="Work with my PC to continue adaptation. New chromedriver." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with my PC to continue adaptation. New chromedriver." />
+    <MESSAGE value="New chromedriver and adaptation for the second test platform." />
+    <option name="LAST_COMMIT_MESSAGE" value="New chromedriver and adaptation for the second test platform." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

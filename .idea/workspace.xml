@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Work with my PC to continue adaptation.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Work with my PC to continue adaptation. New chromedriver.">
+      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettingsOfProductLists_ChangedValues-[].jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_CompactList_Var1-[].jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var2-[].jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,17 +69,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,6 +84,17 @@
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -118,8 +122,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
@@ -127,10 +131,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676628242689</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Work with my PC to continue adaptation. New chromedriver.">
+      <created>1676628531639</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1676628531639</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +476,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test-case #1 is totally ready!" />
     <MESSAGE value="Test-case #2 is totally ready!" />
     <MESSAGE value="Added comments to two test-cases." />
     <MESSAGE value="Added testNG.xml file." />
@@ -490,7 +500,8 @@
     <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Work with my PC to continue adaptation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with my PC to continue adaptation." />
+    <MESSAGE value="Work with my PC to continue adaptation. New chromedriver." />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with my PC to continue adaptation. New chromedriver." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

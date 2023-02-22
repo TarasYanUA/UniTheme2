@@ -122,9 +122,9 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("span.ty-icon-right-open-thin")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector("span.ty-icon-right-open-thin")).isEnabled(),
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".ty-icon-right-open-thin")).isEnabled(),
                 "Mini icons are not as a gallery!");
         takeScreenShot("240 Var2_QuickView");
         stCategoryPage.clickCloseQuickView();

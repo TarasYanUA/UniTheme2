@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
@@ -26,6 +26,11 @@ import java.time.Duration;
 Отображать цену вверху --	y
 Отображать пустые звёзды рейтинга товара --	n
 Отображать общее значение рейтинга товара -- y
+* Отображать статусы для кнопок "Купить" -- Количество товаров
+* Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- y
+* Отображать кнопку "Добавить в избранное" -- y
+* Отображать кнопку "Добавить в список сравнения" -- y
+* Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
 
 Проверка проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -35,11 +40,11 @@ import java.time.Duration;
 - Все шаблоны категории + RTL
 */
 
-public class GeneralSettings_ProductLists_Var2 extends TestRunner{
+public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunner{
     @Test
     public void checkGeneralSettingsOfProductLists_ChangedValues() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings themeSettings = new ThemeSettings();
+        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
@@ -55,28 +60,28 @@ public class GeneralSettings_ProductLists_Var2 extends TestRunner{
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxMiniIconsGalleryOne = themeSettings.settingMiniIconsGallery;
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxMiniIconsGalleryOne = themeSettingsProductLists.settingMiniIconsGallery;
         if(!checkboxMiniIconsGalleryOne.isSelected()){
-            themeSettings.settingMiniIconsGallery.click();
+            themeSettingsProductLists.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStockProducts = themeSettings.settingOutOfStockProducts;
+        WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()){
-            themeSettings.settingOutOfStockProducts.click();
+            themeSettingsProductLists.settingOutOfStockProducts.click();
         }
-        themeSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
-        themeSettings.selectSettingPriceDisplayFormat("col");
-        WebElement checkboxPriceAtTheTop = themeSettings.settingPriceAtTheTop;
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
+        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if(!checkboxPriceAtTheTop.isSelected()){
-            themeSettings.settingPriceAtTheTop.click();
+            themeSettingsProductLists.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
+            themeSettingsProductLists.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
+            themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 

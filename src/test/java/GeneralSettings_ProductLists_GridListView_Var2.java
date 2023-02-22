@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
@@ -37,50 +37,50 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test
     public void checkGeneralSettings_ProductLists_GridListView_Var2() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings themeSettings = new ThemeSettings();
+        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с настройками темы
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
+            themeSettingsProductLists.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
+            themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
-        themeSettings.clickAndTypeSettingMinHeightForProductCell("300");
-        themeSettings.clickAndTypeSettingProductIconWidth("400");
-        themeSettings.clickAndTypeSettingProductIconHeight("200");
-        WebElement checkboxSettingShowProductCode = themeSettings.settingShowProductCode;
+        themeSettingsProductLists.clickAndTypeSettingMinHeightForProductCell("300");
+        themeSettingsProductLists.clickAndTypeSettingProductIconWidth("400");
+        themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
+        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
         if(checkboxSettingShowProductCode.isSelected()){
-            themeSettings.settingShowProductCode.click();
+            themeSettingsProductLists.settingShowProductCode.click();
         }
-        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettings.settingDisplayAvailabilityStatus;
+        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
         if(checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            themeSettings.settingDisplayAvailabilityStatus.click();
+            themeSettingsProductLists.settingDisplayAvailabilityStatus.click();
         }
-        WebElement checkboxSettingShowQuantityChanger = themeSettings.settingShowQuantityChanger;
+        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
         if(checkboxSettingShowQuantityChanger.isSelected()){
-            themeSettings.settingShowQuantityChanger.click();
+            themeSettingsProductLists.settingShowQuantityChanger.click();
         }
-        themeSettings.selectSettingShowAddToCartButton("icon");
-        themeSettings.selectSettingAdditionalProductInformation("features_and_variations");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettings.settingShowAdditionalInformationOnHover;
+        themeSettingsProductLists.selectSettingShowAddToCartButton("icon");
+        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_variations");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            themeSettings.settingShowAdditionalInformationOnHover.click();
+            themeSettingsProductLists.settingShowAdditionalInformationOnHover.click();
         }
-        WebElement checkboxSettingShowBrandLogo = themeSettings.settingShowBrandLogo;
+        WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
         if(!checkboxSettingShowBrandLogo.isSelected()){
-            themeSettings.settingShowBrandLogo.click();
+            themeSettingsProductLists.settingShowBrandLogo.click();
         }
-        WebElement checkboxSettingShowYouSave = themeSettings.settingShowYouSave;
+        WebElement checkboxSettingShowYouSave = themeSettingsProductLists.settingShowYouSave;
         if(!checkboxSettingShowYouSave.isSelected()){
-            themeSettings.settingShowYouSave.click();
+            themeSettingsProductLists.settingShowYouSave.click();
         }
-        themeSettings.selectSettingSwitchProductImageWhenHovering("points");
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной

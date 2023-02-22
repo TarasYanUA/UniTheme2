@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
@@ -25,6 +25,11 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать цену вверху --	n
 Отображать пустые звёзды рейтинга товара --	y
 Отображать общее значение рейтинга товара -- n
+* Отображать статусы для кнопок "Купить" -- Иконка
+* Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- n
+* Отображать кнопку "Добавить в избранное" -- y
+* Отображать кнопку "Добавить в список сравнения" -- y
+* Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
 
 Проверка проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -34,7 +39,7 @@ import static taras.constants.DriverProvider.getDriver;
 - Все шаблоны категории + RTL
 */
 
-public class GeneralSettings_ProductLists_Var1 extends TestRunner {
+public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunner {
     @Test
     public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -49,33 +54,50 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
             checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
-        //Работаем с настройками темы (идут по умолчанию)
+        //Работаем с настройками темы (в основном идут по умолчанию)
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings themeSettings = csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxMiniIconsGallery = themeSettings.settingMiniIconsGallery;
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxMiniIconsGallery = themeSettingsProductLists.settingMiniIconsGallery;
         if(checkboxMiniIconsGallery.isSelected()){
-            themeSettings.settingMiniIconsGallery.click();
+            themeSettingsProductLists.settingMiniIconsGallery.click();
         }
-        WebElement checkboxOutOfStickProducts = themeSettings.settingOutOfStockProducts;
+        WebElement checkboxOutOfStickProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (!checkboxOutOfStickProducts.isSelected()){
-            themeSettings.settingOutOfStockProducts.click();
+            themeSettingsProductLists.settingOutOfStockProducts.click();
         }
-        themeSettings.selectSettingPriceDisplayFormat("row-mix");
-        WebElement checkboxPriceAtTheTop = themeSettings.settingPriceAtTheTop;
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
+        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if(checkboxPriceAtTheTop.isSelected()){
-            themeSettings.settingPriceAtTheTop.click();
+            themeSettingsProductLists.settingPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
+            themeSettingsProductLists.settingProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
+            themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
-        themeSettings.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
+        themeSettingsProductLists.selectSettingDisplayCartStatus("check-icon");
+        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
+        if(checkboxSettingDisplayStatusesForButtons.isSelected()){
+            checkboxSettingDisplayStatusesForButtons.click();
+        }
+        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
+        if(!checkboxSettingDisplayButtonComparisonList.isSelected()){
+            checkboxSettingDisplayButtonComparisonList.click();
+        }
+        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
+        if(!checkboxSettingDisplayButtonWishList.isSelected()){
+            checkboxSettingDisplayButtonWishList.click();
+        }
+        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse;
+        if(!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()){
+            checkboxSettingDisplayButtonsWhenHoveringMouse.click();
+        }
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной
@@ -90,6 +112,15 @@ public class GeneralSettings_ProductLists_Var1 extends TestRunner {
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty stars at a product!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-icon-baseline-favorite-border")).isEnabled(),
+                "There is no button 'Add to wish list' on the product block!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-icon-addchart")).isEnabled(),
+                "There is not button 'Add to comparison list' on the product block!");
+        //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
+
+        //////////////////////
         takeScreenShot("110 Var1_BlockWithProducts");
         stHomePage.changeLanguageByIndex(2);
         makePause();

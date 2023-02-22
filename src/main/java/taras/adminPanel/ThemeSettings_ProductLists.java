@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 
-public class ThemeSettings extends AbstractPage {
-    public ThemeSettings(){super();}
+public class ThemeSettings_ProductLists extends AbstractPage {
+    public ThemeSettings_ProductLists(){super();}
 
     //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
@@ -23,6 +23,16 @@ public class ThemeSettings extends AbstractPage {
     public WebElement settingProductRating;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating_num']")
     public WebElement settingCommonValueOfProductRating;
+    @FindBy(id = "settings.abt__ut2.product_list.show_cart_status")
+    private WebElement settingDisplayCartStatus;
+    @FindBy(id = "settings.abt__ut2.product_list.show_favorite_compare_status")
+    public WebElement settingDisplayStatusesForButtons;
+    @FindBy(id = "settings.abt__ut2.product_list.button_wish_list_view.desktop")
+    public WebElement settingDisplayButtonWishList;
+    @FindBy(id = "settings.abt__ut2.product_list.button_compare_view.desktop")
+    public WebElement settingDisplayButtonComparisonList;
+    @FindBy(id = "settings.abt__ut2.product_list.hover_buttons_w_c_q.desktop")
+    public WebElement settingDisplayButtonsWhenHoveringMouse;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHoveringMousePointer;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_height.desktop']")
@@ -103,6 +113,10 @@ public class ThemeSettings extends AbstractPage {
     }
     public void selectSettingSwitchProductImageWhenHovering(String value){
         getSettingSwitchProductImageWhenHovering().selectByValue(value);
+    }
+    public Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
+    public void selectSettingDisplayCartStatus(String value){
+        getSettingDisplayCartStatus().selectByValue(value);
     }
 
     //Настройки для вида списка товаров "Список без опций"

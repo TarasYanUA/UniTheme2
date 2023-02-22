@@ -1,8 +1,8 @@
 <suite name="UniTheme2">
     <test name="General settings of the theme">
         <classes>
-            <class name="GeneralSettings_ProductLists_Var1" />
-            <class name="GeneralSettings_ProductLists_Var2" />
+            <class name="GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+            <class name="GeneralSettings_ProductLists_AllCategoryLists_Var2" />
             <class name="GeneralSettings_ProductLists_GridListView_Var1" />
             <class name="GeneralSettings_ProductLists_GridListView_Var2" />
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />

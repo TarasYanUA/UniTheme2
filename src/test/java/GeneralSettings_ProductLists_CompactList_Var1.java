@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -42,31 +42,31 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Работаем с настройками темы
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings themeSettings = csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
+            themeSettingsProductLists.settingProductRating.click();
         }
-        WebElement checkboxCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
+        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(checkboxCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
+            themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
-        WebElement checkboxProductCode = themeSettings.compactList_productCode;
+        WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
         if(checkboxProductCode.isSelected()){
-            themeSettings.compactList_productCode.click();
+            themeSettingsProductLists.compactList_productCode.click();
         }
-        WebElement checkboxAvailabilityStatus = themeSettings.compactList_availabilityStatus;
+        WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
         if(checkboxAvailabilityStatus.isSelected()){
-            themeSettings.compactList_availabilityStatus.click();
+            themeSettingsProductLists.compactList_availabilityStatus.click();
         }
-        WebElement checkboxQuantityModifier = themeSettings.compactList_quantityCharger;
+        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
         if(!checkboxQuantityModifier.isSelected()){
-            themeSettings.compactList_quantityCharger.click();
+            themeSettingsProductLists.compactList_quantityCharger.click();
         }
-        WebElement checkboxButtonAddToCart = themeSettings.compactList_buttonAddToCart;
+        WebElement checkboxButtonAddToCart = themeSettingsProductLists.compactList_buttonAddToCart;
         if(!checkboxButtonAddToCart.isSelected()){
-            themeSettings.compactList_buttonAddToCart.click();
+            themeSettingsProductLists.compactList_buttonAddToCart.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 

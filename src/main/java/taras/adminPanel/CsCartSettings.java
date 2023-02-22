@@ -106,9 +106,9 @@ public class CsCartSettings extends AbstractPage {
     public void clickThemeSectionsOnManagementPage(){
         themeSectionsOnManagementPage.click();
     }
-    public ThemeSettings navigateToThemeSettings(){
+    public ThemeSettings_ProductLists navigateToThemeSettings(){
         themeSettings.click();
-        return new ThemeSettings();
+        return new ThemeSettings_ProductLists();
     }
 
 }

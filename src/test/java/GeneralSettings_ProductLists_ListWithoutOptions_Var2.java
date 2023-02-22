@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -45,32 +45,32 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         //Работаем с настройками темы
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings themeSettings = csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        themeSettings.clickAndTypeWithoutOptionsIconWidth("400");
-        themeSettings.clickAndTypeWithoutOptionsIconHeight("200");
-        WebElement checkboxProductCode = themeSettings.withoutOptionsProductCode;
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        themeSettingsProductLists.clickTabProductLists();
+        themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
+        themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
+        WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
         if(!checkboxProductCode.isSelected()){
-            themeSettings.withoutOptionsProductCode.click();
+            themeSettingsProductLists.withoutOptionsProductCode.click();
         }
-        WebElement checkboxAmountStatus = themeSettings.withoutOptionsAmountStatus;
+        WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
         if(!checkboxAmountStatus.isSelected()){
-            themeSettings.withoutOptionsAmountStatus.click();
+            themeSettingsProductLists.withoutOptionsAmountStatus.click();
         }
-        WebElement checkboxShowQuantity = themeSettings.withoutOptionsShowQuantity;
+        WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
         if(!checkboxShowQuantity.isSelected()){
-            themeSettings.withoutOptionsShowQuantity.click();
+            themeSettingsProductLists.withoutOptionsShowQuantity.click();
         }
-        themeSettings.selectWithoutOptionsContentUnderDescription("features");
-        WebElement checkboxShowProductOptions = themeSettings.withoutOptionsShowProductOptions;
+        themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
+        WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
         if(!checkboxShowProductOptions.isSelected()){
-            themeSettings.withoutOptionsShowProductOptions.click();
+            themeSettingsProductLists.withoutOptionsShowProductOptions.click();
         }
-        WebElement checkboxBrandLogo = themeSettings.settingShowBrandLogo_ListWithoutOptions;
+        WebElement checkboxBrandLogo = themeSettingsProductLists.settingShowBrandLogo_ListWithoutOptions;
         if(!checkboxBrandLogo.isSelected()){
             checkboxBrandLogo.click();
         }
-        themeSettings.selectWithoutOptionsHoverGallery("lines");
+        themeSettingsProductLists.selectWithoutOptionsHoverGallery("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной

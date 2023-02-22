@@ -117,7 +117,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 "There is no button 'Add to wish list' on the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-icon-addchart")).isEnabled(),
-                "There is not button 'Add to comparison list' on the product block!");
+                "There is no button 'Add to comparison list' on the product block!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
 
         //////////////////////

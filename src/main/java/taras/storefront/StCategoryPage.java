@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
+import java.util.List;
+
 public class StCategoryPage extends AbstractPage {
     public StCategoryPage(){
         super();
@@ -43,10 +45,14 @@ public class StCategoryPage extends AbstractPage {
     public WebElement buttonAddToCart;
     @FindBy(css = "div[class*='cm-value-changer']")
     public WebElement quantityCharger;
-    @FindBy(css = "div.ut2-cl-bt .ut2-icon-baseline-favorite-border")
-    public WebElement iconWishList;
-    @FindBy(css = ".ut2-icon-addchart")
-    public WebElement iconComparisonList;
+    @FindBy(css = ".ty-btn__add-to-cart")
+    public WebElement button_AddToCart;
+    @FindBy(css = ".ty-btn__secondary.cm-notification-close")
+    public WebElement button_ContinueShopping;
+    @FindBy(css = ".notification-content.alert")
+    public List<WebElement> notification_AlertSuccess;
+    @FindBy(css = ".close.cm-notification-close")
+    public WebElement closeNotification_AlertSuccess;
 
     public WebElement hoverPhoneProduct(){
         return phoneProduct;
@@ -97,4 +103,6 @@ public class StCategoryPage extends AbstractPage {
     public void clickButtonQuickView(){
         buttonQuickView.click();
     }
+
+
 }

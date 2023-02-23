@@ -12,6 +12,10 @@ public class StHomePage extends AbstractPage {
     }
     @FindBy(css = ".cm-btn.cm-btn-success")
     private WebElement cookieNoticeOnStorefront;
+    @FindBy(css = ".ut2-icon-outline-account-circle")
+    private WebElement accountOnTop;
+    @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")
+    private WebElement button_LogOut;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     private WebElement blockWithProducts;
     @FindBy(css = "li[class$='ty-menu-item__apparel']")
@@ -30,11 +34,22 @@ public class StHomePage extends AbstractPage {
     private WebElement languageButton;
     @FindBy(css = "ul[class^='cm-select-list'] li")
     private List<WebElement> languageSelection;
+    @FindBy(css = "div[id*='content_abt__ut2_grid_tab'] .ut2-w-c-q__buttons")
+    private WebElement productInProductBlock;
 
 
     public void closeCookieNoticeOnStorefront(){
         cookieNoticeOnStorefront.click();
     }
+    public WebElement hoverToAccountOnTop(){return accountOnTop;}
+    public void LogOutOnStorefront(){
+        WebElement element = hoverToAccountOnTop();
+        Actions scrollToBlock = new Actions(DriverProvider.getDriver());
+        scrollToBlock.moveToElement(element);
+        scrollToBlock.perform();
+        button_LogOut.click();
+    }
+
     public WebElement hoverBlockWithProducts(){
         return blockWithProducts;
     }
@@ -95,5 +110,12 @@ public class StHomePage extends AbstractPage {
         languageButton.click();
         WebElement listOfLanguages = getLanguageSelection().get(langCode);
         listOfLanguages.click();
+    }
+    public WebElement getProductInProductBlock(){return productInProductBlock;}
+    public void hoverToProductInProductBlock(){
+        WebElement element = getProductInProductBlock();
+        Actions hoverProduct = new Actions(DriverProvider.getDriver());
+        hoverProduct.moveToElement(element);
+        hoverProduct.perform();
     }
 }

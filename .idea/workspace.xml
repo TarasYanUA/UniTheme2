@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed methods for language selection - RTL and RU!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="First test-case is totally ready for adaptation to theme v4.16.1b">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677162816762</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="First test-case is totally ready for adaptation to theme v4.16.1b">
+      <created>1677164922045</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1677164922045</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +503,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added comments to two test-cases." />
     <MESSAGE value="Added testNG.xml file." />
     <MESSAGE value="Added asserts to both test-cases." />
     <MESSAGE value="Relocated setting to Class Page. Added one more setting of the theme." />
@@ -519,7 +527,8 @@
     <MESSAGE value="Started working with new settings of CS-Cart 4.16.1b" />
     <MESSAGE value="First test-case is adapted to Uni2 v4.16.1b" />
     <MESSAGE value="Changed methods for language selection - RTL and RU!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed methods for language selection - RTL and RU!" />
+    <MESSAGE value="First test-case is totally ready for adaptation to theme v4.16.1b" />
+    <option name="LAST_COMMIT_MESSAGE" value="First test-case is totally ready for adaptation to theme v4.16.1b" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

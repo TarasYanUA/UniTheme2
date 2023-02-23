@@ -53,6 +53,10 @@ public class StCategoryPage extends AbstractPage {
     public List<WebElement> notification_AlertSuccess;
     @FindBy(css = ".close.cm-notification-close")
     public WebElement closeNotification_AlertSuccess;
+    @FindBy(css = ".ut2-add-to-wish")
+    public WebElement button_AddToWishList;
+    @FindBy(css = ".ut2-add-to-compare")
+    public WebElement button_AddToComparisonList;
 
     public WebElement hoverPhoneProduct(){
         return phoneProduct;

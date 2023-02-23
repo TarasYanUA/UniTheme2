@@ -181,8 +181,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         if(getDriver().findElement(By.cssSelector(".notification-content.alert")).isEnabled()){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
-            }
-        }
+            }}
         stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToPhoneProduct();
@@ -205,12 +204,44 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
+        //Проверка, что у товаров переключатель изображений с полосками
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".abt__ut2_hover_gallery.lines")).isEnabled(),
+                "Gallery of product images is not with stripes in the product block!");
+        //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
+        Assert.assertTrue(getDriver().findElement(By
+                        .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
+                "There is no empty stars at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+                "There is no button 'Add to wish list' in the product block!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+                "There is no button 'Add to comparison list' in the product block!");
+        //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
+        //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
+                "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
+        //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
+        Assert.assertTrue(getDriver().findElement(By
+                        .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
+                "There is no empty stars at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+                "There is no button 'Add to wish list' in the product block!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+                "There is no button 'Add to comparison list' in the product block!");
+        takeScreenShot("160 Var1_Category_CompactList_ProductListView");
+        //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
+                "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         makePause();

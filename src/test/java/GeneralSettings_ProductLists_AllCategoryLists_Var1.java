@@ -125,12 +125,12 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("110 Var1_BlockWithProducts");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("111 Var1_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
@@ -154,11 +154,11 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By.cssSelector("div.ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("121 Var1_WomanClothCategoryRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров переключатель изображений с полосками
@@ -178,21 +178,16 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("130 Var1_PhonesCategory");
-
-
-
         if(getDriver().findElement(By.cssSelector(".notification-content.alert")).isEnabled()){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }
         }
-
-
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("131 Var1_PhonesCategoryRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
@@ -200,7 +195,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
@@ -211,13 +206,13 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         takeScreenShot("161 Var1_Category_CompactList_ProductListViewRTL");
     }

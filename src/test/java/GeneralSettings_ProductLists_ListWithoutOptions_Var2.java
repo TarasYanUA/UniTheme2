@@ -105,7 +105,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with lines!");
         takeScreenShot("610 ListWithoutOptions_MenClothCategory_Var2");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RTL();
         makePause();
         takeScreenShot("611 ListWithoutOptions_MenClothCategory_Var2(RTL)");
     }

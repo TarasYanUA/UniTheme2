@@ -32,8 +32,10 @@ public class StHomePage extends AbstractPage {
     private WebElement menuGameConsoles;
     @FindBy(css = "a[id*='wrap_language']")
     private WebElement languageButton;
-    @FindBy(css = "ul[class^='cm-select-list'] li")
-    private List<WebElement> languageSelection;
+    @FindBy(css = ".ty-select-block__list-item a[data-ca-name='ar']")
+    private WebElement languageRTL;
+    @FindBy(css = ".ty-select-block__list-item a[data-ca-name='ru']")
+    private WebElement languageRU;
     @FindBy(css = "div[id*='content_abt__ut2_grid_tab'] .ut2-w-c-q__buttons")
     private WebElement productInProductBlock;
 
@@ -103,13 +105,13 @@ public class StHomePage extends AbstractPage {
         hoverMenu.perform();
         menuGameConsoles.click();
     }
-    public List<WebElement> getLanguageSelection(){
-        return languageSelection;
-    }
-    public void changeLanguageByIndex (int langCode){
+    public void selectLanguage_RTL(){
         languageButton.click();
-        WebElement listOfLanguages = getLanguageSelection().get(langCode);
-        listOfLanguages.click();
+        languageRTL.click();
+    }
+    public void selectLanguage_RU(){
+        languageButton.click();
+        languageRU.click();
     }
     public WebElement getProductInProductBlock(){return productInProductBlock;}
     public void hoverToProductInProductBlock(){

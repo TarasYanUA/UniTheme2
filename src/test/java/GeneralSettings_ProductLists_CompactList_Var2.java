@@ -83,7 +83,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         Assert.assertTrue(stCategoryPage.quantityCharger.isEnabled(), "There is no quantity charger!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("810 ProductLists_CompactLists_Var2");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("820 ProductLists_CompactLists_Var2(RTL)");

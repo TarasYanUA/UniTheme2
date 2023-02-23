@@ -93,7 +93,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("720 ProductLists_CompactLists_QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("730 ProductLists_CompactLists_Var1(RTL)");

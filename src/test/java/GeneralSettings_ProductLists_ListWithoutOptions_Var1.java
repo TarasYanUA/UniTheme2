@@ -79,7 +79,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
         takeScreenShot("510 ListWithoutOptions_MenClothCategory_Var1");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         takeScreenShot("511 ListWithoutOptions_MenClothCategory_Var1(RTL)");
     }

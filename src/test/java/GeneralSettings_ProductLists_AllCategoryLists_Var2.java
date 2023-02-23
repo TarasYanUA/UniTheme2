@@ -94,30 +94,30 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("210 Var2_BlockWithProducts");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("211 Var2_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("221 Var2_WomanClothCategoryRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("231 Var2_PhonesCategoryRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
@@ -128,7 +128,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
                 "Mini icons are not as a gallery!");
         takeScreenShot("240 Var2_QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -139,13 +139,13 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
-        stHomePage.changeLanguageByIndex(1);
+        stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("251 Var2_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RTL();
         makePause();
         takeScreenShot("261 Var2_Category_CompactList_ProductListViewRTL");
     }

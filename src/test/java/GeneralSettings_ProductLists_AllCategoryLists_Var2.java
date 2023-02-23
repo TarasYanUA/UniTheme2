@@ -12,7 +12,10 @@ import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
 
-/*
+import static taras.constants.DriverProvider.getDriver;
+
+/* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1BU7MqO4tilXIiXQ7w73f9TRbi0dmko-Nmg6_CWQJr0E/edit#gid=0
+
 Проверка следующих настроек:
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
@@ -26,11 +29,11 @@ import java.time.Duration;
 Отображать цену вверху --	y
 Отображать пустые звёзды рейтинга товара --	n
 Отображать общее значение рейтинга товара -- y
-* Отображать статусы для кнопок "Купить" -- Количество товаров
-* Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- y
-* Отображать кнопку "Добавить в избранное" -- y
-* Отображать кнопку "Добавить в список сравнения" -- y
-* Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
+Отображать статусы для кнопок "Купить" -- Количество товаров
+Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- y
+Отображать кнопку "Добавить в избранное" -- y
+Отображать кнопку "Добавить в список сравнения" -- y
+Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
 
 Проверка проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -69,7 +72,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         if (checkboxOutOfStockProducts.isSelected()){
             themeSettingsProductLists.settingOutOfStockProducts.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
         themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if(!checkboxPriceAtTheTop.isSelected()){
@@ -83,6 +85,24 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         if(!checkboxSettingCommonValueOfProductRating.isSelected()){
             themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
+        themeSettingsProductLists.selectSettingDisplayCartStatus("counter");
+        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
+        if(!checkboxSettingDisplayStatusesForButtons.isSelected()){
+            checkboxSettingDisplayStatusesForButtons.click();
+        }
+        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
+        if(!checkboxSettingDisplayButtonComparisonList.isSelected()){
+            checkboxSettingDisplayButtonComparisonList.click();
+        }
+        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
+        if(!checkboxSettingDisplayButtonWishList.isSelected()){
+            checkboxSettingDisplayButtonWishList.click();
+        }
+        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse;
+        if(checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()){
+            checkboxSettingDisplayButtonsWhenHoveringMouse.click();
+        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с витриной
@@ -93,6 +113,21 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stHomePage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        //Проверка, что у товаров присутствует галерея мини-иконок товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).isEnabled(),
+                "There is no Gallery of mini icons of the product in the product block!");
+        //Проверка, что у товаров присутствует общее значение рейтинга товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
+                "There is no common value of product rating at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+                "There is no button 'Add to wish list' in the product block!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+                "There is no button 'Add to comparison list' in the product block!");
+        //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
+        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled(),
+                "The buttons are not displayed without hovering over a product cell in the product block!");
         takeScreenShot("210 Var2_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         makePause();
@@ -102,6 +137,24 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
+        //Проверка, что на странице отсутствует обесцвеченный товар.
+        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled(),
+                "There is a decolorized product on the category page but shouldn't!");
+        //Проверка, что у товаров присутствует галерея мини-иконок товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).isEnabled(),
+                "There is no Gallery of mini icons of the product on the category page!");
+        //Проверка, что у товаров присутствует общее значение рейтинга товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
+                "There is no common value of product rating at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+                "There is no button 'Add to wish list' on the category page!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+                "There is no button 'Add to comparison list' on the category page!");
+        //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
+        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled(),
+                "The buttons are not displayed without hovering over a product cell on the category page!");
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
@@ -111,6 +164,38 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stHomePage.selectLanguage_RU();
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
+        //Проверка, что у товаров присутствует общее значение рейтинга товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
+                "There is no common value of product rating at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
+                "There is no button 'Add to wish list' on the category page!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
+                "There is no button 'Add to comparison list' on the category page!");
+        //////////////////////////
+        //Проверка, что присутствует статус у кнопки "Избранное"
+        //нажать на кнопку
+        //закрыть всплывающее окно
+        //осуществеить проверку
+
+        //Проверка, что присутствует статус у кнопки "Сравнение"
+        //нажать на кнопку
+        //закрыть всплывающее окно
+        //осуществеить проверку
+
+
+        //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров (не сделано ещё!!!!!)
+        stHomePage.LogOutOnStorefront();
+        stCategoryPage.button_AddToCart.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
+        stCategoryPage.button_ContinueShopping.click();
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
+                "There is no status for the button 'Add to cart' on the category page!");
+
+
+        //////////////////////////
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
         stHomePage.selectLanguage_RTL();

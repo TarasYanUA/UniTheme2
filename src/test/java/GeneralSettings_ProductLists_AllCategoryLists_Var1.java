@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.time.Duration;
 import static taras.constants.DriverProvider.getDriver;
 
-/*
+/* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1BU7MqO4tilXIiXQ7w73f9TRbi0dmko-Nmg6_CWQJr0E/edit#gid=0
+
 1) "Настройки -- Внешний вид":
 Включить быстрый просмотр -- y
 Показывать мини-иконки в виде галереи -- n
@@ -25,11 +26,11 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать цену вверху --	n
 Отображать пустые звёзды рейтинга товара --	y
 Отображать общее значение рейтинга товара -- n
-* Отображать статусы для кнопок "Купить" -- Иконка
-* Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- n
-* Отображать кнопку "Добавить в избранное" -- y
-* Отображать кнопку "Добавить в список сравнения" -- y
-* Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
+Отображать статусы для кнопок "Купить" -- Иконка
+Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- n
+Отображать кнопку "Добавить в избранное" -- y
+Отображать кнопку "Добавить в список сравнения" -- y
+Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
 
 Проверка проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -102,6 +103,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
 
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StCategoryPage stCategoryPage = new StCategoryPage();
         focusBrowserTab(1);
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
@@ -116,13 +118,14 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
                 "There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
                 "There is no button 'Add to comparison list' in the product block!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled(),
+                "Buttons are not displayed when hovering over a product cell in the product block!");
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("110 Var1_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
@@ -133,7 +136,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stHomePage.selectLanguage_RU();
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
-        StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице присутствует обесцвеченный товар.
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled(),
                 "There is no decolorized product on the category page!");
@@ -145,10 +147,10 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                         .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
                 "There is no button 'Add to wish list' on the category page!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         Assert.assertTrue(getDriver().findElement(By.cssSelector("div.ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
@@ -168,6 +170,12 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty rating stars at a product!");
+        //Проверка, что кнопка "Избранное" присутствует
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
+                "There is no button 'Add to wish list' on the category page!");
+        //Проверка, что кнопка "Сравнить" присутствует
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
+                "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.LogOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
@@ -212,10 +220,10 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                         .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
                 "There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
                 "There is no button 'Add to comparison list' in the product block!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled());
@@ -233,10 +241,10 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                         .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).isEnabled(),
                 "There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToWishList.isEnabled(),
                 "There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
                 "There is no button 'Add to comparison list' in the product block!");
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки

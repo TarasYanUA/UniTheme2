@@ -134,6 +134,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("111 Var1_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
+        
         //Категория "Женская одежда"
         stHomePage.navigateToMenuWomanCloth();
         //Проверка, что на странице присутствует обесцвеченный товар.
@@ -161,6 +162,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("121 Var1_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
+
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров переключатель изображений с полосками
@@ -195,6 +197,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("131 Var1_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
+
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
@@ -209,6 +212,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("141 Var1_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
+
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();

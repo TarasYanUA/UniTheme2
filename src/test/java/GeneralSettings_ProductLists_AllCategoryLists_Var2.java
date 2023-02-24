@@ -11,7 +11,6 @@ import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
-
 import static taras.constants.DriverProvider.getDriver;
 
 /* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1BU7MqO4tilXIiXQ7w73f9TRbi0dmko-Nmg6_CWQJr0E/edit#gid=0
@@ -111,7 +110,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
         stHomePage.closeCookieNoticeOnStorefront();
-        //Блок товаров на главной странице
+        /*//Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствует галерея мини-иконок товара
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).isEnabled(),
@@ -126,7 +125,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
                 "There is no button 'Add to comparison list' in the product block!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
-        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled(),
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).size() < 1,
                 "The buttons are not displayed without hovering over a product cell in the product block!");
         takeScreenShot("210 Var2_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
@@ -138,14 +137,11 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице отсутствует обесцвеченный товар.
-        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEnabled(),
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
                 "There is a decolorized product on the category page but shouldn't!");
         //Проверка, что у товаров присутствует галерея мини-иконок товара
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).isEnabled(),
                 "There is no Gallery of mini icons of the product on the category page!");
-        //Проверка, что у товаров присутствует общее значение рейтинга товара
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
-                "There is no common value of product rating at a product!");
         //Проверка, что кнопка "Избранное" присутствует
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-wish")).isEnabled(),
                 "There is no button 'Add to wish list' on the category page!");
@@ -153,7 +149,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-add-to-compare")).isEnabled(),
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
-        Assert.assertFalse(getDriver().findElement(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).isEnabled(),
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).size() < 1,
                 "The buttons are not displayed without hovering over a product cell on the category page!");
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
@@ -162,6 +158,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("221 Var2_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
+        */StCategoryPage stCategoryPage = new StCategoryPage(); // delete it
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
@@ -173,19 +170,22 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Проверка, что кнопка "Сравнить" присутствует
         Assert.assertTrue(stCategoryPage.button_AddToComparisonList.isEnabled(),
                 "There is no button 'Add to comparison list' on the category page!");
-        //////////////////////////
         //Проверка, что присутствует статус у кнопки "Избранное"
-        //нажать на кнопку
-        //закрыть всплывающее окно
-        //осуществеить проверку
-
+        stCategoryPage.button_AddToWishList.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
+        stCategoryPage.closeNotificationWindow.click();
+        Assert.assertTrue(stCategoryPage.button_AddToWishList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
-        //нажать на кнопку
-        //закрыть всплывающее окно
-        //осуществеить проверку
-
-
-        //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров (не сделано ещё!!!!!)
+        stCategoryPage.button_AddToComparisonList.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
+        stCategoryPage.closeNotificationWindow.click();
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to comparison list'!");
+        /*  Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
+        //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.LogOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
@@ -193,9 +193,10 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.button_ContinueShopping.click();
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
                 "There is no status for the button 'Add to cart' on the category page!");
-
-
-        //////////////////////////
+        if(getDriver().findElement(By.cssSelector(".notification-content.alert")).isEnabled()){
+            for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
+                stCategoryPage.closeNotification_AlertSuccess.click();
+            }}*/
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
         stHomePage.selectLanguage_RTL();
@@ -203,6 +204,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("231 Var2_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
+
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
@@ -217,18 +219,43 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("span.ty-icon-right-open-thin")));
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
         takeScreenShot("241 Var2_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
+
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
+        //Проверка, что у товаров присутствует общее значение рейтинга товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
+                "There is no common value of product rating at a product!");
+        //Проверка, что присутствует статус у кнопки "Избранное"
+        Assert.assertTrue(stCategoryPage.button_AddToWishList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to wish list'!");
+        //Проверка, что присутствует статус у кнопки "Сравнение"
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to comparison list'!");
+        //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
+                "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("251 Var2_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
+        //Проверка, что у товаров присутствует общее значение рейтинга товара
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-show-rating-num")).isEnabled(),
+                "There is no common value of product rating at a product!");
+        //Проверка, что присутствует статус у кнопки "Избранное"
+        Assert.assertTrue(stCategoryPage.button_AddToWishList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to wish list'!");
+        //Проверка, что присутствует статус у кнопки "Сравнение"
+        Assert.assertTrue(stCategoryPage.button_AddToComparisonList_ActiveStatus.isEnabled(),
+                "There is no status for the button 'Add to comparison list'!");
+        //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
+        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
+                "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         makePause();

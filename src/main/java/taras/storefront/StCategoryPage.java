@@ -57,6 +57,12 @@ public class StCategoryPage extends AbstractPage {
     public WebElement button_AddToWishList;
     @FindBy(css = ".ut2-add-to-compare")
     public WebElement button_AddToComparisonList;
+    @FindBy(css = ".cm-notification-close")
+    public WebElement closeNotificationWindow;
+    @FindBy(css = "a.ut2-add-to-wish.active")
+    public WebElement button_AddToWishList_ActiveStatus;
+    @FindBy(css = "a.ut2-add-to-compare.active")
+    public WebElement button_AddToComparisonList_ActiveStatus;
 
     public WebElement hoverPhoneProduct(){
         return phoneProduct;

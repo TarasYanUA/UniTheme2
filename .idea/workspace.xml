@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="First test-case is totally ready for adaptation to theme v4.16.1b">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
@@ -57,11 +57,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2">
     <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -91,17 +102,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -114,19 +114,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -475,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677164922045</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
+      <created>1677168036961</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1677168036961</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added testNG.xml file." />
     <MESSAGE value="Added asserts to both test-cases." />
     <MESSAGE value="Relocated setting to Class Page. Added one more setting of the theme." />
     <MESSAGE value="Third test-cases has started!" />
@@ -528,7 +534,8 @@
     <MESSAGE value="First test-case is adapted to Uni2 v4.16.1b" />
     <MESSAGE value="Changed methods for language selection - RTL and RU!" />
     <MESSAGE value="First test-case is totally ready for adaptation to theme v4.16.1b" />
-    <option name="LAST_COMMIT_MESSAGE" value="First test-case is totally ready for adaptation to theme v4.16.1b" />
+    <MESSAGE value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

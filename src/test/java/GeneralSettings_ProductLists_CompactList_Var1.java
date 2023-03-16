@@ -11,7 +11,6 @@ import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Настройки -- Внешний вид":
@@ -73,9 +72,6 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();

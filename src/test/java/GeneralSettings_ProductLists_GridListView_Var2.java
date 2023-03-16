@@ -86,9 +86,6 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверяем, что дополнительная информация отображается при наведении

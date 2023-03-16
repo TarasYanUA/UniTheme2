@@ -1,7 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
@@ -10,8 +8,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
-import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
@@ -60,9 +56,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
         stHomePage.navigateToMenuMenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();

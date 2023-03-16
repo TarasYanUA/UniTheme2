@@ -1,4 +1,5 @@
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
@@ -45,10 +46,13 @@ public class TestRunner {
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size()>0){
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();
+        }
     }
-    public void takeScreenShot(String testName) throws IOException {
+    public void takeScreenShot(String screenshotName) throws IOException {
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + testName + ".jpg"));
+        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
     }
     public void makePause(){
         try {

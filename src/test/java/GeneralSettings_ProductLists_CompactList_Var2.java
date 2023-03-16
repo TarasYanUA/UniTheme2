@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
@@ -9,8 +6,6 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
-import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
@@ -62,9 +57,6 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();

@@ -49,13 +49,13 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
+        WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if(!checkboxThumbnailsGallery.isSelected()){
-            csCartSettings.settingThumbnailsGallery.click();
+            csCartSettings.setting_ThumbnailsGallery.click();
         }
-        WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
+        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            csCartSettings.settingQuickView.click();
+            csCartSettings.setting_QuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы

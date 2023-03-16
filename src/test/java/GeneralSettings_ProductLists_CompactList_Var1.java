@@ -33,9 +33,9 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с настройками CS-Cart
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
+        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            csCartSettings.settingQuickView.click();
+            csCartSettings.setting_QuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы

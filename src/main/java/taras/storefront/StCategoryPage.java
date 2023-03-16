@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
-
 import java.util.List;
 
 public class StCategoryPage extends AbstractPage {

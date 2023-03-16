@@ -68,9 +68,16 @@ public class CsCartSettings extends AbstractPage {
 
     //Настройки CS-Cart, вкладка "Внешний вид"
     @FindBy(css = "input[id*='field___enable_quick_view']")
-    public WebElement settingQuickView;
+    public WebElement setting_QuickView;
     @FindBy(css = "input[id*='field___thumbnails_gallery']")
-    public WebElement settingThumbnailsGallery;
+    public WebElement setting_ThumbnailsGallery;
+    @FindBy(id = "field___show_prices_taxed_clean_116")
+    public WebElement setting_PriceWithTaxes;
+    @FindBy(id = "field___in_stock_field_146")
+    public WebElement setting_NumberOfAvailableProducts;
+    @FindBy(id = "field___product_details_in_tab_288")
+    public WebElement setting_ProductDetailsInTab;
+
 
 
     public void clickSaveButtonOfSettings(){

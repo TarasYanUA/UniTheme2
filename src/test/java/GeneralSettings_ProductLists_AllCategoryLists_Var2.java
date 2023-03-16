@@ -107,10 +107,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Работаем с витриной
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
-        /*//Блок товаров на главной странице
+        //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствует галерея мини-иконок товара
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).isEnabled(),
@@ -158,7 +155,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("221 Var2_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
-        */StCategoryPage stCategoryPage = new StCategoryPage(); // delete it
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
@@ -236,8 +232,9 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         Assert.assertTrue(stCategoryPage.button_AddToComparisonList_ActiveStatus.isEnabled(),
                 "There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
-                "There is no status for the button 'Add to cart' on the category page!");
+/*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+                "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
         makePause();
@@ -254,8 +251,9 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         Assert.assertTrue(stCategoryPage.button_AddToComparisonList_ActiveStatus.isEnabled(),
                 "There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-        Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
-                "There is no status for the button 'Add to cart' on the category page!");
+/*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+                "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         makePause();

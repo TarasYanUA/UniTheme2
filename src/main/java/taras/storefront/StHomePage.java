@@ -4,14 +4,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
-import java.util.List;
 
 public class StHomePage extends AbstractPage {
     public StHomePage(){
         super();
     }
-    @FindBy(css = ".cm-btn.cm-btn-success")
-    private WebElement cookieNoticeOnStorefront;
     @FindBy(css = ".ut2-icon-outline-account-circle")
     private WebElement accountOnTop;
     @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")
@@ -40,9 +37,6 @@ public class StHomePage extends AbstractPage {
     private WebElement productInProductBlock;
 
 
-    public void closeCookieNoticeOnStorefront(){
-        cookieNoticeOnStorefront.click();
-    }
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
     public void LogOutOnStorefront(){
         WebElement element = hoverToAccountOnTop();

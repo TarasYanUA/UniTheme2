@@ -46,11 +46,11 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxThumbnailsGallery = csCartSettings.settingThumbnailsGallery;
+        WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if(checkboxThumbnailsGallery.isSelected()){
             checkboxThumbnailsGallery.click();
         }
-        WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
+        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if(!checkboxSettingQuickView.isSelected()){
             checkboxSettingQuickView.click();
         }

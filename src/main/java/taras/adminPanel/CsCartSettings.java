@@ -57,6 +57,10 @@ public class CsCartSettings extends AbstractPage {
     private WebElement section_Features;
     @FindBy(css = "a[href$='feature_id=18'][data-ca-external-click-id]")
     private WebElement featureBrand;
+    @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
+    public WebElement feature_HardDrive;
+    @FindBy(id = "redactor-uuid-0")
+    private WebElement field_DescriptionOfFeature;
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
     @FindBy(css = ".cs-icon.icon-shopping-cart")
@@ -68,7 +72,11 @@ public class CsCartSettings extends AbstractPage {
     @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
     public WebElement showInProductList;
     @FindBy(id = "elm_feature_display_on_header_18")
-    public WebElement showInHeaderOnProductPage;
+    public WebElement showInHeaderOnProductPage_Brand;
+    @FindBy(id = "elm_feature_display_on_header_23")
+    public WebElement showInHeaderOnProductPage_HardDisk;
+    @FindBy(css = "input[value='Сохранить']")
+    public WebElement button_SaveFeature;
 
     //Настройки CS-Cart, вкладка "Внешний вид"
     @FindBy(css = "input[id*='field___enable_quick_view']")
@@ -118,6 +126,11 @@ public class CsCartSettings extends AbstractPage {
     }
     public void navigateToSection_Features(){
         section_Features.click();
+    }
+    public void clickAndTypeField_DescriptionOfFeature(String value){
+        field_DescriptionOfFeature.click();
+        field_DescriptionOfFeature.clear();
+        field_DescriptionOfFeature.sendKeys(value);
     }
     public void clickFeatureBrand(){
         featureBrand.click();

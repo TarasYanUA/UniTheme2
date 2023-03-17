@@ -31,7 +31,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с настройками характеристики Бренд
         csCartSettings.hoverToProductMenu();
-        csCartSettings.navigateMenuFeatures();
+        csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){

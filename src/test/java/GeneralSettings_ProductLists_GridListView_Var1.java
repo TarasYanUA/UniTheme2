@@ -40,7 +40,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с настройками характеристики Бренд
         csCartSettings.hoverToProductMenu();
-        csCartSettings.navigateMenuFeatures();
+        csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){

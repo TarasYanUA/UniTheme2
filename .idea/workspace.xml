@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started to write test-case for product page!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Configurations for product page are totally ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,20 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Created project!">
-      <created>1670234570547</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1670234570547</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Theme settings are ready.">
-      <created>1670250631602</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1670250631602</updated>
     </task>
     <task id="LOCAL-00006" summary="CS-Cart settings are added.">
       <created>1670254273246</created>
@@ -500,7 +482,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678982520579</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Configurations for product page are totally ready!">
+      <created>1679050303086</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1679050303087</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Configurations for product page are totally ready!">
+      <created>1679050462573</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1679050462574</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="settings in admin panel are ready! Start working with asserts on HomePage." />
     <MESSAGE value="Asserts on HomePage are ready!" />
     <MESSAGE value="Third test-case is totally ready!" />
     <MESSAGE value="Fourth test-case is totally ready!" />
@@ -553,7 +548,8 @@
     <MESSAGE value="Second test-case for adaptation to theme v4.16.1b is ready!" />
     <MESSAGE value="Added adaptation to a new chrome browser.&#10;Improved code." />
     <MESSAGE value="Started to write test-case for product page!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to write test-case for product page!" />
+    <MESSAGE value="Configurations for product page are totally ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configurations for product page are totally ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

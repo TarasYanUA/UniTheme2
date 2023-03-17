@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Configurations for product page are totally ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added feature Hard driver to Configurations!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,13 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00006" summary="CS-Cart settings are added.">
-      <created>1670254273246</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1670254273246</updated>
     </task>
     <task id="LOCAL-00007" summary="Test-case #1 is totally ready!">
       <created>1670492107720</created>
@@ -496,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679050462574</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added feature Hard driver to Configurations!">
+      <created>1679058328266</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1679058328266</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -524,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Asserts on HomePage are ready!" />
     <MESSAGE value="Third test-case is totally ready!" />
     <MESSAGE value="Fourth test-case is totally ready!" />
     <MESSAGE value="Some very important bug fixes at my test-cases." />
@@ -549,7 +549,8 @@
     <MESSAGE value="Added adaptation to a new chrome browser.&#10;Improved code." />
     <MESSAGE value="Started to write test-case for product page!" />
     <MESSAGE value="Configurations for product page are totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configurations for product page are totally ready!" />
+    <MESSAGE value="Added feature Hard driver to Configurations!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added feature Hard driver to Configurations!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

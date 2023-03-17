@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
+import taras.storefront.ProductPage;
 
 public class ProductSettings extends AbstractPage {
     public ProductSettings(){super();}
@@ -14,6 +15,10 @@ public class ProductSettings extends AbstractPage {
     private WebElement searchFieldOfProduct;
     @FindBy(css = ".products-list__image")
     public WebElement chooseAnyProduct;
+    @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
+    private WebElement gearwheelOfProduct;
+    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(@href, 'preview')]")
+    private WebElement previewButton;
 
     @FindBy(id = "elm_zero_price_action")
     private WebElement setting_ZeroPriceAction;
@@ -41,6 +46,11 @@ public class ProductSettings extends AbstractPage {
         searchFieldOfProduct.click();
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
+    }
+    public ProductPage navigateToProductPage(){
+        gearwheelOfProduct.click();
+        previewButton.click();
+        return new ProductPage();
     }
     public void setPricePerUnit(String value1, String value2, String value3){
         field_UnitName.click();

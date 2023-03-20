@@ -173,5 +173,31 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
         takeScreenShot("120 Feature description, one column");
+
+        //Другие шаблоны страницы товара
+        focusBrowserTab(0);
+        productSettings.selectSetting_ProductTemplate("bigpicture_template");
+        csCartSettings.clickSaveButtonOfSettings();
+        productSettings.navigateToProductPage();
+        focusBrowserTab(2);
+        takeScreenShot("125 Template - Big picture");
+        productPage.shiftLanguage_RTL();
+        takeScreenShot("130 Template - Big picture (RTL)");
+        focusBrowserTab(0);
+        productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
+        csCartSettings.clickSaveButtonOfSettings();
+        productSettings.navigateToProductPage();
+        focusBrowserTab(3);
+        takeScreenShot("135 Template - Big picture, flat");
+        productPage.shiftLanguage_RTL();
+        takeScreenShot("140 Template - Big picture, flat (RTL)");
+        focusBrowserTab(0);
+        productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
+        csCartSettings.clickSaveButtonOfSettings();
+        productSettings.navigateToProductPage();
+        focusBrowserTab(4);
+        takeScreenShot("145 Template - Three columned");
+        productPage.shiftLanguage_RTL();
+        takeScreenShot("150 Template - Three columned (RTL)");
     }
 }

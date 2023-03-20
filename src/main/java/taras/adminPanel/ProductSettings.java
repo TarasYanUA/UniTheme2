@@ -17,7 +17,7 @@ public class ProductSettings extends AbstractPage {
     public WebElement chooseAnyProduct;
     @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
     private WebElement gearwheelOfProduct;
-    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(@href, 'preview')]")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]")
     private WebElement previewButton;
 
     @FindBy(id = "elm_zero_price_action")

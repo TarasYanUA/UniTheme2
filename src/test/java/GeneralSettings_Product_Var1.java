@@ -1,4 +1,3 @@
-import io.netty.handler.ssl.ocsp.OcspClientHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,6 @@ import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
-
 import java.io.IOException;
 import java.time.Duration;
 
@@ -122,13 +120,6 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
     }
 
     @Test(priority = 2)
-    /*
-    - опустились к характеристикам
-    - проверили колонки характеристик
-    - скриншот 2
-    - проверил описание характеристики
-    - скриншот 3
-     */
     public void checkSettingsOnProductPage() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
@@ -164,10 +155,23 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         //Проверяем, что Бонусные баллы присутствуют
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
-        takeScreenShot("100 Product page, Var1");
+        takeScreenShot("100 Product page, Default template, Var1");
+        productPage.shiftLanguage_RTL();
+        makePause();
+        takeScreenShot("105 Product page, Default template, Var1 (RTL)");
 
         //Проверяем характеристики
-        productPage.tab_Features.click();
+        productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
+        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
+                .size() >=1, "Features are located in two columns instead of one!");
+        takeScreenShot("110 Product features, one column (RTL)");
+        productPage.shiftLanguage_RU();
+        productPage.scrollToAndClickTab_Features();
+        takeScreenShot("115 Product features, one column");
+        productPage.featureDescription.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
+        takeScreenShot("120 Feature description, one column");
     }
 }

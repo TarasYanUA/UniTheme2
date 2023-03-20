@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Product page Var1 is ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added screenshots with product templates for Product page Var1">
+      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_Product_Var1.checkSettingsOnProductPage">
+  <component name="RunManager" selected="TestNG.GeneralSettings_Product_Var2.setConfigurationsForProductPage_Var2">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,28 +77,6 @@
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -127,21 +107,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GeneralSettings_Product_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_Product_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_Product_Var2.setConfigurationsForProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_Product_Var2" />
+      <option name="METHOD_NAME" value="setConfigurationsForProductPage_Var2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_Product_Var1.checkSettingsOnProductPage" />
+      <item itemvalue="TestNG.GeneralSettings_Product_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_Product_Var2.setConfigurationsForProductPage_Var2" />
       <item itemvalue="TestNG.GeneralSettings_Product_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_Product_Var2.setConfigurationsForProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_Product_Var2" />
         <item itemvalue="TestNG.GeneralSettings_Product_Var1.checkSettingsOnProductPage" />
         <item itemvalue="TestNG.GeneralSettings_Product_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -153,13 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Test-case #1 is totally ready!">
-      <created>1670499660860</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1670499660860</updated>
     </task>
     <task id="LOCAL-00010" summary="Test-case #2 is totally ready!">
       <created>1670502796812</created>
@@ -497,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679310144287</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added screenshots with product templates for Product page Var1">
+      <created>1679317097250</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1679317097250</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -525,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Some very important bug fixes at my test-cases." />
     <MESSAGE value="Split with packages." />
     <MESSAGE value="Test-case for List without options is started!" />
     <MESSAGE value="Test-case for List without options is done!" />
@@ -550,7 +552,8 @@
     <MESSAGE value="Added feature Hard driver to Configurations!" />
     <MESSAGE value="Adding asserts for product page!" />
     <MESSAGE value="Product page Var1 is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product page Var1 is ready!" />
+    <MESSAGE value="Added screenshots with product templates for Product page Var1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added screenshots with product templates for Product page Var1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

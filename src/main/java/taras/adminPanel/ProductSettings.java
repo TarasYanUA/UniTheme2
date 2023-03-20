@@ -20,6 +20,10 @@ public class ProductSettings extends AbstractPage {
     @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]")
     private WebElement previewButton;
 
+    @FindBy(id = "elm_price_price")
+    private WebElement field_Price;
+    @FindBy(id = "elm_in_stock")
+    private WebElement field_InStock;
     @FindBy(id = "elm_zero_price_action")
     private WebElement setting_ZeroPriceAction;
     @FindBy(id = "elm_product_unit_name")
@@ -33,7 +37,9 @@ public class ProductSettings extends AbstractPage {
     @FindBy(id = "elm_details_layout")
     private WebElement setting_ProductTemplate;
     @FindBy(id = "redactor-uuid-1")
-    public WebElement field_ShortDescription;
+    private WebElement field_ShortDescription;
+    @FindBy(id = "redactor-voice-2")
+    private WebElement field_PromoText;
 
     //вкладка "Бонусные баллы"
     @FindBy(id = "reward_points")
@@ -51,6 +57,16 @@ public class ProductSettings extends AbstractPage {
         gearwheelOfProduct.click();
         previewButton.click();
         return new ProductPage();
+    }
+    public void clickAndTypeField_Price(String value){
+        field_Price.click();
+        field_Price.clear();
+        field_Price.sendKeys(value);
+    }
+    public void clickAndTypeField_InStock(String value){
+        field_InStock.click();
+        field_InStock.clear();
+        field_InStock.sendKeys(value);
     }
     public void setPricePerUnit(String value1, String value2, String value3){
         field_UnitName.click();
@@ -89,5 +105,15 @@ public class ProductSettings extends AbstractPage {
         field_ShortDescription.click();
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
+    }
+    public WebElement getField_PromoText(){return field_PromoText;}
+    public void hoverAndTypeField_PromoText(String value){
+        WebElement element = getField_PromoText();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+        field_PromoText.click();
+        field_PromoText.clear();
+        field_PromoText.sendKeys(value);
     }
 }

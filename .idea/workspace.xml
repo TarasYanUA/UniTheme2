@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added screenshots with product templates for Product page Var1">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-case Product Var2 is ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_Product_Var2.setConfigurationsForProductPage_Var2">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Test-case #2 is totally ready!">
-      <created>1670502796812</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1670502796812</updated>
     </task>
     <task id="LOCAL-00011" summary="Test-case #2 is totally ready!">
       <created>1670503570836</created>
@@ -500,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679317097250</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Test-case Product Var2 is ready!">
+      <created>1679328055678</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1679328055678</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Split with packages." />
     <MESSAGE value="Test-case for List without options is started!" />
     <MESSAGE value="Test-case for List without options is done!" />
     <MESSAGE value="List without options is totally ready!" />
@@ -553,7 +554,8 @@
     <MESSAGE value="Adding asserts for product page!" />
     <MESSAGE value="Product page Var1 is ready!" />
     <MESSAGE value="Added screenshots with product templates for Product page Var1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added screenshots with product templates for Product page Var1" />
+    <MESSAGE value="Test-case Product Var2 is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case Product Var2 is ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

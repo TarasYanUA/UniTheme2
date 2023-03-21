@@ -38,7 +38,9 @@ public class ProductSettings extends AbstractPage {
     private WebElement setting_ProductTemplate;
     @FindBy(id = "redactor-uuid-1")
     private WebElement field_ShortDescription;
-    @FindBy(id = "redactor-voice-2")
+    @FindBy(css = "label[for='elm_product_promo_text']")
+    private WebElement fieldName_PromoText;
+    @FindBy(id = "redactor-uuid-2")
     private WebElement field_PromoText;
 
     //вкладка "Бонусные баллы"
@@ -106,12 +108,13 @@ public class ProductSettings extends AbstractPage {
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
     }
-    public WebElement getField_PromoText(){return field_PromoText;}
+    public WebElement getField_PromoText(){return fieldName_PromoText;}
     public void hoverAndTypeField_PromoText(String value){
         WebElement element = getField_PromoText();
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
+        hover.moveToElement(element).scrollByAmount(0,100);
         hover.perform();
+        fieldName_PromoText.click();
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);

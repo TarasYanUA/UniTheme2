@@ -59,6 +59,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement featureBrand;
     @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
     public WebElement feature_HardDrive;
+    @FindBy(css = "label[for='elm_feature_description_23']")
+    private WebElement field_FeatureDescription;
     @FindBy(id = "redactor-uuid-0")
     private WebElement field_DescriptionOfFeature;
     @FindBy(css = ".btn.btn-primary.cm-submit")
@@ -126,6 +128,7 @@ public class CsCartSettings extends AbstractPage {
         section_Features.click();
     }
     public void clickAndTypeField_DescriptionOfFeature(String value){
+        field_FeatureDescription.click();
         field_DescriptionOfFeature.click();
         field_DescriptionOfFeature.clear();
         field_DescriptionOfFeature.sendKeys(value);

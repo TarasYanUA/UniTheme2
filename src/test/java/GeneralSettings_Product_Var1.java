@@ -107,13 +107,13 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         productSettings.selectSetting_OutOfStockActions("N");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
+        productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
         productSettings.tab_RewardPoints.click();
         if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
             productSettings.setting_AllowPaymentByPoints.click();
         }
-        productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

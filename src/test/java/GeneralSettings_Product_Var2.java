@@ -29,12 +29,12 @@ import java.time.Duration;
     * Отображать информацию о бренде товара --  Название бренда товара
 - Настраиваем товар X-Box 360:
     * Действие при нулевой цене --  Попросить покупателя ввести цену
-    * Цена за единицу --  да
+    * Цена за единицу --  нет (по причине нулевой цены)
     * Действие при отсутствии товара в наличии --   Предзаказ
     * шаблон страницы товара -- все 4 шт
     * Краткое описание --   да
     * Промо-текст -- да
-    * Бонусные баллы --  да
+    * Бонусные баллы --  нет (по причине нулевой цены)
 */
 
 public class GeneralSettings_Product_Var2 extends TestRunner{
@@ -129,24 +129,15 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         //Проверяем, что присутствует Краткое описание товара
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
                 "There is no product Short description!");
-
-
-        ////////////////
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).size() >=1,
                 "There is no field 'Enter your price'!");
-        //Проверяем, что присутствует Цена за единицу
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-per-unit ")).size() >=1,
-                "There is no Price per unit!");
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).size() >=1,
                 "There is no field 'Backorder'!");
         //Проверяем, что Промо-текст присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
                 "There is no Promo-text!");
-        //Проверяем, что Бонусные баллы присутствуют
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
-                "There is no Reward points!");
         takeScreenShot("200 Product page, Default template, Var2");
         productPage.shiftLanguage_RTL();
         makePause();

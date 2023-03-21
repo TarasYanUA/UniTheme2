@@ -146,7 +146,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col']"))
+        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
         takeScreenShot("210 Product features, two columns (RTL)");
         productPage.shiftLanguage_RU();

@@ -102,6 +102,8 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct.click();
+        productSettings.clickAndTypeField_Price("10000.00");
+        productSettings.clickAndTypeField_InStock("20");
         productSettings.selectSetting_ZeroPriceAction("R");
         productSettings.setPricePerUnit("игровые приставки", "3", "3");
         productSettings.selectSetting_OutOfStockActions("N");
@@ -166,14 +168,14 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         //Проверяем, что характеристики расположены в одну колонку
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
                 .size() >=1, "Features are located in two columns instead of one!");
-        takeScreenShot("110 Product features, one column (RTL)");
+        takeScreenShot("1110 Product features, one column (RTL)");
         productPage.shiftLanguage_RU();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot("115 Product features, one column");
+        takeScreenShot("1115 Product features, one column");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("120 Feature description, one column");
+        takeScreenShot("1120 Feature description, one column");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
@@ -181,24 +183,32 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        takeScreenShot("125 Template - Big picture, Var1");
+        takeScreenShot("1125 Template - Big picture, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("130 Template - Big picture, Var1 (RTL)");
+        takeScreenShot("1130 Template - Big picture, Var1 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        takeScreenShot("135 Template - Big picture flat, Var1");
+        takeScreenShot("1135 Template - Big picture flat, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("140 Template - Big picture flat, Var1 (RTL)");
+        takeScreenShot("1140 Template - Big picture flat, Var1 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        takeScreenShot("145 Template - Three columned, Var1");
+        takeScreenShot("1145 Template - Three columned, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("150 Template - Three columned, Var1 (RTL)");
+        takeScreenShot("1150 Template - Three columned, Var1 (RTL)");
+        focusBrowserTab(0);
+        productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
+        csCartSettings.clickSaveButtonOfSettings();
+        productSettings.navigateToProductPage();
+        focusBrowserTab(5);
+        takeScreenShot("1155 Template - Gallery, Var1");
+        productPage.shiftLanguage_RTL();
+        takeScreenShot("1160 Template - Gallery, Var1 (RTL)");
     }
 }

@@ -19,7 +19,9 @@ public class ProductPage extends AbstractPage {
     @FindBy(css = "a[data-ca-name=\"ar\"]")
     private WebElement language_RTL;
     @FindBy(css = "#features a")
-    public WebElement tab_Features;
+    private WebElement tab_Features;
+    @FindBy(id = "content_features")
+    private WebElement tab_FeaturesForNonTabs;
     @FindBy(css = "a[id*='opener_ut2_features_dialog_']")
     public WebElement featureDescription;
 
@@ -44,5 +46,15 @@ public class ProductPage extends AbstractPage {
         scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(element), 0, 750);
         scroll.perform();
         tab_Features.click();
+    }
+    public WebElement hoverTab_FeaturesForNonTabs(){
+        return tab_FeaturesForNonTabs;
+    }
+    public void scrollToAndClickTab_FeaturesForNonTabs(){
+        WebElement element = hoverTab_FeaturesForNonTabs();
+        Actions scroll = new Actions(DriverProvider.getDriver());
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(element), 0, 50);
+        scroll.perform();
+        tab_FeaturesForNonTabs.click();
     }
 }

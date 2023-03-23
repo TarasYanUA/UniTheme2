@@ -128,9 +128,9 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         //Проверяем, что количество доступных товаров присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).size() >=1,
                 "There is no number of available products!");
-        //Проверяем, что информация о товаре отображается не во вкладках
+        //Проверяем, что информация о товаре отображается во вкладках
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
-                .size() >=1, "Product information is displayed in tabs but shouldn't!");
+                .size() >=1, "Product information is not displayed in tabs!");
         //Проверяем, что название характеристики "Бренд" присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is no Brand name on product page!");

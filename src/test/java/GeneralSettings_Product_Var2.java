@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,7 +32,7 @@ import java.time.Duration;
     * Действие при нулевой цене --  Попросить покупателя ввести цену
     * Цена за единицу --  нет (по причине нулевой цены)
     * Действие при отсутствии товара в наличии --   Предзаказ
-    * шаблон страницы товара -- все 4 шт
+    * шаблон страницы товара -- все 5 шт
     * Краткое описание --   да
     * Промо-текст -- да
     * Бонусные баллы --  нет (по причине нулевой цены)
@@ -53,6 +54,23 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
             csCartSettings.setting_ProductDetailsInTab.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+        //Работаем с настройками характеристик Жесткий диск и Бренд
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.feature_HardDrive.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
+        if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
+            csCartSettings.showInHeaderOnProductPage_HardDisk.click();
+        }
+        csCartSettings.button_SaveFeature.click();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
+        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
+            checkbox_ShowInHeaderOnProductPage.click();
+            csCartSettings.clickSaveButtonOfSettings();
+        }
 
         //Настраиваем UniTheme настройки
         csCartSettings.navigateToAddonsPage();
@@ -87,6 +105,8 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         productSettings.selectSetting_ZeroPriceAction("A");
         productSettings.selectSetting_OutOfStockActions("B");
         productSettings.selectSetting_ProductTemplate("default_template");
+        productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
+        productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         csCartSettings.clickSaveButtonOfSettings();
     }
 
@@ -120,7 +140,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         //Проверяем, что присутствует ID пользовательского блока
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
                 "There is no Custom block in the right column!");
-        //Проверяем, что модификатор количества присутствует
+        //Проверяем, что Модификатор количества присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).size() >=1,
                 "There is no Quantity changer!");
         //Проверяем, что Код товара присутствует
@@ -134,28 +154,28 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
                 "There is no field 'Enter your price'!");
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).size() >=1,
-                "There is no field 'Backorder'!");
+                "There is no field 'On backorder'!");
         //Проверяем, что Промо-текст присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
                 "There is no Promo-text!");
-        takeScreenShot("200 Product page, Default template, Var2");
+        takeScreenShot("1200 Product page, Default template, Var2");
         productPage.shiftLanguage_RTL();
         makePause();
-        takeScreenShot("205 Product page, Default template, Var2 (RTL)");
+        takeScreenShot("1205 Product page, Default template, Var2 (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
-        takeScreenShot("210 Product features, two columns (RTL)");
+        takeScreenShot("1210 Product features, two columns (RTL)");
         productPage.shiftLanguage_RU();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot("215 Product features, two columns");
+        takeScreenShot("1215 Product features, two columns");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("220 Feature description, two columns");
+        takeScreenShot("1220 Feature description, two columns");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
@@ -163,24 +183,32 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        takeScreenShot("225 Template - Big picture, Var2");
+        takeScreenShot("1225 Template - Big picture, Var2");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("230 Template - Big picture, Var2 (RTL)");
+        takeScreenShot("1230 Template - Big picture, Var2 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        takeScreenShot("235 Template - Big picture flat, Var2");
+        takeScreenShot("1235 Template - Big picture flat, Var2");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("240 Template - Big picture flat, Var2 (RTL)");
+        takeScreenShot("1240 Template - Big picture flat, Var2 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        takeScreenShot("245 Template - Three columned, Var2");
+        takeScreenShot("1245 Template - Three columned, Var2");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("250 Template - Three columned, Var2 (RTL)");
+        takeScreenShot("1250 Template - Three columned, Var2 (RTL)");
+        focusBrowserTab(0);
+        productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
+        csCartSettings.clickSaveButtonOfSettings();
+        productSettings.navigateToProductPage();
+        focusBrowserTab(5);
+        takeScreenShot("1255 Template - Gallery, Var2");
+        productPage.shiftLanguage_RTL();
+        takeScreenShot("1260 Template - Gallery, Var2 (RTL)");
     }
 }

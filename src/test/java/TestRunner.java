@@ -46,9 +46,6 @@ public class TestRunner {
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size()>=1){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();
-        }
     }
     public void takeScreenShot(String screenshotName) throws IOException {
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);

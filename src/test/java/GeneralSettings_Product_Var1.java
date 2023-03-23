@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 /*
+ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
 - Настройки CS-Cart "Настройки -> Внешний вид":
     * Показывать мини-иконки в виде галереи --  вкл
     * Показывать количество доступных товаров -- откл
@@ -127,6 +128,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         productSettings.chooseAnyProduct.click();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
+        productPage.cookie.click();
         productPage.shiftLanguage_RU();
         //Проверяем, что мини-иконки в виде галереи
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-bigpicture-thumbnails_gallery")).size() >=1,

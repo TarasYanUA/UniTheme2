@@ -10,6 +10,8 @@ import taras.constants.AbstractPage;
 
 public class ProductPage extends AbstractPage {
     public ProductPage(){super();}
+    @FindBy(css = ".cm-btn-success")
+    public WebElement cookie;
     @FindBy(css = "a[id*='sw_select'][id*='wrap_language']")
     private WebElement gearwheel_Language;
     @FindBy(css = "a[data-ca-name=\"ru\"]")

@@ -36,6 +36,8 @@ public class ProductSettings extends AbstractPage {
     private WebElement setting_OutOfStockActions;
     @FindBy(id = "elm_details_layout")
     private WebElement setting_ProductTemplate;
+    @FindBy(css = "label[for='elm_product_short_descr']")
+    private WebElement fieldName_ShortDescription;
     @FindBy(id = "redactor-uuid-1")
     private WebElement field_ShortDescription;
     @FindBy(css = "label[for='elm_product_promo_text']")
@@ -98,12 +100,13 @@ public class ProductSettings extends AbstractPage {
         getSetting_ProductTemplate().selectByValue(value);
     }
 
-    public WebElement getField_ShortDescription(){return field_ShortDescription;}
+    public WebElement getField_ShortDescription(){return fieldName_ShortDescription;}
     public void hoverAndTypeField_ShortDescription(String value){
         WebElement element = getField_ShortDescription();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
+        fieldName_ShortDescription.click();
         field_ShortDescription.click();
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);

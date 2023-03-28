@@ -13,12 +13,10 @@ import java.io.IOException;
 import java.time.Duration;
 
 /*
-Проверка следующих настроек:
-1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
+Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Отображать пустые звёзды рейтинга товара -- да
 Отображать общее значение рейтинга товара -- нет
 
-Минимальная высота для ячейки товара (по умолчанию пусто) -- 490
 Ширина иконки товара (по умолчанию 200) --	200
 Высота иконки товара (по умолчанию 200) --	350
 
@@ -60,7 +58,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
             themeSettingsProductLists.settingCommonValueOfProductRating.click();
         }
-        themeSettingsProductLists.clickAndTypeSettingMinHeightForProductCell("490");
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("350");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;

@@ -7,5 +7,5 @@ public class Constants {
     public static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
     public static final String FIREFOX_DRIVER_PATH = "src/test/resources/geckodriver.exe";
 
-    public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
+    public static final String BASIC_URL = "https://abd-076ee5dee9.demos.abt.team/admin.php";
 }

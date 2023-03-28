@@ -131,7 +131,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
         //Проверяем, что мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-bigpicture-thumbnails_gallery")).size() >=1,
+        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).size() >=1,
                 "Mini-icons are not in view of gallery!");
         //Проверяем, что информация о товаре отображается во вкладках
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))

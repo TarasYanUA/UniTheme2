@@ -35,8 +35,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingDisplayButtonsWhenHoveringMouse;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHoveringMousePointer;
-    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_height.desktop']")
-    private WebElement settingMinHeightForProductCell;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_width.desktop']")
     private WebElement settingProductIconWidth;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_height.desktop']")
@@ -78,12 +76,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     }
     public void selectSettingSwitchProductImageWhenHoveringMousePointer(String value){
         getSettingSwitchProductImageWhenHoveringMousePointer().selectByValue(value);
-    }
-
-    public void clickAndTypeSettingMinHeightForProductCell(String value){
-        settingMinHeightForProductCell.click();
-        settingMinHeightForProductCell.clear();
-        settingMinHeightForProductCell.sendKeys(value);
     }
     public void clickAndTypeSettingProductIconWidth(String value){
         settingProductIconWidth.click();

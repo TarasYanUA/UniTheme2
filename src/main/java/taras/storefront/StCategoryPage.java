@@ -1,11 +1,16 @@
 package taras.storefront;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
+import java.time.Duration;
 import java.util.List;
+import static taras.constants.DriverProvider.getDriver;
 
 public class StCategoryPage extends AbstractPage {
     public StCategoryPage(){
@@ -92,6 +97,9 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickQuickViewOfPhoneProduct(){
         quickViewOfPhoneProduct.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
+        makePause();
     }
     public void clickCloseQuickView(){
         closeQuickView.click();
@@ -113,5 +121,11 @@ public class StCategoryPage extends AbstractPage {
         buttonQuickView.click();
     }
 
-
+    public void makePause(){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

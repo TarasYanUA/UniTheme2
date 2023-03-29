@@ -1,11 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
@@ -198,8 +200,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("140 Var1_QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
@@ -232,6 +232,8 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         Assert.assertTrue(getDriver().findElement(By.cssSelector(".ut2-added-to-cart")).isEnabled(),
                 "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
+        Actions actions = new Actions(DriverProvider.getDriver());
+        actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");

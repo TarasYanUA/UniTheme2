@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml",
+    "last_opened_file_path": "C:/Idea Projects/Stickers/pom.xml",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -152,13 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00019" summary="settings in admin panel are ready! Start working with asserts on HomePage.">
-      <created>1671116637192</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1671116637192</updated>
     </task>
     <task id="LOCAL-00020" summary="Asserts on HomePage are ready!">
       <created>1671119542652</created>
@@ -496,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680168778600</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2">
+      <created>1680170293604</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1680170293604</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -524,7 +526,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
     <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
@@ -549,7 +550,8 @@
     <MESSAGE value="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page." />
     <MESSAGE value="Added pauses for language shift and quick view window." />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+    <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

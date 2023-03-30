@@ -42,7 +42,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){
-            csCartSettings.showInProductList.click();
+            checkboxShowInProductList.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
@@ -52,39 +52,39 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            themeSettingsProductLists.settingProductRating.click();
+            checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(checkboxSettingCommonValueOfProductRating.isSelected()){
-            themeSettingsProductLists.settingCommonValueOfProductRating.click();
+            checkboxSettingCommonValueOfProductRating.click();
         }
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("350");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
         if(!checkboxSettingShowProductCode.isSelected()){
-            themeSettingsProductLists.settingShowProductCode.click();
+            checkboxSettingShowProductCode.click();
         }
         WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
         if(!checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            themeSettingsProductLists.settingDisplayAvailabilityStatus.click();
+            checkboxSettingDisplayAvailabilityStatus.click();
         }
         WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
         if(!checkboxSettingShowQuantityChanger.isSelected()){
-            themeSettingsProductLists.settingShowQuantityChanger.click();
+            checkboxSettingShowQuantityChanger.click();
         }
         themeSettingsProductLists.selectSettingShowAddToCartButton("icon_and_text");
         themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            themeSettingsProductLists.settingShowAdditionalInformationOnHover.click();
+            checkboxSettingShowAdditionalInformationOnHover.click();
         }
         WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
         if(!checkboxSettingShowBrandLogo.isSelected()){
-            themeSettingsProductLists.settingShowBrandLogo.click();
+            checkboxSettingShowBrandLogo.click();
         }
         WebElement checkboxSettingShowYouSave = themeSettingsProductLists.settingShowYouSave;
         if(!checkboxSettingShowYouSave.isSelected()){
-            themeSettingsProductLists.settingShowYouSave.click();
+            checkboxSettingShowYouSave.click();
         }
         themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("lines");
         csCartSettings.clickSaveButtonOfSettings();

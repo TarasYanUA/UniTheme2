@@ -11,6 +11,7 @@ import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
 import java.time.Duration;
+import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Настройки -- Внешний вид":
@@ -35,7 +36,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if(!checkboxSettingQuickView.isSelected()){
-            csCartSettings.setting_QuickView.click();
+            checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
@@ -45,27 +46,27 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(checkboxProductRating.isSelected()){
-            themeSettingsProductLists.settingProductRating.click();
+            checkboxProductRating.click();
         }
         WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(checkboxCommonValueOfProductRating.isSelected()){
-            themeSettingsProductLists.settingCommonValueOfProductRating.click();
+            checkboxCommonValueOfProductRating.click();
         }
         WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
         if(checkboxProductCode.isSelected()){
-            themeSettingsProductLists.compactList_productCode.click();
+            checkboxProductCode.click();
         }
         WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
         if(checkboxAvailabilityStatus.isSelected()){
-            themeSettingsProductLists.compactList_availabilityStatus.click();
+            checkboxAvailabilityStatus.click();
         }
         WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
         if(!checkboxQuantityModifier.isSelected()){
-            themeSettingsProductLists.compactList_quantityCharger.click();
+            checkboxQuantityModifier.click();
         }
         WebElement checkboxButtonAddToCart = themeSettingsProductLists.compactList_buttonAddToCart;
         if(!checkboxButtonAddToCart.isSelected()){
-            themeSettingsProductLists.compactList_buttonAddToCart.click();
+            checkboxButtonAddToCart.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 
@@ -77,11 +78,14 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         //Проверяем, что кнопка "Купить" присутствует
-        Assert.assertTrue(stCategoryPage.buttonAddToCart.isEnabled(), "There is no button 'Add to cart'!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+                "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        Assert.assertTrue(stCategoryPage.quantityCharger.isEnabled(), "There is no quantity charger!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+                "There is no quantity charger!");
         //Проверяем, что Быстрый просмотр присутствует
-        Assert.assertTrue(stCategoryPage.buttonQuickView.isEnabled(), "There is no button 'Quick view'!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).size() >= 1,
+                "There is no button 'Quick view'!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("710 ProductLists_CompactLists_Var1");
         stCategoryPage.clickButtonQuickView();

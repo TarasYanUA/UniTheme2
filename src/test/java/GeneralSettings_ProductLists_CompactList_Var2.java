@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,6 +7,8 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import java.io.IOException;
+
+import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
@@ -30,27 +33,27 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if(!checkboxProductRating.isSelected()){
-            themeSettingsProductLists.settingProductRating.click();
+            checkboxProductRating.click();
         }
         WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if(!checkboxCommonValueOfProductRating.isSelected()){
-            themeSettingsProductLists.settingCommonValueOfProductRating.click();
+            checkboxCommonValueOfProductRating.click();
         }
         WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
         if(!checkboxProductCode.isSelected()){
-            themeSettingsProductLists.compactList_productCode.click();
+            checkboxProductCode.click();
         }
         WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
         if(!checkboxAvailabilityStatus.isSelected()){
-            themeSettingsProductLists.compactList_availabilityStatus.click();
+            checkboxAvailabilityStatus.click();
         }
         WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
         if(!checkboxQuantityModifier.isSelected()){
-            themeSettingsProductLists.compactList_quantityCharger.click();
+            checkboxQuantityModifier.click();
         }
         WebElement checkboxButtonAddToCart = themeSettingsProductLists.compactList_buttonAddToCart;
         if(!checkboxButtonAddToCart.isSelected()){
-            themeSettingsProductLists.compactList_buttonAddToCart.click();
+            checkboxButtonAddToCart.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 
@@ -62,17 +65,23 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
         makePause();
         //Проверяем, что пустые звезды рейтинга присутствуют
-        Assert.assertTrue(stCategoryPage.emptyRatingStars.isEnabled(), "There is no empty rating stars!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).size() >= 1,
+                "There is no empty rating stars!");
         //Проверяем, что общее значение рейтинга присутствует
-        Assert.assertTrue(stCategoryPage.commonValueOfProductRating.isEnabled(), "There is no common value of product rating!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).size() >= 1,
+                "There is no common value of product rating!");
         //Проверяем, что код товара присутствует
-        Assert.assertTrue(stCategoryPage.productCode.isEnabled(), "There is no product code!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("span[id*='product_code']")).size() >= 1,
+                "There is no product code!");
         //Проверяем, что статус товара присутствует
-        Assert.assertTrue(stCategoryPage.availabilityStatus.isEnabled(), "There is no availability status!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).size() >= 1,
+                "There is no availability status!");
         //Проверяем, что кнопка "Купить" присутствует
-        Assert.assertTrue(stCategoryPage.buttonAddToCart.isEnabled(), "There is no button 'Add to cart'!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+                "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        Assert.assertTrue(stCategoryPage.quantityCharger.isEnabled(), "There is no quantity charger!");
+        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+                "There is no quantity charger!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("810 ProductLists_CompactLists_Var2");
         stHomePage.selectLanguage_RTL();

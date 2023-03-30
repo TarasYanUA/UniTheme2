@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added pauses for language shift and quick view window.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,18 +37,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
@@ -166,13 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Relocated setting to Class Page. Added one more setting of the theme.">
-      <created>1670582719229</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1670582719229</updated>
     </task>
     <task id="LOCAL-00018" summary="Third test-cases has started!">
       <created>1670594344345</created>
@@ -510,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679990871473</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Added pauses for language shift and quick view window.">
+      <created>1680083485906</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1680083485907</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adaptation to CS-Cart 4.16.1" />
     <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
     <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
     <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
@@ -563,7 +551,8 @@
     <MESSAGE value="Fixed some settings." />
     <MESSAGE value="Test-case 3 is ready!" />
     <MESSAGE value="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page." />
+    <MESSAGE value="Added pauses for language shift and quick view window." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pauses for language shift and quick view window." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

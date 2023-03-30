@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added pauses for language shift and quick view window.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,10 +81,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_Product_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_Product_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -94,12 +92,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_Product_Var2.checkSettingsOnProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_Product_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_Product_Var2" />
-      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Var2" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -131,19 +128,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_Product_Var2.checkSettingsOnProductPage_Var2" />
       <item itemvalue="TestNG.GeneralSettings_Product_Var3" />
       <item itemvalue="TestNG.GeneralSettings_Product_Var3.checkSettingsOnProductPage_Var3" />
       <item itemvalue="TestNG.GeneralSettings_Product_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_Product_Var3.checkSettingsOnProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_Product_Var3" />
         <item itemvalue="TestNG.GeneralSettings_Product_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_Product_Var2.checkSettingsOnProductPage_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -155,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Third test-cases has started!">
-      <created>1670594344345</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1670594344345</updated>
     </task>
     <task id="LOCAL-00019" summary="settings in admin panel are ready! Start working with asserts on HomePage.">
       <created>1671116637192</created>
@@ -499,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680083485907</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1">
+      <created>1680168778599</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1680168778600</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -527,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
     <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
     <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
@@ -552,7 +548,8 @@
     <MESSAGE value="Test-case 3 is ready!" />
     <MESSAGE value="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page." />
     <MESSAGE value="Added pauses for language shift and quick view window." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pauses for language shift and quick view window." />
+    <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

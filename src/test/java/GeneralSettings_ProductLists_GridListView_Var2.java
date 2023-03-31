@@ -32,8 +32,8 @@ import java.time.Duration;
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_GridListView_Var2() throws IOException {
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с настройками темы
@@ -42,45 +42,48 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         csCartSettings.navigateToThemeSettings();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
-        if(checkboxProductRating.isSelected()){
+        if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if(!checkboxSettingCommonValueOfProductRating.isSelected()){
+        if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("400");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
-        if(checkboxSettingShowProductCode.isSelected()){
+        if (checkboxSettingShowProductCode.isSelected()) {
             checkboxSettingShowProductCode.click();
         }
         WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
-        if(checkboxSettingDisplayAvailabilityStatus.isSelected()){
+        if (checkboxSettingDisplayAvailabilityStatus.isSelected()) {
             checkboxSettingDisplayAvailabilityStatus.click();
         }
         WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
-        if(checkboxSettingShowQuantityChanger.isSelected()){
+        if (checkboxSettingShowQuantityChanger.isSelected()) {
             checkboxSettingShowQuantityChanger.click();
         }
         themeSettingsProductLists.selectSettingShowAddToCartButton("icon");
         themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_variations");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
-        if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
+        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
             checkboxSettingShowAdditionalInformationOnHover.click();
         }
         WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
-        if(!checkboxSettingShowBrandLogo.isSelected()){
+        if (!checkboxSettingShowBrandLogo.isSelected()) {
             checkboxSettingShowBrandLogo.click();
         }
         WebElement checkboxSettingShowYouSave = themeSettingsProductLists.settingShowYouSave;
-        if(!checkboxSettingShowYouSave.isSelected()){
+        if (!checkboxSettingShowYouSave.isSelected()) {
             checkboxSettingShowYouSave.click();
         }
         themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();
+    }
 
-        //Работаем с витриной
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var2")
+    public void checkProductLists_GridListView_Var2() throws IOException {
+        CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         //Блок товаров на главной странице

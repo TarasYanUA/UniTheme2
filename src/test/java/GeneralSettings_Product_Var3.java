@@ -96,7 +96,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
     public void checkSettingsOnProductPage_Var3() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
@@ -121,7 +121,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         //Проверяем, что Код товара присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
                 "There is no product code!");
-        /////////Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
+        //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_248")).size() >=1,
                 "There is no field 'Sign up for notification'!");
         //Проверяем, что Бонусные баллы присутствуют

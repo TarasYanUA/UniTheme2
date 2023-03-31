@@ -23,41 +23,44 @@ import static taras.constants.DriverProvider.getDriver;
  */
 
 public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_CompactList_Var1() throws IOException {
-        CsCartSettings csCartSettings = new CsCartSettings();
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_CompactList_Var2() {
         //Работаем с настройками темы
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
-        if(!checkboxProductRating.isSelected()){
+        if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if(!checkboxCommonValueOfProductRating.isSelected()){
+        if (!checkboxCommonValueOfProductRating.isSelected()) {
             checkboxCommonValueOfProductRating.click();
         }
         WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
-        if(!checkboxProductCode.isSelected()){
+        if (!checkboxProductCode.isSelected()) {
             checkboxProductCode.click();
         }
         WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
-        if(!checkboxAvailabilityStatus.isSelected()){
+        if (!checkboxAvailabilityStatus.isSelected()) {
             checkboxAvailabilityStatus.click();
         }
         WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
-        if(!checkboxQuantityModifier.isSelected()){
+        if (!checkboxQuantityModifier.isSelected()) {
             checkboxQuantityModifier.click();
         }
         WebElement checkboxButtonAddToCart = themeSettingsProductLists.compactList_buttonAddToCart;
-        if(!checkboxButtonAddToCart.isSelected()){
+        if (!checkboxButtonAddToCart.isSelected()) {
             checkboxButtonAddToCart.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+    }
 
-        //Работаем с витриной
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var2")
+    public void checkProductLists_CompactList_Var2() throws IOException{
+        CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenuGameConsoles();

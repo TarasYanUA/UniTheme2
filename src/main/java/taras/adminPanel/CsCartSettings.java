@@ -1,6 +1,5 @@
 package taras.adminPanel;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -62,7 +61,7 @@ public class CsCartSettings extends AbstractPage {
     public WebElement feature_HardDrive;
     @FindBy(css = "label[for='elm_feature_description_23']")
     private WebElement field_FeatureDescription;
-    @FindBy(id = "redactor-uuid-0")
+    @FindBy(css = ".controls .redactor-layer p")
     private WebElement field_DescriptionOfFeature;
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
@@ -108,9 +107,7 @@ public class CsCartSettings extends AbstractPage {
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
     }
-    public WebElement hoverSettingsOfCsCart(){
-        return settingsOfCsCart;
-    }
+    public WebElement hoverSettingsOfCsCart(){return settingsOfCsCart;}
     public void navigateToAddonsManagementPage(){
         addonsManagementPage.click();
     }
@@ -128,8 +125,15 @@ public class CsCartSettings extends AbstractPage {
     public void navigateToSection_Features(){
         section_Features.click();
     }
-    public void clickAndTypeField_DescriptionOfFeature(String value){
+    public WebElement hoverFeatureDescription(){return field_FeatureDescription;}
+    public void scrollToFeatureDescription(){
+        WebElement element = hoverFeatureDescription();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.scrollToElement(element);
+        hover.perform();
         field_FeatureDescription.click();
+    }
+    public void clickAndTypeField_DescriptionOfFeature(String value){
         field_DescriptionOfFeature.click();
         field_DescriptionOfFeature.clear();
         field_DescriptionOfFeature.sendKeys(value);

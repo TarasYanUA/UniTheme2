@@ -26,15 +26,15 @@ import java.io.IOException;
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_ListWithoutOptions_Var2() throws IOException {
-        CsCartSettings csCartSettings = new CsCartSettings();
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_ListWithoutOptions_Var2() {
         //Работаем с настройками характеристики Бренд
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if(!checkboxShowInProductList.isSelected()){
+        if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
             csCartSettings.clickSaveButtonOfSettings();
         }
@@ -46,30 +46,33 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
-        if(!checkboxProductCode.isSelected()){
+        if (!checkboxProductCode.isSelected()) {
             checkboxProductCode.click();
         }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
-        if(!checkboxAmountStatus.isSelected()){
+        if (!checkboxAmountStatus.isSelected()) {
             checkboxAmountStatus.click();
         }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
-        if(!checkboxShowQuantity.isSelected()){
+        if (!checkboxShowQuantity.isSelected()) {
             checkboxShowQuantity.click();
         }
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
-        if(!checkboxShowProductOptions.isSelected()){
+        if (!checkboxShowProductOptions.isSelected()) {
             checkboxShowProductOptions.click();
         }
         WebElement checkboxBrandLogo = themeSettingsProductLists.settingShowBrandLogo_ListWithoutOptions;
-        if(!checkboxBrandLogo.isSelected()){
+        if (!checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
         themeSettingsProductLists.selectWithoutOptionsHoverGallery("lines");
         csCartSettings.clickSaveButtonOfSettings();
+    }
 
-        //Работаем с витриной
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var2")
+    public void checkProductLists_ListWithoutOptions_Var2() throws IOException {
+        CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenuMenCloth();

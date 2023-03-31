@@ -9,6 +9,8 @@ public class StHomePage extends AbstractPage {
     public StHomePage(){
         super();
     }
+    @FindBy(css = ".cm-btn-success")
+    public WebElement cookie;
     @FindBy(css = ".ut2-icon-outline-account-circle")
     private WebElement accountOnTop;
     @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")

@@ -110,8 +110,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         StCategoryPage stCategoryPage = new StCategoryPage();
         focusBrowserTab(1);
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size() >= 1){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();  }
+        stHomePage.cookie.click();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров переключатель изображений с полосками

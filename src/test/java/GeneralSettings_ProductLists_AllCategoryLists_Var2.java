@@ -110,8 +110,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size() >= 1){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();  }
+        stHomePage.cookie.click();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверка, что у товаров присутствует галерея мини-иконок товара

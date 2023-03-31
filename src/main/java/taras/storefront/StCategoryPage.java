@@ -33,22 +33,12 @@ public class StCategoryPage extends AbstractPage {
     private WebElement grid_ProductListView;
     @FindBy(css = ".ty-icon.ty-icon-products-without-options")
     private WebElement listWithoutOptions_ProductListView;
-    @FindBy(css = "div[class*='ut2-show-rating-num']")
-    public WebElement commonValueOfProductRating;
-    @FindBy(css = ".ut2-rating-stars-empty")
-    public WebElement emptyRatingStars;
     @FindBy(css = "div[class='ut2-sorting-wrap'] span[class='ty-icon ty-icon-short-list']")
     private WebElement compactList_ProductListView;
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public WebElement buttonQuickView;
-    @FindBy(css = "span[id*='product_code']")
-    public WebElement productCode;
-    @FindBy(css = ".ty-compact-list__amount")
-    public WebElement availabilityStatus;
     @FindBy(css = "button[id*='button_cart']")
     public WebElement buttonAddToCart;
-    @FindBy(css = "div[class*='cm-value-changer']")
-    public WebElement quantityCharger;
     @FindBy(css = ".ty-btn__add-to-cart")
     public WebElement button_AddToCart;
     @FindBy(css = ".ty-btn__secondary.cm-notification-close")
@@ -63,10 +53,7 @@ public class StCategoryPage extends AbstractPage {
     public WebElement button_AddToComparisonList;
     @FindBy(css = ".cm-notification-close")
     public WebElement closeNotificationWindow;
-    @FindBy(css = "a.ut2-add-to-wish.active")
-    public WebElement button_AddToWishList_ActiveStatus;
-    @FindBy(css = "a.ut2-add-to-compare.active")
-    public WebElement button_AddToComparisonList_ActiveStatus;
+
 
     public WebElement hoverPhoneProduct(){
         return phoneProduct;

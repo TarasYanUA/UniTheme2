@@ -47,12 +47,17 @@ public class TestRunner {
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
     public void takeScreenShot(String screenshotName) throws IOException {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
     }
     public void makePause(){
         try {
-            Thread.sleep(2500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

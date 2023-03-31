@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -82,6 +83,9 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).size() >= 1){
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
+        }
         productSettings.clickAndTypeField_Price("10000");
         productSettings.clickAndTypeField_InStock("0");
         productSettings.selectSetting_OutOfStockActions("S");
@@ -92,6 +96,11 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         productSettings.tab_RewardPoints.click();
         if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
             productSettings.setting_AllowPaymentByPoints.click();
+        }
+        productSettings.tab_QuantityDiscounts.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2){
+            productSettings.clickAndType_field_Quantity("3");
+            productSettings.clickAndType_field_Value("22000");
         }
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -176,8 +185,10 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1355 Template - Gallery, Var3");
         productPage.shiftLanguage_RTL();
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1360 Template - Gallery, Var3 (RTL)");
     }
 }

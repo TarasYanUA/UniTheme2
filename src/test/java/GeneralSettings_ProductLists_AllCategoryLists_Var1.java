@@ -45,8 +45,8 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_DefaultValues() {
-        CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с CS-Cart настройками
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (checkboxThumbnailsGallery.isSelected()) {

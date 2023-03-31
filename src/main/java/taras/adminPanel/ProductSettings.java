@@ -50,6 +50,12 @@ public class ProductSettings extends AbstractPage {
     public WebElement tab_RewardPoints;
     @FindBy(id = "pd_is_pbp")
     public WebElement setting_AllowPaymentByPoints;
+    @FindBy(id = "qty_discounts")
+    public WebElement tab_QuantityDiscounts;
+    @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
+    private WebElement field_Quantity;
+    @FindBy(css = "#box_add_qty_discount .cm-numeric")
+    private WebElement field_Value;
 
 
     public void clickAndType_SearchFieldOfProduct(String value){
@@ -121,5 +127,15 @@ public class ProductSettings extends AbstractPage {
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);
+    }
+    public void clickAndType_field_Quantity(String value){
+        field_Quantity.click();
+        field_Quantity.clear();
+        field_Quantity.sendKeys(value);
+    }
+    public void clickAndType_field_Value(String value){
+        field_Value.click();
+        field_Value.clear();
+        field_Value.sendKeys(value);
     }
 }

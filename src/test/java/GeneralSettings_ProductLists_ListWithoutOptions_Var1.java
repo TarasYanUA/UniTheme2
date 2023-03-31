@@ -21,39 +21,42 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_ListWithoutOptions_Var1() throws IOException {
-        CsCartSettings csCartSettings = new CsCartSettings();
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
         //Работаем с настройками темы
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAddonsPage();
         csCartSettings.clickThemeSectionsOnManagementPage();
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
-        if(checkboxProductCode.isSelected()){
+        if (checkboxProductCode.isSelected()) {
             checkboxProductCode.click();
         }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
-        if(checkboxAmountStatus.isSelected()){
+        if (checkboxAmountStatus.isSelected()) {
             checkboxAmountStatus.click();
         }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
-        if(!checkboxShowQuantity.isSelected()){
+        if (!checkboxShowQuantity.isSelected()) {
             checkboxShowQuantity.click();
         }
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("variations");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
-        if(checkboxShowProductOptions.isSelected()){
+        if (checkboxShowProductOptions.isSelected()) {
             checkboxShowProductOptions.click();
         }
         WebElement checkboxBrandLogo = themeSettingsProductLists.withoutOptionsBrandLogo;
-        if(checkboxBrandLogo.isSelected()){
+        if (checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
         themeSettingsProductLists.selectWithoutOptionsHoverGallery("points");
         csCartSettings.clickSaveButtonOfSettings();
+    }
 
-        //Работаем с витриной
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var1")
+    public void checkProductLists_ListWithoutOptions_Var1() throws IOException {
+        CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenuMenCloth();

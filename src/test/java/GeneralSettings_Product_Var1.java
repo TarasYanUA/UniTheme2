@@ -62,6 +62,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         csCartSettings.feature_HardDrive.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        csCartSettings.scrollToFeatureDescription();
         csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
         if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
             csCartSettings.showInHeaderOnProductPage_HardDisk.click();
@@ -120,7 +121,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var1")
     public void checkSettingsOnProductPage_Var1() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

@@ -112,7 +112,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var2")
     public void checkSettingsOnProductPage_Var2() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

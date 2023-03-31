@@ -43,17 +43,17 @@ import static taras.constants.DriverProvider.getDriver;
 */
 
 public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunner {
-    @Test
-    public void checkGeneralSettingsOfProductLists_DefaultValues() throws IOException {
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_DefaultValues() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
-        if(checkboxThumbnailsGallery.isSelected()){
+        if (checkboxThumbnailsGallery.isSelected()) {
             checkboxThumbnailsGallery.click();
         }
         WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
-        if(!checkboxSettingQuickView.isSelected()){
+        if (!checkboxSettingQuickView.isSelected()) {
             checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
@@ -63,47 +63,50 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxMiniIconsGallery = themeSettingsProductLists.settingMiniIconsGallery;
-        if(checkboxMiniIconsGallery.isSelected()){
+        if (checkboxMiniIconsGallery.isSelected()) {
             checkboxMiniIconsGallery.click();
         }
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
-        if (!checkboxOutOfStockProducts.isSelected()){
+        if (!checkboxOutOfStockProducts.isSelected()) {
             checkboxOutOfStockProducts.click();
         }
         themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
-        if(checkboxPriceAtTheTop.isSelected()){
+        if (checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
-        if(!checkboxProductRating.isSelected()){
+        if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if(checkboxSettingCommonValueOfProductRating.isSelected()){
+        if (checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
         themeSettingsProductLists.selectSettingDisplayCartStatus("check-icon");
         WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
-        if(checkboxSettingDisplayStatusesForButtons.isSelected()){
+        if (checkboxSettingDisplayStatusesForButtons.isSelected()) {
             checkboxSettingDisplayStatusesForButtons.click();
         }
         WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
-        if(!checkboxSettingDisplayButtonComparisonList.isSelected()){
+        if (!checkboxSettingDisplayButtonComparisonList.isSelected()) {
             checkboxSettingDisplayButtonComparisonList.click();
         }
         WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
-        if(!checkboxSettingDisplayButtonWishList.isSelected()){
+        if (!checkboxSettingDisplayButtonWishList.isSelected()) {
             checkboxSettingDisplayButtonWishList.click();
         }
         WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse;
-        if(!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()){
+        if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
         themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         csCartSettings.clickSaveButtonOfSettings();
+    }
 
-        //Работаем с витриной
+        @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_DefaultValues")
+        public void checkAllCategoryLists_DefaultValues() throws IOException {
+        CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         StCategoryPage stCategoryPage = new StCategoryPage();
         focusBrowserTab(1);
@@ -227,6 +230,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         takeScreenShot("150 Var1_Category_ListWithoutOptionsRTL");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
+        makePause();
         stHomePage.selectLanguage_RU();
         makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");

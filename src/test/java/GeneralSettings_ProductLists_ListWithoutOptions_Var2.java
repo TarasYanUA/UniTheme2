@@ -35,7 +35,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if(!checkboxShowInProductList.isSelected()){
-            csCartSettings.showInProductList.click();
+            checkboxShowInProductList.click();
             csCartSettings.clickSaveButtonOfSettings();
         }
         //Работаем с настройками темы
@@ -47,20 +47,20 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
         if(!checkboxProductCode.isSelected()){
-            themeSettingsProductLists.withoutOptionsProductCode.click();
+            checkboxProductCode.click();
         }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
         if(!checkboxAmountStatus.isSelected()){
-            themeSettingsProductLists.withoutOptionsAmountStatus.click();
+            checkboxAmountStatus.click();
         }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
         if(!checkboxShowQuantity.isSelected()){
-            themeSettingsProductLists.withoutOptionsShowQuantity.click();
+            checkboxShowQuantity.click();
         }
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
         if(!checkboxShowProductOptions.isSelected()){
-            themeSettingsProductLists.withoutOptionsShowProductOptions.click();
+            checkboxShowProductOptions.click();
         }
         WebElement checkboxBrandLogo = themeSettingsProductLists.settingShowBrandLogo_ListWithoutOptions;
         if(!checkboxBrandLogo.isSelected()){

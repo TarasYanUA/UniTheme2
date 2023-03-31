@@ -31,24 +31,24 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
         if(checkboxProductCode.isSelected()){
-            themeSettingsProductLists.withoutOptionsProductCode.click();
+            checkboxProductCode.click();
         }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
         if(checkboxAmountStatus.isSelected()){
-            themeSettingsProductLists.withoutOptionsAmountStatus.click();
+            checkboxAmountStatus.click();
         }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
         if(!checkboxShowQuantity.isSelected()){
-            themeSettingsProductLists.withoutOptionsShowQuantity.click();
+            checkboxShowQuantity.click();
         }
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("variations");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
         if(checkboxShowProductOptions.isSelected()){
-            themeSettingsProductLists.withoutOptionsShowProductOptions.click();
+            checkboxShowProductOptions.click();
         }
         WebElement checkboxBrandLogo = themeSettingsProductLists.withoutOptionsBrandLogo;
         if(checkboxBrandLogo.isSelected()){
-            themeSettingsProductLists.withoutOptionsBrandLogo.click();
+            checkboxBrandLogo.click();
         }
         themeSettingsProductLists.selectWithoutOptionsHoverGallery("points");
         csCartSettings.clickSaveButtonOfSettings();

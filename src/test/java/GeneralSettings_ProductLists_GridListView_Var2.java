@@ -86,6 +86,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
+        stHomePage.cookie.click();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         //Проверяем, что дополнительная информация отображается при наведении

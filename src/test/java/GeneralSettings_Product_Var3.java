@@ -35,6 +35,7 @@ import java.time.Duration;
     * Краткое описание --   нет
     * Промо-текст -- нет
     * Бонусные баллы --  да
+    * Оптовые цены -- да
 */
 
 public class GeneralSettings_Product_Var3 extends TestRunner{

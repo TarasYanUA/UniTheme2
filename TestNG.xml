@@ -11,6 +11,7 @@
             <class name="GeneralSettings_ProductLists_CompactList_Var2" />
             <class name="GeneralSettings_Product_Var1" />
             <class name="GeneralSettings_Product_Var2" />
+            <class name="GeneralSettings_Product_Var3" />
         </classes>
     </test>
 </suite>

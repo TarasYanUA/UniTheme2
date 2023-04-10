@@ -1,103 +1,88 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
-import taras.constants.DriverProvider;
-import taras.storefront.ProductPage;
+
 import java.io.IOException;
-import java.time.Duration;
 
 /*
-ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
+ссылка на чеклист: https://docs.google.com/spreadsheets/d/1dWaGNOBw-F8WQslHjiRiRSK2QOHiSeRLbxKiAe-h6KQ/edit?usp=sharing
 - Настройки CS-Cart "Настройки -> Внешний вид":
-    * Показывать мини-иконки в виде галереи --  вкл
-    * Показывать количество доступных товаров -- откл
-    * Показывать информацию о товаре во вкладках -- вкл
-- Настраиваем характеристики:
-    * Бренд -- включить настройку "Показывать в заголовке карточки товара"
-    * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
+    * Включить быстрый просмотр --  да
+    * Показывать мини-иконки в виде галереи --  нет
 - Настраиваем UniTheme настройки:
-    * ID пользовательского блока --  93
-    * Отображать модификатор количества --  нет
-    * Отображать код товара --  нет
-    * Отображать характеристики товара -- да
-    * Отображать характеристики в две колонки --    нет
+    * ID пользовательского блока --  нет
+    * Количество отображаемых изображений галереи товара -- 2
+    * Отображать модификатор количества --  да
+    * Отображать код товара --  да
     * Отображать краткое описание --    да
-    * Отображать информацию о бренде товара --  Логотип бренда товара
-- Настраиваем товар X-Box 360:
-    * Действие при нулевой цене --  Не разрешать добавлять товар в корзину
-    * Цена за единицу --  да
-    * Действие при отсутствии товара в наличии --   Не выбрано
-    * шаблон страницы товара -- все 5 шт
-    * Краткое описание --   да
+    * Отображать информацию о бренде товара --  Название бренда товара
+- Настраиваем UniTheme цветосхему, вкладка "Товар":
+    * Добавить фон/маску для изображений товара --  да
+    * Добавить обрамление для изображений товара -- да
+- Настраиваем UniTheme цветосхему, вкладка "Списки товаров":
+    * Тип обрамления товара в сетке -- Без рамки
+    * Добавить фон/маску для изображений товара --  да
+- Настраиваем товар Samsung NX200:
+    * Цена за единицу --  33000
+    * Наличие --    10
     * Промо-текст -- да
     * Бонусные баллы --  да
-    * Оптовые цены -- нет
+    * Оптовые цены -- да
+    * Краткое описание --   да
+    * шаблон страницы товара -- все 5 шт
 */
 
-public class GeneralSettings_Product_Var1 extends TestRunner{
+public class GeneralSettings_Product_NewSettings_Var1 extends TestRunner{
     @Test(priority = 1)
-    public void setConfigurationsForProductPage_Var1(){
+    public void setConfigurationsForProductPage_Var1() throws IOException {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        if(!csCartSettings.setting_ThumbnailsGallery.isSelected()){
+        if(!csCartSettings.setting_QuickView.isSelected()){
+            csCartSettings.setting_QuickView.click();
+        }
+        if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
         }
-        if(csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
-            csCartSettings.setting_NumberOfAvailableProducts.click();
-        }
-        if(!csCartSettings.setting_ProductDetailsInTab.isSelected()){
-            csCartSettings.setting_ProductDetailsInTab.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
-        //Работаем с настройками характеристик Жесткий диск и Бренд
-        csCartSettings.hoverToProductMenu();
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.feature_HardDrive.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        csCartSettings.scrollToFeatureDescription();
-        csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
-            csCartSettings.showInHeaderOnProductPage_HardDisk.click();
-        }
-        csCartSettings.button_SaveFeature.click();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
-        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
-            checkbox_ShowInHeaderOnProductPage.click();
-            csCartSettings.clickSaveButtonOfSettings();
-        }
 
         //Настраиваем UniTheme настройки
-        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
-        themeSettingsProduct.tab_Product.click();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("93");
-        if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
+        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages("2");
+        if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
-        if(themeSettingsProduct.setting_ShowProductCode.isSelected()){
+        if(!themeSettingsProduct.setting_ShowProductCode.isSelected()){
             themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
         }
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
-        themeSettingsProduct.selectSetting_ShowProductBrand("logo");
+        themeSettingsProduct.selectSetting_ShowProductBrand("name");
         csCartSettings.clickSaveButtonOfSettings();
+
+        //Настраиваем UniTheme цветосхему
+        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        colorSchemeSettings.fieldOfActiveColorScheme.click();
+        colorSchemeSettings.activeColorScheme.click();
+        makePause();
+        colorSchemeSettings.tab_Product.click();
+        if(!colorSchemeSettings.setting_ProductMaskForProductImages.isSelected()){
+            colorSchemeSettings.setting_ProductMaskForProductImages.click();
+        }
+        if(!colorSchemeSettings.setting_ProductBorderForProductImages.isSelected()){
+            colorSchemeSettings.setting_ProductBorderForProductImages.click();
+        }
+        colorSchemeSettings.tab_ProductLists.click();
+        colorSchemeSettings.selectSetting_FrameType("none");
+        if(!colorSchemeSettings.setting_ProductListsMaskForProductImages.isSelected()){
+        colorSchemeSettings.setting_ProductListsMaskForProductImages.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
+/*
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
@@ -211,6 +196,6 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         focusBrowserTab(5);
         takeScreenShot("1155 Template - Gallery, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1160 Template - Gallery, Var1 (RTL)");
+        takeScreenShot("1160 Template - Gallery, Var1 (RTL)");*/
     }
 }

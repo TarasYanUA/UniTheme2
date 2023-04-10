@@ -39,9 +39,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
             csCartSettings.clickSaveButtonOfSettings();
         }
         //Работаем с настройками темы
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");

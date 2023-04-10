@@ -37,6 +37,7 @@ public class CsCartSettings extends AbstractPage {
         return new StHomePage();
     }
 
+
     @FindBy(css = ".btn.btn-primary")
     private WebElement buttonAuthorization;
     @FindBy(css = "#bp_off_bottom_panel")
@@ -49,6 +50,12 @@ public class CsCartSettings extends AbstractPage {
     private WebElement themeSectionsOnManagementPage;
     @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.settings']")
     private WebElement themeSettings;
+    @FindBy(css = ".nav-tabs #products")
+    public WebElement tab_Product;
+    @FindBy(css = "#product_list")
+    private WebElement tabProductLists;
+    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.less_settings']")
+    private WebElement colorSchemeSettings;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
     @FindBy(css = "a[href$='products.manage']")
@@ -144,8 +151,24 @@ public class CsCartSettings extends AbstractPage {
     public void clickThemeSectionsOnManagementPage(){
         themeSectionsOnManagementPage.click();
     }
-    public ThemeSettings_ProductLists navigateToThemeSettings(){
+    public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists(){
+        navigateToAddonsPage();
+        clickThemeSectionsOnManagementPage();
         themeSettings.click();
+        tabProductLists.click();
         return new ThemeSettings_ProductLists();
+    }
+    public ThemeSettings_Product navigateTo_ThemeSettings_tabProduct(){
+        navigateToAddonsPage();
+        clickThemeSectionsOnManagementPage();
+        themeSettings.click();
+        tab_Product.click();
+        return new ThemeSettings_Product();
+    }
+    public ColorSchemeSettings navigateTo_ColorSchemeSettings(){
+        navigateToAddonsPage();
+        clickThemeSectionsOnManagementPage();
+        colorSchemeSettings.click();
+        return new ColorSchemeSettings();
     }
 }

@@ -11,6 +11,8 @@ public class ThemeSettings_Product extends AbstractPage {
     public WebElement tab_Product;
     @FindBy(id = "settings.abt__ut2.products.custom_block_id")
     private WebElement setting_CustomBlockID;
+    @FindBy(id = "settings.abt__ut2.products.multiple_product_images")
+    private WebElement setting_NumberOfDisplayedImages;
     @FindBy(id = "settings.abt__ut2.products.view.show_qty.desktop")
     public WebElement setting_ShowQuantityChanger;
     @FindBy(id = "settings.abt__ut2.products.view.show_sku.desktop")
@@ -29,6 +31,10 @@ public class ThemeSettings_Product extends AbstractPage {
         setting_CustomBlockID.click();
         setting_CustomBlockID.clear();
         setting_CustomBlockID.sendKeys(value);
+    }
+    public Select getSetting_NumberOfDisplayedImages(){return new Select(setting_NumberOfDisplayedImages);}
+    public void selectSetting_NumberOfDisplayedImages(String value){
+        getSetting_NumberOfDisplayedImages().selectByValue(value);
     }
     public Select getSetting_ShowProductBrand(){return new Select(setting_ShowProductBrand);}
     public void selectSetting_ShowProductBrand(String value){

@@ -46,9 +46,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        csCartSettings.navigateToThemeSettings();
+        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if (!checkboxProductRating.isSelected()) {

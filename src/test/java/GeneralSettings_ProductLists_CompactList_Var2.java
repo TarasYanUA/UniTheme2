@@ -27,9 +27,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
     public void setConfigurationsForProductLists_CompactList_Var2() {
         //Работаем с настройками темы
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if (!checkboxProductRating.isSelected()) {

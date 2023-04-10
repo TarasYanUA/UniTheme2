@@ -56,11 +56,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        csCartSettings.navigateToThemeSettings();
-        ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
-        themeSettingsProduct.tab_Product.click();
+        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();

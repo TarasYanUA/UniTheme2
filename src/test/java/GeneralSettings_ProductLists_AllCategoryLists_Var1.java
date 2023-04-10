@@ -58,9 +58,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         }
         csCartSettings.clickSaveButtonOfSettings();
         //Работаем с настройками темы (в основном идут по умолчанию)
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateToThemeSettings();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxMiniIconsGallery = themeSettingsProductLists.settingMiniIconsGallery;
         if (checkboxMiniIconsGallery.isSelected()) {

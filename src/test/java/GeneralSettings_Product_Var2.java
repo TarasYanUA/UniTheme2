@@ -161,7 +161,6 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
                 "There is no Promo-text!");
         takeScreenShot("1200 Product page, Default template, Var2");
         productPage.shiftLanguage_RTL();
-        makePause();
         takeScreenShot("1205 Product page, Default template, Var2 (RTL)");
 
         //Проверяем характеристики

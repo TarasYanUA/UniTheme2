@@ -119,7 +119,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         takeScreenShot("310 GridListView_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("311 GridListView_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
@@ -144,7 +143,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("320 GridListView_PhoneCategory");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("321 GridListView_PhoneCategoryRTL");
         stCategoryPage.clickQuickViewOfPhoneProduct();

@@ -30,11 +30,21 @@ public class ProductPage extends AbstractPage {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
         gearwheel_Language.click();
         language_RU.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public void shiftLanguage_RTL(){
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
         gearwheel_Language.click();
         language_RTL.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public WebElement hoverTab_Features(){

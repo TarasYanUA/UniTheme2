@@ -132,7 +132,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
                 "The buttons are not displayed without hovering over a product cell in the product block!");
         takeScreenShot("210 Var2_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("211 Var2_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
@@ -157,10 +156,10 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("221 Var2_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
+
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
@@ -201,7 +200,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("230 Var2_PhonesCategory");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("231 Var2_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
@@ -226,7 +224,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
 
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
-        makePause();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что присутствует статус у кнопки "Избранное"
@@ -240,10 +237,8 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
                 "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
-        makePause();
         takeScreenShot("251 Var2_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
-        makePause();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что присутствует статус у кнопки "Избранное"
@@ -256,7 +251,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
                 "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        makePause();
         takeScreenShot("261 Var2_Category_CompactList_ProductListViewRTL");
     }
 }

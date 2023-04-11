@@ -77,7 +77,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stHomePage.navigateToMenuMenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
-        makePause();
         //Проверяем, что код товара присутствует
         int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='product_code']")).size();
         Assert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product cell!");
@@ -101,7 +100,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with lines!");
         takeScreenShot("610 ListWithoutOptions_MenClothCategory_Var2");
         stHomePage.selectLanguage_RTL();
-        makePause();
         takeScreenShot("611 ListWithoutOptions_MenClothCategory_Var2(RTL)");
     }
 }

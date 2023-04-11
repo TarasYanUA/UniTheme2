@@ -132,7 +132,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("110 Var1_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
         takeScreenShot("111 Var1_BlockWithProductsRTL");
@@ -157,7 +156,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("120 Var1_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("121 Var1_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
@@ -189,7 +187,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("131 Var1_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
@@ -209,7 +206,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
 
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
-        makePause();
         //Проверка, что у товаров переключатель изображений с полосками
         Assert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes in the product block!");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
@@ -229,10 +225,8 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();
         stHomePage.selectLanguage_RU();
-        makePause();
         takeScreenShot("151 Var1_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
-        makePause();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         Assert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
@@ -246,7 +240,6 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var1 extends TestRunn
                 "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("160 Var1_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        makePause();
         takeScreenShot("161 Var1_Category_CompactList_ProductListViewRTL");
     }
 }

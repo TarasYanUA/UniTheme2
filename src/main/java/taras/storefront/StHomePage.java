@@ -104,10 +104,20 @@ public class StHomePage extends AbstractPage {
     public void selectLanguage_RTL(){
         languageButton.click();
         languageRTL.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public void selectLanguage_RU(){
         languageButton.click();
         languageRU.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public WebElement getProductInProductBlock(){return productInProductBlock;}
     public void hoverToProductInProductBlock(){

@@ -78,7 +78,6 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
-        makePause();
         //Проверяем, что кнопка "Купить" присутствует
         Assert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
                 "There is no button 'Add to cart'!");
@@ -91,12 +90,9 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("710 ProductLists_CompactLists_Var1");
         stCategoryPage.clickButtonQuickView();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("720 ProductLists_CompactLists_QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("730 ProductLists_CompactLists_Var1(RTL)");
         stCategoryPage.clickButtonQuickView();

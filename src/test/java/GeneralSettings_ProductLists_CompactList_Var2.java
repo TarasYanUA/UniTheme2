@@ -65,7 +65,6 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
-        makePause();
         //Проверяем, что пустые звезды рейтинга присутствуют
         Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).size() >= 1,
                 "There is no empty rating stars!");
@@ -87,7 +86,6 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("810 ProductLists_CompactLists_Var2");
         stHomePage.selectLanguage_RTL();
-        makePause();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("820 ProductLists_CompactLists_Var2(RTL)");
     }

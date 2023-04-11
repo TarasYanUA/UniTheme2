@@ -88,15 +88,24 @@ public class StCategoryPage extends AbstractPage {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         makePause();
     }
-    public void clickCloseQuickView(){
-        closeQuickView.click();
-    }
     public void clickQuickViewOfMenClothProduct(){
         quickViewOfMenClothProduct.click();
     }
-    public void clickGrid_ProductListView(){grid_ProductListView.click();}
-    public void clickListWithoutOptions_ProductListView(){listWithoutOptions_ProductListView.click();}
-    public void clickCompactList_ProductListView(){compactList_ProductListView.click();}
+    public void clickGrid_ProductListView(){
+        grid_ProductListView.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+    }
+    public void clickListWithoutOptions_ProductListView(){
+        listWithoutOptions_ProductListView.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+    }
+    public void clickCompactList_ProductListView(){
+        compactList_ProductListView.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+    }
     public WebElement moveToButtonAddToCart(){return buttonAddToCart;}
     public void hoverToButtonAddToCart(){
         WebElement elementOfButtonAddToCart = moveToButtonAddToCart();
@@ -106,8 +115,10 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickButtonQuickView(){
         buttonQuickView.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
     }
-
+    public void clickCloseQuickView(){closeQuickView.click();}
     public void makePause(){
         try {
             Thread.sleep(1000);

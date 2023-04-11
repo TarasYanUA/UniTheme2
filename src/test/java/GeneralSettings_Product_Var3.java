@@ -135,7 +135,6 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
                 "There is no Reward points!");
         takeScreenShot("1300 Product page, Default template, Var3");
         productPage.shiftLanguage_RTL();
-        makePause();
         takeScreenShot("1305 Product page, Default template, Var3 (RTL)");
 
         //Проверяем характеристики

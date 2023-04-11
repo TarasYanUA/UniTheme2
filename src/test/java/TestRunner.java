@@ -1,4 +1,5 @@
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
@@ -47,6 +48,7 @@ public class TestRunner {
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
     public void takeScreenShot(String screenshotName) throws IOException {
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,100);");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

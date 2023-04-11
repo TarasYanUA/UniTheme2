@@ -61,9 +61,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         stHomePage.navigateToMenuMenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
-        makePause();
         stCategoryPage.clickListWithoutOptions_ProductListView(); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
-        makePause();
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
         Assert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
@@ -75,7 +73,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
         takeScreenShot("510 ListWithoutOptions_MenClothCategory_Var1");
         stHomePage.selectLanguage_RTL();
-        makePause();
         takeScreenShot("511 ListWithoutOptions_MenClothCategory_Var1(RTL)");
     }
 }

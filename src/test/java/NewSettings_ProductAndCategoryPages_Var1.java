@@ -12,7 +12,6 @@ import org.openqa.selenium.interactions.Actions;
 import taras.storefront.ProductPage;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
 import java.time.Duration;
 import static taras.constants.DriverProvider.getDriver;
 

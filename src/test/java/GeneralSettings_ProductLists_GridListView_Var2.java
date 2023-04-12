@@ -9,7 +9,6 @@ import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
 import java.time.Duration;
 
 /*

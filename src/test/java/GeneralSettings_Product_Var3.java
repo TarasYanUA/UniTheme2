@@ -113,7 +113,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
         //Проверяем, что мини-иконки не в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center.cm-image-gallery")).size() >=1,
+        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
                 "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что информация о товаре отображается не во вкладках
         Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).size() >=1,

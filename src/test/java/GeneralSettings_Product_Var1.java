@@ -3,7 +3,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
@@ -121,7 +121,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var1")
-    public void checkSettingsOnProductPage_Var1() throws IOException {
+    public void checkSettingsOnProductPage_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
@@ -130,35 +130,36 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).size() >=1,
                 "Mini-icons are not in view of gallery!");
         //Проверяем, что информация о товаре отображается во вкладках
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
                 .size() >=1, "Product information is displayed not in tabs!");
         //Проверяем, что логотип характеристики "Бренд" присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand")).size() >=1,
                 "There is no Brand logo on product page!");
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
                         .size() >=1,"There is no feature Brand on the feature list!");
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Жесткий диск']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Жесткий диск']"))
                 .size() >=1,"There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
                 "There is no Custom block in the right column!");
         //Проверяем, что присутствует Краткое описание товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
                 "There is no product Short description!");
         //Проверяем, что присутствует Цена за единицу
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-per-unit ")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-per-unit ")).size() >=1,
                 "There is no Price per unit!");
         //Проверяем, что Промо-текст присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
                 "There is no Promo-text!");
         //Проверяем, что Бонусные баллы присутствуют
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
         takeScreenShot("100 Product page, Default template, Var1");
         productPage.shiftLanguage_RTL();
@@ -167,7 +168,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
                 .size() >=1, "Features are located in two columns instead of one!");
         takeScreenShot("1110 Product features, one column (RTL)");
         productPage.shiftLanguage_RU();
@@ -211,5 +212,7 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         takeScreenShot("1155 Template - Gallery, Var1");
         productPage.shiftLanguage_RTL();
         takeScreenShot("1160 Template - Gallery, Var1 (RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_Product_Var1 passed successfully!");
     }
 }

@@ -1,6 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
@@ -57,7 +57,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var2")
-    public void checkProductLists_CompactList_Var2() throws IOException{
+    public void checkProductLists_CompactList_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
@@ -65,28 +65,31 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что пустые звезды рейтинга присутствуют
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).size() >= 1,
                 "There is no empty rating stars!");
         //Проверяем, что общее значение рейтинга присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).size() >= 1,
                 "There is no common value of product rating!");
         //Проверяем, что код товара присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("span[id*='product_code']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("span[id*='product_code']")).size() >= 1,
                 "There is no product code!");
         //Проверяем, что статус товара присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).size() >= 1,
                 "There is no availability status!");
         //Проверяем, что кнопка "Купить" присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
                 "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
                 "There is no quantity charger!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("810 ProductLists_CompactLists_Var2");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("820 ProductLists_CompactLists_Var2(RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
     }
 }

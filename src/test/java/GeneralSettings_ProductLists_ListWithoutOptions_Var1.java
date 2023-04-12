@@ -1,13 +1,12 @@
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
 
 /*
 UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
@@ -53,7 +52,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var1")
-    public void checkProductLists_ListWithoutOptions_Var1() throws IOException {
+    public void checkProductLists_ListWithoutOptions_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
@@ -61,18 +60,22 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         stHomePage.navigateToMenuMenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
+        makePause();
         stCategoryPage.clickListWithoutOptions_ProductListView(); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
-        Assert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
+        softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
         //Проверяем, что содержимое под описанием это список вариаций
         int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-lv__item-features")).size();
-        Assert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a variation list!");
+        softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a variation list!");
         //Проверяем, что переключатель изображений товара в виде точек
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
+        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
         takeScreenShot("510 ListWithoutOptions_MenClothCategory_Var1");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("511 ListWithoutOptions_MenClothCategory_Var1(RTL)");
+        takeScreenShot("515 ListWithoutOptions_MenClothCategory_Var1(RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var1 passed successfully!");
     }
 }

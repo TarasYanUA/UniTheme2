@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
@@ -120,7 +120,7 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_NewSettings_Var1")
-    public void checkNewSettingsOnProductAndCategoryPages_Var1() throws IOException {
+    public void checkNewSettingsOnProductAndCategoryPages_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
@@ -129,23 +129,24 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
         "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что название характеристики "Бренд" присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is no Brand name on product page!");
         //Проверяем, что присутствует Краткое описание товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
                 "There is no product Short description!");
         //Проверяем, что Промо-текст присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
                 "There is no Promo-text!");
         //Проверяем, что Бонусные баллы присутствуют
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).size() >=1,
                 "Number of displayed images of the product gallery is not 2!");
         takeScreenShot("1400 Product page - Default template, Var1");
         productPage.shiftLanguage_RTL();
@@ -213,5 +214,7 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("1498 QuickView, Var1");
+        softAssert.assertAll();
+        System.out.println("NewSettings_ProductAndCategoryPages_Var1 passed successfully!");
     }
 }

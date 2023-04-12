@@ -47,7 +47,7 @@ public class TestRunner {
         ArrayList tabs = new ArrayList<> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
-    public void takeScreenShot(String screenshotName) throws IOException {
+    public void takeScreenShot(String screenshotName) {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,100);");
         try {
             Thread.sleep(1000);
@@ -55,7 +55,11 @@ public class TestRunner {
             e.printStackTrace();
         }
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
+        try {
+            FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void makePause(){
         try {

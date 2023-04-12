@@ -22,7 +22,7 @@ import java.time.Duration;
     * Бренд -- включить настройку "Показывать в заголовке карточки товара"
     * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
-    * ID пользовательского блока --  93
+    * ID пользовательского блока --  95
     * Отображать модификатор количества --  да
     * Отображать код товара --  да
     * Отображать характеристики товара -- да
@@ -77,7 +77,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("93");
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("95");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }

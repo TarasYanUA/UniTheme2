@@ -119,8 +119,7 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test
-            //(priority = 2, dependsOnMethods = "setConfigurations_NewSettings_Var1")
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_NewSettings_Var1")
     public void checkNewSettingsOnProductAndCategoryPages_Var1() throws IOException {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

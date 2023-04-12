@@ -16,8 +16,8 @@ import java.time.Duration;
 Отображать пустые звёзды рейтинга товара -- да
 Отображать общее значение рейтинга товара -- нет
 
-Ширина иконки товара (по умолчанию 200) --	200
-Высота иконки товара (по умолчанию 200) --	350
+Ширина иконки товара (по умолчанию 240) --	200
+Высота иконки товара (по умолчанию 290) --	200
 
 Отображать код товара -- да
 Отображать статус наличия -- да
@@ -56,7 +56,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
             checkboxSettingCommonValueOfProductRating.click();
         }
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
-        themeSettingsProductLists.clickAndTypeSettingProductIconHeight("350");
+        themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
         if (!checkboxSettingShowProductCode.isSelected()) {
             checkboxSettingShowProductCode.click();

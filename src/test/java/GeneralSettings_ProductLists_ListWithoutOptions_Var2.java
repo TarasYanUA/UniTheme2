@@ -7,7 +7,6 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
 
 /*
 1) "Товары -- Характеристики -- Бренд":

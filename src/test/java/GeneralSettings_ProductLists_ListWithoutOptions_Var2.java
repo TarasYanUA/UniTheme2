@@ -1,6 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
@@ -69,7 +69,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var2")
-    public void checkProductLists_ListWithoutOptions_Var2() throws IOException {
+    public void checkProductLists_ListWithoutOptions_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
@@ -77,29 +77,32 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stHomePage.navigateToMenuMenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что код товара присутствует
         int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='product_code']")).size();
-        Assert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product cell!");
+        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product cell!");
         //Проверяем, что статус наличия присутствует
         int sizeOfAvailabilityStatus = DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).size();
-        Assert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product cell!");
+        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product cell!");
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
-        Assert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
+        softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
         //Проверяем, что содержимое под описанием это список характеристик
         int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pl__feature")).size();
-        Assert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a feature list!");
+        softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a feature list!");
         //Проверяем, что опции товара присутствуют
         int sizeOfProductOptions = DriverProvider.getDriver().findElements(By.cssSelector(".cm-picker-product-options")).size();
-        Assert.assertTrue(sizeOfProductOptions > 1, "There is no product options on the product cell!");
+        softAssert.assertTrue(sizeOfProductOptions > 1, "There is no product options on the product cell!");
         //Проверяем, что логотип бренда присутствует
         int sizeOfBrandLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        Assert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the product cell!");
+        softAssert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the product cell!");
         //Проверяем, что переключатель изображений товара в виде полосок
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
-        Assert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with lines!");
+        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with lines!");
         takeScreenShot("610 ListWithoutOptions_MenClothCategory_Var2");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("611 ListWithoutOptions_MenClothCategory_Var2(RTL)");
+        takeScreenShot("615 ListWithoutOptions_MenClothCategory_Var2(RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
     }
 }

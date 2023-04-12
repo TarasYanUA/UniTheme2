@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
@@ -111,7 +111,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var2")
-    public void checkSettingsOnProductPage_Var2() throws IOException {
+    public void checkSettingsOnProductPage_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
@@ -120,44 +120,45 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
                 "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что количество доступных товаров присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).size() >=1,
                 "There is no number of available products!");
         //Проверяем, что информация о товаре отображается во вкладках
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
                 .size() >=1, "Product information is not displayed in tabs!");
         //Проверяем, что название характеристики "Бренд" присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is no Brand name on product page!");
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
                         .size() >=1,"There is no feature Brand on the feature list!");
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Жесткий диск']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Жесткий диск']"))
                 .size() >=1,"There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
                 "There is no Custom block in the right column!");
         //Проверяем, что Модификатор количества присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).size() >=1,
                 "There is no Quantity changer!");
         //Проверяем, что Код товара присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
                 "There is no product code!");
         //Проверяем, что присутствует Краткое описание товара
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
                 "There is no product Short description!");
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).size() >=1,
                 "There is no field 'Enter your price'!");
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).size() >=1,
                 "There is no field 'On backorder'!");
         //Проверяем, что Промо-текст присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
                 "There is no Promo-text!");
         takeScreenShot("1200 Product page, Default template, Var2");
         productPage.shiftLanguage_RTL();
@@ -166,7 +167,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
         takeScreenShot("1210 Product features, two columns (RTL)");
         productPage.shiftLanguage_RU();
@@ -210,5 +211,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         takeScreenShot("1255 Template - Gallery, Var2");
         productPage.shiftLanguage_RTL();
         takeScreenShot("1260 Template - Gallery, Var2 (RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_Product_Var2 passed successfully!");
     }
 }

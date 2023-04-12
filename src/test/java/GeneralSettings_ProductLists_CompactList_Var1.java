@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
@@ -70,7 +70,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var1")
-    public void checkProductLists_CompactList_Var1() throws IOException{
+    public void checkProductLists_CompactList_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
@@ -78,14 +78,15 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stHomePage.navigateToMenuGameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что кнопка "Купить" присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
                 "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
                 "There is no quantity charger!");
         //Проверяем, что Быстрый просмотр присутствует
-        Assert.assertTrue(getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).size() >= 1,
                 "There is no button 'Quick view'!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot("710 ProductLists_CompactLists_Var1");
@@ -99,5 +100,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("740 ProductLists_CompactLists_QuickView(RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
     }
 }

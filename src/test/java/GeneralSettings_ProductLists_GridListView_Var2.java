@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
@@ -80,25 +80,26 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var2")
-    public void checkProductLists_GridListView_Var2() throws IOException {
+    public void checkProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что дополнительная информация отображается при наведении
         int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
-        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
         //Проверяем, что логотип присутствует
         int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
         //Проверяем, что текст "Вы экономите" присутствует
         int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
-        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде точек
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
+        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
         takeScreenShot("410 GridListView_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
@@ -108,13 +109,13 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Категория "Мужская одежда"
         stHomePage.navigateToMenuMenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
-        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
         //Проверяем, что логотип присутствует
-        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
         //Проверяем, что текст "Вы экономите" присутствует
-        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
-        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("420 GridListView_MenClothCategory");
@@ -132,6 +133,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("431 GridListView_QuickView");
-        stCategoryPage.clickCloseQuickView();
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }
 }

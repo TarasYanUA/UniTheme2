@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
@@ -104,31 +104,32 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ChangedValues")
-    public void checkAllCategoryLists_ChangedValues() throws IOException {
+    public void checkAllCategoryLists_ChangedValues() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        SoftAssert softAssert = new SoftAssert();
         //Проверка, что у товаров присутствует галерея мини-иконок товара
         int sizeOfGalleryOfMiniIcons = getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).size();
-        Assert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
                 "There is no Gallery of mini icons of the product in the product block!");
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         int sizeOfGeneralRatingNumber = getDriver().findElements(By.cssSelector(".ut2-show-rating-num")).size();
-        Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что кнопка "Избранное" присутствует
         int sizeOfButton_AddToWishList = getDriver().findElements(By.cssSelector(".ut2-add-to-wish")).size();
-        Assert.assertTrue(sizeOfButton_AddToWishList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
                 "There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
         int sizeOfButton_AddToComparisonList = getDriver().findElements(By.cssSelector(".ut2-add-to-compare")).size();
-        Assert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' in the product block!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
         int sizeOfButtonsAreDisplayedOnHover = getDriver().findElements(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).size();
-        Assert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
+        softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
                 "The buttons are not displayed without hovering over a product cell in the product block!");
         takeScreenShot("210 Var2_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
@@ -139,19 +140,19 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         stHomePage.navigateToMenuWomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице отсутствует обесцвеченный товар.
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
                 "There is a decolorized product on the category page but shouldn't!");
         //Проверка, что у товаров присутствует галерея мини-иконок товара
-        Assert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
                 "There is no Gallery of mini icons of the product on the category page!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(sizeOfButton_AddToWishList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
                 "There is no button 'Add to wish list' on the category page!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются БЕЗ наведения на ячейку товара
-        Assert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
+        softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
                 "The buttons are not displayed without hovering over a product cell on the category page!");
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("220 Var2_WomanClothCategory");
@@ -163,12 +164,12 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что кнопка "Избранное" присутствует
-        Assert.assertTrue(sizeOfButton_AddToWishList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
                 "There is no button 'Add to wish list' on the category page!");
         //Проверка, что кнопка "Сравнить" присутствует
-        Assert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что присутствует статус у кнопки "Избранное"
         stCategoryPage.button_AddToWishList.click();
@@ -176,13 +177,13 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
         stCategoryPage.closeNotificationWindow.click();
         int sizeOfStatusAtButton_WishList = getDriver().findElements(By.cssSelector("a.ut2-add-to-wish.active")).size();
-        Assert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
+        softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
         stCategoryPage.button_AddToComparisonList.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
         stCategoryPage.closeNotificationWindow.click();
-        Assert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
+        softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no status for the button 'Add to comparison list'!");
         /*  Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
@@ -191,7 +192,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size() >= 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size() >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
         if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
@@ -210,7 +211,7 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).size() >= 1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).size() >= 1,
                 "Mini icons are not as a gallery!");
         takeScreenShot("240 Var2_QuickView");
         stCategoryPage.clickCloseQuickView();
@@ -225,32 +226,34 @@ public class GeneralSettings_ProductLists_AllCategoryLists_Var2 extends TestRunn
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что присутствует статус у кнопки "Избранное"
-        Assert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
+        softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
         int sizeOfStatusAtButton_Comparison = getDriver().findElements(By.cssSelector("a.ut2-add-to-compare.active")).size();
-        Assert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
+        softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
 /*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
                 "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("250 Var2_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
         takeScreenShot("251 Var2_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        Assert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что присутствует статус у кнопки "Избранное"
-        Assert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
+        softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
-        Assert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
+        softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
 /*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
-        Assert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
                 "There is no status for the button 'Add to cart' on the category page!");*/
         takeScreenShot("260 Var2_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         takeScreenShot("261 Var2_Category_CompactList_ProductListViewRTL");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_AllCategoryLists_Var2 passed successfully!");
     }
 }

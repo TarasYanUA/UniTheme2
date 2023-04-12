@@ -3,7 +3,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
@@ -103,7 +103,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
-    public void checkSettingsOnProductPage_Var3() throws IOException {
+    public void checkSettingsOnProductPage_Var3() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
@@ -112,26 +112,27 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_RU();
+        SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
                 "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что информация о товаре отображается не во вкладках
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).size() >=1,
                 "Product information is displayed in tabs but shouldn't!");
         //Проверяем, что логтип "Бренд" отсутствует
-        Assert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is a Brand logo but shouldn't!");
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        Assert.assertFalse(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
                         .size() >=1,"There is a feature Brand on the feature list but shouldn't!");
         //Проверяем, что Код товара присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
                 "There is no product code!");
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_248")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_248")).size() >=1,
                 "There is no field 'Sign up for notification'!");
         //Проверяем, что Бонусные баллы присутствуют
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
         takeScreenShot("1300 Product page, Default template, Var3");
         productPage.shiftLanguage_RTL();
@@ -140,7 +141,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         //Проверяем характеристики
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         //Проверяем, что характеристики расположены в две колонки
-        Assert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
         takeScreenShot("1310 Product features, two columns (RTL)");
         productPage.shiftLanguage_RU();
@@ -186,5 +187,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         productPage.shiftLanguage_RTL();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1360 Template - Gallery, Var3 (RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_Product_Var3 passed successfully!");
     }
 }

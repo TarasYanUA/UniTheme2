@@ -12,7 +12,7 @@
             <class name="GeneralSettings_Product_Var1" />
             <class name="GeneralSettings_Product_Var2" />
             <class name="GeneralSettings_Product_Var3" />
-            <class name="NewSettings_ProductAndCategoryPages_Var1" />
+            <class name="ColorSchemeSettings_Product_Var1" />
         </classes>
     </test>
 </suite>

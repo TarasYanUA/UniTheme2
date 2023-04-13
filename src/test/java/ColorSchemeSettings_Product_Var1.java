@@ -1,6 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
@@ -10,13 +8,9 @@ import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import org.openqa.selenium.interactions.Actions;
 import taras.storefront.ProductPage;
-import taras.storefront.StCategoryPage;
-import taras.storefront.StHomePage;
-import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
-ссылка на чеклист: https://docs.google.com/spreadsheets/d/1dWaGNOBw-F8WQslHjiRiRSK2QOHiSeRLbxKiAe-h6KQ/edit?usp=sharing
+ссылка на чеклист: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=2110746700
 - Настройки CS-Cart "Настройки -> Внешний вид":
     * Включить быстрый просмотр --  да
     * Показывать мини-иконки в виде галереи --  нет
@@ -30,9 +24,6 @@ import static taras.constants.DriverProvider.getDriver;
 - Настраиваем UniTheme цветосхему, вкладка "Товар":
     * Добавить фон/маску для изображений товара --  да
     * Добавить обрамление для изображений товара -- да
-- Настраиваем UniTheme цветосхему, вкладка "Списки товаров":
-    * Тип обрамления товара в сетке -- Без рамки
-    * Добавить фон/маску для изображений товара --  да
 - Настраиваем товар Samsung NX200:
     * Цена за единицу --  33000
     * Наличие --    10
@@ -43,7 +34,7 @@ import static taras.constants.DriverProvider.getDriver;
     * шаблон страницы товара -- все 5 шт
 */
 
-public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
+public class ColorSchemeSettings_Product_Var1 extends TestRunner{
     @Test(priority = 1)
     public void setConfigurations_NewSettings_Var1() {
         //Настраиваем CS-Cart настройки
@@ -84,11 +75,6 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         }
         if(!colorSchemeSettings.setting_ProductBorderForProductImages.isSelected()){
             colorSchemeSettings.setting_ProductBorderForProductImages.click();
-        }
-        colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("none");
-        if(!colorSchemeSettings.setting_ProductListsMaskForProductImages.isSelected()){
-        colorSchemeSettings.setting_ProductListsMaskForProductImages.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 
@@ -184,7 +170,9 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         takeScreenShot("1455 Product page - Gallery, Var1");
         productPage.shiftLanguage_RTL();
         takeScreenShot("1460 Product page - Gallery, Var1 (RTL)");
-
+        softAssert.assertAll();
+        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully!");
+/*
         //Работаем на странице категории
         StHomePage stHomePage = new StHomePage();
         StCategoryPage stCategoryPage = new StCategoryPage();
@@ -213,7 +201,6 @@ public class NewSettings_ProductAndCategoryPages_Var1 extends TestRunner{
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("1498 QuickView, Var1");
-        softAssert.assertAll();
-        System.out.println("NewSettings_ProductAndCategoryPages_Var1 passed successfully!");
+ */
     }
 }

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added softAssert for all test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/NewSettings_ProductAndCategoryPages_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +71,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
+      <option name="METHOD_NAME" value="checkNewSettingsOnProductAndCategoryPages_Var1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
+      <option name="METHOD_NAME" value="setConfigurationsForProductPage_Var1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -94,56 +129,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewSettings_ProductAndCategoryPages_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NewSettings_ProductAndCategoryPages_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewSettings_ProductAndCategoryPages_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NewSettings_ProductAndCategoryPages_Var1" />
-      <option name="METHOD_NAME" value="checkNewSettingsOnProductAndCategoryPages_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewSettings_ProductAndCategoryPages_Var1.setConfigurationsForProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NewSettings_ProductAndCategoryPages_Var1" />
-      <option name="METHOD_NAME" value="setConfigurationsForProductPage_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
-      <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1" />
-      <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
-      <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1.setConfigurationsForProductPage_Var1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
-        <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1" />
-        <item itemvalue="TestNG.NewSettings_ProductAndCategoryPages_Var1.setConfigurationsForProductPage_Var1" />
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -155,13 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!">
-      <created>1673441998900</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1673441998900</updated>
     </task>
     <task id="LOCAL-00034" summary="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!">
       <created>1673442097732</created>
@@ -499,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681302059803</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Added softAssert for all test-cases.">
+      <created>1681306566530</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1681306566530</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -61,6 +61,19 @@ public class TestRunner {
             throw new RuntimeException(e);
         }
     }
+    public void takeScreenShot_withoutScroll (String screenshotName) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void makePause(){
         try {
             Thread.sleep(2000);

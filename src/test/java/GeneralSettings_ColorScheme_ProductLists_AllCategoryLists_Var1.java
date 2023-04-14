@@ -156,13 +156,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1,
                 "Buttons are not displayed when hovering over a product cell in the product block!");
         stHomePage.hoverToProductInProductBlock();
-        makePause();
-        takeScreenShot("100 Var1_BlockWithProducts");
+        takeScreenShot_withoutScroll("100 Var1_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
-        makePause();
-        takeScreenShot("105 Var1_BlockWithProductsRTL");
+        takeScreenShot_withoutScroll("105 Var1_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"

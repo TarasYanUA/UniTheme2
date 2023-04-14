@@ -127,7 +127,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test//(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")
     public void checkProductLists_AllCategoryLists_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();

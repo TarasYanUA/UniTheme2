@@ -1,6 +1,7 @@
 package taras.storefront;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
@@ -54,7 +55,7 @@ public class StHomePage extends AbstractPage {
     public void scrollToBlockWithProducts(){
         WebElement elementForScroll = hoverBlockWithProducts();
         Actions scrollToBlock = new Actions(DriverProvider.getDriver());
-        scrollToBlock.moveToElement(elementForScroll).scrollByAmount(0,800);
+        scrollToBlock.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(elementForScroll), 0, 800);
         scrollToBlock.perform();
     }
     public WebElement hoverMenuElectronic(){

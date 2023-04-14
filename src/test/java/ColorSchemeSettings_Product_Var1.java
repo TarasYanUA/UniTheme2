@@ -13,7 +13,6 @@ import taras.storefront.ProductPage;
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=2110746700
 - Настройки CS-Cart "Настройки -> Внешний вид":
     * Показывать мини-иконки в виде галереи --  нет
-    * Включить быстрый просмотр --  да
 - Настраиваем UniTheme настройки, вкладка "Товар":
     * ID пользовательского блока --  нет
     * Количество отображаемых изображений галереи товара -- 2
@@ -42,11 +41,8 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
+            csCartSettings.clickSaveButtonOfSettings();
         }
-        if(!csCartSettings.setting_QuickView.isSelected()){
-            csCartSettings.setting_QuickView.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();

@@ -14,8 +14,8 @@ public class ProductPage extends AbstractPage {
     public WebElement cookie;
     @FindBy(css = "a[id*='sw_select'][id*='wrap_language']")
     private WebElement gearwheel_Language;
-    @FindBy(css = "a[data-ca-name=\"ru\"]")
-    private WebElement language_RU;
+    @FindBy(css = "a[data-ca-name=\"en\"]")
+    private WebElement language_EN;
     @FindBy(css = "a[data-ca-name=\"ar\"]")
     private WebElement language_RTL;
     @FindBy(css = "#features a")
@@ -26,10 +26,10 @@ public class ProductPage extends AbstractPage {
     public WebElement featureDescription;
 
 
-    public void shiftLanguage_RU(){
+    public void shiftLanguage_EN(){
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
         gearwheel_Language.click();
-        language_RU.click();
+        language_EN.click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

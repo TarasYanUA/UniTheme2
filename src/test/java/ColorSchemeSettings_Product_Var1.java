@@ -109,7 +109,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_RU();
+        productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,

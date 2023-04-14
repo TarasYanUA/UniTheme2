@@ -118,7 +118,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_RU();
+        productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
@@ -169,7 +169,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
         takeScreenShot("1210 Product features, two columns (RTL)");
-        productPage.shiftLanguage_RU();
+        productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("1215 Product features, two columns");
         productPage.featureDescription.click();

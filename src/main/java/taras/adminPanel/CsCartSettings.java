@@ -1,5 +1,6 @@
 package taras.adminPanel;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -127,6 +128,10 @@ public class CsCartSettings extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
         section_Products.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).size() <1){
+            DriverProvider.getDriver().findElement(By.cssSelector("#sw_select_en_wrap_content")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
+        }
         return new ProductSettings();
     }
     public void navigateToSection_Features(){

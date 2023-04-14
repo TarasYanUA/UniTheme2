@@ -152,13 +152,6 @@
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
     </task>
-    <task id="LOCAL-00036" summary="Adaptation to CS-Cart 4.16.1">
-      <created>1675335704963</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1675335704963</updated>
-    </task>
     <task id="LOCAL-00037" summary="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
       <created>1676535334164</created>
       <option name="number" value="00037" />
@@ -495,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681463055518</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
+      <created>1681463243573</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1681463243573</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

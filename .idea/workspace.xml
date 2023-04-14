@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,13 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
-      <created>1676559060848</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1676559060848</updated>
     </task>
     <task id="LOCAL-00040" summary="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
       <created>1676561586111</created>
@@ -500,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681475580086</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;.">
+      <created>1681479855125</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1681479855125</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Product page Var1 is ready!" />
     <MESSAGE value="Added screenshots with product templates for Product page Var1" />
     <MESSAGE value="Test-case Product Var2 is ready!" />
     <MESSAGE value="Fixed bugs in test-cases." />
@@ -553,7 +549,8 @@
     <MESSAGE value="Test-case for color scheme, tab &quot;Product&quot;." />
     <MESSAGE value="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1." />
     <MESSAGE value="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;." />
+    <MESSAGE value="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

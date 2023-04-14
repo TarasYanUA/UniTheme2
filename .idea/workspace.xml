@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_ProductLists_Var1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,18 +84,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
-      <option name="METHOD_NAME" value="checkNewSettingsOnProductAndCategoryPages_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -109,11 +95,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <option name="METHOD_NAME" value="checkProductLists_AllCategoryLists_Var2" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -135,18 +133,18 @@
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
-      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -158,13 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout.">
-      <created>1676555634691</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1676555634691</updated>
     </task>
     <task id="LOCAL-00039" summary="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
       <created>1676559060848</created>
@@ -502,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681463802832</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;.">
+      <created>1681475580086</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475580086</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adding asserts for product page!" />
     <MESSAGE value="Product page Var1 is ready!" />
     <MESSAGE value="Added screenshots with product templates for Product page Var1" />
     <MESSAGE value="Test-case Product Var2 is ready!" />
@@ -555,7 +552,8 @@
     <MESSAGE value="Added softAssert for all test-cases." />
     <MESSAGE value="Test-case for color scheme, tab &quot;Product&quot;." />
     <MESSAGE value="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1." />
+    <MESSAGE value="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

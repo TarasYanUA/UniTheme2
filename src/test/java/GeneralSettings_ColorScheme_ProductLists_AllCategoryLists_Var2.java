@@ -155,7 +155,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         int sizeOfButtonsAreDisplayedOnHover = getDriver().findElements(By.cssSelector(".ut2-w-c-q__buttons.w_c_q-hover")).size();
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
                 "The buttons are not displayed without hovering over a product cell in the product block!");
-        takeScreenShot("200 Var2_BlockWithProducts");
+        takeScreenShot_withoutScroll("200 Var2_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot_withoutScroll("205 Var2_BlockWithProductsRTL");
@@ -179,7 +179,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
                 "The buttons are not displayed without hovering over a product cell on the category page!");
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot_withoutScroll("210 Var2_WomanClothCategory");
+        takeScreenShot("210 Var2_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToClothProduct();
         takeScreenShot("215 Var2_WomanClothCategoryRTL");

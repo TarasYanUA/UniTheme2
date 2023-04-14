@@ -18,13 +18,22 @@ public class ColorSchemeSettings extends AbstractPage {
     @FindBy(id = "settings.abt__ut2.product_list.show_grid_border")
     private WebElement setting_FrameType;
     @FindBy(id = "settings.abt__ut2.product_list.mask_images_gallery")
-    public WebElement setting_ProductListsMaskForProductImages;
+    public WebElement setting_ProductLists_MaskForProductImages;
+    @FindBy(id = "settings.abt__ut2.product_list.use_elements_alignment")
+    private WebElement setting_ProductLists_ElementsAlignment;
+    @FindBy(id = "settings.abt__ut2.product_list.extend_grid_item_on_hover")
+    public WebElement setting_ProductLists_ExpandGridItemOnHover;
+    @FindBy(id = "settings.abt__ut2.product_list.grid-list.product_name_font_weight")
+    private WebElement setting_ProductLists_FontWeightForProductName;
 
     public Select getSetting_FrameType(){return new Select(setting_FrameType);}
     public void selectSetting_FrameType(String value){
         getSetting_FrameType().selectByValue(value);
     }
-
+    public Select getSetting_ProductLists_ElementsAlignment(){return new Select(setting_ProductLists_ElementsAlignment);}
+    public void selectSetting_ProductLists_ElementsAlignment(String value){getSetting_ProductLists_ElementsAlignment().selectByValue(value);}
+    public Select getSetting_ProductLists_FontWeightForProductName(){return new Select(setting_ProductLists_FontWeightForProductName);}
+    public void selectSetting_ProductLists_FontWeightForProductName(String value){getSetting_ProductLists_FontWeightForProductName().selectByValue(value);}
 
     @FindBy(css = ".nav-tabs #products")
     public WebElement tab_Product;

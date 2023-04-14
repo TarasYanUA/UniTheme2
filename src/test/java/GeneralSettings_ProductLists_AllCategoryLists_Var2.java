@@ -12,7 +12,7 @@ import taras.storefront.StHomePage;
 import java.time.Duration;
 import static taras.constants.DriverProvider.getDriver;
 
-/* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1BU7MqO4tilXIiXQ7w73f9TRbi0dmko-Nmg6_CWQJr0E/edit#gid=0
+/* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=718159332
 
 Проверка следующих настроек:
 1) "Настройки -- Внешний вид":

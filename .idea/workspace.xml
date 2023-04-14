@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1." />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_ProductLists_Var1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +63,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ColorSchemeSettings_Product_Var1">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,12 +98,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
-      <option name="METHOD_NAME" value="setConfigurationsForProductPage_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -127,19 +134,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
       <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
-      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.checkProductLists_ListWithoutOptions_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
         <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.checkNewSettingsOnProductAndCategoryPages_Var1" />
-        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1.setConfigurationsForProductPage_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -151,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
-      <created>1676535334164</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1676535334164</updated>
     </task>
     <task id="LOCAL-00038" summary="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout.">
       <created>1676555634691</created>
@@ -495,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681463243573</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
+      <created>1681463802832</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1681463802832</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

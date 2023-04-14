@@ -12,9 +12,9 @@ import taras.storefront.ProductPage;
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=2110746700
 - Настройки CS-Cart "Настройки -> Внешний вид":
-    * Включить быстрый просмотр --  да
     * Показывать мини-иконки в виде галереи --  нет
-- Настраиваем UniTheme настройки:
+    * Включить быстрый просмотр --  да
+- Настраиваем UniTheme настройки, вкладка "Товар":
     * ID пользовательского блока --  нет
     * Количество отображаемых изображений галереи товара -- 2
     * Отображать модификатор количества --  да
@@ -36,15 +36,15 @@ import taras.storefront.ProductPage;
 
 public class ColorSchemeSettings_Product_Var1 extends TestRunner{
     @Test(priority = 1)
-    public void setConfigurations_NewSettings_Var1() {
+    public void setConfigurations_ColorSchemeSettings_Product_Var1() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        if(!csCartSettings.setting_QuickView.isSelected()){
-            csCartSettings.setting_QuickView.click();
-        }
         if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
+        }
+        if(!csCartSettings.setting_QuickView.isSelected()){
+            csCartSettings.setting_QuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 
@@ -64,7 +64,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         themeSettingsProduct.selectSetting_ShowProductBrand("name");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //Настраиваем UniTheme цветосхему
+        //Настраиваем UniTheme цветосхему, вкладка "Товар"
         ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
@@ -104,8 +104,8 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_NewSettings_Var1")
-    public void checkNewSettingsOnProductAndCategoryPages_Var1() {
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_ColorSchemeSettings_Product_Var1")
+    public void checkColorSchemeSettings_Product_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
@@ -133,9 +133,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).size() >=1,
                 "Number of displayed images of the product gallery is not 2!");
-        takeScreenShot("1400 Product page - Default template, Var1");
+        takeScreenShot("2000 ColorScheme, Product page - Default template, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1405 Product page - Default template, Var1 (RTL)");
+        takeScreenShot("2005 ColorScheme, Product page - Default template, Var1 (RTL)");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
@@ -143,64 +143,34 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        takeScreenShot("1425 Product page - Big picture, Var1");
+        takeScreenShot("2010 Product page - Big picture, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1430 Product page - Big picture, Var1 (RTL)");
+        takeScreenShot("2015 Product page - Big picture, Var1 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        takeScreenShot("1435 Product page - Big picture flat, Var1");
+        takeScreenShot("2020 Product page - Big picture flat, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1440 Product page - Big picture flat, Var1 (RTL)");
+        takeScreenShot("2025 Product page - Big picture flat, Var1 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        takeScreenShot("1445 Product page - Three columned, Var1");
+        takeScreenShot("2030 Product page - Three columned, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1450 Product page - Three columned, Var1 (RTL)");
+        takeScreenShot("2035 Product page - Three columned, Var1 (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
-        takeScreenShot("1455 Product page - Gallery, Var1");
+        takeScreenShot("2040 Product page - Gallery, Var1");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("1460 Product page - Gallery, Var1 (RTL)");
+        takeScreenShot("2045 Product page - Gallery, Var1 (RTL)");
         softAssert.assertAll();
         System.out.println("ColorSchemeSettings_Product_Var1 passed successfully!");
-/*
-        //Работаем на странице категории
-        StHomePage stHomePage = new StHomePage();
-        StCategoryPage stCategoryPage = new StCategoryPage();
-        stHomePage.navigateToMenuPhones();
-        takeScreenShot("1465 Category - Grid, Var1 (RTL)");
-        //Быстрый просмотр в категории "Телефоны"
-        stCategoryPage.hoverToPhoneProduct();
-        stCategoryPage.clickQuickViewOfPhoneProduct();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("1470 QuickView, Var1 (RTL)");
-        stCategoryPage.clickCloseQuickView();
-        stCategoryPage.clickListWithoutOptions_ProductListView();
-        takeScreenShot("1475 Category - List without options, Var1 (RTL)");
-        stCategoryPage.clickCompactList_ProductListView();
-        takeScreenShot("1480 Category - Compact list, Var1 (RTL)");
-        stHomePage.selectLanguage_RU();
-        takeScreenShot("1485 Category - Compact list, Var1");
-        stCategoryPage.clickListWithoutOptions_ProductListView();
-        takeScreenShot("1490 Category - List without options, Var1");
-        stCategoryPage.clickGrid_ProductListView();
-        takeScreenShot("1495 Category - Grid, Var1");
-        //Быстрый просмотр в категории "Телефоны"
-        stCategoryPage.hoverToPhoneProduct();
-        stCategoryPage.clickQuickViewOfPhoneProduct();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("1498 QuickView, Var1");
- */
     }
 }

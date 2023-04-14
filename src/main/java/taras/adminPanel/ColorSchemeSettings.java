@@ -12,12 +12,6 @@ public class ColorSchemeSettings extends AbstractPage {
     public WebElement fieldOfActiveColorScheme;
     @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(text(),\"CS-Cart\")]")
     public WebElement activeColorScheme;
-    @FindBy(css = ".nav-tabs #products")
-    public WebElement tab_Product;
-    @FindBy(id = "settings.abt__ut2.products.mask_images_gallery")
-    public WebElement setting_ProductMaskForProductImages;
-    @FindBy(id = "settings.abt__ut2.products.bordered_images_gallery")
-    public WebElement setting_ProductBorderForProductImages;
 
     @FindBy(css = ".nav-tabs #product_list")
     public WebElement tab_ProductLists;
@@ -26,11 +20,20 @@ public class ColorSchemeSettings extends AbstractPage {
     @FindBy(id = "settings.abt__ut2.product_list.mask_images_gallery")
     public WebElement setting_ProductListsMaskForProductImages;
 
-
     public Select getSetting_FrameType(){return new Select(setting_FrameType);}
     public void selectSetting_FrameType(String value){
         getSetting_FrameType().selectByValue(value);
     }
+
+
+    @FindBy(css = ".nav-tabs #products")
+    public WebElement tab_Product;
+    @FindBy(id = "settings.abt__ut2.products.mask_images_gallery")
+    public WebElement setting_ProductMaskForProductImages;
+    @FindBy(id = "settings.abt__ut2.products.bordered_images_gallery")
+    public WebElement setting_ProductBorderForProductImages;
+
+
 
 /*    public void chooseActiveColorScheme(){
         //fieldOfActiveColorScheme.click();

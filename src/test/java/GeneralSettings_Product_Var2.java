@@ -21,7 +21,7 @@ import java.time.Duration;
     * Бренд -- включить настройку "Показывать в заголовке карточки товара"
     * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
-    * ID пользовательского блока --  95
+    * ID пользовательского блока --  84
     * Отображать модификатор количества --  да
     * Отображать код товара --  да
     * Отображать характеристики товара -- да
@@ -76,7 +76,7 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("95");
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("84");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -133,10 +133,10 @@ public class GeneralSettings_Product_Var2 extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is no Brand name on product page!");
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']"))
                         .size() >=1,"There is no feature Brand on the feature list!");
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Жесткий диск']"))
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']"))
                 .size() >=1,"There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,

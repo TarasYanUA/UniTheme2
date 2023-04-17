@@ -129,13 +129,17 @@ public class CsCartSettings extends AbstractPage {
         hover.perform();
         section_Products.click();
         if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).size() <1){
-            DriverProvider.getDriver().findElement(By.cssSelector("#sw_select_en_wrap_content")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
             DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
         }
         return new ProductSettings();
     }
     public void navigateToSection_Features(){
         section_Features.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).size() <1){
+            DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
+        }
     }
     public WebElement hoverFeatureDescription(){return field_FeatureDescription;}
     public void scrollToFeatureDescription(){

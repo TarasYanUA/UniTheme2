@@ -142,14 +142,14 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         //Проверяем, что характеристики расположены в две колонки
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
                 .size() >=1, "Features are located in one column instead of two!");
-        takeScreenShot("1310 Product features, two columns (RTL)");
+        takeScreenShot_withoutScroll("1310 Product features, two columns (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
-        takeScreenShot("1315 Product features, two columns");
+        takeScreenShot_withoutScroll("1315 Product features, two columns");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("1320 Feature description, two columns");
+        takeScreenShot_withoutScroll("1320 Feature description, two columns");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);

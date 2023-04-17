@@ -1,10 +1,13 @@
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
+import taras.storefront.StCategoryPage;
+import taras.storefront.StHomePage;
 
 /*
-1) "Настройки -- Внешний вид":
+1) CS-Cart настройки -- Внешний вид:
 Включить быстрый просмотр -- да
 Показывать мини-иконки в виде галереи --  нет
 
@@ -59,5 +62,17 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner{
         }
         colorSchemeSettings.selectSetting_General_CartIcon("type1");
         csCartSettings.clickSaveButtonOfSettings();
+    }
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ColorSchemeSettings_General_Var1")
+    public void checkColorSchemeSettings_General_Var1(){
+        CsCartSettings csCartSettings = new CsCartSettings();
+        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        focusBrowserTab(1);
+        stHomePage.cookie.click();
+        //Блок товаров на главной странице
+        stHomePage.scrollToBlockWithProducts();
+        SoftAssert softAssert = new SoftAssert();
+        //Проверка, что
     }
 }

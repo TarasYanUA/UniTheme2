@@ -13,6 +13,38 @@ public class ColorSchemeSettings extends AbstractPage {
     @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(text(),\"CS-Cart\")]")
     public WebElement activeColorScheme;
 
+    @FindBy(id = "general")
+    public WebElement tab_General;
+    @FindBy(id = "settings.abt__ut2.general.use_rounding")
+    private WebElement setting_General_RoundCornersForElements;
+    @FindBy(id = "settings.abt__ut2.general.use_rounding_blocks")
+    public WebElement setting_General_RoundCornersOfBlocks;
+    @FindBy(id = "settings.abt__ut2.general.use_titles_uppercase")
+    public WebElement setting_General_DisplayHeadersInCapitalLetters;
+    @FindBy(id = "settings.abt__ut2.general.buttons.style")
+    private WebElement setting_General_ButtonsStyle;
+    @FindBy(id = "settings.abt__ut2.general.buttons.use_text_uppercase")
+    public WebElement setting_General_DisplayTextInCapitalLetters;
+    @FindBy(id = "settings.abt__ut2.general.buttons.use_shadow")
+    public WebElement setting_General_AddShadow;
+    @FindBy(id = "settings.abt__ut2.general.buttons.use_gradient")
+    public WebElement setting_General_AddBulk;
+    @FindBy(id = "settings.abt__ut2.general.buttons.use_icon_cart")
+    private WebElement setting_General_CartIcon;
+
+    private Select getSetting_General_RoundCornersForElements(){return new Select(setting_General_RoundCornersForElements);}
+    public void selectSetting_General_RoundCornersForElements (String value){
+        getSetting_General_RoundCornersForElements().selectByValue(value);
+    }
+    private Select getSetting_General_ButtonsStyle(){return new Select(setting_General_ButtonsStyle);}
+    public void selectSetting_General_ButtonsStyle (String value){
+        getSetting_General_ButtonsStyle().selectByValue(value);
+    }
+    private Select getSetting_General_CartIcon(){return new Select(setting_General_CartIcon);}
+    public void selectSetting_General_CartIcon (String value){
+        getSetting_General_CartIcon().selectByValue(value);
+    }
+
     @FindBy(css = ".nav-tabs #product_list")
     public WebElement tab_ProductLists;
     @FindBy(id = "settings.abt__ut2.product_list.show_grid_border")

@@ -122,7 +122,7 @@ public class GeneralSettings_Product_Var3 extends TestRunner{
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
                 "There is a Brand logo but shouldn't!");
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Бренд']"))
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']"))
                         .size() >=1,"There is a feature Brand on the feature list but shouldn't!");
         //Проверяем, что Код товара присутствует
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,

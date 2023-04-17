@@ -16,7 +16,7 @@ import static taras.constants.DriverProvider.getDriver;
 
 /* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=718159332
 
-1) "Настройки -- Внешний вид":
+1) CS-Cart настройки -- Внешний вид:
 Включить быстрый просмотр -- y
 Показывать мини-иконки в виде галереи -- n
 

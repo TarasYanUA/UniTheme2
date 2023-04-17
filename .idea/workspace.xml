@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved some screenshots on the product page.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Set configurations for test-case ColorSchemeSettings_General_Var1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,20 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00046" summary="First test-case is adapted to Uni2 v4.16.1b">
-      <created>1677161822877</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1677161822877</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Changed methods for language selection - RTL and RU!">
-      <created>1677162816762</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1677162816762</updated>
     </task>
     <task id="LOCAL-00048" summary="First test-case is totally ready for adaptation to theme v4.16.1b">
       <created>1677164922045</created>
@@ -499,7 +483,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681730789789</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Set configurations for test-case ColorSchemeSettings_General_Var1">
+      <created>1681742524460</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1681742524460</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Set configurations for test-case ColorSchemeSettings_General_Var1">
+      <created>1681742813157</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1681742813157</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -527,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed some settings in Var2.&#10;Added a new template &quot;AB: Gallery&quot;.&#10;Screenshots start with a number of 1000." />
     <MESSAGE value="Fixed some settings." />
     <MESSAGE value="Test-case 3 is ready!" />
     <MESSAGE value="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page." />
@@ -552,7 +549,8 @@
     <MESSAGE value="Changed RU language on EN language.&#10;Updated versions at pom file." />
     <MESSAGE value="Fixed some bugs in tests-cases for Products." />
     <MESSAGE value="Improved some screenshots on the product page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved some screenshots on the product page." />
+    <MESSAGE value="Set configurations for test-case ColorSchemeSettings_General_Var1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set configurations for test-case ColorSchemeSettings_General_Var1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

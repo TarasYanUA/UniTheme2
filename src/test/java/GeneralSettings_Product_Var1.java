@@ -169,14 +169,14 @@ public class GeneralSettings_Product_Var1 extends TestRunner{
         //Проверяем, что характеристики расположены в одну колонку
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
                 .size() >=1, "Features are located in two columns instead of one!");
-        takeScreenShot("1110 Product features, one column (RTL)");
+        takeScreenShot_withoutScroll("1110 Product features, one column (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot("1115 Product features, one column");
+        takeScreenShot_withoutScroll("1115 Product features, one column");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("1120 Feature description, one column");
+        takeScreenShot_withoutScroll("1120 Feature description, one column");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);

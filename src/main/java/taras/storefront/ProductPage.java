@@ -53,7 +53,7 @@ public class ProductPage extends AbstractPage {
     public void scrollToAndClickTab_Features(){
         WebElement element = hoverTab_Features();
         Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(element), 0, 500);
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(element), 0, 600);
         scroll.perform();
         tab_Features.click();
     }

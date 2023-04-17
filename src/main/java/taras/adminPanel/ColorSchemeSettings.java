@@ -13,8 +13,7 @@ public class ColorSchemeSettings extends AbstractPage {
     @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(text(),\"CS-Cart\")]")
     public WebElement activeColorScheme;
 
-    @FindBy(id = "general")
-    public WebElement tab_General;
+    //Вкладка "Общее"
     @FindBy(id = "settings.abt__ut2.general.use_rounding")
     private WebElement setting_General_RoundCornersForElements;
     @FindBy(id = "settings.abt__ut2.general.use_rounding_blocks")
@@ -45,6 +44,7 @@ public class ColorSchemeSettings extends AbstractPage {
         getSetting_General_CartIcon().selectByValue(value);
     }
 
+    //Вкладка "Списки товаров"
     @FindBy(css = ".nav-tabs #product_list")
     public WebElement tab_ProductLists;
     @FindBy(id = "settings.abt__ut2.product_list.show_grid_border")
@@ -67,13 +67,13 @@ public class ColorSchemeSettings extends AbstractPage {
     public Select getSetting_ProductLists_FontWeightForProductName(){return new Select(setting_ProductLists_FontWeightForProductName);}
     public void selectSetting_ProductLists_FontWeightForProductName(String value){getSetting_ProductLists_FontWeightForProductName().selectByValue(value);}
 
+    //Вкладка "Товар"
     @FindBy(css = ".nav-tabs #products")
     public WebElement tab_Product;
     @FindBy(id = "settings.abt__ut2.products.mask_images_gallery")
     public WebElement setting_ProductMaskForProductImages;
     @FindBy(id = "settings.abt__ut2.products.bordered_images_gallery")
     public WebElement setting_ProductBorderForProductImages;
-
 
 
 /*    public void chooseActiveColorScheme(){

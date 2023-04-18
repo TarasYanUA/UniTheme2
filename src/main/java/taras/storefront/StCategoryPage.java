@@ -53,6 +53,10 @@ public class StCategoryPage extends AbstractPage {
     public WebElement button_AddToComparisonList;
     @FindBy(css = ".cm-notification-close")
     public WebElement closeNotificationWindow;
+    @FindBy(css = ".ty-product-review-write-product-review-button")
+    private WebElement button_WriteReview;
+    @FindBy(xpath = "(//button[contains(@class, 'ui-dialog-titlebar-close')])[2]")
+    public WebElement closeWriteReview;
 
 
     public WebElement hoverPhoneProduct(){
@@ -125,5 +129,10 @@ public class StCategoryPage extends AbstractPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    public void clickButton_WriteReview(){
+        button_WriteReview.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-2")));
     }
 }

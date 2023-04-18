@@ -14,6 +14,7 @@
             <class name="GeneralSettings_Product_Var3" />
             <class name="ColorSchemeSettings_Product_Var1" />
             <class name="ColorSchemeSettings_General_Var1" />
+            <class name="ColorSchemeSettings_General_Var2" />
         </classes>
     </test>
 </suite>

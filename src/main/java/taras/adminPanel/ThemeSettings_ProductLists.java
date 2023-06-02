@@ -13,6 +13,10 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     private WebElement tabProductLists;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_gallery']")
     public WebElement settingMiniIconsGallery;
+    public Select getSettingMiniIconsGallery(){return new Select(settingMiniIconsGallery);}
+    public void selectSettingMiniIconsGallery(String value){
+        getSettingMiniIconsGallery().selectByValue(value);
+    }
     @FindBy(css = "input[id=\"settings.abt__ut2.product_list.decolorate_out_of_stock_products\"]")
     public WebElement settingOutOfStockProducts;
     @FindBy(id = "settings.abt__ut2.product_list.price_display_format")

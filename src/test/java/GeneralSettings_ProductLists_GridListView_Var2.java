@@ -24,10 +24,12 @@ import java.time.Duration;
 Отображать модификатор количества -- нет
 Отображать кнопку "Купить" -- Только Иконка корзины (упрощенный вариант)
 Дополнительная информация о товаре -- Список характеристик и вариаций
+-- Переключать изображение товара при движении мышки -- Не переключать (нужно для настройки выше)
 Отображать дополнительную информацию при наведении -- да
 Отображать логотип бренда -- да
 Отображать "Вы экономите" -- да
-Переключать изображение товара при движении мышки -- с точками
+Показывать галерею мини-иконок товара в товарном списке --  с точками
+Переключать изображение товара при движении мышки -- Не переключать
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
@@ -74,7 +76,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         if (!checkboxSettingShowYouSave.isSelected()) {
             checkboxSettingShowYouSave.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("points");
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

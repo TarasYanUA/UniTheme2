@@ -27,6 +27,7 @@ import java.time.Duration;
 Отображать дополнительную информацию при наведении -- да
 Отображать логотип бренда -- да
 Отображать "Вы экономите" -- да
+Показывать галерею мини-иконок товара в товарном списке --	Не отображать
 Переключать изображение товара при движении мышки -- с полосками
 */
 
@@ -83,6 +84,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         if (!checkboxSettingShowYouSave.isSelected()) {
             checkboxSettingShowYouSave.click();
         }
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
         themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("lines");
         csCartSettings.clickSaveButtonOfSettings();
     }

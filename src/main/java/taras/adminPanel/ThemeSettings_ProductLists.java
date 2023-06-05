@@ -11,12 +11,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
     private WebElement tabProductLists;
-    @FindBy(css = "input[id='settings.abt__ut2.product_list.show_gallery']")
-    public WebElement settingMiniIconsGallery;
-    public Select getSettingMiniIconsGallery(){return new Select(settingMiniIconsGallery);}
-    public void selectSettingMiniIconsGallery(String value){
-        getSettingMiniIconsGallery().selectByValue(value);
-    }
     @FindBy(css = "input[id=\"settings.abt__ut2.product_list.decolorate_out_of_stock_products\"]")
     public WebElement settingOutOfStockProducts;
     @FindBy(id = "settings.abt__ut2.product_list.price_display_format")
@@ -37,8 +31,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingDisplayButtonComparisonList;
     @FindBy(id = "settings.abt__ut2.product_list.hover_buttons_w_c_q.desktop")
     public WebElement settingDisplayButtonsWhenHoveringMouse;
-    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
-    private WebElement settingSwitchProductImageWhenHoveringMousePointer;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_width.desktop']")
     private WebElement settingProductIconWidth;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_height.desktop']")
@@ -63,6 +55,12 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingShowYouSave;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHovering;
+    @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
+    public WebElement setting_ShowGalleryOfMiniIcons;
+    public Select getSetting_ShowGalleryOfMiniIcons(){return new Select(setting_ShowGalleryOfMiniIcons);}
+    public void selectSetting_ShowGalleryOfMiniIcons(String value){
+        getSetting_ShowGalleryOfMiniIcons().selectByValue(value);
+    }
 
 
     public void clickTabProductLists(){
@@ -74,12 +72,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     }
     public void selectSettingPriceDisplayFormat(String value){
         getSettingPriceDisplayFormat().selectByValue(value);
-    }
-    public Select getSettingSwitchProductImageWhenHoveringMousePointer(){
-        return new Select(settingSwitchProductImageWhenHoveringMousePointer);
-    }
-    public void selectSettingSwitchProductImageWhenHoveringMousePointer(String value){
-        getSettingSwitchProductImageWhenHoveringMousePointer().selectByValue(value);
     }
     public void clickAndTypeSettingProductIconWidth(String value){
         settingProductIconWidth.click();
@@ -132,6 +124,8 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement withoutOptionsShowProductOptions;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
     public WebElement withoutOptionsBrandLogo;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")
+    public WebElement withoutOptions_ShowGalleryOfMiniIcons;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
     private WebElement withoutOptionsHoverGallery;
 
@@ -151,6 +145,12 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     }
     public void selectWithoutOptionsContentUnderDescription(String value){
         getWithoutOptionsContentUnderDescription().selectByValue(value);
+    }
+    public Select getWithoutOptions_ShowGalleryOfMiniIcons(){
+        return new Select(withoutOptions_ShowGalleryOfMiniIcons);
+    }
+    public void selectWithoutOptions_ShowGalleryOfMiniIcons(String value){
+        getWithoutOptions_ShowGalleryOfMiniIcons().selectByValue(value);
     }
     public Select getWithoutOptionsHoverGallery(){
         return new Select(withoutOptionsHoverGallery);

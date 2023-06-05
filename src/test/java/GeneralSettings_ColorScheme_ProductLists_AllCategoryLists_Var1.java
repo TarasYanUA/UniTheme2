@@ -21,8 +21,6 @@ import static taras.constants.DriverProvider.getDriver;
 Показывать мини-иконки в виде галереи -- n
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Показывать галерею мини-иконок товара в товарном списке --	Не отображать
-Переключать изображение товара при движении мышки -- с полосками
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
@@ -68,7 +66,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Работаем с настройками темы (в основном идут по умолчанию)
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
-        themeSettingsProductLists.selectSettingMiniIconsGallery("N");
+        //!!!!!!!!!!!!!!themeSettingsProductLists.selectSettingMiniIconsGallery("N");
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (!checkboxOutOfStockProducts.isSelected()) {
             checkboxOutOfStockProducts.click();
@@ -103,7 +101,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

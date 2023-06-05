@@ -21,7 +21,8 @@ import taras.storefront.StHomePage;
 Содержимое под описанием    -- Список характеристик
 Отображать опции товара -- да
 Отображать логотип бренда   -- да
-Переключать изображение товара при движении мышки   -- с полосками
+Показывать галерею мини-иконок товара в товарном списке --  С точками
+Переключать изображение товара при движении мышки   -- Не переключать
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRunner {
@@ -63,7 +64,8 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         if (!checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
-        themeSettingsProductLists.selectWithoutOptionsHoverGallery("lines");
+        themeSettingsProductLists.selectWithoutOptions_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectWithoutOptionsHoverGallery("N");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

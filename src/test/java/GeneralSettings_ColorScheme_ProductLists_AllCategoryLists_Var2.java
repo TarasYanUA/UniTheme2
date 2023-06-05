@@ -21,8 +21,6 @@ import static taras.constants.DriverProvider.getDriver;
 Показывать мини-иконки в виде галереи -- y
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Показывать галерею мини-иконок товара в товарном списке --	с стрелками
-Переключать изображение товара при движении мышки -- Не переключать (нужно для настройки выше)
 Обесцвечивать товары, которых нет в наличии --	n
 Формат отображения цен --	Вариант 1
 Отображать цену вверху --	y
@@ -33,6 +31,8 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать кнопку "Добавить в избранное" -- y
 Отображать кнопку "Добавить в список сравнения" -- y
 Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
+Показывать галерею мини-иконок товара в товарном списке --  Стрелками
+Переключать изображение товара при движении мышки -- Не переключать
 
 3) - UniTheme2 -- Настройки цветосхемы -- вкладка "Списки товаров":
 Тип обрамления товара в сетке --	Рамка с внешними отступами
@@ -65,10 +65,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
             checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками темы
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
-        themeSettingsProductLists.selectSettingMiniIconsGallery("points");
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()) {
             checkboxOutOfStockProducts.click();
@@ -86,7 +86,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("N");
         themeSettingsProductLists.selectSettingDisplayCartStatus("counter");
         WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
         if (!checkboxSettingDisplayStatusesForButtons.isSelected()) {
@@ -104,6 +103,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         if (checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("arrows");
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -257,6 +258,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 /*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
                 "There is no status for the button 'Add to cart' on the category page!");*/
+        makePause();
         takeScreenShot("240 Var2_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
         takeScreenShot("245 Var2_Category_ListWithoutOptions");

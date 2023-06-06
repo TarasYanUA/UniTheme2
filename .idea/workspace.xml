@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Theme 4.16.2.b">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Added adaptation to a new chrome browser.&#10;Improved code.">
-      <created>1678972446811</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1678972446812</updated>
     </task>
     <task id="LOCAL-00052" summary="Started to write test-case for product page!">
       <created>1678982520579</created>
@@ -499,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685688398223</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки">
+      <created>1685977045893</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1685977045894</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -527,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added pauses for language shift and quick view window." />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2" />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_CompactList_Var1 and Var2" />
@@ -552,7 +546,8 @@
     <MESSAGE value="Started with storefront for test-case ColorSchemeSettings_General_Var1" />
     <MESSAGE value="The last test-case for ColorScheme settings is ready!" />
     <MESSAGE value="Theme 4.16.2.b" />
-    <option name="LAST_COMMIT_MESSAGE" value="Theme 4.16.2.b" />
+    <MESSAGE value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

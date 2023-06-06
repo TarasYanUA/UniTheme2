@@ -37,6 +37,16 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
+        //Работаем с настройками характеристики Бренд
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками темы
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
@@ -99,9 +109,9 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что текст "Вы экономите" присутствует
         int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
         softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде точек
-        int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 3, "Gallery of mini icons is not with points on the product block!");
         takeScreenShot_withoutScroll("410 GridListView_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
@@ -111,13 +121,13 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Категория "Мужская одежда"
         stHomePage.navigateToMenuMenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
         //Проверяем, что логотип присутствует
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
+        //Проверяем, что галерея мини-иконок в виде точек
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons  >= 3, "Gallery of mini icons is not with points on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
         takeScreenShot("420 GridListView_MenClothCategory");

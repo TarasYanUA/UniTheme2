@@ -45,6 +45,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
             checkboxShowInProductList.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками темы
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
@@ -128,19 +129,19 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Категория "Телефоны"
         stHomePage.navigateToMenuPhones();
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product block!");
+        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page!");
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product block!");
+        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the category page!");
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the product block!");
+        softAssert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the category page!");
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
         //Проверяем, что логотип присутствует
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("320 GridListView_PhoneCategory");

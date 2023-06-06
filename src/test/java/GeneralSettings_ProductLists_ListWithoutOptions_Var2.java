@@ -38,6 +38,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
             checkboxShowInProductList.click();
             csCartSettings.clickSaveButtonOfSettings();
         }
+
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();

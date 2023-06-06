@@ -119,10 +119,10 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
-        takeScreenShot("310 GridListView_BlockWithProducts");
+        takeScreenShot_withoutScroll("310 GridListView_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot("311 GridListView_BlockWithProductsRTL");
+        takeScreenShot_withoutScroll("311 GridListView_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"

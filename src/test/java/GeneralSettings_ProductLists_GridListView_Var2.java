@@ -102,10 +102,10 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде точек
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
-        takeScreenShot("410 GridListView_BlockWithProducts");
+        takeScreenShot_withoutScroll("410 GridListView_BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot("411 GridListView_BlockWithProductsRTL");
+        takeScreenShot_withoutScroll("411 GridListView_BlockWithProductsRTL");
         stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"

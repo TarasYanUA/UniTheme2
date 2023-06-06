@@ -23,8 +23,18 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
-        //Работаем с настройками темы
+        //Работаем с настройками характеристики Бренд
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
+        //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;

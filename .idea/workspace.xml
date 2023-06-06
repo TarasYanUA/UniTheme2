@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved screenshots for two test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,20 +44,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CS-Cart4.16.2.b&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "4.16.2.b",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
@@ -66,18 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2">
-    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2">
     <configuration name="ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -124,21 +116,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.Cycle.checkCycle" />
       <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
       <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
-      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.Cycle.checkCycle" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
-        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -150,13 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Started to write test-case for product page!">
-      <created>1678982520579</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1678982520579</updated>
     </task>
     <task id="LOCAL-00053" summary="Configurations for product page are totally ready!">
       <created>1679050303086</created>
@@ -494,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685977045894</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Improved screenshots for two test-cases.">
+      <created>1686055790095</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1686055790096</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1" />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2" />
     <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_CompactList_Var1 and Var2" />
     <MESSAGE value="Fixed asserts at the rest of test-cases." />
@@ -547,7 +549,8 @@
     <MESSAGE value="The last test-case for ColorScheme settings is ready!" />
     <MESSAGE value="Theme 4.16.2.b" />
     <MESSAGE value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
+    <MESSAGE value="Improved screenshots for two test-cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved screenshots for two test-cases." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

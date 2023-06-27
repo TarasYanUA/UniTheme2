@@ -84,9 +84,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Проверяем, что переключатель изображений товара в виде точек
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
-        takeScreenShot("510 ListWithoutOptions_MenClothCategory_Var1");
+        takeScreenShot("500 ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("515 ListWithoutOptions_MenClothCategory_Var1(RTL)");
+        takeScreenShot("505 ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var1 passed successfully!");
     }

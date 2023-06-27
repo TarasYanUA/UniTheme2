@@ -88,17 +88,17 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         softAssert.assertTrue(getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).size() >= 1,
                 "There is no button 'Quick view'!");
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("710 ProductLists_CompactLists_Var1");
+        takeScreenShot("700 ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
-        takeScreenShot("720 ProductLists_CompactLists_QuickView");
+        takeScreenShot("705 ProductLists_CompactList_Var1 - QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("730 ProductLists_CompactLists_Var1(RTL)");
+        takeScreenShot("710 ProductLists_CompactList_Var1 (RTL)");
         stCategoryPage.clickButtonQuickView();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("740 ProductLists_CompactLists_QuickView(RTL)");
+        takeScreenShot("715 ProductLists_CompactList_Var1 - QuickView (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
     }

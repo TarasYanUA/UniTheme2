@@ -177,10 +177,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover < 1,
                 "The buttons are not displayed without hovering over a product cell on the category page!");
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("210 Var2_WomanClothCategory");
+        takeScreenShot("210 Var2_ColorScheme_ProductLists_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("215 Var2_WomanClothCategoryRTL");
+        takeScreenShot("215 Var2_ColorScheme_ProductLists_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
@@ -221,10 +221,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}*/
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("220 Var2_PhonesCategory");
+        takeScreenShot("220 Var2_ColorScheme_ProductLists_PhonesCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("225 Var2_PhonesCategoryRTL");
+        takeScreenShot("225 Var2_ColorScheme_ProductLists_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"
@@ -235,14 +235,14 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что присутствуют мини-иконки в виде галереи
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).size() >= 1,
                 "Mini icons are not as a gallery!");
-        takeScreenShot("230 Var2_QuickView");
+        takeScreenShot("230 Var2_ColorScheme_ProductLists_QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
-        takeScreenShot("235 Var2_QuickViewRTL");
+        takeScreenShot("235 Var2_ColorScheme_ProductLists_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
 
         //Других два шаблона страницы категории
@@ -259,9 +259,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
                 "There is no status for the button 'Add to cart' on the category page!");*/
         makePause();
-        takeScreenShot("240 Var2_Category_ListWithoutOptionsRTL");
+        takeScreenShot("240 Var2_ColorScheme_ProductLists_Category_ListWithoutOptionsRTL");
         stHomePage.selectLanguage_RU();
-        takeScreenShot("245 Var2_Category_ListWithoutOptions");
+        takeScreenShot("245 Var2_ColorScheme_ProductLists_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
@@ -273,9 +273,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 /*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
                 "There is no status for the button 'Add to cart' on the category page!");*/
-        takeScreenShot("250 Var2_Category_CompactList_ProductListView");
+        takeScreenShot("250 Var2_ColorScheme_ProductLists_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("255 Var2_Category_CompactList_ProductListViewRTL");
+        takeScreenShot("255 Var2_ColorScheme_ProductLists_Category_CompactList_ProductListViewRTL");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 passed successfully!");
     }

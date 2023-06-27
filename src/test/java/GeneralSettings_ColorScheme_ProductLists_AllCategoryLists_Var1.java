@@ -174,10 +174,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1);
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("110 Var1_WomanClothCategory");
+        takeScreenShot("110 Var1_ColorScheme_ProductLists_WomanClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("115 Var1_WomanClothCategoryRTL");
+        takeScreenShot("115 Var1_ColorScheme_ProductLists_WomanClothCategoryRTL");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
@@ -201,25 +201,25 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("120 Var1_PhonesCategory");
+        takeScreenShot("120 Var1_ColorScheme_ProductLists_PhonesCategory");
         if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("125 Var1_PhonesCategoryRTL");
+        takeScreenShot("125 Var1_ColorScheme_ProductLists_PhonesCategoryRTL");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("130 Var1_QuickView");
+        takeScreenShot("130 Var1_ColorScheme_ProductLists_QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("135 Var1_QuickViewRTL");
+        takeScreenShot("135 Var1_ColorScheme_ProductLists_QuickViewRTL");
         stCategoryPage.clickCloseQuickView();
 
         //Других два шаблона страницы категории
@@ -238,12 +238,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("140 Var1_Category_ListWithoutOptionsRTL");
+        takeScreenShot("140 Var1_ColorScheme_ProductLists_Category_ListWithoutOptionsRTL");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();
         stHomePage.selectLanguage_RU();
-        takeScreenShot("145 Var1_Category_ListWithoutOptions");
+        takeScreenShot("145 Var1_ColorScheme_ProductLists_Category_ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
@@ -252,13 +252,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что кнопка "Сравнить" присутствует
         softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' in the product block!");
-        takeScreenShot("150 Var1_Category_CompactList_ProductListView");
+        takeScreenShot("150 Var1_ColorScheme_ProductLists_Category_CompactList_ProductListView");
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("155 Var1_Category_CompactList_ProductListView");
+        takeScreenShot("155 Var1_ColorScheme_ProductLists_Category_CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("160 Var1_Category_CompactList_ProductListViewRTL");
+        takeScreenShot("160 Var1_ColorScheme_ProductLists_Category_CompactList_ProductListViewRTL");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 passed successfully!");
     }

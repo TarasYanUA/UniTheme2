@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved some asserts.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Configurations for product page are totally ready!">
-      <created>1679050462573</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1679050462574</updated>
     </task>
     <task id="LOCAL-00055" summary="Added feature Hard driver to Configurations!">
       <created>1679058328266</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686063771493</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;">
+      <created>1687858410194</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1687858410195</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed asserts at GeneralSettings_ProductLists_CompactList_Var1 and Var2" />
     <MESSAGE value="Fixed asserts at the rest of test-cases." />
     <MESSAGE value="Added dependsOnMethods for all test-cases." />
     <MESSAGE value="Added a little pause before screenshots.&#10;Improved test-case GeneralSettings_Product_Var3.java" />
@@ -547,7 +546,8 @@
     <MESSAGE value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
     <MESSAGE value="Improved screenshots for two test-cases." />
     <MESSAGE value="Improved some asserts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved some asserts." />
+    <MESSAGE value="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

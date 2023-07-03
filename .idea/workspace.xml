@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added pauses for category lists.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
@@ -18,9 +29,12 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +49,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="CS-Cart4.16.1" />
@@ -60,16 +100,15 @@
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4.16.2.b&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEA Projects\UniTheme2" />
+      <recent name="E:\IDEA Projects\UniTheme2\src\test" />
+      <recent name="E:\IDEA Projects\UniTheme2\src" />
+      <recent name="E:\IDEA Projects\UniTheme2\src\test\resources" />
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -79,23 +118,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.checkProductLists_ListWithoutOptions_Var2">
-    <configuration name="Cycle.checkCycle" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
+    <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Cycle" />
-      <option name="METHOD_NAME" value="checkCycle" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -103,10 +130,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -114,10 +141,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -125,12 +152,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2.checkProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-      <option name="METHOD_NAME" value="checkProductLists_ListWithoutOptions_Var2" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -139,19 +176,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.checkProductLists_ListWithoutOptions_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-      <item itemvalue="TestNG.Cycle.checkCycle" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.checkProductLists_ListWithoutOptions_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.Cycle.checkCycle" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -164,350 +201,350 @@
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
     </task>
-    <task id="LOCAL-00057" summary="Product page Var1 is ready!">
-      <created>1679310144287</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
+    <task id="LOCAL-00001" summary="Created project!">
+      <created>1670233666928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1679310144287</updated>
+      <updated>1670233666928</updated>
     </task>
-    <task id="LOCAL-00058" summary="Added screenshots with product templates for Product page Var1">
-      <created>1679317097250</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
+    <task id="LOCAL-00002" summary="Created project!">
+      <created>1670234199202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1679317097250</updated>
+      <updated>1670234199202</updated>
     </task>
-    <task id="LOCAL-00059" summary="Test-case Product Var2 is ready!">
-      <created>1679328055678</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
+    <task id="LOCAL-00003" summary="Created project!">
+      <created>1670234334010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1679328055678</updated>
+      <updated>1670234334010</updated>
     </task>
-    <task id="LOCAL-00060" summary="Fixed bugs in test-cases.">
-      <created>1679394002763</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
+    <task id="LOCAL-00004" summary="Created project!">
+      <created>1670234570547</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1679394002764</updated>
+      <updated>1670234570547</updated>
     </task>
-    <task id="LOCAL-00061" summary="Fixed bugs in test-cases.">
-      <created>1679394266040</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+    <task id="LOCAL-00005" summary="Theme settings are ready.">
+      <created>1670250631602</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1679394266040</updated>
+      <updated>1670250631602</updated>
     </task>
-    <task id="LOCAL-00062" summary="Fixed some settings in Var2.&#10;Added a new template &quot;AB: Gallery&quot;.&#10;Screenshots start with a number of 1000.">
-      <created>1679576292423</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+    <task id="LOCAL-00006" summary="CS-Cart settings are added.">
+      <created>1670254273246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1679576292424</updated>
+      <updated>1670254273246</updated>
     </task>
-    <task id="LOCAL-00063" summary="Fixed some settings.">
-      <created>1679577412994</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+    <task id="LOCAL-00007" summary="Test-case #1 is totally ready!">
+      <created>1670492107720</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1679577412994</updated>
+      <updated>1670492107720</updated>
     </task>
-    <task id="LOCAL-00064" summary="Test-case 3 is ready!">
-      <created>1679586966140</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+    <task id="LOCAL-00008" summary="Test-case #1 is totally ready!">
+      <created>1670499498456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1679586966140</updated>
+      <updated>1670499498456</updated>
     </task>
-    <task id="LOCAL-00065" summary="Removed the setting &quot;Height of product cell&quot; as this setting has been removed at theme version 4.16.1.c.&#10;Fixed mini-gallery for product page.">
-      <created>1679990871472</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+    <task id="LOCAL-00009" summary="Test-case #1 is totally ready!">
+      <created>1670499660860</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1679990871473</updated>
+      <updated>1670499660860</updated>
     </task>
-    <task id="LOCAL-00066" summary="Added pauses for language shift and quick view window.">
-      <created>1680083485906</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+    <task id="LOCAL-00010" summary="Test-case #2 is totally ready!">
+      <created>1670502796812</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1680083485907</updated>
+      <updated>1670502796812</updated>
     </task>
-    <task id="LOCAL-00067" summary="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var1">
-      <created>1680168778599</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+    <task id="LOCAL-00011" summary="Test-case #2 is totally ready!">
+      <created>1670503570836</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1680168778600</updated>
+      <updated>1670503570836</updated>
     </task>
-    <task id="LOCAL-00068" summary="Fixed asserts at GeneralSettings_ProductLists_AllCategoryLists_Var2">
-      <created>1680170293604</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+    <task id="LOCAL-00012" summary="Added comments to two test-cases.">
+      <created>1670504336715</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1680170293604</updated>
+      <updated>1670504336715</updated>
     </task>
-    <task id="LOCAL-00069" summary="Fixed asserts at GeneralSettings_ProductLists_CompactList_Var1 and Var2">
-      <created>1680188404304</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+    <task id="LOCAL-00013" summary="Added testNG.xml file.">
+      <created>1670504770293</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1680188404305</updated>
+      <updated>1670504770293</updated>
     </task>
-    <task id="LOCAL-00070" summary="Fixed asserts at the rest of test-cases.">
-      <created>1680254712136</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
+    <task id="LOCAL-00014" summary="Added asserts to both test-cases.">
+      <created>1670510745435</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1680254712136</updated>
+      <updated>1670510745435</updated>
     </task>
-    <task id="LOCAL-00071" summary="Fixed asserts at the rest of test-cases.">
-      <created>1680254826451</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
+    <task id="LOCAL-00015" summary="Added asserts to both test-cases.">
+      <created>1670512166425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1680254826451</updated>
+      <updated>1670512166425</updated>
     </task>
-    <task id="LOCAL-00072" summary="Added dependsOnMethods for all test-cases.">
-      <created>1680266305520</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
+    <task id="LOCAL-00016" summary="Added asserts to both test-cases.">
+      <created>1670514650310</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1680266305520</updated>
+      <updated>1670514650310</updated>
     </task>
-    <task id="LOCAL-00073" summary="Added a little pause before screenshots.&#10;Improved test-case GeneralSettings_Product_Var3.java">
-      <created>1680272377936</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
+    <task id="LOCAL-00017" summary="Relocated setting to Class Page. Added one more setting of the theme.">
+      <created>1670582719229</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1680272377936</updated>
+      <updated>1670582719229</updated>
     </task>
-    <task id="LOCAL-00074" summary="Added Quantity Discounts for a product page at test-case 3.&#10;Closed cookie on storefront at all test-cases of categories.">
-      <created>1680273927621</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
+    <task id="LOCAL-00018" summary="Third test-cases has started!">
+      <created>1670594344345</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1680273927621</updated>
+      <updated>1670594344345</updated>
     </task>
-    <task id="LOCAL-00075" summary="Added Product page test-case to TestNG file.">
-      <created>1680600918680</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
+    <task id="LOCAL-00019" summary="settings in admin panel are ready! Start working with asserts on HomePage.">
+      <created>1671116637192</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1680600918681</updated>
+      <updated>1671116637192</updated>
     </task>
-    <task id="LOCAL-00076" summary="Changed two methods for navigation to theme settings.&#10;Added a new test-case for new settings on the product page.">
-      <created>1681136650239</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
+    <task id="LOCAL-00020" summary="Asserts on HomePage are ready!">
+      <created>1671119542652</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1681136650239</updated>
+      <updated>1671119542652</updated>
     </task>
-    <task id="LOCAL-00077" summary="New test-case for new settings on the product page is ready!">
-      <created>1681138763616</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
+    <task id="LOCAL-00021" summary="Asserts on HomePage are ready!">
+      <created>1671120139157</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1681138763616</updated>
+      <updated>1671120139157</updated>
     </task>
-    <task id="LOCAL-00078" summary="Improved some code for making screenshots and clicking on different category view.">
-      <created>1681224326871</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
+    <task id="LOCAL-00022" summary="Third test-case is totally ready!">
+      <created>1671714325682</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1681224326872</updated>
+      <updated>1671714325682</updated>
     </task>
-    <task id="LOCAL-00079" summary="Fixed some bugs in text-cases for product pages.">
-      <created>1681285964492</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
+    <task id="LOCAL-00023" summary="Fourth test-case is totally ready!">
+      <created>1671717854741</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1681285964492</updated>
+      <updated>1671717854741</updated>
     </task>
-    <task id="LOCAL-00080" summary="Added softAssert for all test-cases.">
-      <created>1681301310781</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
+    <task id="LOCAL-00024" summary="Fourth test-case is totally ready!">
+      <created>1671718892308</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1681301310781</updated>
+      <updated>1671718892308</updated>
     </task>
-    <task id="LOCAL-00081" summary="Added softAssert for all test-cases.">
-      <created>1681302059803</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
+    <task id="LOCAL-00025" summary="Some very important bug fixes at my test-cases.">
+      <created>1671791835662</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1681302059803</updated>
+      <updated>1671791835662</updated>
     </task>
-    <task id="LOCAL-00082" summary="Added softAssert for all test-cases.">
-      <created>1681306566530</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
+    <task id="LOCAL-00026" summary="Split with packages.">
+      <created>1672994782105</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1681306566530</updated>
+      <updated>1672994782105</updated>
     </task>
-    <task id="LOCAL-00083" summary="Test-case for color scheme, tab &quot;Product&quot;.">
-      <created>1681389955150</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
+    <task id="LOCAL-00027" summary="Split with packages.">
+      <created>1673011750977</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1681389955150</updated>
+      <updated>1673011750978</updated>
     </task>
-    <task id="LOCAL-00084" summary="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
-      <created>1681463055518</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
+    <task id="LOCAL-00028" summary="Split with packages.">
+      <created>1673011845367</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1681463055518</updated>
+      <updated>1673011845367</updated>
     </task>
-    <task id="LOCAL-00085" summary="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
-      <created>1681463243573</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
+    <task id="LOCAL-00029" summary="Split with packages.">
+      <created>1673011993949</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1681463243573</updated>
+      <updated>1673011993949</updated>
     </task>
-    <task id="LOCAL-00086" summary="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1.">
-      <created>1681463802832</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
+    <task id="LOCAL-00030" summary="Test-case for List without options is started!">
+      <created>1673013760418</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1681463802832</updated>
+      <updated>1673013760418</updated>
     </task>
-    <task id="LOCAL-00087" summary="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;.">
-      <created>1681475580086</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
+    <task id="LOCAL-00031" summary="Test-case for List without options is done!">
+      <created>1673360546962</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1681475580086</updated>
+      <updated>1673360546962</updated>
     </task>
-    <task id="LOCAL-00088" summary="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;.">
-      <created>1681479855125</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
+    <task id="LOCAL-00032" summary="List without options is totally ready!">
+      <created>1673368202059</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1681479855125</updated>
+      <updated>1673368202059</updated>
     </task>
-    <task id="LOCAL-00089" summary="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;.">
-      <created>1681480988672</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
+    <task id="LOCAL-00033" summary="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!">
+      <created>1673441998900</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1681480988673</updated>
+      <updated>1673441998900</updated>
     </task>
-    <task id="LOCAL-00090" summary="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;.">
-      <created>1681482301747</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
+    <task id="LOCAL-00034" summary="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!">
+      <created>1673442097732</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1681482301747</updated>
+      <updated>1673442097732</updated>
     </task>
-    <task id="LOCAL-00091" summary="Changed RU language on EN language.&#10;Updated versions at pom file.">
-      <created>1681484186225</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
+    <task id="LOCAL-00035" summary="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!">
+      <created>1673448997158</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1681484186225</updated>
+      <updated>1673448997158</updated>
     </task>
-    <task id="LOCAL-00092" summary="Changed RU language on EN language.&#10;Updated versions at pom file.">
-      <created>1681484426180</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
+    <task id="LOCAL-00036" summary="Adaptation to CS-Cart 4.16.1">
+      <created>1675335704963</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1681484426180</updated>
+      <updated>1675335704963</updated>
     </task>
-    <task id="LOCAL-00093" summary="Fixed some bugs in tests-cases for Products.">
-      <created>1681725945177</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
+    <task id="LOCAL-00037" summary="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
+      <created>1676535334164</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1681725945178</updated>
+      <updated>1676535334164</updated>
     </task>
-    <task id="LOCAL-00094" summary="Improved some screenshots on the product page.">
-      <created>1681730789789</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
+    <task id="LOCAL-00038" summary="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout.">
+      <created>1676555634691</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1681730789789</updated>
+      <updated>1676555634691</updated>
     </task>
-    <task id="LOCAL-00095" summary="Set configurations for test-case ColorSchemeSettings_General_Var1">
-      <created>1681742524460</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
+    <task id="LOCAL-00039" summary="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676559060848</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1681742524460</updated>
+      <updated>1676559060848</updated>
     </task>
-    <task id="LOCAL-00096" summary="Set configurations for test-case ColorSchemeSettings_General_Var1">
-      <created>1681742813157</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
+    <task id="LOCAL-00040" summary="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676561586111</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1681742813157</updated>
+      <updated>1676561586111</updated>
     </task>
-    <task id="LOCAL-00097" summary="Started with storefront for test-case ColorSchemeSettings_General_Var1">
-      <created>1681744124762</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
+    <task id="LOCAL-00041" summary="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676562980885</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1681744124762</updated>
+      <updated>1676562980885</updated>
     </task>
-    <task id="LOCAL-00098" summary="The last test-case for ColorScheme settings is ready!">
-      <created>1681829098390</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
+    <task id="LOCAL-00042" summary="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676563101321</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1681829098392</updated>
+      <updated>1676563101321</updated>
     </task>
-    <task id="LOCAL-00099" summary="Theme 4.16.2.b">
-      <created>1685688398222</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
+    <task id="LOCAL-00043" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082096563</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1685688398223</updated>
+      <updated>1677082096563</updated>
     </task>
-    <task id="LOCAL-00100" summary="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки">
-      <created>1685977045893</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
+    <task id="LOCAL-00044" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082224205</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1685977045894</updated>
+      <updated>1677082224205</updated>
     </task>
-    <task id="LOCAL-00101" summary="Improved screenshots for two test-cases.">
-      <created>1686055790095</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
+    <task id="LOCAL-00045" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082274343</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1686055790096</updated>
+      <updated>1677082274343</updated>
     </task>
-    <task id="LOCAL-00102" summary="Improved some asserts.">
-      <created>1686063771493</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
+    <task id="LOCAL-00046" summary="First test-case is adapted to Uni2 v4.16.1b">
+      <created>1677161822877</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1686063771493</updated>
+      <updated>1677161822877</updated>
     </task>
-    <task id="LOCAL-00103" summary="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;">
-      <created>1687858410194</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
+    <task id="LOCAL-00047" summary="Changed methods for language selection - RTL and RU!">
+      <created>1677162816762</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1687858410195</updated>
+      <updated>1677162816762</updated>
     </task>
-    <task id="LOCAL-00104" summary="Improbed screenshots names for two test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists">
-      <created>1687859469545</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
+    <task id="LOCAL-00048" summary="First test-case is totally ready for adaptation to theme v4.16.1b">
+      <created>1677164922045</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1687859469545</updated>
+      <updated>1677164922045</updated>
     </task>
-    <task id="LOCAL-00105" summary="Added pauses for category lists.">
-      <created>1687859620067</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
+    <task id="LOCAL-00049" summary="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
+      <created>1677168036961</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1687859620067</updated>
+      <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,32 +572,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added a little pause before screenshots.&#10;Improved test-case GeneralSettings_Product_Var3.java" />
-    <MESSAGE value="Added Quantity Discounts for a product page at test-case 3.&#10;Closed cookie on storefront at all test-cases of categories." />
-    <MESSAGE value="Added Product page test-case to TestNG file." />
-    <MESSAGE value="Changed two methods for navigation to theme settings.&#10;Added a new test-case for new settings on the product page." />
-    <MESSAGE value="New test-case for new settings on the product page is ready!" />
-    <MESSAGE value="Improved some code for making screenshots and clicking on different category view." />
-    <MESSAGE value="Fixed some bugs in text-cases for product pages." />
-    <MESSAGE value="Added softAssert for all test-cases." />
-    <MESSAGE value="Test-case for color scheme, tab &quot;Product&quot;." />
-    <MESSAGE value="Added test-case ColorSchemeSettings_Product_Var1.&#10;Started to work with test-case ColorSchemeSettings_ProductLists_Var1." />
-    <MESSAGE value="Added color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot;." />
-    <MESSAGE value="Added the second color scheme settings to the test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2&quot;." />
-    <MESSAGE value="Changed RU language on EN language.&#10;Updated versions at pom file." />
-    <MESSAGE value="Fixed some bugs in tests-cases for Products." />
-    <MESSAGE value="Improved some screenshots on the product page." />
-    <MESSAGE value="Set configurations for test-case ColorSchemeSettings_General_Var1" />
-    <MESSAGE value="Started with storefront for test-case ColorSchemeSettings_General_Var1" />
-    <MESSAGE value="The last test-case for ColorScheme settings is ready!" />
-    <MESSAGE value="Theme 4.16.2.b" />
-    <MESSAGE value="Put changes for two settings: Показывать галерею мини-иконок товара в товарном списке, Переключать изображение товара при движении мышки" />
-    <MESSAGE value="Improved screenshots for two test-cases." />
-    <MESSAGE value="Improved some asserts." />
-    <MESSAGE value="Fixed test-case &quot;GeneralSettings_ProductLists_ListWithoutOptions_Var2&quot;" />
-    <MESSAGE value="Improbed screenshots names for two test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists" />
-    <MESSAGE value="Added pauses for category lists." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pauses for category lists." />
+    <MESSAGE value="Added asserts to both test-cases." />
+    <MESSAGE value="Relocated setting to Class Page. Added one more setting of the theme." />
+    <MESSAGE value="Third test-cases has started!" />
+    <MESSAGE value="settings in admin panel are ready! Start working with asserts on HomePage." />
+    <MESSAGE value="Asserts on HomePage are ready!" />
+    <MESSAGE value="Third test-case is totally ready!" />
+    <MESSAGE value="Fourth test-case is totally ready!" />
+    <MESSAGE value="Some very important bug fixes at my test-cases." />
+    <MESSAGE value="Split with packages." />
+    <MESSAGE value="Test-case for List without options is started!" />
+    <MESSAGE value="Test-case for List without options is done!" />
+    <MESSAGE value="List without options is totally ready!" />
+    <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!" />
+    <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!" />
+    <MESSAGE value="Adaptation to CS-Cart 4.16.1" />
+    <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
+    <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
+    <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
+    <MESSAGE value="Started working with new settings of CS-Cart 4.16.1b" />
+    <MESSAGE value="First test-case is adapted to Uni2 v4.16.1b" />
+    <MESSAGE value="Changed methods for language selection - RTL and RU!" />
+    <MESSAGE value="First test-case is totally ready for adaptation to theme v4.16.1b" />
+    <MESSAGE value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

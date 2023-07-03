@@ -21,7 +21,8 @@ import taras.storefront.StHomePage;
 Содержимое под описанием    -- Список характеристик
 Отображать опции товара -- да
 Отображать логотип бренда   -- да
-Переключать изображение товара при движении мышки   -- с полосками
+Показывать галерею мини-иконок товара в товарном списке --  С точками
+Переключать изображение товара при движении мышки   -- Не переключать
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRunner {
@@ -37,6 +38,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
             checkboxShowInProductList.click();
             csCartSettings.clickSaveButtonOfSettings();
         }
+
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
@@ -63,7 +65,8 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         if (!checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
-        themeSettingsProductLists.selectWithoutOptionsHoverGallery("lines");
+        themeSettingsProductLists.selectWithoutOptions_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectWithoutOptionsHoverGallery("N");
         csCartSettings.clickSaveButtonOfSettings();
     }
 
@@ -96,11 +99,11 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         int sizeOfBrandLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
         softAssert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the product cell!");
         //Проверяем, что переключатель изображений товара в виде полосок
-        int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
-        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with lines!");
-        takeScreenShot("610 ListWithoutOptions_MenClothCategory_Var2");
+        int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
+        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with points!");
+        takeScreenShot("600 ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("615 ListWithoutOptions_MenClothCategory_Var2(RTL)");
+        takeScreenShot("605 ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
     }

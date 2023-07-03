@@ -16,14 +16,25 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 Содержимое под описанием    -- Список вариаций
 Отображать опции товара -- нет
 Отображать логотип бренда   -- нет
+Показывать галерею мини-иконок товара в товарном списке --  Не отображать
 Переключать изображение товара при движении мышки   -- с точками
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
-        //Работаем с настройками темы
+        //Работаем с настройками характеристики Бренд
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
+        //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
@@ -47,6 +58,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         if (checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
+        themeSettingsProductLists.selectWithoutOptions_ShowGalleryOfMiniIcons("N");
         themeSettingsProductLists.selectWithoutOptionsHoverGallery("points");
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -72,9 +84,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Проверяем, что переключатель изображений товара в виде точек
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
-        takeScreenShot("510 ListWithoutOptions_MenClothCategory_Var1");
+        takeScreenShot("500 ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("515 ListWithoutOptions_MenClothCategory_Var1(RTL)");
+        takeScreenShot("505 ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var1 passed successfully!");
     }

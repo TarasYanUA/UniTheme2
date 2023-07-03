@@ -21,8 +21,6 @@ import static taras.constants.DriverProvider.getDriver;
 Показывать мини-иконки в виде галереи -- n
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Показывать галерею мини-иконок товара в товарном списке --	n
-Переключать изображение товара при движении мышки -- с полосками
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
@@ -68,10 +66,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Работаем с настройками темы (в основном идут по умолчанию)
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxMiniIconsGallery = themeSettingsProductLists.settingMiniIconsGallery;
-        if (checkboxMiniIconsGallery.isSelected()) {
-            checkboxMiniIconsGallery.click();
-        }
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (!checkboxOutOfStockProducts.isSelected()) {
             checkboxOutOfStockProducts.click();
@@ -106,7 +100,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHoveringMousePointer("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -156,11 +149,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1,
                 "Buttons are not displayed when hovering over a product cell in the product block!");
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("100 Var1_BlockWithProducts");
+        takeScreenShot_withoutScroll("100 ColorScheme_AllCategoryLists_Var1 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("105 Var1_BlockWithProductsRTL");
+        takeScreenShot_withoutScroll("105 ColorScheme_AllCategoryLists_Var1 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"
@@ -180,10 +173,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1);
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("110 Var1_WomanClothCategory");
+        takeScreenShot("110 ColorScheme_AllCategoryLists_Var1 - WomanClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("115 Var1_WomanClothCategoryRTL");
+        takeScreenShot("115 ColorScheme_AllCategoryLists_Var1 - WomanClothCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
@@ -207,25 +200,25 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("120 Var1_PhonesCategory");
+        takeScreenShot("120 ColorScheme_AllCategoryLists_Var1 - PhonesCategory");
         if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("125 Var1_PhonesCategoryRTL");
+        takeScreenShot("125 ColorScheme_AllCategoryLists_Var1 - PhonesCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("130 Var1_QuickView");
+        takeScreenShot("130 ColorScheme_AllCategoryLists_Var1 - QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("135 Var1_QuickViewRTL");
+        takeScreenShot("135 ColorScheme_AllCategoryLists_Var1 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
 
         //Других два шаблона страницы категории
@@ -244,12 +237,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("140 Var1_Category_ListWithoutOptionsRTL");
+        takeScreenShot("140 Var1_ColorScheme_ProductLists_Category_ListWithoutOptionsRTL");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();
         stHomePage.selectLanguage_RU();
-        takeScreenShot("145 Var1_Category_ListWithoutOptions");
+        takeScreenShot("145 ColorScheme_AllCategoryLists_Var1 - ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
@@ -258,13 +251,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что кнопка "Сравнить" присутствует
         softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' in the product block!");
-        takeScreenShot("150 Var1_Category_CompactList_ProductListView");
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("155 Var1_Category_CompactList_ProductListView");
+        takeScreenShot("150 ColorScheme_AllCategoryLists_Var1 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("160 Var1_Category_CompactList_ProductListViewRTL");
+        takeScreenShot("155 ColorScheme_AllCategoryLists_Var1 - CompactList_ProductListView (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 passed successfully!");
     }

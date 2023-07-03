@@ -9,9 +9,9 @@
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
             <class name="GeneralSettings_ProductLists_CompactList_Var1" />
             <class name="GeneralSettings_ProductLists_CompactList_Var2" />
-            <class name="GeneralSettings_Product_Var1" />
-            <class name="GeneralSettings_Product_Var2" />
-            <class name="GeneralSettings_Product_Var3" />
+            <class name="GeneralSettings_ProductPage_Var1" />
+            <class name="GeneralSettings_ProductPage_Var2" />
+            <class name="GeneralSettings_ProductPage_Var3" />
             <class name="ColorSchemeSettings_Product_Var1" />
             <class name="ColorSchemeSettings_General_Var1" />
             <class name="ColorSchemeSettings_General_Var2" />

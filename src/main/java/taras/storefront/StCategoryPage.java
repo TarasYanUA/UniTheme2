@@ -104,11 +104,13 @@ public class StCategoryPage extends AbstractPage {
         listWithoutOptions_ProductListView.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        makePause();
     }
     public void clickCompactList_ProductListView(){
         compactList_ProductListView.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        makePause();
     }
     public WebElement moveToButtonAddToCart(){return buttonAddToCart;}
     public void hoverToButtonAddToCart(){
@@ -125,7 +127,7 @@ public class StCategoryPage extends AbstractPage {
     public void clickCloseQuickView(){closeQuickView.click();}
     public void makePause(){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

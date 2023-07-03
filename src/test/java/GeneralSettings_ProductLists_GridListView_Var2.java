@@ -24,10 +24,12 @@ import java.time.Duration;
 Отображать модификатор количества -- нет
 Отображать кнопку "Купить" -- Только Иконка корзины (упрощенный вариант)
 Дополнительная информация о товаре -- Список характеристик и вариаций
+-- Переключать изображение товара при движении мышки -- Не переключать (нужно для настройки выше)
 Отображать дополнительную информацию при наведении -- да
 Отображать логотип бренда -- да
 Отображать "Вы экономите" -- да
-Переключать изображение товара при движении мышки -- с точками
+Показывать галерею мини-иконок товара в товарном списке --  с точками
+Переключать изображение товара при движении мышки -- Не переключать
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
@@ -35,6 +37,16 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
+        //Работаем с настройками характеристики Бренд
+        csCartSettings.hoverToProductMenu();
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками темы
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
@@ -74,7 +86,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         if (!checkboxSettingShowYouSave.isSelected()) {
             checkboxSettingShowYouSave.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("points");
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
     }
 
@@ -96,42 +109,42 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что текст "Вы экономите" присутствует
         int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
         softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде точек
-        int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
-        takeScreenShot("410 GridListView_BlockWithProducts");
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 3, "Gallery of mini icons is not with points on the product block!");
+        takeScreenShot_withoutScroll("400 ProductLists_GridListView_Var2 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot("411 GridListView_BlockWithProductsRTL");
+        takeScreenShot_withoutScroll("405 ProductLists_GridListView_Var2 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"
         stHomePage.navigateToMenuMenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
         //Проверяем, что логотип присутствует
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
+        //Проверяем, что галерея мини-иконок в виде точек
+        softAssert.assertTrue(sizeOfGalleryOfMiniIcons  >= 3, "Gallery of mini icons is not with points on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("420 GridListView_MenClothCategory");
+        takeScreenShot("410 ProductLists_GridListView_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("421 GridListView_MenClothCategoryRTL");
+        takeScreenShot("415 ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("430 GridListView_QuickViewRTL");
+        takeScreenShot("420 ProductLists_GridListView_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RU();
         stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("431 GridListView_QuickView");
+        takeScreenShot("425 ProductLists_GridListView_Var2 - QuickView");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }

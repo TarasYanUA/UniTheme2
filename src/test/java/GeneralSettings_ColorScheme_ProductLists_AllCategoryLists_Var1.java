@@ -101,7 +101,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("lines");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
+        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

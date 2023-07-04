@@ -58,8 +58,8 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         if (checkboxBrandLogo.isSelected()) {
             checkboxBrandLogo.click();
         }
-        themeSettingsProductLists.selectWithoutOptions_ShowGalleryOfMiniIcons("N");
-        themeSettingsProductLists.selectWithoutOptionsHoverGallery("points");
+        themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("N");
+        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

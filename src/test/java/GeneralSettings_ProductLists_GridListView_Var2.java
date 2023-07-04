@@ -87,7 +87,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
             checkboxSettingShowYouSave.click();
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("N");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

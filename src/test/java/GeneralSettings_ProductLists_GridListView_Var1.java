@@ -86,7 +86,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
             checkboxSettingShowYouSave.click();
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("lines");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
         csCartSettings.clickSaveButtonOfSettings();
     }
 

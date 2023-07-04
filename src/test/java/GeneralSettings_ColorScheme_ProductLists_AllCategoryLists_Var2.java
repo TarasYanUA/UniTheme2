@@ -104,7 +104,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("arrows");
-        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("N");
+        themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("arrows");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
+        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
+
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

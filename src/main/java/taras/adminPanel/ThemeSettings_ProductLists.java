@@ -54,19 +54,12 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
     public WebElement settingShowYouSave;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
-    private WebElement settingSwitchProductImageWhenHovering_Grid;
-    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop']")
-    private WebElement settingSwitchProductImageWhenHovering_List;
+    private WebElement settingSwitchProductImageWhenHovering;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
     public WebElement setting_ShowStandardImageGallery_Grid;
-    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")
-    public WebElement setting_ShowStandardImageGallery_List;
     public Select getSetting_ShowStandardImageGallery_Grid(){return new Select(setting_ShowStandardImageGallery_Grid);}
-    public Select getSetting_ShowStandardImageGallery_List(){return new Select(setting_ShowStandardImageGallery_List);}
-
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
         getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
-        getSetting_ShowStandardImageGallery_List().selectByValue(value);
     }
 
 
@@ -103,15 +96,11 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public void selectSettingAdditionalProductInformation(String value){
         getSettingAdditionalProductInformation().selectByValue(value);
     }
-    public Select getSettingSwitchProductImageWhenHovering_Grid(){
-        return new Select(settingSwitchProductImageWhenHovering_Grid);
+    public Select getSettingSwitchProductImageWhenHovering(){
+        return new Select(settingSwitchProductImageWhenHovering);
     }
-    public Select getSettingSwitchProductImageWhenHovering_List(){
-        return new Select(settingSwitchProductImageWhenHovering_List);
-    }
-    public void selectSettingSwitchProductImageWhenHovering(String value){
-        getSettingSwitchProductImageWhenHovering_Grid().selectByValue(value);
-        getSettingSwitchProductImageWhenHovering_List().selectByValue(value);
+    public void selectSetting_SwitchProductImageWhenHovering(String value){
+        getSettingSwitchProductImageWhenHovering().selectByValue(value);
     }
     public Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
     public void selectSettingDisplayCartStatus(String value){
@@ -136,9 +125,9 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
     public WebElement withoutOptionsBrandLogo;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")
-    public WebElement withoutOptions_ShowGalleryOfMiniIcons;
+    public WebElement withoutOptions_ShowStandardImageGallery;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
-    private WebElement withoutOptionsHoverGallery;
+    private WebElement withoutOptions_SwitchProductImageWhenHovering;
 
 
     public void clickAndTypeWithoutOptionsIconWidth (String value){
@@ -158,16 +147,16 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         getWithoutOptionsContentUnderDescription().selectByValue(value);
     }
     public Select getWithoutOptions_ShowGalleryOfMiniIcons(){
-        return new Select(withoutOptions_ShowGalleryOfMiniIcons);
+        return new Select(withoutOptions_ShowStandardImageGallery);
     }
-    public void selectWithoutOptions_ShowGalleryOfMiniIcons(String value){
+    public void selectWithoutOptions_ShowStandardImageGallery(String value){
         getWithoutOptions_ShowGalleryOfMiniIcons().selectByValue(value);
     }
-    public Select getWithoutOptionsHoverGallery(){
-        return new Select(withoutOptionsHoverGallery);
+    public Select getWithoutOptions_SwitchProductImageWhenHovering(){
+        return new Select(withoutOptions_SwitchProductImageWhenHovering);
     }
-    public void selectWithoutOptionsHoverGallery(String value){
-        getWithoutOptionsHoverGallery().selectByValue(value);
+    public void selectWithoutOptions_SwitchProductImageWhenHovering(String value){
+        getWithoutOptions_SwitchProductImageWhenHovering().selectByValue(value);
     }
 
     //Настройки для вида списка товаров "Компактный список"

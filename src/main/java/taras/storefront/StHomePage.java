@@ -46,7 +46,9 @@ public class StHomePage extends AbstractPage {
         Actions scrollToBlock = new Actions(DriverProvider.getDriver());
         scrollToBlock.moveToElement(element);
         scrollToBlock.perform();
-        button_LogOut.click();
+        accountOnTop.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).size() > 0) {
+        button_LogOut.click();  }
     }
 
     public WebElement hoverBlockWithProducts(){

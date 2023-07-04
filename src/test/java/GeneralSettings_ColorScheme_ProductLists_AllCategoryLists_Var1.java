@@ -31,6 +31,7 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать кнопку "Добавить в избранное" -- y
 Отображать кнопку "Добавить в список сравнения" -- y
 Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
+Переключать изображение товара при движении мышки (Сетка и Список без опций) -- С полосками
 
 3) UniTheme2 -- Настройки цветосхемы -- вкладка "Списки товаров":
 Тип обрамления товара в сетке --	Без рамки
@@ -100,6 +101,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
         }
+        themeSettingsProductLists.selectSettingSwitchProductImageWhenHovering("lines");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -132,7 +134,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         SoftAssert softAssert = new SoftAssert();
         //Проверка, что у товаров переключатель изображений с полосками
         int sizeOfHoverGalleryInLines = getDriver().findElements(By.cssSelector(".abt__ut2_hover_gallery.lines")).size();
-        softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes in the product block!");
+        softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with lines");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         int sizeOfEmptyReviewsStars = getDriver().findElements(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).size();
@@ -224,7 +226,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         //Проверка, что у товаров переключатель изображений с полосками
-        softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes in the product block!");
+        softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with lines");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
@@ -237,7 +239,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("140 Var1_ColorScheme_ProductLists_Category_ListWithoutOptionsRTL");
+        takeScreenShot("140 ColorScheme_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();

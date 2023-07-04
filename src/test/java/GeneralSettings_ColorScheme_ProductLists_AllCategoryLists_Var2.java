@@ -31,8 +31,8 @@ import static taras.constants.DriverProvider.getDriver;
 Отображать кнопку "Добавить в избранное" -- y
 Отображать кнопку "Добавить в список сравнения" -- y
 Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
-Показывать галерею мини-иконок товара в товарном списке --  Стрелками
-Переключать изображение товара при движении мышки -- Не переключать
+Отображать стандартную галерею изображений (Сетка и Список без опций) -- Стрелками
+Переключать изображение товара при движении мышки (Сетка и Список без опций) -- Не переключать (нужно для настройки выше)
 
 3) - UniTheme2 -- Настройки цветосхемы -- вкладка "Списки товаров":
 Тип обрамления товара в сетке --	Рамка с внешними отступами
@@ -134,10 +134,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         SoftAssert softAssert = new SoftAssert();
-        //Проверка, что у товаров присутствует галерея мини-иконок товара
-        int sizeOfGalleryOfMiniIcons = getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).size();
-        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
-                "There is no Gallery of mini icons of the product in the product block!");
+        //Проверка, что у товаров присутствует галерея изображений и она стрелками
+        int sizeOfStandardImageGallery = getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover .icon-right-circle")).size();
+        softAssert.assertTrue(sizeOfStandardImageGallery >= 1,
+                "Image gallery of the product is not with arrows navigation in the product block!");
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         int sizeOfGeneralRatingNumber = getDriver().findElements(By.cssSelector(".ut2-show-rating-num")).size();
         softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
@@ -164,9 +164,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что на странице отсутствует обесцвеченный товар.
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
                 "There is a decolorized product on the category page but shouldn't!");
-        //Проверка, что у товаров присутствует галерея мини-иконок товара
-        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 1,
-                "There is no Gallery of mini icons of the product on the category page!");
+        //Проверка, что у товаров присутствует галерея изображений и она стрелками
+        softAssert.assertTrue(sizeOfStandardImageGallery >= 1,
+                "Image gallery of the product is not with arrows navigation on the category page!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
                 "There is no button 'Add to wish list' on the category page!");

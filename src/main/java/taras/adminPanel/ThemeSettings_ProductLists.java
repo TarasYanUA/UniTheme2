@@ -54,12 +54,19 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
     public WebElement settingShowYouSave;
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
-    private WebElement settingSwitchProductImageWhenHovering;
+    private WebElement settingSwitchProductImageWhenHovering_Grid;
+    @FindBy(css = "select[id='settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop']")
+    private WebElement settingSwitchProductImageWhenHovering_List;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
-    public WebElement setting_ShowGalleryOfMiniIcons;
-    public Select getSetting_ShowGalleryOfMiniIcons(){return new Select(setting_ShowGalleryOfMiniIcons);}
+    public WebElement setting_ShowStandardImageGallery_Grid;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")
+    public WebElement setting_ShowStandardImageGallery_List;
+    public Select getSetting_ShowStandardImageGallery_Grid(){return new Select(setting_ShowStandardImageGallery_Grid);}
+    public Select getSetting_ShowStandardImageGallery_List(){return new Select(setting_ShowStandardImageGallery_List);}
+
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
-        getSetting_ShowGalleryOfMiniIcons().selectByValue(value);
+        getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
+        getSetting_ShowStandardImageGallery_List().selectByValue(value);
     }
 
 
@@ -96,11 +103,15 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public void selectSettingAdditionalProductInformation(String value){
         getSettingAdditionalProductInformation().selectByValue(value);
     }
-    public Select getSettingSwitchProductImageWhenHovering(){
-        return new Select(settingSwitchProductImageWhenHovering);
+    public Select getSettingSwitchProductImageWhenHovering_Grid(){
+        return new Select(settingSwitchProductImageWhenHovering_Grid);
+    }
+    public Select getSettingSwitchProductImageWhenHovering_List(){
+        return new Select(settingSwitchProductImageWhenHovering_List);
     }
     public void selectSettingSwitchProductImageWhenHovering(String value){
-        getSettingSwitchProductImageWhenHovering().selectByValue(value);
+        getSettingSwitchProductImageWhenHovering_Grid().selectByValue(value);
+        getSettingSwitchProductImageWhenHovering_List().selectByValue(value);
     }
     public Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
     public void selectSettingDisplayCartStatus(String value){
@@ -160,10 +171,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     }
 
     //Настройки для вида списка товаров "Компактный список"
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.image_width.desktop")
-    private WebElement  compactList_productIconWidth;
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.image_height.desktop")
-    private WebElement compactList_productIconHeight;
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_sku.desktop")
     public WebElement compactList_productCode;
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_amount.desktop")

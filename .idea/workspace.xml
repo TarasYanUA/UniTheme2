@@ -7,34 +7,10 @@
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ColorSchemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_Product_Var3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,15 +70,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "4.16.2.b",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\IDEA Projects\UniTheme2" />
@@ -118,7 +95,29 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2">
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeneralSettings_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -141,17 +140,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -163,32 +151,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -552,19 +529,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

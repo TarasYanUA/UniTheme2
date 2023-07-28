@@ -112,10 +112,10 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что галерея мини-иконок товара в виде точек
         int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
         softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 3, "Gallery of mini icons is not with points on the product block!");
-        takeScreenShot_withoutScroll("400 ProductLists_GridListView_Var2 - BlockWithProducts");
+        takeScreenShot_withoutScroll("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot_withoutScroll("405 ProductLists_GridListView_Var2 - BlockWithProducts (RTL)");
+        takeScreenShot_withoutScroll("405 GS_ProductLists_GridListView_Var2 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"
@@ -130,21 +130,21 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         softAssert.assertTrue(sizeOfGalleryOfMiniIcons  >= 3, "Gallery of mini icons is not with points on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("410 ProductLists_GridListView_Var2 - MenClothCategory");
+        takeScreenShot("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("415 ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
+        takeScreenShot("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("420 ProductLists_GridListView_Var2 - QuickView (RTL)");
+        takeScreenShot("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RU();
         stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("425 ProductLists_GridListView_Var2 - QuickView");
+        takeScreenShot("425 GS_ProductLists_GridListView_Var2 - QuickView");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }

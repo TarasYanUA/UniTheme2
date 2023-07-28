@@ -120,10 +120,10 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
-        takeScreenShot_withoutScroll("300 ProductLists_GridListView_Var1 - BlockWithProducts");
+        takeScreenShot_withoutScroll("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot_withoutScroll("305 ProductLists_GridListView_Var1 - BlockWithProducts (RTL)");
+        takeScreenShot_withoutScroll("305 GS_ProductLists_GridListView_Var1 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
@@ -144,21 +144,21 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("310 ProductLists_GridListView_Var1 - PhoneCategory");
+        takeScreenShot("310 GS_ProductLists_GridListView_Var1 - PhoneCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("315 ProductLists_GridListView_Var1 - PhoneCategory (RTL)");
+        takeScreenShot("315 GS_ProductLists_GridListView_Var1 - PhoneCategory (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("320 ProductLists_GridListView_Var1 - QuickView (RTL)");
+        takeScreenShot("320 GS_ProductLists_GridListView_Var1 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RU();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("325 ProductLists_GridListView_Var1 - QuickView");
+        takeScreenShot("325 GS_ProductLists_GridListView_Var1 - QuickView");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var1 passed successfully!");
     }

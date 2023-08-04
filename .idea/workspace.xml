@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added EDGE browser.">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/operadriver.exe" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started work with Chrome browser v115 through Opera browser with Chrome driver!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +42,7 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.c" />
               </list>
             </value>
           </entry>
@@ -53,7 +51,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CS-Cart4.16.1" />
+        <entry key="$PROJECT_DIR$" value="CS-Cart4.16.2.b" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,11 +97,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var1">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ColorSchemeSettings_Product_Var1">
+    <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -157,19 +155,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -525,7 +523,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="settings in admin panel are ready! Start working with asserts on HomePage." />
     <MESSAGE value="Asserts on HomePage are ready!" />
     <MESSAGE value="Third test-case is totally ready!" />
     <MESSAGE value="Fourth test-case is totally ready!" />
@@ -566,7 +563,8 @@
     <MESSAGE value="Added new settings of the theme to test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists" />
     <MESSAGE value="Improved new settings of the theme to test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists" />
     <MESSAGE value="Added EDGE browser." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added EDGE browser." />
+    <MESSAGE value="Started work with Chrome browser v115 through Opera browser with Chrome driver!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work with Chrome browser v115 through Opera browser with Chrome driver!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

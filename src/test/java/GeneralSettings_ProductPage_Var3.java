@@ -26,6 +26,7 @@ import java.time.Duration;
     * Отображать характеристики в две колонки --    да
     * Отображать краткое описание --    нет
     * Отображать информацию о бренде товара --  Не отображать
+    * Количество отображаемых изображений галереи товара (для всех шаблонов страницы товара) -- 3
 - Настраиваем товар X-Box 360:
     * Действие при нулевой цене --  Не отображать
     * Цена за единицу --  да
@@ -73,6 +74,11 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner{
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("none");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("3");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("3");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("3");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("3");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("3");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
@@ -133,6 +139,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner{
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
+        //Проверяем, что Количество отображаемых изображений галереи товара - 3
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-3")).size() >=1,
+                "Number of displayed images of the product gallery is not 3!");
         takeScreenShot("1100 GS_ProductPage_Var3 - Default template");
         productPage.shiftLanguage_RTL();
         takeScreenShot("1105 GS_ProductPage_Var3 - Default template (RTL)");

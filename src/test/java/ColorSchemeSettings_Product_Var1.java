@@ -1,4 +1,4 @@
-import org.openqa.selenium.By;
+import  org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
@@ -44,10 +44,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
             csCartSettings.clickSaveButtonOfSettings();
         }
 
-        //Настраиваем UniTheme настройки
+        //Настраиваем UniTheme настройки, вкладка "Товар"
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages("2");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -58,6 +57,11 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("name");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Товар"

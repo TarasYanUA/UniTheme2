@@ -11,7 +11,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
     private WebElement tabProductLists;
-    @FindBy(css = "input[id=\"settings.abt__ut2.product_list.decolorate_out_of_stock_products\"]")
+    @FindBy(css = "input[id='settings.abt__ut2.product_list.decolorate_out_of_stock_products']")
     public WebElement settingOutOfStockProducts;
     @FindBy(id = "settings.abt__ut2.product_list.price_display_format")
     private WebElement settingPriceDisplayFormat;
@@ -61,6 +61,8 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
         getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
     }
+    @FindBy(id = "settings.abt__ut2.product_list.product_variations.allow_variations_selection.desktop")
+    public WebElement setting_AllowToSelectVariationsAndOptions;
 
 
     public void clickTabProductLists(){
@@ -168,5 +170,4 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement compactList_quantityCharger;
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button.desktop")
     public WebElement compactList_buttonAddToCart;
-
 }

@@ -1,13 +1,14 @@
 import  org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.ColorSchemeSettings;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import org.openqa.selenium.interactions.Actions;
 import taras.storefront.ProductPage;
+
+import java.time.Duration;
 
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=2110746700
@@ -63,6 +64,14 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
         csCartSettings.clickSaveButtonOfSettings();
+
+        //Настраиваем UniTheme настройки, вкладка "Списки товаров"
+        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
+        themeSettingsProductLists.clickTabProductLists();
+        if(!themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.isSelected()){
+            themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.click();
+            csCartSettings.clickSaveButtonOfSettings();
+        }
 
         //Настраиваем UniTheme цветосхему, вкладка "Товар"
         ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
@@ -134,8 +143,25 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).size() >=1,
                 "Number of displayed images of the product gallery is not 2!");
         takeScreenShot("1200 ColorSchemeSettings_Product_Var1 - Default template");
+        productPage.hoverToBlockWithProducts();
+        makePause();
+        productPage.buttonAddToCart_ProductWithOptions.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).size() >=1,
+        "There is no quantity changer in pop-up window of the product with options!");
+        takeScreenShot_withoutScroll("1202 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
+        productPage.closePopUpWindow.click();
         productPage.shiftLanguage_RTL();
         takeScreenShot("1205 ColorSchemeSettings_Product_Var1 - Default template (RTL)");
+        productPage.hoverToBlockWithProducts();
+        makePause();
+        productPage.buttonAddToCart_ProductWithOptions.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        takeScreenShot_withoutScroll("1207 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options (RTL)");
+        productPage.closePopUpWindow.click();
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);

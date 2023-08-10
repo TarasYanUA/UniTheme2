@@ -24,6 +24,19 @@ public class ProductPage extends AbstractPage {
     private WebElement tab_FeaturesForNonTabs;
     @FindBy(css = "a[id*='opener_ut2_features_dialog_']")
     public WebElement featureDescription;
+    @FindBy(css = ".ty-tabs__span")
+    private WebElement blockWithProducts_MostPopular;
+    public WebElement getBlockWithProducts_MostPopular(){return blockWithProducts_MostPopular;}
+    public void hoverToBlockWithProducts(){
+        WebElement element = getBlockWithProducts_MostPopular();
+        Actions hoverProduct = new Actions(DriverProvider.getDriver());
+        hoverProduct.moveToElement(element);
+        hoverProduct.perform();
+    }
+    @FindBy(css = ".ty-icon.ut2-icon-use_icon_cart")
+    public WebElement buttonAddToCart_ProductWithOptions;
+    @FindBy(css = ".ui-icon-closethick")
+    public WebElement closePopUpWindow;
 
 
     public void shiftLanguage_EN(){

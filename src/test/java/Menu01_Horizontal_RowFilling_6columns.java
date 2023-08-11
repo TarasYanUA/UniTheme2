@@ -17,7 +17,7 @@ import java.time.Duration;
 
 */
 
-public class HorizontalMenu01_RowFilling_6columns extends TestRunner{
+public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
     @Test(priority = 1)
     public void setConfigurations_HorizontalMenu01_RowFilling_6columns(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"

@@ -180,4 +180,42 @@ public class CsCartSettings extends AbstractPage {
         colorSchemeSettings.click();
         return new ColorSchemeSettings();
     }
+
+
+    //Страница "Дизайн -- Макеты"
+    @FindBy(id = "elm_menu_design")
+    private WebElement menuDesign;
+    @FindBy(id = "elm_menu_design_layouts")
+    private WebElement section_Layouts;
+    @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
+    public WebElement layout_Lightv2;
+    @FindBy(css = ".with-menu.active .dropdown-toggle")
+    private WebElement gearwheelOfActiveLayout;
+    @FindBy(css = ".with-menu.active a[href*='block_manager.set_default_layout']")
+    private WebElement button_makeByDefault;
+
+    public WebElement hoverMenuDesign(){
+        return menuDesign;
+    }
+    public void navigateToSection_Layouts(){
+        WebElement element = hoverMenuDesign();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+        section_Layouts.click();
+    }
+
+    public WebElement hoverGearwheelOfActiveLayout(){return gearwheelOfActiveLayout;}
+    public void setLayoutAsDefault(){
+        WebElement element = hoverGearwheelOfActiveLayout();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+        gearwheelOfActiveLayout.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).size()>=1){
+            button_makeByDefault.click();
+            try { Thread.sleep(1500);
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+    }
 }

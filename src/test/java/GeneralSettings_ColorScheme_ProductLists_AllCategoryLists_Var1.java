@@ -160,7 +160,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"
-        stHomePage.navigateToMenuWomanCloth();
+        stHomePage.navigateToMenu_WomanCloth();
         //Проверка, что на странице присутствует обесцвеченный товар.
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() >= 1,
                 "There is no decolorized product on the category page!");
@@ -183,7 +183,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToMenuPhones();
+        stHomePage.navigateToMenu_Phones();
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes on the category page!");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга

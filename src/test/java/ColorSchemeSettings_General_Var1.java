@@ -81,7 +81,7 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner{
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToMenuPhones();
+        stHomePage.navigateToMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("1310 ColorSchemeSettings_General_Var1 - Category page");

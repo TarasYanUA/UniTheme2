@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adaptation of the setting &quot;Number of displayed images of the product gallery&quot; in v4.16.2c in the second test-case.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adaptation to v4.16.2c is done, including all new settings.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HorizontalMenu01_RowFilling_6columns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,44 +111,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ColorSchemeSettings_Product_Var1">
-    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.HorizontalMenu01_RowFilling_6columns.check_HorizontalMenu01_RowFilling_6columns">
     <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -158,21 +134,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HorizontalMenu01_RowFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HorizontalMenu01_RowFilling_6columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HorizontalMenu01_RowFilling_6columns.check_HorizontalMenu01_RowFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HorizontalMenu01_RowFilling_6columns" />
+      <option name="METHOD_NAME" value="check_HorizontalMenu01_RowFilling_6columns" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HorizontalMenu01_RowFilling_6columns.setConfigurations_HorizontalMenu01_RowFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HorizontalMenu01_RowFilling_6columns" />
+      <option name="METHOD_NAME" value="setConfigurations_HorizontalMenu01_RowFilling_6columns" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+      <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns" />
+      <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns.check_HorizontalMenu01_RowFilling_6columns" />
+      <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns.setConfigurations_HorizontalMenu01_RowFilling_6columns" />
       <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns.check_HorizontalMenu01_RowFilling_6columns" />
+        <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns" />
+        <item itemvalue="TestNG.HorizontalMenu01_RowFilling_6columns.setConfigurations_HorizontalMenu01_RowFilling_6columns" />
         <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -528,7 +539,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fourth test-case is totally ready!" />
     <MESSAGE value="Some very important bug fixes at my test-cases." />
     <MESSAGE value="Split with packages." />
     <MESSAGE value="Test-case for List without options is started!" />
@@ -569,7 +579,8 @@
     <MESSAGE value="Started work with Chrome browser v115 through Opera browser with Chrome driver!" />
     <MESSAGE value="Adaptation to the setting &quot;Number of displayed images of the product gallery&quot; in v4.16.2c." />
     <MESSAGE value="Adaptation of the setting &quot;Number of displayed images of the product gallery&quot; in v4.16.2c in the second test-case." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaptation of the setting &quot;Number of displayed images of the product gallery&quot; in v4.16.2c in the second test-case." />
+    <MESSAGE value="Adaptation to v4.16.2c is done, including all new settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adaptation to v4.16.2c is done, including all new settings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,6 +588,11 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

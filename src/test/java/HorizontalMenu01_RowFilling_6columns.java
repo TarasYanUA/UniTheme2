@@ -14,6 +14,7 @@ import java.time.Duration;
 Работаем с макетом Light v2. Здесь значения по умолчанию:
 Горизонтальное меню + Строчное заполнение + 6 колонок
 + Показывать иконки для пунктов меню второго уровня
+
 */
 
 public class HorizontalMenu01_RowFilling_6columns extends TestRunner{

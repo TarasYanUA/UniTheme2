@@ -74,7 +74,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
-        stHomePage.navigateToMenuGameConsoles();
+        stHomePage.navigateToMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
         SoftAssert softAssert = new SoftAssert();

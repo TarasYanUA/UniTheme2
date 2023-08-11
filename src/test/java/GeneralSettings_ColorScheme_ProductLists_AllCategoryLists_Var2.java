@@ -162,7 +162,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         takeScreenShot_withoutScroll("205 GS_CS_ProductLists_AllCategoryLists_Var2 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
         //Категория "Женская одежда"
-        stHomePage.navigateToMenuWomanCloth();
+        stHomePage.navigateToMenu_WomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице отсутствует обесцвеченный товар.
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
@@ -187,7 +187,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToMenuPhones();
+        stHomePage.navigateToMenu_Phones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что кнопка "Избранное" присутствует

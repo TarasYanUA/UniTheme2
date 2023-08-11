@@ -69,7 +69,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
-        stHomePage.navigateToMenuMenCloth();
+        stHomePage.navigateToMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();

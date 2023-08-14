@@ -96,9 +96,7 @@ public class StHomePage extends AbstractPage {
         scrollToBlock.perform();
     }
 
-    //Относится к меню
-
-
+    //Относится к меню на витрине
     private WebElement hoverMenuAllProducts(){return menuAllProducts;}
     public void navigateToMenu_AllProducts(){
         WebElement element = hoverMenuAllProducts();

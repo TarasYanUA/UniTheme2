@@ -14,11 +14,11 @@ import java.time.Duration;
 Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
 Горизонтальное меню + Строчное заполнение + 2 колонки
 + Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
++ Кол-во отображаемых элементов во 2-м уровне меню -- 0
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
-+ Элементы второго уровня -- 12
-+ Элементы третьего уровня -- 6
-+ Минимальная высота для меню -- 500
++ Элементы второго уровня -- 5 (здесь данная настройка роли не играет по причине настройки ниже)
++ Элементы третьего уровня -- 0
++ Минимальная высота для меню -- 700
 */
 
 public class Menu04_Horizontal_RowFilling_2columns extends TestRunner{
@@ -45,8 +45,8 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner{
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         menuSettings.clickAndType_setting_SecondLevelElements("12");
-        menuSettings.clickAndType_setting_ThirdLevelElements("6");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
+        menuSettings.clickAndType_setting_ThirdLevelElements("0");
+        menuSettings.clickAndType_setting_MinimumHeightForMenu("700");
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
         menuSettings.button_saveBlock.click();
@@ -68,17 +68,11 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner{
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToMenu_Electronic();
         takeScreenShot_withoutScroll("Menu402 Menu04_Horizontal_RowFilling_2columns - Menu Electronic");
-        //Проверяем, что у меню второго уровня есть иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+        //Проверяем, что у меню второго уровня присутствуют иконки
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-link.item-icon")).size() >=1,
                 "There are no icons at the menu of the second level!");
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
-                "'Number of visible elements in the 2-level menu' is not 5!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
-                "There are less than 3 buttons 'More' in the elements of the 2-level menu");
-        //Проверяем, что Элементов второго уровня -- не меньше 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
+        //Проверяем, что Элементов второго уровня -- 0
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
                 "Number of elements of the 2-level is less than 6!");
         softAssert.assertAll();
         stHomePage.navigateToMenu_Apparel();

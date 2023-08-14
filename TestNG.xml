@@ -15,6 +15,13 @@
             <class name="ColorSchemeSettings_Product_Var1" />
             <class name="ColorSchemeSettings_General_Var1" />
             <class name="ColorSchemeSettings_General_Var2" />
+
+            <!--Тест-кейсы для меню на витрине
+            <class name="Menu01_Horizontal_RowFilling_6columns" />
+            <class name="Menu02_Horizontal_RowFilling_5columns" />
+            <class name="Menu03_Horizontal_RowFilling_4columns" />
+            <class name="Menu04_Horizontal_RowFilling_2columns" />
+            <class name="Menu05_Horizontal_RowFilling_1column" /> -->
         </classes>
     </test>
 </suite>

@@ -11,19 +11,19 @@ import taras.storefront.StHomePage;
 import java.time.Duration;
 
 /*
-Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
-Горизонтальное меню + Строчное заполнение + 6 колонок
+Работаем с макетом Light v2:
+Горизонтальное меню + Строчное заполнение + 4 колонки
 + Показывать иконки для пунктов меню второго уровня -- да
 + Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10 -- с этой настройкой ещё поработать отдельно!!!
-+ Элементы второго уровня -- 12
-+ Элементы третьего уровня -- 6
++ Кол-во отображаемых элементов в 3-м уровне меню -- 10
++ Элементы второго уровня -- 4
++ Элементы третьего уровня -- 4
 + Минимальная высота для меню -- 500
 */
 
-public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
+public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
     @Test(priority = 1)
-    public void setConfigurations_Menu01_Horizontal_RowFilling_6columns(){
+    public void setConfigurations_Menu03_Horizontal_RowFilling_4columns(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_Layouts();
@@ -35,7 +35,7 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();
         menuSettings.selectSetting_FillingType("row_filling");
-        menuSettings.selectSetting_MaximumColumns("6");
+        menuSettings.selectSetting_MaximumColumns("4");
         if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             menuSettings.setting_CompactDisplayView.click();
         }
@@ -44,30 +44,30 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
         }
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        menuSettings.clickAndType_setting_SecondLevelElements("12");
-        menuSettings.clickAndType_setting_ThirdLevelElements("6");
+        menuSettings.clickAndType_setting_SecondLevelElements("3");
+        menuSettings.clickAndType_setting_ThirdLevelElements("0");
         menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu01_Horizontal_RowFilling_6columns")
-    public void check_Menu01_Horizontal_RowFilling_6columns(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu03_Horizontal_RowFilling_4columns")
+    public void check_Menu03_Horizontal_RowFilling_4columns(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot_withoutScroll("Menu100 Menu01_Horizontal_RowFilling_6columns - Menu AllProducts");
+        takeScreenShot_withoutScroll("Menu300 Menu03_Horizontal_RowFilling_4columns - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
                 "Menu filling is not Row!");
-        //Проверяем, что колонок 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='6']")).size() >=1,
-                "Menu columns are not equal 6 columns!");
+        //Проверяем, что колонок 4
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='4']")).size() >=1,
+                "Menu columns are not equal 4 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu102 Menu01_Horizontal_RowFilling_6columns - Menu Electronic");
+        takeScreenShot_withoutScroll("Menu302 Menu03_Horizontal_RowFilling_4columns - Menu Electronic");
         //Проверяем, что у меню второго уровня есть иконки
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are no icons at the menu of the second level!");
@@ -76,26 +76,29 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
                 "'Number of visible elements in the 2-level menu' is not 5!");
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
-                "There are less than three buttons 'More' in the elements of the 2-level menu");
-        //Проверяем, что Элементов второго уровня -- не меньше 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
-                "Number of elements of the 2-level is less than 6!");
+                "There are less than 3 buttons 'More' in the elements of the 2-level menu!");
+        //Проверяем, что Элементов второго уровня -- не меньше 3
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='3']")).size() >=1,
+                "Number of elements of the 2-level is less than 3!");
+        //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
+                "There is no button 'More [category]' in the 2-level menu!");
         softAssert.assertAll();
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu104 Menu01_Horizontal_RowFilling_6columns - Menu Apparel");
+        takeScreenShot_withoutScroll("Menu304 Menu03_Horizontal_RowFilling_4columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu106 Menu01_Horizontal_RowFilling_6columns - Menu SportsAndOutdoors");
+        takeScreenShot_withoutScroll("Menu306 Menu03_Horizontal_RowFilling_4columns - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu108 Menu01_Horizontal_RowFilling_6columns - Menu VideoGames");
+        takeScreenShot_withoutScroll("Menu308 Menu03_Horizontal_RowFilling_4columns - Menu VideoGames");
 
         stHomePage.selectLanguage_RTL();
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu110 Menu01_Horizontal_RowFilling_6columns - Menu Electronic (RTL)");
+        takeScreenShot_withoutScroll("Menu310 Menu03_Horizontal_RowFilling_4columns - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu112 Menu01_Horizontal_RowFilling_6columns - Menu Apparel (RTL)");
+        takeScreenShot_withoutScroll("Menu312 Menu03_Horizontal_RowFilling_4columns - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu114 Menu01_Horizontal_RowFilling_6columns - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot_withoutScroll("Menu314 Menu03_Horizontal_RowFilling_4columns - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu116 Menu01_Horizontal_RowFilling_6columns - Menu VideoGames (RTL)");
+        takeScreenShot_withoutScroll("Menu316 Menu03_Horizontal_RowFilling_4columns - Menu VideoGames (RTL)");
     }
 }

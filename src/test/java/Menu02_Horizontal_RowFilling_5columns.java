@@ -80,7 +80,6 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         //Проверяем, что Элементов второго уровня -- не меньше 6
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
                 "Number of elements in the 2-level menu is less than 6!");
-        softAssert.assertAll();
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu204 Menu02_Horizontal_RowFilling_5columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
@@ -97,5 +96,6 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         takeScreenShot_withoutScroll("Menu214 Menu02_Horizontal_RowFilling_5columns - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
         takeScreenShot_withoutScroll("Menu216 Menu02_Horizontal_RowFilling_5columns - Menu VideoGames (RTL)");
+        softAssert.assertAll();
     }
 }

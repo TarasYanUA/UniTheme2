@@ -11,10 +11,14 @@ import taras.storefront.StHomePage;
 import java.time.Duration;
 
 /*
-Работаем с макетом Light v2. Здесь значения по умолчанию:
+Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
 Горизонтальное меню + Строчное заполнение + 6 колонок
-+ Показывать иконки для пунктов меню второго уровня
-
++ Показывать иконки для пунктов меню второго уровня -- да
++ Кол-во отображаемых элементов во 2-м уровне меню -- 5
++ Кол-во отображаемых элементов в 3-м уровне меню -- 10
++ Элементы второго уровня -- 12
++ Элементы третьего уровня -- 6
++ Минимальная высота для меню -- 500
 */
 
 public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
@@ -67,6 +71,7 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
         //Проверяем, что у меню второго уровня есть иконки
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There is no icons at the menu of the second level!");
+        softAssert.assertAll();
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu104 HorizontalMenu01_RowFilling_6columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
@@ -75,6 +80,13 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner{
         takeScreenShot_withoutScroll("Menu108 HorizontalMenu01_RowFilling_6columns - Menu VideoGames");
 
         stHomePage.selectLanguage_RTL();
-        softAssert.assertAll();
+        stHomePage.navigateToMenu_Electronic();
+        takeScreenShot_withoutScroll("Menu110 HorizontalMenu01_RowFilling_6columns - Menu Electronic (RTL)");
+        stHomePage.navigateToMenu_Apparel();
+        takeScreenShot_withoutScroll("Menu112 HorizontalMenu01_RowFilling_6columns - Menu Apparel (RTL)");
+        stHomePage.navigateToMenu_SportsAndOutdoors();
+        takeScreenShot_withoutScroll("Menu114 HorizontalMenu01_RowFilling_6columns - Menu SportsAndOutdoors (RTL)");
+        stHomePage.navigateToMenu_VideoGames();
+        takeScreenShot_withoutScroll("Menu116 HorizontalMenu01_RowFilling_6columns - Menu VideoGames (RTL)");
     }
 }

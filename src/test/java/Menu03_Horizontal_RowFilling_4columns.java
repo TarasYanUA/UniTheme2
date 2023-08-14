@@ -14,11 +14,11 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Строчное заполнение + 4 колонки
 + Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
++ Кол-во отображаемых элементов во 2-м уровне меню -- 4
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 4
 + Элементы третьего уровня -- 4
-+ Минимальная высота для меню -- 500
++ Минимальная высота для меню -- 300
 */
 
 public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
@@ -42,11 +42,11 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
         if(!menuSettings.setting_ShowIconsForMenuItems.isSelected()){
             menuSettings.setting_ShowIconsForMenuItems.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
+        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("4");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        menuSettings.clickAndType_setting_SecondLevelElements("3");
-        menuSettings.clickAndType_setting_ThirdLevelElements("0");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
+        menuSettings.clickAndType_setting_SecondLevelElements("4");
+        menuSettings.clickAndType_setting_ThirdLevelElements("4");
+        menuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
         menuSettings.button_saveBlock.click();
@@ -71,19 +71,15 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
         //Проверяем, что у меню второго уровня есть иконки
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are no icons at the menu of the second level!");
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
-                "'Number of visible elements in the 2-level menu' is not 5!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
-                "There are less than 3 buttons 'More' in the elements of the 2-level menu!");
+        //Проверяем, что отсутствуют кнопки "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=1,
+                "There are buttons 'More' in the elements of the 2-level menu but shouldn't!");
         //Проверяем, что Элементов второго уровня -- не меньше 3
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='3']")).size() >=1,
                 "Number of elements of the 2-level is less than 3!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
                 "There is no button 'More [category]' in the 2-level menu!");
-        softAssert.assertAll();
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu304 Menu03_Horizontal_RowFilling_4columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
@@ -100,5 +96,6 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
         takeScreenShot_withoutScroll("Menu314 Menu03_Horizontal_RowFilling_4columns - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
         takeScreenShot_withoutScroll("Menu316 Menu03_Horizontal_RowFilling_4columns - Menu VideoGames (RTL)");
+        softAssert.assertAll();
     }
 }

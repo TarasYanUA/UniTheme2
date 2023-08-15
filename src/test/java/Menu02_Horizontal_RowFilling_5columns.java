@@ -7,7 +7,6 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
-
 import java.time.Duration;
 
 /*
@@ -77,9 +76,9 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=10,
                 "There are less than 10 buttons 'More' in the elements of the 2-level menu");
-        //Проверяем, что Элементов второго уровня -- не меньше 6
+        //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
-                "Number of elements in the 2-level menu is less than 6!");
+                "Number of elements in the 2-level menu is less than 7!");
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu204 Menu02_Horizontal_RowFilling_5columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();

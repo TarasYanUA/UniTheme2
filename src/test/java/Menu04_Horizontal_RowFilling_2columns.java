@@ -7,7 +7,6 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
-
 import java.time.Duration;
 
 /*
@@ -72,9 +71,8 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-link.item-icon")).size() >=1,
                 "There are no icons at the menu of the second level!");
         //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
-                "Number of elements of the 2-level is less than 6!");
-        softAssert.assertAll();
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='0']")).size() >=1,
+                "Number of elements of the 2-level is more than zero!");
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu404 Menu04_Horizontal_RowFilling_2columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
@@ -91,5 +89,6 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner{
         takeScreenShot_withoutScroll("Menu414 Menu04_Horizontal_RowFilling_2columns - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
         takeScreenShot_withoutScroll("Menu416 Menu04_Horizontal_RowFilling_2columns - Menu VideoGames (RTL)");
+        softAssert.assertAll();
     }
 }

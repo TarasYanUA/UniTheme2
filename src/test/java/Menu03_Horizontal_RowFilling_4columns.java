@@ -7,7 +7,6 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
-
 import java.time.Duration;
 
 /*
@@ -74,9 +73,9 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner{
         //Проверяем, что отсутствуют кнопки "Ещё" у элементов во 2-м уровне меню
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=1,
                 "There are buttons 'More' in the elements of the 2-level menu but shouldn't!");
-        //Проверяем, что Элементов второго уровня -- не меньше 3
+        //Проверяем, что Элементов второго уровня -- 4
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='3']")).size() >=1,
-                "Number of elements of the 2-level is less than 3!");
+                "Number of elements of the 2-level is less than 4!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
                 "There is no button 'More [category]' in the 2-level menu!");

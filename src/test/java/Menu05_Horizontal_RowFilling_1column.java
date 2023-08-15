@@ -7,16 +7,15 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
-
 import java.time.Duration;
 
 /*
 Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
 Горизонтальное меню + Строчное заполнение + 1 колонка
-+ Показывать иконки для пунктов меню второго уровня -- да
++ Показывать иконки для пунктов меню второго уровня -- нет
 + Кол-во отображаемых элементов во 2-м уровне меню -- 5
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
-+ Элементы второго уровня -- 12
++ Элементы второго уровня -- 3
 + Элементы третьего уровня -- 6
 + Минимальная высота для меню -- 500
 */
@@ -39,12 +38,12 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner{
         if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             menuSettings.setting_CompactDisplayView.click();
         }
-        if(!menuSettings.setting_ShowIconsForMenuItems.isSelected()){
+        if(menuSettings.setting_ShowIconsForMenuItems.isSelected()){
             menuSettings.setting_ShowIconsForMenuItems.click();
         }
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        menuSettings.clickAndType_setting_SecondLevelElements("12");
+        menuSettings.clickAndType_setting_SecondLevelElements("3");
         menuSettings.clickAndType_setting_ThirdLevelElements("6");
         menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         menuSettings.tab_Content.click();
@@ -68,19 +67,21 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner{
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToMenu_Electronic();
         takeScreenShot_withoutScroll("Menu502 Menu05_Horizontal_RowFilling_1column - Menu Electronic");
-        //Проверяем, что у меню второго уровня есть иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
-                "There are no icons at the menu of the second level!");
+        //Проверяем, что у меню второго уровня отсутствуют иконки
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+                "There are icons at the menu of the second level but shouldn't!");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
                 "'Number of visible elements in the 2-level menu' is not 5!");
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
                 "There are less than 3 buttons 'More' in the elements of the 2-level menu");
-        //Проверяем, что Элементов второго уровня -- не меньше 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
-                "Number of elements of the 2-level is less than 6!");
-        softAssert.assertAll();
+        //Проверяем, что Элементов второго уровня -- 3
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='2']")).size() >=1,
+                "Number of elements of the 2-level is less than 3!");
+        //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
+                "There is no button 'More [category]' in the 2-level menu!");
         stHomePage.navigateToMenu_Apparel();
         takeScreenShot_withoutScroll("Menu504 Menu05_Horizontal_RowFilling_1column - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
@@ -97,5 +98,6 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner{
         takeScreenShot_withoutScroll("Menu514 Menu05_Horizontal_RowFilling_1column - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
         takeScreenShot_withoutScroll("Menu516 Menu05_Horizontal_RowFilling_1column - Menu VideoGames (RTL)");
+        softAssert.assertAll();
     }
 }

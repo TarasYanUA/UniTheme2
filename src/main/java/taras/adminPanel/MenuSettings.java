@@ -10,7 +10,7 @@ import taras.constants.DriverProvider;
 public class MenuSettings extends AbstractPage {
     public MenuSettings(){super();}
 
-    @FindBy(css = ".device-specific-block.grid.grid_16#grid_528 .bm-action-properties.action")
+    @FindBy(css = "div[data-block-id='150'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;

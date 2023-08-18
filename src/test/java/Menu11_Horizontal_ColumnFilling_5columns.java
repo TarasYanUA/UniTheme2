@@ -11,7 +11,7 @@ import java.time.Duration;
 
 /*
 Работаем с макетом Light v2:
-Горизонтальное меню + Строчное заполнение + 5 колонок
+Горизонтальное меню + Колоночное заполнение + 5 колонок
 + Показывать иконки для пунктов меню второго уровня -- нет
 + Кол-во отображаемых элементов во 2-м уровне меню -- 2
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
@@ -20,9 +20,9 @@ import java.time.Duration;
 + Минимальная высота для меню -- 500
 */
 
-public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
+public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner{
     @Test(priority = 1)
-    public void setConfigurations_Menu02_Horizontal_RowFilling_5columns(){
+    public void setConfigurations_Menu11_Horizontal_ColumnFilling_5columns(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_Layouts();
@@ -33,7 +33,7 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();
-        menuSettings.selectSetting_FillingType("row_filling");
+        menuSettings.selectSetting_FillingType("column_filling");
         menuSettings.selectSetting_MaximumColumns("5");
         if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             menuSettings.setting_CompactDisplayView.click();
@@ -51,22 +51,22 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu02_Horizontal_RowFilling_5columns")
-    public void check_Menu02_Horizontal_RowFilling_5columns(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu11_Horizontal_ColumnFilling_5columns")
+    public void check_Menu11_Horizontal_ColumnFilling_5columns(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot_withoutScroll("Menu200 Menu02_Horizontal_RowFilling_5columns - Menu AllProducts");
-        //Проверяем, что у меню Строчное заполнение
+        takeScreenShot_withoutScroll("Menu11.00 Menu11_Horizontal_ColumnFilling_5columns - Menu AllProducts");
+        //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
-                "Menu filling is not Row!");
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+                "Menu filling is not Column!");
         //Проверяем, что колонок 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
                 "Menu columns are not equal 5 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu202 Menu02_Horizontal_RowFilling_5columns - Menu Electronic");
+        takeScreenShot_withoutScroll("Menu11.02 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -80,21 +80,21 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
                 "Number of elements in the 2-level menu is less than 7!");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu204 Menu02_Horizontal_RowFilling_5columns - Menu Apparel");
+        takeScreenShot_withoutScroll("Menu11.04 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu206 Menu02_Horizontal_RowFilling_5columns - Menu SportsAndOutdoors");
+        takeScreenShot_withoutScroll("Menu11.06 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu208 Menu02_Horizontal_RowFilling_5columns - Menu VideoGames");
+        takeScreenShot_withoutScroll("Menu11.08 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames");
 
         stHomePage.selectLanguage_RTL();
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu210 Menu02_Horizontal_RowFilling_5columns - Menu Electronic (RTL)");
+        takeScreenShot_withoutScroll("Menu11.10 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu212 Menu02_Horizontal_RowFilling_5columns - Menu Apparel (RTL)");
+        takeScreenShot_withoutScroll("Menu11.12 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu214 Menu02_Horizontal_RowFilling_5columns - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot_withoutScroll("Menu11.14 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu216 Menu02_Horizontal_RowFilling_5columns - Menu VideoGames (RTL)");
+        takeScreenShot_withoutScroll("Menu11.16 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

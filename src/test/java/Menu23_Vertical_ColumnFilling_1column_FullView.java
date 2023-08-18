@@ -36,7 +36,7 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner{
         menuSettings.menuSettings_buttonSettings.click();
         menuSettings.selectSetting_FillingType("column_filling");
         menuSettings.selectSetting_MaximumColumns("1");
-        if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
+        if(menuSettings.setting_CompactDisplayView.isSelected()){
             menuSettings.setting_CompactDisplayView.click();
         }
         if(menuSettings.setting_ShowIconsForMenuItems.isSelected()){

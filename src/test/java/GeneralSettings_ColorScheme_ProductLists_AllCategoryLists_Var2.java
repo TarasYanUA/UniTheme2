@@ -210,7 +210,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.closeNotificationWindow.click();
         softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no status for the button 'Add to comparison list'!");
-        /*  Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
+
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.LogOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
@@ -222,7 +222,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
-            }}*/
+            }}
+
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
         stHomePage.selectLanguage_RTL();
@@ -258,9 +259,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         int sizeOfStatusAtButton_Comparison = getDriver().findElements(By.cssSelector("a.ut2-add-to-compare.active")).size();
         softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-/*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
-                "There is no status for the button 'Add to cart' on the category page!");*/
+                "There is no status for the button 'Add to cart' on the category page!");
         makePause();
         takeScreenShot("240 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions (RTL)");
         stHomePage.selectLanguage_RU();
@@ -273,9 +273,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что присутствует статус у кнопки "Сравнение"
         softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-/*      Скрыто, пока не решена ошибка https://abteam.planfix.com/task/38481
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
-                "There is no status for the button 'Add to cart' on the category page!");*/
+                "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         takeScreenShot("255 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView (RTL)");

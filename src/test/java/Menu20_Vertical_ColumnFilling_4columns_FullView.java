@@ -92,14 +92,16 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner{
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
+        stHomePage.navigateToMenu_AllProducts();
+        takeScreenShot_withoutScroll("Menu20.10 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu20.10 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Electronic (RTL)");
+        takeScreenShot_withoutScroll("Menu20.12 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu20.12 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Apparel (RTL)");
+        takeScreenShot_withoutScroll("Menu20.14 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu20.14 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot_withoutScroll("Menu20.16 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu20.16 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu VideoGames (RTL)");
+        takeScreenShot_withoutScroll("Menu20.18 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

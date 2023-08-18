@@ -12,6 +12,8 @@ public class MenuSettings extends AbstractPage {
 
     @FindBy(css = "div[data-block-id='150'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu;
+    @FindBy(css = "div[data-block-id='145'] .bm-action-properties.action")
+    public WebElement gearwheelOfTheBlock_Categories;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")

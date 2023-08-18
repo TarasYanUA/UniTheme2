@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved names for screenshots of the menu.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed commented code because planfix task https://abteam.planfix.com/task/38481 is done.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu20_Vertical_ColumnFilling_4columns_FullView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Menu05_Horizontal_RowFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu05_Horizontal_RowFilling_1column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Menu10_Horizontal_ColumnFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu10_Horizontal_ColumnFilling_6columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Menu13_Horizontal_ColumnFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu13_Horizontal_ColumnFilling_2columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Menu14_Horizontal_ColumnFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu14_Horizontal_ColumnFilling_1column.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,44 +105,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu14_Horizontal_ColumnFilling_1column">
-    <configuration name="Menu05_Horizontal_RowFilling_1column" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu05_Horizontal_RowFilling_1column" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu10_Horizontal_ColumnFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu10_Horizontal_ColumnFilling_6columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu11_Horizontal_ColumnFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu11_Horizontal_ColumnFilling_5columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView">
     <configuration name="Menu12_Horizontal_ColumnFilling_4columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Menu12_Horizontal_ColumnFilling_4columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu13_Horizontal_ColumnFilling_2columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu13_Horizontal_ColumnFilling_2columns" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -152,21 +139,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu20_Vertical_ColumnFilling_4columns_FullView" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu20_Vertical_ColumnFilling_4columns_FullView" />
+      <option name="METHOD_NAME" value="check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu10_Horizontal_ColumnFilling_6columns" />
-      <item itemvalue="TestNG.Menu11_Horizontal_ColumnFilling_5columns" />
       <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
+      <item itemvalue="TestNG.Menu13_Horizontal_ColumnFilling_2columns" />
       <item itemvalue="TestNG.Menu14_Horizontal_ColumnFilling_1column" />
-      <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
+      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
+      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
+        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
+        <item itemvalue="TestNG.Menu13_Horizontal_ColumnFilling_2columns" />
         <item itemvalue="TestNG.Menu14_Horizontal_ColumnFilling_1column" />
         <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
-        <item itemvalue="TestNG.Menu11_Horizontal_ColumnFilling_5columns" />
-        <item itemvalue="TestNG.Menu10_Horizontal_ColumnFilling_6columns" />
-        <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
       </list>
     </recent_temporary>
   </component>
@@ -522,7 +532,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
     <MESSAGE value="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
@@ -563,7 +572,8 @@
     <MESSAGE value="Fifth test-case is ready!" />
     <MESSAGE value="4 test-cases for Horizontal menu in Columns are ready!" />
     <MESSAGE value="Improved names for screenshots of the menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved names for screenshots of the menu." />
+    <MESSAGE value="Removed commented code because planfix task https://abteam.planfix.com/task/38481 is done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed commented code because planfix task https://abteam.planfix.com/task/38481 is done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -574,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java</url>
-          <line>98</line>
+          <line>100</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

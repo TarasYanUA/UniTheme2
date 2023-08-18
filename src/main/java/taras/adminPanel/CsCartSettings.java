@@ -187,6 +187,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement menuDesign;
     @FindBy(id = "elm_menu_design_layouts")
     private WebElement section_Layouts;
+    @FindBy(css = "a[href$='block_manager.manage&s_layout=5']")
+    public WebElement layout_Light;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
     public WebElement layout_Lightv2;
     @FindBy(css = ".with-menu.active .dropdown-toggle")

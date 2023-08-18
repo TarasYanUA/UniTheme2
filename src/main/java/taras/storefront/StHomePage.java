@@ -29,6 +29,8 @@ public class StHomePage extends AbstractPage {
     private WebElement productInProductBlock;
 
     //Разделы меню
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
+    public WebElement menuButton_Catalog;
     @FindBy(css = "li[class$='ty-menu-item__products']")
     private WebElement menuAllProducts;
     @FindBy(css = "li[class$='ty-menu-item__apparel']")

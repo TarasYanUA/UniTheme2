@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="First Vertical menu is ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Menu21_Vertical_ColumnFilling_5columns_FullView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Menu22_Vertical_ColumnFilling_2columns_FullView.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Two more test-cases of Vertical menu are ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu23_Vertical_ColumnFilling_1column.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu20_Vertical_ColumnFilling_4columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu20_Vertical_ColumnFilling_4columns_FullView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,24 +97,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.check_Menu22_Vertical_ColumnFilling_2columns_FullView">
+  <component name="RunManager" selected="TestNG.Menu23_Vertical_ColumnFilling_1column_FullView">
     <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Menu20_Vertical_ColumnFilling_4columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu20_Vertical_ColumnFilling_4columns_FullView" />
-      <option name="METHOD_NAME" value="check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -157,21 +143,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu23_Vertical_ColumnFilling_1column_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu23_Vertical_ColumnFilling_1column_FullView" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
-      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
       <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
       <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
       <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.check_Menu22_Vertical_ColumnFilling_2columns_FullView" />
+      <item itemvalue="TestNG.Menu23_Vertical_ColumnFilling_1column_FullView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu23_Vertical_ColumnFilling_1column_FullView" />
         <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.check_Menu22_Vertical_ColumnFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
         <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
-        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.check_Menu20_Vertical_ColumnFilling_4columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -527,7 +524,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout." />
     <MESSAGE value="Started working with new settings of CS-Cart 4.16.1b" />
     <MESSAGE value="First test-case is adapted to Uni2 v4.16.1b" />
@@ -568,7 +564,8 @@
     <MESSAGE value="Improved names for screenshots of the menu." />
     <MESSAGE value="Removed commented code because planfix task https://abteam.planfix.com/task/38481 is done." />
     <MESSAGE value="First Vertical menu is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Vertical menu is ready!" />
+    <MESSAGE value="Two more test-cases of Vertical menu are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two more test-cases of Vertical menu are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fourth test-case is ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fifth test-case is ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu10_Horizontal_ColumnFilling_6columns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu11_Horizontal_ColumnFilling_5columns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu12_Horizontal_ColumnFilling_4columns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu13_Horizontal_ColumnFilling_2columns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu14_Horizontal_ColumnFilling_1column.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Menu02_Horizontal_RowFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu02_Horizontal_RowFilling_5columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu03_Horizontal_RowFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu03_Horizontal_RowFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu05_Horizontal_RowFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu05_Horizontal_RowFilling_1column.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,51 +104,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu05_Horizontal_RowFilling_1column">
-    <configuration name="Menu01_Horizontal_RowFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu01_Horizontal_RowFilling_6columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu02_Horizontal_RowFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu02_Horizontal_RowFilling_5columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu03_Horizontal_RowFilling_4columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu03_Horizontal_RowFilling_4columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu04_Horizontal_RowFilling_2columns" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu04_Horizontal_RowFilling_2columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Menu14_Horizontal_ColumnFilling_1column">
     <configuration name="Menu05_Horizontal_RowFilling_1column" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -158,21 +116,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu10_Horizontal_ColumnFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu10_Horizontal_ColumnFilling_6columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu11_Horizontal_ColumnFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu11_Horizontal_ColumnFilling_5columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu12_Horizontal_ColumnFilling_4columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu12_Horizontal_ColumnFilling_4columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu14_Horizontal_ColumnFilling_1column" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu14_Horizontal_ColumnFilling_1column" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.Menu10_Horizontal_ColumnFilling_6columns" />
+      <item itemvalue="TestNG.Menu11_Horizontal_ColumnFilling_5columns" />
+      <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
+      <item itemvalue="TestNG.Menu14_Horizontal_ColumnFilling_1column" />
       <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
-      <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
-      <item itemvalue="TestNG.Menu03_Horizontal_RowFilling_4columns" />
-      <item itemvalue="TestNG.Menu04_Horizontal_RowFilling_2columns" />
-      <item itemvalue="TestNG.Menu01_Horizontal_RowFilling_6columns" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu14_Horizontal_ColumnFilling_1column" />
+        <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
+        <item itemvalue="TestNG.Menu11_Horizontal_ColumnFilling_5columns" />
+        <item itemvalue="TestNG.Menu10_Horizontal_ColumnFilling_6columns" />
         <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
-        <item itemvalue="TestNG.Menu04_Horizontal_RowFilling_2columns" />
-        <item itemvalue="TestNG.Menu03_Horizontal_RowFilling_4columns" />
-        <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
-        <item itemvalue="TestNG.Menu01_Horizontal_RowFilling_6columns" />
       </list>
     </recent_temporary>
   </component>
@@ -528,7 +530,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!" />
     <MESSAGE value="Adaptation to CS-Cart 4.16.1" />
     <MESSAGE value="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout." />
     <MESSAGE value="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout." />
@@ -569,7 +570,8 @@
     <MESSAGE value="Two first test-cases are ready!" />
     <MESSAGE value="Third test-case is ready!" />
     <MESSAGE value="Fourth test-case is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth test-case is ready!" />
+    <MESSAGE value="Fifth test-case is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fifth test-case is ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -585,13 +587,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Menu01_Horizontal_RowFilling_6columns.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Menu05_Horizontal_RowFilling_1column.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="21" />
+          <line>16</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

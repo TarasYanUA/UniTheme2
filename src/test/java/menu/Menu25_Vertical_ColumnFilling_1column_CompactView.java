@@ -1,3 +1,5 @@
+package menu;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,35 +9,36 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
+
 import java.time.Duration;
 
 /*
-Работаем с макетом Light v2:
-Горизонтальное меню + Колоночное заполнение + 1 колонка
+Работаем с макетом Light:
+Вертикальное меню + Колоночное заполнение + 1 колонка + Компактное меню
 + Показывать иконки для пунктов меню второго уровня -- нет
 + Кол-во отображаемых элементов во 2-м уровне меню -- 5
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 3
 + Элементы третьего уровня -- 6
-+ Минимальная высота для меню -- 500
++ Минимальная высота для меню -- 300
 */
 
-public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
+public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu14_Horizontal_ColumnFilling_1column(){
+    public void setConfigurations_Menu25_Vertical_ColumnFilling_1column_CompactView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_Layouts();
-        csCartSettings.layout_Lightv2.click();
+        csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_MainMenu.click();
+        menuSettings.gearwheelOfTheBlock_Categories.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();
         menuSettings.selectSetting_FillingType("column_filling");
         menuSettings.selectSetting_MaximumColumns("1");
-        if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
+        if(!menuSettings.setting_CompactDisplayView.isSelected()){
             menuSettings.setting_CompactDisplayView.click();
         }
         if(menuSettings.setting_ShowIconsForMenuItems.isSelected()){
@@ -45,19 +48,20 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         menuSettings.clickAndType_setting_SecondLevelElements("3");
         menuSettings.clickAndType_setting_ThirdLevelElements("6");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
+        menuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu14_Horizontal_ColumnFilling_1column")
-    public void check_Menu14_Horizontal_ColumnFilling_1column(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu25_Vertical_ColumnFilling_1column_CompactView")
+    public void check_Menu25_Vertical_ColumnFilling_1column_CompactView(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
+        stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu14.00 Menu14_Horizontal_ColumnFilling_1column - Menu AllProducts");
+        takeScreenShot("Menu25.00 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -66,7 +70,7 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu14.02 Menu14_Horizontal_ColumnFilling_1column - Menu Electronic");
+        takeScreenShot("Menu25.02 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -83,21 +87,25 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
                 "There is no button 'More [category]' in the 2-level menu!");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu14.04 Menu14_Horizontal_ColumnFilling_1column - Menu Apparel");
+        takeScreenShot("Menu25.04 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu14.06 Menu14_Horizontal_ColumnFilling_1column - Menu SportsAndOutdoors");
+        takeScreenShot("Menu25.06 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu14.08 Menu14_Horizontal_ColumnFilling_1column - Menu VideoGames");
+        takeScreenShot("Menu25.08 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames");
 
+        stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
+        stHomePage.menuButton_Catalog.click();
+        stHomePage.navigateToMenu_AllProducts();
+        takeScreenShot("Menu25.10 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu14.10 Menu14_Horizontal_ColumnFilling_1column - Menu Electronic (RTL)");
+        takeScreenShot("Menu25.12 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu14.12 Menu14_Horizontal_ColumnFilling_1column - Menu Apparel (RTL)");
+        takeScreenShot("Menu25.14 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu14.14 Menu14_Horizontal_ColumnFilling_1column - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot("Menu25.16 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu14.16 Menu14_Horizontal_ColumnFilling_1column - Menu VideoGames (RTL)");
+        takeScreenShot("Menu25.18 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

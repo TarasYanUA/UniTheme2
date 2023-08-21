@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed one bug in the Assert.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Menu25_Vertical_ColumnFilling_1column_CompactView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView">
+  <component name="RunManager" selected="TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView">
     <configuration name="Menu13_Horizontal_ColumnFilling_2columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,18 +115,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Menu21_Vertical_ColumnFilling_5columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu21_Vertical_ColumnFilling_5columns_FullView.setConfigurations_Menu21_Vertical_ColumnFilling_5columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Menu21_Vertical_ColumnFilling_5columns_FullView" />
-      <option name="METHOD_NAME" value="setConfigurations_Menu21_Vertical_ColumnFilling_5columns_FullView" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -155,21 +143,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu25_Vertical_ColumnFilling_1column_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Menu25_Vertical_ColumnFilling_1column_CompactView" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.Menu13_Horizontal_ColumnFilling_2columns" />
-      <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.setConfigurations_Menu21_Vertical_ColumnFilling_5columns_FullView" />
       <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
+      <item itemvalue="TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView" />
       <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
       <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView" />
         <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
         <item itemvalue="TestNG.Menu13_Horizontal_ColumnFilling_2columns" />
         <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
-        <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.setConfigurations_Menu21_Vertical_ColumnFilling_5columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -525,7 +524,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changed methods for language selection - RTL and RU!" />
     <MESSAGE value="First test-case is totally ready for adaptation to theme v4.16.1b" />
     <MESSAGE value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
     <MESSAGE value="Added new settings of the theme to test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists" />
@@ -566,7 +564,8 @@
     <MESSAGE value="Fourth test-case of Vertical menu is ready!" />
     <MESSAGE value="Added menu test-cases to TestNG file." />
     <MESSAGE value="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu." />
+    <MESSAGE value="Fixed one bug in the Assert." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed one bug in the Assert." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

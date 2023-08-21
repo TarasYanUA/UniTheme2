@@ -14,7 +14,7 @@ import java.time.Duration;
 Работаем с макетом Light:
 Вертикальное меню + Колоночное заполнение + 5 колонок
 + Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 2
++ Кол-во отображаемых элементов во 2-м уровне меню -- 0
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
@@ -42,7 +42,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         if(menuSettings.setting_ShowIconsForMenuItems.isSelected()){
             menuSettings.setting_ShowIconsForMenuItems.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("2");
+        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("0");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         menuSettings.clickAndType_setting_SecondLevelElements("12");
         menuSettings.clickAndType_setting_ThirdLevelElements("6");
@@ -72,9 +72,9 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 2
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:2;']")).size() >=1,
-                "'Number of visible elements in the 2-level menu' is not 2!");
+        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 0
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:0;']")).size() >=1,
+                "'Number of visible elements in the 2-level menu' is more than zero!");
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=10,
                 "There are less than 10 buttons 'More' in the elements of the 2-level menu");

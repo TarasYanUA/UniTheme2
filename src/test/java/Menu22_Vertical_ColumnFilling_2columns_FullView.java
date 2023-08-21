@@ -69,7 +69,7 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
         stHomePage.navigateToMenu_Electronic();
         takeScreenShot("Menu22.02 Menu22_Vertical_ColumnFilling_2columns_FullView - Menu Electronic");
         //Проверяем, что у меню второго уровня присутствуют иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-link.item-icon")).size() >=1,
                 "There are no icons at the menu of the second level!");
         //Проверяем, что Элементов второго уровня -- 0
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='0']")).size() >=1,

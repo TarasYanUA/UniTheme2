@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added menu test-cases to TestNG file.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Menu24_Vertical_ColumnFilling_2columns_CompactView.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu13_Horizontal_ColumnFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu13_Horizontal_ColumnFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu21_Vertical_ColumnFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu21_Vertical_ColumnFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Menu22_Vertical_ColumnFilling_2columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Menu22_Vertical_ColumnFilling_2columns_FullView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView">
+  <component name="RunManager" selected="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView">
     <configuration name="Menu13_Horizontal_ColumnFilling_2columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -170,11 +165,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
         <item itemvalue="TestNG.Menu13_Horizontal_ColumnFilling_2columns" />
         <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
         <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.setConfigurations_Menu21_Vertical_ColumnFilling_5columns_FullView" />
-        <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -530,7 +525,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First test-case is adapted to Uni2 v4.16.1b" />
     <MESSAGE value="Changed methods for language selection - RTL and RU!" />
     <MESSAGE value="First test-case is totally ready for adaptation to theme v4.16.1b" />
     <MESSAGE value="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)" />
@@ -571,7 +565,8 @@
     <MESSAGE value="Two more test-cases of Vertical menu are ready!" />
     <MESSAGE value="Fourth test-case of Vertical menu is ready!" />
     <MESSAGE value="Added menu test-cases to TestNG file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added menu test-cases to TestNG file." />
+    <MESSAGE value="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the first test-case for Compact menu.&#10;Improved some steps for some test-cases of the menu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

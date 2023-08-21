@@ -1,7 +1,6 @@
 package menu;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
@@ -9,7 +8,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import taras.adminPanel.CsCartSettings;
 import taras.constants.DriverProvider;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -17,16 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static taras.constants.Constants.BASIC_URL;
-
-/*
-Данный проект разработан для проверки отображения витрины с различными комбинациями настроек Юни темы.
-Актуальная версия Юни темы 4.16.2d. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
-Использовать макеты Light v2, Advanced и Default.
-
-Рекомендуется запускать проект через файл TestNG.xml. Но можно также через Surefire отчёт:
-перейти в "Терминал" и ввести "mvn clean test". После этого в папке "target -> surefire reports"
-открыть файл "index.html" с помощью браузера.
- */
 
 public class TestRunner {
     @BeforeMethod

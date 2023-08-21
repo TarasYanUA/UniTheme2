@@ -61,7 +61,7 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu25.00 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts");
+        takeScreenShot("Menu25.00 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -70,7 +70,7 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu25.02 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic");
+        takeScreenShot("Menu25.02 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -87,25 +87,25 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
                 "There is no button 'More [category]' in the 2-level menu!");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu25.04 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel");
+        takeScreenShot("Menu25.04 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu25.06 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors");
+        takeScreenShot("Menu25.06 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu25.08 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames");
+        takeScreenShot("Menu25.08 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames");
 
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu25.10 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts (RTL)");
+        takeScreenShot("Menu25.10 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu25.12 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic (RTL)");
+        takeScreenShot("Menu25.12 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu25.14 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel (RTL)");
+        takeScreenShot("Menu25.14 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu25.16 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot("Menu25.16 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu25.18 menu.Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames (RTL)");
+        takeScreenShot("Menu25.18 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

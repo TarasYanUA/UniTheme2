@@ -61,7 +61,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu21.00 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts");
+        takeScreenShot("Menu21.00 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -70,7 +70,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
                 "Menu columns are not equal 5 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu21.02 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Electronic");
+        takeScreenShot("Menu21.02 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -84,25 +84,25 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
                 "Number of elements in the 2-level menu is less than 7!");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu21.04 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Apparel");
+        takeScreenShot("Menu21.04 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu21.06 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu SportsAndOutdoors");
+        takeScreenShot("Menu21.06 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu21.08 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu VideoGames");
+        takeScreenShot("Menu21.08 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu VideoGames");
 
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu21.10 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts (RTL)");
+        takeScreenShot("Menu21.10 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu21.12 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Electronic (RTL)");
+        takeScreenShot("Menu21.12 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu21.14 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Apparel (RTL)");
+        takeScreenShot("Menu21.14 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu21.16 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot("Menu21.16 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu21.18 menu.Menu21_Vertical_ColumnFilling_5columns_FullView - Menu VideoGames (RTL)");
+        takeScreenShot("Menu21.18 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

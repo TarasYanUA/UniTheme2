@@ -73,30 +73,30 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner{
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("1300 ColorSchemeSettings_General_Var1 - Block with products");
+        takeScreenShot("1300 ColorSchemeSettings_General_Var1 - Block with products");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("1305 ColorSchemeSettings_General_Var1 - Block with products (RTL)");
+        takeScreenShot("1305 ColorSchemeSettings_General_Var1 - Block with products (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
         stHomePage.navigateToMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("1310 ColorSchemeSettings_General_Var1 - Category page");
+        takeScreenShot_withScroll("1310 ColorSchemeSettings_General_Var1 - Category page");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("1315 ColorSchemeSettings_General_Var1 - QuickView");
+        takeScreenShot_withScroll("1315 ColorSchemeSettings_General_Var1 - QuickView");
         stCategoryPage.clickButton_WriteReview();
-        takeScreenShot("1320 ColorSchemeSettings_General_Var1 - Write review");
+        takeScreenShot_withScroll("1320 ColorSchemeSettings_General_Var1 - Write review");
         stCategoryPage.closeWriteReview.click();
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("1325 ColorSchemeSettings_General_Var1 - Category page (RTL)");
+        takeScreenShot_withScroll("1325 ColorSchemeSettings_General_Var1 - Category page (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("1330 ColorSchemeSettings_General_Var1 - QuickView (RTL)");
+        takeScreenShot_withScroll("1330 ColorSchemeSettings_General_Var1 - QuickView (RTL)");
         stCategoryPage.clickButton_WriteReview();
-        takeScreenShot("1335 ColorSchemeSettings_General_Var1 - Write review (RTL)");
+        takeScreenShot_withScroll("1335 ColorSchemeSettings_General_Var1 - Write review (RTL)");
     }
 }

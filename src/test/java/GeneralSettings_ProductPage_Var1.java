@@ -160,23 +160,23 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner{
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
                 "There is no Reward points!");
-        takeScreenShot("900 GS_ProductPage_Var1 - Default template");
+        takeScreenShot_withScroll("900 GS_ProductPage_Var1 - Default template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("905 GS_ProductPage_Var1 - Default template (RTL)");
+        takeScreenShot_withScroll("905 GS_ProductPage_Var1 - Default template (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']"))
                 .size() >=1, "Features are located in two columns instead of one!");
-        takeScreenShot_withoutScroll("910 GS_ProductPage_Var1 - Product features, one column (RTL)");
+        takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot_withoutScroll("915 GS_ProductPage_Var1 - Product features, one column");
+        takeScreenShot("915 GS_ProductPage_Var1 - Product features, one column");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot_withoutScroll("920 GS_ProductPage_Var1 - Feature description, one column");
+        takeScreenShot("920 GS_ProductPage_Var1 - Feature description, one column");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
@@ -184,33 +184,33 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner{
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        takeScreenShot("925 GS_ProductPage_Var1 - Big picture");
+        takeScreenShot_withScroll("925 GS_ProductPage_Var1 - Big picture");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("930 GS_ProductPage_Var1 - Big picture (RTL)");
+        takeScreenShot_withScroll("930 GS_ProductPage_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        takeScreenShot("935 GS_ProductPage_Var1 - Big picture flat");
+        takeScreenShot_withScroll("935 GS_ProductPage_Var1 - Big picture flat");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("940 GS_ProductPage_Var1 - Big picture flat (RTL)");
+        takeScreenShot_withScroll("940 GS_ProductPage_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        takeScreenShot("945 GS_ProductPage_Var1 - Three columned");
+        takeScreenShot_withScroll("945 GS_ProductPage_Var1 - Three columned");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("950 GS_ProductPage_Var1 - Three columned (RTL)");
+        takeScreenShot_withScroll("950 GS_ProductPage_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
-        takeScreenShot("955 GS_ProductPage_Var1 - Gallery template");
+        takeScreenShot_withScroll("955 GS_ProductPage_Var1 - Gallery template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot("960 GS_ProductPage_Var1 - Gallery template (RTL)");
+        takeScreenShot_withScroll("960 GS_ProductPage_Var1 - Gallery template (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Var1 passed successfully!");
     }

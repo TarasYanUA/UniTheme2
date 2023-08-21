@@ -152,11 +152,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1,
                 "Buttons are not displayed when hovering over a product cell in the product block!");
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("100 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts");
+        takeScreenShot("100 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
-        takeScreenShot_withoutScroll("105 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts (RTL)");
+        takeScreenShot("105 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"
@@ -176,10 +176,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         softAssert.assertTrue(sizeOfButtonsAreDisplayedOnHover >= 1);
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("110 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory");
+        takeScreenShot_withScroll("110 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToClothProduct();
-        takeScreenShot("115 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory (RTL)");
+        takeScreenShot_withScroll("115 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
@@ -203,25 +203,25 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
+        takeScreenShot_withScroll("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
         if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
+        takeScreenShot_withScroll("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("130 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView");
+        takeScreenShot_withScroll("130 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot("135 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView (RTL)");
+        takeScreenShot_withScroll("135 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
 
         //Других два шаблона страницы категории
@@ -240,12 +240,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("140 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
+        takeScreenShot_withScroll("140 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();
         stHomePage.selectLanguage_RU();
-        takeScreenShot("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
+        takeScreenShot_withScroll("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
@@ -257,9 +257,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
-        takeScreenShot("150 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView");
+        takeScreenShot_withScroll("150 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("155 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView (RTL)");
+        takeScreenShot_withScroll("155 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 passed successfully!");
     }

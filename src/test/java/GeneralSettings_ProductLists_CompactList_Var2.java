@@ -84,10 +84,10 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
                 "There is no quantity charger!");
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("800 GS_ProductLists_CompactList_Var2");
+        takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("805 GS_ProductLists_CompactLists_Var2 (RTL)");
+        takeScreenShot_withScroll("805 GS_ProductLists_CompactLists_Var2 (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
     }

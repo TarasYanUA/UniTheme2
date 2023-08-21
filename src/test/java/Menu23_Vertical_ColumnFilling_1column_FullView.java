@@ -21,7 +21,7 @@ import java.time.Duration;
 + Минимальная высота для меню -- 500
 */
 
-public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner{
+public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu23_Vertical_ColumnFilling_1column_FullView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
@@ -59,7 +59,7 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner{
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot_withoutScroll("Menu23.00 Menu23_Vertical_ColumnFilling_1column_FullView - Menu AllProducts");
+        takeScreenShot("Menu23.00 Menu23_Vertical_ColumnFilling_1column_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -68,7 +68,7 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu23.02 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Electronic");
+        takeScreenShot("Menu23.02 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -85,25 +85,25 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner{
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
                 "There is no button 'More [category]' in the 2-level menu!");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu23.04 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Apparel");
+        takeScreenShot("Menu23.04 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Apparel");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu23.06 Menu23_Vertical_ColumnFilling_1column_FullView - Menu SportsAndOutdoors");
+        takeScreenShot("Menu23.06 Menu23_Vertical_ColumnFilling_1column_FullView - Menu SportsAndOutdoors");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu23.08 Menu23_Vertical_ColumnFilling_1column_FullView - Menu VideoGames");
+        takeScreenShot("Menu23.08 Menu23_Vertical_ColumnFilling_1column_FullView - Menu VideoGames");
 
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot_withoutScroll("Menu23.10 Menu23_Vertical_ColumnFilling_1column_FullView - Menu AllProducts (RTL)");
+        takeScreenShot("Menu23.10 Menu23_Vertical_ColumnFilling_1column_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot_withoutScroll("Menu23.12 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Electronic (RTL)");
+        takeScreenShot("Menu23.12 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Electronic (RTL)");
         stHomePage.navigateToMenu_Apparel();
-        takeScreenShot_withoutScroll("Menu23.14 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Apparel (RTL)");
+        takeScreenShot("Menu23.14 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Apparel (RTL)");
         stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot_withoutScroll("Menu23.16 Menu23_Vertical_ColumnFilling_1column_FullView - Menu SportsAndOutdoors (RTL)");
+        takeScreenShot("Menu23.16 Menu23_Vertical_ColumnFilling_1column_FullView - Menu SportsAndOutdoors (RTL)");
         stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot_withoutScroll("Menu23.18 Menu23_Vertical_ColumnFilling_1column_FullView - Menu VideoGames (RTL)");
+        takeScreenShot("Menu23.18 Menu23_Vertical_ColumnFilling_1column_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }
 }

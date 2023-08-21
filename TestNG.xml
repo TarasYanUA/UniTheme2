@@ -36,6 +36,10 @@
             <class name="menu.Menu23_Vertical_ColumnFilling_1column_FullView" />
             <class name="menu.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
             <class name="menu.Menu25_Vertical_ColumnFilling_1column_CompactView" />
+            <class name="menu.Menu30_Vertical_RowFilling_5columns_FullView" />
+            <class name="menu.Menu31_Vertical_RowFilling_4columns_FullView" />
+            <class name="menu.Menu32_Vertical_RowFilling_2columns_FullView" />
+            <class name="menu.Menu33_Vertical_RowFilling_1column_FullView" />
         </classes>
     </test>
 </suite>

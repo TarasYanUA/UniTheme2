@@ -15,7 +15,7 @@ import static taras.constants.Constants.BASIC_URL;
 
 /*
 Данный проект разработан для проверки отображения витрины с различными комбинациями настроек Юни темы.
-Актуальная версия Юни темы 4.16.1b. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
+Актуальная версия Юни темы 4.16.2d. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
 Использовать макеты Light v2, Advanced и Default.
 
 Рекомендуется запускать проект через файл TestNG.xml. Но можно также через Surefire отчёт:
@@ -24,7 +24,6 @@ import static taras.constants.Constants.BASIC_URL;
  */
 
 public class TestRunner {
-
     @BeforeMethod
     public void prepareBrowser() {
         DriverProvider.getDriver().get(BASIC_URL);
@@ -48,7 +47,7 @@ public class TestRunner {
         ArrayList tabs = new ArrayList<> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
-    public void takeScreenShot(String screenshotName) {
+    public void takeScreenShot_withScroll(String screenshotName) {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,100);");
         try {
             Thread.sleep(1000);
@@ -62,7 +61,7 @@ public class TestRunner {
             throw new RuntimeException(e);
         }
     }
-    public void takeScreenShot_withoutScroll (String screenshotName) {
+    public void takeScreenShot(String screenshotName) {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

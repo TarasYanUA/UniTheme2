@@ -101,9 +101,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         //Проверяем, что переключатель изображений товара в виде полосок
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
         softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with points!");
-        takeScreenShot("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
+        takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
-        takeScreenShot("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
+        takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
     }

@@ -1,6 +1,7 @@
 <suite name="UniTheme2">
-    <test name="General settings of UniTheme2">
+    <test name="Settings of UniTheme2">
         <classes>
+            <!--Тест-кейсы для Общих настроек темы -->
             <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
             <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
             <class name="GeneralSettings_ProductLists_GridListView_Var1" />
@@ -12,16 +13,27 @@
             <class name="GeneralSettings_ProductPage_Var1" />
             <class name="GeneralSettings_ProductPage_Var2" />
             <class name="GeneralSettings_ProductPage_Var3" />
+
+            <!--Тест-кейсы для настроек Цветосхемы -->
             <class name="ColorSchemeSettings_Product_Var1" />
             <class name="ColorSchemeSettings_General_Var1" />
             <class name="ColorSchemeSettings_General_Var2" />
 
-            <!--Тест-кейсы для меню на витрине -->
+            <!--Тест-кейсы для Меню на витрине -->
             <class name="Menu01_Horizontal_RowFilling_6columns" />
             <class name="Menu02_Horizontal_RowFilling_5columns" />
             <class name="Menu03_Horizontal_RowFilling_4columns" />
             <class name="Menu04_Horizontal_RowFilling_2columns" />
             <class name="Menu05_Horizontal_RowFilling_1column" />
+            <class name="Menu10_Horizontal_ColumnFilling_6columns" />
+            <class name="Menu11_Horizontal_ColumnFilling_5columns" />
+            <class name="Menu12_Horizontal_ColumnFilling_4columns" />
+            <class name="Menu13_Horizontal_ColumnFilling_2columns" />
+            <class name="Menu14_Horizontal_ColumnFilling_1column" />
+            <class name="Menu20_Vertical_ColumnFilling_4columns_FullView" />
+            <class name="Menu21_Vertical_ColumnFilling_5columns_FullView" />
+            <class name="Menu22_Vertical_ColumnFilling_2columns_FullView" />
+            <class name="Menu23_Vertical_ColumnFilling_1column_FullView" />
         </classes>
     </test>
 </suite>

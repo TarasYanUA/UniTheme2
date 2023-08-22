@@ -28,7 +28,7 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
     public void setConfigurations_Menu34_Vertical_RowFilling_3columns_CompactView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_Layouts();
+        csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();

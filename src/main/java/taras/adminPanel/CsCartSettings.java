@@ -189,6 +189,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement section_Layouts;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=5']")
     public WebElement layout_Light;
+    @FindBy(id = "elm_menu_design_menus")
+    private WebElement section_Menu;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
     public WebElement layout_Lightv2;
     @FindBy(css = ".with-menu.active .dropdown-toggle")
@@ -199,12 +201,20 @@ public class CsCartSettings extends AbstractPage {
     public WebElement hoverMenuDesign(){
         return menuDesign;
     }
-    public void navigateToSection_Layouts(){
+    public void navigateToSection_DesignLayouts(){
         WebElement element = hoverMenuDesign();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
         section_Layouts.click();
+    }
+    public MenuSettings navigateToSection_DesignMenu(){
+        WebElement element = hoverMenuDesign();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+        section_Menu.click();
+        return new MenuSettings();
     }
 
     public WebElement hoverGearwheelOfActiveLayout(){return gearwheelOfActiveLayout;}

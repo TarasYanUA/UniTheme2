@@ -1,4 +1,5 @@
 package menu;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,34 +9,50 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
+
 import java.time.Duration;
 
 /*
-Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
-Горизонтальное меню + Строчное заполнение + 6 колонок
-+ Показывать иконки для пунктов меню второго уровня -- да
+Работаем с макетом Light v2:
+Горизонтальное меню + Строчное заполнение + 3-х уровневое меню
++ Количество колонок -- 5
++ Показывать иконки для пунктов меню второго уровня -- да (в данном кейсе настройка бесполезна)
 + Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10 -- с этой настройкой ещё поработать отдельно!!!
++ Кол-во отображаемых элементов в 3-м уровне меню -- 10 !!!
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
 + Минимальная высота для меню -- 500
 */
 
-public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
+public class Menu40_Horizontal_RowFilling_3LevelMenu extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu01_Horizontal_RowFilling_6columns(){
-        //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
+    public void setConfigurations_Menu40_Horizontal_RowFilling_3LevelMenu(){
+        //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
+        MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
+        menuSettings.choose_MainMenu.click();
+        menuSettings.chooseMenu_Electronics.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        menuSettings.menuTab_ABUniTheme2.click();
+        if(!menuSettings.setting_ActivateSettings.isSelected()){
+            menuSettings.setting_ActivateSettings.click();
+        }
+        if(!menuSettings.setting_Activate3LevelMenu.isSelected()){
+            menuSettings.setting_Activate3LevelMenu.click();
+        }
+        menuSettings.button_Save3LevelMenu.click();
+
+        //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
-        MenuSettings menuSettings = new MenuSettings();
         menuSettings.gearwheelOfTheBlock_MainMenu.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();
         menuSettings.selectSetting_FillingType("row_filling");
-        menuSettings.selectSetting_MaximumColumns("6");
+        menuSettings.selectSetting_MaximumColumns("5");
         if(menuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             menuSettings.setting_CompactDisplayView.click();
         }
@@ -52,50 +69,41 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu01_Horizontal_RowFilling_6columns")
-    public void check_Menu01_Horizontal_RowFilling_6columns(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu40_Horizontal_RowFilling_3LevelMenu")
+    public void check_Menu40_Horizontal_RowFilling_3LevelMenu(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu1.00 Menu01_Horizontal_RowFilling_6columns - Menu AllProducts");
+        takeScreenShot("Menu40.00 Menu40_Horizontal_RowFilling_3LevelMenu - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
                 "Menu filling is not Row!");
-        //Проверяем, что колонок 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='6']")).size() >=1,
-                "Menu columns are not equal 6 columns!");
+        //Проверяем, что колонок 5
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
+                "Menu columns are not equal 5 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu1.02 Menu01_Horizontal_RowFilling_6columns - Menu Electronic");
-        //Проверяем, что у меню второго уровня есть иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
-                "There are no icons at the menu of the second level!");
+        takeScreenShot("Menu40.02 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
                 "'Number of visible elements in the 2-level menu' is not 5!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
-                "There are less than three buttons 'More' in the elements of the 2-level menu");
+        //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=1,
+                "There is no any button 'More' in the elements of the 2-level menu");
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='6']")).size() >=1,
                 "Number of elements of the 2-level is less than 7!");
-        stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu1.04 Menu01_Horizontal_RowFilling_6columns - Menu Apparel");
-        stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu1.06 Menu01_Horizontal_RowFilling_6columns - Menu SportsAndOutdoors");
-        stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu1.08 Menu01_Horizontal_RowFilling_6columns - Menu VideoGames");
+        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        takeScreenShot("Menu40.04 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics");
 
         stHomePage.selectLanguage_RTL();
+        stHomePage.navigateToMenu_AllProducts();
+        takeScreenShot("Menu40.06 Menu40_Horizontal_RowFilling_3LevelMenu - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu1.10 Menu01_Horizontal_RowFilling_6columns - Menu Electronic (RTL)");
-        stHomePage.navigateToMenu_Apparel();
-        takeScreenShot("Menu1.12 Menu01_Horizontal_RowFilling_6columns - Menu Apparel (RTL)");
-        stHomePage.navigateToMenu_SportsAndOutdoors();
-        takeScreenShot("Menu1.14 Menu01_Horizontal_RowFilling_6columns - Menu SportsAndOutdoors (RTL)");
-        stHomePage.navigateToMenu_VideoGames();
-        takeScreenShot("Menu1.16 Menu01_Horizontal_RowFilling_6columns - Menu VideoGames (RTL)");
+        takeScreenShot("Menu40.08 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers (RTL)");
+        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        takeScreenShot("Menu40.10 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }
 }

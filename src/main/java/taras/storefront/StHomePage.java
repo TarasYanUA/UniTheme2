@@ -167,4 +167,13 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
+    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='1']")
+    private WebElement threeLevelMenu_CarElectronics;
+    private WebElement hoverThreeLevelMenu_CarElectronics(){return threeLevelMenu_CarElectronics;}
+    public void navigateToMenu_ThreeLevelMenu_CarElectronics(){
+        WebElement element = hoverThreeLevelMenu_CarElectronics();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+    }
 }

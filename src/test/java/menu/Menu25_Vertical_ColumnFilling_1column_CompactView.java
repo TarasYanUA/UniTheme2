@@ -28,7 +28,7 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
     public void setConfigurations_Menu25_Vertical_ColumnFilling_1column_CompactView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_Layouts();
+        csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();

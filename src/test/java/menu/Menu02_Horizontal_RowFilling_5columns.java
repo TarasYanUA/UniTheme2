@@ -26,7 +26,7 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner {
     public void setConfigurations_Menu02_Horizontal_RowFilling_5columns(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_Layouts();
+        csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();

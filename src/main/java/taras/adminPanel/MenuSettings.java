@@ -77,4 +77,18 @@ public class MenuSettings extends AbstractPage {
     }
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
+
+    //Настройки меню на странице "Дизайн -- Меню"
+    @FindBy(xpath = "//a[contains(text(), 'AB: Main menu')]")
+    public WebElement choose_MainMenu;
+    @FindBy(xpath = "//a[text()='Электроника']")
+    public WebElement chooseMenu_Electronics;
+    @FindBy(xpath = "//div[contains(@class, 'ui-dialog-content')]//a[text()='AB: UniTheme2']")
+    public WebElement menuTab_ABUniTheme2;
+    @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__status_']")
+    public WebElement setting_ActivateSettings;
+    @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__dropdown_']")
+    public  WebElement setting_Activate3LevelMenu;
+    @FindBy(css = ".ui-dialog-content input[name='dispatch[static_data.update]']")
+    public WebElement button_Save3LevelMenu;
 }

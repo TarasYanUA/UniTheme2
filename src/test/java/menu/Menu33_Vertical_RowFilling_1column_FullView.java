@@ -29,7 +29,7 @@ public class Menu33_Vertical_RowFilling_1column_FullView extends TestRunner {
     public void setConfigurations_Menu33_Vertical_RowFilling_1column_FullView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_Layouts();
+        csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();

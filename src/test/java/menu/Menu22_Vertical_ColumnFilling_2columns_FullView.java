@@ -28,7 +28,7 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
     public void setConfigurations_Menu22_Vertical_ColumnFilling_2columns_FullView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_Layouts();
+        csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();

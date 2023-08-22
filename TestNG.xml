@@ -40,6 +40,8 @@
             <class name="menu.Menu31_Vertical_RowFilling_4columns_FullView" />
             <class name="menu.Menu32_Vertical_RowFilling_2columns_FullView" />
             <class name="menu.Menu33_Vertical_RowFilling_1column_FullView" />
+            <class name="menu.Menu34_Vertical_RowFilling_3columns_CompactView" />
+            <class name="menu.Menu35_Vertical_RowFilling_1column_CompactView" />
         </classes>
     </test>
 </suite>

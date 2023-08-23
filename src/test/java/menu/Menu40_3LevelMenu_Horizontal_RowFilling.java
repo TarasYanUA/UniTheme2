@@ -24,9 +24,9 @@ import java.time.Duration;
 + Минимальная высота для меню -- 500
 */
 
-public class Menu40_Horizontal_RowFilling_3LevelMenu extends TestRunner {
+public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu40_Horizontal_RowFilling_3LevelMenu(){
+    public void setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling(){
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
         MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
@@ -69,13 +69,13 @@ public class Menu40_Horizontal_RowFilling_3LevelMenu extends TestRunner {
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu40_Horizontal_RowFilling_3LevelMenu")
-    public void check_Menu40_Horizontal_RowFilling_3LevelMenu(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling")
+    public void check_Menu40_3LevelMenu_Horizontal_RowFilling(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu40.00 Menu40_Horizontal_RowFilling_3LevelMenu - Menu AllProducts");
+        takeScreenShot("Menu40.00 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -84,7 +84,7 @@ public class Menu40_Horizontal_RowFilling_3LevelMenu extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
                 "Menu columns are not equal 5 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu40.02 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers");
+        takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
                 "'Number of visible elements in the 2-level menu' is not 5!");
@@ -101,15 +101,15 @@ public class Menu40_Horizontal_RowFilling_3LevelMenu extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-btn-text")).size() >=1,
                 "There is no any button 'More [category]'!"); //Здесь есть ошибка в количестве, оформленная в задаче https://abteam.planfix.com/task/41448 пункт №3
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu40.04 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics");
+        takeScreenShot("Menu40.04 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics");
 
         stHomePage.selectLanguage_RTL();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu40.06 Menu40_Horizontal_RowFilling_3LevelMenu - Menu AllProducts (RTL)");
+        takeScreenShot("Menu40.06 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu40.08 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers (RTL)");
+        takeScreenShot("Menu40.08 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu40.10 Menu40_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics (RTL)");
+        takeScreenShot("Menu40.10 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }
 }

@@ -24,9 +24,9 @@ import java.time.Duration;
 + Минимальная высота для меню -- 500
 */
 
-public class Menu41_Horizontal_ColumnFilling_3LevelMenu extends TestRunner {
+public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu41_Horizontal_RowFilling_3LevelMenu(){
+    public void setConfigurations_Menu41_3LevelMenu_Horizontal_ColumnFilling(){
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
         MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
@@ -69,13 +69,13 @@ public class Menu41_Horizontal_ColumnFilling_3LevelMenu extends TestRunner {
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu41_Horizontal_RowFilling_3LevelMenu")
-    public void check_Menu41_Horizontal_RowFilling_3LevelMenu(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu41_3LevelMenu_Horizontal_ColumnFilling")
+    public void check_Menu41_3LevelMenu_Horizontal_ColumnFilling(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu41.00 Menu41_Horizontal_RowFilling_3LevelMenu - Menu AllProducts");
+        takeScreenShot("Menu41.00 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -84,7 +84,7 @@ public class Menu41_Horizontal_ColumnFilling_3LevelMenu extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='3']")).size() >=1,
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu41.02 Menu41_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers");
+        takeScreenShot("Menu41.02 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers");
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=1,
                 "There is no any button 'More' in the elements of the 2-level menu");
@@ -98,15 +98,15 @@ public class Menu41_Horizontal_ColumnFilling_3LevelMenu extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-btn-text")).size() >=1,
                 "There is no any button 'More [category]'!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu41.04 Menu41_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics");
+        takeScreenShot("Menu41.04 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-CarElectronics");
 
         stHomePage.selectLanguage_RTL();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu41.06 Menu41_Horizontal_RowFilling_3LevelMenu - Menu AllProducts (RTL)");
+        takeScreenShot("Menu41.06 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu41.08 Menu41_Horizontal_RowFilling_3LevelMenu - Menu Electronic-Computers (RTL)");
+        takeScreenShot("Menu41.08 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu41.10 Menu41_Horizontal_RowFilling_3LevelMenu - Menu Electronic-CarElectronics (RTL)");
+        takeScreenShot("Menu41.10 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }
 }

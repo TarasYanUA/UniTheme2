@@ -25,9 +25,9 @@ import java.time.Duration;
 + Минимальная высота для меню -- 300
 */
 
-public class Menu42_3LevelMenu_Vertical_ColumnFilling extends TestRunner {
+public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu42_3LevelMenu_Vertical_ColumnFilling(){
+    public void setConfigurations_Menu42_3LevelMenu_Vertical_ColumnFilling_FullView(){
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
         MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
@@ -70,14 +70,14 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling extends TestRunner {
         menuSettings.button_saveBlock.click();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu42_3LevelMenu_Vertical_ColumnFilling")
-    public void check_Menu42_3LevelMenu_Vertical_ColumnFilling(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu42_3LevelMenu_Vertical_ColumnFilling_FullView")
+    public void check_Menu42_3LevelMenu_Vertical_ColumnFilling_FullView(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu42.00 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu AllProducts");
+        takeScreenShot("Menu42.00 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
@@ -86,7 +86,7 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
                 "Menu columns are not equal 5 columns!");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu42.02 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu Electronic-Computers");
+        takeScreenShot("Menu42.02 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
@@ -106,17 +106,17 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling extends TestRunner {
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-btn-text")).size() >=1,
                 "There is no any button 'More [category]'!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu42.04 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu Electronic-CarElectronics");
+        takeScreenShot("Menu42.04 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics");
 
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
         stHomePage.navigateToMenu_AllProducts();
-        takeScreenShot("Menu42.06 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu AllProducts (RTL)");
+        takeScreenShot("Menu42.06 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToMenu_Electronic();
-        takeScreenShot("Menu42.08 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu Electronic-Computers (RTL)");
+        takeScreenShot("Menu42.08 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
-        takeScreenShot("Menu42.10 Menu42_3LevelMenu_Vertical_ColumnFilling - Menu Electronic-CarElectronics (RTL)");
+        takeScreenShot("Menu42.10 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }
 }

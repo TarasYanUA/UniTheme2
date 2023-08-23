@@ -44,6 +44,8 @@
             <class name="menu.Menu35_Vertical_RowFilling_1column_CompactView" />
             <class name="menu.Menu40_3LevelMenu_Horizontal_RowFilling" />
             <class name="menu.Menu41_3LevelMenu_Horizontal_ColumnFilling" />
+            <class name="menu.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView" />
+            <class name="menu.Menu43_3LevelMenu_Vertical_RowFilling_FullView" />
         </classes>
     </test>
 </suite>

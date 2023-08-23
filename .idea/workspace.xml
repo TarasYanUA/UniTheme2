@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added third test-case for 3-Level menu.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu43_3LevelMenu_Vertical_RowFilling_FullView.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added fourth test-case for 3-Level menu (at the Vertical menu).">
+      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu44_3LevelMenu_Vertical_RowFilling_CompactView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,24 +99,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView">
-    <configuration name="Menu41_3LevelMenu_Horizontal_ColumnFilling" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu41_3LevelMenu_Horizontal_ColumnFilling" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView">
     <configuration name="Menu41_3LevelMenu_Horizontal_ColumnFilling.check_Menu41_Horizontal_RowFilling_3LevelMenu" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -190,21 +170,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu44_3LevelMenu_Vertical_RowFilling_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling" />
       <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.check_Menu41_Horizontal_RowFilling_3LevelMenu" />
       <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.setConfigurations_Menu41_Horizontal_RowFilling_3LevelMenu" />
       <item itemvalue="TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView" />
       <item itemvalue="TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView" />
+      <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
         <item itemvalue="TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView" />
         <item itemvalue="TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView" />
         <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.check_Menu41_Horizontal_RowFilling_3LevelMenu" />
         <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.setConfigurations_Menu41_Horizontal_RowFilling_3LevelMenu" />
-        <item itemvalue="TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling" />
       </list>
     </recent_temporary>
   </component>
@@ -560,7 +557,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -576,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adaptation of the setting &quot;Number of displayed images of the product gallery&quot; in v4.16.2c in the second test-case." />
     <MESSAGE value="Adaptation to v4.16.2c is done, including all new settings." />
     <MESSAGE value="First test-case for Horizontal menu is read!" />
     <MESSAGE value="First test-case for Horizontal menu is ready!" />
@@ -601,7 +597,8 @@
     <MESSAGE value="First test-case for 3-Level menu is ready!" />
     <MESSAGE value="Added second test-case for 3-Level menu and added some asserts for both cases." />
     <MESSAGE value="Added third test-case for 3-Level menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added third test-case for 3-Level menu." />
+    <MESSAGE value="Added fourth test-case for 3-Level menu (at the Vertical menu)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fourth test-case for 3-Level menu (at the Vertical menu)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

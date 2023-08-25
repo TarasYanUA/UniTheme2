@@ -77,7 +77,7 @@ public class MenuSettings extends AbstractPage {
         MenuContent.click();
         DriverProvider.getDriver().findElement(By.xpath("//option[contains(text(), 'Main menu')]")).click();
     }
-    @FindBy(css = ".ui-dialog-content input[name='block_data[properties][abt__ut2_show_title]']")
+    @FindBy(css = "input[id$='_abt__ut2_fly_menu_properties_abt__ut2_show_title']")
     public WebElement setting_ShowTitle;
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;

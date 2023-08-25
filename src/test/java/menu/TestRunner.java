@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import static taras.constants.Constants.BASIC_URL;
 
 public class TestRunner {

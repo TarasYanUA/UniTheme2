@@ -3,6 +3,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
@@ -27,30 +29,6 @@ public class StHomePage extends AbstractPage {
     private WebElement blockWithProducts;
     @FindBy(css = "div[id*='content_abt__ut2_grid_tab'] .ut2-w-c-q__buttons")
     private WebElement productInProductBlock;
-
-    //Разделы меню
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
-    public WebElement menuButton_Catalog;
-    @FindBy(css = "li[class$='ty-menu-item__products']")
-    private WebElement menuAllProducts;
-    @FindBy(css = "li[class$='ty-menu-item__apparel']")
-    private WebElement menuApparel;
-    @FindBy(css = "li[class$='ty-menu-item__electronics']")
-    private WebElement menuElectronic;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
-    private WebElement menuPhones;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
-    private WebElement menuGameConsoles;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[3]")
-    private WebElement menuWomanCloth;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
-    private WebElement menuMenCloth;
-    @FindBy(css = "li[class$='ty-menu-item__sport']")
-    private WebElement menuSportsAndOutdoors;
-    @FindBy(css = "li[class$='ty-menu-item__media']")
-    private WebElement menuVideoGames;
-
-
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
     public void LogOutOnStorefront(){
         WebElement element = hoverToAccountOnTop();
@@ -98,7 +76,28 @@ public class StHomePage extends AbstractPage {
         scrollToBlock.perform();
     }
 
-    //Относится к меню на витрине
+    //Разделы меню на витрине
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
+    public WebElement menuButton_Catalog;
+    @FindBy(css = "li[class$='ty-menu-item__products']")
+    private WebElement menuAllProducts;
+    @FindBy(css = "li[class$='ty-menu-item__apparel']")
+    private WebElement menuApparel;
+    @FindBy(css = "li[class$='ty-menu-item__electronics']")
+    private WebElement menuElectronic;
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
+    private WebElement menuPhones;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
+    private WebElement menuGameConsoles;
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[3]")
+    private WebElement menuWomanCloth;
+    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
+    private WebElement menuMenCloth;
+    @FindBy(css = "li[class$='ty-menu-item__sport']")
+    private WebElement menuSportsAndOutdoors;
+    @FindBy(css = "li[class$='ty-menu-item__media']")
+    private WebElement menuVideoGames;
+
     private WebElement hoverMenuAllProducts(){return menuAllProducts;}
     public void navigateToMenu_AllProducts(){
         WebElement element = hoverMenuAllProducts();
@@ -172,6 +171,57 @@ public class StHomePage extends AbstractPage {
     private WebElement hoverThreeLevelMenu_CarElectronics(){return threeLevelMenu_CarElectronics;}
     public void navigateToMenu_ThreeLevelMenu_CarElectronics(){
         WebElement element = hoverThreeLevelMenu_CarElectronics();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+    }
+
+    //Fly меню на витрине
+    @FindBy(css = ".cm-external-triggered.ut2-sw-title")
+    public WebElement button_FlyMenu;
+    @FindBy(css = ".ut2-sw-w .ut2-icon-baseline-close")
+    public WebElement button_CloseFlyMenu;
+    @FindBy(css = ".ut2-lfl.ty-menu-item__products p")
+    private WebElement flyMenu_AllProducts;
+    private WebElement hoverFlyMenu_AllProducts(){return flyMenu_AllProducts;}
+    public void navigateToFlyMenu_AllProducts(){
+        WebElement element = hoverFlyMenu_AllProducts();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element).build().perform();
+
+    }
+    @FindBy(css = ".ut2-lfl.ty-menu-item__electronics p")
+    private WebElement flyMenu_Electronics;
+    private WebElement hoverFlyMenu_Electronics(){return flyMenu_Electronics;}
+    public void navigateToFlyMenu_Electronics(){
+        WebElement element = hoverFlyMenu_Electronics();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+    }
+    @FindBy(css = ".ut2-lfl.ty-menu-item__apparel p")
+    private WebElement flyMenu_Apparel;
+    private WebElement hoverFlyMenu_Apparel(){return flyMenu_Apparel;}
+    public void navigateToFlyMenu_Apparel(){
+        WebElement element = hoverFlyMenu_Apparel();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+    }
+    @FindBy(css = ".ut2-lfl.ty-menu-item__sport p")
+    private WebElement flyMenu_SportsAndOutdoors;
+    private WebElement hoverFlyMenu_SportsAndOutdoors(){return flyMenu_SportsAndOutdoors;}
+    public void navigateToFlyMenu_SportsAndOutdoors(){
+        WebElement element = hoverFlyMenu_SportsAndOutdoors();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+    }
+    @FindBy(css = ".ut2-lfl.ty-menu-item__media p")
+    private WebElement flyMenu_VideoGames;
+    private WebElement hoverFlyMenu_VideoGames(){return flyMenu_VideoGames;}
+    public void navigateToFlyMenu_VideoGames(){
+        WebElement element = hoverFlyMenu_VideoGames();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();

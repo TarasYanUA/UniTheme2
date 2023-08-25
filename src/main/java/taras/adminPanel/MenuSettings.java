@@ -16,6 +16,8 @@ public class MenuSettings extends AbstractPage {
     public WebElement gearwheelOfTheBlock_Categories;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
+    @FindBy(css = "div[data-block-id='135'] .bm-action-properties.action")
+    public WebElement gearwheelOfTheBlock_FlyMenu;
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;
     public Select getSetting_FillingType(){return new Select(setting_FillingType);}
@@ -75,6 +77,8 @@ public class MenuSettings extends AbstractPage {
         MenuContent.click();
         DriverProvider.getDriver().findElement(By.xpath("//option[contains(text(), 'Main menu')]")).click();
     }
+    @FindBy(css = ".ui-dialog-content input[name='block_data[properties][abt__ut2_show_title]']")
+    public WebElement setting_ShowTitle;
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
 

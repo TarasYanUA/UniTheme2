@@ -42,8 +42,8 @@ public class Menu50_FlyMenu extends TestRunner{
         }
         menuSettings.button_saveBlock.click();
     }
-//(priority = 2, dependsOnMethods = "setConfiguration_Menu50_FlyMenu")
-    @Test
+
+    @Test(priority = 2, dependsOnMethods = "setConfiguration_Menu50_FlyMenu")
     public void check_Menu50_FlyMenu(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();

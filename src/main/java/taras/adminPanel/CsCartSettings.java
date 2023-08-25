@@ -193,6 +193,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement section_Menu;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
     public WebElement layout_Lightv2;
+    @FindBy(css = "a[href$='block_manager.manage&s_layout=3']")
+    public WebElement layout_Default;
     @FindBy(css = ".with-menu.active .dropdown-toggle")
     private WebElement gearwheelOfActiveLayout;
     @FindBy(css = ".with-menu.active a[href*='block_manager.set_default_layout']")

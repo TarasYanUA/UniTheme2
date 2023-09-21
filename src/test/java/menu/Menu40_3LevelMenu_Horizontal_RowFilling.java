@@ -74,7 +74,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToHorizontalMenu_AllProducts();
         takeScreenShot("Menu40.00 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
@@ -83,7 +83,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         //Проверяем, что колонок 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='5']")).size() >=1,
                 "Menu columns are not equal 5 columns!");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
@@ -104,9 +104,9 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         takeScreenShot("Menu40.04 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics");
 
         stHomePage.selectLanguage_RTL();
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToHorizontalMenu_AllProducts();
         takeScreenShot("Menu40.06 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts (RTL)");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu40.08 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu40.10 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics (RTL)");

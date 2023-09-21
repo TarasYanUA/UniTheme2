@@ -127,7 +127,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToMenu_Phones();
+        stHomePage.navigateToVerticalMenu_Phones();
         //Проверяем, что код товара присутствует
         softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page!");
         //Проверяем, что статус наличия присутствует

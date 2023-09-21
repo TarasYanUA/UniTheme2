@@ -79,11 +79,11 @@ public class StHomePage extends AbstractPage {
     //Разделы меню на витрине
     @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
     public WebElement menuButton_Catalog;
-    @FindBy(css = "li[class$='ty-menu-item__products']")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__products")
     private WebElement menuAllProducts;
-    @FindBy(css = "li[class$='ty-menu-item__apparel']")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel")
     private WebElement menuApparel;
-    @FindBy(css = "li[class$='ty-menu-item__electronics']")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__electronics")
     private WebElement menuElectronic;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
     private WebElement menuPhones;
@@ -93,9 +93,9 @@ public class StHomePage extends AbstractPage {
     private WebElement menuWomanCloth;
     @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
     private WebElement menuMenCloth;
-    @FindBy(css = "li[class$='ty-menu-item__sport']")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport")
     private WebElement menuSportsAndOutdoors;
-    @FindBy(css = "li[class$='ty-menu-item__media']")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media")
     private WebElement menuVideoGames;
 
     private WebElement hoverMenuAllProducts(){return menuAllProducts;}

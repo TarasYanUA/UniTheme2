@@ -61,7 +61,7 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu20.00 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
         SoftAssert softAssert = new SoftAssert();
@@ -70,7 +70,7 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         //Проверяем, что колонок 4
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='4']")).size() >=1,
                 "Menu columns are not equal 4 columns!");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu20.02 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Electronic");
         //Проверяем, что у меню второго уровня есть иконки
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
@@ -84,25 +84,25 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         //Проверяем, что Элементов второго уровня -- 4
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='3']")).size() >=1,
                 "Number of elements of the 2-level is less than 4!");
-        stHomePage.navigateToMenu_Apparel();
+        stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu20.04 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Apparel");
-        stHomePage.navigateToMenu_SportsAndOutdoors();
+        stHomePage.navigateToVerticalMenu_SportsAndOutdoors();
         takeScreenShot("Menu20.06 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu SportsAndOutdoors");
-        stHomePage.navigateToMenu_VideoGames();
+        stHomePage.navigateToVerticalMenu_VideoGames();
         takeScreenShot("Menu20.08 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu VideoGames");
 
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu20.10 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu AllProducts (RTL)");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu20.12 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Electronic (RTL)");
-        stHomePage.navigateToMenu_Apparel();
+        stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu20.14 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Apparel (RTL)");
-        stHomePage.navigateToMenu_SportsAndOutdoors();
+        stHomePage.navigateToVerticalMenu_SportsAndOutdoors();
         takeScreenShot("Menu20.16 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu SportsAndOutdoors (RTL)");
-        stHomePage.navigateToMenu_VideoGames();
+        stHomePage.navigateToVerticalMenu_VideoGames();
         takeScreenShot("Menu20.18 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

@@ -75,7 +75,7 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.menuButton_Catalog.click();
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu44.00 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
@@ -84,7 +84,7 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         //Проверяем, что присутствует 1 колонка
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
                 "Menu columns are not equal 1 column!");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu44.02 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu Electronic-Computers");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("li[data-subitems-count='5'] div[data-elem-index='0'] div[class='ty-menu__submenu-list cm-responsive-menu-submenu'] .ty-menu__submenu-item")).size() >=1,
@@ -108,9 +108,9 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         stHomePage.menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
         stHomePage.menuButton_Catalog.click();
-        stHomePage.navigateToMenu_AllProducts();
+        stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu44.06 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu AllProducts (RTL)");
-        stHomePage.navigateToMenu_Electronic();
+        stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu44.08 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu44.10 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu Electronic-CarElectronics (RTL)");

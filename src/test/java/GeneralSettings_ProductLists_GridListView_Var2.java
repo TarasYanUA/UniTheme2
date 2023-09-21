@@ -119,7 +119,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"
-        stHomePage.navigateToMenu_MenCloth();
+        stHomePage.navigateToVerticalMenu_MenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
         //Проверяем, что логотип присутствует

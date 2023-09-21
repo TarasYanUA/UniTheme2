@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added asserts to the first test-case of Fly menu">
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu_Var1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/sha512_sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/operadriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/operadriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CS-Cart4.16.2.b" />
+        <entry key="$PROJECT_DIR$" value="UniTheme4.16.2.c" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,24 +77,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4.16.2.b&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "UniTheme4.17.1",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Idea Projects/Deal of the day/pom.xml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
       <recent name="E:\IDEA Projects\UniTheme2\src\test\resources" />
       <recent name="E:\IDEA Projects\UniTheme2v3\src\test\resources" />
       <recent name="E:\IDEA Projects\UniTheme2" />
       <recent name="E:\IDEA Projects\UniTheme2\src\test" />
-      <recent name="E:\IDEA Projects\UniTheme2\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -102,17 +105,11 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu51_FlyMenu_Var2">
-    <configuration name="Menu44_3LevelMenu_Vertical_RowFilling_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
+    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -120,7 +117,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu50_FlyMenu_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu02_Horizontal_RowFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +126,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu02_Horizontal_RowFilling_5columns" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -137,7 +134,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu50_FlyMenu_Var1.check_Menu50_FlyMenu" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu05_Horizontal_RowFilling_1column" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -146,9 +143,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
-      <option name="METHOD_NAME" value="check_Menu50_FlyMenu" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu05_Horizontal_RowFilling_1column" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -192,19 +188,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-      <item itemvalue="TestNG.Menu50_FlyMenu_Var1.check_Menu50_FlyMenu" />
+      <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+      <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
       <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
       <item itemvalue="TestNG.Menu51_FlyMenu_Var2.setConfiguration_Menu51_FlyMenu_Var2" />
-      <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
+        <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
         <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
         <item itemvalue="TestNG.Menu51_FlyMenu_Var2.setConfiguration_Menu51_FlyMenu_Var2" />
-        <item itemvalue="TestNG.Menu50_FlyMenu_Var1.check_Menu50_FlyMenu" />
-        <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-        <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
       </list>
     </recent_temporary>
   </component>

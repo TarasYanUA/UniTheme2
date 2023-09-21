@@ -70,7 +70,7 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         stHomePage.navigateToMenu_Electronic();
         takeScreenShot("Menu14.02 Menu14_Horizontal_ColumnFilling_1column - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-header-grid .ty-menu__submenu-link .cm-imagea")).size() >=1,
                 "There are icons at the menu of the second level but shouldn't!");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,

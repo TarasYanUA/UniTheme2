@@ -60,7 +60,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu21.00 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
@@ -91,9 +91,9 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         stHomePage.navigateToVerticalMenu_VideoGames();
         takeScreenShot("Menu21.08 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu VideoGames");
 
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu21.10 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToVerticalMenu_Electronic();

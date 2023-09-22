@@ -31,7 +31,7 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner {
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_MainMenu.click();
+        menuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();

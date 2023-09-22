@@ -47,7 +47,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
-        menuSettings.gearwheelOfTheBlock_Categories.click();
+        menuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();

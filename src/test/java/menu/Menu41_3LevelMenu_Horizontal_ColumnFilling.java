@@ -47,7 +47,7 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         csCartSettings.navigateToSection_DesignLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
-        menuSettings.gearwheelOfTheBlock_MainMenu.click();
+        menuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();

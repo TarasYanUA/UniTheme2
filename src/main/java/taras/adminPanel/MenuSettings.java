@@ -11,9 +11,9 @@ public class MenuSettings extends AbstractPage {
     public MenuSettings(){super();}
 
     @FindBy(css = "div[data-block-id='146'] .bm-action-properties.action")
-    public WebElement gearwheelOfTheBlock_MainMenu;
-    @FindBy(css = "div[data-block-id='145'] .bm-action-properties.action")
-    public WebElement gearwheelOfTheBlock_Categories;
+    public WebElement gearwheelOfTheBlock_MainMenu_LightV2;
+    @FindBy(css = "div[data-block-id='141'] .bm-action-properties.action")
+    public WebElement gearwheelOfTheBlock_Categories_Light;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
     @FindBy(css = "div[data-block-id='135'] .bm-action-properties.action")

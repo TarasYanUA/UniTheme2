@@ -229,7 +229,7 @@ public class StHomePage extends AbstractPage {
 
 
     //Fly меню на витрине
-    @FindBy(css = ".cm-external-triggered.ut2-sw-title")
+    @FindBy(css = ".ut2-icon-outline-menu")
     public WebElement button_FlyMenu;
     @FindBy(css = ".ut2-sw-w .ut2-icon-baseline-close")
     public WebElement button_CloseFlyMenu;

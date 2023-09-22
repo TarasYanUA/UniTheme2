@@ -16,8 +16,8 @@ public class MenuSettings extends AbstractPage {
     public WebElement gearwheelOfTheBlock_Categories_Light;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
-    @FindBy(css = "div[data-block-id='135'] .bm-action-properties.action")
-    public WebElement gearwheelOfTheBlock_FlyMenu;
+    @FindBy(css = "div[data-block-id='131'] .bm-action-properties.action")
+    public WebElement gearwheelOfTheBlock_FlyMenu_Default;
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;
     public Select getSetting_FillingType(){return new Select(setting_FillingType);}

@@ -30,7 +30,7 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
         csCartSettings.layout_Default.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_FlyMenu.click();
+        menuSettings.gearwheelOfTheBlock_FlyMenu_Default.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();

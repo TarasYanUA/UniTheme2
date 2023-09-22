@@ -4,37 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Split hover on Horizontal and Vertical menus.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Renamed block names of two menus.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu10_Horizontal_ColumnFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu10_Horizontal_ColumnFilling_6columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu11_Horizontal_ColumnFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu11_Horizontal_ColumnFilling_5columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu20_Vertical_ColumnFilling_4columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu20_Vertical_ColumnFilling_4columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu22_Vertical_ColumnFilling_2columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu22_Vertical_ColumnFilling_2columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu23_Vertical_ColumnFilling_1column_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu23_Vertical_ColumnFilling_1column_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu24_Vertical_ColumnFilling_2columns_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu24_Vertical_ColumnFilling_2columns_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu25_Vertical_ColumnFilling_1column_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu25_Vertical_ColumnFilling_1column_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu31_Vertical_RowFilling_4columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu31_Vertical_RowFilling_4columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu32_Vertical_RowFilling_2columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu32_Vertical_RowFilling_2columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu33_Vertical_RowFilling_1column_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu33_Vertical_RowFilling_1column_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu35_Vertical_RowFilling_1column_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu35_Vertical_RowFilling_1column_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu40_3LevelMenu_Horizontal_RowFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu40_3LevelMenu_Horizontal_RowFilling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu43_3LevelMenu_Vertical_RowFilling_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu43_3LevelMenu_Vertical_RowFilling_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu44_3LevelMenu_Vertical_RowFilling_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu44_3LevelMenu_Vertical_RowFilling_CompactView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +67,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2IUOa3NhUBWs3DGsAYiDYVnn32t" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -127,18 +106,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu35_Vertical_RowFilling_1column_CompactView">
-    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Menu51_FlyMenu_Var2">
     <configuration name="Menu02_Horizontal_RowFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -190,6 +158,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu50_FlyMenu_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Menu51_FlyMenu_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -209,19 +194,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
       <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
       <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
-      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
       <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
       <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
+        <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
         <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
         <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
         <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
-        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
-        <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -577,7 +562,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,7 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Third test-case is ready!" />
     <MESSAGE value="Fourth test-case is ready!" />
     <MESSAGE value="Fifth test-case is ready!" />
     <MESSAGE value="4 test-cases for Horizontal menu in Columns are ready!" />
@@ -618,7 +602,8 @@
     <MESSAGE value="Added asserts to the first test-case of Fly menu" />
     <MESSAGE value="Updated driver for Edge browser!" />
     <MESSAGE value="Split hover on Horizontal and Vertical menus." />
-    <option name="LAST_COMMIT_MESSAGE" value="Split hover on Horizontal and Vertical menus." />
+    <MESSAGE value="Renamed block names of two menus." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed block names of two menus." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

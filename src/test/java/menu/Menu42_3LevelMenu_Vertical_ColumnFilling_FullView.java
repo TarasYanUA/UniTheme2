@@ -75,7 +75,7 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu42.00 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu AllProducts");
         //Проверяем, что у меню Колоночное заполнение
@@ -108,9 +108,9 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu42.04 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics");
 
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu42.06 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToVerticalMenu_Electronic();

@@ -74,7 +74,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu43.00 Menu43_3LevelMenu_Vertical_RowFilling_FullView - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
@@ -105,9 +105,9 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu43.04 Menu43_3LevelMenu_Vertical_RowFilling_FullView - Menu Electronic-CarElectronics");
 
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.selectLanguage_RTL();
-        stHomePage.menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu43.06 Menu43_3LevelMenu_Vertical_RowFilling_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToVerticalMenu_Electronic();

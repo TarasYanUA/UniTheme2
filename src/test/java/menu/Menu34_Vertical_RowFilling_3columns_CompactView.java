@@ -32,7 +32,7 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
         MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_Categories.click();
+        menuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         menuSettings.menuSettings_buttonSettings.click();

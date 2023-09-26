@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 import java.time.Duration;
 
@@ -61,10 +62,11 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
         takeScreenShot("Menu1.00 Menu01_Horizontal_RowFilling_6columns - Menu AllProducts");
         //Проверяем, что у меню Строчное заполнение
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
         //Проверяем, что колонок 6
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='6']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.sixColumns.isEmpty(),
                 "Menu columns are not equal 6 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu1.02 Menu01_Horizontal_RowFilling_6columns - Menu Electronic");

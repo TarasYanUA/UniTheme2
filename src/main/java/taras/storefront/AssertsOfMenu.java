@@ -14,8 +14,10 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> sixColumns;
     @FindBy(css = "div[data-cols-count='5']")
     public List<WebElement> fiveColumns;
-    @FindBy(css = "div[data-cols-count='4']")
+    @FindBy(css = "div[data-cols-count='4']") //эта проверка не колонки считает, а колич. разделов второго уровня, у которых есть по 3 и больше подразделов http://i.abt.team/trs/2023-10-04_175450.jpg
     public List<WebElement> fourColumns;
+    //попробовать для колонок это: .second-lvl[data-elem-index="3"]
+
     @FindBy(css = "div[data-cols-count='2']")
     public List<WebElement> twoColumns;
     @FindBy(css = "div[data-cols-count='1']")
@@ -24,6 +26,8 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> iconsOfSecondLevel;
     @FindBy(css = "div[style='--menu-items:5;']")
     public List<WebElement> numberOElementsIn2levelMenu_isFive;
+    @FindBy(css = "div[class='second-lvl'][data-elem-index='3']")
+    public List<WebElement> numberOElementsIn2levelMenu_isFour;     //классная проверка!
     @FindBy(css = "div[style='--menu-items:2;']")
     public List<WebElement> numberOElementsIn2levelMenu_isTwo;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='0']//div[@class='ty-menu__submenu-item']")

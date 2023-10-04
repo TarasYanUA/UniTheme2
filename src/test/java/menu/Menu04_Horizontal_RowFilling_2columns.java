@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 import java.time.Duration;
 
@@ -60,21 +61,23 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner {
         focusBrowserTab(1);
         stHomePage.navigateToHorizontalMenu_AllProducts();
         takeScreenShot("Menu4.00 Menu04_Horizontal_RowFilling_2columns - Menu AllProducts");
-        //Проверяем, что у меню Строчное заполнение
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        //Проверяем, что у меню Строчное заполнение
+        softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
         //Проверяем, что колонок 2
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='2']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.twoColumns.isEmpty(),
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu4.02 Menu04_Horizontal_RowFilling_2columns - Menu Electronic");
         //Проверяем, что у меню второго уровня присутствуют иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-link.item-icon")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
         //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='0']")).size() >=1,
-                "Number of elements of the 2-level is more than zero!");
+        softAssert.assertTrue(assertsOfMenu.numberOElementsIn2levelMenu_isAnyNumber.isEmpty(),
+                "Number of elements of the second level of the menu is more than zero!");
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu4.04 Menu04_Horizontal_RowFilling_2columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

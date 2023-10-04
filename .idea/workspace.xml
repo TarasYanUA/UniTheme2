@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started to split asserts of menu to the separate Class.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updated pom file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/sha512_sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +48,8 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
-                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.c" />
                 <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.d" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.17.1c" />
               </list>
             </value>
           </entry>
@@ -105,7 +109,24 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu51_FlyMenu_Var2">
+  <component name="RunManager" selected="TestNG.Menu05_Horizontal_RowFilling_1column">
+    <configuration name="Menu01_Horizontal_RowFilling_6columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu01_Horizontal_RowFilling_6columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Menu02_Horizontal_RowFilling_5columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -116,6 +137,40 @@
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
       <option name="MAIN_CLASS_NAME" value="menu.Menu02_Horizontal_RowFilling_5columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu03_Horizontal_RowFilling_4columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu03_Horizontal_RowFilling_4columns" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu04_Horizontal_RowFilling_2columns" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu04_Horizontal_RowFilling_2columns" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -140,72 +195,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu35_Vertical_RowFilling_1column_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu35_Vertical_RowFilling_1column_CompactView" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu50_FlyMenu_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu51_FlyMenu_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu51_FlyMenu_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-      <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
+      <item itemvalue="TestNG.Menu01_Horizontal_RowFilling_6columns" />
+      <item itemvalue="TestNG.Menu03_Horizontal_RowFilling_4columns" />
+      <item itemvalue="TestNG.Menu04_Horizontal_RowFilling_2columns" />
       <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
       <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
-      <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
-        <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-        <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
         <item itemvalue="TestNG.Menu05_Horizontal_RowFilling_1column" />
+        <item itemvalue="TestNG.Menu04_Horizontal_RowFilling_2columns" />
         <item itemvalue="TestNG.Menu02_Horizontal_RowFilling_5columns" />
+        <item itemvalue="TestNG.Menu03_Horizontal_RowFilling_4columns" />
+        <item itemvalue="TestNG.Menu01_Horizontal_RowFilling_6columns" />
       </list>
     </recent_temporary>
   </component>
@@ -561,7 +565,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -577,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="4 test-cases for Horizontal menu in Columns are ready!" />
     <MESSAGE value="Improved names for screenshots of the menu." />
     <MESSAGE value="Removed commented code because planfix task https://abteam.planfix.com/task/38481 is done." />
     <MESSAGE value="First Vertical menu is ready!" />
@@ -602,7 +605,8 @@
     <MESSAGE value="Renamed block names of two menus." />
     <MESSAGE value="Made some changed for Fly menu." />
     <MESSAGE value="Started to split asserts of menu to the separate Class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to split asserts of menu to the separate Class." />
+    <MESSAGE value="Updated pom file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

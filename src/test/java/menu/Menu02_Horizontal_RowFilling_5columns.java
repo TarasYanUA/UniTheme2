@@ -77,9 +77,9 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner {
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
                 "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOElementsIn2levelMenu_isTwo.isEmpty(),
-                "'Number of visible elements in the 2-level menu' is not 2!");
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
+        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Two.isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 2!");
         //Проверяем, что Элементов второго уровня -- 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
                 "Number of elements in the 2-level menu is not 7!");

@@ -68,17 +68,16 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu14.02 Menu14_Horizontal_ColumnFilling_1column - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5   //оформлена ошибка https://abteam.planfix.com/task/41190
-        String numberOfElementsIn3levelMenu = "div[style='--menu-items:" + "5" + ";']";
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(numberOfElementsIn3levelMenu)).isEmpty(),
-                "'Number of visible elements in the 2-level menu' is not 5!");
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
+        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 5!");
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
                 "There are less than 3 buttons 'More' in the elements of the 2-level menu!");

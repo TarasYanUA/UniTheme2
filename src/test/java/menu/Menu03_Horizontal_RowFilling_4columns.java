@@ -78,7 +78,7 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are buttons 'More' in the second level of the menu but shouldn't!");
         //Проверяем, что Элементов второго уровня -- 4
-        softAssert.assertTrue(assertsOfMenu.numberOElementsIn2levelMenu_isAnyNumber.size() ==4,
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 4,
                 "Number of elements of the second level is not 4!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),

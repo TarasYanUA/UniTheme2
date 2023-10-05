@@ -18,7 +18,7 @@ import java.time.Duration;
 + Показывать иконки для пунктов меню второго уровня -- да
 + Кол-во отображаемых элементов во 2-м уровне меню -- 5 (здесь данная настройка роли не играет по причине настройки 'Элементы третьего уровня')
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
-+ Элементы второго уровня -- 5 (здесь данная настройка роли не играет по причине настройки ниже)
++ Элементы второго уровня -- 5
 + Элементы третьего уровня -- 0
 + Минимальная высота для меню -- 700
 */
@@ -75,9 +75,12 @@ public class Menu13_Horizontal_ColumnFilling_2columns extends TestRunner {
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
-        //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertTrue(assertsOfMenu.numberOElementsIn2levelMenu_isAnyNumber.isEmpty(),
-                "Number of elements of the second level of the menu is more than zero!");
+        //Проверяем, что Элементов второго уровня -- 5
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+                "Number of elements of the 2-level is not 5!");
+        //Проверяем, что Элементов третьего уровня -- 0
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
+                "Number of elements of the third level of the menu is more than zero!");
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu13.04 Menu13_Horizontal_ColumnFilling_2columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

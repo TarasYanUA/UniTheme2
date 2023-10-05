@@ -75,15 +75,15 @@ public class Menu10_Horizontal_ColumnFilling_6columns extends TestRunner {
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
+                "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOElementsIn2levelMenu_isFive.isEmpty(),
                 "'Number of visible elements in the 2-level menu' is not 5!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >=3,
-                "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
-        //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsOfSecondLevel_isSeven.isEmpty(),
-                "Number of elements of the 2-level is less than 7!");
+        //Проверяем, что Элементов второго уровня -- 7
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
+                "Number of elements of the 2-level is not 7!");
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu10.04 Menu10_Horizontal_ColumnFilling_6columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

@@ -13,5 +13,5 @@ public class Constants {
     public static final String OPERA_DRIVER_PROPERTY = "webdriver.edge.driver";
     public static final String OPERA_DRIVER_PATH = "src/test/resources/operadriver.exe";
 
-    public static final String BASIC_URL = "https://trs.test.abt.team/4171ultru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4171ultru_seo_for_blog/admin.php?dispatch=addons.manage";
 }

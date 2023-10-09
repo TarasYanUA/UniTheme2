@@ -19,7 +19,7 @@ import java.time.Duration;
 + Кол-во отображаемых элементов во 2-м уровне меню -- 2
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 12
-+ Элементы третьего уровня -- 6
++ Элементы третьего уровня -- 4
 + Минимальная высота для меню -- 500
 */
 
@@ -47,7 +47,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("2");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         menuSettings.clickAndType_setting_SecondLevelElements("12");
-        menuSettings.clickAndType_setting_ThirdLevelElements("6");
+        menuSettings.clickAndType_setting_ThirdLevelElements("4");
         menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
@@ -75,15 +75,18 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
-        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
-                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Two.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 2!");
         //Проверяем, что Элементов второго уровня -- 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
                 "Number of elements of the 2-level is not 7!");
+        //Проверяем, что Элементов третьего уровня -- 4
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 4,
+                "Number of elements of the third level is not 4!");
+        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
+                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu11.04 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

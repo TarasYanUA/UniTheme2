@@ -22,18 +22,16 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> oneColumn;
     @FindBy(css = ".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")
     public List<WebElement> iconsOfSecondLevel;
-    @FindBy(css = ".ut2-more")
-    public List<WebElement> button_MoreInElementsOf2levelMenu;
     @FindBy(css = "div[style='--menu-items:5;']")
     public List<WebElement> numberOfElementsIn3levelMenu_Five;  //Настройка "Кол-во отображаемых элементов в 3-м уровне меню" Оформлена ошибка https://abteam.planfix.com/task/41190
     @FindBy(css = "div[style='--menu-items:2;']")
     public List<WebElement> numberOfElementsIn3levelMenu_Two;  //Настройка "Кол-во отображаемых элементов в 3-м уровне меню" Оформлена ошибка https://abteam.planfix.com/task/41190
-
-
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index]")
     public List<WebElement> numberOfElements_SecondLevel;   //Настройка "Элементы второго уровня"
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='0']//div[@class='ty-menu__submenu-item']")
     public List<WebElement> numberOfElements_ThirdLevel;    //Настройка "Элементы третьего уровня"
+    @FindBy(css = ".ut2-more")
+    public List<WebElement> button_MoreInElementsOf2levelMenu;
     @FindBy(css = ".ty-menu__submenu-alt-link")
     public List<WebElement> button_MoreCategoryInTheSecondLevel;
 }

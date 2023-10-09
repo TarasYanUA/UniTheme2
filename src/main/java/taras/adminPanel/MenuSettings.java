@@ -10,13 +10,13 @@ import taras.constants.DriverProvider;
 public class MenuSettings extends AbstractPage {
     public MenuSettings(){super();}
 
-    @FindBy(css = "div[data-block-id='146'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='Главное меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu_LightV2;
-    @FindBy(css = "div[data-block-id='141'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='Категории'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_Categories_Light;
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
-    @FindBy(css = "div[data-block-id='131'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='Меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_FlyMenu_Default;
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;

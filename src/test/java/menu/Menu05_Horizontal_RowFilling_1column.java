@@ -75,15 +75,18 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons in the second level of the menu but shouldn't!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
-                "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
         //Проверяем, что Элементов второго уровня -- 3
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 3,
                 "Number of elements of the 2-level is not 3!");
+        //Проверяем, что Элементов третьего уровня -- 6
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
+                "Number of elements of the third level is not 6!");
+        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
+                "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");

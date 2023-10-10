@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 import java.time.Duration;
 
@@ -16,7 +17,7 @@ import java.time.Duration;
 Вертикальное меню + Колоночное заполнение + 2 колонки
 + Компактный вид отображения -- нет
 + Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5 (здесь данная настройка роли не играет по причине настройки 'Элементы третьего уровня')
++ Кол-во отображаемых элементов во 2-м уровне меню -- 5
 + Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 5 (здесь данная настройка роли не играет по причине настройки ниже)
 + Элементы третьего уровня -- 0
@@ -62,21 +63,29 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
         stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu22.00 Menu22_Vertical_ColumnFilling_2columns_FullView - Menu AllProducts");
-        //Проверяем, что у меню Колоночное заполнение
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        //Проверяем, что у меню Колоночное заполнение
+        softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
         //Проверяем, что колонок 2
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='2']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.twoColumns.isEmpty(),
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu22.02 Menu22_Vertical_ColumnFilling_2columns_FullView - Menu Electronic");
         //Проверяем, что у меню второго уровня присутствуют иконки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-link.item-icon")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
-        //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='0']")).size() >=1,
-                "Number of elements of the 2-level is more than zero!");
+        //Проверяем, что Элементов второго уровня -- 5
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+                "Number of elements of the 2-level is not 5!");
+        //Проверяем, что Элементов третьего уровня -- 0
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
+                "Number of elements of the third level of the menu is more than zero!");
+        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
+                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu22.04 Menu22_Vertical_ColumnFilling_2columns_FullView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

@@ -8,17 +8,17 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-
 import java.time.Duration;
 
 /*
 Работаем с макетом Light:
 Вертикальное меню + Строчное заполнение + 1 колонка + Компактный вид
 + Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5 (здесь данная настройка роли не играет по причине настройки 'Элементы третьего уровня')
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
-+ Элементы второго уровня -- 5 (здесь данная настройка роли не играет по причине настройки ниже)
++ Кол-во отображаемых элементов во 2-м уровне меню -- 5
++ Кол-во отображаемых элементов в 3-м уровне меню -- 10  (здесь эту настройку не проверяем)
++ Элементы второго уровня -- 5
 + Элементы третьего уровня -- 0
 + Минимальная высота для меню -- 600
 */
@@ -62,21 +62,26 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
         stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu35.00 Menu35_Vertical_RowFilling_1column_CompactView - Menu AllProducts");
-        //Проверяем, что у меню Строчное заполнение
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        //Проверяем, что у меню Строчное заполнение
+        softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu35.02 Menu35_Vertical_RowFilling_1column_CompactView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+        softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
-        //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='0']")).size() >=1,
-                "Number of elements of the 2-level is more than zero!");
+        //Проверяем, что Элементов второго уровня -- 5
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+                "Number of elements of the second level is not 5!");
+        //Проверяем, что Элементов третьего уровня -- 0
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
+                "Number of elements of the third level of the menu is more than zero!");
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu35.04 Menu35_Vertical_RowFilling_1column_CompactView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

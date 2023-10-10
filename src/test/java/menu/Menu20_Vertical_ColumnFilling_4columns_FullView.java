@@ -75,7 +75,7 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
                 "Menu columns are not equal 4 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu20.02 Menu20_Vertical_ColumnFilling_4columns_FullView - Menu Electronic");
-        //Проверяем, что у меню второго уровня есть иконки
+        //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5

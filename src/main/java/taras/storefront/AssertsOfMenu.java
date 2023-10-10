@@ -16,6 +16,8 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> fiveColumns;
     @FindBy(css = "li[data-settings-cols='4']")
     public List<WebElement> fourColumns;
+    @FindBy(css = "li[data-settings-cols='3']")
+    public List<WebElement> threeColumns;
     @FindBy(css = "li[data-settings-cols='2']")
     public List<WebElement> twoColumns;
     @FindBy(css = "li[data-settings-cols='1']")

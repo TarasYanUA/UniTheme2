@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
 import java.time.Duration;
@@ -62,30 +63,35 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         stHomePage.verticalMenu_menuButton_Catalog.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu25.00 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu AllProducts");
-        //Проверяем, что у меню Колоночное заполнение
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu .row-filling")).size() >=1,
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        //Проверяем, что у меню Колоночное заполнение
+        softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[data-cols-count='1']")).size() >=1,
+        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu25.02 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Electronic");
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".second-lvl .ut2-mwi-icon-wrap .ut2-mwi-icon")).size() >=1,
+        softAssert.assertFalse(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 5
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:5;']")).size() >=1,
-                "'Number of visible elements in the 2-level menu' is not 5!");
-        //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-more")).size() >=3,
-                "There are less than 3 buttons 'More' in the elements of the 2-level menu");
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
+        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 5!");
         //Проверяем, что Элементов второго уровня -- 3
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='second-lvl'][data-elem-index='2']")).size() >=1,
-                "Number of elements of the 2-level is less than 3!");
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 3,
+                "Number of elements of the second level is not 3!");
+        //Проверяем, что Элементов третьего уровня -- 6
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
+                "Number of elements of the third level is not 6!");
+        //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+                "There are no buttons 'More' in the elements of the 2-level menu!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu__submenu-alt-link")).size() >=1,
-                "There is no button 'More [category]' in the 2-level menu!");
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+                "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu25.04 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

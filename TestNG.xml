@@ -19,7 +19,7 @@
             <class name="ColorSchemeSettings_General_Var1" />
             <class name="ColorSchemeSettings_General_Var2" />-->
 
-            <!--Тест-кейсы для Меню на витрине
+            <!--Тест-кейсы для Меню на витрине -->
             <class name="menu.Menu01_Horizontal_RowFilling_6columns" />
             <class name="menu.Menu02_Horizontal_RowFilling_5columns" />
             <class name="menu.Menu03_Horizontal_RowFilling_4columns" />
@@ -29,7 +29,7 @@
             <class name="menu.Menu11_Horizontal_ColumnFilling_5columns" />
             <class name="menu.Menu12_Horizontal_ColumnFilling_4columns" />
             <class name="menu.Menu13_Horizontal_ColumnFilling_2columns" />
-            <class name="menu.Menu14_Horizontal_ColumnFilling_1column" /> -->
+            <class name="menu.Menu14_Horizontal_ColumnFilling_1column" />
             <class name="menu.Menu20_Vertical_ColumnFilling_4columns_FullView" />
             <class name="menu.Menu21_Vertical_ColumnFilling_5columns_FullView" />
             <class name="menu.Menu22_Vertical_ColumnFilling_2columns_FullView" />

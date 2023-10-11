@@ -39,10 +39,6 @@ public class BrowserFactory {
                 options.addArguments("--remote-allow-origins=*");
                 webDriver = new ChromeDriver(options);
                 break;
-            case FIREFOX:
-                System.setProperty(Constants.FIREFOX_DRIVER_PROPERTY, Constants.FIREFOX_DRIVER_PATH);
-                webDriver = new FirefoxDriver();
-                break;
             case EDGE:
                 System.setProperty(Constants.EDGE_DRIVER_PROPERTY, Constants.EDGE_DRIVER_PATH);
                 webDriver = new EdgeDriver();

@@ -8,17 +8,17 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.MenuSettings;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
 import java.time.Duration;
 
 /*
 Работаем с макетом Default:
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 3
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 2
-+ Показать заголовок -- да
-
++ Показывать иконки для пунктов меню второго уровня --  нет
++ Кол-во отображаемых элементов во 2-м уровне меню --   3
++ Кол-во отображаемых элементов в 3-м уровне меню --    2
++ Показать заголовок -- нет
 */
 
 public class Menu51_FlyMenu_Var2 extends TestRunner{
@@ -39,7 +39,7 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
         }
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("3");
         menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
-        if(!menuSettings.setting_ShowTitle.isSelected()){
+        if(menuSettings.setting_ShowTitle.isSelected()){
             menuSettings.setting_ShowTitle.click();
         }
         menuSettings.button_saveBlock.click();
@@ -55,18 +55,26 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        //Проверка, что заголовок меню отсутствует
+        softAssert.assertTrue(assertsOfMenu.flyMenu_title.isEmpty(),
+                "There is a title in the Fly menu but shouldn't!");
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        softAssert.assertFalse(DriverProvider.getDriver().findElements(By.cssSelector(".img .ut2-lfl-icon")).size() >=1,
+        softAssert.assertTrue(assertsOfMenu.flyMenu_iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 3
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu-item__electronics div[class='ut2-lsl with-pic ut2-lsl__more']"))
-                        .size() == 3,"'Number of visible elements in the 2-level menu' is not 3!");
-        //Проверяем, что присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-lsl__show_more")).size() >=1,
-                "There is no any button 'More [category]' in the second level menu!");
+        softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_SecondLevel.size() == 3 ||
+                        assertsOfMenu.flyMenu_NumberOfElements_SecondLevelWithButtonMore.size() == 3,
+                "'Number of visible elements in the 2-level menu' is not 3!");
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-menu-item__electronics .ut2-tlw a[href*='kompyutery'][class='']"))
-                        .size() == 2,"'Number of visible elements in the 3-level menu' is equal 2!");
+        softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_ThirdLevel.size() == 2,
+                "'Number of visible elements in the 3-level menu' is not 2!");
+        //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMore.isEmpty(),
+                "There is no any button 'More' in the elements of the second level of the Fly menu!");
+        //Проверяем, что присутствует кнопка "Больше [категория]"
+        softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
+                "There is no any button 'More [category]' in the second level of Fly menu!");
 
         stHomePage. navigateToFlyMenu_AllProducts();
         takeScreenShot("Menu51.00 Menu51_FlyMenu_Var2 - Menu AllProducts");

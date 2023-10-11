@@ -38,7 +38,22 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> button_MoreInElementsOf2levelMenu;
     @FindBy(css = ".ty-menu__submenu-alt-link")
     public List<WebElement> button_MoreCategoryInTheSecondLevel;
-
     @FindBy(css = ".second-lvl[data-elem-index='0'] .tree-level-col .ty-menu__submenu-item")    //Настройка "Кол-во отображаемых элементов в 3-м уровне меню"
     public List<WebElement> threeLevelMenu_elementsInThirdLevel; //Здесь есть ошибка в количестве, оформленная в задаче https://abteam.planfix.com/task/41448 пункт №2
+
+    //FLY menu
+    @FindBy(xpath = "//span[text()='Меню']")
+    public List<WebElement> flyMenu_title;
+    @FindBy(css = ".img .ut2-lfl-icon")
+    public List<WebElement> flyMenu_iconsOfSecondLevel;
+    @FindBy(css = ".ty-menu-item__electronics div[class='ut2-lsl with-pic']")
+    public List<WebElement> flyMenu_NumberOfElements_SecondLevel;
+    @FindBy(css = ".ty-menu-item__electronics div[class='ut2-lsl with-pic ut2-lsl__more']")
+    public List<WebElement> flyMenu_NumberOfElements_SecondLevelWithButtonMore;
+    @FindBy(css = ".ty-menu-item__electronics .ut2-tlw a[href*='kompyutery']:not(.hidden)")
+    public List<WebElement> flyMenu_NumberOfElements_ThirdLevel;
+    @FindBy(css = ".ut2-lsl__more-link")
+    public List<WebElement> flyMenu_ButtonMore;
+    @FindBy(css = ".ut2-lsl__show_more")
+    public List<WebElement> flyMenu_ButtonMoreCategories;
 }

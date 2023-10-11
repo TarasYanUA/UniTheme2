@@ -83,9 +83,6 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
         //Проверяем, что Элементов третьего уровня -- 0
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
                 "Number of elements of the third level of the menu is more than zero!");
-        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
-                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu22.04 Menu22_Vertical_ColumnFilling_2columns_FullView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

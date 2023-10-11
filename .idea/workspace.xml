@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed hover function for compact menus.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed asserts for Menu50-51.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +107,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu50_FlyMenu_Var1">
+  <component name="RunManager" selected="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView">
     <configuration name="Menu21_Vertical_ColumnFilling_5columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -117,6 +118,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
       <option name="MAIN_CLASS_NAME" value="menu.Menu21_Vertical_ColumnFilling_5columns_FullView" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu22_Vertical_ColumnFilling_2columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu22_Vertical_ColumnFilling_2columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -135,24 +153,6 @@
       <option name="PACKAGE_NAME" value="menu" />
       <option name="MAIN_CLASS_NAME" value="menu.Menu30_Vertical_RowFilling_5columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu44_3LevelMenu_Vertical_RowFilling_CompactView.check_Menu44_3LevelMenu_Vertical_RowFilling_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
-      <option name="METHOD_NAME" value="check_Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -196,18 +196,18 @@
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
+      <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
       <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
-      <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.check_Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
       <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
       <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
         <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
         <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
         <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
-        <item itemvalue="TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.check_Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
       </list>
     </recent_temporary>
   </component>
@@ -563,7 +563,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed all menu test-cases to the package." />
     <MESSAGE value="Added 4 more test-cases for Vertical menu." />
     <MESSAGE value="Added 2 test-cases for Compact view of the menu." />
     <MESSAGE value="First test-case for 3-Level menu is ready!" />
@@ -604,7 +603,8 @@
     <MESSAGE value="Fixed asserts for Menu20-25." />
     <MESSAGE value="Fixed asserts for Menu30-35." />
     <MESSAGE value="Fixed hover function for compact menus." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed hover function for compact menus." />
+    <MESSAGE value="Fixed asserts for Menu50-51." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed asserts for Menu50-51." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

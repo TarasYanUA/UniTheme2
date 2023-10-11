@@ -34,7 +34,7 @@ public class StHomePage extends AbstractPage {
         scrollToBlock.moveToElement(element);
         scrollToBlock.perform();
         accountOnTop.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).size() > 0) {
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
         button_LogOut.click();  }
     }
     public void selectLanguage_RTL(){
@@ -241,8 +241,9 @@ public class StHomePage extends AbstractPage {
         WebElement element = hoverFlyMenu_AllProducts();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element).build().perform();
-
     }
+
+    //FLY menu
     @FindBy(css = ".ut2-lfl.ty-menu-item__electronics p")
     private WebElement flyMenu_Electronics;
     private WebElement hoverFlyMenu_Electronics(){return flyMenu_Electronics;}

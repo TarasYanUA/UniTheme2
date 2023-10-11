@@ -76,24 +76,24 @@ public class StHomePage extends AbstractPage {
 
     //Разделы меню на витрине
     @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
-    public WebElement verticalMenu_menuButton_Catalog;
+    public WebElement verticalMenu_menuButton_Categories;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__products")
     private WebElement verticalMenu_menuAllProducts;
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel")
-    private WebElement verticalMenu_menuApparel;
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__electronics")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__electronics .menu-lvl-ctn")
     private WebElement verticalMenu_menuElectronic;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__electronics')]//div[@class='ty-menu__submenu-item-header ut2-mwi-icon-wrap'])[4]")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel .menu-lvl-ctn")
+    private WebElement verticalMenu_menuApparel;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']")
     private WebElement verticalMenu_menuPhones;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
     private WebElement verticalMenu_menuGameConsoles;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[3]")
-    private WebElement verticalMenu_menuWomanCloth;
-    @FindBy(xpath = "(//li[contains(@class, 'ty-menu-item__apparel')]//div[contains(@class, 'ty-menu__submenu-item')])[2]")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
     private WebElement verticalMenu_menuMenCloth;
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
+    private WebElement verticalMenu_menuWomanCloth;
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport .menu-lvl-ctn")
     private WebElement verticalMenu_menuSportsAndOutdoors;
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media")
+    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media  .menu-lvl-ctn")
     private WebElement verticalMenu_menuVideoGames;
 
     private WebElement hoverVerticalMenu_AllProducts(){return verticalMenu_menuAllProducts;}
@@ -164,6 +164,7 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
+
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='1']")
     private WebElement threeLevelMenu_CarElectronics;
     private WebElement hoverThreeLevelMenu_CarElectronics(){return threeLevelMenu_CarElectronics;}

@@ -61,7 +61,7 @@ public class Menu33_Vertical_RowFilling_1column_FullView extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
-        stHomePage.verticalMenu_menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu33.00 Menu33_Vertical_RowFilling_1column_FullView - Menu AllProducts");
 
@@ -100,9 +100,9 @@ public class Menu33_Vertical_RowFilling_1column_FullView extends TestRunner {
         stHomePage.navigateToVerticalMenu_VideoGames();
         takeScreenShot("Menu33.08 Menu33_Vertical_RowFilling_1column_FullView - Menu VideoGames");
 
-        stHomePage.verticalMenu_menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.selectLanguage_RTL();
-        stHomePage.verticalMenu_menuButton_Catalog.click();
+        stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu33.10 Menu33_Vertical_RowFilling_1column_FullView - Menu AllProducts (RTL)");
         stHomePage.navigateToVerticalMenu_Electronic();

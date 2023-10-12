@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
@@ -38,7 +39,6 @@ public class CsCartSettings extends AbstractPage {
         return new StHomePage();
     }
 
-
     @FindBy(css = ".btn.btn-primary")
     private WebElement buttonAuthorization;
     @FindBy(css = "#bp_off_bottom_panel")
@@ -59,6 +59,8 @@ public class CsCartSettings extends AbstractPage {
     private WebElement colorSchemeSettings;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
+    @FindBy(css = "a[href$='dispatch=categories.manage']")
+    private WebElement section_Categories;
     @FindBy(css = "a[href$='products.manage']")
     private WebElement section_Products;
     @FindBy(css = "a[href$='product_features.manage']")
@@ -122,13 +124,21 @@ public class CsCartSettings extends AbstractPage {
     public WebElement hoverMenuProducts(){
         return menuProducts;
     }
+
+    public void navigateToSection_Categories(){
+        WebElement element = hoverMenuProducts();
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(element);
+        hover.perform();
+        section_Categories.click();
+    }
     public ProductSettings navigateToSection_Products(){
         WebElement element = hoverMenuProducts();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
         section_Products.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).size() <1){
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
             DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
         }
@@ -136,7 +146,7 @@ public class CsCartSettings extends AbstractPage {
     }
     public void navigateToSection_Features(){
         section_Features.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).size() <1){
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
             DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
         }
@@ -226,10 +236,32 @@ public class CsCartSettings extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
         gearwheelOfActiveLayout.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).size()>=1){
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).isEmpty()){
             button_makeByDefault.click();
             try { Thread.sleep(1500);
             } catch (InterruptedException e) { e.printStackTrace(); }
         }
     }
+
+    //Для раздела "Товары -- Категории"
+    @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
+    public WebElement gearwheelOnCategoryPage;
+    @FindBy(css = "a[href$='categories.m_add']")
+    public WebElement button_AddBulkCategory;
+    @FindBy(css = "select[name='categories_data[0][parent_id]']")
+    public WebElement categoryLocation;
+    private Select getCategoryLocation(){return new Select(categoryLocation);}
+    public void selectCategoryLocation_Computers(){
+        getCategoryLocation().selectByValue("167");
+    }
+    @FindBy(css = ".span3")
+    public WebElement field_CategoryName;
+    public void clickAndType_Field_CategoryName(){
+        field_CategoryName.click();
+        field_CategoryName.sendKeys("AutoTestCategory");
+    }
+    @FindBy(css = ".btn-clone")
+    public WebElement button_Clone;
+    @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
+    public WebElement button_Create;
 }

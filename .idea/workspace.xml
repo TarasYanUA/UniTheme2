@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed asserts for Menu50-51.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="All menus were checked and fixed.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_CategoriesOn3Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,8 +105,8 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView">
-    <configuration name="Menu21_Vertical_ColumnFilling_5columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level">
+    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +115,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu21_Vertical_ColumnFilling_5columns_FullView" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu20_Vertical_ColumnFilling_4columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -125,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu22_Vertical_ColumnFilling_2columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu40_3LevelMenu_Horizontal_RowFilling" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -134,7 +132,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu22_Vertical_ColumnFilling_2columns_FullView" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu40_3LevelMenu_Horizontal_RowFilling" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -142,7 +140,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu30_Vertical_RowFilling_5columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -151,7 +149,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu30_Vertical_RowFilling_5columns_FullView" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -159,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu50_FlyMenu_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -168,15 +166,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="METHOD_NAME" value="setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu51_FlyMenu_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -185,8 +184,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu51_FlyMenu_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="METHOD_NAME" value="setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -195,19 +195,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
-      <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
-      <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
-      <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-      <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
+      <item itemvalue="TestNG.Menu40_3LevelMenu_Horizontal_RowFilling" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
+      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView" />
-        <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
-        <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
-        <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
-        <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
+        <item itemvalue="TestNG.Menu40_3LevelMenu_Horizontal_RowFilling" />
+        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -563,7 +563,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added 4 more test-cases for Vertical menu." />
     <MESSAGE value="Added 2 test-cases for Compact view of the menu." />
     <MESSAGE value="First test-case for 3-Level menu is ready!" />
     <MESSAGE value="Added second test-case for 3-Level menu and added some asserts for both cases." />
@@ -604,7 +603,8 @@
     <MESSAGE value="Fixed asserts for Menu30-35." />
     <MESSAGE value="Fixed hover function for compact menus." />
     <MESSAGE value="Fixed asserts for Menu50-51." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed asserts for Menu50-51." />
+    <MESSAGE value="All menus were checked and fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="All menus were checked and fixed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -627,6 +627,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
           <line>82</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -47,6 +47,10 @@
             <class name="menu.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView" />
             <class name="menu.Menu43_3LevelMenu_Vertical_RowFilling_FullView" />
             <class name="menu.Menu44_3LevelMenu_Vertical_RowFilling_CompactView" />
+            <class name="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
+            <class name="menu.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
+            <class name="menu.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
+            <class name="menu.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
             <class name="menu.Menu50_FlyMenu_Var1" />
             <class name="menu.Menu51_FlyMenu_Var2" />
         </classes>

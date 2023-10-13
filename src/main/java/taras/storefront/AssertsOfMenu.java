@@ -40,6 +40,8 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> button_MoreCategoryInTheSecondLevel;
     @FindBy(css = ".second-lvl[data-elem-index='0'] .tree-level-col .ty-menu__submenu-item")    //Настройка "Кол-во отображаемых элементов в 3-м уровне меню"
     public List<WebElement> threeLevelMenu_elementsInThirdLevel; //Здесь есть ошибка в количестве, оформленная в задаче https://abteam.planfix.com/task/41448 пункт №2
+    @FindBy(css = ".tree-level .ty-menu__submenu-alt-link")
+    public List<WebElement> threeLevelMenu_button_MoreCategory;
 
     //FLY menu
     @FindBy(xpath = "//span[text()='Меню']")

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="All menus were checked and fixed.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_CategoriesOn3Level.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_CategoriesOn3Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,24 +104,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level">
-    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu20_Vertical_ColumnFilling_4columns_FullView" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level">
     <configuration name="Menu40_3LevelMenu_Horizontal_RowFilling" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -140,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +131,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -157,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -166,7 +148,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
+      <option name="METHOD_NAME" value="check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
       <option name="METHOD_NAME" value="setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -175,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -184,7 +184,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
       <option name="METHOD_NAME" value="setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -195,19 +195,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
       <item itemvalue="TestNG.Menu40_3LevelMenu_Horizontal_RowFilling" />
-      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
-      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
-      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
-      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
-        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
-        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_CategoriesOn3Level.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu45_3LevelMenu_CategoriesOn3Level" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.setConfigurations_Menu40_3LevelMenu_Horizontal_RowFilling" />
         <item itemvalue="TestNG.Menu40_3LevelMenu_Horizontal_RowFilling" />
-        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -563,7 +563,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added 2 test-cases for Compact view of the menu." />
     <MESSAGE value="First test-case for 3-Level menu is ready!" />
     <MESSAGE value="Added second test-case for 3-Level menu and added some asserts for both cases." />
     <MESSAGE value="Added third test-case for 3-Level menu." />
@@ -604,7 +603,8 @@
     <MESSAGE value="Fixed hover function for compact menus." />
     <MESSAGE value="Fixed asserts for Menu50-51." />
     <MESSAGE value="All menus were checked and fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="All menus were checked and fixed." />
+    <MESSAGE value="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,13 +630,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java</url>
-          <line>52</line>
+          <line>54</line>
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -79,6 +79,7 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         menuSettings.tab_Content.click();
         menuSettings.selectMenuContent_MainMenu();
         menuSettings.button_saveBlock.click();
+
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView")

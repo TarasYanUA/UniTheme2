@@ -15,6 +15,7 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 * Добавляем много категорий в третий уровень Fly меню
+* Добавляем банер в третий уровень Fly меню
 
 Горизонтальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 4
@@ -42,6 +43,25 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
             menuSettings.setting_Activate3LevelMenu.click();
         }
         menuSettings.button_Save3LevelMenu.click();
+        //Добавляем баннер для меню "Компьютеры"
+        menuSettings.arrowOfCategory.click();
+        menuSettings.categoryComputers.click();
+        menuSettings.menuTab_ABUniTheme2.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
+            menuSettings.button_Html.click();
+            menuSettings.clickAndType_Field_HtmlContent();
+        }
+        menuSettings.button_Save3LevelMenu.click();
+        menuSettings.selectLanguage_RTL();
+        menuSettings.arrowOfCategory.click();
+        menuSettings.categoryComputers.click();
+        menuSettings.menuTab_ABUniTheme2.click();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
+            menuSettings.button_Html.click();
+            menuSettings.clickAndType_Field_HtmlContent();
+        }
+        menuSettings.button_Save3LevelMenu.click();
+        menuSettings.selectLanguage_RU();
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
@@ -89,6 +109,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu45.00 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - AllProducts");
         stHomePage.navigateToVerticalMenu_Electronic();
+        stHomePage.navigateToMenu_ThreeLevelMenu_Computers();
         takeScreenShot("Menu45.02 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-Computers");
 
         SoftAssert softAssert = new SoftAssert();
@@ -108,6 +129,8 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
                 "There is no button 'More [category]' in the third level of the menu!");
+        softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_banner.isEmpty(),
+                "There is no banner in the third level of the menu!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu45.04 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-CarElectronics");
 
@@ -117,6 +140,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         stHomePage.navigateToVerticalMenu_AllProducts();
         takeScreenShot("Menu45.06 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - AllProducts (RTL)");
         stHomePage.navigateToVerticalMenu_Electronic();
+        stHomePage.navigateToMenu_ThreeLevelMenu_Computers();
         takeScreenShot("Menu45.08 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-Computers (RTL)");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu45.10 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-CarElectronics (RTL)");

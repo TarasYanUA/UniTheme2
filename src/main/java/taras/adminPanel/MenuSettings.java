@@ -92,7 +92,33 @@ public class MenuSettings extends AbstractPage {
     @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__status_']")
     public WebElement setting_ActivateSettings;
     @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__dropdown_']")
-    public  WebElement setting_Activate3LevelMenu;
+    public WebElement setting_Activate3LevelMenu;
     @FindBy(css = ".ui-dialog-content input[name='dispatch[static_data.update]']")
     public WebElement button_Save3LevelMenu;
+    @FindBy(css = "#on_item_192 .icon-caret-right")
+    public WebElement arrowOfCategory;
+    @FindBy(css = "a[data-ca-external-click-id='opener_group193']")
+    public WebElement categoryComputers;
+    @FindBy(css = ".re-icon-html")
+    public WebElement button_Html;
+    @FindBy(css = ".cm-skip-check-item.open")
+    private WebElement field_HtmlContent;
+    public void clickAndType_Field_HtmlContent(){
+        field_HtmlContent.click();
+        field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
+    }
+    @FindBy(css = "a[id*='wrap_content'] span")
+    private WebElement languageButton;
+    @FindBy(css = ".content-variant-wrap a[name='ar']")
+    private WebElement languageRTL;
+    @FindBy(css = ".content-variant-wrap a[name='ru']")
+    private WebElement languageRU;
+    public void selectLanguage_RTL(){
+        languageButton.click();
+        languageRTL.click();
+    }
+    public void selectLanguage_RU(){
+        languageButton.click();
+        languageRU.click();
+    }
 }

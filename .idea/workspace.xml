@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories is ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/menu/Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Menu46-48 are ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -134,7 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
       <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
-      <option name="METHOD_NAME" value="check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <option name="METHOD_NAME" value="setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -196,7 +198,7 @@
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
-      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
       <item itemvalue="TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
       <item itemvalue="TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
       <item itemvalue="TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
@@ -204,10 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
         <item itemvalue="TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
         <item itemvalue="TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
-        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.check_Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
-        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -563,7 +565,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added second test-case for 3-Level menu and added some asserts for both cases." />
     <MESSAGE value="Added third test-case for 3-Level menu." />
     <MESSAGE value="Added fourth test-case for 3-Level menu (at the Vertical menu)." />
     <MESSAGE value="The last (fifth) test-case for 3-level menu is ready!" />
@@ -604,7 +605,8 @@
     <MESSAGE value="All menus were checked and fixed." />
     <MESSAGE value="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
     <MESSAGE value="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories is ready!" />
+    <MESSAGE value="Menu46-48 are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu46-48 are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -627,11 +629,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
           <line>82</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

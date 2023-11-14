@@ -278,7 +278,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("255 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView (RTL)");
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 passed successfully!");
+        softAssert.assertAll();
     }
 }

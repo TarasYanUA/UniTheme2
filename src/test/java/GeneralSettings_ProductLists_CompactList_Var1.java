@@ -99,7 +99,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("715 GS_ProductLists_CompactList_Var1 - QuickView (RTL)");
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
+        softAssert.assertAll();
     }
 }

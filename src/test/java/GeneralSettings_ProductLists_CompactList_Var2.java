@@ -88,7 +88,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot_withScroll("805 GS_ProductLists_CompactLists_Var2 (RTL)");
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
+        softAssert.assertAll();
     }
 }

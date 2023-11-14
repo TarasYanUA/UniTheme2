@@ -145,7 +145,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("425 GS_ProductLists_GridListView_Var2 - QuickView");
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
+        softAssert.assertAll();
     }
 }

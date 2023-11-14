@@ -211,7 +211,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner{
         takeScreenShot_withScroll("955 GS_ProductPage_Var1 - Gallery template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("960 GS_ProductPage_Var1 - Gallery template (RTL)");
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Var1 passed successfully!");
+        softAssert.assertAll();
     }
 }

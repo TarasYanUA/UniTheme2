@@ -53,6 +53,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
     public void setConfigurationsForProductLists_AllCategoryLists_Var1() {
         //Работаем с CS-Cart настройками
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Light.click();
+        csCartSettings.setLayoutAsDefault();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (checkboxThumbnailsGallery.isSelected()) {
@@ -162,7 +165,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Категория "Женская одежда"
         stHomePage.navigateToVerticalMenu_WomanCloth();
         //Проверка, что на странице присутствует обесцвеченный товар.
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEmpty(),
                 "There is no decolorized product on the category page!");
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes on the category page!");
@@ -204,7 +207,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
-        if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
+        if(!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}

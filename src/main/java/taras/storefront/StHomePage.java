@@ -25,7 +25,7 @@ public class StHomePage extends AbstractPage {
     private WebElement button_LogOut;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     private WebElement blockWithProducts;
-    @FindBy(css = "div[id*='content_abt__ut2_grid_tab'] .ut2-w-c-q__buttons")
+    @FindBy(css = ".ut2-w-c-q__buttons")
     private WebElement productInProductBlock;
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
     public void LogOutOnStorefront(){

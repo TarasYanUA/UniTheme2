@@ -140,7 +140,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
         softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
+        //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();

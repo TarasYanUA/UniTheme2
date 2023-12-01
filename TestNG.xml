@@ -1,13 +1,5 @@
 <suite name="UniTheme2">
     <test name="Settings of UniTheme2">
-
-        <groups>
-            <run>
-                <include name="general_settings" />
-            </run>
-        </groups>
-
-
         <classes>
             <!--Тест-кейсы для Общих настроек темы -->
             <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
@@ -60,7 +52,7 @@
             <class name="menu.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
             <class name="menu.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
             <class name="menu.Menu50_FlyMenu_Var1" />
-            <class name="menu.Menu51_FlyMenu_Var2" />-->
+            <class name="menu.Menu51_FlyMenu_Var2" /> -->
         </classes>
     </test>
 </suite>

@@ -23,8 +23,13 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
-        //Работаем с настройками характеристики Бренд
         CsCartSettings csCartSettings = new CsCartSettings();
+        //Устанавливаем нужный макет
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Light.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Работаем с настройками характеристики Бренд
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();

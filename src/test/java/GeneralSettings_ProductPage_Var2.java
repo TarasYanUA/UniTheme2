@@ -121,43 +121,43 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner{
         productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).isEmpty(),
                 "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что количество доступных товаров присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).isEmpty(),
                 "There is no number of available products!");
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']"))
-                .size() >=1, "Product information is not displayed in tabs!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
+                "Product information is not displayed in tabs!");
         //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
                 "There is no Brand name on product page!");
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']"))
-                        .size() >=1,"There is no feature Brand on the feature list!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
+                "There is no feature Brand on the feature list!");
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']"))
-                .size() >=1,"There is no feature Hard drive on the feature list!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
+                "There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).isEmpty(),
                 "There is no Custom block in the right column!");
         //Проверяем, что Модификатор количества присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).isEmpty(),
                 "There is no Quantity changer!");
         //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
                 "There is no product code!");
         //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).isEmpty(),
                 "There is no field 'Enter your price'!");
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).isEmpty(),
                 "There is no field 'On backorder'!");
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
                 "There is no Promo-text!");
         takeScreenShot_withScroll("1000 GS_ProductPage_Var2 - Default template");
         productPage.shiftLanguage_RTL();
@@ -166,8 +166,8 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner{
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col"))
-                .size() >=1, "Features are located in one column instead of two!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
+                "Features are located in one column instead of two!");
         takeScreenShot("1010 GS_ProductPage_Var2 - Product features, two columns (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();

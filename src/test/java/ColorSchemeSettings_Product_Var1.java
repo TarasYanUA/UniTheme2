@@ -90,7 +90,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
         productSettings.chooseAnyProduct.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).size() >= 1){
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
         }
         productSettings.clickAndTypeField_Price("33000.00");
@@ -124,22 +124,22 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).isEmpty(),
         "Mini-icons are in view of gallery but shouldn't!");
         //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
                 "There is no Brand name on product page!");
         //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
                 "There is no Promo-text!");
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).isEmpty(),
                 "Number of displayed images of the product gallery is not 2!");
         takeScreenShot_withScroll("1200 ColorSchemeSettings_Product_Var1 - Default template");
         productPage.hoverToBlockWithProducts();
@@ -148,7 +148,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner{
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
         //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).size() >=1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).isEmpty(),
         "There is no quantity changer in pop-up window of the product with options!");
         takeScreenShot("1202 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
         productPage.closePopUpWindow.click();

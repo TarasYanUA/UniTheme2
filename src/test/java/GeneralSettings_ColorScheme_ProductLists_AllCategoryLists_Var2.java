@@ -52,9 +52,8 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 extends TestRunner{
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с CS-Cart настройками
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (!checkboxThumbnailsGallery.isSelected()) {
@@ -67,7 +66,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
-        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected()) {
@@ -165,7 +164,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.navigateToVerticalMenu_WomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице отсутствует обесцвеченный товар.
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).size() < 1,
+        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEmpty(),
                 "There is a decolorized product on the category page but shouldn't!");
         //Проверка, что у товаров присутствует галерея изображений и она стрелками
         softAssert.assertTrue(sizeOfStandardImageGallery >= 1,
@@ -217,9 +216,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).isEmpty(),
                 "There is no status for the button 'Add to cart' on the category page!");
-        if(getDriver().findElements(By.cssSelector(".notification-content.alert")).size() >= 1){
+        if(!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
@@ -237,7 +236,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
         //Проверка, что присутствуют мини-иконки в виде галереи
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).size() >= 1,
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).isEmpty(),
                 "Mini icons are not as a gallery!");
         takeScreenShot_withScroll("230 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView");
         stCategoryPage.clickCloseQuickView();
@@ -259,7 +258,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         int sizeOfStatusAtButton_Comparison = getDriver().findElements(By.cssSelector("a.ut2-add-to-compare.active")).size();
         softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).isEmpty(),
                 "There is no status for the button 'Add to cart' on the category page!");
         makePause();
         takeScreenShot_withScroll("240 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions (RTL)");
@@ -273,7 +272,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что присутствует статус у кнопки "Сравнение"
         softAssert.assertTrue(sizeOfStatusAtButton_Comparison >= 1,"There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).size()>=1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).isEmpty(),
                 "There is no status for the button 'Add to cart' on the category page!");
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();

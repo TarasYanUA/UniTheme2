@@ -66,22 +66,22 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что пустые звезды рейтинга присутствуют
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).isEmpty(),
                 "There is no empty rating stars!");
         //Проверяем, что общее значение рейтинга присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).isEmpty(),
                 "There is no common value of product rating!");
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("span[id*='product_code']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("span[id*='product_code']")).isEmpty(),
                 "There is no product code!");
         //Проверяем, что статус товара присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).isEmpty(),
                 "There is no availability status!");
         //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("button[id*='button_cart']")).isEmpty(),
                 "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
                 "There is no quantity charger!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");

@@ -32,6 +32,9 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
     public void setConfigurationsForProductLists_CompactList_Var1() {
         //Работаем с настройками CS-Cart
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Light.click();
+        csCartSettings.setLayoutAsDefault();
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if (!checkboxSettingQuickView.isSelected()) {
@@ -79,13 +82,13 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("button[id*='button_cart']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("button[id*='button_cart']")).isEmpty(),
                 "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
                 "There is no quantity charger!");
         //Проверяем, что Быстрый просмотр присутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).size() >= 1,
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).isEmpty(),
                 "There is no button 'Quick view'!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");

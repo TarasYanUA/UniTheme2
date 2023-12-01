@@ -83,14 +83,6 @@ public class StHomePage extends AbstractPage {
     private WebElement verticalMenu_menuElectronic;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel .menu-lvl-ctn")
     private WebElement verticalMenu_menuApparel;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']//span")
-    private WebElement menuPhones;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
-    private WebElement menuGameConsoles;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
-    private WebElement menuMenCloth;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
-    private WebElement menuWomanCloth;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport .menu-lvl-ctn")
     private WebElement verticalMenu_menuSportsAndOutdoors;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media  .menu-lvl-ctn")
@@ -112,20 +104,6 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
-    public void navigateToHorizontalMenu_Phones(){
-        WebElement elementOfMenu = hoverVerticalMenu_Electronic();
-        Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
-        hoverMenuPhones.moveToElement(elementOfMenu);
-        hoverMenuPhones.perform();
-        menuPhones.click();
-    }
-    public void navigateToHorizontalMenu_GameConsoles(){
-        WebElement elementOfMenu = hoverVerticalMenu_Electronic();
-        Actions hoverMenu = new Actions(DriverProvider.getDriver());
-        hoverMenu.moveToElement(elementOfMenu);
-        hoverMenu.perform();
-        menuGameConsoles.click();
-    }
     public WebElement hoverVerticalMenu_Apparel(){
         return verticalMenu_menuApparel;
     }
@@ -134,21 +112,6 @@ public class StHomePage extends AbstractPage {
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
-    }
-    public void navigateToHorizontalMenu_WomanCloth(){
-        WebElement elementOfMenu = hoverVerticalMenu_Apparel();
-        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
-        hoverMenuApparel.moveToElement(elementOfMenu);
-        hoverMenuApparel.perform();
-        menuWomanCloth.click();
-    }
-
-    public void navigateToHorizontalMenu_MenCloth(){
-        WebElement elementOfMenu = hoverVerticalMenu_Apparel();
-        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
-        hoverMenuApparel.moveToElement(elementOfMenu);
-        hoverMenuApparel.perform();
-        menuMenCloth.click();
     }
     private WebElement hoverVerticalMenu_SportsAndOutdoors(){return verticalMenu_menuSportsAndOutdoors;}
     public void navigateToVerticalMenu_SportsAndOutdoors(){
@@ -184,6 +147,14 @@ public class StHomePage extends AbstractPage {
         hover.perform();
     }
 
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']//span")
+    private WebElement horizontalMenu_menuPhones;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
+    private WebElement horizontalMenu_menuGameConsoles;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
+    private WebElement horizontalMenu_menuMenCloth;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
+    private WebElement horizontalMenu_menuWomanCloth;
     @FindBy(css = ".ty-menu__wrapper .ty-menu-item__products")
     private WebElement horizontalMenu_menuAllProducts;
     @FindBy(css = ".ty-menu__wrapper .ty-menu-item__apparel")
@@ -212,6 +183,21 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
+    public void navigateToHorizontalMenu_Phones(){
+        WebElement elementOfMenu = hoverHorizontalMenu_Electronic();
+        Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
+        hoverMenuPhones.moveToElement(elementOfMenu);
+        hoverMenuPhones.perform();
+        horizontalMenu_menuPhones.click();
+    }
+    public void navigateToHorizontalMenu_GameConsoles(){
+        WebElement elementOfMenu = hoverHorizontalMenu_Electronic();
+        Actions hoverMenu = new Actions(DriverProvider.getDriver());
+        hoverMenu.moveToElement(elementOfMenu);
+        hoverMenu.perform();
+        horizontalMenu_menuGameConsoles.click();
+    }
+
     public WebElement hoverHorizontalMenu_Apparel(){
         return horizontalMenu_menuApparel;
     }
@@ -220,6 +206,20 @@ public class StHomePage extends AbstractPage {
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
+    }
+    public void navigateToHorizontalMenu_MenCloth(){
+        WebElement elementOfMenu = hoverHorizontalMenu_Apparel();
+        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
+        hoverMenuApparel.moveToElement(elementOfMenu);
+        hoverMenuApparel.perform();
+        horizontalMenu_menuMenCloth.click();
+    }
+    public void navigateToHorizontalMenu_WomanCloth(){
+        WebElement elementOfMenu = hoverHorizontalMenu_Apparel();
+        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
+        hoverMenuApparel.moveToElement(elementOfMenu);
+        hoverMenuApparel.perform();
+        horizontalMenu_menuWomanCloth.click();
     }
     private WebElement hoverHorizontalMenu_SportsAndOutdoors(){return horizontalMenu_menuSportsAndOutdoors;}
     public void navigateToHorizontalMenu_SportsAndOutdoors(){
@@ -235,7 +235,6 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
-
 
 
     //Fly меню на витрине

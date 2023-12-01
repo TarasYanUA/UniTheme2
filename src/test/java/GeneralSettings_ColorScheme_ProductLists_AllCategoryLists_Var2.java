@@ -196,20 +196,24 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что присутствует статус у кнопки "Избранное"
-        stCategoryPage.button_AddToWishList.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
-        stCategoryPage.closeNotificationWindow.click();
+        if(getDriver().findElements(By.cssSelector("a.ut2-add-to-wish.active")).isEmpty()) {
+            stCategoryPage.button_AddToWishList.click();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
+            stCategoryPage.closeNotificationWindow.click();
+        }
         int sizeOfStatusAtButton_WishList = getDriver().findElements(By.cssSelector("a.ut2-add-to-wish.active")).size();
         softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
-        stCategoryPage.button_AddToComparisonList.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
-        stCategoryPage.closeNotificationWindow.click();
-        softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
+        if(getDriver().findElements(By.cssSelector(".ut2-add-to-compare.active")).isEmpty()) {
+            stCategoryPage.button_AddToComparisonList.click();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
+            stCategoryPage.closeNotificationWindow.click();
+        }
+        int sizeOfStatusAtButton_ComparisonList = getDriver().findElements(By.cssSelector("a.ut2-add-to-wish.active")).size();
+        softAssert.assertTrue(sizeOfStatusAtButton_ComparisonList >= 1,
                 "There is no status for the button 'Add to comparison list'!");
-
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.LogOutOnStorefront();
         stCategoryPage.button_AddToCart.click();

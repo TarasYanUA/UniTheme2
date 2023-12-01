@@ -51,11 +51,13 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var1() {
-        //Работаем с CS-Cart настройками
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_DesignLayouts();
-        csCartSettings.layout_Light.click();
+        csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
+
+        //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (checkboxThumbnailsGallery.isSelected()) {
@@ -133,6 +135,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         StCategoryPage stCategoryPage = new StCategoryPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         SoftAssert softAssert = new SoftAssert();
@@ -163,7 +166,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"
-        stHomePage.navigateToVerticalMenu_WomanCloth();
+        stHomePage.navigateToHorizontalMenu_WomanCloth();
         //Проверка, что на странице присутствует обесцвеченный товар.
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEmpty(),
                 "There is no decolorized product on the category page!");
@@ -186,7 +189,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToVerticalMenu_Phones();
+        stHomePage.navigateToHorizontalMenu_Phones();
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes on the category page!");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга

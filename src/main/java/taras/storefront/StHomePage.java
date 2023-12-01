@@ -83,14 +83,14 @@ public class StHomePage extends AbstractPage {
     private WebElement verticalMenu_menuElectronic;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel .menu-lvl-ctn")
     private WebElement verticalMenu_menuApparel;
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']")
-    private WebElement verticalMenu_menuPhones;
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']//span")
+    private WebElement menuPhones;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']")
-    private WebElement verticalMenu_menuGameConsoles;
+    private WebElement menuGameConsoles;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
-    private WebElement verticalMenu_menuMenCloth;
+    private WebElement menuMenCloth;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
-    private WebElement verticalMenu_menuWomanCloth;
+    private WebElement menuWomanCloth;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport .menu-lvl-ctn")
     private WebElement verticalMenu_menuSportsAndOutdoors;
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media  .menu-lvl-ctn")
@@ -112,19 +112,19 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
-    public void navigateToVerticalMenu_Phones(){
+    public void navigateToHorizontalMenu_Phones(){
         WebElement elementOfMenu = hoverVerticalMenu_Electronic();
         Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
         hoverMenuPhones.moveToElement(elementOfMenu);
         hoverMenuPhones.perform();
-        verticalMenu_menuPhones.click();
+        menuPhones.click();
     }
-    public void navigateToVerticalMenu_GameConsoles(){
+    public void navigateToHorizontalMenu_GameConsoles(){
         WebElement elementOfMenu = hoverVerticalMenu_Electronic();
         Actions hoverMenu = new Actions(DriverProvider.getDriver());
         hoverMenu.moveToElement(elementOfMenu);
         hoverMenu.perform();
-        verticalMenu_menuGameConsoles.click();
+        menuGameConsoles.click();
     }
     public WebElement hoverVerticalMenu_Apparel(){
         return verticalMenu_menuApparel;
@@ -135,20 +135,20 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element);
         hover.perform();
     }
-    public void navigateToVerticalMenu_WomanCloth(){
+    public void navigateToHorizontalMenu_WomanCloth(){
         WebElement elementOfMenu = hoverVerticalMenu_Apparel();
         Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
         hoverMenuApparel.moveToElement(elementOfMenu);
         hoverMenuApparel.perform();
-        verticalMenu_menuWomanCloth.click();
+        menuWomanCloth.click();
     }
 
-    public void navigateToVerticalMenu_MenCloth(){
+    public void navigateToHorizontalMenu_MenCloth(){
         WebElement elementOfMenu = hoverVerticalMenu_Apparel();
         Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
         hoverMenuApparel.moveToElement(elementOfMenu);
         hoverMenuApparel.perform();
-        verticalMenu_menuMenCloth.click();
+        menuMenCloth.click();
     }
     private WebElement hoverVerticalMenu_SportsAndOutdoors(){return verticalMenu_menuSportsAndOutdoors;}
     public void navigateToVerticalMenu_SportsAndOutdoors(){

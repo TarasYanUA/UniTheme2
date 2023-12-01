@@ -76,7 +76,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
-        stHomePage.navigateToVerticalMenu_MenCloth();
+
+        //Категория "Мужская одежда"
+        stHomePage.navigateToHorizontalMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
         SoftAssert softAssert = new SoftAssert();

@@ -106,7 +106,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("arrows");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
-
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -160,8 +159,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("205 GS_CS_ProductLists_AllCategoryLists_Var2 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
+
         //Категория "Женская одежда"
-        stHomePage.navigateToVerticalMenu_WomanCloth();
+        stHomePage.navigateToHorizontalMenu_WomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         //Проверка, что на странице отсутствует обесцвеченный товар.
         softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEmpty(),
@@ -186,7 +186,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToVerticalMenu_Phones();
+        stHomePage.navigateToHorizontalMenu_Phones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
         //Проверка, что кнопка "Избранное" присутствует
@@ -222,7 +222,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
-
+        
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
         stHomePage.selectLanguage_RTL();

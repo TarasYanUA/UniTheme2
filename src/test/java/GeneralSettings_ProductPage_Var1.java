@@ -43,8 +43,13 @@ import java.time.Duration;
 public class GeneralSettings_ProductPage_Var1 extends TestRunner{
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Var1(){
-        //Настраиваем CS-Cart настройки
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Настраиваем CS-Cart настройки
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         if(!csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
@@ -56,6 +61,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner{
             csCartSettings.setting_ProductDetailsInTab.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками характеристик Жесткий диск и Бренд
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();

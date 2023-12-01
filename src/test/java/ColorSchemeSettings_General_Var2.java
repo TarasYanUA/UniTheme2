@@ -70,6 +70,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner{
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
@@ -81,7 +82,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner{
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToVerticalMenu_Phones();
+        stHomePage.navigateToHorizontalMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("1410 ColorSchemeSettings_General_Var2 - Category page");

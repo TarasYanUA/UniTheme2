@@ -55,6 +55,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner{
             csCartSettings.setting_ProductDetailsInTab.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками характеристик Жесткий диск и Бренд
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();

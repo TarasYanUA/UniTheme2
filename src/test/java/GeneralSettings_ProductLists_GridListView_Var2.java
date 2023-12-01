@@ -36,7 +36,6 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         //Работаем с настройками характеристики Бренд
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
@@ -48,7 +47,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
-        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if (checkboxProductRating.isSelected()) {
@@ -97,6 +96,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         SoftAssert softAssert = new SoftAssert();
@@ -119,7 +119,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"
-        stHomePage.navigateToVerticalMenu_MenCloth();
+        stHomePage.navigateToHorizontalMenu_MenCloth();
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
         //Проверяем, что логотип присутствует

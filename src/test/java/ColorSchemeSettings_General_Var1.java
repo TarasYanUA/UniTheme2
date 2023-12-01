@@ -24,8 +24,13 @@ import taras.storefront.StHomePage;
 public class ColorSchemeSettings_General_Var1 extends TestRunner{
     @Test(priority = 1)
     public void setConfigurationsFor_ColorSchemeSettings_General_Var1() {
-        //Настраиваем CS-Cart настройки
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Настраиваем CS-Cart настройки
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (checkboxThumbnailsGallery.isSelected()) {
@@ -70,6 +75,7 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner{
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         stHomePage.hoverToProductInProductBlock();
@@ -81,7 +87,7 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner{
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToVerticalMenu_Phones();
+        stHomePage.navigateToHorizontalMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("1310 ColorSchemeSettings_General_Var1 - Category page");

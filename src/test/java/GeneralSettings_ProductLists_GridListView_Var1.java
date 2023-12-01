@@ -34,8 +34,12 @@ import java.time.Duration;
 public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_GridListView_Var1() {
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
+        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
         //Работаем с настройками характеристики Бренд
         csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
@@ -47,7 +51,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
-        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
         if (!checkboxProductRating.isSelected()) {
@@ -96,6 +100,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         SoftAssert softAssert = new SoftAssert();
@@ -127,7 +132,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stHomePage.selectLanguage_RU();
 
         //Категория "Телефоны"
-        stHomePage.navigateToVerticalMenu_Phones();
+        stHomePage.navigateToHorizontalMenu_Phones();
         //Проверяем, что код товара присутствует
         softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page!");
         //Проверяем, что статус наличия присутствует

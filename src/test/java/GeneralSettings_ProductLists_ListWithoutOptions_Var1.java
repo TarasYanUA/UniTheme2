@@ -23,10 +23,10 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        //Устанавливаем нужный макет
         csCartSettings.navigateToSection_DesignLayouts();
-        csCartSettings.layout_Light.click();
+        csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
         //Работаем с настройками характеристики Бренд
@@ -74,7 +74,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
-        stHomePage.navigateToVerticalMenu_MenCloth();
+
+        //Категория "Мужская одежда"
+        stHomePage.navigateToHorizontalMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();

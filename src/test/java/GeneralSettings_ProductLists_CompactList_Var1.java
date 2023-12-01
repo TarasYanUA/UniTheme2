@@ -30,17 +30,20 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_CompactList_Var1() {
-        //Работаем с настройками CS-Cart
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_DesignLayouts();
-        csCartSettings.layout_Light.click();
+        csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
+
+        //Работаем с настройками CS-Cart
         csCartSettings.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
         if (!checkboxSettingQuickView.isSelected()) {
             checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
+
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
@@ -77,7 +80,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();
-        stHomePage.navigateToVerticalMenu_GameConsoles();
+        stHomePage.navigateToHorizontalMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
         SoftAssert softAssert = new SoftAssert();

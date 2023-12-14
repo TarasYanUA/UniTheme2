@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed Vertical menu into Horizontal one on test-cases combined with theme settings.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Corrected test-case GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -104,7 +102,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2">
+  <component name="RunManager" selected="TestNG.ColorSchemeSettings_General_Var1">
     <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -171,8 +169,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
@@ -531,7 +529,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added asserts to the first test-case of Fly menu" />
     <MESSAGE value="Updated driver for Edge browser!" />
     <MESSAGE value="Split hover on Horizontal and Vertical menus." />
     <MESSAGE value="Renamed block names of two menus." />
@@ -572,7 +569,8 @@
     <MESSAGE value="softAssert.assertAll(); should be the last line because the code under won't be done." />
     <MESSAGE value="Improved test-cases and code according to new standards." />
     <MESSAGE value="Changed Vertical menu into Horizontal one on test-cases combined with theme settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Vertical menu into Horizontal one on test-cases combined with theme settings." />
+    <MESSAGE value="Corrected test-case GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected test-case GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -21,7 +21,7 @@ import taras.storefront.StHomePage;
 Иконка Корзины -- Вариант 1
 */
 
-public class ColorSchemeSettings_General_Var1 extends TestRunner{
+public class ColorSchemeSettings_General_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_ColorSchemeSettings_General_Var1() {
         //Настраиваем макет для тест-кейса

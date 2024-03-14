@@ -3,14 +3,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
-import taras.constants.DriverProvider;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import taras.adminPanel.CsCartSettings;
+import taras.constants.DriverProvider;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import static taras.constants.Constants.BASIC_URL;
 
 /*

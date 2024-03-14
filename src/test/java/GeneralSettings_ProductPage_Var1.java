@@ -40,7 +40,7 @@ import java.time.Duration;
     * Оптовые цены -- нет
 */
 
-public class GeneralSettings_ProductPage_Var1 extends TestRunner{
+public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Var1(){
         //Настраиваем макет для тест-кейса

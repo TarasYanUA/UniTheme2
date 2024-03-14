@@ -49,7 +49,7 @@ import static taras.constants.DriverProvider.getDriver;
 - Все шаблоны категории + RTL
 */
 
-public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 extends TestRunner{
+public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var2() {
         //Работаем с CS-Cart настройками

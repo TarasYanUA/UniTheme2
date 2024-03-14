@@ -21,7 +21,7 @@ import taras.storefront.StHomePage;
 Иконка Корзины -- Вариант 7
 */
 
-public class ColorSchemeSettings_General_Var2 extends TestRunner{
+public class ColorSchemeSettings_General_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_ColorSchemeSettings_General_Var2() {
         //Настраиваем CS-Cart настройки

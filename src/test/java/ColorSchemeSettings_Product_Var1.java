@@ -33,7 +33,7 @@ import java.time.Duration;
     * шаблон страницы товара -- все 5 шт
 */
 
-public class ColorSchemeSettings_Product_Var1 extends TestRunner{
+public class ColorSchemeSettings_Product_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_ColorSchemeSettings_Product_Var1() {
         //Настраиваем CS-Cart настройки

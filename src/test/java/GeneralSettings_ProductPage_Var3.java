@@ -38,7 +38,7 @@ import java.time.Duration;
     * Оптовые цены -- да
 */
 
-public class GeneralSettings_ProductPage_Var3 extends TestRunner{
+public class GeneralSettings_ProductPage_Var3 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Var3(){
         //Настраиваем CS-Cart настройки

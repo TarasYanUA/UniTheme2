@@ -166,7 +166,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.selectLanguage_RU();
         
         //Категория "Женская одежда"
-        stHomePage.navigateToHorizontalMenu_WomanCloth();
+         stHomePage.navigateToHorizontalMenu_WomanCloth();
         //Проверка, что на странице присутствует обесцвеченный товар.
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-gl__body.content-on-hover.decolorize")).isEmpty(),
                 "There is no decolorized product on the category page!");

@@ -95,9 +95,9 @@ public class MenuSettings extends AbstractPage {
     public WebElement setting_Activate3LevelMenu;
     @FindBy(css = ".ui-dialog-content input[name='dispatch[static_data.update]']")
     public WebElement button_Save3LevelMenu;
-    @FindBy(css = "#on_item_192 .icon-caret-right")
+    @FindBy(css = "#on_item_255 .icon-caret-right")
     public WebElement arrowOfCategory;
-    @FindBy(css = "a[data-ca-external-click-id='opener_group193']")
+    @FindBy(css = "a[data-ca-external-click-id='opener_group256']")
     public WebElement categoryComputers;
     @FindBy(css = ".re-icon-html")
     public WebElement button_Html;

@@ -58,6 +58,11 @@ public class StHomePage extends AbstractPage {
 
     public WebElement getProductInProductBlock(){return productInProductBlock;}
     public void hoverToProductInProductBlock(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebElement element = getProductInProductBlock();
         Actions hoverProduct = new Actions(DriverProvider.getDriver());
         hoverProduct.moveToElement(element);

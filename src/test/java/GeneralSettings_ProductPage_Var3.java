@@ -117,6 +117,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+        productPage.checkbox_NotifyMe.click();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails.ty-center")).isEmpty(),
@@ -144,6 +145,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
                 "Number of displayed images of the product gallery is not 3!");
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         productPage.shiftLanguage_RTL();
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1105 GS_ProductPage_Var3 - Default template (RTL)");
 
         //Проверяем характеристики
@@ -166,33 +168,41 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
         productPage.shiftLanguage_RTL();
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
         productPage.shiftLanguage_RTL();
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
         productPage.shiftLanguage_RTL();
+        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
+        productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot_withScroll("1155 GS_ProductPage_Var3 - Gallery template");
         productPage.shiftLanguage_RTL();
+        productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot_withScroll("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
         System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");

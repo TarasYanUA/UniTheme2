@@ -24,6 +24,8 @@ public class ProductPage extends AbstractPage {
     private WebElement tab_FeaturesForNonTabs;
     @FindBy(css = "a[id*='opener_ut2_features_dialog_']")
     public WebElement featureDescription;
+    @FindBy(css = "#subscribe_form_wrapper input")
+    public WebElement checkbox_NotifyMe;
     @FindBy(css = ".ty-tabs__span")
     private WebElement blockWithProducts_MostPopular;
     public WebElement getBlockWithProducts_MostPopular(){return blockWithProducts_MostPopular;}

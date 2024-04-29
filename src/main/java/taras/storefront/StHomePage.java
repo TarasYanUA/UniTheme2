@@ -27,6 +27,7 @@ public class StHomePage extends AbstractPage {
     private WebElement blockWithProducts;
     @FindBy(css = ".ut2-w-c-q__buttons")
     private WebElement productInProductBlock;
+
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
     public void LogOutOnStorefront(){
         WebElement element = hoverToAccountOnTop();
@@ -37,6 +38,7 @@ public class StHomePage extends AbstractPage {
         if(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
         button_LogOut.click();  }
     }
+
     public void selectLanguage_RTL(){
         languageButton.click();
         languageRTL.click();
@@ -256,7 +258,6 @@ public class StHomePage extends AbstractPage {
         hover.moveToElement(element).build().perform();
     }
 
-    //FLY menu
     @FindBy(css = ".ut2-lfl.ty-menu-item__electronics p")
     private WebElement flyMenu_Electronics;
     private WebElement hoverFlyMenu_Electronics(){return flyMenu_Electronics;}

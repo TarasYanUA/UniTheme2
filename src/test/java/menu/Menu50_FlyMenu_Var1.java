@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.MenuSettings;
+import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -25,29 +25,29 @@ public class Menu50_FlyMenu_Var1 extends TestRunner{
     public void setConfiguration_Menu50_FlyMenu_Var1() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Default.click();
         csCartSettings.setLayoutAsDefault();
-        MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_FlyMenu_Default.click();
+        MainMenuSettings mainMenuSettings = new MainMenuSettings();
+        mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuSettings_buttonSettings.click();
-        if(!menuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            menuSettings.setting_ShowIconsForMenuItems.click();
+        mainMenuSettings.menuSettings_buttonSettings.click();
+        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
+            mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        if(!menuSettings.setting_ShowTitle.isSelected()){
-            menuSettings.setting_ShowTitle.click();
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        if(!mainMenuSettings.setting_ShowTitle.isSelected()){
+            mainMenuSettings.setting_ShowTitle.click();
         }
-        menuSettings.button_saveBlock.click();
+        mainMenuSettings.button_saveBlock.click();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfiguration_Menu50_FlyMenu_Var1")
     public void check_Menu50_FlyMenu_Var1(){
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.button_FlyMenu.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

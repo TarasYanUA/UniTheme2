@@ -43,7 +43,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
     public void setConfigurationsForProductPage_Var3(){
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        csCartSettings.navigateToAppearanceSettings();
         if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
         }

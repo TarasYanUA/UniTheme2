@@ -26,7 +26,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
     public void setConfigurationsFor_ColorSchemeSettings_General_Var2() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (!checkboxThumbnailsGallery.isSelected()) {
             checkboxThumbnailsGallery.click();
@@ -67,7 +67,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
     description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
     public void checkColorSchemeSettings_General_Var2(){
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

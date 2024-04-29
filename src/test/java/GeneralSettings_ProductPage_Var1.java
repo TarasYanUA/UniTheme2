@@ -45,12 +45,12 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     public void setConfigurationsForProductPage_Var1(){
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
         //Настраиваем CS-Cart настройки
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        csCartSettings.navigateToAppearanceSettings();
         if(!csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
         }
@@ -63,12 +63,11 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристик Жесткий диск и Бренд
-        csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.feature_HardDrive.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        csCartSettings.scrollToFeatureDescription();
+        csCartSettings.scrollToFeatureDescription_HardDrive();
         csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
         if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
             csCartSettings.showInHeaderOnProductPage_HardDisk.click();

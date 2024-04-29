@@ -30,7 +30,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
     public void setConfigurationsForProductLists_ListWithoutOptions_Var2() {
         //Работаем с настройками характеристики Бренд
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
@@ -73,7 +72,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var2")
     public void checkProductLists_ListWithoutOptions_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

@@ -21,7 +21,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
         saveButtonOfSettings.click();
     }
 
-    @FindBy(css = ".icon-shopping-cart")
+    @FindBy(css = "a[href*='bottom_panel.redirect']")
     private WebElement storefront;
 
     public StHomePage navigateToStorefront(){
@@ -188,7 +188,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
 
 
     //Меню "Веб-сайт -- Темы -- Макеты"
-    @FindBy(id = "a[href=\"#primary_main_menu_1_6_body\"]")
+    @FindBy(css = "a[href=\"#primary_main_menu_1_6_body\"]")
     private WebElement menu_Website;
     @FindBy(id = "website_themes")
     private WebElement menu_Themes;

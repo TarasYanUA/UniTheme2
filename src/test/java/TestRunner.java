@@ -23,6 +23,7 @@ public class TestRunner {
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
         DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
+        DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }
     @AfterMethod
     public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {

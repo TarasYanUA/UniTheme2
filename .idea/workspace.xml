@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Work with adaptation to CS-Cart 4.18.1.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +86,7 @@
     "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
     "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
     "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor": "Run",
     "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor": "Run",
     "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
@@ -129,18 +132,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3">
-    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1">
     <configuration name="ColorSchemeSettings_General_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -152,11 +144,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <option name="METHOD_NAME" value="checkProductLists_AllCategoryLists_Var1" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -187,19 +191,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
       <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
-      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
-        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
-        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +229,7 @@
       <workItem from="1712221062835" duration="8518000" />
       <workItem from="1712577088002" duration="2194000" />
       <workItem from="1712739978319" duration="36000" />
-      <workItem from="1714388976952" duration="11959000" />
+      <workItem from="1714388976952" duration="12941000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -570,7 +574,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,6 +637,15 @@
           <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
           <line>82</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TestRunner.java</url>
+          <line>37</line>
+          <properties class="TestRunner" method="focusBrowserTab">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -11,6 +11,11 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     //Настройки темы, вкладка "Списки товаров"
     @FindBy(css = "#product_list")
     private WebElement tabProductLists;
+
+    public void clickTabProductLists(){
+        tabProductLists.click();
+    }
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.decolorate_out_of_stock_products']")
     public WebElement settingOutOfStockProducts;
     @FindBy(id = "settings.abt__ut2.product_list.price_display_format")
@@ -65,16 +70,13 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement setting_AllowToSelectVariationsAndOptions;
 
 
-    public void clickTabProductLists(){
-        tabProductLists.click();
-    }
-
     public Select getSettingPriceDisplayFormat(){
         return new Select(settingPriceDisplayFormat);
     }
     public void selectSettingPriceDisplayFormat(String value){
         getSettingPriceDisplayFormat().selectByValue(value);
     }
+
     public void clickAndTypeSettingProductIconWidth(String value){
         settingProductIconWidth.click();
         settingProductIconWidth.clear();
@@ -92,18 +94,21 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public void selectSettingShowAddToCartButton(String value){
         getSettingShowAddToCartButton().selectByValue(value);
     }
+
     public Select getSettingAdditionalProductInformation(){
         return new Select(settingAdditionalProductInformation);
     }
     public void selectSettingAdditionalProductInformation(String value){
         getSettingAdditionalProductInformation().selectByValue(value);
     }
+
     public Select getSettingSwitchProductImageWhenHovering(){
         return new Select(settingSwitchProductImageWhenHovering);
     }
     public void selectSetting_SwitchProductImageWhenHovering(String value){
         getSettingSwitchProductImageWhenHovering().selectByValue(value);
     }
+
     public Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
     public void selectSettingDisplayCartStatus(String value){
         getSettingDisplayCartStatus().selectByValue(value);
@@ -142,18 +147,21 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         withoutOptionsIconHeight.clear();
         withoutOptionsIconHeight.sendKeys(value);
     }
+
     public Select getWithoutOptionsContentUnderDescription(){
         return new Select(withoutOptionsContentUnderDescription);
     }
     public void selectWithoutOptionsContentUnderDescription(String value){
         getWithoutOptionsContentUnderDescription().selectByValue(value);
     }
+
     public Select getWithoutOptions_ShowGalleryOfMiniIcons(){
         return new Select(withoutOptions_ShowStandardImageGallery);
     }
     public void selectWithoutOptions_ShowStandardImageGallery(String value){
         getWithoutOptions_ShowGalleryOfMiniIcons().selectByValue(value);
     }
+
     public Select getWithoutOptions_SwitchProductImageWhenHovering(){
         return new Select(withoutOptions_SwitchProductImageWhenHovering);
     }

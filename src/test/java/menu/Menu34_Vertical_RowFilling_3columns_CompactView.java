@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.MenuSettings;
+import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -29,36 +29,36 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
     public void setConfigurations_Menu34_Vertical_RowFilling_3columns_CompactView(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
-        MenuSettings menuSettings = new MenuSettings();
-        menuSettings.gearwheelOfTheBlock_Categories_Light.click();
+        MainMenuSettings mainMenuSettings = new MainMenuSettings();
+        mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuSettings_buttonSettings.click();
-        menuSettings.selectSetting_FillingType("row_filling");
-        menuSettings.selectSetting_MaximumColumns("3");
-        if(!menuSettings.setting_CompactDisplayView.isSelected()){
-            menuSettings.setting_CompactDisplayView.click();
+        mainMenuSettings.menuSettings_buttonSettings.click();
+        mainMenuSettings.selectSetting_FillingType("row_filling");
+        mainMenuSettings.selectSetting_MaximumColumns("3");
+        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
         }
-        if(!menuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            menuSettings.setting_ShowIconsForMenuItems.click();
+        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
+            mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("30");
-        menuSettings.clickAndType_setting_SecondLevelElements("30");
-        menuSettings.clickAndType_setting_ThirdLevelElements("30");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("600");
-        menuSettings.tab_Content.click();
-        menuSettings.selectMenuContent_MainMenu();
-        menuSettings.button_saveBlock.click();
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("30");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("30");
+        mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("600");
+        mainMenuSettings.tab_Content.click();
+        mainMenuSettings.selectMenuContent_MainMenu();
+        mainMenuSettings.button_saveBlock.click();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu34_Vertical_RowFilling_3columns_CompactView")
     public void check_Menu34_Vertical_RowFilling_3columns_CompactView(){
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

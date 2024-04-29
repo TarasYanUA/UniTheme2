@@ -53,12 +53,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
     public void setConfigurationsForProductLists_AllCategoryLists_Var1() {
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
         //Работаем с CS-Cart настройками
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (checkboxThumbnailsGallery.isSelected()) {
             checkboxThumbnailsGallery.click();
@@ -131,7 +131,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
         public void checkProductLists_AllCategoryLists_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         StCategoryPage stCategoryPage = new StCategoryPage();
         focusBrowserTab(1);
         stHomePage.cookie.click();

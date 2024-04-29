@@ -9,88 +9,48 @@ import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 
-public class CsCartSettings extends AbstractPage {
+public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     public CsCartSettings(){
         super();
     }
 
-    public void navigateToAddonsPage() {
-        WebElement elementOfAddonsDropDown = hoverAddonsDropDown();
-        Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
-        hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);
-        hoverAddonsDropDown.perform();
-        navigateToAddonsManagementPage();
+    @FindBy(css = ".btn.btn-primary.cm-submit")
+    private WebElement saveButtonOfSettings;
+
+    public void clickSaveButtonOfSettings(){
+        saveButtonOfSettings.click();
     }
-    public void navigateToAppearanceSettingsOfCsCart(){
-        WebElement mainRightNavBar = hoverSettingsOfCsCart();
-        Actions hoverSettingsOfCsCart = new Actions(DriverProvider.getDriver());
-        hoverSettingsOfCsCart.moveToElement(mainRightNavBar);
-        hoverSettingsOfCsCart.perform();
-        clickAppearanceSettingsOfCsCart();
-    }
-    public void hoverToProductMenu(){
-        WebElement elementOfMenuProducts = hoverMenuProducts();
-        Actions hoverMenuProducts = new Actions(DriverProvider.getDriver());
-        hoverMenuProducts.moveToElement(elementOfMenuProducts);
-        hoverMenuProducts.perform();
-    }
-    public StHomePage navigateToStorefrontMainPage(){
-        storefrontMainPage.click();
+
+    @FindBy(css = ".icon-shopping-cart")
+    private WebElement storefront;
+
+    public StHomePage navigateToStorefront(){
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".bp-bottom-button--disabled-panel")).isEmpty())
+            DriverProvider.getDriver().findElement(By.id("bp_on_bottom_panel")).click();
+        storefront.click();
         return new StHomePage();
     }
 
-    @FindBy(css = ".btn.btn-primary")
-    private WebElement buttonAuthorization;
-    @FindBy(css = "#bp_off_bottom_panel")
-    private WebElement bottomAdminPanel;
-    @FindBy(css = "#elm_menu_addons")
-    private WebElement addonsDropDown;
-    @FindBy(css = "#elm_menu_addons_downloaded_add_ons")
-    private WebElement addonsManagementPage;
-    @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
-    private WebElement themeSectionsOnManagementPage;
-    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.settings']")
-    private WebElement themeSettings;
-    @FindBy(css = ".nav-tabs #products")
-    public WebElement tab_Product;
-    @FindBy(css = "#product_list")
-    private WebElement tabProductLists;
-    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.less_settings']")
-    private WebElement colorSchemeSettings;
-    @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
-    private WebElement menuProducts;
-    @FindBy(css = "a[href$='dispatch=categories.manage']")
-    private WebElement section_Categories;
-    @FindBy(css = "a[href$='products.manage']")
-    private WebElement section_Products;
-    @FindBy(css = "a[href$='product_features.manage']")
-    private WebElement section_Features;
-    @FindBy(css = "a[href$='feature_id=18'][data-ca-external-click-id]")
-    private WebElement featureBrand;
-    @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
-    public WebElement feature_HardDrive;
-    @FindBy(css = "label[for='elm_feature_description_23']")
-    private WebElement field_FeatureDescription;
-    @FindBy(css = ".controls .redactor-layer p")
-    private WebElement field_DescriptionOfFeature;
-    @FindBy(css = ".btn.btn-primary.cm-submit")
-    private WebElement saveButtonOfSettings;
-    @FindBy(css = ".icon-shopping-cart")
-    private WebElement storefrontMainPage;
-    @FindBy(css = "#elm_menu_settings")
-    private WebElement settingsOfCsCart;
-    @FindBy(css = "#elm_menu_settings_Appearance")
-    private WebElement appearanceSettingsOfCsCart;
-    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
-    public WebElement showInProductList;
-    @FindBy(id = "elm_feature_display_on_header_18")
-    public WebElement showInHeaderOnProductPage_Brand;
-    @FindBy(id = "elm_feature_display_on_header_23")
-    public WebElement showInHeaderOnProductPage_HardDisk;
-    @FindBy(css = "input[value='Сохранить']")
-    public WebElement button_SaveFeature;
 
-    //Настройки CS-Cart, вкладка "Внешний вид"
+    @FindBy(css = "a[href=\"#primary_main_menu_1_7_body\"]")
+    private WebElement menu_Addons;
+    @FindBy(id = "addons_downloaded_add_ons")
+    private WebElement menu_DownloadedAddons;
+
+    public void navigateTo_DownloadedAddonsPage() {
+        menu_Addons.click();
+        menu_DownloadedAddons.click();
+    }
+
+    //Меню "Настройки"
+    @FindBy(id = "administration")
+    private WebElement menu_Settings;
+    @FindBy(css = "a[href$='section_id=General']")
+    private WebElement section_GeneralSettings;
+
+    //Меню "Настройки -- Внешний вид"
+    @FindBy(css = "a[href$='section_id=Appearance']")
+    private WebElement section_Appearance;
     @FindBy(css = "input[id*='field___enable_quick_view']")
     public WebElement setting_QuickView;
     @FindBy(css = "input[id*='field___thumbnails_gallery']")
@@ -100,64 +60,88 @@ public class CsCartSettings extends AbstractPage {
     @FindBy(id = "field___product_details_in_tab_288")
     public WebElement setting_ProductDetailsInTab;
 
-
-
-    public void clickSaveButtonOfSettings(){
-        saveButtonOfSettings.click();
-    }
-    public void clickAppearanceSettingsOfCsCart(){
-        appearanceSettingsOfCsCart.click();
-    }
-    public void clickButtonAuthorization(){
-        buttonAuthorization.click();
-    }
-    public void closeBottomAdminPanel(){
-        bottomAdminPanel.click();
-    }
-    public WebElement hoverAddonsDropDown(){
-        return addonsDropDown;
-    }
-    public WebElement hoverSettingsOfCsCart(){return settingsOfCsCart;}
-    public void navigateToAddonsManagementPage(){
-        addonsManagementPage.click();
-    }
-    public WebElement hoverMenuProducts(){
-        return menuProducts;
+    public void navigateToAppearanceSettings(){
+        menu_Settings.click();
+        section_GeneralSettings.click();
+        section_Appearance.click();
     }
 
-    public void navigateToSection_Categories(){
-        WebElement element = hoverMenuProducts();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-        section_Categories.click();
-    }
+    //Меню "Товары --Товары"
+    @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
+    private WebElement menu_Products;
+    @FindBy(id = "products_products")
+    private WebElement section_Products;
+
     public ProductSettings navigateToSection_Products(){
-        WebElement element = hoverMenuProducts();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
+        menu_Products.click();
         section_Products.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).isEmpty()){
-            DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
-            DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
-        }
+        checkPageOnEngLang();
         return new ProductSettings();
     }
-    public void navigateToSection_Features(){
-        section_Features.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).isEmpty()){
-            DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
-            DriverProvider.getDriver().findElement(By.cssSelector(".popup-icons a[name='en']")).click();
-        }
+
+    //Меню "Товары -- Категории"
+    @FindBy(id = "products_categories")
+    private WebElement section_Categories;
+    @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
+    public WebElement gearwheelOnCategoryPage;
+    @FindBy(css = "a[href$='categories.m_add']")
+    public WebElement button_AddBulkCategory;
+    @FindBy(css = "select[name='categories_data[0][parent_id]']")
+    public WebElement categoryLocation;
+    @FindBy(css = ".span3")
+    public WebElement field_CategoryName;
+    @FindBy(css = ".btn-clone")
+    public WebElement button_Clone;
+    @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
+    public WebElement button_Create;
+
+    public void navigateToSection_Categories(){
+        menu_Products.click();
+        section_Categories.click();
     }
-    public WebElement hoverFeatureDescription(){return field_FeatureDescription;}
-    public void scrollToFeatureDescription(){
-        WebElement element = hoverFeatureDescription();
+
+    private Select getCategoryLocation(){return new Select(categoryLocation);}
+    public void selectCategoryLocation_Computers(){
+        getCategoryLocation().selectByValue("167");
+    }
+
+    public void clickAndType_Field_CategoryName(){
+        field_CategoryName.click();
+        field_CategoryName.sendKeys("AutoTestCategory");
+    }
+
+    //Меню "Товары -- Характеристики"
+    @FindBy(id = "products_features")
+    private WebElement section_Features;
+    @FindBy(css = "a[data-ca-external-click-id=\"opener_group18\"]")
+    private WebElement featureBrand;
+    @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
+    public WebElement feature_HardDrive;
+    @FindBy(css = "label[for='elm_feature_description_23']")
+    private WebElement field_FeatureDescription_HardDrive;
+    @FindBy(css = ".controls .redactor-layer p")
+    private WebElement field_DescriptionOfFeature;
+    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
+    public WebElement showInProductList;
+    @FindBy(id = "elm_feature_display_on_header_18")
+    public WebElement showInHeaderOnProductPage_Brand;
+    @FindBy(id = "elm_feature_display_on_header_23")
+    public WebElement showInHeaderOnProductPage_HardDisk;
+    @FindBy(css = "input[value='Сохранить']")
+    public WebElement button_SaveFeature;
+
+    public void navigateToSection_Features(){
+        menu_Products.click();
+        section_Features.click();
+        checkPageOnEngLang();
+    }
+    public WebElement hoverFeatureDescription_HardDrive(){return field_FeatureDescription_HardDrive;}
+    public void scrollToFeatureDescription_HardDrive(){
+        WebElement element = hoverFeatureDescription_HardDrive();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.scrollToElement(element);
         hover.perform();
-        field_FeatureDescription.click();
+        field_FeatureDescription_HardDrive.click();
     }
     public void clickAndTypeField_DescriptionOfFeature(String value){
         field_DescriptionOfFeature.click();
@@ -167,40 +151,51 @@ public class CsCartSettings extends AbstractPage {
     public void clickFeatureBrand(){
         featureBrand.click();
     }
-    public void clickThemeSectionsOnManagementPage(){
-        themeSectionsOnManagementPage.click();
-    }
+
+
+    //Меню "Модули -- Скачанные модули"
+    @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
+    private WebElement themeSectionsOnPage_DownloadedAddons;
+    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.settings']")
+    private WebElement themeSettings;
+    @FindBy(css = ".nav-tabs #products")
+    public WebElement tab_Product;
+    @FindBy(css = "#product_list")
+    private WebElement tab_ProductLists;
+    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.less_settings']")
+    private WebElement colorSchemeSettings;
+
     public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists(){
-        navigateToAddonsPage();
-        clickThemeSectionsOnManagementPage();
+        navigateTo_DownloadedAddonsPage();
+        themeSectionsOnPage_DownloadedAddons.click();
         themeSettings.click();
-        tabProductLists.click();
+        tab_ProductLists.click();
         return new ThemeSettings_ProductLists();
     }
     public ThemeSettings_Product navigateTo_ThemeSettings_tabProduct(){
-        navigateToAddonsPage();
-        clickThemeSectionsOnManagementPage();
+        navigateTo_DownloadedAddonsPage();
+        themeSectionsOnPage_DownloadedAddons.click();
         themeSettings.click();
         tab_Product.click();
         return new ThemeSettings_Product();
     }
     public ColorSchemeSettings navigateTo_ColorSchemeSettings(){
-        navigateToAddonsPage();
-        clickThemeSectionsOnManagementPage();
+        navigateTo_DownloadedAddonsPage();
+        themeSectionsOnPage_DownloadedAddons.click();
         colorSchemeSettings.click();
         return new ColorSchemeSettings();
     }
 
 
-    //Страница "Дизайн -- Макеты"
-    @FindBy(id = "elm_menu_design")
-    private WebElement menuDesign;
-    @FindBy(id = "elm_menu_design_layouts")
+    //Меню "Веб-сайт -- Темы -- Макеты"
+    @FindBy(id = "a[href=\"#primary_main_menu_1_6_body\"]")
+    private WebElement menu_Website;
+    @FindBy(id = "website_themes")
+    private WebElement menu_Themes;
+    @FindBy(css = ".nav__actions-bar a[href$='block_manager.manage']")
     private WebElement section_Layouts;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=5']")
     public WebElement layout_Light;
-    @FindBy(id = "elm_menu_design_menus")
-    private WebElement section_Menu;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
     public WebElement layout_Lightv2;
     @FindBy(css = "a[href$='block_manager.manage&s_layout=3']")
@@ -210,23 +205,10 @@ public class CsCartSettings extends AbstractPage {
     @FindBy(css = ".with-menu.active a[href*='block_manager.set_default_layout']")
     private WebElement button_makeByDefault;
 
-    public WebElement hoverMenuDesign(){
-        return menuDesign;
-    }
-    public void navigateToSection_DesignLayouts(){
-        WebElement element = hoverMenuDesign();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
+    public void navigateToSection_WebsiteLayouts(){
+        menu_Website.click();
+        menu_Themes.click();
         section_Layouts.click();
-    }
-    public MenuSettings navigateToSection_DesignMenu(){
-        WebElement element = hoverMenuDesign();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-        section_Menu.click();
-        return new MenuSettings();
     }
 
     public WebElement hoverGearwheelOfActiveLayout(){return gearwheelOfActiveLayout;}
@@ -243,25 +225,12 @@ public class CsCartSettings extends AbstractPage {
         }
     }
 
-    //Для раздела "Товары -- Категории"
-    @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
-    public WebElement gearwheelOnCategoryPage;
-    @FindBy(css = "a[href$='categories.m_add']")
-    public WebElement button_AddBulkCategory;
-    @FindBy(css = "select[name='categories_data[0][parent_id]']")
-    public WebElement categoryLocation;
-    private Select getCategoryLocation(){return new Select(categoryLocation);}
-    public void selectCategoryLocation_Computers(){
-        getCategoryLocation().selectByValue("167");
+    //Меню "Веб-сайт -- Меню"
+    @FindBy(id = "website_menus")
+    private WebElement menu_WebsiteMenu;
+
+    public void navigateTo_WebsiteMenuPage(){
+        menu_Website.click();
+        menu_WebsiteMenu.click();
     }
-    @FindBy(css = ".span3")
-    public WebElement field_CategoryName;
-    public void clickAndType_Field_CategoryName(){
-        field_CategoryName.click();
-        field_CategoryName.sendKeys("AutoTestCategory");
-    }
-    @FindBy(css = ".btn-clone")
-    public WebElement button_Clone;
-    @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
-    public WebElement button_Create;
 }

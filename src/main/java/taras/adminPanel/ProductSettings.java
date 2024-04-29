@@ -11,14 +11,19 @@ import taras.storefront.ProductPage;
 
 public class ProductSettings extends AbstractPage {
     public ProductSettings(){super();}
-    @FindBy(css = ".sidebar-field input")
-    private WebElement searchFieldOfProduct;
+
     @FindBy(css = ".products-list__image")
     public WebElement chooseAnyProduct;
-    @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
+    @FindBy(css = ".dropdown-icon--tools")
     private WebElement gearwheelOfProduct;
     @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]")
     private WebElement previewButton;
+
+    public ProductPage navigateToProductPage(){
+        gearwheelOfProduct.click();
+        previewButton.click();
+        return new ProductPage();
+    }
 
     @FindBy(id = "elm_price_price")
     private WebElement field_Price;
@@ -46,27 +51,36 @@ public class ProductSettings extends AbstractPage {
     private WebElement field_PromoText;
 
     //вкладка "Бонусные баллы"
-    @FindBy(id = "reward_points")
+    @FindBy(css = ".content__tabs-navigation #reward_points")
     public WebElement tab_RewardPoints;
     @FindBy(id = "pd_is_pbp")
     public WebElement setting_AllowPaymentByPoints;
     @FindBy(id = "qty_discounts")
     public WebElement tab_QuantityDiscounts;
     @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
+
     private WebElement field_Quantity;
     @FindBy(css = "#box_add_qty_discount .cm-numeric")
     private WebElement field_Value;
 
+    public void clickAndType_field_Quantity(String value){
+        field_Quantity.click();
+        field_Quantity.clear();
+        field_Quantity.sendKeys(value);
+    }
+    public void clickAndType_field_Value(String value){
+        field_Value.click();
+        field_Value.clear();
+        field_Value.sendKeys(value);
+    }
+
+    @FindBy(css = ".search__input")
+    private WebElement searchFieldOfProduct;
 
     public void clickAndType_SearchFieldOfProduct(String value){
         searchFieldOfProduct.click();
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
-    }
-    public ProductPage navigateToProductPage(){
-        gearwheelOfProduct.click();
-        previewButton.click();
-        return new ProductPage();
     }
     public void clickAndTypeField_Price(String value){
         field_Price.click();
@@ -95,12 +109,14 @@ public class ProductSettings extends AbstractPage {
     public void selectSetting_ZeroPriceAction(String value){
         getSetting_ZeroPriceAction().selectByValue(value);
     }
+
     public Select getSetting_OutOfStockActions(){
         return new Select(setting_OutOfStockActions);
     }
     public void selectSetting_OutOfStockActions(String value){
         getSetting_OutOfStockActions().selectByValue(value);
     }
+
     public Select getSetting_ProductTemplate(){return new Select(setting_ProductTemplate);}
     public void selectSetting_ProductTemplate(String value){
         getSetting_ProductTemplate().selectByValue(value);
@@ -117,6 +133,7 @@ public class ProductSettings extends AbstractPage {
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
     }
+
     public WebElement getField_PromoText(){return fieldName_PromoText;}
     public void hoverAndTypeField_PromoText(String value){
         WebElement element = getField_PromoText();
@@ -127,15 +144,5 @@ public class ProductSettings extends AbstractPage {
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);
-    }
-    public void clickAndType_field_Quantity(String value){
-        field_Quantity.click();
-        field_Quantity.clear();
-        field_Quantity.sendKeys(value);
-    }
-    public void clickAndType_field_Value(String value){
-        field_Value.click();
-        field_Value.clear();
-        field_Value.sendKeys(value);
     }
 }

@@ -36,7 +36,6 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работаем с настройками характеристики Бренд
-        csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
@@ -92,7 +91,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var2")
     public void checkProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

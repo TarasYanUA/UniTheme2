@@ -1,12 +1,12 @@
 package menu;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import taras.adminPanel.CsCartSettings;
 import taras.constants.DriverProvider;
 import java.io.File;
 import java.io.IOException;
@@ -21,9 +21,7 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.clickButtonAuthorization();
-        csCartSettings.closeBottomAdminPanel();
+        DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
     }
     @AfterMethod
     public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {

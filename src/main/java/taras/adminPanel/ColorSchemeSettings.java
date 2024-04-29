@@ -62,8 +62,10 @@ public class ColorSchemeSettings extends AbstractPage {
     public void selectSetting_FrameType(String value){
         getSetting_FrameType().selectByValue(value);
     }
+
     public Select getSetting_ProductLists_ElementsAlignment(){return new Select(setting_ProductLists_ElementsAlignment);}
     public void selectSetting_ProductLists_ElementsAlignment(String value){getSetting_ProductLists_ElementsAlignment().selectByValue(value);}
+
     public Select getSetting_ProductLists_FontWeightForProductName(){return new Select(setting_ProductLists_FontWeightForProductName);}
     public void selectSetting_ProductLists_FontWeightForProductName(String value){getSetting_ProductLists_FontWeightForProductName().selectByValue(value);}
 
@@ -74,15 +76,4 @@ public class ColorSchemeSettings extends AbstractPage {
     public WebElement setting_ProductMaskForProductImages;
     @FindBy(id = "settings.abt__ut2.products.bordered_images_gallery")
     public WebElement setting_ProductBorderForProductImages;
-
-
-/*    public void chooseActiveColorScheme(){
-        //fieldOfActiveColorScheme.click();
-
-
-        for (int i=0; i<listOfColorSchemeNames.size(); i++){
-            System.out.println(listOfColorSchemeNames.get(i).getText());
-
-        }
-    }*/
 }

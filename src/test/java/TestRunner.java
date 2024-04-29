@@ -1,11 +1,11 @@
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import taras.adminPanel.CsCartSettings;
 import taras.constants.DriverProvider;
 
 import java.io.File;
@@ -16,25 +16,13 @@ import java.util.Arrays;
 
 import static taras.constants.Constants.BASIC_URL;
 
-/*
-Данный проект разработан для проверки отображения витрины с различными комбинациями настроек Юни темы.
-Актуальная версия Юни темы 4.17.2b. Можно установить как саму тему отдельно, так и Пакет UniTheme2 (UltRu).
-Используются макеты Light v2, Advanced и Default.
-
-Рекомендуется запускать проект через файл TestNG.xml. Но можно также через Surefire отчёт:
-перейти в "Терминал" и ввести "mvn clean test". После этого в папке "target -> surefire reports"
-открыть файл "index.html" с помощью браузера.
- */
-
 public class TestRunner {
     @BeforeMethod
     public void prepareBrowser() {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.clickButtonAuthorization();
-        csCartSettings.closeBottomAdminPanel();
+        DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
     }
     @AfterMethod
     public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {

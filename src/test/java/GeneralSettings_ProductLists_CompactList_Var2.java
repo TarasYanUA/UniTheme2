@@ -58,7 +58,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var2")
     public void checkProductLists_CompactList_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
         stHomePage.navigateToHorizontalMenu_GameConsoles();

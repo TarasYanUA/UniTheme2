@@ -38,7 +38,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
     public void setConfigurations_ColorSchemeSettings_Product_Var1() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
+        csCartSettings.navigateToAppearanceSettings();
         if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
             csCartSettings.setting_ThumbnailsGallery.click();
             csCartSettings.clickSaveButtonOfSettings();

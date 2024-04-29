@@ -36,12 +36,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
     public void setConfigurationsForProductLists_GridListView_Var1() {
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
         //Работаем с настройками характеристики Бренд
-        csCartSettings.hoverToProductMenu();
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
@@ -97,7 +96,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var1")
     public void checkProductLists_GridListView_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

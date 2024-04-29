@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.MenuSettings;
+import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -30,38 +30,39 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
     public void setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView() {
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
-        MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
-        menuSettings.choose_MainMenu.click();
-        menuSettings.chooseMenu_Electronics.click();
+        csCartSettings.navigateTo_WebsiteMenuPage();
+        MainMenuSettings mainMenuSettings = new MainMenuSettings();
+        mainMenuSettings.choose_MainMenu.click();
+        mainMenuSettings.chooseMenu_Electronics.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuTab_ABUniTheme2.click();
-        if (!menuSettings.setting_ActivateSettings.isSelected()) {
-            menuSettings.setting_ActivateSettings.click();
+        mainMenuSettings.menuTab_ABUniTheme2.click();
+        if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
+            mainMenuSettings.setting_ActivateSettings.click();
         }
-        if (!menuSettings.setting_Activate3LevelMenu.isSelected()) {
-            menuSettings.setting_Activate3LevelMenu.click();
+        if (!mainMenuSettings.setting_Activate3LevelMenu.isSelected()) {
+            mainMenuSettings.setting_Activate3LevelMenu.click();
         }
-        menuSettings.button_Save3LevelMenu.click();
+        mainMenuSettings.button_Save3LevelMenu.click();
         //Добавляем баннер для меню "Компьютеры"
-        menuSettings.arrowOfCategory.click();
-        menuSettings.categoryComputers.click();
-        menuSettings.menuTab_ABUniTheme2.click();
+        mainMenuSettings.arrowOfCategory.click();
+        mainMenuSettings.categoryComputers.click();
+        mainMenuSettings.menuTab_ABUniTheme2.click();
         if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
-            menuSettings.button_Html.click();
-            menuSettings.clickAndType_Field_HtmlContent();
+            mainMenuSettings.button_Html.click();
+            mainMenuSettings.clickAndType_Field_HtmlContent();
         }
-        menuSettings.button_Save3LevelMenu.click();
-        menuSettings.selectLanguage_RTL();
-        menuSettings.arrowOfCategory.click();
-        menuSettings.categoryComputers.click();
-        menuSettings.menuTab_ABUniTheme2.click();
+        mainMenuSettings.button_Save3LevelMenu.click();
+        mainMenuSettings.selectLanguage_RTL();
+        mainMenuSettings.arrowOfCategory.click();
+        mainMenuSettings.categoryComputers.click();
+        mainMenuSettings.menuTab_ABUniTheme2.click();
         if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
-            menuSettings.button_Html.click();
-            menuSettings.clickAndType_Field_HtmlContent();
+            mainMenuSettings.button_Html.click();
+            mainMenuSettings.clickAndType_Field_HtmlContent();
         }
-        menuSettings.button_Save3LevelMenu.click();
-        menuSettings.selectLanguage_RU();
+        mainMenuSettings.button_Save3LevelMenu.click();
+        mainMenuSettings.selectLanguage_RU();
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
@@ -78,32 +79,32 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         }
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
-        menuSettings.gearwheelOfTheBlock_Categories_Light.click();
+        mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuSettings_buttonSettings.click();
-        menuSettings.selectSetting_FillingType("column_filling");
-        menuSettings.selectSetting_MaximumColumns("4");
-        if(menuSettings.setting_CompactDisplayView.isSelected()){
-            menuSettings.setting_CompactDisplayView.click();
+        mainMenuSettings.menuSettings_buttonSettings.click();
+        mainMenuSettings.selectSetting_FillingType("column_filling");
+        mainMenuSettings.selectSetting_MaximumColumns("4");
+        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
-        menuSettings.clickAndType_setting_SecondLevelElements("30");
-        menuSettings.clickAndType_setting_ThirdLevelElements("80");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("500");
-        menuSettings.tab_Content.click();
-        menuSettings.selectMenuContent_MainMenu();
-        menuSettings.button_saveBlock.click();
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
+        mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
+        mainMenuSettings.tab_Content.click();
+        mainMenuSettings.selectMenuContent_MainMenu();
+        mainMenuSettings.button_saveBlock.click();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView")
     public void check_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

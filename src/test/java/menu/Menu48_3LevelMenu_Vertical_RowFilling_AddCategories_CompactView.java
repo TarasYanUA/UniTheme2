@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.MenuSettings;
+import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -30,19 +30,20 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
     public void setConfigurations_Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView() {
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
         CsCartSettings csCartSettings = new CsCartSettings();
-        MenuSettings menuSettings = csCartSettings.navigateToSection_DesignMenu();
-        menuSettings.choose_MainMenu.click();
-        menuSettings.chooseMenu_Electronics.click();
+        csCartSettings.navigateTo_WebsiteMenuPage();
+        MainMenuSettings mainMenuSettings = new MainMenuSettings();
+        mainMenuSettings.choose_MainMenu.click();
+        mainMenuSettings.chooseMenu_Electronics.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuTab_ABUniTheme2.click();
-        if (!menuSettings.setting_ActivateSettings.isSelected()) {
-            menuSettings.setting_ActivateSettings.click();
+        mainMenuSettings.menuTab_ABUniTheme2.click();
+        if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
+            mainMenuSettings.setting_ActivateSettings.click();
         }
-        if (!menuSettings.setting_Activate3LevelMenu.isSelected()) {
-            menuSettings.setting_Activate3LevelMenu.click();
+        if (!mainMenuSettings.setting_Activate3LevelMenu.isSelected()) {
+            mainMenuSettings.setting_Activate3LevelMenu.click();
         }
-        menuSettings.button_Save3LevelMenu.click();
+        mainMenuSettings.button_Save3LevelMenu.click();
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
@@ -59,32 +60,32 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
         }
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        csCartSettings.navigateToSection_DesignLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Light.click();
         csCartSettings.setLayoutAsDefault();
-        menuSettings.gearwheelOfTheBlock_Categories_Light.click();
+        mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
-        menuSettings.menuSettings_buttonSettings.click();
-        menuSettings.selectSetting_FillingType("row_filling");
-        menuSettings.selectSetting_MaximumColumns("1");
-        if(!menuSettings.setting_CompactDisplayView.isSelected()){
-            menuSettings.setting_CompactDisplayView.click();
+        mainMenuSettings.menuSettings_buttonSettings.click();
+        mainMenuSettings.selectSetting_FillingType("row_filling");
+        mainMenuSettings.selectSetting_MaximumColumns("1");
+        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
         }
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
-        menuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
-        menuSettings.clickAndType_setting_SecondLevelElements("30");
-        menuSettings.clickAndType_setting_ThirdLevelElements("80");
-        menuSettings.clickAndType_setting_MinimumHeightForMenu("700");
-        menuSettings.tab_Content.click();
-        menuSettings.selectMenuContent_MainMenu();
-        menuSettings.button_saveBlock.click();
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
+        mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("700");
+        mainMenuSettings.tab_Content.click();
+        mainMenuSettings.selectMenuContent_MainMenu();
+        mainMenuSettings.button_saveBlock.click();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView")
     public void check_Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

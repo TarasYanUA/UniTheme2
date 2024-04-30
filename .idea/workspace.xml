@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Work with adaptation to CS-Cart 4.18.1.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue adapatation to CS-Cart 4.18.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +82,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor": "Run",
     "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
     "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
     "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
@@ -104,7 +104,7 @@
     "git-widget-placeholder": "UniTheme4.17.2b",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml",
+    "last_opened_file_path": "C:/Idea Projects/Sitemap/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -132,12 +132,13 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1">
-    <configuration name="ColorSchemeSettings_General_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1">
+    <configuration name="ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
+      <option name="METHOD_NAME" value="checkColorSchemeSettings_General_Var1" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -191,19 +192,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-      <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-        <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +230,8 @@
       <workItem from="1712221062835" duration="8518000" />
       <workItem from="1712577088002" duration="2194000" />
       <workItem from="1712739978319" duration="36000" />
-      <workItem from="1714388976952" duration="12941000" />
+      <workItem from="1714388976952" duration="12971000" />
+      <workItem from="1714457942360" duration="4818000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -574,7 +576,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started to split asserts of menu to the separate Class." />
     <MESSAGE value="Updated pom file." />
     <MESSAGE value="Removed asserts at the first 5 test-cases of the menu." />
     <MESSAGE value="Removed asserts at the Menu13 and still continue to work with this menu." />
@@ -618,7 +619,8 @@
     <MESSAGE value="Adaptation to UniTheme2 v4.17.2.b" />
     <MESSAGE value="Added new steps for a product page for checkbox &quot;Notify me&quot;." />
     <MESSAGE value="Work with adaptation to CS-Cart 4.18.1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with adaptation to CS-Cart 4.18.1." />
+    <MESSAGE value="Continue adapatation to CS-Cart 4.18.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue adapatation to CS-Cart 4.18.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

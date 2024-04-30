@@ -1,6 +1,7 @@
 package taras.storefront;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -67,6 +68,7 @@ public class StCategoryPage extends AbstractPage {
         Actions hoverPhoneProduct = new Actions(DriverProvider.getDriver());
         hoverPhoneProduct.moveToElement(elementOfPhoneProduct);
         hoverPhoneProduct.perform();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", phoneProduct);
     }
     public WebElement hoverClothProduct(){
         return clothProduct;
@@ -81,9 +83,9 @@ public class StCategoryPage extends AbstractPage {
         return menClothProduct;
     }
     public void hoverToMenClothProduct() {
-        WebElement elementOfPhoneProduct = hoverMenClothProduct();
+        WebElement elementOfMenClothProduct = hoverMenClothProduct();
         Actions hoverMenClothProduct = new Actions(DriverProvider.getDriver());
-        hoverMenClothProduct.moveToElement(elementOfPhoneProduct);
+        hoverMenClothProduct.moveToElement(elementOfMenClothProduct);
         hoverMenClothProduct.perform();
     }
     public void clickQuickViewOfPhoneProduct(){
@@ -94,11 +96,6 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickQuickViewOfMenClothProduct(){
         quickViewOfMenClothProduct.click();
-    }
-    public void clickGrid_ProductListView(){
-        grid_ProductListView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
     }
     public void clickListWithoutOptions_ProductListView(){
         listWithoutOptions_ProductListView.click();

@@ -85,7 +85,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         stHomePage.navigateToHorizontalMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("1410 ColorSchemeSettings_General_Var2 - Category page");
+        takeScreenShot("1410 ColorSchemeSettings_General_Var2 - Category page");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot_withScroll("1415 ColorSchemeSettings_General_Var2 - QuickView");
         stCategoryPage.clickButton_WriteReview();
@@ -94,7 +94,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("1425 ColorSchemeSettings_General_Var2 - Category page (RTL)");
+        takeScreenShot("1425 ColorSchemeSettings_General_Var2 - Category page (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot_withScroll("1430 ColorSchemeSettings_General_Var2 - QuickView (RTL)");
         stCategoryPage.clickButton_WriteReview();

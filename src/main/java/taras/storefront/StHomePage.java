@@ -19,7 +19,7 @@ public class StHomePage extends AbstractPage {
     private WebElement languageRTL;
     @FindBy(css = ".ty-select-block__list-item a[data-ca-name='ru']")
     private WebElement languageRU;
-    @FindBy(css = ".ut2-icon-outline-account-circle")
+    @FindBy(css = "div[id^='account_info_']")
     private WebElement accountOnTop;
     @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")
     private WebElement button_LogOut;
@@ -61,7 +61,7 @@ public class StHomePage extends AbstractPage {
     public WebElement getProductInProductBlock(){return productInProductBlock;}
     public void hoverToProductInProductBlock(){
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

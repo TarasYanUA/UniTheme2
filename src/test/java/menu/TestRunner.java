@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import java.util.concurrent.TimeUnit;
+
 import static taras.constants.Constants.BASIC_URL;
 
 public class TestRunner {
@@ -21,6 +24,7 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
+        DriverProvider.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    // Установка неявного ожидания в 10 секунд\
         DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
         DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }

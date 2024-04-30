@@ -128,6 +128,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         csCartSettings.clickSaveButtonOfSettings();
     }
 
+
         @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
         public void checkProductLists_AllCategoryLists_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -209,14 +210,14 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfStatusAtButton_AddToCart >= 1,
                 "There is no status for the button 'Add to cart' on the category page!");
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
+        takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
         if(!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()){
             for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }}
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
+        takeScreenShot("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"

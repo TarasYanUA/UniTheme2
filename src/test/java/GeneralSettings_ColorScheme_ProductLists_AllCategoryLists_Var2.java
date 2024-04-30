@@ -228,10 +228,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
             }}
         
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
+        takeScreenShot("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
-        takeScreenShot_withScroll("225 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory (RTL)");
+        takeScreenShot("225 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"

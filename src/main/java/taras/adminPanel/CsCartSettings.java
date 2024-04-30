@@ -1,6 +1,7 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -21,13 +22,10 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
         saveButtonOfSettings.click();
     }
 
-    @FindBy(css = "a[href*='bottom_panel.redirect']")
-    private WebElement storefront;
-
     public StHomePage navigateToStorefront(){
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".bp-bottom-button--disabled-panel")).isEmpty())
-            DriverProvider.getDriver().findElement(By.id("bp_on_bottom_panel")).click();
-        storefront.click();
+        String currentUrl = DriverProvider.getDriver().getCurrentUrl();
+        String[] url = currentUrl.split("admin.php");
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.open('"+url[0]+"')");
         return new StHomePage();
     }
 

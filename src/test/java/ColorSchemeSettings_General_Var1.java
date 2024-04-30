@@ -69,7 +69,7 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ColorSchemeSettings_General_Var1",
-    description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
+            description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
     public void checkColorSchemeSettings_General_Var1(){
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefront();

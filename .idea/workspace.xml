@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made experiments with &quot;scroll to element&quot; to improve the screenshots.&#10;Added implicit wait.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved methods for opening the page Downloaded addons.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +131,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
     <configuration name="ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -234,7 +230,7 @@
       <workItem from="1712577088002" duration="2194000" />
       <workItem from="1712739978319" duration="36000" />
       <workItem from="1714388976952" duration="12971000" />
-      <workItem from="1714457942360" duration="20203000" />
+      <workItem from="1714457942360" duration="20966000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -579,7 +575,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Menu1-14 are almost ready!" />
     <MESSAGE value="Menu1-14 are finished!" />
     <MESSAGE value="Fixed css selectors for three menu blocks in the layout pages." />
     <MESSAGE value="Added assert for the setting 'Элементы третьего уровня' for Menu1-14." />
@@ -623,7 +618,8 @@
     <MESSAGE value="Continueв adapatation and worked with the method &quot;navigateToStorefront&quot;." />
     <MESSAGE value="Made experiments with &quot;scroll to element&quot; to improve the screenshots." />
     <MESSAGE value="Made experiments with &quot;scroll to element&quot; to improve the screenshots.&#10;Added implicit wait." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made experiments with &quot;scroll to element&quot; to improve the screenshots.&#10;Added implicit wait." />
+    <MESSAGE value="Improved methods for opening the page Downloaded addons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved methods for opening the page Downloaded addons." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

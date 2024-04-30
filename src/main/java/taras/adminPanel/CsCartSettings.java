@@ -73,7 +73,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     }
 
     //Меню "Товары --Товары"
-    @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
+    @FindBy(css = "a[href='#primary_main_menu_1_3_body']")
     private WebElement menu_Products;
     @FindBy(id = "products_products")
     private WebElement section_Products;

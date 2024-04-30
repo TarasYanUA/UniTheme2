@@ -10,7 +10,7 @@ import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 
-public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
+public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, CheckMenuToBeActive {
     public CsCartSettings(){
         super();
     }
@@ -36,15 +36,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     private WebElement menu_DownloadedAddons;
 
     public void navigateTo_DownloadedAddonsPage() {
-        if(DriverProvider.getDriver().findElements(By
-                .xpath("//span[text()='Модули']/../..//a[contains(@class, 'main-menu-1__toggle--active')]")).isEmpty()) {
-            menu_Addons.click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        checkMenuToBeActive(menu_Addons);
         menu_DownloadedAddons.click();
     }
 
@@ -73,13 +65,13 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     }
 
     //Меню "Товары --Товары"
-    @FindBy(css = "a[href='#primary_main_menu_1_3_body']")
+    @FindBy(xpath = "//span[text()='Товары']")
     private WebElement menu_Products;
     @FindBy(id = "products_products")
     private WebElement section_Products;
 
     public ProductSettings navigateToSection_Products(){
-        menu_Products.click();
+        checkMenuToBeActive(menu_Products);
         section_Products.click();
         checkPageOnEngLang();
         return new ProductSettings();
@@ -102,7 +94,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     public WebElement button_Create;
 
     public void navigateToSection_Categories(){
-        menu_Products.click();
+        checkMenuToBeActive(menu_Products);
         section_Categories.click();
     }
 
@@ -137,7 +129,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     public WebElement button_SaveFeature;
 
     public void navigateToSection_Features(){
-        menu_Products.click();
+        checkMenuToBeActive(menu_Products);
         section_Features.click();
         checkPageOnEngLang();
     }
@@ -194,7 +186,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
 
 
     //Меню "Веб-сайт -- Темы -- Макеты"
-    @FindBy(css = "a[href=\"#primary_main_menu_1_6_body\"]")
+    @FindBy(xpath = "//span[text()='Веб-сайт']")
     private WebElement menu_Website;
     @FindBy(id = "website_themes")
     private WebElement menu_Themes;
@@ -212,7 +204,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     private WebElement button_makeByDefault;
 
     public void navigateToSection_WebsiteLayouts(){
-        menu_Website.click();
+        checkMenuToBeActive(menu_Website);
         menu_Themes.click();
         section_Layouts.click();
     }
@@ -236,7 +228,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     private WebElement menu_WebsiteMenu;
 
     public void navigateTo_WebsiteMenuPage(){
-        menu_Website.click();
+        checkMenuToBeActive(menu_Website);
         menu_WebsiteMenu.click();
     }
 }

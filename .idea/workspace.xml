@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved methods for opening the page Downloaded addons.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Bug fix.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckPageOnEngLang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckPageOnEngLang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +133,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2">
     <configuration name="ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -167,10 +169,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -192,20 +194,23 @@
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://trs.test.abt.team/4181ultru_unitheme2/admin.php?dispatch=products.manage" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -230,7 +235,7 @@
       <workItem from="1712577088002" duration="2194000" />
       <workItem from="1712739978319" duration="36000" />
       <workItem from="1714388976952" duration="12971000" />
-      <workItem from="1714457942360" duration="20966000" />
+      <workItem from="1714457942360" duration="23147000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -575,7 +580,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +599,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Menu1-14 are finished!" />
     <MESSAGE value="Fixed css selectors for three menu blocks in the layout pages." />
     <MESSAGE value="Added assert for the setting 'Элементы третьего уровня' for Menu1-14." />
     <MESSAGE value="Fixed asserts for Menu20-25." />
@@ -619,7 +623,8 @@
     <MESSAGE value="Made experiments with &quot;scroll to element&quot; to improve the screenshots." />
     <MESSAGE value="Made experiments with &quot;scroll to element&quot; to improve the screenshots.&#10;Added implicit wait." />
     <MESSAGE value="Improved methods for opening the page Downloaded addons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved methods for opening the page Downloaded addons." />
+    <MESSAGE value="Bug fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,6 +643,15 @@
           <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
           <line>82</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java</url>
+          <line>37</line>
+          <properties class="taras.adminPanel.CsCartSettings" method="navigateTo_DownloadedAddonsPage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

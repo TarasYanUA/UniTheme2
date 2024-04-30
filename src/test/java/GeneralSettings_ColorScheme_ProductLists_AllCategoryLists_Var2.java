@@ -141,7 +141,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Image gallery of the product is not with arrows navigation in the product block!");
         //Проверка, что у товаров присутствует общее значение рейтинга товара
         int sizeOfGeneralRatingNumber = getDriver().findElements(By.cssSelector(".ut2-show-rating-num")).size();
-        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating on the product block!");
         //Проверка, что кнопка "Избранное" присутствует
         int sizeOfButton_AddToWishList = getDriver().findElements(By.cssSelector(".ut2-add-to-wish")).size();
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
@@ -188,7 +188,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating on the category 'Phones'!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,
                 "There is no button 'Add to wish list' on the category page!");
@@ -255,7 +255,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Других два шаблона страницы категории
         stCategoryPage.clickListWithoutOptions_ProductListView();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating on the category 'List without options'!");
         //Проверка, что присутствует статус у кнопки "Избранное"
         softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"
@@ -270,7 +270,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         takeScreenShot_withScroll("245 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating at a product!");
+        softAssert.assertTrue(sizeOfGeneralRatingNumber >= 1,"There is no common value of product rating on the category 'Compact list'!");
         //Проверка, что присутствует статус у кнопки "Избранное"
         softAssert.assertTrue(sizeOfStatusAtButton_WishList >= 1,"There is no status for the button 'Add to wish list'!");
         //Проверка, что присутствует статус у кнопки "Сравнение"

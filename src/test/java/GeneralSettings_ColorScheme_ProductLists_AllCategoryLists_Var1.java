@@ -146,7 +146,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
         int sizeOfEmptyReviewsStars = getDriver().findElements(By
                 .cssSelector("div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")).size();
-        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
+        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There are no empty stars on the product block!");
         //Проверка, что кнопка "Избранное" присутствует
         int sizeOfButton_AddToWishList = getDriver().findElements(By.cssSelector(".ut2-add-to-wish")).size();
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,"There is no button 'Add to wish list' in the product block!");
@@ -174,7 +174,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes on the category page!");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
+        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There are no empty stars on the category 'Woman cloth'!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,"There is no button 'Add to wish list' on the category page!");
         //Проверка, что кнопка "Сравнить" присутствует
@@ -194,7 +194,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with stripes on the category page!");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty rating stars at a product!");
+        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There are no empty rating stars at a product!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,"There is no button 'Add to wish list' on the category page!");
         //Проверка, что кнопка "Сравнить" присутствует
@@ -236,7 +236,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверка, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(sizeOfHoverGalleryInLines >= 1,"Gallery of product images is not with lines");
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
+        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There are no empty stars on the category 'List without options'!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,"There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует
@@ -255,7 +255,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         takeScreenShot_withScroll("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
         stCategoryPage.clickCompactList_ProductListView();
         //Проверка, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There is no empty stars at a product!");
+        softAssert.assertTrue(sizeOfEmptyReviewsStars >= 1,"There are no empty stars on the category 'Compact list'!");
         //Проверка, что кнопка "Избранное" присутствует
         softAssert.assertTrue(sizeOfButton_AddToWishList >= 1,"There is no button 'Add to wish list' in the product block!");
         //Проверка, что кнопка "Сравнить" присутствует

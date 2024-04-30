@@ -30,13 +30,21 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang {
     }
 
 
-    @FindBy(css = "a[href=\"#primary_main_menu_1_7_body\"]")
+    @FindBy(xpath = "//span[text()='Модули']")
     private WebElement menu_Addons;
     @FindBy(id = "addons_downloaded_add_ons")
     private WebElement menu_DownloadedAddons;
 
     public void navigateTo_DownloadedAddonsPage() {
-        menu_Addons.click();
+        if(DriverProvider.getDriver().findElements(By
+                .xpath("//span[text()='Модули']/../..//a[contains(@class, 'main-menu-1__toggle--active')]")).isEmpty()) {
+            menu_Addons.click();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         menu_DownloadedAddons.click();
     }
 

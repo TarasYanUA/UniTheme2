@@ -29,7 +29,7 @@ public class StHomePage extends AbstractPage {
     private WebElement productInProductBlock;
 
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
-    public void LogOutOnStorefront(){
+    public void logOutOnStorefront(){
         WebElement element = hoverToAccountOnTop();
         Actions scrollToBlock = new Actions(DriverProvider.getDriver());
         scrollToBlock.moveToElement(element);

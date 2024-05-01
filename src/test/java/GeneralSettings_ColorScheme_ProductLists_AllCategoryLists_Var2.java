@@ -215,7 +215,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(sizeOfStatusAtButton_ComparisonList >= 1,
                 "There is no status for the button 'Add to comparison list'!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
-        stHomePage.LogOutOnStorefront();
+        stHomePage.logOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));

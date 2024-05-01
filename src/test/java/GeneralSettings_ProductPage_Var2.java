@@ -98,7 +98,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct.click();
+        productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("0");
         productSettings.clickAndTypeField_InStock("0");
         productSettings.selectSetting_ZeroPriceAction("A");
@@ -114,7 +114,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct.click();
+        productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();

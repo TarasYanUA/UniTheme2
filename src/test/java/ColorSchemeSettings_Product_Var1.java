@@ -89,7 +89,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
-        productSettings.chooseAnyProduct.click();
+        productSettings.chooseAnyProduct();
         if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
         }
@@ -117,7 +117,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
-        productSettings.chooseAnyProduct.click();
+        productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();

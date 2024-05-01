@@ -201,7 +201,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(sizeOfButton_AddToComparisonList >= 1,
                 "There is no button 'Add to comparison list' on the category page!");
         //Проверка, что у кнопки "В корзину" отображается статус в виде иконки
-        stHomePage.LogOutOnStorefront();
+        stHomePage.logOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));

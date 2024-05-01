@@ -125,7 +125,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement showInHeaderOnProductPage_Brand;
     @FindBy(id = "elm_feature_display_on_header_23")
     public WebElement showInHeaderOnProductPage_HardDisk;
-    @FindBy(css = "input[value='Сохранить']")
+    @FindBy(css = ".buttons-container-picker input[value='Сохранить']")
     public WebElement button_SaveFeature;
 
     public void navigateToSection_Features(){

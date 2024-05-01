@@ -10,6 +10,8 @@ import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
+import taras.storefront.StHomePage;
+
 import java.time.Duration;
 
 /*
@@ -84,10 +86,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct.click();
-        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
+        productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000");
         productSettings.clickAndTypeField_InStock("0");
         productSettings.selectSetting_OutOfStockActions("S");
@@ -112,11 +111,13 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct.click();
+        productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+        StHomePage stHomePage = new StHomePage();
+        stHomePage.logOutOnStorefront();
         productPage.checkbox_NotifyMe.click();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи

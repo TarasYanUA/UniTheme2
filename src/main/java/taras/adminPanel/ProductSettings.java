@@ -1,5 +1,6 @@
 package taras.adminPanel;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,10 +13,10 @@ import taras.storefront.ProductPage;
 public class ProductSettings extends AbstractPage {
     public ProductSettings(){super();}
 
-    @FindBy(css = ".products-list__image")
-    public WebElement chooseAnyProduct;
     @FindBy(css = ".dropdown-icon--tools")
     private WebElement gearwheelOfProduct;
+    @FindBy(css = ".products-list__image")
+    private WebElement chooseAnyProduct;
     @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]")
     private WebElement previewButton;
 
@@ -23,6 +24,10 @@ public class ProductSettings extends AbstractPage {
         gearwheelOfProduct.click();
         previewButton.click();
         return new ProductPage();
+    }
+    public void chooseAnyProduct(){
+        if(!DriverProvider.getDriver().findElements(By.id("content_manage_products")).isEmpty())
+            chooseAnyProduct.click();
     }
 
     @FindBy(id = "elm_price_price")
@@ -74,13 +79,18 @@ public class ProductSettings extends AbstractPage {
         field_Value.sendKeys(value);
     }
 
-    @FindBy(css = ".search__input")
+    @FindBy(css = "input[form='search_filters_form']")
     private WebElement searchFieldOfProduct;
 
     public void clickAndType_SearchFieldOfProduct(String value){
         searchFieldOfProduct.click();
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void clickAndTypeField_Price(String value){
         field_Price.click();

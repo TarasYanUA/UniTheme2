@@ -1,5 +1,6 @@
 package taras.storefront;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import taras.constants.DriverProvider;
@@ -45,6 +46,9 @@ public class ProductPage extends AbstractPage {
 
     public void shiftLanguage_EN(){
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
+        }
         gearwheel_Language.click();
         language_EN.click();
         try {
@@ -55,6 +59,9 @@ public class ProductPage extends AbstractPage {
     }
     public void shiftLanguage_RTL(){
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
+        }
         gearwheel_Language.click();
         language_RTL.click();
         try {

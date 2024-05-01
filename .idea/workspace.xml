@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Bug fixes for product pages.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updates ReadMe file.">
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +233,7 @@
       <workItem from="1712739978319" duration="36000" />
       <workItem from="1714388976952" duration="12971000" />
       <workItem from="1714457942360" duration="23297000" />
-      <workItem from="1714555388867" duration="11119000" />
+      <workItem from="1714555388867" duration="11418000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -579,7 +578,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed asserts for Menu20-25." />
     <MESSAGE value="Fixed asserts for Menu30-35." />
     <MESSAGE value="Fixed hover function for compact menus." />
     <MESSAGE value="Fixed asserts for Menu50-51." />
@@ -623,7 +621,8 @@
     <MESSAGE value="Bug fix." />
     <MESSAGE value="Added Interface to check condition of menus in the admin panel." />
     <MESSAGE value="Bug fixes for product pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes for product pages." />
+    <MESSAGE value="Updates ReadMe file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates ReadMe file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,7 +7,7 @@
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updates ReadMe file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +45,7 @@
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
                 <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.d" />
-                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.18.1b" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.17.2b" />
               </list>
             </value>
           </entry>
@@ -112,7 +112,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -134,7 +134,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -211,6 +211,14 @@
   </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastUrl" value="https://trs.test.abt.team/4181ultru_unitheme2/admin.php?dispatch=products.manage" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -622,10 +630,25 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java</url>
           <line>37</line>
-          <properties class="taras.adminPanel.CsCartSettings">
+          <properties class="taras.adminPanel.CsCartSettings" method="navigateTo_DownloadedAddonsPage">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

@@ -3,9 +3,7 @@ package taras.constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,10 +41,10 @@ public class BrowserFactory {
                 System.setProperty(Constants.EDGE_DRIVER_PROPERTY, Constants.EDGE_DRIVER_PATH);
                 webDriver = new EdgeDriver();
                 break;
-            case OPERA:
+/*            case OPERA:
                 System.setProperty(Constants.OPERA_DRIVER_PROPERTY, Constants.OPERA_DRIVER_PATH);
-                webDriver = new ChromeDriver();
-                break;
+                webDriver = new OperaDriver());
+                break;*/
             default:
                 throw new IllegalStateException("Browser type does not exist: " + browserType);
         }

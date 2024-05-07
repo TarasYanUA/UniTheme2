@@ -1,13 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
 import java.time.Duration;
@@ -45,7 +43,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     public void setConfigurationsForProductPage_Var1(){
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
+/*        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
@@ -61,24 +59,6 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
             csCartSettings.setting_ProductDetailsInTab.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
-
-        //Работаем с настройками характеристик Жесткий диск и Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.feature_HardDrive.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        csCartSettings.scrollToFeatureDescription_HardDrive();
-        csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
-            csCartSettings.showInHeaderOnProductPage_HardDisk.click();
-        }
-        csCartSettings.button_SaveFeature.click();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
-        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
-            checkbox_ShowInHeaderOnProductPage.click();
-            csCartSettings.clickSaveButtonOfSettings();
-        }
 
         //Настраиваем UniTheme настройки
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
@@ -102,6 +82,23 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("logo");
         csCartSettings.clickSaveButtonOfSettings();
+
+        //Работаем с настройками характеристик Жесткий диск и Бренд
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.feature_HardDrive.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
+        if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
+            csCartSettings.showInHeaderOnProductPage_HardDisk.click();
+        }
+        csCartSettings.button_SaveFeature.click();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
+        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
+            checkbox_ShowInHeaderOnProductPage.click();
+            csCartSettings.clickSaveButtonOfSettings();
+        }*/
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

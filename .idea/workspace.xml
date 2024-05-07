@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved screenshots for test-case GeneralSettings_ProductPage_Var3">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Some changes for product page!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
     "git-widget-placeholder": "UniTheme4.17.2b",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Idea Projects/Sitemap/pom.xml",
+    "last_opened_file_path": "C:/Idea Projects/Deal_of_the_day/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -240,7 +239,7 @@
       <workItem from="1714457942360" duration="23297000" />
       <workItem from="1714555388867" duration="11418000" />
       <workItem from="1714980176408" duration="14373000" />
-      <workItem from="1715061836772" duration="16578000" />
+      <workItem from="1715061836772" duration="18335000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -585,7 +584,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
     <MESSAGE value="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories is ready!" />
     <MESSAGE value="Menu46-48 are ready!" />
     <MESSAGE value="Added banner for Menu45 and Menu47 are ready!" />
@@ -629,7 +627,8 @@
     <MESSAGE value="1) Removed operadriver as Opera browser is not supported anymore.&#10;2) Added geckodriver for Firefox browser but it is impossible to be used as such functions as: hover, scroll, shift broser tab etc work totally different than chrome browser does.&#10;3) Improved Interface CheckMenuToBeActive so it could work properly." />
     <MESSAGE value="I wanted to increase speed for Condition of the menu element ab_addons but it is not possible because the system needs time to write a proper code. But I improved the visibility of this method." />
     <MESSAGE value="Improved screenshots for test-case GeneralSettings_ProductPage_Var3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved screenshots for test-case GeneralSettings_ProductPage_Var3" />
+    <MESSAGE value="Some changes for product page!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes for product page!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,15 +652,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java</url>
           <line>45</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java</url>
-          <line>37</line>
-          <properties class="taras.adminPanel.CsCartSettings" method="navigateTo_DownloadedAddonsPage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

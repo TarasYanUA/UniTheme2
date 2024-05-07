@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="1) Removed operadriver as Opera browser is not supported anymore.&#10;2) Added geckodriver for Firefox browser but it is impossible to be used as such functions as: hover, scroll, shift broser tab etc work totally different than chrome browser does.&#10;3) Improved Interface CheckMenuToBeActive so it could work properly.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="I wanted to increase speed for Condition of the menu element ab_addons but it is not possible because the system needs time to write a proper code. But I improved the visibility of this method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +98,7 @@
     "TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductPage_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductPage_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
     "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
     "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
     "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
@@ -135,29 +134,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var1">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3">
     <configuration name="GeneralSettings_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -181,6 +158,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GeneralSettings_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeneralSettings_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -192,21 +180,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var3" />
+      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Var3" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +239,7 @@
       <workItem from="1714457942360" duration="23297000" />
       <workItem from="1714555388867" duration="11418000" />
       <workItem from="1714980176408" duration="14373000" />
-      <workItem from="1715061836772" duration="11126000" />
+      <workItem from="1715061836772" duration="13011000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -584,7 +584,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +603,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed asserts for Menu50-51." />
     <MESSAGE value="All menus were checked and fixed." />
     <MESSAGE value="Started work with Menu45_3LevelMenu_Vertical_CategoriesOn3Level" />
     <MESSAGE value="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories is ready!" />
@@ -628,7 +627,8 @@
     <MESSAGE value="Updates ReadMe file." />
     <MESSAGE value="Updated libraries in pom file and deleted aspectJ report." />
     <MESSAGE value="1) Removed operadriver as Opera browser is not supported anymore.&#10;2) Added geckodriver for Firefox browser but it is impossible to be used as such functions as: hover, scroll, shift broser tab etc work totally different than chrome browser does.&#10;3) Improved Interface CheckMenuToBeActive so it could work properly." />
-    <option name="LAST_COMMIT_MESSAGE" value="1) Removed operadriver as Opera browser is not supported anymore.&#10;2) Added geckodriver for Firefox browser but it is impossible to be used as such functions as: hover, scroll, shift broser tab etc work totally different than chrome browser does.&#10;3) Improved Interface CheckMenuToBeActive so it could work properly." />
+    <MESSAGE value="I wanted to increase speed for Condition of the menu element ab_addons but it is not possible because the system needs time to write a proper code. But I improved the visibility of this method." />
+    <option name="LAST_COMMIT_MESSAGE" value="I wanted to increase speed for Condition of the menu element ab_addons but it is not possible because the system needs time to write a proper code. But I improved the visibility of this method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -75,7 +75,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("84");
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -174,7 +174,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot_withScroll("1020 GS_ProductPage_Var2 - Feature description, two columns");
+        takeScreenShot("1020 GS_ProductPage_Var2 - Feature description, two columns");
 
         //Другие шаблоны страницы товара
         focusBrowserTab(0);

@@ -66,7 +66,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("84");
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }

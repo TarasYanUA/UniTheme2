@@ -201,11 +201,11 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(5);
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
-        takeScreenShot_withScroll("1155 GS_ProductPage_Var3 - Gallery template");
+        takeScreenShot("1155 GS_ProductPage_Var3 - Gallery template");
         productPage.shiftLanguage_RTL();
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
-        takeScreenShot_withScroll("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
+        takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
         System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");
         softAssert.assertAll();
     }

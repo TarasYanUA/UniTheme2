@@ -65,13 +65,11 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     }
 
     //Меню "Товары --Товары"
-    @FindBy(xpath = "//span[text()='Товары']")
-    private WebElement menu_Products;
     @FindBy(id = "products_products")
     private WebElement section_Products;
 
     public ProductSettings navigateToSection_Products(){
-        checkMenuToBeActive(menu_Products);
+        checkMenu_Products_ToBeActive();
         section_Products.click();
         checkPageOnEngLang();
         return new ProductSettings();
@@ -94,7 +92,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement button_Create;
 
     public void navigateToSection_Categories(){
-        checkMenuToBeActive(menu_Products);
+        checkMenu_Products_ToBeActive();
         section_Categories.click();
     }
 
@@ -117,8 +115,10 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement feature_HardDrive;
     @FindBy(css = "label[for='elm_feature_description_23']")
     private WebElement field_FeatureDescription_HardDrive;
-    @FindBy(css = ".controls .redactor-layer p")
-    private WebElement field_DescriptionOfFeature;
+    @FindBy(css = ".re-button.re-html.re-button-icon")
+    private WebElement button_Html_HardDrive;
+    @FindBy(css = ".cm-skip-check-item.open")
+    private WebElement field_HtmlDescriptionOfFeature;
     @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
     public WebElement showInProductList;
     @FindBy(id = "elm_feature_display_on_header_18")
@@ -129,22 +129,16 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement button_SaveFeature;
 
     public void navigateToSection_Features(){
-        checkMenuToBeActive(menu_Products);
+        checkMenu_Products_ToBeActive();
         section_Features.click();
         checkPageOnEngLang();
     }
-    public WebElement hoverFeatureDescription_HardDrive(){return field_FeatureDescription_HardDrive;}
-    public void scrollToFeatureDescription_HardDrive(){
-        WebElement element = hoverFeatureDescription_HardDrive();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.scrollToElement(element);
-        hover.perform();
-        field_FeatureDescription_HardDrive.click();
-    }
     public void clickAndTypeField_DescriptionOfFeature(String value){
-        field_DescriptionOfFeature.click();
-        field_DescriptionOfFeature.clear();
-        field_DescriptionOfFeature.sendKeys(value);
+        field_FeatureDescription_HardDrive.click();
+        button_Html_HardDrive.click();
+        field_HtmlDescriptionOfFeature.click();
+        field_HtmlDescriptionOfFeature.clear();
+        field_HtmlDescriptionOfFeature.sendKeys(value);
     }
     public void clickFeatureBrand(){
         featureBrand.click();

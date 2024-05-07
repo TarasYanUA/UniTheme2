@@ -7,6 +7,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import taras.constants.DriverProvider;
+
 import java.util.concurrent.TimeUnit;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        DriverProvider.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);    // Установка неявного ожидания в 5 секунд
+        DriverProvider.getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);    // Установка неявного ожидания в 3 секунды
         DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
         DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }
@@ -42,7 +43,7 @@ public class TestRunner {
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
     public void takeScreenShot_withScroll(String screenshotName) {
-        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,170);");
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,130);");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

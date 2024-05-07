@@ -138,7 +138,6 @@ public class ProductSettings extends AbstractPage {
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
-        fieldName_ShortDescription.click();
         field_ShortDescription.click();
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
@@ -148,9 +147,8 @@ public class ProductSettings extends AbstractPage {
     public void hoverAndTypeField_PromoText(String value){
         WebElement element = getField_PromoText();
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element).scrollByAmount(0,100);
+        hover.scrollToElement(element);
         hover.perform();
-        fieldName_PromoText.click();
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);

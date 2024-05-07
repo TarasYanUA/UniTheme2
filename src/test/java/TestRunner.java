@@ -7,9 +7,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import taras.constants.DriverProvider;
-
-import java.util.concurrent.TimeUnit;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -24,7 +21,6 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        DriverProvider.getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);    // Установка неявного ожидания в 3 секунды
         DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
         DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }

@@ -1,11 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
+import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
 import java.time.Duration;
@@ -43,7 +45,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     public void setConfigurationsForProductPage_Var1(){
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
-/*        csCartSettings.navigateToSection_WebsiteLayouts();
+        csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_Lightv2.click();
         csCartSettings.setLayoutAsDefault();
 
@@ -98,7 +100,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
             checkbox_ShowInHeaderOnProductPage.click();
             csCartSettings.clickSaveButtonOfSettings();
-        }*/
+        }
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

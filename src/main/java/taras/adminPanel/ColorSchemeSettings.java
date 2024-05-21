@@ -10,7 +10,7 @@ public class ColorSchemeSettings extends AbstractPage {
 
     @FindBy(css = "a[id^='sw_select_'][id$='_wrap_currency']")
     public WebElement fieldOfActiveColorScheme;
-    @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(text(),\"CS-Cart\")]")
+    @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(.,\"CS-Cart\")]")
     public WebElement activeColorScheme;
 
     //Вкладка "Общее"

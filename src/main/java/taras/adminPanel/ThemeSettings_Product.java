@@ -33,6 +33,8 @@ public class ThemeSettings_Product extends AbstractPage {
     private WebElement setting_NumberOfDisplayedImages_GalleryTemplate;
     @FindBy(id = "settings.abt__ut2.products.abt__ut2_three_columns_template.multiple_product_images.desktop")
     private WebElement setting_NumberOfDisplayedImages_ThreeColumnsTemplate;
+    @FindBy (id = "settings.abt__ut2.products.abt__ut2_cascade_gallery_template.formation_multiple_product_images.desktop")
+    private WebElement setting_CombinationsOfProductGalleryImageFormations;
 
 
     public void clickAndTypeSetting_CustomBlockID(String value){
@@ -40,29 +42,34 @@ public class ThemeSettings_Product extends AbstractPage {
         setting_CustomBlockID.clear();
         setting_CustomBlockID.sendKeys(value);
     }
-    public Select getSetting_ShowProductBrand(){return new Select(setting_ShowProductBrand);}
+    private Select getSetting_ShowProductBrand(){return new Select(setting_ShowProductBrand);}
     public void selectSetting_ShowProductBrand(String value){
         getSetting_ShowProductBrand().selectByValue(value);
     }
 
-    public Select getSetting_NumberOfDisplayedImages_DefaultTemplate(){return new Select(setting_NumberOfDisplayedImages_DefaultTemplate);}
+    private Select getSetting_NumberOfDisplayedImages_DefaultTemplate(){return new Select(setting_NumberOfDisplayedImages_DefaultTemplate);}
     public void selectSetting_NumberOfDisplayedImages_DefaultTemplate(String value){
         getSetting_NumberOfDisplayedImages_DefaultTemplate().selectByValue(value);
     }
-    public Select getSetting_NumberOfDisplayedImages_BigPictureTemplate(){return new Select(setting_NumberOfDisplayedImages_BigPictureTemplate);}
+    private Select getSetting_NumberOfDisplayedImages_BigPictureTemplate(){return new Select(setting_NumberOfDisplayedImages_BigPictureTemplate);}
     public void selectSetting_NumberOfDisplayedImages_BigPictureTemplate(String value){
         getSetting_NumberOfDisplayedImages_BigPictureTemplate().selectByValue(value);
     }
-    public Select getSetting_NumberOfDisplayedImages_BigPictureFlatTemplate(){return new Select(setting_NumberOfDisplayedImages_BigPictureFlatTemplate);}
+    private Select getSetting_NumberOfDisplayedImages_BigPictureFlatTemplate(){return new Select(setting_NumberOfDisplayedImages_BigPictureFlatTemplate);}
     public void selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate(String value){
         getSetting_NumberOfDisplayedImages_BigPictureFlatTemplate().selectByValue(value);
     }
-    public Select getSetting_NumberOfDisplayedImages_GalleryTemplate(){return new Select(setting_NumberOfDisplayedImages_GalleryTemplate);}
+    private Select getSetting_NumberOfDisplayedImages_GalleryTemplate(){return new Select(setting_NumberOfDisplayedImages_GalleryTemplate);}
     public void selectSetting_NumberOfDisplayedImages_GalleryTemplate(String value){
         getSetting_NumberOfDisplayedImages_GalleryTemplate().selectByValue(value);
     }
-    public Select getSetting_NumberOfDisplayedImages_ThreeColumnsTemplate(){return new Select(setting_NumberOfDisplayedImages_ThreeColumnsTemplate);}
+    private Select getSetting_NumberOfDisplayedImages_ThreeColumnsTemplate(){return new Select(setting_NumberOfDisplayedImages_ThreeColumnsTemplate);}
     public void selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate(String value){
         getSetting_NumberOfDisplayedImages_ThreeColumnsTemplate().selectByValue(value);
+    }
+
+    private Select getSetting_CombinationsOfProductGalleryImageFormations(){return new Select(setting_CombinationsOfProductGalleryImageFormations);}
+    public void selectSetting_CombinationsOfProductGalleryImageFormations(String value){
+        getSetting_CombinationsOfProductGalleryImageFormations().selectByValue(value);
     }
 }

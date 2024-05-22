@@ -1,15 +1,16 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
+
 import java.time.Duration;
 
 /*
@@ -22,27 +23,27 @@ import java.time.Duration;
     * Бренд -- включить настройку "Показывать в заголовке карточки товара"
     * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
-    * ID пользовательского блока --  109
+    * ID пользовательского блока --  106
     * Отображать модификатор количества --  нет
     * Отображать код товара --  нет
     * Отображать характеристики товара -- да
     * Отображать характеристики в две колонки --    нет
     * Отображать краткое описание --    да
     * Отображать информацию о бренде товара --  Логотип бренда товара
-- Настраиваем товар X-Box 360:
+- Настраиваем товар Camera NX200:
     * Действие при нулевой цене --  Не разрешать добавлять товар в корзину
     * Цена за единицу --  да
     * Действие при отсутствии товара в наличии --   Не выбрано
-    * шаблон страницы товара -- 5 шт (кроме Каскада)
+    * шаблон страницы товара -- только Каскад
     * Краткое описание --   да
     * Промо-текст -- да
     * Бонусные баллы --  да
     * Оптовые цены -- нет
 */
 
-public class GeneralSettings_ProductPage_Var1 extends TestRunner {
+public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurationsForProductPage_Var1(){
+    public void setConfigurationsForProductPage_CascadeGallery_Var1(){
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_WebsiteLayouts();
@@ -57,6 +58,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         if(csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
             csCartSettings.setting_NumberOfAvailableProducts.click();
         }
+        csCartSettings.selectSetting_ProductPageView("abt__ut2_cascade_gallery_template");
         if(!csCartSettings.setting_ProductDetailsInTab.isSelected()){
             csCartSettings.setting_ProductDetailsInTab.click();
         }
@@ -66,7 +68,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
+        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("106");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -83,6 +85,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("logo");
+        themeSettingsProduct.selectSetting_CombinationsOfProductGalleryImageFormations("1");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристик Жесткий диск и Бренд
@@ -104,14 +107,13 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
+        productSettings.clickAndType_SearchFieldOfProduct("NX200");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000.00");
         productSettings.clickAndTypeField_InStock("20");
         productSettings.selectSetting_ZeroPriceAction("R");
-        productSettings.setPricePerUnit("игровые приставки", "3", "3");
+        productSettings.setPricePerUnit("шт", "3", "1");
         productSettings.selectSetting_OutOfStockActions("N");
-        productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         Actions actions = new Actions(DriverProvider.getDriver());
@@ -123,8 +125,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var1")
-    public void checkSettingsOnProductPage_Var1() {
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_CascadeGallery_Var1")
+    public void checkSettingsOnProductPage_CascadeGallery_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
@@ -150,8 +152,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
                 "There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).isEmpty(),
-                "There is no Custom block in the right column!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
+                "There is no Custom block!");
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");
@@ -164,58 +166,23 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");
-        takeScreenShot_withScroll("900 GS_ProductPage_Var1 - Default template");
+        takeScreenShot_withScroll("Cascade1 10 GS_ProductPage_Cascade_Var1 - Default template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("905 GS_ProductPage_Var1 - Default template (RTL)");
+        takeScreenShot_withScroll("Cascade1 15 GS_ProductPage_Cascade_Var1 - Default template (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']")).isEmpty(),
                 "Features are located in two columns instead of one!");
-        takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");
+        takeScreenShot("Cascade1 20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot("915 GS_ProductPage_Var1 - Product features, one column");
+        takeScreenShot("Cascade1 25 GS_ProductPage_Cascade_Var1 - Product features, one column");
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("920 GS_ProductPage_Var1 - Feature description, one column");
-
-        //Другие шаблоны страницы товара
-        focusBrowserTab(0);
-        productSettings.selectSetting_ProductTemplate("bigpicture_template");
-        csCartSettings.clickSaveButtonOfSettings();
-        productSettings.navigateToProductPage();
-        focusBrowserTab(2);
-        takeScreenShot_withScroll("925 GS_ProductPage_Var1 - Big picture");
-        productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("930 GS_ProductPage_Var1 - Big picture (RTL)");
-        focusBrowserTab(0);
-        productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
-        csCartSettings.clickSaveButtonOfSettings();
-        productSettings.navigateToProductPage();
-        focusBrowserTab(3);
-        takeScreenShot_withScroll("935 GS_ProductPage_Var1 - Big picture flat");
-        productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("940 GS_ProductPage_Var1 - Big picture flat (RTL)");
-        focusBrowserTab(0);
-        productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
-        csCartSettings.clickSaveButtonOfSettings();
-        productSettings.navigateToProductPage();
-        focusBrowserTab(4);
-        takeScreenShot_withScroll("945 GS_ProductPage_Var1 - Three columned");
-        productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("950 GS_ProductPage_Var1 - Three columned (RTL)");
-        focusBrowserTab(0);
-        productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.clickSaveButtonOfSettings();
-        productSettings.navigateToProductPage();
-        focusBrowserTab(5);
-        takeScreenShot_withScroll("955 GS_ProductPage_Var1 - Gallery template");
-        productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("960 GS_ProductPage_Var1 - Gallery template (RTL)");
-        System.out.println("GeneralSettings_ProductPage_Var1 passed successfully!");
+        takeScreenShot("Cascade1 30 GS_ProductPage_Cascade_Var1 - Feature description, one column");
         softAssert.assertAll();
     }
 }

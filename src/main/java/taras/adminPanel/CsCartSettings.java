@@ -57,12 +57,17 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement setting_NumberOfAvailableProducts;
     @FindBy(id = "field___product_details_in_tab_288")
     public WebElement setting_ProductDetailsInTab;
+    @FindBy (id = "field___default_product_details_view_180")
+    private WebElement setting_ProductPageView;
 
     public void navigateToAppearanceSettings(){
         menu_Settings.click();
         section_GeneralSettings.click();
         section_Appearance.click();
     }
+
+    private Select getSetting_ProductPageView(){return new Select(setting_ProductPageView);}
+    public void selectSetting_ProductPageView(String value){getSetting_ProductPageView().selectByValue(value);}
 
     //Меню "Товары --Товары"
     @FindBy(id = "products_products")

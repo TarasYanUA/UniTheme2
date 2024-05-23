@@ -19,7 +19,7 @@ public class TestRunner {
     @BeforeMethod
     public void prepareBrowser() {
         DriverProvider.getDriver().get(BASIC_URL);
-        DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
+        DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
         DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
         DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель

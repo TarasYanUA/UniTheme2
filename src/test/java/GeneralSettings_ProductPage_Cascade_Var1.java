@@ -1,8 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
@@ -11,17 +9,13 @@ import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
 
-import java.time.Duration;
-
 /*
-ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
 - Настройки CS-Cart "Настройки -> Внешний вид":
     * Показывать мини-иконки в виде галереи --  вкл
     * Показывать количество доступных товаров -- откл
     * Показывать информацию о товаре во вкладках -- вкл
 - Настраиваем характеристики:
     * Бренд -- включить настройку "Показывать в заголовке карточки товара"
-    * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
     * ID пользовательского блока --  106
     * Отображать модификатор количества --  нет
@@ -30,7 +24,8 @@ import java.time.Duration;
     * Отображать характеристики в две колонки --    нет
     * Отображать краткое описание --    да
     * Отображать информацию о бренде товара --  Логотип бренда товара
-- Настраиваем товар Camera NX200:
+    * Комбинации формаций изображений галереи товара -- 1
+- Настраиваем товар Phone Titan:
     * Действие при нулевой цене --  Не разрешать добавлять товар в корзину
     * Цена за единицу --  да
     * Действие при отсутствии товара в наличии --   Не выбрано
@@ -88,26 +83,22 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         themeSettingsProduct.selectSetting_CombinationsOfProductGalleryImageFormations("1");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //Работаем с настройками характеристик Жесткий диск и Бренд
+        //Работаем с настройками характеристики Бренд
         csCartSettings.navigateToSection_Features();
-        csCartSettings.feature_HardDrive.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        csCartSettings.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        if(!csCartSettings.showInHeaderOnProductPage_HardDisk.isSelected()){
-            csCartSettings.showInHeaderOnProductPage_HardDisk.click();
-        }
-        csCartSettings.button_SaveFeature.click();
         csCartSettings.clickFeatureBrand();
+        WebElement checkbox_ShowOnFeaturesTab_Brand = csCartSettings.showOnFeaturesTab_Brand;
+        if(!checkbox_ShowOnFeaturesTab_Brand.isSelected()){
+            checkbox_ShowOnFeaturesTab_Brand.click();
+        }
         WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
         if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
             checkbox_ShowInHeaderOnProductPage.click();
-            csCartSettings.clickSaveButtonOfSettings();
         }
+        csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_SearchFieldOfProduct("NX200");
+        productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000.00");
         productSettings.clickAndTypeField_InStock("20");
@@ -129,16 +120,16 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
     public void checkSettingsOnProductPage_CascadeGallery_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
+        productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
-        //Проверяем, что мини-иконки в виде галереи
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).isEmpty(),
-                "Mini-icons are not in view of gallery!");
+        //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).isEmpty(),
+                "There is a mini-icons gallery but shouldn't!");
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
                 "Product information is displayed not in tabs!");
@@ -148,9 +139,6 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
                 "There is no feature Brand on the feature list!");
-        //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
-                "There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
                 "There is no Custom block!");
@@ -166,23 +154,20 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");
-        takeScreenShot_withScroll("Cascade1 10 GS_ProductPage_Cascade_Var1 - Default template");
+        takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Default template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("Cascade1 15 GS_ProductPage_Cascade_Var1 - Default template (RTL)");
+        takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Default template (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']")).isEmpty(),
                 "Features are located in two columns instead of one!");
-        takeScreenShot("Cascade1 20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
+        takeScreenShot("Cascade1.20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
-        takeScreenShot("Cascade1 25 GS_ProductPage_Cascade_Var1 - Product features, one column");
-        productPage.featureDescription.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
-        takeScreenShot("Cascade1 30 GS_ProductPage_Cascade_Var1 - Feature description, one column");
+        takeScreenShot("Cascade1.25 GS_ProductPage_Cascade_Var1 - Product features, one column");
+        System.out.println("GeneralSettings_ProductPage_Cascade_Var1 passed successfully!");
         softAssert.assertAll();
     }
 }

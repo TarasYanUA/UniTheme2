@@ -148,9 +148,9 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         //Проверяем, что Промо-текст присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
                 "There is no Promo-text!");
-        takeScreenShot_withScroll("Cascade2.10 GS_ProductPage_Var2 - Default template");
+        takeScreenShot_withScroll("Cascade2.10 GS_ProductPage_Var2 - Cascade template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("Cascade2.15 GS_ProductPage_Var2 - Default template (RTL)");
+        takeScreenShot_withScroll("Cascade2.15 GS_ProductPage_Var2 - Cascade template (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();

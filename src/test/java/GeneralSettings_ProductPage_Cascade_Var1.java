@@ -154,9 +154,9 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");
-        takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Default template");
+        takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Cascade template");
         productPage.shiftLanguage_RTL();
-        takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Default template (RTL)");
+        takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Cascade template (RTL)");
 
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();

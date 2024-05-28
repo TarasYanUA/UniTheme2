@@ -135,8 +135,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productPage.shiftLanguage_EN();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки в виде галереи
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class*='thumbnails_gallery']")).isEmpty(),
-                "Mini-icons are not in view of gallery!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails_gallery")).isEmpty(),
+                "Mini-icons are not as a gallery!");
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
                 "Product information is displayed not in tabs!");

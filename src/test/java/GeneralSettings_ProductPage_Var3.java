@@ -123,7 +123,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
-                "Mini-icons are as a gallery but shouldn't!");
+                "Mini-icons are as a gallery but shouldn't! ");
         //Проверяем, что информация о товаре отображается не во вкладках
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).isEmpty(),
                 "Product information is displayed in tabs but shouldn't!");

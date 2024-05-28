@@ -15,6 +15,7 @@
             <class name="GeneralSettings_ProductPage_Var3" />
             <class name="GeneralSettings_ProductPage_Cascade_Var1" />
             <class name="GeneralSettings_ProductPage_Cascade_Var2" />
+            <class name="GeneralSettings_ProductPage_Cascade_Var3" />
 
 
             <!--Тест-кейсы для настроек Цветосхемы -->

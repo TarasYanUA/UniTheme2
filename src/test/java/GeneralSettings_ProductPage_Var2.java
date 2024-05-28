@@ -121,7 +121,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
-                "Mini-icons are as a gallery but shouldn't!");
+                "Mini-icons are as a gallery but shouldn't! ");
         //Проверяем, что количество доступных товаров присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).isEmpty(),
                 "There is no number of available products!");

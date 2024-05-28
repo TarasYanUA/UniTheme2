@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added test-case &quot;Cascade2&quot;.&#10;Improved test-case &quot;Cascade1&quot;.&#10;Changed a test product from Camera NX200 to Phone Titan.&#10;Exceeded implicite wait to 2 seconds.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var3.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added the third test-case &quot;Cascade3&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,51 +82,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor": "Run",
-    "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
-    "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
-    "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
-    "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
-    "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
-    "TestNG.UniTheme2/TestNG.xml.executor": "Run",
-    "git-widget-placeholder": "UniTheme4.17.2b",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_Product_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UniTheme2/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UniTheme4.17.2b&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
@@ -141,7 +144,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
     <configuration name="GeneralSettings_ProductPage_Cascade_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -582,7 +585,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +604,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="softAssert.assertAll(); should be the last line because the code under won't be done." />
     <MESSAGE value="Improved test-cases and code according to new standards." />
     <MESSAGE value="Changed Vertical menu into Horizontal one on test-cases combined with theme settings." />
     <MESSAGE value="Corrected test-case GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
@@ -626,7 +628,8 @@
     <MESSAGE value="Changed Xpath for colorscheme because of new feature." />
     <MESSAGE value="Added a new test-case for the new template of product page &quot;Cascade gallery&quot;." />
     <MESSAGE value="Added test-case &quot;Cascade2&quot;.&#10;Improved test-case &quot;Cascade1&quot;.&#10;Changed a test product from Camera NX200 to Phone Titan.&#10;Exceeded implicite wait to 2 seconds." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test-case &quot;Cascade2&quot;.&#10;Improved test-case &quot;Cascade1&quot;.&#10;Changed a test product from Camera NX200 to Phone Titan.&#10;Exceeded implicite wait to 2 seconds." />
+    <MESSAGE value="Added the third test-case &quot;Cascade3&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the third test-case &quot;Cascade3&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

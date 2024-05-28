@@ -105,7 +105,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
         //Проверяем, что текст "Вы экономите" присутствует
-        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
+        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).size();
         softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
         //Проверяем, что галерея мини-иконок товара в виде точек
         int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();

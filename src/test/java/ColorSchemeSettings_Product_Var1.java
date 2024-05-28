@@ -125,7 +125,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
-        "Mini-icons are as a gallery but shouldn't!");
+        "Mini-icons are as a gallery but shouldn't! ");
         //Проверяем, что название характеристики "Бренд" присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
                 "There is no Brand name on product page!");

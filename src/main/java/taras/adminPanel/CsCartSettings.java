@@ -29,7 +29,6 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         return new StHomePage();
     }
 
-
     @FindBy(xpath = "//span[text()='Модули']")
     private WebElement menu_Addons;
     @FindBy(id = "addons_downloaded_add_ons")
@@ -43,14 +42,14 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Настройки"
     @FindBy(id = "administration")
     private WebElement menu_Settings;
+
+    //Меню "Настройки -- Общие настройки -- Внешний вид"
     @FindBy(css = "a[href$='section_id=General']")
     private WebElement section_GeneralSettings;
-
-    //Меню "Настройки -- Внешний вид"
     @FindBy(css = "a[href$='section_id=Appearance']")
     private WebElement section_Appearance;
-    @FindBy(css = "input[id*='field___enable_quick_view']")
-    public WebElement setting_QuickView;
+    @FindBy(id = "field___show_prices_taxed_clean_116")
+    public WebElement setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
     @FindBy(css = "input[id*='field___thumbnails_gallery']")
     public WebElement setting_ThumbnailsGallery;
     @FindBy(id = "field___in_stock_field_146")
@@ -59,6 +58,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement setting_ProductDetailsInTab;
     @FindBy (id = "field___default_product_details_view_180")
     private WebElement setting_ProductPageView;
+    @FindBy(css = "input[id*='field___enable_quick_view']")
+    public WebElement setting_QuickView;
 
     public void navigateToAppearanceSettings(){
         menu_Settings.click();
@@ -68,6 +69,40 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
     private Select getSetting_ProductPageView(){return new Select(setting_ProductPageView);}
     public void selectSetting_ProductPageView(String value){getSetting_ProductPageView().selectByValue(value);}
+
+    //Меню "Настройки -- Общие настройки -- Оформить заказ"
+    @FindBy(css = "a[href$='section_id=Checkout']")
+    private WebElement section_Checkout;
+    @FindBy(id = "field___tax_calculation_179")
+    public WebElement setting_TaxCalculationMethodBasedOn;
+
+    public void navigateToCheckoutSettings(){
+        menu_Settings.click();
+        section_GeneralSettings.click();
+        section_Checkout.click();
+    }
+
+    private Select getSetting_TaxCalculationMethodBasedOn(){return new Select(setting_TaxCalculationMethodBasedOn);}
+    public void selectSetting_TaxCalculationMethodBasedOn(String value){getSetting_TaxCalculationMethodBasedOn().selectByValue(value);}
+
+    //Меню "Настройки -- Налоги"
+    @FindBy(css = "a[href$='taxes.manage'] div")
+    private WebElement section_Taxes;
+    @FindBy(xpath = "//input[@type='checkbox'][@name='tax_data[7][price_includes_tax]']")
+    public WebElement setting_priceIncludesTax;
+    @FindBy(css = "tr[data-ct-tax-id='7']")
+    public WebElement vat20;
+    @FindBy(css = "a[data-ca-dispatch='dispatch[taxes.m_update]']")
+    public WebElement button_saveTaxes;
+    @FindBy(css = ".btn-group.bulk-edit__wrapper span:nth-child(2).bulk-edit__btn-content")
+    public WebElement button_Actions;
+    @FindBy(css = "a[data-ca-dispatch=\"dispatch[taxes.apply_selected_taxes]\"]")
+    public WebElement button_ApplySelectedTaxesToAllProducts;
+
+    public void navigateToTaxes(){
+        menu_Settings.click();
+        section_Taxes.click();
+    }
 
     //Меню "Товары --Товары"
     @FindBy(id = "products_products")

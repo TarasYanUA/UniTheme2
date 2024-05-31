@@ -90,11 +90,11 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement section_Taxes;
     @FindBy(xpath = "//input[@type='checkbox'][@name='tax_data[7][price_includes_tax]']")
     public WebElement setting_priceIncludesTax;
-    @FindBy(css = "tr[data-ct-tax-id='7']")
+    @FindBy(css = "tr[data-ct-tax-id='7'] td")
     public WebElement vat20;
     @FindBy(css = "a[data-ca-dispatch='dispatch[taxes.m_update]']")
     public WebElement button_saveTaxes;
-    @FindBy(css = ".btn-group.bulk-edit__wrapper span:nth-child(2).bulk-edit__btn-content")
+    @FindBy(css = ".bulk-edit__btn.bulk-edit__btn--actions span")
     public WebElement button_Actions;
     @FindBy(css = "a[data-ca-dispatch=\"dispatch[taxes.apply_selected_taxes]\"]")
     public WebElement button_ApplySelectedTaxesToAllProducts;

@@ -18,13 +18,13 @@ public class StCategoryPage extends AbstractPage {
         super();
     }
 
-    @FindBy(css = "form[name='product_form_74'] div.ut2-gl__body")
+    @FindBy(css = "form[name*='product_form_'] div.ut2-gl__body")
     private WebElement phoneProduct;
     @FindBy(css = "a[href*='nike']")
     private WebElement clothProduct;
     @FindBy(css = "form[name='product_form_280'] div[class*='__buttons']")
     private WebElement menClothProduct;
-    @FindBy(xpath = "//form[@name='product_form_74']//a[@data-ca-target-id='product_quick_view']")
+    @FindBy(xpath = "//form[contains(@name, 'product_form_')]//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfPhoneProduct;
     @FindBy(xpath = "//form[@name='product_form_280']//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfMenClothProduct;
@@ -121,7 +121,15 @@ public class StCategoryPage extends AbstractPage {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
     }
-    public void clickCloseQuickView(){closeQuickView.click();}
+
+    private WebElement hoverCloseQuickView(){return closeQuickView;}
+    public void clickCloseQuickView(){
+        WebElement element = hoverCloseQuickView();
+        Actions hoverToElement = new Actions(DriverProvider.getDriver());
+        hoverToElement.moveToElement(element);
+        hoverToElement.perform();
+        closeQuickView.click();}
+
     public void makePause(){
         try {
             Thread.sleep(2000);

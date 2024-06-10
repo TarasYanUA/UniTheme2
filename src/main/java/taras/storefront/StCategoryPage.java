@@ -18,14 +18,14 @@ public class StCategoryPage extends AbstractPage {
         super();
     }
 
-    @FindBy(css = "form[name*='product_form_'] div.ut2-gl__body")
-    private WebElement phoneProduct;
+    @FindBy(css = "a[title='Droid 3']")
+    private WebElement phoneProduct_Droid3;
     @FindBy(css = "a[href*='nike']")
     private WebElement clothProduct;
     @FindBy(css = "form[name='product_form_280'] div[class*='__buttons']")
     private WebElement menClothProduct;
-    @FindBy(xpath = "//form[contains(@name, 'product_form_')]//a[@data-ca-target-id='product_quick_view']")
-    private WebElement quickViewOfPhoneProduct;
+    @FindBy(xpath = "//a[@title='Droid 3']/../../..//a[@data-ca-target-id='product_quick_view']")
+    private WebElement quickViewOfPhoneProduct_Droid3;
     @FindBy(xpath = "//form[@name='product_form_280']//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfMenClothProduct;
     @FindBy(css = ".ui-button-icon.ui-icon")
@@ -61,14 +61,14 @@ public class StCategoryPage extends AbstractPage {
 
 
     public WebElement hoverPhoneProduct(){
-        return phoneProduct;
+        return phoneProduct_Droid3;
     }
     public void hoverToPhoneProduct() {
         WebElement elementOfPhoneProduct = hoverPhoneProduct();
         Actions hoverPhoneProduct = new Actions(DriverProvider.getDriver());
         hoverPhoneProduct.moveToElement(elementOfPhoneProduct);
         hoverPhoneProduct.perform();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", phoneProduct);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", phoneProduct_Droid3);
     }
     public WebElement hoverClothProduct(){
         return clothProduct;
@@ -89,7 +89,7 @@ public class StCategoryPage extends AbstractPage {
         hoverMenClothProduct.perform();
     }
     public void clickQuickViewOfPhoneProduct(){
-        quickViewOfPhoneProduct.click();
+        quickViewOfPhoneProduct_Droid3.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         makePause();

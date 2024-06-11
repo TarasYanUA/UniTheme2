@@ -35,7 +35,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement menu_DownloadedAddons;
 
     public void navigateTo_DownloadedAddonsPage() {
-        checkMenuToBeActive(menu_Addons);
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
         menu_DownloadedAddons.click();
     }
 
@@ -240,7 +240,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement button_makeByDefault;
 
     public void navigateToSection_WebsiteLayouts(){
-        checkMenuToBeActive(menu_Website);
+        checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         menu_Themes.click();
         section_Layouts.click();
     }
@@ -264,7 +264,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement menu_WebsiteMenu;
 
     public void navigateTo_WebsiteMenuPage(){
-        checkMenuToBeActive(menu_Website);
+        checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         menu_WebsiteMenu.click();
     }
 }

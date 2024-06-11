@@ -3,20 +3,20 @@ package taras.adminPanel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import taras.constants.DriverProvider;
+import java.util.Collection;
 import java.util.List;
+import org.openqa.selenium.NoSuchElementException;
 
 public interface CheckMenuToBeActive {
-    default void checkMenuToBeActive(WebElement menu) {
+    default void checkMenuToBeActive(String menuDispatch, WebElement menu) {
         checkMenu_Addons_ToBeActive();
-        if (DriverProvider.getDriver().findElements(By.xpath(String.valueOf(menu))
-                .xpath("/../..//a[contains(@class, 'active')]")).isEmpty()) {
-            menu.click();
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
 
+        String selector = "a[href$='" + menuDispatch + "'].main-menu-1__link";
+        Collection<WebElement> elements = DriverProvider.getDriver().findElements(By.cssSelector(selector + " ~ a[class*='main-menu-1__toggle--active']"));
+        try {
+            if (elements.isEmpty())
+                menu.click();
+        } catch (NoSuchElementException e) {
         }
     }
 

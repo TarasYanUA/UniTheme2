@@ -16,6 +16,11 @@ public interface CheckMenuToBeActive {
         try {
             if (elements.isEmpty())
                 menu.click();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         } catch (NoSuchElementException e) {
         }
     }

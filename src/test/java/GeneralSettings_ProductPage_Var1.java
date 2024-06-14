@@ -150,8 +150,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
                 "There is no feature Hard drive on the feature list!");
         //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".col-right .ut2-settings-desktop")).isEmpty(),
-                "There is no Custom block in the right column!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
+                "There is no Custom block on the product page!");
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");

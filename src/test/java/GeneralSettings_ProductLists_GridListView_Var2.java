@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
@@ -29,6 +30,8 @@ import java.time.Duration;
 Отображать "Вы экономите" -- да
 Показывать галерею мини-иконок товара в товарном списке --  Навигация точками
 Переключать изображение товара при движении мышки -- Не переключать (нужно для настройки выше)
+
+Вкладка "Показать ещё" -- Разрешить для товарных списков--  нет
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
@@ -85,6 +88,12 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
+        ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
+        themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
+        if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
+            themeSettings_showMore.setting_AllowForProductLists.click();
         csCartSettings.clickSaveButtonOfSettings();
     }
 

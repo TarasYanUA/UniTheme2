@@ -46,7 +46,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Настройки -- Общие настройки -- Внешний вид"
     @FindBy(css = "a[href$='section_id=General']")
     private WebElement section_GeneralSettings;
-    @FindBy(css = "a[href$='section_id=Appearance']")
+    @FindBy(css = "a[href*='section_id=Appearance']")
     private WebElement section_Appearance;
     @FindBy(id = "field___show_prices_taxed_clean_116")
     public WebElement setting_DisplayPricesWithTaxesOnCategoryAndProductPages;

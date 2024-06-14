@@ -28,7 +28,7 @@ import java.time.Duration;
     * Отображать характеристики в две колонки --    да
     * Отображать краткое описание --    нет
     * Отображать информацию о бренде товара --  Не отображать
-    * Количество отображаемых изображений галереи товара (для всех шаблонов страницы товара) -- 3
+    * Количество отображаемых изображений галереи товара (для всех шаблонов страницы товара) -- 2
 - Настраиваем товар X-Box 360:
     * Действие при нулевой цене --  Не отображать
     * Цена за единицу --  да
@@ -76,11 +76,11 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("none");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("3");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("3");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("3");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("3");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("3");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
+        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
@@ -142,9 +142,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");
-        //Проверяем, что Количество отображаемых изображений галереи товара - 3
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".images-3")).isEmpty(),
-                "Number of displayed images of the product gallery is not 3!");
+        //Проверяем, что Количество отображаемых изображений галереи товара - 2
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).isEmpty(),
+                "Number of displayed images of the product gallery is not 2!");
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         productPage.shiftLanguage_RTL();
         productPage.checkbox_NotifyMe.click();

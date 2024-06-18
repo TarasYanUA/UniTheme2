@@ -177,6 +177,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     }
     public void clickAndTypeField_DescriptionOfFeature(String value){
         field_FeatureDescription_HardDrive.click();
+        try { Thread.sleep(1500);
+        } catch (InterruptedException e) { e.printStackTrace(); }
         button_Html_HardDrive.click();
         field_HtmlDescriptionOfFeature.click();
         field_HtmlDescriptionOfFeature.clear();

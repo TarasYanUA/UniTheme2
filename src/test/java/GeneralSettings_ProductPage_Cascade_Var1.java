@@ -167,7 +167,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("Cascade1.25 GS_ProductPage_Cascade_Var1 - Product features, one column");
-        System.out.println("GeneralSettings_ProductPage_Cascade_Var1 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductPage_Cascade_Var1 passed successfully!");
     }
 }

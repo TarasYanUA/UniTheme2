@@ -209,7 +209,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         takeScreenShot_withScroll("1055 GS_ProductPage_Var2 - Gallery template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1060 GS_ProductPage_Var2 - Gallery template (RTL)");
-        System.out.println("GeneralSettings_ProductPage_Var2 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductPage_Var2 passed successfully!");
     }
 }

@@ -104,5 +104,6 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
         takeScreenShot_withScroll("1330 ColorSchemeSettings_General_Var1 - QuickView (RTL)");
         stCategoryPage.clickButton_WriteReview();
         takeScreenShot_withScroll("1335 ColorSchemeSettings_General_Var1 - Write review (RTL)");
+        System.out.println("ColorSchemeSettings_General_Var1 has passed successfully!");
     }
 }

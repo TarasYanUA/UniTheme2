@@ -1,7 +1,6 @@
 package taras.storefront;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -66,7 +65,6 @@ public class StCategoryPage extends AbstractPage {
         Actions hoverPhoneProduct = new Actions(DriverProvider.getDriver());
         hoverPhoneProduct.moveToElement(elementOfPhoneProduct);
         hoverPhoneProduct.perform();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", phoneProduct_Droid3);
     }
     public WebElement hoverClothProduct(){
         return clothProduct;

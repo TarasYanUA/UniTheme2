@@ -88,8 +88,6 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
-        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
-        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
         themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
         if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
@@ -152,7 +150,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("425 GS_ProductLists_GridListView_Var2 - QuickView");
-        System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }
 }

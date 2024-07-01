@@ -30,11 +30,9 @@ public class StCategoryPage extends AbstractPage {
     private WebElement quickViewOfMenClothProduct;
     @FindBy(css = ".ui-button-icon.ui-icon")
     private WebElement closeQuickView;
-    @FindBy(css = ".ty-icon.ty-icon-products-multicolumns")
-    private WebElement grid_ProductListView;
-    @FindBy(css = ".ty-icon.ty-icon-products-without-options")
+    @FindBy(css = ".ty-icon.ut2-icon-products-without-options")
     private WebElement listWithoutOptions_ProductListView;
-    @FindBy(css = "div[class='ut2-sorting-wrap'] span[class='ty-icon ty-icon-short-list']")
+    @FindBy(css = ".ty-icon.ut2-icon-short-list")
     private WebElement compactList_ProductListView;
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public WebElement buttonQuickView;

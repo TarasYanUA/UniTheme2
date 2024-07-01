@@ -207,7 +207,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
-        System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");
     }
 }

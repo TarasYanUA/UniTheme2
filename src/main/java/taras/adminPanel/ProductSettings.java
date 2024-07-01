@@ -1,14 +1,16 @@
 package taras.adminPanel;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.ProductPage;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public class ProductSettings extends AbstractPage {
     public ProductSettings(){super();}
@@ -26,8 +28,9 @@ public class ProductSettings extends AbstractPage {
         return new ProductPage();
     }
     public void chooseAnyProduct(){
-        if(!DriverProvider.getDriver().findElements(By.id("content_manage_products")).isEmpty())
-            chooseAnyProduct.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(chooseAnyProduct));
+        chooseAnyProduct.click();
     }
 
     @FindBy(id = "elm_price_price")
@@ -136,7 +139,7 @@ public class ProductSettings extends AbstractPage {
     public void hoverAndTypeField_ShortDescription(String value){
         WebElement element = getField_ShortDescription();
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
+        hover.moveToElement(element, 600, 100);
         hover.perform();
         field_ShortDescription.click();
         field_ShortDescription.clear();

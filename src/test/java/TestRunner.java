@@ -14,38 +14,40 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static taras.constants.Constants.BASIC_URL;
+import static taras.constants.DriverProvider.getDriver;
 
 public class TestRunner {
     @BeforeMethod
     public void prepareBrowser() {
-        DriverProvider.getDriver().get(BASIC_URL);
-        DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //Общая задержка
-        DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        DriverProvider.getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
-        DriverProvider.getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
+        getDriver().get(BASIC_URL);
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //Общая задержка
+        getDriver().manage().window().maximize();    //Размер браузера на весь экран
+        getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
+        getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }
+
     @AfterMethod
     public void takeScreenShotOnFailure_closeBrowser(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
-            File scrFile = ((TakesScreenshot)DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+            File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
-        DriverProvider.getDriver().quit();
+        getDriver().quit();
         DriverProvider.destroyDriver();
     }
     public void focusBrowserTab(int tabNum) {
-        ArrayList tabs = new ArrayList<> (DriverProvider.getDriver().getWindowHandles());
-        DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
+        ArrayList tabs = new ArrayList<> (getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
     public void takeScreenShot_withScroll(String screenshotName) {
-        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,130);");
+        ((JavascriptExecutor) getDriver()).executeScript("scroll(0,130);");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+        File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
         } catch (IOException e) {
@@ -58,7 +60,7 @@ public class TestRunner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+        File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
         } catch (IOException e) {

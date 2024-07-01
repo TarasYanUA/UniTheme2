@@ -105,7 +105,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
-        System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
     }
 }

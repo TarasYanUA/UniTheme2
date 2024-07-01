@@ -195,7 +195,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         takeScreenShot_withScroll("1240 ColorSchemeSettings_Product_Var1 - Gallery template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1245 ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
-        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully!");
         softAssert.assertAll();
+        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully!");
     }
 }

@@ -6,6 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
+
 public class StHomePage extends AbstractPage {
     public StHomePage(){
         super();
@@ -49,6 +53,8 @@ public class StHomePage extends AbstractPage {
         }
     }
     public void selectLanguage_RU(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(languageButton));
         languageButton.click();
         languageRU.click();
         try {

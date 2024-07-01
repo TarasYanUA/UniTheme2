@@ -150,7 +150,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         takeScreenShot_withScroll("Cascade3.30 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me' (RTL)");
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("Cascade3.35 GS_ProductPage_Cascade_Var3 - Product features, two columns (RTL)");
-        System.out.println("GeneralSettings_ProductPage_Cascade_Var3 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductPage_Cascade_Var3 passed successfully!");
     }
 }

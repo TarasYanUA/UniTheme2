@@ -154,7 +154,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         }
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")
+    @Test
     public void checkProductLists_AllCategoryLists_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefront();
@@ -255,7 +255,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.logOutOnStorefront();
         stCategoryPage.button_AddToCart.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-added-to-cart")).isEmpty(),
@@ -280,14 +280,14 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверка, что присутствуют мини-иконки в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-icon-right-open-thin")).isEmpty(),
                 "Mini icons are not as a gallery!");
-        takeScreenShot_withScroll("230 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView");
+        takeScreenShot("230 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
-        takeScreenShot_withScroll("235 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView (RTL)");
+        takeScreenShot("235 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
 
         //Других два шаблона страницы категории
@@ -325,7 +325,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("255 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView (RTL)");
-        System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 passed successfully!");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 passed successfully!");
     }
 }

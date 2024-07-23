@@ -197,17 +197,11 @@ public class StHomePage extends AbstractPage {
         hover.perform();
     }
     public void navigateToHorizontalMenu_Phones(){
-        WebElement elementOfMenu = hoverHorizontalMenu_Electronic();
-        Actions hoverMenuPhones = new Actions(DriverProvider.getDriver());
-        hoverMenuPhones.moveToElement(elementOfMenu);
-        hoverMenuPhones.perform();
+        navigateToHorizontalMenu_Electronic();
         horizontalMenu_menuPhones.click();
     }
     public void navigateToHorizontalMenu_GameConsoles(){
-        WebElement elementOfMenu = hoverHorizontalMenu_Electronic();
-        Actions hoverMenu = new Actions(DriverProvider.getDriver());
-        hoverMenu.moveToElement(elementOfMenu);
-        hoverMenu.perform();
+        navigateToHorizontalMenu_Electronic();
         horizontalMenu_menuGameConsoles.click();
     }
 
@@ -221,17 +215,11 @@ public class StHomePage extends AbstractPage {
         hover.perform();
     }
     public void navigateToHorizontalMenu_MenCloth(){
-        WebElement elementOfMenu = hoverHorizontalMenu_Apparel();
-        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
-        hoverMenuApparel.moveToElement(elementOfMenu);
-        hoverMenuApparel.perform();
+        navigateToHorizontalMenu_Apparel();
         horizontalMenu_menuMenCloth.click();
     }
     public void navigateToHorizontalMenu_WomanCloth(){
-        WebElement elementOfMenu = hoverHorizontalMenu_Apparel();
-        Actions hoverMenuApparel = new Actions(DriverProvider.getDriver());
-        hoverMenuApparel.moveToElement(elementOfMenu);
-        hoverMenuApparel.perform();
+        navigateToHorizontalMenu_Apparel();
         horizontalMenu_menuWomanCloth.click();
     }
     private WebElement hoverHorizontalMenu_SportsAndOutdoors(){return horizontalMenu_menuSportsAndOutdoors;}

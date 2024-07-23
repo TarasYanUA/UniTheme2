@@ -37,8 +37,8 @@ public class TestRunner {
         DriverProvider.destroyDriver();
     }
     public void focusBrowserTab(int tabNum) {
-        ArrayList tabs = new ArrayList<> (getDriver().getWindowHandles());
-        getDriver().switchTo().window(tabs.get(tabNum).toString());
+        ArrayList<String> tabs = new ArrayList<> (getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs.get(tabNum));
     }
     public void takeScreenShot_withScroll(String screenshotName) {
         ((JavascriptExecutor) getDriver()).executeScript("scroll(0,130);");

@@ -71,7 +71,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public void selectSetting_ProductPageView(String value){getSetting_ProductPageView().selectByValue(value);}
 
     //Меню "Настройки -- Общие настройки -- Оформить заказ"
-    @FindBy(css = "a[href$='section_id=Checkout']")
+    @FindBy(css = "a[href*='section_id=Checkout']")
     private WebElement section_Checkout;
     @FindBy(id = "field___tax_calculation_179")
     public WebElement setting_TaxCalculationMethodBasedOn;

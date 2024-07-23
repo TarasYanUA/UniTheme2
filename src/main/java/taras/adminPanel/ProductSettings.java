@@ -2,6 +2,7 @@ package taras.adminPanel;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
@@ -139,7 +140,7 @@ public class ProductSettings extends AbstractPage {
     public void hoverAndTypeField_ShortDescription(String value){
         WebElement element = getField_ShortDescription();
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element, 600, 100);
+        hover.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(element), 0, 800);
         hover.perform();
         field_ShortDescription.click();
         field_ShortDescription.clear();

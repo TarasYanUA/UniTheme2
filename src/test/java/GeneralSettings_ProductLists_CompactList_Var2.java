@@ -67,22 +67,22 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что пустые звезды рейтинга присутствуют
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).isEmpty(),
-                "There is no empty rating stars!");
+                "There is no empty rating stars on the category page 'CompactList'!");
         //Проверяем, что общее значение рейтинга присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).isEmpty(),
-                "There is no common value of product rating!");
+                "There is no common value of product rating on the category page 'CompactList'!");
         //Проверяем, что код товара присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("span[id*='product_code']")).isEmpty(),
-                "There is no product code!");
+                "There is no product code on the category page 'CompactList'!");
         //Проверяем, что статус товара присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).isEmpty(),
-                "There is no availability status!");
+                "There is no availability status on the category page 'CompactList'!");
         //Проверяем, что кнопка "Купить" присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("button[id*='button_cart']")).isEmpty(),
-                "There is no button 'Add to cart'!");
+                "There is no button 'Add to cart' on the category page 'CompactList'!");
         //Проверяем, что модификатор количества присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
-                "There is no quantity charger!");
+                "There is no quantity charger on the category page 'CompactList'!");
         stCategoryPage.hoverToButtonAddToCart();
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");
         stHomePage.selectLanguage_RTL();

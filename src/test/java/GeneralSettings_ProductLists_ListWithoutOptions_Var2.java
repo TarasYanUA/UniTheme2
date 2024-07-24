@@ -82,26 +82,26 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stCategoryPage.clickListWithoutOptions_ProductListView();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что код товара присутствует
-        int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='product_code']")).size();
-        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product cell!");
+        int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-list div[id*='product_code']")).size();
+        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page 'ListWithoutOptions'!");
         //Проверяем, что статус наличия присутствует
         int sizeOfAvailabilityStatus = DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).size();
-        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product cell!");
+        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the category page 'ListWithoutOptions'!");
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
-        softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
+        softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the category page 'ListWithoutOptions'!");
         //Проверяем, что содержимое под описанием это список характеристик
         int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pl__feature")).size();
         softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a feature list!");
         //Проверяем, что опции товара присутствуют
         int sizeOfProductOptions = DriverProvider.getDriver().findElements(By.cssSelector(".cm-picker-product-options")).size();
-        softAssert.assertTrue(sizeOfProductOptions > 1, "There is no product options on the product cell!");
+        softAssert.assertTrue(sizeOfProductOptions > 1, "There is no product options on the category page 'ListWithoutOptions'!");
         //Проверяем, что логотип бренда присутствует
         int sizeOfBrandLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        softAssert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the product cell!");
+        softAssert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the category page 'ListWithoutOptions'!");
         //Проверяем, что переключатель изображений товара в виде полосок
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
-        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with points!");
+        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with points on the category page 'ListWithoutOptions'!");
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");

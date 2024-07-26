@@ -72,7 +72,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).isEmpty(),
                 "There is no common value of product rating on the category page 'CompactList'!");
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("span[id*='product_code']")).isEmpty(),
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-product-list div[id*='product_code']")).isEmpty(),
                 "There is no product code on the category page 'CompactList'!");
         //Проверяем, что статус товара присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).isEmpty(),

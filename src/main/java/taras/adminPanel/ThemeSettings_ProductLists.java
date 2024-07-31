@@ -56,8 +56,13 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingShowBrandLogo;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo_ListWithoutOptions;
-    @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_you_save.desktop']")
+    @FindBy(id = "settings.abt__ut2.product_list.show_you_save.desktop")
     public WebElement settingShowYouSave;
+    private Select getSettingShowYouSave(){return new Select(settingShowYouSave);}
+    public void selectSettingShowYouSave(String value){
+        getSettingShowYouSave().selectByValue(value);;
+    }
+
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHovering;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
@@ -66,6 +71,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
         getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
     }
+
     @FindBy(id = "settings.abt__ut2.product_list.product_variations.allow_variations_selection.desktop")
     public WebElement setting_AllowToSelectVariationsAndOptions;
 

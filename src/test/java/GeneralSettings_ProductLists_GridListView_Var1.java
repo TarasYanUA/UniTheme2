@@ -16,6 +16,7 @@ import java.time.Duration;
 Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Отображать пустые звёзды рейтинга товара -- да
 Отображать общее значение рейтинга товара -- нет
+Отображать "Вы экономите" -- Сокращенный вид
 
 Ширина иконки товара (по умолчанию 240) --	200
 Высота иконки товара (по умолчанию 290) --	200
@@ -27,7 +28,6 @@ import java.time.Duration;
 Дополнительная информация о товаре -- Краткое описание и характеристики
 Отображать дополнительную информацию при наведении -- да
 Отображать логотип бренда -- да
-Отображать "Вы экономите" -- да
 Показывать галерею мини-иконок товара в товарном списке --	Не отображать
 Переключать изображение товара при движении мышки -- с полосками
 
@@ -63,6 +63,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         if (checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
+        themeSettingsProductLists.selectSettingShowYouSave("short");
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
@@ -86,10 +87,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
         if (!checkboxSettingShowBrandLogo.isSelected()) {
             checkboxSettingShowBrandLogo.click();
-        }
-        WebElement checkboxSettingShowYouSave = themeSettingsProductLists.settingShowYouSave;
-        if (!checkboxSettingShowYouSave.isSelected()) {
-            checkboxSettingShowYouSave.click();
         }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
@@ -128,7 +125,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Проверяем, что текст "Вы экономите" присутствует
         int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).size();
         softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
+        //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
         takeScreenShot("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");

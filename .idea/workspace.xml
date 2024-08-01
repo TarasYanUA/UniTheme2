@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue adaptation to the newest theme version 4.18.1d.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
@@ -108,6 +107,7 @@
     "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor": "Run",
     "TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor": "Run",
@@ -159,18 +159,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_GridListView_Var2">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -187,6 +176,18 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var1" />
+      <option name="METHOD_NAME" value="checkProductLists_GridListView_Var1" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -218,19 +219,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -600,7 +601,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,13 +677,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="52" />
+          <line>150</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

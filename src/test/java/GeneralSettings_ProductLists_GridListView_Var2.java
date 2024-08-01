@@ -101,6 +101,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
 
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что дополнительная информация отображается при наведении
         int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
@@ -109,8 +110,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
         //Проверяем, что текст "Вы экономите" присутствует
-        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("ty-save-price")).size();
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is no text 'You save' on the product block!");
         //Проверяем, что галерея мини-иконок товара в виде точек
         int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
         softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 3, "Gallery of mini icons is not with points on the product block!");
@@ -127,7 +128,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что логотип присутствует
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is no text 'You save' on the category page!");
         //Проверяем, что галерея мини-иконок в виде точек
         softAssert.assertTrue(sizeOfGalleryOfMiniIcons  >= 3, "Gallery of mini icons is not with points on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();

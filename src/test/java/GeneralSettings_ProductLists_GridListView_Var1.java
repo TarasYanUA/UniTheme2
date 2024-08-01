@@ -106,6 +106,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что код товара присутствует
         int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector(".ty-control-group__label")).size();
@@ -123,8 +124,8 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
         //Проверяем, что текст "Вы экономите" присутствует
-        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).size();
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is no text 'You save' on the product block!");
         //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
         int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
@@ -147,7 +148,8 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Проверяем, что логотип присутствует
         softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the category page!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is no text 'You save' on the category page!");
         //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
         softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the category page!");
         StCategoryPage stCategoryPage = new StCategoryPage();

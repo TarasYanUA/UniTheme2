@@ -42,7 +42,7 @@ import java.time.Duration;
 
 public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurationsForProductPage_Var1(){
+    public void setConfigurationsFor_GeneralSettings_ProductPage_Var1(){
         //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_WebsiteLayouts();
@@ -123,8 +123,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var1")
-    public void checkSettingsOnProductPage_Var1() {
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_GeneralSettings_ProductPage_Var1")
+    public void checkGeneralSettings_ProductPage_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");

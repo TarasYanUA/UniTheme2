@@ -8,6 +8,8 @@ import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 
+import static taras.constants.DriverProvider.getDriver;
+
 /*
 1) "Товары -- Характеристики -- Бренд":
 - включаем "Показывать в списке товаров"
@@ -18,6 +20,7 @@ import taras.storefront.StHomePage;
 Отображать код товара   -- да
 Отображать статус наличия   -- да
 Отображать модификатор количества   -- да
+Отображать кнопку "Купить"  -- Иконка корзины и текст
 Содержимое под описанием    -- Список характеристик
 Отображать опции товара -- да
 Отображать логотип бренда   -- да
@@ -55,6 +58,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         if (!checkboxShowQuantity.isSelected()) {
             checkboxShowQuantity.click();
         }
+        themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_and_text");
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
         if (!checkboxShowProductOptions.isSelected()) {
@@ -80,28 +84,41 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stHomePage.navigateToHorizontalMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickListWithoutOptions_ProductListView();
+
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что код товара присутствует
         int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-list div[id*='product_code']")).size();
         softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page 'ListWithoutOptions'!");
+
         //Проверяем, что статус наличия присутствует
         int sizeOfAvailabilityStatus = DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).size();
         softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the category page 'ListWithoutOptions'!");
+
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
         softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the category page 'ListWithoutOptions'!");
+
         //Проверяем, что содержимое под описанием это список характеристик
         int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pl__feature")).size();
         softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a feature list!");
+
         //Проверяем, что опции товара присутствуют
         int sizeOfProductOptions = DriverProvider.getDriver().findElements(By.cssSelector(".cm-picker-product-options")).size();
         softAssert.assertTrue(sizeOfProductOptions > 1, "There is no product options on the category page 'ListWithoutOptions'!");
+
         //Проверяем, что логотип бренда присутствует
         int sizeOfBrandLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
         softAssert.assertTrue(sizeOfBrandLogo > 1, "There is no product logo on the category page 'ListWithoutOptions'!");
+
         //Проверяем, что переключатель изображений товара в виде полосок
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
         softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with points on the category page 'ListWithoutOptions'!");
+
+        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-icon-use_icon_cart")).isEmpty()
+                && !getDriver().findElements(By.cssSelector(".ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer")).isEmpty(),
+                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
+
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");

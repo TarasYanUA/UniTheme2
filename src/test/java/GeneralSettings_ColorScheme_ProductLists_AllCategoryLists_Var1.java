@@ -192,11 +192,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         boolean exist_TaxText = getDriver().findElements(By.cssSelector("span[id*='line_product_price_']")).isEmpty();
         softAssert.assertTrue(!exist_TaxText,
                 "There is no text of a product tax in the product block!");
-        stHomePage.hoverToProductInProductBlock();
+        stHomePage.scrollToBlockWithProducts();
         takeScreenShot("100 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        stHomePage.hoverToProductInProductBlock();
         takeScreenShot("105 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts (RTL)");
         stHomePage.selectLanguage_RU();
 

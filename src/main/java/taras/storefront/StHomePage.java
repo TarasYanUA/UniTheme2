@@ -29,8 +29,6 @@ public class StHomePage extends AbstractPage {
     private WebElement button_LogOut;
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     private WebElement blockWithProducts;
-    @FindBy(css = ".ut2-w-c-q__buttons")
-    private WebElement productInProductBlock;
 
     public WebElement hoverToAccountOnTop(){return accountOnTop;}
     public void logOutOnStorefront(){
@@ -62,19 +60,6 @@ public class StHomePage extends AbstractPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public WebElement getProductInProductBlock(){return productInProductBlock;}
-    public void hoverToProductInProductBlock(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        WebElement element = getProductInProductBlock();
-        Actions hoverProduct = new Actions(DriverProvider.getDriver());
-        hoverProduct.moveToElement(element);
-        hoverProduct.perform();
     }
 
     public WebElement hoverBlockWithProducts(){

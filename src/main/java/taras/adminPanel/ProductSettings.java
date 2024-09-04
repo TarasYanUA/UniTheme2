@@ -91,7 +91,7 @@ public class ProductSettings extends AbstractPage {
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

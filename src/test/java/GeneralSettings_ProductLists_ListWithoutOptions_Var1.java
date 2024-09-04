@@ -8,16 +8,19 @@ import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 
+import static taras.constants.DriverProvider.getDriver;
+
 /*
 UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
-Отображать код товара   -- нет
+Отображать код товара       -- нет
 Отображать статус наличия   -- нет
 Отображать модификатор количества   -- да
+Отображать кнопку "Купить"  -- Только Иконка корзины
 Содержимое под описанием    -- Список вариаций
-Отображать опции товара -- нет
+Отображать опции товара     -- нет
 Отображать логотип бренда   -- нет
 Показывать галерею мини-иконок товара в товарном списке -- Не отображать
-Переключать изображение товара при движении мышки   -- с точками
+Переключать изображение товара при движении мышки       -- с точками
 */
 
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRunner {
@@ -53,6 +56,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         if (!checkboxShowQuantity.isSelected()) {
             checkboxShowQuantity.click();
         }
+        themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_button");
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("variations");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
         if (checkboxShowProductOptions.isSelected()) {
@@ -80,16 +84,24 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         stCategoryPage.clickListWithoutOptions_ProductListView();
         makePause();
         stCategoryPage.clickListWithoutOptions_ProductListView(); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
+
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что модификатор количества присутствует
         int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
         softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
+
         //Проверяем, что содержимое под описанием это список вариаций
         int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-lv__item-features")).size();
         softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a variation list!");
+
         //Проверяем, что переключатель изображений товара в виде точек
         int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
         softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
+
+        //Проверяем, что кнопка "Купить" только иконкой
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-icon-use_icon_cart")).isEmpty(),
+                "The button 'Add to cart' is not Icon only or even missed!");
+
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("505 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");

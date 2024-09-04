@@ -60,14 +60,14 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingShowYouSave;
     private Select getSettingShowYouSave(){return new Select(settingShowYouSave);}
     public void selectSettingShowYouSave(String value){
-        getSettingShowYouSave().selectByValue(value);;
+        getSettingShowYouSave().selectByValue(value);
     }
 
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHovering;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
     public WebElement setting_ShowStandardImageGallery_Grid;
-    public Select getSetting_ShowStandardImageGallery_Grid(){return new Select(setting_ShowStandardImageGallery_Grid);}
+    private Select getSetting_ShowStandardImageGallery_Grid(){return new Select(setting_ShowStandardImageGallery_Grid);}
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
         getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
     }
@@ -76,7 +76,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement setting_AllowToSelectVariationsAndOptions;
 
 
-    public Select getSettingPriceDisplayFormat(){
+    private Select getSettingPriceDisplayFormat(){
         return new Select(settingPriceDisplayFormat);
     }
     public void selectSettingPriceDisplayFormat(String value){
@@ -94,28 +94,28 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         settingProductIconHeight.sendKeys(value);
     }
 
-    public Select getSettingShowAddToCartButton(){
+    private Select getSettingShowAddToCartButton(){
         return new Select(settingShowAddToCartButton);
     }
     public void selectSettingShowAddToCartButton(String value){
         getSettingShowAddToCartButton().selectByValue(value);
     }
 
-    public Select getSettingAdditionalProductInformation(){
+    private Select getSettingAdditionalProductInformation(){
         return new Select(settingAdditionalProductInformation);
     }
     public void selectSettingAdditionalProductInformation(String value){
         getSettingAdditionalProductInformation().selectByValue(value);
     }
 
-    public Select getSettingSwitchProductImageWhenHovering(){
+    private Select getSettingSwitchProductImageWhenHovering(){
         return new Select(settingSwitchProductImageWhenHovering);
     }
     public void selectSetting_SwitchProductImageWhenHovering(String value){
         getSettingSwitchProductImageWhenHovering().selectByValue(value);
     }
 
-    public Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
+    private Select getSettingDisplayCartStatus(){return new Select(settingDisplayCartStatus);}
     public void selectSettingDisplayCartStatus(String value){
         getSettingDisplayCartStatus().selectByValue(value);
     }
@@ -131,6 +131,8 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement withoutOptionsAmountStatus;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_qty.desktop")
     public WebElement withoutOptionsShowQuantity;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_button_add_to_cart.desktop")
+    private WebElement withoutOptions_ShowButtonAddToCart;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.grid_item_bottom_content.desktop")
     private WebElement withoutOptionsContentUnderDescription;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_options.desktop")
@@ -154,21 +156,26 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         withoutOptionsIconHeight.sendKeys(value);
     }
 
-    public Select getWithoutOptionsContentUnderDescription(){
+    private Select getWithoutOptionsContentUnderDescription(){
         return new Select(withoutOptionsContentUnderDescription);
     }
     public void selectWithoutOptionsContentUnderDescription(String value){
         getWithoutOptionsContentUnderDescription().selectByValue(value);
     }
+    
+    private Select getWithoutOptions_ShowButtonAddToCart(){ return new Select(withoutOptions_ShowButtonAddToCart);}
+    public void selectWithoutOptions_ShowButtonAddToCart(String value) {
+        getWithoutOptions_ShowButtonAddToCart().selectByValue(value);
+    }
 
-    public Select getWithoutOptions_ShowGalleryOfMiniIcons(){
+    private Select getWithoutOptions_ShowGalleryOfMiniIcons(){
         return new Select(withoutOptions_ShowStandardImageGallery);
     }
     public void selectWithoutOptions_ShowStandardImageGallery(String value){
         getWithoutOptions_ShowGalleryOfMiniIcons().selectByValue(value);
     }
 
-    public Select getWithoutOptions_SwitchProductImageWhenHovering(){
+    private Select getWithoutOptions_SwitchProductImageWhenHovering(){
         return new Select(withoutOptions_SwitchProductImageWhenHovering);
     }
     public void selectWithoutOptions_SwitchProductImageWhenHovering(String value){

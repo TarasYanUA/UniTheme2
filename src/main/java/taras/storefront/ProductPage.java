@@ -38,7 +38,7 @@ public class ProductPage extends AbstractPage {
         hoverProduct.perform();
     }
 
-    @FindBy(css = ".ty-icon.ut2-icon-use_icon_cart")
+    @FindBy(css = "a[id*='opener_ut2_select_options'] .ut2-icon-use_icon_cart")
     public WebElement buttonAddToCart_ProductWithOptions;
     @FindBy(css = ".ui-icon-closethick")
     public WebElement closePopUpWindow;

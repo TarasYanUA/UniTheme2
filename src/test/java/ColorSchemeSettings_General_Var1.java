@@ -78,11 +78,9 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
 
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
-        stHomePage.hoverToProductInProductBlock();
         takeScreenShot("1300 ColorSchemeSettings_General_Var1 - Block with products");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        stHomePage.hoverToProductInProductBlock();
         takeScreenShot("1305 ColorSchemeSettings_General_Var1 - Block with products (RTL)");
         stHomePage.selectLanguage_RU();
 

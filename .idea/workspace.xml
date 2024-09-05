@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added new setting to both test-cases &quot;ProductLists_ListWithoutOptions&quot;.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-cases &quot;ProductLists_ListWithoutOptions&quot; and &quot;ProductLists_CompactList&quot; are ready. Added a new setting &quot;Show &quot;Add to cart&quot; button&quot;." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +47,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="UniTheme_4.18.2a" />
@@ -613,7 +608,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved screenshots for test-case GeneralSettings_ProductPage_Var3" />
     <MESSAGE value="Some changes for product page!" />
     <MESSAGE value="Changed Xpath for colorscheme because of new feature." />
     <MESSAGE value="Added a new test-case for the new template of product page &quot;Cascade gallery&quot;." />
@@ -657,7 +651,8 @@
     <MESSAGE value="Updated pom.xml file." />
     <MESSAGE value="Adapted theme to the last version 4.18.2a." />
     <MESSAGE value="Added new setting to both test-cases &quot;ProductLists_ListWithoutOptions&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new setting to both test-cases &quot;ProductLists_ListWithoutOptions&quot;." />
+    <MESSAGE value="Test-cases &quot;ProductLists_ListWithoutOptions&quot; and &quot;ProductLists_CompactList&quot; are ready. Added a new setting &quot;Show &quot;Add to cart&quot; button&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-cases &quot;ProductLists_ListWithoutOptions&quot; and &quot;ProductLists_CompactList&quot; are ready. Added a new setting &quot;Show &quot;Add to cart&quot; button&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

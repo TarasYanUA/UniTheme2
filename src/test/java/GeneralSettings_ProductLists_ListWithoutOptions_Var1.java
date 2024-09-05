@@ -87,20 +87,20 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
 
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что модификатор количества присутствует
-        int sizeOfQuantityCharger = DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).size();
-        softAssert.assertTrue(sizeOfQuantityCharger > 1, "There is no quantity charger on the product cell!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).isEmpty(), 
+                "There is no quantity charger on the product cell on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что содержимое под описанием это список вариаций
-        int sizeOfContentUnderDescription = DriverProvider.getDriver().findElements(By.cssSelector(".ut2-lv__item-features")).size();
-        softAssert.assertTrue(sizeOfContentUnderDescription > 1, "The content under description is not a variation list!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-lv__item-features")).isEmpty(), 
+                "The content under description is not a variation list on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что переключатель изображений товара в виде точек
-        int sizeOfMousePointersAsPoints = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        softAssert.assertTrue(sizeOfMousePointersAsPoints > 1, "Image switcher is not with dots!");
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).isEmpty(),
+                "Image switcher is not with dots on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что кнопка "Купить" только иконкой
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-icon-use_icon_cart")).isEmpty(),
-                "The button 'Add to cart' is not Icon only or even missed!");
+                "The button 'Add to cart' is not Icon only or even missed on the category page 'ListWithoutOptions'!");
 
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage_RTL();

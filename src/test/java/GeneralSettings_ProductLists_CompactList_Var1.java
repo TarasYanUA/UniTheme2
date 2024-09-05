@@ -14,15 +14,15 @@ import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Настройки -- Внешний вид":
-Включить быстрый просмотр -- да
+Включить быстрый просмотр   -- да
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
 Отображать пустые звёзды рейтинга товара	-- нет
 Отображать общее значение рейтинга товара	-- нет
-Отображать код товара	-- нет
+Отображать код товара	    -- нет
 Отображать статус наличия	-- нет
 Отображать модификатор количества	-- да
-Отображать кнопку "Купить"	-- да
+Отображать кнопку "Купить"	-- Только Иконка корзины (упрощенный вариант)
 
 3) Проверка проходит на странице категории "Игровые приставки"
 */
@@ -67,10 +67,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         if (!checkboxQuantityModifier.isSelected()) {
             checkboxQuantityModifier.click();
         }
-        WebElement checkboxButtonAddToCart = themeSettingsProductLists.compactList_buttonAddToCart;
-        if (!checkboxButtonAddToCart.isSelected()) {
-            checkboxButtonAddToCart.click();
-        }
+        themeSettingsProductLists.selectCompactList_buttonAddToCart("icon");
         csCartSettings.clickSaveButtonOfSettings();
     }
 
@@ -83,17 +80,21 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stHomePage.navigateToHorizontalMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
+
         SoftAssert softAssert = new SoftAssert();
-        //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("button[id*='button_cart']")).isEmpty(),
-                "There is no button 'Add to cart'!");
         //Проверяем, что модификатор количества присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
-                "There is no quantity charger!");
+                "There is no quantity charger on the category page 'Compact list'!");
+
         //Проверяем, что Быстрый просмотр присутствует
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).isEmpty(),
                 "There is no button 'Quick view'!");
         stCategoryPage.hoverToButtonAddToCart();
+
+        //Проверяем, что кнопка "Купить" присутствует
+        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-compact-list__buttons .ut2-icon-use_icon_cart")).isEmpty(),
+                "There is no button 'Add to cart' on the category page 'Compact list'!");
+
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
         takeScreenShot_withScroll("705 GS_ProductLists_CompactList_Var1 - QuickView");

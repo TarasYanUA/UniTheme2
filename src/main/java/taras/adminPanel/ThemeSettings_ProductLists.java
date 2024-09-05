@@ -189,6 +189,11 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement compactList_availabilityStatus;
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_qty.desktop")
     public WebElement compactList_quantityCharger;
-    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button.desktop")
-    public WebElement compactList_buttonAddToCart;
+    @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_add_to_cart.desktop")
+    private WebElement compactList_buttonAddToCart;
+
+    private Select getCompactList_buttonAddToCart(){return new Select(compactList_buttonAddToCart);}
+    public void selectCompactList_buttonAddToCart (String value){
+        getCompactList_buttonAddToCart().selectByValue(value);
+    }
 }

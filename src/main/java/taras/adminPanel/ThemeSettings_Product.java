@@ -21,6 +21,8 @@ public class ThemeSettings_Product extends AbstractPage {
     public WebElement setting_FeaturesInTwoColumns;
     @FindBy(id = "settings.abt__ut2.products.view.show_short_description.desktop")
     public WebElement setting_ShowShortDescription;
+    @FindBy(id = "settings.abt__ut2.products.view.show_you_save.desktop")
+    private WebElement setting_ShowYouSave;
     @FindBy(id = "settings.abt__ut2.products.view.show_brand_format.desktop")
     private WebElement setting_ShowProductBrand;
     @FindBy(id = "settings.abt__ut2.products.default_template.multiple_product_images.desktop")
@@ -45,6 +47,11 @@ public class ThemeSettings_Product extends AbstractPage {
     private Select getSetting_ShowProductBrand(){return new Select(setting_ShowProductBrand);}
     public void selectSetting_ShowProductBrand(String value){
         getSetting_ShowProductBrand().selectByValue(value);
+    }
+
+    private Select getSetting_ShowYouSave(){return new Select(setting_ShowYouSave);}
+    public void selectSetting_ShowYouSave(String value){
+        getSetting_ShowYouSave().selectByValue(value);
     }
 
     private Select getSetting_NumberOfDisplayedImages_DefaultTemplate(){return new Select(setting_NumberOfDisplayedImages_DefaultTemplate);}

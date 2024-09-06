@@ -36,6 +36,8 @@ public class ProductSettings extends AbstractPage {
 
     @FindBy(id = "elm_price_price")
     private WebElement field_Price;
+    @FindBy(id = "elm_list_price")
+    private WebElement field_ListPrice;
     @FindBy(id = "elm_in_stock")
     private WebElement field_InStock;
     @FindBy(id = "elm_zero_price_action")
@@ -96,16 +98,25 @@ public class ProductSettings extends AbstractPage {
             throw new RuntimeException(e);
         }
     }
+
     public void clickAndTypeField_Price(String value){
         field_Price.click();
         field_Price.clear();
         field_Price.sendKeys(value);
     }
+
+    public void clickAndTypeField_ListPrice(String value){
+        field_ListPrice.click();
+        field_ListPrice.clear();
+        field_ListPrice.sendKeys(value);
+    }
+
     public void clickAndTypeField_InStock(String value){
         field_InStock.click();
         field_InStock.clear();
         field_InStock.sendKeys(value);
     }
+
     public void setPricePerUnit(String value1, String value2, String value3){
         field_UnitName.click();
         field_UnitName.clear();

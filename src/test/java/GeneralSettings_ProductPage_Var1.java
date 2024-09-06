@@ -15,29 +15,30 @@ import java.time.Duration;
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
 - Настройки CS-Cart "Настройки -> Внешний вид":
-    * Показывать мини-иконки в виде галереи --  вкл
-    * Показывать количество доступных товаров -- откл
-    * Показывать информацию о товаре во вкладках -- вкл
+    * Показывать мини-иконки в виде галереи     -- вкл
+    * Показывать количество доступных товаров   -- откл
+    * Показывать информацию о товаре во вкладках-- вкл
 - Настраиваем характеристики:
     * Бренд -- включить настройку "Показывать в заголовке карточки товара"
     * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
-    * ID пользовательского блока --  109
-    * Отображать модификатор количества --  нет
-    * Отображать код товара --  нет
-    * Отображать характеристики товара -- да
-    * Отображать характеристики в две колонки --    нет
-    * Отображать краткое описание --    да
-    * Отображать информацию о бренде товара --  Логотип бренда товара
+    * ID пользовательского блока                -- 109
+    * Отображать модификатор количества         -- нет
+    * Отображать код товара                     -- нет
+    * Отображать характеристики товара          -- да
+    * Отображать характеристики в две колонки   -- нет
+    * Отображать краткое описание               -- да
+    * Отображать "Вы экономите"                 -- Сокращенный вид
+    * Отображать информацию о бренде товара     -- Логотип бренда товара
 - Настраиваем товар X-Box 360:
-    * Действие при нулевой цене --  Не разрешать добавлять товар в корзину
-    * Цена за единицу --  да
-    * Действие при отсутствии товара в наличии --   Не выбрано
-    * шаблон страницы товара -- 5 шт (кроме Каскада)
-    * Краткое описание --   да
-    * Промо-текст -- да
-    * Бонусные баллы --  да
-    * Оптовые цены -- нет
+    * Действие при нулевой цене                 -- Не разрешать добавлять товар в корзину
+    * Цена за единицу                           -- да
+    * Действие при отсутствии товара в наличии  -- Не выбрано
+    * шаблон страницы товара                    -- 5 шт (кроме Каскада)
+    * Краткое описание                          -- да
+    * Промо-текст                               -- да
+    * Бонусные баллы                            -- да
+    * Оптовые цены                              -- нет
 */
 
 public class GeneralSettings_ProductPage_Var1 extends TestRunner {
@@ -82,6 +83,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
+        themeSettingsProduct.selectSetting_ShowYouSave("short");
         themeSettingsProduct.selectSetting_ShowProductBrand("logo");
         csCartSettings.clickSaveButtonOfSettings();
 
@@ -129,38 +131,54 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
+        productSettings.clickAndTypeField_ListPrice("15000");
+        csCartSettings.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails_gallery")).isEmpty(),
                 "Mini-icons are not as a gallery!");
+
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
                 "Product information is displayed not in tabs!");
+
         //Проверяем, что логотип характеристики "Бренд" присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand")).isEmpty(),
                 "There is no Brand logo on product page!");
+
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
                 "There is no feature Brand on the feature list!");
+
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
                 "There is no feature Hard drive on the feature list!");
+
         //Проверяем, что присутствует ID пользовательского блока
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
                 "There is no Custom block on the product page!");
+
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");
+
+        //Проверяем, что текст "Вы экономите" присутствует
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is no text 'You save' on the category page!");
+
         //Проверяем, что присутствует Цена за единицу
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-per-unit ")).isEmpty(),
                 "There is no Price per unit!");
+
         //Проверяем, что Промо-текст присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
                 "There is no Promo-text!");
+
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
                 "There is no Reward points!");

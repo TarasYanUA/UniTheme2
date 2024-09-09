@@ -27,12 +27,12 @@ import java.time.Duration;
     * Отображать характеристики товара  -- да
     * Отображать характеристики в две колонки   -- да
     * Отображать краткое описание       -- да
-    * Отображать "Вы экономите"         -- Полный вид
-    * Отображать информацию о бренде товара     --  Название бренда товара
+    * Отображать "Вы экономите"         -- Не отображать (по причине нулевой цены)
+    * Отображать информацию о бренде товара     -- Название бренда товара
 - Настраиваем товар X-Box 360:
     * Действие при нулевой цене         -- Попросить покупателя ввести цену
     * Цена за единицу                   -- нет (по причине нулевой цены)
-    * Действие при отсутствии товара в наличии --   Предзаказ
+    * Действие при отсутствии товара в наличии  -- Предзаказ
     * шаблон страницы товара            -- 5 шт (кроме Каскада)
     * Краткое описание                  -- да
     * Промо-текст                       -- да
@@ -120,43 +120,60 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
                 "Mini-icons are as a gallery but shouldn't!");
+
         //Проверяем, что количество доступных товаров присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).isEmpty(),
                 "There is no number of available products!");
+
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
                 "Product information is not displayed in tabs!");
+
         //Проверяем, что название характеристики "Бренд" присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
                 "There is no Brand name on product page!");
+
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
                 "There is no feature Brand on the feature list!");
+
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
                 "There is no feature Hard drive on the feature list!");
+
         //Проверяем, что присутствует ID пользовательского блока
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
                 "There is no Custom block on the product page!");
+
         //Проверяем, что Модификатор количества присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).isEmpty(),
                 "There is no Quantity changer!");
+
         //Проверяем, что Код товара присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
                 "There is no product code!");
+
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
                 "There is no product Short description!");
+
+        //Проверяем, что текст "Вы экономите" отсутствует по причине нулевой цены
+        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is a text 'You save' but shouldn't on the product page!");
+
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).isEmpty(),
                 "There is no field 'Enter your price'!");
+
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).isEmpty(),
                 "There is no field 'On backorder'!");
+
         //Проверяем, что Промо-текст присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
                 "There is no Promo-text!");
@@ -164,9 +181,8 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1005 GS_ProductPage_Var2 - Default template (RTL)");
 
-        //Проверяем характеристики
-        productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
+        productPage.scrollToAndClickTab_Features();
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
                 "Features are located in one column instead of two!");
         takeScreenShot("1010 GS_ProductPage_Var2 - Product features, two columns (RTL)");

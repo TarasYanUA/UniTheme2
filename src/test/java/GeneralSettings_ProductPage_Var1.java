@@ -169,11 +169,11 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
 
         //Проверяем, что текст "Вы экономите" присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
-                "There is no text 'You save' on the category page!");
+                "There is no text 'You save' on the product page!");
 
         //Проверяем, что присутствует Цена за единицу
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-per-unit ")).isEmpty(),
-                "There is no Price per unit!");
+                "There is no Price per unit on the product page!");
 
         //Проверяем, что Промо-текст присутствует
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
@@ -186,9 +186,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("905 GS_ProductPage_Var1 - Default template (RTL)");
 
-        //Проверяем характеристики
-        productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
+        productPage.scrollToAndClickTab_Features();
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-similar-filter-container ']")).isEmpty(),
                 "Features are located in two columns instead of one!");
         takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");

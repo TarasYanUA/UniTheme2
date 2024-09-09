@@ -114,6 +114,8 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
+        productSettings.clickAndTypeField_ListPrice("15000");
+        csCartSettings.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();

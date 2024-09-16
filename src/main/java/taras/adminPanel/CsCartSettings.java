@@ -240,6 +240,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement gearwheelOfActiveLayout;
     @FindBy(css = ".with-menu.active a[href*='block_manager.set_default_layout']")
     private WebElement button_makeByDefault;
+    @FindBy(xpath = "//a[text()='Домашняя страница']")
+    public WebElement layout_TabHomePage;
 
     public void navigateToSection_WebsiteLayouts(){
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
@@ -260,6 +262,9 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
             } catch (InterruptedException e) { e.printStackTrace(); }
         }
     }
+
+
+
 
     //Меню "Веб-сайт -- Меню"
     @FindBy(id = "website_menus")

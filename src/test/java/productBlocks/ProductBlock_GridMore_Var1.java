@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.DisableLazyLoadFromBlock;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import testRunner.TestRunner;
@@ -14,8 +15,15 @@ import testRunner.TestRunner;
 import java.time.Duration;
 
 /*
-1) CS-Cart настройки -- Внешний вид:
-Показывать цены с налогом на страницах категорий и товаров --   y
+
+1) Настройки  блока товаров "Распродажа"
+Шаблон                      -- AB: Сетка (с кнопкой "Показать ещё")
+Показать номер элемента     -- нет
+Количество колонок в списке -- 5
+Тип загрузки                -- По клику
+Заполнение                  -- Товары со скидкой
+Макс. число элементов       -- 17
+Спрятать кнопку добавления товара в корзину -- нет
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Формат отображения цен --	Вариант 4
@@ -43,23 +51,28 @@ import java.time.Duration;
 Эффект увеличения ячейки при наведении --	да
 Насыщенность шрифта для названия товара --	Нормальный
 
-4) Настраиваем налог для всех товаров
+4) Настраиваем налог для всех товаров + CS-Cart настройки -- Внешний вид:
+Показывать цены с налогом на страницах категорий и товаров --   y
 */
 
-public class ProductBlock_GridMore_Var1 extends TestRunner {
+public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromBlock {
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
-        //Работаем с CS-Cart настройками
-        csCartSettings.navigateToAppearanceSettings();
-        WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
-        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
-            checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
-            csCartSettings.clickSaveButtonOfSettings();
-        }
+        //Настраиваем блок товаров "Распродажа"
+        disableLazyLoadFromBlock("Распродажа");
 
-        //Работаем с настройками темы
+        //Работаем с настройками характеристики Бренд
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
+        }
+        csCartSettings.clickSaveButtonOfSettings();
+
+        //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
@@ -84,7 +97,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner {
         }
         themeSettingsProductLists.selectSettingShowYouSave("short");
 
-        //п.2.2
+        //Работаем с настройками темы п.2.2
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
         if (!checkboxSettingShowProductCode.isSelected()) {
             checkboxSettingShowProductCode.click();
@@ -126,7 +139,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner {
         colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("normal");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //Настраиваем налог для всех товаров
+        //п.4.1 Настраиваем налог для всех товаров
         csCartSettings.navigateToCheckoutSettings();
         csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
         csCartSettings.clickSaveButtonOfSettings();
@@ -145,6 +158,14 @@ public class ProductBlock_GridMore_Var1 extends TestRunner {
                     .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
             csCartSettings.button_Actions.click();
             csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
+        }
+
+        //п.4.2 Работаем с CS-Cart настройками
+        csCartSettings.navigateToAppearanceSettings();
+        WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
+        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
+            checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
+            csCartSettings.clickSaveButtonOfSettings();
         }
     }
 }

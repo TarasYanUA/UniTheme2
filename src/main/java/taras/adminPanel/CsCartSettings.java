@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, CheckMenuToBeActive {
     public CsCartSettings(){
@@ -243,6 +246,40 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(xpath = "//a[text()='Домашняя страница']")
     public WebElement layout_TabHomePage;
 
+    //Настройки блока товаров
+    @FindBy(css = "a[id^='sw_case_settings_']")
+    public WebElement button_SettingsOfTemplate;
+
+    @FindBy(css = "select[id$='_products_template']")
+    WebElement setting_BlockTemplate;
+
+    @FindBy(css = "input[id$='_products_properties_item_number']")
+    public WebElement checkbox_ShowItemNumber;
+
+    @FindBy(css = "input[id$='_products_properties_number_of_columns']")
+    WebElement field_NumberOfColumnsInList;
+
+    @FindBy(css = "select[id$='_products_properties_abt__ut2_loading_type']")
+    WebElement setting_LoadingType;
+
+    @FindBy(css = "li[id^='block_contents_'] a")
+    public WebElement tabOfBlock_Content;
+
+    @FindBy(css = "select[id$='_content_items_filling']")
+    WebElement setting_Filling;
+
+    @FindBy(css = "input[id$='_content_items_properties_items_limit']")
+    WebElement field_Limit;
+
+    @FindBy(css = "li[id^='block_settings_']")
+    public WebElement tabOfBlock_BlockSettings;
+
+    @FindBy(css = "input[id$='_products_properties_hide_add_to_cart_button']")
+    public WebElement checkbox_HideAddToCartButton;
+
+    @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
+    public WebElement button_saveBlock;
+
     public void navigateToSection_WebsiteLayouts(){
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         menu_Themes.click();
@@ -263,7 +300,38 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         }
     }
 
+    public void navigateToBlockSettings(String blockName) {
+        DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='" + blockName + "'] div[class*='bm-action-properties']")).click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".ui-dialog-title")));
+    }
 
+    private Select getSetting_BlockTemplate() {return new Select(setting_BlockTemplate);}
+    public void selectSetting_BlockTemplate(String value) {
+        getSetting_BlockTemplate().selectByValue(value);
+    }
+
+    public void clickAndType_Field_NumberOfColumnsInList(String value) {
+        field_NumberOfColumnsInList.click();
+        field_NumberOfColumnsInList.clear();
+        field_NumberOfColumnsInList.sendKeys(value);
+    }
+
+    private Select getSetting_LoadingType(){return new Select(setting_LoadingType);}
+    public void selectSetting_LoadingType(String value) {
+        getSetting_LoadingType().selectByValue(value);
+    }
+
+    private Select getSetting_Filling() {return new Select(setting_Filling); }
+    public void selectSetting_Filling(String value) {
+        getSetting_Filling().selectByValue(value);
+    }
+
+    public void clickAndType_Field_Limit(String value) {
+        field_Limit.click();
+        field_Limit.clear();
+        field_Limit.sendKeys(value);
+    }
 
 
     //Меню "Веб-сайт -- Меню"

@@ -9,8 +9,8 @@ import taras.constants.DriverProvider;
 
 import java.time.Duration;
 
-public interface DisableLazyLoadFromBlock {
-    default void disableLazyLoadFromBlock(String blockName) {
+public interface DisableLazyLoadFromSection {
+    default void disableLazyLoadFromSection (String blockName) {
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_WebsiteLayouts();
         csCartSettings.layout_TabHomePage.click();

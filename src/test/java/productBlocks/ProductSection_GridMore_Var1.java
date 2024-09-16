@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.DisableLazyLoadFromBlock;
+import taras.adminPanel.DisableLazyLoadFromSection;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import testRunner.TestRunner;
@@ -15,7 +15,6 @@ import testRunner.TestRunner;
 import java.time.Duration;
 
 /*
-
 1) Настройки  блока товаров "Распродажа"
 Шаблон                      -- AB: Сетка (с кнопкой "Показать ещё")
 Показать номер элемента     -- нет
@@ -23,11 +22,11 @@ import java.time.Duration;
 Тип загрузки                -- По клику
 Заполнение                  -- Товары со скидкой
 Макс. число элементов       -- 17
-Спрятать кнопку добавления товара в корзину -- нет
+Спрятать кнопку добавления товара в корзину     -- нет
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен --	Вариант 4
-Отображать цену вверху --	n
+Формат отображения цен                          -- Вариант 4
+Отображать цену вверху                          -- n
 Отображать пустые звёзды рейтинга товара        -- y
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
@@ -36,32 +35,47 @@ import java.time.Duration;
 Отображать "Вы экономите"                       -- Сокращенный вид
 
 2.2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Сетка"
-Отображать код товара -- да
-Отображать статус наличия -- да
-Отображать модификатор количества -- да
-Отображать кнопку "Купить" -- Иконка корзины и текст
-Дополнительная информация о товаре -- Краткое описание и характеристики
+Отображать код товара                           -- да
+Отображать статус наличия                       -- да
+Отображать модификатор количества               -- да
+Отображать кнопку "Купить"                      -- Иконка корзины и текст
+Дополнительная информация о товаре              -- Краткое описание и характеристики
 Отображать дополнительную информацию при наведении -- да
-Отображать логотип бренда -- да
+Отображать логотип бренда                       -- да
 
-3) UniTheme2 -- Настройки цветосхемы -- вкладка "Списки товаров":
-Тип обрамления товара в сетке --	Без рамки
-Добавить фон/маску для изображений товара --	нет
+3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
+Тип обрамления товара в сетке                   -- Без рамки
+Добавить фон/маску для изображений товара       -- нет
 Использовать выравнивание элементов в товарной сетке --	да
-Эффект увеличения ячейки при наведении --	да
-Насыщенность шрифта для названия товара --	Нормальный
+Эффект увеличения ячейки при наведении          -- да
+Насыщенность шрифта для названия товара         -- Нормальный
 
 4) Настраиваем налог для всех товаров + CS-Cart настройки -- Внешний вид:
-Показывать цены с налогом на страницах категорий и товаров --   y
+Показывать цены с налогом на страницах категорий и товаров-- y
 */
 
-public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromBlock {
+public class ProductSection_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
         //Настраиваем блок товаров "Распродажа"
-        disableLazyLoadFromBlock("Распродажа");
+        disableLazyLoadFromSection("Распродажа");
+        makePause();
+        csCartSettings.navigateToBlockSettings("Распродажа");
+        csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
+        csCartSettings.button_SettingsOfTemplate.click();
+        if(csCartSettings.checkbox_ShowItemNumber.isSelected())
+            csCartSettings.checkbox_ShowItemNumber.click();
+        csCartSettings.clickAndType_Field_NumberOfColumnsInList("5");
+        csCartSettings.selectSetting_LoadingType("onclick");
+        csCartSettings.tabOfBlock_Content.click();
+        csCartSettings.selectSetting_Filling("on_sale");
+        csCartSettings.clickAndType_Field_Limit("17");
+        csCartSettings.tabOfBlock_BlockSettings.click();
+        if(csCartSettings.checkbox_HideAddToCartButton.isSelected())
+            csCartSettings.checkbox_HideAddToCartButton.click();
+        csCartSettings.button_saveBlock.click();
 
         //Работаем с настройками характеристики Бренд
         csCartSettings.navigateToSection_Features();

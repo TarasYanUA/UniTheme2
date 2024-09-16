@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Added new setting &quot;Show You save&quot; to the product page for all test-cases.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed TestRunner file to the package.&#10;Start work with new test-cases &quot;productBlocks&quot;.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -615,7 +611,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,8 +630,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added a new test-case for the new template of product page &quot;Cascade gallery&quot;." />
-    <MESSAGE value="Added test-case &quot;Cascade2&quot;.&#10;Improved test-case &quot;Cascade1&quot;.&#10;Changed a test product from Camera NX200 to Phone Titan.&#10;Exceeded implicite wait to 2 seconds." />
     <MESSAGE value="Added the third test-case &quot;Cascade3&quot;." />
     <MESSAGE value="Added some changes to adapt according to new classes on the storefront!" />
     <MESSAGE value="Added test-case Cascade3 to TestNG." />
@@ -659,7 +653,9 @@
     <MESSAGE value="Test-cases &quot;ProductLists_ListWithoutOptions&quot; and &quot;ProductLists_CompactList&quot; are ready. Added a new setting &quot;Show &quot;Add to cart&quot; button&quot;." />
     <MESSAGE value="Added new setting &quot;Show You save&quot; to the product page. First test-case is ready!" />
     <MESSAGE value="Added new setting &quot;Show You save&quot; to the product page for all test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new setting &quot;Show You save&quot; to the product page for all test-cases." />
+    <MESSAGE value="Updated aaa dependencies for this libraries in your pom.xml file.&#10;Updated all drivers." />
+    <MESSAGE value="Removed TestRunner file to the package.&#10;Start work with new test-cases &quot;productBlocks&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed TestRunner file to the package.&#10;Start work with new test-cases &quot;productBlocks&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -686,7 +682,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java</url>
-          <line>258</line>
+          <line>260</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>

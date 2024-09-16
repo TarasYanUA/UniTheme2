@@ -4,6 +4,7 @@ import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
+import testRunner.TestRunner;
 
 /*
 1) CS-Cart настройки -- Внешний вид:

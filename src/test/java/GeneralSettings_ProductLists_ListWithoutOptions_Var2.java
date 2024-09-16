@@ -7,6 +7,7 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
+import testRunner.TestRunner;
 
 import static taras.constants.DriverProvider.getDriver;
 

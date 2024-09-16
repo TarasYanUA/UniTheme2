@@ -6,6 +6,7 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
+import testRunner.TestRunner;
 
 import static taras.constants.DriverProvider.getDriver;
 

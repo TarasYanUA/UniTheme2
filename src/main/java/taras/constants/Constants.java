@@ -10,5 +10,5 @@ public class Constants {
     public static final String FIREFOX_DRIVER_PROPERTY = "webdriver.opera.driver";
     public static final String FIREFOX_DRIVER_PATH = "src/test/resources/geckodriver.exe";
 
-    public static final String BASIC_URL = "https://trs.test.abt.team/4182ultru/admin.php?dispatch=abt__ut2.settings&selected_section=product_list&sl=ru";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4182ultru/admin.php?dispatch=addons.manage";
 }

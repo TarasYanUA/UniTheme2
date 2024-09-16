@@ -36,10 +36,12 @@ public class TestRunner {
         getDriver().quit();
         DriverProvider.destroyDriver();
     }
+
     public void focusBrowserTab(int tabNum) {
         ArrayList<String> tabs = new ArrayList<> (getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(tabNum));
     }
+
     public void takeScreenShot_withScroll(String screenshotName) {
         ((JavascriptExecutor) getDriver()).executeScript("scroll(0,130);");
         try {
@@ -54,6 +56,7 @@ public class TestRunner {
             throw new RuntimeException(e);
         }
     }
+
     public void takeScreenShot(String screenshotName) {
         try {
             Thread.sleep(1000);
@@ -67,6 +70,7 @@ public class TestRunner {
             throw new RuntimeException(e);
         }
     }
+
     public void makePause(){
         try {
             Thread.sleep(2000);

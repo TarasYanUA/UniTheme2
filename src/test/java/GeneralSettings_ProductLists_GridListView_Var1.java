@@ -8,6 +8,7 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -16,24 +17,24 @@ import java.time.Duration;
 
 /*
 Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Отображать пустые звёзды рейтинга товара -- да
-Отображать общее значение рейтинга товара -- нет
-Отображать "Вы экономите" -- Сокращенный вид
+Отображать пустые звёзды рейтинга товара    -- да
+Отображать общее значение рейтинга товара   -- нет
+Отображать "Вы экономите"                   -- Сокращенный вид
 
 Ширина иконки товара (по умолчанию 240) --	200
 Высота иконки товара (по умолчанию 290) --	200
 
-Отображать код товара -- да
-Отображать статус наличия -- да
-Отображать модификатор количества -- да
-Отображать кнопку "Купить" -- Иконка корзины и текст
-Дополнительная информация о товаре -- Краткое описание и характеристики
+Отображать код товара                   -- да
+Отображать статус наличия               -- да
+Отображать модификатор количества       -- да
+Отображать кнопку "Купить"              -- Иконка корзины и текст
+Дополнительная информация о товаре      -- Краткое описание и характеристики
 Отображать дополнительную информацию при наведении -- да
-Отображать логотип бренда -- да
+Отображать логотип бренда               -- да
 Показывать галерею мини-иконок товара в товарном списке --	Не отображать
-Переключать изображение товара при движении мышки -- с полосками
+Переключать изображение товара при движении мышки       -- с полосками
 
-Вкладка "Показать ещё" -- Разрешить для товарных списков -- нет
+Вкладка "Показать ещё" -- Разрешить для товарных списков-- нет
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
@@ -94,7 +95,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
         themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
-        if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
+        if (themeSettings_showMore.setting_AllowForProductLists.isSelected())
             themeSettings_showMore.setting_AllowForProductLists.click();
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -110,27 +111,36 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stHomePage.scrollToBlockWithProducts();
         DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что код товара присутствует
-        int sizeOfProductCodes = DriverProvider.getDriver().findElements(By.cssSelector(".ty-control-group__label")).size();
-        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.productCode.isEmpty(),
+                "There is no product code in the product block!");
+
         //Проверяем, что статус наличия присутствует
-        int sizeOfAvailabilityStatus = DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).size();
-        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+                "There is no availability status in the product block!");
+
         //Проверяем, что модификатор количества присутствует
-        int sizeOfQuantityChanger = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-center ty-value-changer cm-value-changer']")).size();
-        softAssert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+                "There is no quantity Changer in the product block!");
+
         //Проверяем, что дополнительная информация отображается при наведении
-        int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
-        //Проверяем, что логотип присутствует
-        int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+                "Buttons are displayed without mouse hover in the product block!");
+
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+                "There is no product logo in the product block!");
+
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
-                "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
-        int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")).size();
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
+                "There is no text 'You save' in the product block!");
+
+        //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
+        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+                "Switch is not with stripes or there is no Switch at all in the product block!");
+
         takeScreenShot("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
@@ -140,23 +150,37 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(sizeOfProductCodes > 1, "There is no product code on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.productCode.isEmpty(),
+                "There is no product code on the category page!");
+
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(sizeOfAvailabilityStatus > 1, "There is no availability status on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+                "There is no availability status on the category page!");
+
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(sizeOfQuantityChanger > 1, "There is no quantity Changer on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+                "There is no quantity Changer on the category page!");
+
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
-        //Проверяем, что логотип присутствует
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+                "Buttons are displayed without mouse hover on the category page!");
+
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+                "There is no product logo on the category page!");
+
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
                 "There is no text 'You save' on the category page!");
-        //Проверяем, что переключатель изображений товара присутствует и он в виде полосок
-        softAssert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the category page!");
+
+        //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
+        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+                "Switch is not with stripes or there is no Switch at all on the category page!");
+
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("310 GS_ProductLists_GridListView_Var1 - PhoneCategory");
+
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot_withScroll("315 GS_ProductLists_GridListView_Var1 - PhoneCategory (RTL)");

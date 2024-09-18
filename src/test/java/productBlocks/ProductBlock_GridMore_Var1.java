@@ -248,7 +248,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "There is no text 'You save' in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.text_Tax.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
                 "There is no text of a product tax in the product block!");
 
         //Проверяем, что код товара присутствует

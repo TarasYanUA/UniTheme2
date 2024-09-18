@@ -8,6 +8,7 @@ import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -105,22 +106,24 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.scrollToBlockWithProducts();
         DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что дополнительная информация отображается при наведении
-        int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+                "Buttons are displayed without mouse hover in the product block!");
 
-        //Проверяем, что логотип присутствует
-        int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+                "There is no product logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
-                "There is no text 'You save' on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
+                "There is no text 'You save' in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        int sizeOfGalleryOfMiniIcons = DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).size();
-        softAssert.assertTrue(sizeOfGalleryOfMiniIcons >= 3, "Gallery of mini icons is not with points on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.galleryOgMiniIcons_Dots.isEmpty(),
+                "Gallery of mini icons is not with points in the product block!");
+
         takeScreenShot("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
@@ -131,17 +134,21 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.navigateToHorizontalMenu_MenCloth();
 
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+                "Buttons are displayed without mouse hover on the category page!");
 
-        //Проверяем, что логотип присутствует
-        softAssert.assertTrue(sizeOfLogo > 2, "There is no product logo on the category page!");
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+                "There is no product logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
                 "There is no text 'You save' on the category page!");
 
-        //Проверяем, что галерея мини-иконок в виде точек
-        softAssert.assertTrue(sizeOfGalleryOfMiniIcons  >= 3, "Gallery of mini icons is not with points on the category page!");
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        softAssert.assertTrue(!assertsOnStorefront.galleryOgMiniIcons_Dots.isEmpty(),
+                "Gallery of mini icons is not with points on the category page!");
+
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
         takeScreenShot_withScroll("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
@@ -159,6 +166,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("425 GS_ProductLists_GridListView_Var2 - QuickView");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }

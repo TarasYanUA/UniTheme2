@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="First test-case for Product blocks is totally ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Transferred asserts to the Class AssertsOnStorefront from 4 test-cases: GeneralSettings_ProductLists_GridListView and GeneralSettings_ColorScheme_ProductLists_AllCategoryLists.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,6 +172,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="productBlocks" />
       <recent name="" />
       <recent name="menu" />
       <recent name="Menu" />
@@ -638,7 +637,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +656,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Worked with two test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists:&#10;* Fixed some css selectors;&#10;* Adapted to Demos." />
     <MESSAGE value="Worked with two test-cases GeneralSettings_ColorScheme_ProductLists_AllCategoryLists:&#10;* Fixed some css selectors;&#10;* Adapted to Demos.&#10;&#10;Updated libraries at pom.xml" />
     <MESSAGE value="Improved phone product for the test GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
     <MESSAGE value="Added pause to the Interface CheckMenuToBeActive, because a lot of tests were failing." />
@@ -682,7 +680,8 @@
     <MESSAGE value="Continue work with method setConfigurationsForProductBlock_GridMore_Var1!&#10;Added Interface DisableLazyLoadFromBlock." />
     <MESSAGE value="Method setConfigurationsForProductBlock_GridMore_Var1 is totally ready!" />
     <MESSAGE value="First test-case for Product blocks is totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="First test-case for Product blocks is totally ready!" />
+    <MESSAGE value="Transferred asserts to the Class AssertsOnStorefront from 4 test-cases: GeneralSettings_ProductLists_GridListView and GeneralSettings_ColorScheme_ProductLists_AllCategoryLists." />
+    <option name="LAST_COMMIT_MESSAGE" value="Transferred asserts to the Class AssertsOnStorefront from 4 test-cases: GeneralSettings_ProductLists_GridListView and GeneralSettings_ColorScheme_ProductLists_AllCategoryLists." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

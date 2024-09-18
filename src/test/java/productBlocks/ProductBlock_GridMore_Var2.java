@@ -24,27 +24,27 @@ import java.util.List;
 1) Настройки  блока товаров "Распродажа"
 Шаблон                      -- AB: Сетка (с кнопкой "Показать ещё")
 Показать номер элемента     -- n
-Количество колонок в списке -- 5
+Количество колонок в списке -- 4
 Тип загрузки                -- По клику
 Заполнение                  -- Товары со скидкой
-Макс. число элементов       -- 17
+Макс. число элементов       -- 15
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 4
-Отображать цену вверху                          -- n
-Отображать пустые звёзды рейтинга товара        -- y
+Формат отображения цен                          -- Вариант 3
+Отображать цену вверху                          -- n    !!!!!!!!!!!изменить в тест-кейсе 3
+Отображать пустые звёзды рейтинга товара        -- n
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
-Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
+Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
 Отображать "Вы экономите"                       -- Сокращенный вид
 
 2.2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Сетка"
 Отображать код товара                           -- y
 Отображать статус наличия                       -- y
-Отображать модификатор количества               -- y
-Отображать кнопку "Купить"                      -- Иконка корзины и текст
+Отображать модификатор количества               -- n
+Отображать кнопку "Купить"                      -- Только иконка корзины    !!!!!!!!здесь ОСТАНОВИЛСЯ
 Дополнительная информация о товаре              -- Краткое описание и характеристики
 Отображать дополнительную информацию при наведении -- y
 Отображать логотип бренда                       -- y
@@ -60,7 +60,7 @@ import java.util.List;
 Показывать цены с налогом на страницах категорий и товаров-- y
 */
 
-public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
+public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
 
     @Test(priority = 1)
@@ -76,11 +76,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
-        csCartSettings.clickAndType_Field_NumberOfColumnsInList("5");
+        csCartSettings.clickAndType_Field_NumberOfColumnsInList("4");
         csCartSettings.selectSetting_LoadingType("onclick");
         csCartSettings.tabOfBlock_Content.click();
         csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("17");
+        csCartSettings.clickAndType_Field_Limit("15");
         csCartSettings.tabOfBlock_BlockSettings.click();
         if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
             csCartSettings.checkbox_HideAddToCartButton.click();
@@ -97,13 +97,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
-        if (!checkboxProductRating.isSelected()) {
+        if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
@@ -118,9 +118,9 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         if (!checkboxSettingDisplayButtonWishList.isSelected()) {
             checkboxSettingDisplayButtonWishList.click();
         }
-        if(!themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
+        if(themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
             themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("full");
+        themeSettingsProductLists.selectSettingShowYouSave("short");
 
         //Работаем с настройками темы п.2.2
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
@@ -132,10 +132,10 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
             checkboxSettingDisplayAvailabilityStatus.click();
         }
         WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
-        if (!checkboxSettingShowQuantityChanger.isSelected()) {
+        if (checkboxSettingShowQuantityChanger.isSelected()) {
             checkboxSettingShowQuantityChanger.click();
         }
-        themeSettingsProductLists.selectSettingShowAddToCartButton("icon_and_text");
+        themeSettingsProductLists.selectSettingShowAddToCartButton("icon_button");
         themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
@@ -209,10 +209,10 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
 
-        //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
+        //Проверяем, что у блока товаров 4 колонки. Настройка блока "Количество колонок в списке -- 4"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column5")).size(), 5,
-                "Number of columns is not equal 5 in the product block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column4")).size(), 4,
+                "Number of columns is not equal 4 in the product block!");
 
         int num = 1;
         while (true) {
@@ -233,9 +233,9 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
             }
         }
 
-        //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
-                "There are no empty stars in the product block!");
+        //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
+        softAssert.assertFalse(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+                "There are empty stars but shouldn't in the product block!");
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
         softAssert.assertFalse(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
@@ -269,14 +269,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
                 "There is no availability status in the product block!");
 
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
-                "There is no quantity Changer in the product block!");
+        //Проверяем, что модификатор количества отсутствует
+        softAssert.assertFalse(!assertsOnStorefront.quantityChanger.isEmpty(),
+                "There is a quantity Changer but shouldn't in the product block!");
 
-        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly.isEmpty()
-                        && !assertsOnStorefront.gridList__ShowAddToCartButton_TextOnly.isEmpty(),
-                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
+        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly.isEmpty(),
+                "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
 
         //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
@@ -293,10 +292,10 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is no product logo in the product block!");
 
-        //Проверяем, что Максимальное число элементов -- 17 (не превышает это значение)
+        //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 17,
-                "Max number of products increases 17 products in the block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 15,
+                "Max number of products increases 15 products in the block!");
 
         stHomePage.selectLanguage_RTL();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));

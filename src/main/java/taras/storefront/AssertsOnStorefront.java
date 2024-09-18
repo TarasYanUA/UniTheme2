@@ -53,6 +53,12 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
     public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества"
 
+    @FindBy(css = ".ut2-icon-use_icon_cart")
+    public List<WebElement> gridList__ShowAddToCartButton_IconOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только иконка корзины
+
+    @FindBy(css = ".ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer")
+    public List<WebElement> gridList__ShowAddToCartButton_TextOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только текст
+
     @FindBy(css = "div[class='ut2-gl__body content-on-hover']")
     public List<WebElement> additionalInformationOnHover;   //Настройка "Отображать дополнительную информацию при наведении"
 

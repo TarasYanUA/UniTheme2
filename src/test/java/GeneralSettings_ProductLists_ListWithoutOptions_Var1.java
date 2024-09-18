@@ -99,7 +99,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).isEmpty(),
                 "Image switcher is not with dots on the category page 'ListWithoutOptions'!");
 
-        //Проверяем, что кнопка "Купить" только иконкой
+        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
         softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-icon-use_icon_cart")).isEmpty(),
                 "The button 'Add to cart' is not Icon only or even missed on the category page 'ListWithoutOptions'!");
 

@@ -11,24 +11,25 @@ import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.time.Duration;
 
 public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, CheckMenuToBeActive {
-    public CsCartSettings(){
+    public CsCartSettings() {
         super();
     }
 
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
 
-    public void clickSaveButtonOfSettings(){
+    public void clickSaveButtonOfSettings() {
         saveButtonOfSettings.click();
     }
 
-    public StHomePage navigateToStorefront(){
+    public StHomePage navigateToStorefront() {
         String currentUrl = DriverProvider.getDriver().getCurrentUrl();
         String[] url = currentUrl.split("admin.php");
-        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.open('"+url[0]+"')");
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.open('" + url[0] + "')");
         return new StHomePage();
     }
 
@@ -59,19 +60,24 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement setting_NumberOfAvailableProducts;
     @FindBy(id = "field___product_details_in_tab_288")
     public WebElement setting_ProductDetailsInTab;
-    @FindBy (id = "field___default_product_details_view_180")
+    @FindBy(id = "field___default_product_details_view_180")
     private WebElement setting_ProductPageView;
     @FindBy(css = "input[id*='field___enable_quick_view']")
     public WebElement setting_QuickView;
 
-    public void navigateToAppearanceSettings(){
+    public void navigateToAppearanceSettings() {
         menu_Settings.click();
         section_GeneralSettings.click();
         section_Appearance.click();
     }
 
-    private Select getSetting_ProductPageView(){return new Select(setting_ProductPageView);}
-    public void selectSetting_ProductPageView(String value){getSetting_ProductPageView().selectByValue(value);}
+    private Select getSetting_ProductPageView() {
+        return new Select(setting_ProductPageView);
+    }
+
+    public void selectSetting_ProductPageView(String value) {
+        getSetting_ProductPageView().selectByValue(value);
+    }
 
     //Меню "Настройки -- Общие настройки -- Оформить заказ"
     @FindBy(css = "a[href*='section_id=Checkout']")
@@ -79,14 +85,19 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(id = "field___tax_calculation_179")
     public WebElement setting_TaxCalculationMethodBasedOn;
 
-    public void navigateToCheckoutSettings(){
+    public void navigateToCheckoutSettings() {
         menu_Settings.click();
         section_GeneralSettings.click();
         section_Checkout.click();
     }
 
-    private Select getSetting_TaxCalculationMethodBasedOn(){return new Select(setting_TaxCalculationMethodBasedOn);}
-    public void selectSetting_TaxCalculationMethodBasedOn(String value){getSetting_TaxCalculationMethodBasedOn().selectByValue(value);}
+    private Select getSetting_TaxCalculationMethodBasedOn() {
+        return new Select(setting_TaxCalculationMethodBasedOn);
+    }
+
+    public void selectSetting_TaxCalculationMethodBasedOn(String value) {
+        getSetting_TaxCalculationMethodBasedOn().selectByValue(value);
+    }
 
     //Меню "Настройки -- Налоги"
     @FindBy(css = "a[href$='taxes.manage'] div")
@@ -102,7 +113,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "a[data-ca-dispatch=\"dispatch[taxes.apply_selected_taxes]\"]")
     public WebElement button_ApplySelectedTaxesToAllProducts;
 
-    public void navigateToTaxes(){
+    public void navigateToTaxes() {
         menu_Settings.click();
         section_Taxes.click();
     }
@@ -111,7 +122,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(id = "products_products")
     private WebElement section_Products;
 
-    public ProductSettings navigateToSection_Products(){
+    public ProductSettings navigateToSection_Products() {
         checkMenu_Products_ToBeActive();
         section_Products.click();
         checkPageOnEngLang();
@@ -134,17 +145,20 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
     public WebElement button_Create;
 
-    public void navigateToSection_Categories(){
+    public void navigateToSection_Categories() {
         checkMenu_Products_ToBeActive();
         section_Categories.click();
     }
 
-    private Select getCategoryLocation(){return new Select(categoryLocation);}
-    public void selectCategoryLocation_Computers(){
+    private Select getCategoryLocation() {
+        return new Select(categoryLocation);
+    }
+
+    public void selectCategoryLocation_Computers() {
         getCategoryLocation().selectByValue("167");
     }
 
-    public void clickAndType_Field_CategoryName(){
+    public void clickAndType_Field_CategoryName() {
         field_CategoryName.click();
         field_CategoryName.sendKeys("AutoTestCategory");
     }
@@ -173,21 +187,26 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = ".buttons-container-picker input[value='Сохранить']")
     public WebElement button_SaveFeature;
 
-    public void navigateToSection_Features(){
+    public void navigateToSection_Features() {
         checkMenu_Products_ToBeActive();
         section_Features.click();
         checkPageOnEngLang();
     }
-    public void clickAndTypeField_DescriptionOfFeature(String value){
+
+    public void clickAndTypeField_DescriptionOfFeature(String value) {
         field_FeatureDescription_HardDrive.click();
-        try { Thread.sleep(1500);
-        } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         button_Html_HardDrive.click();
         field_HtmlDescriptionOfFeature.click();
         field_HtmlDescriptionOfFeature.clear();
         field_HtmlDescriptionOfFeature.sendKeys(value);
     }
-    public void clickFeatureBrand(){
+
+    public void clickFeatureBrand() {
         featureBrand.click();
     }
 
@@ -204,21 +223,23 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.less_settings']")
     private WebElement colorSchemeSettings;
 
-    public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists(){
+    public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists() {
         navigateTo_DownloadedAddonsPage();
         themeSectionsOnPage_DownloadedAddons.click();
         themeSettings.click();
         tab_ProductLists.click();
         return new ThemeSettings_ProductLists();
     }
-    public ThemeSettings_Product navigateTo_ThemeSettings_tabProduct(){
+
+    public ThemeSettings_Product navigateTo_ThemeSettings_tabProduct() {
         navigateTo_DownloadedAddonsPage();
         themeSectionsOnPage_DownloadedAddons.click();
         themeSettings.click();
         tab_Product.click();
         return new ThemeSettings_Product();
     }
-    public ColorSchemeSettings navigateTo_ColorSchemeSettings(){
+
+    public ColorSchemeSettings navigateTo_ColorSchemeSettings() {
         navigateTo_DownloadedAddonsPage();
         themeSectionsOnPage_DownloadedAddons.click();
         colorSchemeSettings.click();
@@ -229,22 +250,31 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Веб-сайт -- Темы -- Макеты"
     @FindBy(xpath = "//span[text()='Веб-сайт']")
     private WebElement menu_Website;
+
     @FindBy(id = "website_themes")
     private WebElement menu_Themes;
+
     @FindBy(css = ".nav__actions-bar a[href$='block_manager.manage']")
     private WebElement section_Layouts;
+
     @FindBy(css = "a[href$='block_manager.manage&s_layout=5']")
     public WebElement layout_Light;
+
     @FindBy(css = "a[href$='block_manager.manage&s_layout=6']")
     public WebElement layout_Lightv2;
+
     @FindBy(css = "a[href$='block_manager.manage&s_layout=3']")
     public WebElement layout_Default;
+
     @FindBy(css = ".with-menu.active .dropdown-toggle")
     private WebElement gearwheelOfActiveLayout;
+
     @FindBy(css = ".with-menu.active a[href*='block_manager.set_default_layout']")
     private WebElement button_makeByDefault;
+
     @FindBy(xpath = "//a[text()='Домашняя страница']")
     public WebElement layout_TabHomePage;
+
 
     //Настройки блока товаров
     @FindBy(css = "a[id^='sw_case_settings_']")
@@ -280,23 +310,30 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
 
-    public void navigateToSection_WebsiteLayouts(){
+
+    public void navigateToSection_WebsiteLayouts() {
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         menu_Themes.click();
         section_Layouts.click();
     }
 
-    public WebElement hoverGearwheelOfActiveLayout(){return gearwheelOfActiveLayout;}
-    public void setLayoutAsDefault(){
+    public WebElement hoverGearwheelOfActiveLayout() {
+        return gearwheelOfActiveLayout;
+    }
+
+    public void setLayoutAsDefault() {
         WebElement element = hoverGearwheelOfActiveLayout();
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(element);
         hover.perform();
         gearwheelOfActiveLayout.click();
-        if(!DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).isEmpty()){
+        if (!DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).isEmpty()) {
             button_makeByDefault.click();
-            try { Thread.sleep(1500);
-            } catch (InterruptedException e) { e.printStackTrace(); }
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -306,9 +343,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".ui-dialog-title")));
     }
 
-    private Select getSetting_BlockTemplate() {return new Select(setting_BlockTemplate);}
     public void selectSetting_BlockTemplate(String value) {
-        getSetting_BlockTemplate().selectByValue(value);
+        new Select(setting_BlockTemplate).selectByValue(value);
     }
 
     public void clickAndType_Field_NumberOfColumnsInList(String value) {
@@ -317,14 +353,12 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         field_NumberOfColumnsInList.sendKeys(value);
     }
 
-    private Select getSetting_LoadingType(){return new Select(setting_LoadingType);}
     public void selectSetting_LoadingType(String value) {
-        getSetting_LoadingType().selectByValue(value);
+        new Select(setting_LoadingType).selectByValue(value);
     }
 
-    private Select getSetting_Filling() {return new Select(setting_Filling); }
     public void selectSetting_Filling(String value) {
-        getSetting_Filling().selectByValue(value);
+        new Select(setting_Filling).selectByValue(value);
     }
 
     public void clickAndType_Field_Limit(String value) {
@@ -338,7 +372,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(id = "website_menus")
     private WebElement menu_WebsiteMenu;
 
-    public void navigateTo_WebsiteMenuPage(){
+
+    public void navigateTo_WebsiteMenuPage() {
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         menu_WebsiteMenu.click();
     }

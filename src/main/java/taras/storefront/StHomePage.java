@@ -62,86 +62,77 @@ public class StHomePage extends AbstractPage {
         }
     }
 
-    public WebElement hoverBlockWithProducts(){
-        return blockWithProducts;
-    }
     public void scrollToBlockWithProducts(){
-        WebElement elementForScroll = hoverBlockWithProducts();
         Actions scrollToBlock = new Actions(DriverProvider.getDriver());
-        scrollToBlock.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(elementForScroll), 0, 800);
+        scrollToBlock.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(blockWithProducts), 0, 800);
         scrollToBlock.perform();
     }
+
 
     //Разделы меню на витрине
     @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
     public WebElement verticalMenu_menuButton_Categories;
+
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__products")
     private WebElement verticalMenu_menuAllProducts;
+
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__electronics .menu-lvl-ctn")
     private WebElement verticalMenu_menuElectronic;
+
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel .menu-lvl-ctn")
     private WebElement verticalMenu_menuApparel;
+
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport .menu-lvl-ctn")
     private WebElement verticalMenu_menuSportsAndOutdoors;
+
     @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media  .menu-lvl-ctn")
     private WebElement verticalMenu_menuVideoGames;
 
-    private WebElement hoverVerticalMenu_AllProducts(){return verticalMenu_menuAllProducts;}
+    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0']")
+    private WebElement threeLevelMenu_Computers;
+
+    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='1']")
+    private WebElement threeLevelMenu_CarElectronics;
+
     public void navigateToVerticalMenu_AllProducts(){
-        WebElement element = hoverVerticalMenu_AllProducts();
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-    }
-    private WebElement hoverVerticalMenu_Electronic(){
-        return verticalMenu_menuElectronic;
-    }
-    public void navigateToVerticalMenu_Electronic(){
-        WebElement element = hoverVerticalMenu_Electronic();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-    }
-    public WebElement hoverVerticalMenu_Apparel(){
-        return verticalMenu_menuApparel;
-    }
-    public void navigateToVerticalMenu_Apparel(){
-        WebElement element = hoverVerticalMenu_Apparel();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-    }
-    private WebElement hoverVerticalMenu_SportsAndOutdoors(){return verticalMenu_menuSportsAndOutdoors;}
-    public void navigateToVerticalMenu_SportsAndOutdoors(){
-        WebElement element = hoverVerticalMenu_SportsAndOutdoors();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
-        hover.perform();
-    }
-    private WebElement hoverVerticalMenu_VideoGames(){return verticalMenu_menuVideoGames;}
-    public void navigateToVerticalMenu_VideoGames(){
-        WebElement element = hoverVerticalMenu_VideoGames();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
+        hover.moveToElement(verticalMenu_menuAllProducts);
         hover.perform();
     }
 
-    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0']")
-    private WebElement threeLevelMenu_Computers;
-    private WebElement hoverThreeLevelMenu_Computers(){return threeLevelMenu_Computers;}
-    public void navigateToMenu_ThreeLevelMenu_Computers(){
-        WebElement element = hoverThreeLevelMenu_Computers();
+    public void navigateToVerticalMenu_Electronic(){
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
+        hover.moveToElement(verticalMenu_menuElectronic);
         hover.perform();
     }
-    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='1']")
-    private WebElement threeLevelMenu_CarElectronics;
-    private WebElement hoverThreeLevelMenu_CarElectronics(){return threeLevelMenu_CarElectronics;}
-    public void navigateToMenu_ThreeLevelMenu_CarElectronics(){
-        WebElement element = hoverThreeLevelMenu_CarElectronics();
+
+    public void navigateToVerticalMenu_Apparel(){
         Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(element);
+        hover.moveToElement(verticalMenu_menuApparel);
+        hover.perform();
+    }
+
+    public void navigateToVerticalMenu_SportsAndOutdoors(){
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(verticalMenu_menuSportsAndOutdoors);
+        hover.perform();
+    }
+
+    public void navigateToVerticalMenu_VideoGames(){
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(verticalMenu_menuVideoGames);
+        hover.perform();
+    }
+
+    public void navigateToMenu_ThreeLevelMenu_Computers(){
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(threeLevelMenu_Computers);
+        hover.perform();
+    }
+
+    public void navigateToMenu_ThreeLevelMenu_CarElectronics(){
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(threeLevelMenu_CarElectronics);
         hover.perform();
     }
 

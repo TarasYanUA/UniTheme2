@@ -61,7 +61,7 @@ public class TestRunner {
 
     public void takeScreenShot(String screenshotName) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -79,5 +79,10 @@ public class TestRunner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getBlockID(String blockName) {
+        String getBlockID = DriverProvider.getDriver().findElement(By.cssSelector("div[title='" + blockName + "'] small[data-ca-block-manager='block_id']")).getText();
+        return getBlockID.trim().split("#")[1];
     }
 }

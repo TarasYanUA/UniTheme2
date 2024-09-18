@@ -2,17 +2,23 @@ package productBlocks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.DisableLazyLoadFromSection;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
+import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
 import java.time.Duration;
+import java.util.List;
 
 /*
 1) Настройки  блока товаров "Распродажа"
@@ -44,7 +50,7 @@ import java.time.Duration;
 Отображать логотип бренда                       -- да
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
-Тип обрамления товара в сетке                   -- Без рамки
+Тип обрамления товара в сетке                   -- Рамка с внешними отступами
 Добавить фон/маску для изображений товара       -- нет
 Использовать выравнивание элементов в товарной сетке --	да
 Эффект увеличения ячейки при наведении          -- да
@@ -54,18 +60,21 @@ import java.time.Duration;
 Показывать цены с налогом на страницах категорий и товаров-- y
 */
 
-public class ProductSection_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
+public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
+    String blockID;
+
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
         //Настраиваем блок товаров "Распродажа"
-        disableLazyLoadFromSection("Распродажа");
+        disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
+        blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
         csCartSettings.button_SettingsOfTemplate.click();
-        if(csCartSettings.checkbox_ShowItemNumber.isSelected())
+        if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
         csCartSettings.clickAndType_Field_NumberOfColumnsInList("5");
         csCartSettings.selectSetting_LoadingType("onclick");
@@ -73,7 +82,7 @@ public class ProductSection_GridMore_Var1 extends TestRunner implements DisableL
         csCartSettings.selectSetting_Filling("on_sale");
         csCartSettings.clickAndType_Field_Limit("17");
         csCartSettings.tabOfBlock_BlockSettings.click();
-        if(csCartSettings.checkbox_HideAddToCartButton.isSelected())
+        if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
             csCartSettings.checkbox_HideAddToCartButton.click();
         csCartSettings.button_saveBlock.click();
 
@@ -142,7 +151,7 @@ public class ProductSection_GridMore_Var1 extends TestRunner implements DisableL
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("none");
+        colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
         if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
         }
@@ -181,5 +190,122 @@ public class ProductSection_GridMore_Var1 extends TestRunner implements DisableL
             checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
             csCartSettings.clickSaveButtonOfSettings();
         }
+    }
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")
+    public void checkProductBlock_GridMore_Var1() {
+        CsCartSettings csCartSettings = new CsCartSettings();
+        SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        focusBrowserTab(1);
+        stHomePage.cookie.click();
+
+        //Блок товаров "Распродажа" на главной странице
+        stHomePage.scrollToBlockWithProducts();
+        WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
+        tab_OnSale.click();
+
+        //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
+        softAssert.assertEquals(DriverProvider.getDriver().findElements(By
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column5")).size(), 5,
+                "Number of columns is not equal 5 in the product block!");
+
+        int num = 1;
+        while (true) {
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
+                WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
+
+                Actions scroll = new Actions(DriverProvider.getDriver());
+                scroll.moveToElement(tab_OnSale);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.perform();
+                button_ShowMore.click();
+
+                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock " + num);
+                num++;
+            } else {
+                break;
+            }
+        }
+
+        //Проверяем, что кнопка "Избранное" присутствует
+        softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
+                "There is no button 'Add to wish list' in the product block!");
+
+        //Проверяем, что кнопка "Сравнить" присутствует
+        softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
+                "There is no button 'Add to comparison list' in the product block!");
+
+        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
+        softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
+                "Buttons are not displayed when hovering over a product cell in the product block!");
+
+        //Проверяем, что текст "Вы экономите" присутствует
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
+                "There is no text 'You save' in the product block!");
+
+        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
+        softAssert.assertTrue(!assertsOnStorefront.text_Tax.isEmpty(),
+                "There is no text of a product tax in the product block!");
+
+        //Проверяем, что код товара присутствует
+        softAssert.assertTrue(!assertsOnStorefront.productCode.isEmpty(),
+                "There is no product code in the product block!");
+
+        //Проверяем, что статус наличия присутствует
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+                "There is no availability status in the product block!");
+
+        //Проверяем, что модификатор количества присутствует
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+                "There is no quantity Changer in the product block!");
+
+        //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
+        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID +"'] .product-description")).isEmpty()
+                        && !DriverProvider.getDriver().findElements(By
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty(),
+                "Additional information about products is not 'Short description and features' in the block!");
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+                "Buttons are displayed without mouse hover in the product block!");
+
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+                "There is no product logo in the product block!");
+
+        //Проверяем, что Максимальное число элементов -- 17 (не превышает это значение)
+        softAssert.assertTrue(DriverProvider.getDriver().findElements(By
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 17,
+                "Max number of products increases 17 products in the block!");
+
+        stHomePage.selectLanguage_RTL();
+        WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
+        tab_OnSaleRTL.click();
+
+        int numRTL = 5;
+        while (true) {
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
+                WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
+
+                Actions scroll = new Actions(DriverProvider.getDriver());
+                scroll.moveToElement(tab_OnSaleRTL);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.perform();
+                button_ShowMore.click();
+
+                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock (RTL) " + numRTL);
+                numRTL++;
+            } else {
+                break;
+            }
+        }
+
+        softAssert.assertAll();
+        System.out.println("ProductBlock_GridMore_Var1 passed successfully!");
     }
 }

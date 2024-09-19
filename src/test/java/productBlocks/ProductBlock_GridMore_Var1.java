@@ -56,8 +56,10 @@ import java.util.List;
 Эффект увеличения ячейки при наведении          -- y
 Насыщенность шрифта для названия товара         -- Нормальный
 
-4) Настраиваем налог для всех товаров + CS-Cart настройки -- Внешний вид:
-Показывать цены с налогом на страницах категорий и товаров-- y
+4) Настраиваем налог для всех товаров
+
+5) CS-Cart настройки -- Внешний вид:
+Показывать цены с налогом на страницах категорий и товаров  -- y
 */
 
 public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
@@ -73,6 +75,8 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(4))
+                .until(ExpectedConditions.elementToBeClickable(csCartSettings.button_SettingsOfTemplate));
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
@@ -302,7 +306,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
 
-        int numRTL = 5;
+        int numRTL = 1;
         while (true) {
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {

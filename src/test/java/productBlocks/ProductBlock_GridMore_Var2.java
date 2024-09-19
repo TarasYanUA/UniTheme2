@@ -44,27 +44,29 @@ import java.util.List;
 Отображать код товара                           -- y
 Отображать статус наличия                       -- y
 Отображать модификатор количества               -- n
-Отображать кнопку "Купить"                      -- Только иконка корзины    !!!!!!!!здесь ОСТАНОВИЛСЯ
-Дополнительная информация о товаре              -- Краткое описание и характеристики
-Отображать дополнительную информацию при наведении -- y
-Отображать логотип бренда                       -- y
+Отображать кнопку "Купить"                      -- Только иконка корзины
+Дополнительная информация о товаре              -- Список характеристик и вариаций
+Отображать дополнительную информацию при наведении -- y     !!!!!!!!!!!изменить в тест-кейсе 3
+Отображать логотип бренда                       -- y        !!!!!!!!!!!изменить в тест-кейсе 3
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
-Тип обрамления товара в сетке                   -- Рамка с внешними отступами
-Добавить фон/маску для изображений товара       -- n
-Использовать выравнивание элементов в товарной сетке --	y
-Эффект увеличения ячейки при наведении          -- y
-Насыщенность шрифта для названия товара         -- Нормальный
+Тип обрамления товара в сетке                   -- Рамка с внешними отступами   !!!!!!!!!!!изменить в тест-кейсе 3
+Добавить фон/маску для изображений товара       -- y
+Использовать выравнивание элементов в товарной сетке --	y   !!!!!!!!!!!изменить в тест-кейсе 3
+Эффект увеличения ячейки при наведении          -- n
+Насыщенность шрифта для названия товара         -- Жирный
 
-4) Настраиваем налог для всех товаров + CS-Cart настройки -- Внешний вид:
-Показывать цены с налогом на страницах категорий и товаров-- y
+4) Настраиваем налог для всех товаров
+
+5) CS-Cart настройки -- Внешний вид:
+Показывать цены с налогом на страницах категорий и товаров  -- y
 */
 
 public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
 
     @Test(priority = 1)
-    public void setConfigurationsForProductBlock_GridMore_Var1() {
+    public void setConfigurationsForProductBlock_GridMore_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
         //Настраиваем блок товаров "Распродажа"
@@ -73,6 +75,8 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(4))
+                .until(ExpectedConditions.elementToBeClickable(csCartSettings.button_SettingsOfTemplate));
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
@@ -136,7 +140,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
             checkboxSettingShowQuantityChanger.click();
         }
         themeSettingsProductLists.selectSettingShowAddToCartButton("icon_button");
-        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
+        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_variations");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
             checkboxSettingShowAdditionalInformationOnHover.click();
@@ -154,17 +158,17 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
         colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
-        if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
+        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
         }
         colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("use");
-        if (!colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected()) {
+        if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected()) {
             colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
         }
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("normal");
+        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //п.4.1 Настраиваем налог для всех товаров
+        //Настраиваем налог для всех товаров
         csCartSettings.navigateToCheckoutSettings();
         csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
         csCartSettings.clickSaveButtonOfSettings();
@@ -185,7 +189,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
             csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
         }
 
-        //п.4.2 Работаем с CS-Cart настройками
+        //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
         if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
@@ -194,8 +198,8 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         }
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")
-    public void checkProductBlock_GridMore_Var1() {
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var2")
+    public void checkProductBlock_GridMore_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -226,7 +230,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 scroll.perform();
                 button_ShowMore.click();
 
-                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock " + num);
+                takeScreenShot("ProductBlock_GridMore_Var2 - ProductBlock " + num);
                 num++;
             } else {
                 break;
@@ -249,9 +253,9 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
                 "There is no button 'Add to comparison list' in the product block!");
 
-        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed when hovering over a product cell in the product block!");
+        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
+        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
+                "Buttons are displayed when hovering over a product cell but should be displayed at once in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
@@ -277,12 +281,12 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly.isEmpty(),
                 "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
 
-        //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
+        //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID +"'] .product-description")).isEmpty()
-                        && !DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty(),
-                "Additional information about products is not 'Short description and features' in the block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty()
+                && !DriverProvider.getDriver().findElements(By
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-lv__item-features")).isEmpty(),
+                "Additional information about products is not 'Features and Variations list' in the block!");
 
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
@@ -301,7 +305,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
 
-        int numRTL = 5;
+        int numRTL = 1;
         while (true) {
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
@@ -313,7 +317,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 scroll.perform();
                 button_ShowMore.click();
 
-                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock (RTL) " + numRTL);
+                takeScreenShot("ProductBlock_GridMore_Var2 - ProductBlock (RTL) " + numRTL);
                 numRTL++;
             } else {
                 break;
@@ -321,6 +325,6 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         }
 
         softAssert.assertAll();
-        System.out.println("ProductBlock_GridMore_Var1 passed successfully!");
+        System.out.println("ProductBlock_GridMore_Var2 passed successfully!");
     }
 }

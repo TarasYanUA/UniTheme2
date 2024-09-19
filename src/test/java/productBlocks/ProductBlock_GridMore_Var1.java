@@ -168,7 +168,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("normal");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //п.4.1 Настраиваем налог для всех товаров
+        //Настраиваем налог для всех товаров
         csCartSettings.navigateToCheckoutSettings();
         csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
         csCartSettings.clickSaveButtonOfSettings();
@@ -189,7 +189,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
             csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
         }
 
-        //п.4.2 Работаем с CS-Cart настройками
+        //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
         if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {

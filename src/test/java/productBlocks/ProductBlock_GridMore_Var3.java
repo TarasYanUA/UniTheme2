@@ -24,21 +24,21 @@ import java.util.List;
 1) Настройки  блока товаров "Распродажа"
 Шаблон                      -- AB: Сетка (с кнопкой "Показать ещё")
 Показать номер элемента     -- n
-Количество колонок в списке -- 4
+Количество колонок в списке -- 3
 Тип загрузки                -- По клику
 Заполнение                  -- Товары со скидкой
-Макс. число элементов       -- 15
+Макс. число элементов       -- 7
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 3
-Отображать цену вверху                          -- n    !!!!!!!!!!!изменить в тест-кейсе 3
-Отображать пустые звёзды рейтинга товара        -- n
+Формат отображения цен                          -- Вариант 1
+Отображать цену вверху                          -- y
+Отображать пустые звёзды рейтинга товара        -- y
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
 Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
-Отображать "Вы экономите"                       -- Полный вид
+Отображать "Вы экономите"                       -- Полный вид ?????????
 
 2.2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Сетка"
 Отображать код товара                           -- y
@@ -62,7 +62,7 @@ import java.util.List;
 Показывать цены с налогом на страницах категорий и товаров  -- y
 */
 
-public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLazyLoadFromSection {
+public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
 
     @Test(priority = 1)
@@ -80,11 +80,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
-        csCartSettings.clickAndType_Field_NumberOfColumnsInList("4");
+        csCartSettings.clickAndType_Field_NumberOfColumnsInList("3");
         csCartSettings.selectSetting_LoadingType("onclick");
         csCartSettings.tabOfBlock_Content.click();
         csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("15");
+        csCartSettings.clickAndType_Field_Limit("7");
         csCartSettings.tabOfBlock_BlockSettings.click();
         if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
             csCartSettings.checkbox_HideAddToCartButton.click();
@@ -101,13 +101,13 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
-        if (checkboxPriceAtTheTop.isSelected()) {
+        if (!checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
-        if (checkboxProductRating.isSelected()) {
+        if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
@@ -124,7 +124,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         }
         if(themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
             themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("full");
+        themeSettingsProductLists.selectSettingShowYouSave("short");
 
         //Работаем с настройками темы п.2.2
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
@@ -297,10 +297,10 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is no product logo in the product block!");
 
-        //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)
+        //Проверяем, что Максимальное число элементов -- 7 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 15,
-                "Max number of products increases 15 products in the block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 7,
+                "Max number of products increases 7 products in the block!");
 
         stHomePage.selectLanguage_RTL();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));

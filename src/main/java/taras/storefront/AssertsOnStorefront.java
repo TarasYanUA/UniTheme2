@@ -42,7 +42,10 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> buttonsAreDisplayedOnHover; //Настройка "Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара"
 
     @FindBy(css = "span.ty-save-price")
-    public List<WebElement> text_YouSave;       //Настройка "Отображать "Вы экономите"
+    public List<WebElement> text_YouSave_Full;       //Настройка "Отображать "Вы экономите -- Полный вид"
+
+    @FindBy(css = ".ut2-sld-short span.ty-save-price")
+    public List<WebElement> text_YouSave_Short;       //Настройка "Отображать "Вы экономите -- Сокращенный вид"
 
     @FindBy(css = ".ty-control-group__label")
     public List<WebElement> productCode;        //Настройка "Отображать код товара"

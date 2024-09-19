@@ -116,9 +116,10 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is no product logo in the product block!");
 
-        //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
-                "There is no text 'You save' in the product block!");
+        //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
+                && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+                "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.galleryOgMiniIcons_Dots.isEmpty(),
@@ -141,9 +142,10 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is no product logo on the category page!");
 
-        //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
-                "There is no text 'You save' on the category page!");
+        //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
+                        && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+                "The text 'You save' is not Full or missed on the category page!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.galleryOgMiniIcons_Dots.isEmpty(),

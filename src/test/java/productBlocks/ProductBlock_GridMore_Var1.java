@@ -124,7 +124,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         }
         if(!themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
             themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("full");
+        themeSettingsProductLists.selectSettingShowYouSave("short");
 
         //Работаем с настройками темы п.2.2
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
@@ -257,9 +257,9 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
                 "Buttons are not displayed when hovering over a product cell in the product block!");
 
-        //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave.isEmpty(),
-                "There is no text 'You save' in the product block!");
+        //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),
+                "The text 'You save' is not Short or missed in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),

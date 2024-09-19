@@ -87,7 +87,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         if (!checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }

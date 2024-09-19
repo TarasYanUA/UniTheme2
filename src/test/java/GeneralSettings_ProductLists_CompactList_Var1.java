@@ -49,7 +49,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }

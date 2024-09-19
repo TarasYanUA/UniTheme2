@@ -1,8 +1,10 @@
 package taras.storefront;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
 import java.util.List;
 
@@ -47,11 +49,16 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-sld-short span.ty-save-price")
     public List<WebElement> text_YouSave_Short;       //Настройка "Отображать "Вы экономите -- Сокращенный вид"
 
-    @FindBy(css = ".ty-control-group__label")
+    @FindBy(css = "label[id*='sku_']")
     public List<WebElement> productCode;        //Настройка "Отображать код товара"
     
     @FindBy(css = ".ty-qty-in-stock.ty-control-group__item")
     public List<WebElement> availabilityStatus; //Настройка "Отображать статус наличия"
+    // Динамический поиск по переменной blockID
+    public List<WebElement> getAvailabilityStatus(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-qty-in-stock.ty-control-group__item"));
+    }
     
     @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
     public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества"

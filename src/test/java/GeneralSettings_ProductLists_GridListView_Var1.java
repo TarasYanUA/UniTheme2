@@ -58,7 +58,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
@@ -127,11 +127,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
-                "Buttons are displayed without mouse hover in the product block!");
+                "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
-                "There is no product logo in the product block!");
+                "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),
@@ -163,11 +163,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
-                "Buttons are displayed without mouse hover on the category page!");
+                "Additional information is displayed without mouse hover on the category page!");
 
         //Проверяем, что логотип бренда присутствует
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
-                "There is no product logo on the category page!");
+                "There is no brand logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),

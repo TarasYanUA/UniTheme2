@@ -23,7 +23,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(css = "input[id='settings.abt__ut2.product_list.price_position_top']")
     public WebElement settingPriceAtTheTop;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating']")
-    public WebElement settingProductRating;
+    public WebElement settingEmptyStarsOfProductRating;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.show_rating_num']")
     public WebElement settingCommonValueOfProductRating;
     @FindBy(id = "settings.abt__ut2.product_list.show_cart_status")

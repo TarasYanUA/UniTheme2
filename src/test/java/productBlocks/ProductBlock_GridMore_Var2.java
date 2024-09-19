@@ -106,7 +106,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         if (checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = themeSettingsProductLists.settingProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
@@ -291,11 +291,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
-                "Buttons are displayed without mouse hover in the product block!");
+                "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
-                "There is no product logo in the product block!");
+                "There is no brand logo in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

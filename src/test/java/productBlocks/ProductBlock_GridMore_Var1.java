@@ -50,7 +50,7 @@ import java.util.List;
 Отображать логотип бренда                       -- y
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
-Тип обрамления товара в сетке                   -- Рамка с внешними отступами
+Тип обрамления товара в сетке                   -- Рамка с внешними отступами   !!!!!!!!!!!!!!!!!!
 Добавить фон/маску для изображений товара       -- n
 Использовать выравнивание элементов в товарной сетке --	y
 Эффект увеличения ячейки при наведении          -- y
@@ -60,6 +60,12 @@ import java.util.List;
 
 5) CS-Cart настройки -- Внешний вид:
 Показывать цены с налогом на страницах категорий и товаров  -- y
+
+ДОБАВИТЬ ЕЩЁ:
+Настройки темы -- Списки товаров -- Отображать стандартную галерею изображений
+Переключать изображение товара при движении мышки -- ВСЕГДА ВЫКЛ
+Модуль "Промоакции": включить настройку для отображения примененных промо-акций
+
 */
 
 public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
@@ -73,10 +79,10 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
+        System.out.println("ID блока товаров 'Распродажа': " + blockID);
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(4))
-                .until(ExpectedConditions.elementToBeClickable(csCartSettings.button_SettingsOfTemplate));
+        makePause();
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
@@ -220,13 +226,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         int num = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
                 scroll.perform();
                 button_ShowMore.click();
 
@@ -308,13 +314,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         int numRTL = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
                 scroll.perform();
                 button_ShowMore.click();
 

@@ -27,7 +27,7 @@ import java.util.List;
 Количество колонок в списке -- 6
 Тип загрузки                -- По клику
 Заполнение                  -- Товары со скидкой
-Макс. число элементов       -- 7
+Макс. число элементов       -- 13
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
@@ -73,10 +73,10 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
+        System.out.println("ID блока товаров 'Распродажа': " + blockID);
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(4))
-                .until(ExpectedConditions.elementToBeClickable(csCartSettings.button_SettingsOfTemplate));
+        makePause();
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
@@ -84,7 +84,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         csCartSettings.selectSetting_LoadingType("onclick");
         csCartSettings.tabOfBlock_Content.click();
         csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("7");
+        csCartSettings.clickAndType_Field_Limit("13");
         csCartSettings.tabOfBlock_BlockSettings.click();
         if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
             csCartSettings.checkbox_HideAddToCartButton.click();
@@ -220,13 +220,13 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
         int num = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 500);
                 scroll.perform();
                 button_ShowMore.click();
 
@@ -298,10 +298,10 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         softAssert.assertFalse(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is a brand logo but shouldn't in the product block!");
 
-        //Проверяем, что Максимальное число элементов -- 7 (не превышает это значение)
+        //Проверяем, что Максимальное число элементов -- 13 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 7,
-                "Max number of products increases 7 products in the block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 13,
+                "Max number of products increases 13 products in the block!");
 
         stHomePage.selectLanguage_RTL();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
@@ -309,13 +309,13 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
         int numRTL = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 500);
                 scroll.perform();
                 button_ShowMore.click();
 

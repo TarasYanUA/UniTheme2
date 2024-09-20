@@ -32,7 +32,7 @@ import java.util.List;
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Формат отображения цен                          -- Вариант 3
-Отображать цену вверху                          -- n    !!!!!!!!!!!изменить в тест-кейсе 3
+Отображать цену вверху                          -- n
 Отображать пустые звёзды рейтинга товара        -- n
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
@@ -46,13 +46,13 @@ import java.util.List;
 Отображать модификатор количества               -- n
 Отображать кнопку "Купить"                      -- Только иконка корзины
 Дополнительная информация о товаре              -- Список характеристик и вариаций
-Отображать дополнительную информацию при наведении -- y     !!!!!!!!!!!изменить в тест-кейсе 3
-Отображать логотип бренда                       -- y        !!!!!!!!!!!изменить в тест-кейсе 3
+Отображать дополнительную информацию при наведении -- y
+Отображать логотип бренда                       -- y
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
-Тип обрамления товара в сетке                   -- Рамка с внешними отступами   !!!!!!!!!!!изменить в тест-кейсе 3
+Тип обрамления товара в сетке                   -- Рамка с внешними отступами
 Добавить фон/маску для изображений товара       -- y
-Использовать выравнивание элементов в товарной сетке --	y   !!!!!!!!!!!изменить в тест-кейсе 3
+Использовать выравнивание элементов в товарной сетке --	y
 Эффект увеличения ячейки при наведении          -- n
 Насыщенность шрифта для названия товара         -- Жирный
 
@@ -73,10 +73,10 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
+        System.out.println("ID блока товаров 'Распродажа': " + blockID);
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(4))
-                .until(ExpectedConditions.elementToBeClickable(csCartSettings.button_SettingsOfTemplate));
+        makePause();
         csCartSettings.button_SettingsOfTemplate.click();
         if (csCartSettings.checkbox_ShowItemNumber.isSelected())
             csCartSettings.checkbox_ShowItemNumber.click();
@@ -220,13 +220,13 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         int num = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
                 scroll.perform();
                 button_ShowMore.click();
 
@@ -308,13 +308,13 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         int numRTL = 1;
         while (true) {
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.xpath("(//span[contains(@id, 'ut2_load_more_block_')])[3]"));
+            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
                 scroll.perform();
                 button_ShowMore.click();
 

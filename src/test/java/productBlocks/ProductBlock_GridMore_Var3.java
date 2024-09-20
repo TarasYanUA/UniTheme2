@@ -48,6 +48,7 @@ import java.util.List;
 Дополнительная информация о товаре              -- Список характеристик и вариаций
 Отображать дополнительную информацию при наведении -- y
 Отображать логотип бренда                       -- n
+Отображать стандартную галерею изображений      -- Не переключать
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
 Тип обрамления товара в сетке                   -- Рамка без внешних отступов
@@ -149,6 +150,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         if (checkboxSettingShowBrandLogo.isSelected()) {
             checkboxSettingShowBrandLogo.click();
         }
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

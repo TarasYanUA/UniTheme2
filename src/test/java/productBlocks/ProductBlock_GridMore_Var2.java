@@ -48,6 +48,8 @@ import java.util.List;
 Дополнительная информация о товаре              -- Список характеристик и вариаций
 Отображать дополнительную информацию при наведении -- y
 Отображать логотип бренда                       -- y
+Показывать галерею мини-иконок товара в товарном списке -- Навигация точками
+Переключать изображение товара при движении мышки-- Не переключать (нужно для настройки выше)
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
 Тип обрамления товара в сетке                   -- Рамка с внешними отступами
@@ -149,6 +151,8 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         if (!checkboxSettingShowBrandLogo.isSelected()) {
             checkboxSettingShowBrandLogo.click();
         }
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -296,6 +300,10 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         //Проверяем, что логотип бренда присутствует
         softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
                 "There is no brand logo in the product block!");
+
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        softAssert.assertTrue(!assertsOnStorefront.galleryOgMiniIcons_Dots.isEmpty(),
+                "Gallery of mini icons is not with points in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

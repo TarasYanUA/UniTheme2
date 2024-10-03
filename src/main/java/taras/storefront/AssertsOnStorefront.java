@@ -22,14 +22,14 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-show-rating-num")
     public List<WebElement> commonValueOfProductRating; //Настройка "Отображать общее значение рейтинга товара"
 
-    @FindBy(css = "a.ut2-added-to-cart")
+    @FindBy(css = "a.ut2-added-to-cart")    //Устарело. Смотреть в текст-кейсе "GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"
     public List<WebElement> statusesForButton_AddToCart_Icon;   //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
 
-    @FindBy(css = "a.ut2-added-to-cart[data-added-amount='1']")
+    @FindBy(css = ".ut2-added-to-cart[data-added-amount='1']")
     public List<WebElement> statusesForButton_AddToCart_Number; //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"
 
     @FindBy(css = "a.ut2-add-to-wish.active")
-    public List<WebElement> statusesForButton_AddToWishList;        //Настройка "Отображать статусы для кнопок "Добавить в избранное"...
+    public List<WebElement> statusesForButton_AddToWishList;        //Настройка "Отображать статусы для кнопок... "Добавить в избранное"
 
     @FindBy(css = "a.ut2-add-to-wish.active")
     public List<WebElement> statusesForButton_AddToComparisonList;  //Настройка "Отображать статусы для кнопок... "Добавить в список сравнения"

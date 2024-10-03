@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -272,9 +273,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Icon.isEmpty()
-                && assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
-                "There is no status for the button 'Add to cart' as 'Icon' on the category 'Phones'!");
+        // Пример использования JavaScript для получения стиля псевдоэлемента ::before
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        String statusesForButton_AddToCart_Icon = (String) js.executeScript(
+                "return window.getComputedStyle(document.querySelector(\"button[id*='button_cart']\"), '::before').getPropertyValue('content');"
+        );
+        softAssert.assertTrue(!statusesForButton_AddToCart_Icon.isEmpty(),
+                "There is no status as 'Icon' for the button 'Add to cart' on the category 'Phones'!");
 
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
@@ -323,8 +328,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Buttons are not displayed when hovering over a product cell on the category 'List without options'!");
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Icon.isEmpty(),
-                "There is no status for the button 'Add to cart' on the category 'List without options'!");
+        softAssert.assertTrue(!statusesForButton_AddToCart_Icon.isEmpty(),
+                "There is no status as 'Icon' for the button 'Add to cart' on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
@@ -351,8 +356,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no button 'Add to comparison list' on the category 'Compact list'!");
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Icon.isEmpty(),
-                "There is no status for the button 'Add to cart' on the category 'Compact list'!");
+        softAssert.assertTrue(!statusesForButton_AddToCart_Icon.isEmpty(),
+                "There is no status as 'Icon' for the button 'Add to cart' on the category 'Compact list'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),

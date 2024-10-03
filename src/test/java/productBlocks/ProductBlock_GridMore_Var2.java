@@ -21,7 +21,7 @@ import java.time.Duration;
 import java.util.List;
 
 /*
-1) Настройки  блока товаров "Распродажа"
+1) Настройки блока товаров "Распродажа"
 Шаблон                      -- AB: Сетка (с кнопкой "Показать ещё")
 Показать номер элемента     -- n
 Количество колонок в списке -- 4
@@ -75,7 +75,6 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        System.out.println("ID блока товаров 'Распродажа': " + blockID);
         csCartSettings.navigateToBlockSettings("Распродажа");
         csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
         makePause();

@@ -91,12 +91,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         section_Checkout.click();
     }
 
-    private Select getSetting_TaxCalculationMethodBasedOn() {
-        return new Select(setting_TaxCalculationMethodBasedOn);
-    }
-
     public void selectSetting_TaxCalculationMethodBasedOn(String value) {
-        getSetting_TaxCalculationMethodBasedOn().selectByValue(value);
+        new Select(setting_TaxCalculationMethodBasedOn).selectByValue(value);
     }
 
     //Меню "Настройки -- Налоги"
@@ -214,13 +210,13 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Модули -- Скачанные модули"
     @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
     private WebElement themeSectionsOnPage_DownloadedAddons;
-    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.settings']")
+    @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.settings']")
     private WebElement themeSettings;
     @FindBy(css = ".nav-tabs #products")
     public WebElement tab_Product;
     @FindBy(css = "#product_list")
     private WebElement tab_ProductLists;
-    @FindBy(css = "div[class=\"btn-group dropleft open\"] a[href$='abt__ut2.less_settings']")
+    @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.less_settings']")
     private WebElement colorSchemeSettings;
 
     public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists() {

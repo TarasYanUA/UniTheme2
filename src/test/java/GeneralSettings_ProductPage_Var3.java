@@ -146,9 +146,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
                 "There is no product code!");
 
-        //Проверяем, что текст "Вы экономите" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
-                "There is no text 'You save' on the product page!");
+        //Проверяем, что текст "Вы экономите" отсутствует
+        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+                "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_248")).isEmpty(),

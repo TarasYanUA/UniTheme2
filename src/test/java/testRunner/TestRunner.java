@@ -83,6 +83,8 @@ public class TestRunner {
 
     public String getBlockID(String blockName) {
         String getBlockID = DriverProvider.getDriver().findElement(By.cssSelector("div[title='" + blockName + "'] small[data-ca-block-manager='block_id']")).getText();
-        return getBlockID.trim().split("#")[1];
+        String blockID = getBlockID.trim().split("#")[1];
+        System.out.println("ID блока '" + blockName + "': " + blockID);
+        return blockID;
     }
 }

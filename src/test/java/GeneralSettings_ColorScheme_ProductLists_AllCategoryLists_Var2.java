@@ -186,9 +186,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
                 "There is no button 'Add to comparison list' in the product block!");
 
-        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed when hovering over a product cell in the product block!");
+        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
+        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
+                "Buttons are not displayed at once, but only when hovering over a product cell in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
@@ -221,8 +221,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no button 'Add to comparison list' on the category 'Woman cloth'!");
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed when hovering over a product cell on the category 'Woman cloth'!");
+        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
+                "Buttons are not displayed at once but only when hovering over a product cell on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),

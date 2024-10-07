@@ -130,7 +130,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement section_Categories;
     @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
     public WebElement gearwheelOnCategoryPage;
-    @FindBy(css = "a[href$='categories.m_add']")
+    @FindBy(css = "a[href*='dispatch=categories.m_add']")
     public WebElement button_AddBulkCategory;
     @FindBy(css = "select[name='categories_data[0][parent_id]']")
     public WebElement categoryLocation;

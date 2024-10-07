@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 public class MainMenuSettings extends AbstractPage {
     public MainMenuSettings(){super();}
 
@@ -95,7 +98,7 @@ public class MainMenuSettings extends AbstractPage {
     public WebElement setting_Activate3LevelMenu;
     @FindBy(css = ".ui-dialog-content input[name='dispatch[static_data.update]']")
     public WebElement button_Save3LevelMenu;
-    @FindBy(css = "#on_item_255 .icon-caret-right")
+    @FindBy(css = "span[id*='on_item_'] .icon-caret-right")
     public WebElement arrowOfCategory;
     @FindBy(css = "a[data-ca-external-click-id='opener_group256']")
     public WebElement categoryComputers;
@@ -114,10 +117,24 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = ".content-variant-wrap a[name='ru']")
     private WebElement languageRU;
     public void selectLanguage_RTL(){
+        try {
+            List<WebElement> notificationElements = driver.findElements(By.cssSelector(".close.cm-notification-close"));
+            if (!notificationElements.isEmpty() && notificationElements.getFirst().isDisplayed()) {
+                notificationElements.getFirst().click();
+            }
+        } catch (NoSuchElementException e) {
+        }
         languageButton.click();
         languageRTL.click();
     }
     public void selectLanguage_RU(){
+        try {
+            List<WebElement> notificationElements = driver.findElements(By.cssSelector(".close.cm-notification-close"));
+            if (!notificationElements.isEmpty() && notificationElements.getFirst().isDisplayed()) {
+                notificationElements.getFirst().click();
+            }
+        } catch (NoSuchElementException e) {
+        }
         languageButton.click();
         languageRU.click();
     }

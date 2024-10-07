@@ -67,8 +67,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
-        if(!DriverProvider.getDriver().findElements(By.xpath("//a[text() = 'AutoTestCategory']")).isEmpty()
-                || DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
             csCartSettings.gearwheelOnCategoryPage.click();
             csCartSettings.button_AddBulkCategory.click();
             csCartSettings.selectCategoryLocation_Computers();

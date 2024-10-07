@@ -17,7 +17,7 @@ import java.time.Duration;
 * Добавляем много категорий в третий уровень Fly меню
 * Добавляем банер в третий уровень Fly меню
 
-Горизонтальное меню + Колоночное заполнение + 3-х уровневое меню
+Вертикальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 4
 + Кол-во отображаемых элементов во 2-м уровне меню -- 75
 + Кол-во отображаемых элементов в 3-м уровне меню -- 75
@@ -48,7 +48,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         mainMenuSettings.arrowOfCategory.click();
         mainMenuSettings.categoryComputers.click();
         mainMenuSettings.menuTab_ABUniTheme2.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
+        if(DriverProvider.getDriver().findElements(By.cssSelector("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/electronics-bg-menu.jpg\"></p>")).isEmpty()) {
             mainMenuSettings.button_Html.click();
             mainMenuSettings.clickAndType_Field_HtmlContent();
         }
@@ -66,8 +66,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
-        if(!DriverProvider.getDriver().findElements(By.xpath("//a[text() = 'AutoTestCategory']")).isEmpty()
-                || DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
             csCartSettings.gearwheelOnCategoryPage.click();
             csCartSettings.button_AddBulkCategory.click();
             csCartSettings.selectCategoryLocation_Computers();
@@ -130,6 +129,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
                 "There is no button 'More [category]' in the third level of the menu!");
+        //Проверяем, что на третьем уровне меню присутствует баннер
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_banner.isEmpty(),
                 "There is no banner in the third level of the menu!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();

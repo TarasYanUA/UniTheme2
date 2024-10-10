@@ -7,14 +7,7 @@
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed some bugs in my tests for MENU.&#10;Adapted some code of MENU tests to the newest theme version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,9 +139,11 @@
     "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
     "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
     "TestNG.Menu03_Horizontal_RowFilling_4columns.executor": "Run",
+    "TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor": "Run",
     "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
     "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
     "TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor": "Run",
+    "TestNG.Menu50_FlyMenu_Var1.executor": "Run",
     "TestNG.ProductBlock_GridMore_Var1.executor": "Run",
     "TestNG.ProductBlock_GridMore_Var2.executor": "Run",
     "TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor": "Run",
@@ -188,23 +183,17 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Menu50_FlyMenu_Var1">
+    <configuration name="Menu21_Vertical_ColumnFilling_5columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <option name="METHOD_NAME" value="checkProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu21_Vertical_ColumnFilling_5columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -263,21 +252,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu50_FlyMenu_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
+      <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
       <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
       <item itemvalue="TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
       <item itemvalue="TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu50_FlyMenu_Var1" />
+        <item itemvalue="TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView" />
         <item itemvalue="TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
         <item itemvalue="TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
         <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -647,7 +653,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -50,7 +50,7 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> flyMenu_title;
     @FindBy(css = ".img .ut2-lfl-icon")
     public List<WebElement> flyMenu_iconsOfSecondLevel;
-    @FindBy(css = ".ty-menu-item__electronics div[class='ut2-lsl with-pic']")
+    @FindBy(css = ".ty-menu-item__electronics div[class*='ut2-lsl with-pic']:not(.ut2-lsl__show_more)")
     public List<WebElement> flyMenu_NumberOfElements_SecondLevel;
     @FindBy(css = ".ty-menu-item__electronics div[class='ut2-lsl with-pic ut2-lsl__more']")
     public List<WebElement> flyMenu_NumberOfElements_SecondLevelWithButtonMore;

@@ -215,6 +215,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
+        makePause();
 
         //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
@@ -312,6 +313,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         stHomePage.selectLanguage_RTL();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
+        makePause();
 
         int numRTL = 1;
         while (true) {

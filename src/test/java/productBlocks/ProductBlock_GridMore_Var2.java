@@ -215,6 +215,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
+        makePause();
 
         //Проверяем, что у блока товаров 4 колонки. Настройка блока "Количество колонок в списке -- 4"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
@@ -229,7 +230,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 550);
                 scroll.perform();
                 button_ShowMore.click();
 
@@ -312,6 +313,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         stHomePage.selectLanguage_RTL();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
+        makePause();
 
         int numRTL = 1;
         while (true) {
@@ -321,7 +323,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 550);
                 scroll.perform();
                 button_ShowMore.click();
 

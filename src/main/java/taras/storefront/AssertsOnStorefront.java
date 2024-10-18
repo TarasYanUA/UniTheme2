@@ -9,7 +9,9 @@ import taras.constants.DriverProvider;
 import java.util.List;
 
 public class AssertsOnStorefront extends AbstractPage {
-    public AssertsOnStorefront(){super();}
+    public AssertsOnStorefront() {
+        super();
+    }
 
     //Настройки темы -- вкладка "Списки товаров"
 
@@ -22,7 +24,8 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-show-rating-num")
     public List<WebElement> commonValueOfProductRating; //Настройка "Отображать общее значение рейтинга товара"
 
-    @FindBy(css = "a.ut2-added-to-cart")    //Устарело. Смотреть в текст-кейсе "GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"
+    @FindBy(css = "a.ut2-added-to-cart")
+    //Устарело. Смотреть в текст-кейсе "GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"
     public List<WebElement> statusesForButton_AddToCart_Icon;   //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
 
     @FindBy(css = ".ut2-added-to-cart[data-added-amount='1']")
@@ -51,15 +54,16 @@ public class AssertsOnStorefront extends AbstractPage {
 
     @FindBy(css = "label[id*='sku_']")
     public List<WebElement> productCode;        //Настройка "Отображать код товара"
-    
+
     @FindBy(css = ".ty-qty-in-stock.ty-control-group__item")
     public List<WebElement> availabilityStatus; //Настройка "Отображать статус наличия"
+
     // Динамический поиск по переменной blockID
     public List<WebElement> getAvailabilityStatus(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-qty-in-stock.ty-control-group__item"));
     }
-    
+
     @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
     public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества"
 
@@ -84,7 +88,15 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")
     public List<WebElement> switchProductImage_WithStripes; //Настройка "Переключать изображение товара при движении мышки -- с полосками"
 
-    
+
+    //Настройки темы -- вкладка "Товар"
+
+    @FindBy(css = ".ut2-pb__product-brand-name")
+    public List<WebElement> showProductBrandInformation_Name;   //Настройка "Отображать информацию о бренде товара -- Отображать название бренда товара"
+
+    @FindBy(css = ".images-2")
+    public List<WebElement> numberOfDisplayedImagesOfProductGallery_2;  //Настройка "Количество отображаемых изображений галереи товара"
+
 
     //Настройки -- Общие настройки -- Внешний вид
 
@@ -92,5 +104,21 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> pricesWithTaxes; //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
 
     @FindBy(css = ".ty-icon-right-open-thin")
-    public List<WebElement> miniThumbnailImagesAsGallery;   //Настройка "Показывать мини-иконки в виде галереи"
+    public List<WebElement> miniThumbnailImagesAsGallery;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
+
+    @FindBy(css = ".ty-product-thumbnails")
+    public List<WebElement> miniThumbnailImages_NotGallery; //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
+
+
+    //Настройки на странице редактирования товара
+
+    @FindBy(css = ".ut2-pb__short-descr")
+    public List<WebElement> product_ShortDescription;    //Настройка "Краткое описание"
+
+    @FindBy(css = ".ut2-pb__note")
+    public List<WebElement> product_PromoText;          //Настройка "Промо-текст"
+
+    @FindBy(css = ".ty-reward-group")
+    public List<WebElement> product_allowPaymentByPoints;   //Вкладка "Бонусные баллы" -- Настройка "Разрешить оплату баллами"
+
 }

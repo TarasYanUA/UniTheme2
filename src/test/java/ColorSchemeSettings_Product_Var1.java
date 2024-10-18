@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import org.openqa.selenium.interactions.Actions;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import testRunner.TestRunner;
 
@@ -32,7 +33,7 @@ import java.time.Duration;
     * Бонусные баллы --  да
     * Оптовые цены -- да
     * Краткое описание --   да
-    * шаблон страницы товара -- все 5 шт
+    * шаблон страницы товара -- 5 шт (кроме Каскадной галереи)
 */
 
 public class ColorSchemeSettings_Product_Var1 extends TestRunner {
@@ -124,34 +125,45 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
-        "Mini-icons are as a gallery but shouldn't!");
+        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_NotGallery.isEmpty(),
+        "Mini-icons are as a gallery but shouldn't on the product page!");
+
         //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
-                "There is no Brand name on product page!");
+        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty(),
+                "The feature Brand is not as Name on the product page!");
+
         //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
-                "There is no product Short description!");
+        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
+                "There is no product Short description on the product page!");
+
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
-                "There is no Promo-text!");
+        softAssert.assertTrue(!assertsOnStorefront.product_PromoText.isEmpty(),
+                "There is no Promo-text on the product page!");
+
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
-                "There is no Reward points!");
+        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
+                "There is no Reward points on the product page!");
+
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).isEmpty(),
-                "Number of displayed images of the product gallery is not 2!");
+        softAssert.assertTrue(!assertsOnStorefront.numberOfDisplayedImagesOfProductGallery_2.isEmpty(),
+                "Number of displayed images of the product gallery is not 2 on the product page!");
+
         takeScreenShot_withScroll("1200 ColorSchemeSettings_Product_Var1 - Default template");
         productPage.hoverToBlockWithProducts();
         makePause();
         productPage.buttonAddToCart_ProductWithOptions.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+
         //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).isEmpty(),
-        "There is no quantity changer in pop-up window of the product with options!");
+        "There is no quantity changer in pop-up window of the product with options on the product page!");
+
         takeScreenShot("1202 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
         productPage.closePopUpWindow.click();
         productPage.shiftLanguage_RTL();
@@ -198,6 +210,6 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1245 ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
         softAssert.assertAll();
-        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully!");
+        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully on the product page!");
     }
 }

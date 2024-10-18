@@ -2,7 +2,10 @@ package taras.constants;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,7 +35,13 @@ public class BrowserFactory {
         switch (browserType) {
             case CHROME:
                 System.setProperty(Constants.CHROME_DRIVER_PROPERTY, Constants.CHROME_DRIVER_PATH);
-                webDriver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                webDriver = new ChromeDriver(options);
+                break;
+            case EDGE:
+                System.setProperty(Constants.EDGE_DRIVER_PROPERTY, Constants.EDGE_DRIVER_PATH);
+                webDriver = new EdgeDriver();
                 break;
             case FIREFOX:
                 System.setProperty(Constants.FIREFOX_DRIVER_PROPERTY, Constants.FIREFOX_DRIVER_PATH);

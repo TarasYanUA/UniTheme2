@@ -293,11 +293,11 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
                 "Additional information about products is not 'Features and Variations list' in the block!");
 
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover on the category page!");
 
         //Проверяем, что логотип бренда отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.brandLogo.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
                 "There is a brand logo but shouldn't in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 13 (не превышает это значение)

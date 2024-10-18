@@ -65,28 +65,31 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
     @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
-    public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества"
+    public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества" (идентично на всех страницах)
 
     @FindBy(css = ".ut2-icon-use_icon_cart")
-    public List<WebElement> gridList__ShowAddToCartButton_IconOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только иконка корзины
+    public List<WebElement> gridList__ShowAddToCartButton_IconOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только иконка корзины"
 
     @FindBy(css = ".ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer")
-    public List<WebElement> gridList__ShowAddToCartButton_TextOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только текст
+    public List<WebElement> gridList__ShowAddToCartButton_TextOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только текст"
 
     @FindBy(css = "div[class='ut2-gl__body content-on-hover']")
-    public List<WebElement> additionalInformationOnHover;   //Настройка "Отображать дополнительную информацию при наведении"
+    public List<WebElement> gridList__AdditionalInformationOnHover;   //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
 
     @FindBy(css = ".brand-img")
-    public List<WebElement> brandLogo;          //Настройка "Отображать логотип бренда"
+    public List<WebElement> gridList__BrandLogo;          //Настройка "Вид списка "Сетка" -- "Отображать логотип бренда"
 
     @FindBy(css = ".owl-pagination")
-    public List<WebElement> galleryOgMiniIcons_Dots;    //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
+    public List<WebElement> gridList__GalleryOfMiniIcons_Dots;  //Настройка "Вид списка "Сетка" -- "Отображать стандартную галерею изображений -- Навигация точками"
 
     @FindBy(css = ".ut2-gl__body.content-on-hover .icon-right-circle")
-    public List<WebElement> galleryOgMiniIcons_Arrows;  //Настройка "Отображать стандартную галерею изображений -- Навигация стрелками"
+    public List<WebElement> gridList__GalleryOgMiniIcons_Arrows;//Настройка "Вид списка "Сетка" -- "Отображать стандартную галерею изображений -- Навигация стрелками"
 
     @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")
-    public List<WebElement> switchProductImage_WithStripes; //Настройка "Переключать изображение товара при движении мышки -- с полосками"
+    public List<WebElement> gridList__SwitchProductImage_WithStripes; //Настройка "Вид списка "Сетка" -- "Переключать изображение товара при движении мышки -- с полосками"
+
+    @FindBy(css = ".ut2-compact-list__buttons .ut2-icon-use_icon_cart")
+    public List<WebElement> compactList__ShowAddToCartButton;   //Настройка "Вид списка "Компактный список" -- Отображать кнопку "Купить"
 
 
     //Настройки темы -- вкладка "Товар"
@@ -104,19 +107,22 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> pricesWithTaxes; //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
 
     @FindBy(css = ".ty-icon-right-open-thin")
-    public List<WebElement> miniThumbnailImagesAsGallery;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
+    public List<WebElement> miniThumbnailImagesAsGallery_Enabled;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
 
     @FindBy(css = ".ty-product-thumbnails")
-    public List<WebElement> miniThumbnailImages_NotGallery; //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
+    public List<WebElement> miniThumbnailImages_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
+
+    @FindBy(css = "a[class*='ut2-quick-view-button']")
+    public List<WebElement> enableQuickView;    //Настройка "Включить быстрый просмотр"
 
 
     //Настройки на странице редактирования товара
 
     @FindBy(css = ".ut2-pb__short-descr")
-    public List<WebElement> product_ShortDescription;    //Настройка "Краткое описание"
+    public List<WebElement> product_ShortDescription;   //Настройка "Краткое описание"
 
     @FindBy(css = ".ut2-pb__note")
-    public List<WebElement> product_PromoText;          //Настройка "Промо-текст"
+    public List<WebElement> product_PromoText;  //Настройка "Промо-текст"
 
     @FindBy(css = ".ty-reward-group")
     public List<WebElement> product_allowPaymentByPoints;   //Вкладка "Бонусные баллы" -- Настройка "Разрешить оплату баллами"

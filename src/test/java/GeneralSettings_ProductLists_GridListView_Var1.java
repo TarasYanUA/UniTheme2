@@ -126,11 +126,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no quantity Changer in the product block!");
 
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
@@ -138,7 +138,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "The text 'You save' is not Short or missed in the product block!");
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Switch is not with stripes or there is no Switch at all in the product block!");
 
         takeScreenShot("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");
@@ -162,11 +162,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no quantity Changer on the category page!");
 
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.additionalInformationOnHover.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover on the category page!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.brandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
                 "There is no brand logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
@@ -174,7 +174,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "The text 'You save' is not Short or missed on the category page!");
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Switch is not with stripes or there is no Switch at all on the category page!");
 
         StCategoryPage stCategoryPage = new StCategoryPage();

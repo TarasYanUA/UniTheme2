@@ -45,7 +45,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         if (!checkboxAvailabilityStatus.isSelected()) {
             checkboxAvailabilityStatus.click();
         }
-        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
+        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityChanger;
         if (!checkboxQuantityModifier.isSelected()) {
             checkboxQuantityModifier.click();
         }

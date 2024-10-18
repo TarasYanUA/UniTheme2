@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
 import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Настройки -- Внешний вид":
@@ -65,7 +65,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         if (checkboxAvailabilityStatus.isSelected()) {
             checkboxAvailabilityStatus.click();
         }
-        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityCharger;
+        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityChanger;
         if (!checkboxQuantityModifier.isSelected()) {
             checkboxQuantityModifier.click();
         }
@@ -84,17 +84,19 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
-                "There is no quantity charger on the category page 'Compact list'!");
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+                "There is no quantity changer on the category page 'Compact list'!");
 
         //Проверяем, что Быстрый просмотр присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("a[class*='ut2-quick-view-button']")).isEmpty(),
-                "There is no button 'Quick view'!");
+        softAssert.assertTrue(!assertsOnStorefront.enableQuickView.isEmpty(),
+                "There is no button 'Quick view' on the category page 'Compact list'!");
         stCategoryPage.hoverToButtonAddToCart();
 
         //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-compact-list__buttons .ut2-icon-use_icon_cart")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton.isEmpty(),
                 "There is no button 'Add to cart' on the category page 'Compact list'!");
 
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");

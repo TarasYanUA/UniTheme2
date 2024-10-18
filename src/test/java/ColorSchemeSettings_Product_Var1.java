@@ -130,7 +130,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_NotGallery.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
         "Mini-icons are as a gallery but shouldn't on the product page!");
 
         //Проверяем, что название характеристики "Бренд" присутствует

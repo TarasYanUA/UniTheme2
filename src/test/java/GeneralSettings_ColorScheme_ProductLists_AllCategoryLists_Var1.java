@@ -176,7 +176,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров переключатель изображений с полосками
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Gallery of product images is not with Stripes in the product block!");
         
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
@@ -214,7 +214,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no decolorized product on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров переключатель изображений с полосками
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Gallery of product images is not with Stripes on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
@@ -248,7 +248,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.navigateToHorizontalMenu_Phones();
 
         //Проверяем, что у товаров переключатель изображений с полосками
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Gallery of product images is not with Stripes on the category 'Phones'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
@@ -308,7 +308,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stCategoryPage.clickListWithoutOptions_ProductListView();
 
         //Проверяем, что у товаров переключатель изображений с полосками
-        softAssert.assertTrue(!assertsOnStorefront.switchProductImage_WithStripes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Gallery of product images is not with Stripes on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга

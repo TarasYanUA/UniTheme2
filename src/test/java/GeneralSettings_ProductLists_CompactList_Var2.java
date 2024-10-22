@@ -1,14 +1,12 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
@@ -64,28 +62,30 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stCategoryPage.clickCompactList_ProductListView();
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что пустые звезды рейтинга присутствуют
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-rating-stars-empty")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
                 "There is no empty rating stars on the category page 'CompactList'!");
 
         //Проверяем, что общее значение рейтинга присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector("div[class*='ut2-show-rating-num']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
                 "There is no common value of product rating on the category page 'CompactList'!");
 
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-compact-list__content div[id*='product_code_']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.productCode_CompactList.isEmpty(),
                 "There is no product code on the category page 'CompactList'!");
 
         //Проверяем, что статус товара присутствует
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ty-compact-list__amount")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_CompactList.isEmpty(),
                 "There is no availability status on the category page 'CompactList'!");
 
         //Проверяем, что модификатор количества отсутствует по причине отсутствия кнопки "Купить"
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector("div[class*='cm-value-changer']")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.quantityChanger.isEmpty(),
                 "There is a quantity charger but shouldn't on the category page 'CompactList'!");
 
         //Проверяем, что кнопка "Купить" отсутствует
-        softAssert.assertTrue(getDriver().findElements(By.cssSelector(".ut2-compact-list__buttons .ut2-icon-use_icon_cart")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.compactList__ShowAddToCartButton.isEmpty(),
                 "There is the button 'Add to cart' but shouldn't on the category page 'CompactList'!");
 
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");

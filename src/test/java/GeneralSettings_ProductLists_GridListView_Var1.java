@@ -114,7 +114,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.productCode.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.productCode().isEmpty(),
                 "There is no product code in the product block!");
 
         //Проверяем, что статус наличия присутствует
@@ -149,8 +149,9 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
+
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.productCode.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.productCode_GridList().isEmpty(),
                 "There is no product code on the category page!");
 
         //Проверяем, что статус наличия присутствует

@@ -52,17 +52,41 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-sld-short span.ty-save-price")
     public List<WebElement> text_YouSave_Short;       //Настройка "Отображать "Вы экономите -- Сокращенный вид"
 
-    @FindBy(css = "label[id*='sku_']")
-    public List<WebElement> productCode;        //Настройка "Отображать код товара"
+
+    String productCode = " div[id*='product_code_']";    //Настройка "Отображать код товара"
+
+    public List<WebElement> productCode(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(productCode));
+    }
+
+    public List<WebElement> productCode_GridList(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(".ut2-gl__body" + productCode));
+    }
+
+    public List<WebElement> productCode_ListWithoutOptions(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-list" + productCode));
+    }
+
+    @FindBy(css = ".ty-compact-list__sku")
+    public List<WebElement> productCode_CompactList;
+
+    public List<WebElement> getProductCode(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + productCode));
+    }
+
 
     @FindBy(css = ".ty-qty-in-stock.ty-control-group__item")
     public List<WebElement> availabilityStatus; //Настройка "Отображать статус наличия"
+
+    @FindBy(css = ".ty-compact-list__amount")
+    public List<WebElement> availabilityStatus_CompactList;
 
     // Динамический поиск по переменной blockID
     public List<WebElement> getAvailabilityStatus(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-qty-in-stock.ty-control-group__item"));
     }
+
 
     @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
     public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества" (идентично на всех страницах)

@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed asserts from test-case &quot;ColorSchemeSettings_Product_Var1&quot; to the class &quot;AssertsOnStorefront&quot;.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed asserts from test-case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; to the class &quot;AssertsOnStorefront&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
@@ -173,6 +168,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -194,11 +190,11 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_CompactList_Var1">
-    <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_CompactList_Var2">
+    <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -264,7 +260,7 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
       <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
@@ -272,11 +268,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var2" />
         <item itemvalue="TestNG.Menu51_FlyMenu_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -646,7 +642,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finished adaptation to the newest theme version 4.18.1d." />
     <MESSAGE value="Updated pom.xml file." />
     <MESSAGE value="Adapted theme to the last version 4.18.2a." />
     <MESSAGE value="Added new setting to both test-cases &quot;ProductLists_ListWithoutOptions&quot;." />
@@ -690,7 +685,8 @@
     <MESSAGE value="Made some corrections according to the newest changes in the theme." />
     <MESSAGE value="Improved some code." />
     <MESSAGE value="Removed asserts from test-case &quot;ColorSchemeSettings_Product_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed asserts from test-case &quot;ColorSchemeSettings_Product_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed asserts from test-case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

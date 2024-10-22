@@ -1,6 +1,7 @@
 package taras.storefront;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
@@ -24,9 +25,12 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-show-rating-num")
     public List<WebElement> commonValueOfProductRating; //Настройка "Отображать общее значение рейтинга товара"
 
-    @FindBy(css = "a.ut2-added-to-cart")
-    //Устарело. Смотреть в текст-кейсе "GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"
-    public List<WebElement> statusesForButton_AddToCart_Icon;   //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
+    //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
+    //Использование JavaScript для получения стиля псевдоэлемента ::before
+    JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+    public String statusesForButton_AddToCart_Icon = (String) js.executeScript(
+            "return window.getComputedStyle(document.querySelector(\"button[id*='button_cart']\"), '::before').getPropertyValue('content');"
+    );
 
     @FindBy(css = ".ut2-added-to-cart[data-added-amount='1']")
     public List<WebElement> statusesForButton_AddToCart_Number; //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"

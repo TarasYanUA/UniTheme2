@@ -44,22 +44,16 @@ public class StHomePage extends AbstractPage {
     public void selectLanguage_RTL(){
         languageButton.click();
         languageRTL.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(languageButton).perform();
     }
     public void selectLanguage_RU(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(languageButton));
         languageButton.click();
         languageRU.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(languageButton).perform();
     }
 
     public void scrollToBlockWithProducts(){

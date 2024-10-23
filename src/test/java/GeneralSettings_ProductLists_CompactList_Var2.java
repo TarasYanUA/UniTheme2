@@ -81,7 +81,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
                 "There is no availability status on the category page 'CompactList'!");
 
         //Проверяем, что модификатор количества отсутствует по причине отсутствия кнопки "Купить"
-        softAssert.assertFalse(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.quantityChanger_CompactList().isEmpty(),
                 "There is a quantity charger but shouldn't on the category page 'CompactList'!");
 
         //Проверяем, что кнопка "Купить" отсутствует

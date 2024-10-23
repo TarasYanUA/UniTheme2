@@ -87,7 +87,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_CompactList().isEmpty(),
                 "There is no quantity changer on the category page 'Compact list'!");
 
         //Проверяем, что Быстрый просмотр присутствует

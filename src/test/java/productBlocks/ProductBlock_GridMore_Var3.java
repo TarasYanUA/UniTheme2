@@ -278,7 +278,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
                 "There is an availability status but shouldn't in the product block ID " + blockID);
 
         //Проверяем, что модификатор количества отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
                 "There is a quantity Changer but shouldn't in the product block!");
 
         //Проверяем, что кнопка "Купить" в виде "Только текст"

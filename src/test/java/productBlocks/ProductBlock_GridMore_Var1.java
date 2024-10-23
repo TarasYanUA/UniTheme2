@@ -274,11 +274,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "There is no product code in the product block!");
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
                 "There is no availability status in the product block!");
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
                 "There is no quantity Changer in the product block!");
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"

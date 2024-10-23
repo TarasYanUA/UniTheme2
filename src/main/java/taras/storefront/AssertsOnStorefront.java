@@ -56,6 +56,10 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-sld-short span.ty-save-price")
     public List<WebElement> text_YouSave_Short;       //Настройка "Отображать "Вы экономите -- Сокращенный вид"
 
+    String gridList = ".ut2-gl__body";
+    String listWithoutOptions = ".ty-product-list";
+    String compactList = ".ty-compact-list__content";
+
 
     String productCode = " div[id*='product_code_']";    //Настройка "Отображать код товара"
 
@@ -64,11 +68,11 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
     public List<WebElement> productCode_GridList(){
-        return DriverProvider.getDriver().findElements(By.cssSelector(".ut2-gl__body" + productCode));
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + productCode));
     }
 
     public List<WebElement> productCode_ListWithoutOptions(){
-        return DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-list" + productCode));
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + productCode));
     }
 
     @FindBy(css = ".ty-compact-list__sku")
@@ -79,8 +83,19 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    @FindBy(css = ".ty-qty-in-stock.ty-control-group__item")
-    public List<WebElement> availabilityStatus; //Настройка "Отображать статус наличия"
+    String availabilityStatus = " .ty-qty-in-stock.ty-control-group__item"; //Настройка "Отображать статус наличия"
+
+    public List<WebElement> availabilityStatus(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(availabilityStatus));
+    }
+
+    public List<WebElement> availabilityStatus_GridList(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + availabilityStatus));
+    }
+
+    public List<WebElement> availabilityStatus_ListWithoutOptions(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + availabilityStatus));
+    }
 
     @FindBy(css = ".ty-compact-list__amount")
     public List<WebElement> availabilityStatus_CompactList;
@@ -88,12 +103,34 @@ public class AssertsOnStorefront extends AbstractPage {
     // Динамический поиск по переменной blockID
     public List<WebElement> getAvailabilityStatus(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
-                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-qty-in-stock.ty-control-group__item"));
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + availabilityStatus));
     }
 
 
-    @FindBy(css = "div[class='ty-center ty-value-changer cm-value-changer']")
-    public List<WebElement> quantityChanger;    //Настройка "Отображать модификатор количества" (идентично на всех страницах)
+   String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";    //Настройка "Отображать модификатор количества"
+
+    public List<WebElement> quantityChanger(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(quantityChanger));
+    }
+
+    public List<WebElement> quantityChanger_GridList(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + quantityChanger));
+    }
+
+    public List<WebElement> quantityChanger_ListWithoutOptions(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + quantityChanger));
+    }
+
+    public List<WebElement> quantityChanger_CompactList(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(compactList + quantityChanger));
+    }
+
+    // Динамический поиск по переменной blockID
+    public List<WebElement> getQuantityChanger(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + availabilityStatus));
+    }
+
 
     @FindBy(css = ".ut2-icon-use_icon_cart")
     public List<WebElement> gridList__ShowAddToCartButton_IconOnly; //Настройка "Вид списка "Сетка" -- Отображать кнопку "Купить" -- Только иконка корзины"

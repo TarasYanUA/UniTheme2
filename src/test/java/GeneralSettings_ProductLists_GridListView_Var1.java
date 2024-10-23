@@ -118,11 +118,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no product code in the product block!");
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_GridList().isEmpty(),
                 "There is no availability status in the product block!");
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_GridList().isEmpty(),
                 "There is no quantity Changer in the product block!");
 
         //Проверяем, что дополнительная информация отображается при наведении
@@ -155,11 +155,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no product code on the category page!");
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_GridList().isEmpty(),
                 "There is no availability status on the category page!");
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_GridList().isEmpty(),
                 "There is no quantity Changer on the category page!");
 
         //Проверяем, что дополнительная информация отображается при наведении
@@ -196,6 +196,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("325 GS_ProductLists_GridListView_Var1 - QuickView");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var1 passed successfully!");
     }

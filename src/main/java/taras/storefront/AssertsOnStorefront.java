@@ -234,11 +234,22 @@ public class AssertsOnStorefront extends AbstractPage {
 
     //Настройки темы -- вкладка "Товар"
 
+    @FindBy(css = ".ut2-pb__custom-block")
+    public List<WebElement> customBlockID;  //Настройка "ID пользовательского блока"
+
+    @FindBy(css = "div[class='cm-ab-similar-filter-container ']")
+    public List<WebElement> showFeaturesInTwoColumns;
+
     @FindBy(css = ".ut2-pb__product-brand-name")
     public List<WebElement> showProductBrandInformation_Name;   //Настройка "Отображать информацию о бренде товара -- Отображать название бренда товара"
 
+    @FindBy(css = ".ut2-pb__product-brand")
+    public List<WebElement> showProductBrandInformation_Logo;   //Настройка "Отображать информацию о бренде товара -- Отображать логотип бренда товара"
+
     @FindBy(css = ".images-2")
     public List<WebElement> numberOfDisplayedImagesOfProductGallery_2;  //Настройка "Количество отображаемых изображений галереи товара"
+
+
 
 
 
@@ -253,6 +264,9 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ty-product-thumbnails")
     public List<WebElement> miniThumbnailImages_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
 
+    @FindBy(css = "div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")
+    public List<WebElement> displayProductDetailsInTabs;    //Настройка "Показывать информацию о товаре во вкладках"
+
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public List<WebElement> enableQuickView;    //Настройка "Включить быстрый просмотр"
 
@@ -260,12 +274,24 @@ public class AssertsOnStorefront extends AbstractPage {
 
     //Настройки на странице редактирования товара
 
+    @FindBy(css = ".ut2-pb__note")
+    public List<WebElement> product_PromoText;  //Настройка "Промо-текст"
+
+    @FindBy(css = ".ty-price-per-unit")
+    public List<WebElement> pricePerUnit;   //Настройка "Цена за единицу"
+
     @FindBy(css = ".ut2-pb__short-descr")
     public List<WebElement> product_ShortDescription;   //Настройка "Краткое описание"
 
     @FindBy(css = ".ut2-pb__note")
-    public List<WebElement> product_PromoText;  //Настройка "Промо-текст"
+    public List<WebElement> promoText;  //Настройка "Промо текст"
+
 
     @FindBy(css = ".ty-reward-group")
     public List<WebElement> product_allowPaymentByPoints;   //Вкладка "Бонусные баллы" -- Настройка "Разрешить оплату баллами"
+
+
+    //ДРУГОЕ
+    @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Brand']")
+    public List<WebElement> showInHeaderOnProductPage;  //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
 }

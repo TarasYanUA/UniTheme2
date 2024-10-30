@@ -283,7 +283,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 "There is a quantity Changer but shouldn't in the product block!");
 
         //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly().isEmpty(),
                 "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
 
         //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
@@ -298,11 +298,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
                 "There is no brand logo in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOfMiniIcons_Dots.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
                 "Gallery of mini icons is not with points in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)

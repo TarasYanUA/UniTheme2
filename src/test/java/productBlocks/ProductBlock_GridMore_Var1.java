@@ -282,8 +282,8 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "There is no quantity Changer in the product block!");
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly.isEmpty()
-                        && !assertsOnStorefront.gridList__ShowAddToCartButton_TextOnly.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_IconOnly(blockID).isEmpty()
+                        && !assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
                 "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
@@ -298,11 +298,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
                 "There is no brand logo in the product block!");
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOgMiniIcons_Arrows.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
                 "Image gallery of the product is not with arrows navigation in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 17 (не превышает это значение)

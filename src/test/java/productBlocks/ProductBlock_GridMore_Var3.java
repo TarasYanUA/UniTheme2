@@ -282,7 +282,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
                 "There is a quantity Changer but shouldn't in the product block!");
 
         //Проверяем, что кнопка "Купить" в виде "Только текст"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_TextOnly.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
                 "The button 'Add to cart' is not as 'Text only' or even missed in the product block!");
 
         //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
@@ -297,7 +297,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
                 "Additional information is displayed without mouse hover on the category page!");
 
         //Проверяем, что логотип бренда отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
                 "There is a brand logo but shouldn't in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 13 (не превышает это значение)

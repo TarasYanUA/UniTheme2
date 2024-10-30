@@ -96,7 +96,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.hoverToButtonAddToCart();
 
         //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty(),
                 "There is no button 'Add to cart' on the category page 'Compact list'!");
 
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");

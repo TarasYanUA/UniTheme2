@@ -171,7 +171,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOgMiniIcons_Arrows.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
                 "Image gallery of the product is not with arrows navigation in the product block!");
         
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
@@ -209,7 +209,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is a decolorized product on the category 'Woman cloth' but shouldn't!");
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOgMiniIcons_Arrows.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
                 "Image gallery of the product is not with arrows navigation on the category 'Woman cloth'!");
 
         //Проверяем, что кнопка "Избранное" присутствует

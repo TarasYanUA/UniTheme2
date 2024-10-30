@@ -85,7 +85,8 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
                 "There is a quantity charger but shouldn't on the category page 'CompactList'!");
 
         //Проверяем, что кнопка "Купить" отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.compactList__ShowAddToCartButton.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty()
+                && !assertsOnStorefront.compactList__ShowAddToCartButton_TextOnly().isEmpty(),
                 "There is the button 'Add to cart' but shouldn't on the category page 'CompactList'!");
 
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");

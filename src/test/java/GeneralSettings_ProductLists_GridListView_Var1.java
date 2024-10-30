@@ -130,7 +130,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
@@ -167,7 +167,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "Additional information is displayed without mouse hover on the category page!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
                 "There is no brand logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"

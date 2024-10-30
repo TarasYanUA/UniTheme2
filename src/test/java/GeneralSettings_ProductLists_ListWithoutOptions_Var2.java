@@ -1,15 +1,12 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
-import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Товары -- Характеристики -- Бренд":
@@ -25,7 +22,7 @@ import static taras.constants.DriverProvider.getDriver;
 Содержимое под описанием    -- Список характеристик
 Отображать опции товара -- да
 Отображать логотип бренда   -- да
-Показывать галерею мини-иконок товара в товарном списке --  С точками
+Отображать стандартную галерею изображений --  Навигация точками
 Переключать изображение товара при движении мышки   -- Не переключать
 */
 
@@ -87,42 +84,45 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stCategoryPage.clickListWithoutOptions_ProductListView();
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-list div[id*='product_code']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.productCode_ListWithoutOptions().isEmpty(),
                 "There is no product code on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty-in-stock.ty-control-group__item")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_ListWithoutOptions().isEmpty(),
                 "There is no availability status on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class*='ty-value-changer']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_ListWithoutOptions().isEmpty(),
                 "There is no quantity charger on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что содержимое под описанием это список характеристик
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pl__feature")).isEmpty(),
-                "The content under description is not a feature list!");
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ContentUnderDescription_FeatureList.isEmpty(),
+                "The content under description is not a Feature list on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что опции товара присутствуют
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-picker-product-options")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowProductOptions.isEmpty(),
                 "There is no product options on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__BrandLogo().isEmpty(),
                 "There is no product logo on the category page 'ListWithoutOptions'!");
 
-        //Проверяем, что переключатель изображений товара в виде полосок
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".owl-pagination")).isEmpty(),
+        //Проверяем, что стандартная галерея изображений товара с навигацией точками
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowStandardImageGallery().isEmpty(),
                 "Image switcher is not with points on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!getDriver().findElements(By.cssSelector(".ut2-icon-use_icon_cart")).isEmpty()
-                && !getDriver().findElements(By.cssSelector(".ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowAddToCartButton_IconOnly().isEmpty()
+                && !assertsOnStorefront.listWithoutOptions__ShowAddToCartButton_TextOnly().isEmpty(),
                 "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var2 passed successfully!");
     }

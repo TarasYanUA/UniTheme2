@@ -113,7 +113,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
@@ -122,7 +122,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOfMiniIcons_Dots.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
                 "Gallery of mini icons is not with points in the product block!");
 
         takeScreenShot("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
@@ -136,20 +136,20 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
 
         //Проверяем, что дополнительная информация отображается при наведении
         softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover on the category page!");
+                "Additional information is displayed without mouse hover on the category page 'GridList'!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo.isEmpty(),
-                "There is no brand logo on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
+                "There is no brand logo on the category page 'GridList'!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
                         && assertsOnStorefront.text_YouSave_Short.isEmpty(),
-                "The text 'You save' is not Full or missed on the category page!");
+                "The text 'You save' is not Full or missed on the category page 'GridList'!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__GalleryOfMiniIcons_Dots.isEmpty(),
-                "Gallery of mini icons is not with points on the category page!");
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
+                "Gallery of mini icons is not with points on the category page 'GridList'!");
 
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();

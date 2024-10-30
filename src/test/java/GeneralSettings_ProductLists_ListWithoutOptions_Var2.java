@@ -112,7 +112,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
 
         //Проверяем, что стандартная галерея изображений товара с навигацией точками
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowStandardImageGallery().isEmpty(),
-                "Image switcher is not with points on the category page 'ListWithoutOptions'!");
+                "Gallery of mini icons is not with points on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowAddToCartButton_IconOnly().isEmpty()

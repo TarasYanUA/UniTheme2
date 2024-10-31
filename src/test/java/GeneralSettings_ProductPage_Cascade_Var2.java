@@ -1,11 +1,10 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
-import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import testRunner.TestRunner;
 
@@ -112,43 +111,54 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
                 "There is a mini-icons gallery but shouldn't!");
-        //Проверяем, что количество доступных товаров присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_68")).isEmpty(),
-                "There is no number of available products!");
+
+        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
+                "Out of stock action is not 'Buy in advance'!");
+
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs.isEmpty(),
                 "Product information is not displayed in tabs!");
+
         //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty(),
                 "There is no Brand name on product page!");
+
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage.isEmpty(),
                 "There is no feature Brand on the feature list!");
+
         //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.customBlockID.isEmpty(),
                 "There is no Custom block!");
+
         //Проверяем, что Модификатор количества присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_68")).isEmpty(),
-                "There is no Quantity changer!");
+        softAssert.assertTrue(!assertsOnStorefront.showQuantityChanger.isEmpty(),
+                "There is no Quantity changer on the product page!");
+
         //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
-                "There is no product code!");
+        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
+                "There is no product code on the product page!");
+
         //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
+
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),
                 "There is no field 'Enter your price'!");
-        //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).isEmpty(),
-                "There is no field 'On backorder'!");
+
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.promoText.isEmpty(),
                 "There is no Promo-text!");
+
         takeScreenShot_withScroll("Cascade2.10 GS_ProductPage_Var2 - Cascade template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("Cascade2.15 GS_ProductPage_Var2 - Cascade template (RTL)");
@@ -156,12 +166,14 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в две колонки
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
                 "Features are located in one column instead of two!");
+
         takeScreenShot("Cascade2.20 GS_ProductPage_Var2 - Product features, two columns (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("Cascade2.25 GS_ProductPage_Var2 - Product features, two columns");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Cascade_Var2 passed successfully!");
     }

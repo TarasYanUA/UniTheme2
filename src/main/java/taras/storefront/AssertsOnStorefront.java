@@ -116,10 +116,6 @@ public class AssertsOnStorefront extends AbstractPage {
 
    String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";    //Настройка "Отображать модификатор количества"
 
-    public List<WebElement> quantityChanger(){
-        return DriverProvider.getDriver().findElements(By.cssSelector(quantityChanger));
-    }
-
     public List<WebElement> quantityChanger_GridList(){
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + quantityChanger));
     }
@@ -237,8 +233,17 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-pb__custom-block")
     public List<WebElement> customBlockID;  //Настройка "ID пользовательского блока"
 
+    @FindBy(css = ".ty-qty#qty_68")
+    public List<WebElement> showQuantityChanger;    //Настройка "Отображать модификатор количества"
+
+    @FindBy(css = ".ut2-pb__sku")
+    public List<WebElement> showProductCode;    //Настройка "Отображать код товара"
+
+    @FindBy(css = ".fg-two-col")
+    public List<WebElement> showFeaturesInTwoColumns_Enabled;   //Настройка "Отображать характеристики в две колонки" ВКЛ.
+
     @FindBy(css = "div[class='cm-ab-similar-filter-container ']")
-    public List<WebElement> showFeaturesInTwoColumns;
+    public List<WebElement> showFeaturesInTwoColumns_Disabled;   //Настройка "Отображать характеристики в две колонки" ОТКЛ.
 
     @FindBy(css = ".ut2-pb__product-brand-name")
     public List<WebElement> showProductBrandInformation_Name;   //Настройка "Отображать информацию о бренде товара -- Отображать название бренда товара"
@@ -247,9 +252,7 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> showProductBrandInformation_Logo;   //Настройка "Отображать информацию о бренде товара -- Отображать логотип бренда товара"
 
     @FindBy(css = ".images-2")
-    public List<WebElement> numberOfDisplayedImagesOfProductGallery_2;  //Настройка "Количество отображаемых изображений галереи товара"
-
-
+    public List<WebElement> numberOfDisplayedImagesOfProductGallery_2;  //Настройка "Количество отображаемых изображений галереи товара -- 2"
 
 
 
@@ -279,6 +282,12 @@ public class AssertsOnStorefront extends AbstractPage {
 
     @FindBy(css = ".ty-price-per-unit")
     public List<WebElement> pricePerUnit;   //Настройка "Цена за единицу"
+
+    @FindBy(css = ".ty-price-curency__input")
+    public List<WebElement> zeroPriceAction_AskCustomerToEnterPrice;    //Настройка "Действие при нулевой цене -- Попросить покупателя ввести цену"
+
+    @FindBy(css = ".on_backorder")
+    public List<WebElement> outOfStockActions_BuyInAdvance;    //Настройка "Действие при отсутствии товара в наличии -- Предзаказ"
 
     @FindBy(css = ".ut2-pb__short-descr")
     public List<WebElement> product_ShortDescription;   //Настройка "Краткое описание"

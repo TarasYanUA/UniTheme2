@@ -131,6 +131,10 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
+        //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
+        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
+                "There is a mini-icons gallery but shouldn't!");
+
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs.isEmpty(),
                 "Product information is displayed not in tabs!");
@@ -169,7 +173,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем характеристики
         productPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
-        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Disabled.isEmpty(),
                 "Features are located in two columns instead of one!");
 
         takeScreenShot("Cascade1.20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");

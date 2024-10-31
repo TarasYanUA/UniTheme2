@@ -136,7 +136,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
                 "There is a mini-icons gallery but shouldn't!");
 
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
                 "Product information is displayed not in tabs!");
 
         //Проверяем, что логотип характеристики "Бренд" присутствует

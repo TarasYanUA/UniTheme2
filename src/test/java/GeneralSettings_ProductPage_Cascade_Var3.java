@@ -7,6 +7,7 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -112,35 +113,47 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
         productPage.checkbox_NotifyMe.click();
+
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
-        softAssert.assertTrue(DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
                 "There is a mini-icons gallery but shouldn't!");
+
         //Проверяем, что информация о товаре отображается не во вкладках
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
                 "Product information is displayed in tabs but shouldn't!");
-        //Проверяем, что логотип "Бренд" отсутствует
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
-                "There is a Brand logo but shouldn't!");
+
+        //Проверяем, что название и логотип "Бренд" отсутствует
+        softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
+                && !assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
+                "There is a Brand name or Brand logo but shouldn't!");
+
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage.isEmpty(),
                 "There is a feature Brand on the feature list but shouldn't!");
+
         //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
                 "There is no product code!");
+
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_68")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),
                 "There is no field 'Sign up for notification'!");
+
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points!");
+
         takeScreenShot_withScroll("Cascade3.10 GS_ProductPage_Cascade_Var3 - Cascade template");
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("Cascade3.15 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me'");
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
+
         //Проверяем, что характеристики расположены в две колонки
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
                 "Features are located in one column instead of two!");
         takeScreenShot("Cascade3.20 GS_ProductPage_Cascade_Var3 - Product features, two columns");
 
@@ -151,6 +164,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         takeScreenShot_withScroll("Cascade3.30 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me' (RTL)");
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("Cascade3.35 GS_ProductPage_Cascade_Var3 - Product features, two columns (RTL)");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Cascade_Var3 passed successfully!");
     }

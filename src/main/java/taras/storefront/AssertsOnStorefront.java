@@ -233,7 +233,7 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-pb__custom-block")
     public List<WebElement> customBlockID;  //Настройка "ID пользовательского блока"
 
-    @FindBy(css = ".ty-qty#qty_68")
+    @FindBy(css = "div.ty-qty[id*='qty_']")
     public List<WebElement> showQuantityChanger;    //Настройка "Отображать модификатор количества"
 
     @FindBy(css = ".ut2-pb__sku")
@@ -268,7 +268,10 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> miniThumbnailImages_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
 
     @FindBy(css = "div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")
-    public List<WebElement> displayProductDetailsInTabs;    //Настройка "Показывать информацию о товаре во вкладках"
+    public List<WebElement> displayProductDetailsInTabs_Enabled;    //Настройка "Показывать информацию о товаре во вкладках" ВКЛ.
+
+    @FindBy(css = ".tab-list-title")
+    public List<WebElement> displayProductDetailsInTabs_Disabled;    //Настройка "Показывать информацию о товаре во вкладках" ОТКЛ.
 
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public List<WebElement> enableQuickView;    //Настройка "Включить быстрый просмотр"
@@ -287,7 +290,10 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> zeroPriceAction_AskCustomerToEnterPrice;    //Настройка "Действие при нулевой цене -- Попросить покупателя ввести цену"
 
     @FindBy(css = ".on_backorder")
-    public List<WebElement> outOfStockActions_BuyInAdvance;    //Настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+    public List<WebElement> outOfStockActions_BuyInAdvance;             //Настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+
+    @FindBy(css = "label[id*='label_sw_product_notify_']")
+    public List<WebElement> outOfStockActions_SignUpForNotification;    //Настройка "Действие при отсутствии товара в наличии -- Подписаться на уведомления"
 
     @FindBy(css = ".ut2-pb__short-descr")
     public List<WebElement> product_ShortDescription;   //Настройка "Краткое описание"

@@ -124,7 +124,7 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
                 "Out of stock action is not 'Buy in advance'!");
 
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
                 "Product information is not displayed in tabs!");
 
         //Проверяем, что название характеристики "Бренд" присутствует

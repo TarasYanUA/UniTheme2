@@ -132,7 +132,7 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
                 "There is no Brand name on product page!");
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is no feature Brand on the feature list!");
 
         //Проверяем, что присутствует ID пользовательского блока

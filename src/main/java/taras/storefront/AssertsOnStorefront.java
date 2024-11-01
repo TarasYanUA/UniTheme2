@@ -92,10 +92,6 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String availabilityStatus = " .ty-qty-in-stock.ty-control-group__item"; //Настройка "Отображать статус наличия"
 
-    public List<WebElement> availabilityStatus(){
-        return DriverProvider.getDriver().findElements(By.cssSelector(availabilityStatus));
-    }
-
     public List<WebElement> availabilityStatus_GridList(){
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + availabilityStatus));
     }
@@ -155,10 +151,6 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";   //Настройка "Отображать кнопку "Купить" -- Только текст"
-
-    public List<WebElement> gridList__ShowAddToCartButton_TextOnly(){
-        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + showAddToCartButton_TextOnly));
-    }
 
     public List<WebElement> listWithoutOptions__ShowAddToCartButton_TextOnly(){
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showAddToCartButton_TextOnly));
@@ -261,7 +253,7 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "span[id*='line_product_price_']")
     public List<WebElement> pricesWithTaxes; //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
 
-    @FindBy(css = ".ty-icon-right-open-thin")
+    @FindBy(css = ".ty-product-thumbnails_gallery")
     public List<WebElement> miniThumbnailImagesAsGallery_Enabled;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
 
     @FindBy(css = ".ty-product-thumbnails")
@@ -308,5 +300,9 @@ public class AssertsOnStorefront extends AbstractPage {
 
     //ДРУГОЕ
     @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Brand']")
-    public List<WebElement> showInHeaderOnProductPage;  //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
+    public List<WebElement> showInHeaderOnProductPage_Brand;  //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
+
+    @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Hard drive']")
+    public List<WebElement> showInHeaderOnProductPage_HardDrive;  //Настройка "Товары -- Характеристики -- Жесткий диск -- Показывать в заголовке карточки товара"
+
 }

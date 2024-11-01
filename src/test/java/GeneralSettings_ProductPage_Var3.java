@@ -9,6 +9,7 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -126,40 +127,44 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productPage.checkbox_NotifyMe.click();
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
                 "Mini-icons are as a gallery but shouldn't!");
 
         //Проверяем, что информация о товаре отображается не во вкладках
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".tab-list-title")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
                 "Product information is displayed in tabs but shouldn't!");
 
-        //Проверяем, что логотип "Бренд" отсутствует
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
-                "There is a Brand logo but shouldn't!");
+        //Проверяем, что логотип и название "Бренд" отсутствуют
+        softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
+                && assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
+                "There is a Brand logo or Brand name but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is a feature Brand on the feature list but shouldn't!");
 
         //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
                 "There is no product code!");
 
         //Проверяем, что текст "Вы экономите" отсутствует
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Full.isEmpty()
+                && !assertsOnStorefront.text_YouSave_Short.isEmpty(),
                 "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#label_sw_product_notify_248")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),
                 "There is no field 'Sign up for notification'!");
 
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-reward-group")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points!");
 
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".images-2")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.numberOfDisplayedImagesOfProductGallery_2.isEmpty(),
                 "Number of displayed images of the product gallery is not 2!");
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
@@ -169,8 +174,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         //Проверяем, что характеристики расположены в две колонки
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
                 "Features are located in one column instead of two!");
+
         takeScreenShot("1110 GS_ProductPage_Var3 - Product features, two columns (RTL)");
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
@@ -223,6 +229,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");
     }

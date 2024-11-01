@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var2&quot; to the class &quot;AssertsOnStorefront&quot;.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var3&quot; to the class &quot;AssertsOnStorefront&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,30 +192,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Cascade_Var2">
-    <configuration name="GeneralSettings_ProductPage_Cascade_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var1" />
-      <option name="METHOD_NAME" value="checkSettingsOnProductPage_CascadeGallery_Var1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3">
     <configuration name="GeneralSettings_ProductPage_Cascade_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -224,10 +204,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductPage_Cascade_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var3" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -235,12 +215,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var3" />
-      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Cascade_Var3" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
+      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Var2" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var3" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -249,19 +251,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -631,7 +633,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated aaa dependencies for this libraries in your pom.xml file.&#10;Updated all drivers." />
     <MESSAGE value="Removed TestRunner file to the package.&#10;Start work with new test-cases &quot;productBlocks&quot;." />
     <MESSAGE value="Method setConfigurationsForProductBlock_GridMore_Var1 is ready!" />
     <MESSAGE value="Continue work with method setConfigurationsForProductBlock_GridMore_Var1!&#10;Added Interface DisableLazyLoadFromBlock." />
@@ -675,7 +676,8 @@
     <MESSAGE value="Removed asserts from test-cases &quot;GeneralSettings_ProductLists_ListWithoutOptions&quot; to the class &quot;AssertsOnStorefront&quot;." />
     <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
     <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var2&quot; to the class &quot;AssertsOnStorefront&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var2&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var3&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var3&quot; to the class &quot;AssertsOnStorefront&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

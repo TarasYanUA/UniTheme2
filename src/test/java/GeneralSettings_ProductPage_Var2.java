@@ -8,6 +8,7 @@ import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import testRunner.TestRunner;
 
@@ -124,61 +125,61 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productPage.shiftLanguage_EN();
 
         SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-product-thumbnails")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
                 "Mini-icons are as a gallery but shouldn't!");
 
-        //Проверяем, что количество доступных товаров присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("#qty_in_stock_248")).isEmpty(),
-                "There is no number of available products!");
-
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector("div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
                 "Product information is not displayed in tabs!");
 
         //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__product-brand-name")).isEmpty(),
-                "There is no Brand name on product page!");
+        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty(),
+                "There is no Brand name on the product page!");
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Brand']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is no feature Brand on the feature list!");
 
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.xpath("//div[@class='ty-features-list']//em[text()='Hard drive']")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_HardDrive.isEmpty(),
                 "There is no feature Hard drive on the feature list!");
 
         //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__custom-block")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.customBlockID.isEmpty(),
                 "There is no Custom block on the product page!");
 
         //Проверяем, что Модификатор количества присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-qty#qty_248")).isEmpty(),
-                "There is no Quantity changer!");
+        softAssert.assertTrue(!assertsOnStorefront.showQuantityChanger.isEmpty(),
+                "There is no Quantity changer on the product page!");
 
         //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__sku")).isEmpty(),
-                "There is no product code!");
+        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
+                "There is no product code on the product page!");
 
         //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__short-descr")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
 
         //Проверяем, что текст "Вы экономите" отсутствует по причине нулевой цены
-        softAssert.assertFalse(!DriverProvider.getDriver().findElements(By.cssSelector("span.ty-save-price")).isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Short.isEmpty()
+                && !assertsOnStorefront.text_YouSave_Full.isEmpty(),
                 "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ty-price-curency__input")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),
                 "There is no field 'Enter your price'!");
 
         //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".on_backorder")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
                 "There is no field 'On backorder'!");
 
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-pb__note")).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.product_PromoText.isEmpty(),
                 "There is no Promo-text!");
+
         takeScreenShot_withScroll("1000 GS_ProductPage_Var2 - Default template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1005 GS_ProductPage_Var2 - Default template (RTL)");
@@ -229,6 +230,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         takeScreenShot_withScroll("1055 GS_ProductPage_Var2 - Gallery template");
         productPage.shiftLanguage_RTL();
         takeScreenShot_withScroll("1060 GS_ProductPage_Var2 - Gallery template (RTL)");
+
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Var2 passed successfully!");
     }

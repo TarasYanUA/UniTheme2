@@ -131,7 +131,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
                 "There is a Brand name or Brand logo but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is a feature Brand on the feature list but shouldn't!");
 
         //Проверяем, что Код товара присутствует

@@ -174,8 +174,6 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     private WebElement field_HtmlDescriptionOfFeature;
     @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
     public WebElement showInProductList;
-    @FindBy(id = "elm_feature_display_on_header_18")
-    public WebElement showInHeaderOnProductPage_Brand;
     @FindBy(id = "elm_feature_display_on_product_18")
     public WebElement showOnFeaturesTab_Brand;
     @FindBy(id = "elm_feature_display_on_header_23")

@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
@@ -22,7 +21,6 @@ import java.time.Duration;
     * Показывать количество доступных товаров   -- откл
     * Показывать информацию о товаре во вкладках-- вкл
 - Настраиваем характеристики:
-    * Бренд -- включить настройку "Показывать в заголовке карточки товара"
     * Жесткий диск -- включить настройку "Показывать в заголовке карточки товара" и задать Описание
 - Настраиваем UniTheme настройки:
     * ID пользовательского блока                -- 109
@@ -100,12 +98,6 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
             csCartSettings.showInHeaderOnProductPage_HardDisk.click();
         }
         csCartSettings.button_SaveFeature.click();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
-        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
-            checkbox_ShowInHeaderOnProductPage.click();
-            csCartSettings.clickSaveButtonOfSettings();
-        }
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

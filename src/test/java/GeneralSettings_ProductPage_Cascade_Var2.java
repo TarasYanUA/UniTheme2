@@ -14,7 +14,7 @@ import testRunner.TestRunner;
     * Показывать количество доступных товаров -- вкл
     * Показывать информацию о товаре во вкладках -- вкл
 - Настраиваем характеристики:
-    * Бренд -- включить настройку "Показывать в заголовке карточки товара"
+    * Бренд -- включить настройку "Показывать во вкладке «Характеристики» карточки товара"
 - Настраиваем UniTheme настройки:
     * ID пользовательского блока --  106
     * Отображать модификатор количества --  да
@@ -59,10 +59,6 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         WebElement checkbox_ShowOnFeaturesTab_Brand = csCartSettings.showOnFeaturesTab_Brand;
         if(!checkbox_ShowOnFeaturesTab_Brand.isSelected()){
             checkbox_ShowOnFeaturesTab_Brand.click();
-        }
-        WebElement checkbox_ShowInHeaderOnProductPage = csCartSettings.showInHeaderOnProductPage_Brand;
-        if(!checkbox_ShowInHeaderOnProductPage.isSelected()){
-            checkbox_ShowInHeaderOnProductPage.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 

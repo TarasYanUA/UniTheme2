@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!">
-      <change afterPath="$PROJECT_DIR$/myErrorScreenshots/checkGeneralSettings_ProductLists_ListWithoutOptions_Var1-[].jpg" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Removed asserts from test-cases &quot;GeneralSettings_ProductPage&quot; to the class &quot;AssertsOnStorefront&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,18 +16,84 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.d" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme_4.18.1c" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="UniTheme_4.18.2a" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TarasYanUA&quot;
+  }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOIj0WQs56ZzrJ&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1725460983428
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TarasYanUA/UniTheme2&quot;,
+    &quot;accountId&quot;: &quot;51eb8828-6df6-4bb4-96b1-341c135a258d&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2IUOa3NhUBWs3DGsAYiDYVnn32t" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -39,46 +103,94 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Maven.UniTheme2 [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Idea Projects/UniTheme2/TestNG.xml"
+    "TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor": "Run",
+    "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
+    "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
+    "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.checkProductLists_CompactList_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.setConfigurationsForProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
+    "TestNG.Menu03_Horizontal_RowFilling_4columns.executor": "Run",
+    "TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor": "Run",
+    "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
+    "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
+    "TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor": "Run",
+    "TestNG.Menu50_FlyMenu_Var1.executor": "Run",
+    "TestNG.Menu51_FlyMenu_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var1.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var2.checkProductBlock_GridMore_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var3.executor": "Run",
+    "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
+    "TestNG.ProductSection_GridMore_Var1.executor": "Run",
+    "TestNG.UniTheme2/TestNG.xml.executor": "Run",
+    "git-widget-placeholder": "UniTheme__4.18.2b",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/Sitemap/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEA Projects\UniTheme2\src\test\resources" />
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
+      <recent name="E:\IDEA Projects\UniTheme2v3\src\test\resources" />
+      <recent name="E:\IDEA Projects\UniTheme2" />
+      <recent name="E:\IDEA Projects\UniTheme2\src\test" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="productBlocks" />
       <recent name="" />
+      <recent name="menu" />
+      <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1">
-    <configuration name="C:/Idea Projects/UniTheme2/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3">
+    <configuration name="GeneralSettings_ProductPage_Cascade_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_CompactList_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -86,10 +198,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -97,10 +209,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -108,10 +220,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
+      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Var2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -120,21 +244,25 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-      <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
+      <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
-        <item itemvalue="TestNG.C:/Idea Projects/UniTheme2/TestNG.xml" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://trs.test.abt.team/4181ultru_unitheme2/admin.php?dispatch=products.manage" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,6 +272,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670232767935</updated>
+      <workItem from="1711721816967" duration="4545000" />
+      <workItem from="1711728316300" duration="16000" />
+      <workItem from="1712044434266" duration="382000" />
+      <workItem from="1712221062835" duration="8518000" />
+      <workItem from="1712577088002" duration="2194000" />
+      <workItem from="1712739978319" duration="36000" />
+      <workItem from="1714388976952" duration="12971000" />
+      <workItem from="1714457942360" duration="23297000" />
+      <workItem from="1714555388867" duration="11418000" />
+      <workItem from="1714980176408" duration="14373000" />
+      <workItem from="1715061836772" duration="18335000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -390,8 +529,109 @@
       <option name="project" value="LOCAL" />
       <updated>1673448997158</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Adaptation to CS-Cart 4.16.1">
+      <created>1675335704963</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1675335704963</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Nees more adaptation to CS-Cart 4.16.1 and tet platform with Add-on Manager + Default layout.">
+      <created>1676535334164</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1676535334164</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Needs more adaptation to CS-Cart 4.16.1 and test platform with Add-on Manager + Default layout.">
+      <created>1676555634691</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1676555634691</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Two test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676559060848</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1676559060848</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Four test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676561586111</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1676561586111</updated>
+    </task>
+    <task id="LOCAL-00041" summary="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676562980885</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1676562980885</updated>
+    </task>
+    <task id="LOCAL-00042" summary="All 8 test-cases are adapted to CS-Cart 4.16.1 and Default layout.">
+      <created>1676563101321</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1676563101321</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082096563</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1677082096563</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082224205</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1677082224205</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Started working with new settings of CS-Cart 4.16.1b">
+      <created>1677082274343</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1677082274343</updated>
+    </task>
+    <task id="LOCAL-00046" summary="First test-case is adapted to Uni2 v4.16.1b">
+      <created>1677161822877</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1677161822877</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Changed methods for language selection - RTL and RU!">
+      <created>1677162816762</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1677162816762</updated>
+    </task>
+    <task id="LOCAL-00048" summary="First test-case is totally ready for adaptation to theme v4.16.1b">
+      <created>1677164922045</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1677164922045</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Started to work with the Second test-case for adaptation to theme v4.16.1b (line 176)">
+      <created>1677168036961</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1677168036961</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -406,35 +646,66 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created project!" />
-    <MESSAGE value="Theme settings are ready." />
-    <MESSAGE value="CS-Cart settings are added." />
-    <MESSAGE value="Test-case #1 is totally ready!" />
-    <MESSAGE value="Test-case #2 is totally ready!" />
-    <MESSAGE value="Added comments to two test-cases." />
-    <MESSAGE value="Added testNG.xml file." />
-    <MESSAGE value="Added asserts to both test-cases." />
-    <MESSAGE value="Relocated setting to Class Page. Added one more setting of the theme." />
-    <MESSAGE value="Third test-cases has started!" />
-    <MESSAGE value="settings in admin panel are ready! Start working with asserts on HomePage." />
-    <MESSAGE value="Asserts on HomePage are ready!" />
-    <MESSAGE value="Third test-case is totally ready!" />
-    <MESSAGE value="Fourth test-case is totally ready!" />
-    <MESSAGE value="Some very important bug fixes at my test-cases." />
-    <MESSAGE value="Split with packages." />
-    <MESSAGE value="Test-case for List without options is started!" />
-    <MESSAGE value="Test-case for List without options is done!" />
-    <MESSAGE value="List without options is totally ready!" />
-    <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; is ready!" />
-    <MESSAGE value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; is ready!" />
+    <MESSAGE value="Method setConfigurationsForProductBlock_GridMore_Var1 is ready!" />
+    <MESSAGE value="Continue work with method setConfigurationsForProductBlock_GridMore_Var1!&#10;Added Interface DisableLazyLoadFromBlock." />
+    <MESSAGE value="Method setConfigurationsForProductBlock_GridMore_Var1 is totally ready!" />
+    <MESSAGE value="First test-case for Product blocks is totally ready!" />
+    <MESSAGE value="Transferred asserts to the Class AssertsOnStorefront from 4 test-cases: GeneralSettings_ProductLists_GridListView and GeneralSettings_ColorScheme_ProductLists_AllCategoryLists." />
+    <MESSAGE value="Continue work with the second test-case for product block &quot;Grid&quot;!" />
+    <MESSAGE value="The second test-case for product block &quot;Grid&quot; is ready!" />
+    <MESSAGE value="Work with the third test-case for product block &quot;Grid&quot;!" />
+    <MESSAGE value="The third test-case for product block &quot;Grid&quot; is ready!" />
+    <MESSAGE value="Improved screenshots.&#10;Improved method to click the button &quot;More&quot;." />
+    <MESSAGE value="Added new theme settings to three test-cases &quot;ProductBlock&quot;." />
+    <MESSAGE value="Improved some asserts." />
+    <MESSAGE value="Fixed some bugs in my tests for MENU.&#10;Adapted some code of MENU tests to the newest theme version." />
+    <MESSAGE value="Made some corrections according to the newest changes in the theme." />
+    <MESSAGE value="Improved some code." />
+    <MESSAGE value="Removed asserts from test-case &quot;ColorSchemeSettings_Product_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductLists_CompactList_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductLists_CompactList_Var2&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed one more assert from test-case &quot;GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-cases &quot;GeneralSettings_ProductLists_GridListView&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-cases &quot;GeneralSettings_ProductLists_ListWithoutOptions&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var1&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var2&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-case &quot;GeneralSettings_ProductPage_Cascade_Var3&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <MESSAGE value="Removed asserts from test-cases &quot;GeneralSettings_ProductPage&quot; to the class &quot;AssertsOnStorefront&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed asserts from test-cases &quot;GeneralSettings_ProductPage&quot; to the class &quot;AssertsOnStorefront&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java</url>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/constants/BrowserFactory.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Cascade_Var1.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java</url>
+          <line>177</line>
+          <properties field="showInHeaderOnProductPage_Brand" class="taras.adminPanel.CsCartSettings" />
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,123 +2,115 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
+import testRunner.TestRunner;
+
 import java.time.Duration;
-import static taras.constants.DriverProvider.getDriver;
 
 /*
 1) "Настройки -- Внешний вид":
-Включить быстрый просмотр -- да
+Включить быстрый просмотр   -- да
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
 Отображать пустые звёзды рейтинга товара	-- нет
 Отображать общее значение рейтинга товара	-- нет
-Отображать код товара	-- нет
+Отображать код товара	    -- нет
 Отображать статус наличия	-- нет
 Отображать модификатор количества	-- да
-Отображать кнопку "Купить"	-- да
-Отображать кнопку "Быстрый просмотр"	-- да
-Отображать кнопку "Добавить в избранное"	-- да
-Отображать кнопку "Добавить к сравнению"	-- да
+Отображать кнопку "Купить"	-- Только Иконка корзины (упрощенный вариант)
 
 3) Проверка проходит на странице категории "Игровые приставки"
 */
 
 public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_CompactList_Var1() throws IOException {
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_CompactList_Var1() {
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_WebsiteLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
         //Работаем с настройками CS-Cart
-        csCartSettings.navigateToAppearanceSettingsOfCsCart();
-        WebElement checkboxSettingQuickView = csCartSettings.settingQuickView;
-        if(!checkboxSettingQuickView.isSelected()){
-            csCartSettings.settingQuickView.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
-        //Работаем с настройками темы
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        ThemeSettings themeSettings = csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
-        if(checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
-        }
-        WebElement checkboxCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
-        if(checkboxCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
-        }
-        WebElement checkboxProductCode = themeSettings.compactList_productCode;
-        if(checkboxProductCode.isSelected()){
-            themeSettings.compactList_productCode.click();
-        }
-        WebElement checkboxAvailabilityStatus = themeSettings.compactList_availabilityStatus;
-        if(checkboxAvailabilityStatus.isSelected()){
-            themeSettings.compactList_availabilityStatus.click();
-        }
-        WebElement checkboxQuantityModifier = themeSettings.compactList_quantityCharger;
-        if(!checkboxQuantityModifier.isSelected()){
-            themeSettings.compactList_quantityCharger.click();
-        }
-        WebElement checkboxButtonAddToCart = themeSettings.compactList_buttonAddToCart;
-        if(!checkboxButtonAddToCart.isSelected()){
-            themeSettings.compactList_buttonAddToCart.click();
-        }
-        WebElement checkboxQuickView = themeSettings.compactList_quickView;
-        if(!checkboxQuickView.isSelected()){
-            themeSettings.compactList_quickView.click();
-        }
-        WebElement checkboxWishList = themeSettings.compactList_buttonWishList;
-        if(!checkboxWishList.isSelected()){
-            themeSettings.compactList_buttonWishList.click();
-        }
-        WebElement checkboxComparisonList = themeSettings.compactList_buttonComparisonList;
-        if(!checkboxComparisonList.isSelected()){
-            themeSettings.compactList_buttonComparisonList.click();
+        csCartSettings.navigateToAppearanceSettings();
+        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
+        if (!checkboxSettingQuickView.isSelected()) {
+            checkboxSettingQuickView.click();
         }
         csCartSettings.clickSaveButtonOfSettings();
 
-        //Работаем с витриной
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        //Работаем с настройками темы
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        if (checkboxProductRating.isSelected()) {
+            checkboxProductRating.click();
+        }
+        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        if (checkboxCommonValueOfProductRating.isSelected()) {
+            checkboxCommonValueOfProductRating.click();
+        }
+        WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
+        if (checkboxProductCode.isSelected()) {
+            checkboxProductCode.click();
+        }
+        WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
+        if (checkboxAvailabilityStatus.isSelected()) {
+            checkboxAvailabilityStatus.click();
+        }
+        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityChanger;
+        if (!checkboxQuantityModifier.isSelected()) {
+            checkboxQuantityModifier.click();
+        }
+        themeSettingsProductLists.selectCompactList_buttonAddToCart("icon");
+        csCartSettings.clickSaveButtonOfSettings();
+    }
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var1")
+    public void checkProductLists_CompactList_Var1() {
+        CsCartSettings csCartSettings = new CsCartSettings();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
-        stHomePage.navigateToMenuGameConsoles();
+        stHomePage.cookie.click();
+        stHomePage.navigateToHorizontalMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.clickCompactList_ProductListView();
-        makePause();
-        //Проверяем, что кнопка "Купить" присутствует
-        Assert.assertTrue(stCategoryPage.buttonAddToCart.isEnabled(), "There is no button 'Add to cart'!");
+
+        SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что модификатор количества присутствует
-        Assert.assertTrue(stCategoryPage.quantityCharger.isEnabled(), "There is no quantity charger!");
+        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_CompactList().isEmpty(),
+                "There is no quantity changer on the category page 'Compact list'!");
+
         //Проверяем, что Быстрый просмотр присутствует
-        Assert.assertTrue(stCategoryPage.buttonQuickView.isEnabled(), "There is no button 'Quick view'!");
-        //Проверяем, что кнопка "Избранное" присутствует
-        Assert.assertTrue(stCategoryPage.iconWishList.isEnabled(), "There is no button 'Wish list'!");
-        //Проверяем, что кнопка "Сравнение" присутствует
-        Assert.assertTrue(stCategoryPage.iconComparisonList.isEnabled(), "There is no button 'Comparison list'!");
+        softAssert.assertTrue(!assertsOnStorefront.enableQuickView.isEmpty(),
+                "There is no button 'Quick view' on the category page 'Compact list'!");
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("710 ProductLists_CompactLists_Var1");
+
+        //Проверяем, что кнопка "Купить" присутствует
+        softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty(),
+                "There is no button 'Add to cart' on the category page 'Compact list'!");
+
+        takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("720 ProductLists_CompactLists_QuickView");
+        takeScreenShot_withScroll("705 GS_ProductLists_CompactList_Var1 - QuickView");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(1);
-        makePause();
+        stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToButtonAddToCart();
-        takeScreenShot("730 ProductLists_CompactLists_Var1(RTL)");
+        takeScreenShot_withScroll("710 GS_ProductLists_CompactList_Var1 (RTL)");
         stCategoryPage.clickButtonQuickView();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("740 ProductLists_CompactLists_QuickView(RTL)");
+        takeScreenShot_withScroll("715 GS_ProductLists_CompactList_Var1 - QuickView (RTL)");
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
     }
 }

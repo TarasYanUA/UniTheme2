@@ -2,25 +2,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.ThemeSettings;
+import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
 import taras.adminPanel.CsCartSettings;
+import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
-import java.io.IOException;
+import testRunner.TestRunner;
+
 import java.time.Duration;
 
 /*
-Проверка следующих настроек:
-1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
+Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Отображать пустые звёзды рейтинга товара -- нет
 Отображать общее значение рейтинга товара -- да
+Отображать "Вы экономите" -- Полный вид
 
-Минимальная высота для ячейки товара (по умолчанию пусто) -- 300
-Ширина иконки товара (по умолчанию 200) --	400
-Высота иконки товара (по умолчанию 200) --	200
+Ширина иконки товара (по умолчанию 240) --	400
+Высота иконки товара (по умолчанию 290) --	380
 
 Отображать код товара -- нет
 Отображать статус наличия -- нет
@@ -29,115 +31,145 @@ import java.time.Duration;
 Дополнительная информация о товаре -- Список характеристик и вариаций
 Отображать дополнительную информацию при наведении -- да
 Отображать логотип бренда -- да
-Отображать "Вы экономите" -- да
-Переключать изображение товара при движении мышки -- с точками
+Показывать галерею мини-иконок товара в товарном списке --  Навигация точками
+Переключать изображение товара при движении мышки -- Не переключать (нужно для настройки выше)
+
+Вкладка "Показать ещё" -- Разрешить для товарных списков--  нет
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
-    @Test
-    public void checkGeneralSettings_ProductLists_GridListView_Var2() throws IOException {
+    @Test(priority = 1)
+    public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings themeSettings = new ThemeSettings();
-        //Работаем с настройками темы
-        csCartSettings.navigateToAddonsPage();
-        csCartSettings.clickThemeSectionsOnManagementPage();
-        csCartSettings.navigateToThemeSettings();
-        themeSettings.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettings.settingProductRating;
-        if(checkboxProductRating.isSelected()){
-            themeSettings.settingProductRating.click();
+        //Работаем с настройками характеристики Бренд
+        csCartSettings.navigateToSection_Features();
+        csCartSettings.clickFeatureBrand();
+        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
+            checkboxShowInProductList.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettings.settingCommonValueOfProductRating;
-        if(!checkboxSettingCommonValueOfProductRating.isSelected()){
-            themeSettings.settingCommonValueOfProductRating.click();
-        }
-        themeSettings.clickAndTypeSettingMinHeightForProductCell("300");
-        themeSettings.clickAndTypeSettingProductIconWidth("400");
-        themeSettings.clickAndTypeSettingProductIconHeight("200");
-        WebElement checkboxSettingShowProductCode = themeSettings.settingShowProductCode;
-        if(checkboxSettingShowProductCode.isSelected()){
-            themeSettings.settingShowProductCode.click();
-        }
-        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettings.settingDisplayAvailabilityStatus;
-        if(checkboxSettingDisplayAvailabilityStatus.isSelected()){
-            themeSettings.settingDisplayAvailabilityStatus.click();
-        }
-        WebElement checkboxSettingShowQuantityChanger = themeSettings.settingShowQuantityChanger;
-        if(checkboxSettingShowQuantityChanger.isSelected()){
-            themeSettings.settingShowQuantityChanger.click();
-        }
-        themeSettings.selectSettingShowAddToCartButton("icon");
-        themeSettings.selectSettingAdditionalProductInformation("features_and_variations");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettings.settingShowAdditionalInformationOnHover;
-        if(!checkboxSettingShowAdditionalInformationOnHover.isSelected()){
-            themeSettings.settingShowAdditionalInformationOnHover.click();
-        }
-        WebElement checkboxSettingShowBrandLogo = themeSettings.settingShowBrandLogo;
-        if(!checkboxSettingShowBrandLogo.isSelected()){
-            themeSettings.settingShowBrandLogo.click();
-        }
-        WebElement checkboxSettingShowYouSave = themeSettings.settingShowYouSave;
-        if(!checkboxSettingShowYouSave.isSelected()){
-            themeSettings.settingShowYouSave.click();
-        }
-        themeSettings.selectSettingSwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();
 
-        //Работаем с витриной
-        StHomePage stHomePage = csCartSettings.navigateToStorefrontMainPage();
+        //Работаем с настройками темы
+        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        themeSettingsProductLists.clickTabProductLists();
+        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        if (checkboxProductRating.isSelected()) {
+            checkboxProductRating.click();
+        }
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
+            checkboxSettingCommonValueOfProductRating.click();
+        }
+        themeSettingsProductLists.selectSettingShowYouSave("full");
+        themeSettingsProductLists.clickAndTypeSettingProductIconWidth("400");
+        themeSettingsProductLists.clickAndTypeSettingProductIconHeight("380");
+        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
+        if (checkboxSettingShowProductCode.isSelected()) {
+            checkboxSettingShowProductCode.click();
+        }
+        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
+        if (checkboxSettingDisplayAvailabilityStatus.isSelected()) {
+            checkboxSettingDisplayAvailabilityStatus.click();
+        }
+        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
+        if (checkboxSettingShowQuantityChanger.isSelected()) {
+            checkboxSettingShowQuantityChanger.click();
+        }
+        themeSettingsProductLists.selectSettingShowAddToCartButton("icon");
+        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_variations");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
+        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
+            checkboxSettingShowAdditionalInformationOnHover.click();
+        }
+        WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
+        if (!checkboxSettingShowBrandLogo.isSelected()) {
+            checkboxSettingShowBrandLogo.click();
+        }
+        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
+        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
+        ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
+        themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
+        if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
+            themeSettings_showMore.setting_AllowForProductLists.click();
+        csCartSettings.clickSaveButtonOfSettings();
+    }
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var2")
+    public void checkProductLists_GridListView_Var2() {
+        CsCartSettings csCartSettings = new CsCartSettings();
+        StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.cookie-notice")));
-        stHomePage.closeCookieNoticeOnStorefront();
+        stHomePage.cookie.click();
+
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
+        DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
+        SoftAssert softAssert = new SoftAssert();
+        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
         //Проверяем, что дополнительная информация отображается при наведении
-        int sizeOfAdditionalInformationOnHover = DriverProvider.getDriver().findElements(By.cssSelector("div[class='ut2-gl__body content-on-hover']")).size();
-        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
-        //Проверяем, что логотип присутствует
-        int sizeOfLogo = DriverProvider.getDriver().findElements(By.cssSelector(".brand-img")).size();
-        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
-        //Проверяем, что текст "Вы экономите" присутствует
-        int sizeOfYouSave = DriverProvider.getDriver().findElements(By.cssSelector("span[class='ty-list-price ty-save-price ty-nowrap']")).size();
-        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде точек
-        int sizeOfSwitchWithStripes = DriverProvider.getDriver().findElements(By.cssSelector("div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")).size();
-        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with points or there is no Switch at all on the product block!");
-        takeScreenShot("410 GridListView_BlockWithProducts");
-        stHomePage.changeLanguageByIndex(1);
-        makePause();
+        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
+                "Additional information is displayed without mouse hover in the product block!");
+
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
+                "There is no brand logo in the product block!");
+
+        //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
+                && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+                "The text 'You save' is not Full or missed in the product block!");
+
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
+                "Gallery of mini icons is not with points in the product block!");
+
+        takeScreenShot("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
+        stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
-        takeScreenShot("411 GridListView_BlockWithProductsRTL");
-        stHomePage.changeLanguageByIndex(2);
+        takeScreenShot("405 GS_ProductLists_GridListView_Var2 - BlockWithProducts (RTL)");
+        stHomePage.selectLanguage_RU();
 
         //Категория "Мужская одежда"
-        stHomePage.navigateToMenuMenCloth();
+        stHomePage.navigateToHorizontalMenu_MenCloth();
+
         //Проверяем, что дополнительная информация отображается при наведении
-        Assert.assertTrue(sizeOfAdditionalInformationOnHover > 1, "Buttons are displayed without mouse hover on the product block!");
-        //Проверяем, что логотип присутствует
-        Assert.assertTrue(sizeOfLogo > 2, "There is no product logo on the product block!");
-        //Проверяем, что текст "Вы экономите" присутствует
-        Assert.assertTrue(sizeOfYouSave > 1, "There is no text 'You save' on the product block!");
-        //Проверяем, что переключатель изображений товара присутсттвует и он в виде полосок
-        Assert.assertTrue(sizeOfSwitchWithStripes > 1, "Switch is not with stripes or there is no Switch at all on the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
+                "Additional information is displayed without mouse hover on the category page 'GridList'!");
+
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
+                "There is no brand logo on the category page 'GridList'!");
+
+        //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
+                        && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+                "The text 'You save' is not Full or missed on the category page 'GridList'!");
+
+        //Проверяем, что галерея мини-иконок товара в виде точек
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
+                "Gallery of mini icons is not with points on the category page 'GridList'!");
+
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("420 GridListView_MenClothCategory");
-        stHomePage.changeLanguageByIndex(1);
-        makePause();
+        takeScreenShot_withScroll("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
+        stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot("421 GridListView_MenClothCategoryRTL");
+        takeScreenShot_withScroll("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("430 GridListView_QuickViewRTL");
+        takeScreenShot_withScroll("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
-        stHomePage.changeLanguageByIndex(2);
+        stHomePage.selectLanguage_RU();
         stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot("431 GridListView_QuickView");
-        stCategoryPage.clickCloseQuickView();
+        takeScreenShot_withScroll("425 GS_ProductLists_GridListView_Var2 - QuickView");
+
+        softAssert.assertAll();
+        System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");
     }
 }

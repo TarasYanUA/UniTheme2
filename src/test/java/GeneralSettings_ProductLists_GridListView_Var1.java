@@ -134,7 +134,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "The text 'You save' is not Short or missed in the product block!");
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
@@ -171,7 +171,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no brand logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "The text 'You save' is not Short or missed on the category page!");
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок

@@ -165,7 +165,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
                 "There is no product Short description!");
 
         //Проверяем, что текст "Вы экономите" присутствует и  "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "The text 'You save' is not Short or missed on the product page!");
 
         //Проверяем, что присутствует Цена за единицу

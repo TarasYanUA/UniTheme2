@@ -117,8 +117,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
-                && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
+                && assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
@@ -143,8 +143,8 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "There is no brand logo on the category page 'GridList'!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
-                        && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
+                        && assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "The text 'You save' is not Full or missed on the category page 'GridList'!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек

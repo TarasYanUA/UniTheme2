@@ -43,6 +43,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         menu_DownloadedAddons.click();
     }
 
+
     //Меню "Настройки"
     @FindBy(id = "administration")
     private WebElement menu_Settings;
@@ -79,6 +80,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         getSetting_ProductPageView().selectByValue(value);
     }
 
+
     //Меню "Настройки -- Общие настройки -- Оформить заказ"
     @FindBy(css = "a[href*='section_id=Checkout']")
     private WebElement section_Checkout;
@@ -94,6 +96,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public void selectSetting_TaxCalculationMethodBasedOn(String value) {
         new Select(setting_TaxCalculationMethodBasedOn).selectByValue(value);
     }
+
 
     //Меню "Настройки -- Налоги"
     @FindBy(css = "a[href$='taxes.manage'] div")
@@ -113,6 +116,37 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         menu_Settings.click();
         section_Taxes.click();
     }
+    
+    public void setTaxesForAllProducts(){   //Настраиваем налог для всех товаров
+        navigateToCheckoutSettings();
+        selectSetting_TaxCalculationMethodBasedOn("unit_price");
+        clickSaveButtonOfSettings();
+        navigateToTaxes();
+        WebElement checkboxPriceIncludesTax = setting_priceIncludesTax;
+        if (checkboxPriceIncludesTax.isSelected()) {
+            checkboxPriceIncludesTax.click();
+            button_saveTaxes.click();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            vat20.click();
+            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
+            button_Actions.click();
+            button_ApplySelectedTaxesToAllProducts.click();
+        }
+
+        //Настраиваем CS-Cart настройку
+        navigateToAppearanceSettings();
+        WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
+        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
+            checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
+            clickSaveButtonOfSettings();
+        }
+    }
+
 
     //Меню "Товары --Товары"
     @FindBy(id = "products_products")
@@ -124,6 +158,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         checkPageOnEngLang();
         return new ProductSettings();
     }
+
 
     //Меню "Товары -- Категории"
     @FindBy(id = "products_categories")
@@ -158,6 +193,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         field_CategoryName.click();
         field_CategoryName.sendKeys("AutoTestCategory");
     }
+
 
     //Меню "Товары -- Характеристики"
     @FindBy(id = "products_features")

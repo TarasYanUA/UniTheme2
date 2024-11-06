@@ -178,7 +178,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes in the product block!");
         
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There are no empty stars in the product block!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -194,7 +194,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Buttons are not displayed when hovering over a product cell in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax in the product block!");
 
         stHomePage.scrollToBlockWithProducts();
@@ -216,7 +216,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There are no empty stars on the category 'Woman cloth'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -232,7 +232,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Buttons are not displayed when hovering over a product cell on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Woman cloth'!");
 
         stCategoryPage.hoverToClothProduct();
@@ -250,7 +250,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes on the category 'Phones'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There are no empty stars on the category 'Phones'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -262,7 +262,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no button 'Add to comparison list' on the category 'Phones'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Phones'!");
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
@@ -306,7 +306,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There are no empty stars on the category 'List without options'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -326,7 +326,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no status as 'Icon' for the button 'Add to cart' on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'List without options'!");
 
         takeScreenShot_withScroll("140 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
@@ -338,7 +338,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stCategoryPage.clickCompactList_ProductListView();
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There are no empty stars on the category 'Compact list'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -354,7 +354,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no status as 'Icon' for the button 'Add to cart' on the category 'Compact list'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Compact list'!");
 
         takeScreenShot_withScroll("150 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView");

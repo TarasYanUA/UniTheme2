@@ -65,11 +65,11 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что пустые звезды рейтинга присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
                 "There is no empty rating stars on the category page 'CompactList'!");
 
         //Проверяем, что общее значение рейтинга присутствует
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating on the category page 'CompactList'!");
 
         //Проверяем, что код товара присутствует

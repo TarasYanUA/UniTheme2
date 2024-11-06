@@ -175,7 +175,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Image gallery of the product is not with arrows navigation in the product block!");
         
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating in the product block!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -191,7 +191,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Buttons are not displayed at once, but only when hovering over a product cell in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax in the product block!");
 
         takeScreenShot("200 GS_CS_ProductLists_AllCategoryLists_Var2 - BlockWithProducts");
@@ -225,7 +225,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Buttons are not displayed at once but only when hovering over a product cell on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Woman cloth'!");
 
         stCategoryPage.hoverToClothProduct();
@@ -239,7 +239,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.navigateToHorizontalMenu_Phones();
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating on the category 'Phones'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -251,7 +251,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no button 'Add to comparison list' on the category 'Phones'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Phones'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
@@ -318,7 +318,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.clickListWithoutOptions_ProductListView();
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating on the category 'List without options'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
@@ -334,7 +334,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no status for the button 'Add to cart' on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'List without options'!");
 
         makePause();
@@ -344,7 +344,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.clickCompactList_ProductListView();
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating on the category 'Compact list'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
@@ -360,7 +360,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no status for the button 'Add to cart' on the category 'Compact list'!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Compact list'!");
 
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");

@@ -156,8 +156,8 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
                 "There is no product Short description!");
 
         //Проверяем, что текст "Вы экономите" отсутствует по причине нулевой цены
-        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Short.isEmpty()
-                && !assertsOnStorefront.text_YouSave_Full.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Short().isEmpty()
+                && !assertsOnStorefront.text_YouSave_Full().isEmpty(),
                 "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену

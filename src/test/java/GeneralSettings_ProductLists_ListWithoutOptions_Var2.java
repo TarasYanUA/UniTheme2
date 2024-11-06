@@ -44,21 +44,21 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.clickTabProductLists();
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
-        WebElement checkboxProductCode = themeSettingsProductLists.withoutOptionsProductCode;
+        WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
         if (!checkboxProductCode.isSelected()) {
             checkboxProductCode.click();
         }
-        WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptionsAmountStatus;
+        WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptions_AmountStatus;
         if (!checkboxAmountStatus.isSelected()) {
             checkboxAmountStatus.click();
         }
-        WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptionsShowQuantity;
+        WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
         if (!checkboxShowQuantity.isSelected()) {
             checkboxShowQuantity.click();
         }
         themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_and_text");
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
-        WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptionsShowProductOptions;
+        WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
         if (!checkboxShowProductOptions.isSelected()) {
             checkboxShowProductOptions.click();
         }

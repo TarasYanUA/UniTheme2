@@ -26,11 +26,29 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-gl__body.content-on-hover.decolorize")
     public List<WebElement> decolorizeOutOfStockProducts;   //Настройка "Обесцвечивать товары, которых нет в наличии"
 
-    @FindBy(css = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]")
-    public List<WebElement> emptyStarsOfProductRating;  //Настройка "Отображать пустые звёзды рейтинга товара"
+    //Настройка "Отображать пустые звёзды рейтинга товара"
+    String emptyStarsOfProductRating = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]";
 
-    @FindBy(css = ".ut2-show-rating-num")
-    public List<WebElement> commonValueOfProductRating; //Настройка "Отображать общее значение рейтинга товара"
+    public List<WebElement> emptyStarsOfProductRating(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(emptyStarsOfProductRating));
+    }
+
+    public List<WebElement> getEmptyStarsOfProductRating(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + emptyStarsOfProductRating));
+    }
+
+    //Настройка "Отображать общее значение рейтинга товара"
+    String commonValueOfProductRating = ".ut2-show-rating-num";
+
+    public List<WebElement> commonValueOfProductRating(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(commonValueOfProductRating));
+    }
+
+    public List<WebElement> getCommonValueOfProductRating(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + commonValueOfProductRating));
+    }
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
     public String getStatusesForButtonAddToCartIcon() {
@@ -62,11 +80,32 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-w-c-q__buttons.w_c_q-hover")
     public List<WebElement> buttonsAreDisplayedOnHover; //Настройка "Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара"
 
-    @FindBy(css = "span.ty-save-price")
-    public List<WebElement> text_YouSave_Full;       //Настройка "Отображать "Вы экономите -- Полный вид"
 
-    @FindBy(css = ".ut2-sld-short span.ty-save-price")
-    public List<WebElement> text_YouSave_Short;       //Настройка "Отображать "Вы экономите -- Сокращенный вид"
+    //Настройка "Отображать "Вы экономите -- Полный вид"
+    String text_YouSave_Full = "span.ty-save-price";
+    public List<WebElement> text_YouSave_Full(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Full));
+    }
+
+    // Динамический поиск по переменной blockID
+    public List<WebElement> getText_YouSave_Full(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + text_YouSave_Full));
+    }
+
+
+    //Настройка "Отображать "Вы экономите -- Сокращенный вид"
+    String text_YouSave_Short = ".ut2-sld-short span.ty-save-price";
+
+    public List<WebElement> text_YouSave_Short(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Short));
+    }
+
+    public List<WebElement> getText_YouSave_Short(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + text_YouSave_Short));
+    }
+
 
     String productCode = " div[id*='product_code_']";    //Настройка "Отображать код товара"
 
@@ -250,8 +289,17 @@ public class AssertsOnStorefront extends AbstractPage {
 
     //Настройки -- Общие настройки -- Внешний вид
 
-    @FindBy(css = "span[id*='line_product_price_']")
-    public List<WebElement> pricesWithTaxes; //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
+    //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
+    String pricesWithTaxes = "span[id*='line_product_price_']";
+
+    public List<WebElement> pricesWithTaxes(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(pricesWithTaxes));
+    }
+
+    public List<WebElement> getPricesWithTaxes(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + pricesWithTaxes));
+    }
 
     @FindBy(css = ".ty-product-thumbnails_gallery")
     public List<WebElement> miniThumbnailImagesAsGallery_Enabled;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.

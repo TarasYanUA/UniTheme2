@@ -36,6 +36,15 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingDisplayButtonComparisonList;
     @FindBy(id = "settings.abt__ut2.product_list.hover_buttons_w_c_q.desktop")
     public WebElement settingDisplayButtonsWhenHoveringMouse;
+
+    @FindBy(id = "settings.abt__ut2.product_list.show_you_save.desktop")
+    public WebElement settingShowYouSave;
+    public void selectSettingShowYouSave(String value) {
+        new Select(settingShowYouSave).selectByValue(value);
+    }
+
+
+    //Настройки для вида списка товаров "Сетка"
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_width.desktop']")
     private WebElement settingProductIconWidth;
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_height.desktop']")
@@ -56,13 +65,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingShowBrandLogo;
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo_ListWithoutOptions;
-    @FindBy(id = "settings.abt__ut2.product_list.show_you_save.desktop")
-    public WebElement settingShowYouSave;
-    private Select getSettingShowYouSave(){return new Select(settingShowYouSave);}
-    public void selectSettingShowYouSave(String value){
-        getSettingShowYouSave().selectByValue(value);
-    }
-
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     private WebElement settingSwitchProductImageWhenHovering;
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
@@ -120,80 +122,101 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         getSettingDisplayCartStatus().selectByValue(value);
     }
 
+
     //Настройки для вида списка товаров "Список без опций"
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_without_options.image_width.desktop']")
-    private WebElement withoutOptionsIconWidth;
+    private WebElement withoutOptions_IconWidth;
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_without_options.image_height.desktop']")
-    private WebElement withoutOptionsIconHeight;
+    private WebElement withoutOptions_IconHeight;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_sku.desktop")
-    public WebElement withoutOptionsProductCode;
+    public WebElement withoutOptions_ProductCode;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_amount.desktop")
-    public WebElement withoutOptionsAmountStatus;
+    public WebElement withoutOptions_AmountStatus;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_qty.desktop")
-    public WebElement withoutOptionsShowQuantity;
+    public WebElement withoutOptions_ShowQuantity;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_button_add_to_cart.desktop")
     private WebElement withoutOptions_ShowButtonAddToCart;
+    public void selectWithoutOptions_ShowButtonAddToCart(String value) {
+        new Select(withoutOptions_ShowButtonAddToCart).selectByValue(value);
+    }
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.grid_item_bottom_content.desktop")
-    private WebElement withoutOptionsContentUnderDescription;
+    private WebElement withoutOptions_ContentUnderDescription;
+    public void selectWithoutOptionsContentUnderDescription(String value){
+        new Select(withoutOptions_ContentUnderDescription).selectByValue(value);
+    }
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_options.desktop")
-    public WebElement withoutOptionsShowProductOptions;
+    public WebElement withoutOptions_ShowProductOptions;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
-    public WebElement withoutOptionsBrandLogo;
+    public WebElement withoutOptions_BrandLogo;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")
     public WebElement withoutOptions_ShowStandardImageGallery;
+    public void selectWithoutOptions_ShowStandardImageGallery(String value){
+        new Select(withoutOptions_ShowStandardImageGallery).selectByValue(value);
+    }
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.enable_hover_gallery.desktop")
     private WebElement withoutOptions_SwitchProductImageWhenHovering;
-
+    public void selectWithoutOptions_SwitchProductImageWhenHovering(String value){
+        new Select(withoutOptions_SwitchProductImageWhenHovering).selectByValue(value);
+    }
 
     public void clickAndTypeWithoutOptionsIconWidth (String value){
-        withoutOptionsIconWidth.click();
-        withoutOptionsIconWidth.clear();
-        withoutOptionsIconWidth.sendKeys(value);
+        withoutOptions_IconWidth.click();
+        withoutOptions_IconWidth.clear();
+        withoutOptions_IconWidth.sendKeys(value);
     }
     public void clickAndTypeWithoutOptionsIconHeight (String value){
-        withoutOptionsIconHeight.click();
-        withoutOptionsIconHeight.clear();
-        withoutOptionsIconHeight.sendKeys(value);
+        withoutOptions_IconHeight.click();
+        withoutOptions_IconHeight.clear();
+        withoutOptions_IconHeight.sendKeys(value);
     }
 
-    private Select getWithoutOptionsContentUnderDescription(){
-        return new Select(withoutOptionsContentUnderDescription);
-    }
-    public void selectWithoutOptionsContentUnderDescription(String value){
-        getWithoutOptionsContentUnderDescription().selectByValue(value);
-    }
-    
-    private Select getWithoutOptions_ShowButtonAddToCart(){ return new Select(withoutOptions_ShowButtonAddToCart);}
-    public void selectWithoutOptions_ShowButtonAddToCart(String value) {
-        getWithoutOptions_ShowButtonAddToCart().selectByValue(value);
-    }
-
-    private Select getWithoutOptions_ShowGalleryOfMiniIcons(){
-        return new Select(withoutOptions_ShowStandardImageGallery);
-    }
-    public void selectWithoutOptions_ShowStandardImageGallery(String value){
-        getWithoutOptions_ShowGalleryOfMiniIcons().selectByValue(value);
-    }
-
-    private Select getWithoutOptions_SwitchProductImageWhenHovering(){
-        return new Select(withoutOptions_SwitchProductImageWhenHovering);
-    }
-    public void selectWithoutOptions_SwitchProductImageWhenHovering(String value){
-        getWithoutOptions_SwitchProductImageWhenHovering().selectByValue(value);
-    }
 
     //Настройки для вида списка товаров "Компактный список"
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_sku.desktop")
     public WebElement compactList_productCode;
+
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_amount.desktop")
     public WebElement compactList_availabilityStatus;
+
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_qty.desktop")
     public WebElement compactList_quantityChanger;
+
     @FindBy(id = "settings.abt__ut2.product_list.short_list.show_button_add_to_cart.desktop")
     private WebElement compactList_buttonAddToCart;
-
-    private Select getCompactList_buttonAddToCart(){return new Select(compactList_buttonAddToCart);}
     public void selectCompactList_buttonAddToCart (String value){
-        getCompactList_buttonAddToCart().selectByValue(value);
+        new Select(compactList_buttonAddToCart).selectByValue(value);
+    }
+
+
+    //Настройки для вида списка товаров "Мелкие элементы"
+    @FindBy(id = "settings.abt__ut2.product_list.small_items.lines_number_in_name_product.desktop")
+    public WebElement smallItems_NumberOfLinesInProductName;
+    public void selectSmallItems_NumberOfLinesInProductName(String value) {
+        new Select(smallItems_NumberOfLinesInProductName).selectByValue(value);
+    }
+
+    @FindBy(id = "settings.abt__ut2.product_list.small_items.show_sku.desktop")
+    public WebElement smallItems_ProductCode;
+
+    @FindBy(id = "settings.abt__ut2.product_list.small_items.show_amount.desktop")
+    public WebElement smallItems_AvailabilityStatus;
+
+    @FindBy(id = "settings.abt__ut2.product_list.small_items.show_qty.desktop")
+    public WebElement smallItems_QuantityChanger;
+
+    @FindBy(id = "settings.abt__ut2.product_list.small_items.show_button_add_to_cart.desktop")
+    private WebElement smallItems_AddToCartButton;
+    public void selectSmallItems_AddToCartButton (String value){
+        new Select(smallItems_AddToCartButton).selectByValue(value);
     }
 }

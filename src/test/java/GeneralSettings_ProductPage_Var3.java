@@ -151,8 +151,8 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
                 "There is no product code!");
 
         //Проверяем, что текст "Вы экономите" отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Full.isEmpty()
-                && !assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Full().isEmpty()
+                && !assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления

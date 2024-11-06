@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.ColorSchemeSettings;
@@ -16,8 +14,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
 import java.util.List;
 
 /*
@@ -59,9 +55,6 @@ import java.util.List;
 Насыщенность шрифта для названия товара         -- Жирный
 
 4) Настраиваем налог для всех товаров
-
-5) CS-Cart настройки -- Внешний вид:
-Показывать цены с налогом на страницах категорий и товаров  -- y
 */
 
 public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLazyLoadFromSection {
@@ -172,33 +165,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.navigateToCheckoutSettings();
-        csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
-        csCartSettings.clickSaveButtonOfSettings();
-        csCartSettings.navigateToTaxes();
-        WebElement checkboxPriceIncludesTax = csCartSettings.setting_priceIncludesTax;
-        if (checkboxPriceIncludesTax.isSelected()) {
-            checkboxPriceIncludesTax.click();
-            csCartSettings.button_saveTaxes.click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            csCartSettings.vat20.click();
-            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
-            csCartSettings.button_Actions.click();
-            csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
-        }
-
-        //Работаем с CS-Cart настройками
-        csCartSettings.navigateToAppearanceSettings();
-        WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
-        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
-            checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
-            csCartSettings.clickSaveButtonOfSettings();
-        }
+        csCartSettings.setTaxesForAllProducts();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var2")
@@ -242,11 +209,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         }
 
         //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
-        softAssert.assertFalse(!assertsOnStorefront.emptyStarsOfProductRating.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
                 "There are empty stars but shouldn't in the product block!");
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
-        softAssert.assertFalse(!assertsOnStorefront.commonValueOfProductRating.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
                 "There is common value of product rating but shouldn't in the product block!");
 
         //Проверяем, что кнопка "Избранное" присутствует
@@ -262,12 +229,12 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 "Buttons are displayed when hovering over a product cell but should be displayed at once in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full.isEmpty()
-                        && assertsOnStorefront.text_YouSave_Short.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty()
+                        && assertsOnStorefront.getText_YouSave_Short(blockID).isEmpty(),
                 "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
 
         //Проверяем, что код товара присутствует

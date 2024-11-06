@@ -165,6 +165,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
 
         takeScreenShot("ProductBlock_SmallItems_Var1");
         stHomePage.selectLanguage_RTL();
+        stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
         takeScreenShot("ProductBlock_SmallItems_Var1 (RTL)");

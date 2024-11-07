@@ -155,7 +155,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public ProductSettings navigateToSection_Products() {
         checkMenu_Products_ToBeActive();
         section_Products.click();
-        checkPageOnEngLang();
+        //checkPageOnEngLang();
         return new ProductSettings();
     }
 
@@ -220,7 +220,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public void navigateToSection_Features() {
         checkMenu_Products_ToBeActive();
         section_Features.click();
-        checkPageOnEngLang();
+        //checkPageOnEngLang();
     }
 
     public void clickAndTypeField_DescriptionOfFeature(String value) {

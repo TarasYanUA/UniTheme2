@@ -16,12 +16,25 @@ import java.time.Duration;
 public class ProductSettings extends AbstractPage {
     public ProductSettings(){super();}
 
+    @FindBy(css = "input[form='search_filters_form']")
+    WebElement searchFieldOfProduct;
     @FindBy(css = ".dropdown-icon--tools")
-    private WebElement gearwheelOfProduct;
+    WebElement gearwheelOfProduct;
     @FindBy(css = ".products-list__image")
-    private WebElement chooseAnyProduct;
+    WebElement chooseAnyProduct;
     @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]")
-    private WebElement previewButton;
+    WebElement previewButton;
+
+    public void clickAndType_SearchFieldOfProduct(String value){
+        searchFieldOfProduct.click();
+        searchFieldOfProduct.sendKeys(value);
+        searchFieldOfProduct.sendKeys(Keys.ENTER);
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public ProductPage navigateToProductPage(){
         gearwheelOfProduct.click();
@@ -34,69 +47,40 @@ public class ProductSettings extends AbstractPage {
         chooseAnyProduct.click();
     }
 
+    //Вкладка товара "Общее"
+    @FindBy(id = "product_description_product")
+    WebElement field_ProductName;
     @FindBy(id = "elm_price_price")
-    private WebElement field_Price;
+    WebElement field_Price;
     @FindBy(id = "elm_list_price")
-    private WebElement field_ListPrice;
+    WebElement field_ListPrice;
     @FindBy(id = "elm_in_stock")
-    private WebElement field_InStock;
+    WebElement field_InStock;
     @FindBy(id = "elm_zero_price_action")
-    private WebElement setting_ZeroPriceAction;
+    WebElement setting_ZeroPriceAction;
     @FindBy(id = "elm_product_unit_name")
-    private WebElement field_UnitName;
+    WebElement field_UnitName;
     @FindBy(id = "elm_product_units_in_product")
-    private WebElement field_UnitsInProduct;
+    WebElement field_UnitsInProduct;
     @FindBy(id = "elm_product_show_price_per_x_units")
-    private WebElement field_PricePerUnit;
+    WebElement field_PricePerUnit;
     @FindBy(id = "elm_out_of_stock_actions")
-    private WebElement setting_OutOfStockActions;
+    WebElement setting_OutOfStockActions;
     @FindBy(id = "elm_details_layout")
-    private WebElement setting_ProductTemplate;
+    WebElement setting_ProductTemplate;
     @FindBy(css = "label[for='elm_product_short_descr']")
-    private WebElement fieldName_ShortDescription;
+    WebElement fieldName_ShortDescription;
     @FindBy(id = "redactor-uuid-1")
-    private WebElement field_ShortDescription;
+    WebElement field_ShortDescription;
     @FindBy(css = "label[for='elm_product_promo_text']")
-    private WebElement fieldName_PromoText;
+    WebElement fieldName_PromoText;
     @FindBy(id = "redactor-uuid-2")
-    private WebElement field_PromoText;
+    WebElement field_PromoText;
 
-    //вкладка "Бонусные баллы"
-    @FindBy(css = ".content__tabs-navigation #reward_points")
-    public WebElement tab_RewardPoints;
-    @FindBy(id = "pd_is_pbp")
-    public WebElement setting_AllowPaymentByPoints;
-    @FindBy(id = "qty_discounts")
-    public WebElement tab_QuantityDiscounts;
-    @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
-
-    private WebElement field_Quantity;
-    @FindBy(css = "#box_add_qty_discount .cm-numeric")
-    private WebElement field_Value;
-
-    public void clickAndType_field_Quantity(String value){
-        field_Quantity.click();
-        field_Quantity.clear();
-        field_Quantity.sendKeys(value);
-    }
-    public void clickAndType_field_Value(String value){
-        field_Value.click();
-        field_Value.clear();
-        field_Value.sendKeys(value);
-    }
-
-    @FindBy(css = "input[form='search_filters_form']")
-    private WebElement searchFieldOfProduct;
-
-    public void clickAndType_SearchFieldOfProduct(String value){
-        searchFieldOfProduct.click();
-        searchFieldOfProduct.sendKeys(value);
-        searchFieldOfProduct.sendKeys(Keys.ENTER);
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public void clickAndTypeField_ProductName(String value){
+        field_ProductName.click();
+        field_ProductName.clear();
+        field_ProductName.sendKeys(value);
     }
 
     public void clickAndTypeField_Price(String value){
@@ -167,5 +151,29 @@ public class ProductSettings extends AbstractPage {
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);
+    }
+
+
+    //вкладка товара "Бонусные баллы"
+    @FindBy(css = ".content__tabs-navigation #reward_points")
+    public WebElement tab_RewardPoints;
+    @FindBy(id = "pd_is_pbp")
+    public WebElement setting_AllowPaymentByPoints;
+    @FindBy(id = "qty_discounts")
+    public WebElement tab_QuantityDiscounts;
+    @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
+    WebElement field_Quantity;
+    @FindBy(css = "#box_add_qty_discount .cm-numeric")
+    WebElement field_Value;
+
+    public void clickAndType_field_Quantity(String value){
+        field_Quantity.click();
+        field_Quantity.clear();
+        field_Quantity.sendKeys(value);
+    }
+    public void clickAndType_field_Value(String value){
+        field_Value.click();
+        field_Value.clear();
+        field_Value.sendKeys(value);
     }
 }

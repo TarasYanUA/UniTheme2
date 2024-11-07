@@ -30,7 +30,7 @@ import java.util.List;
 Формат отображения цен                          -- Вариант 1
 Отображать цену вверху                          -- y
 Отображать пустые звёзды рейтинга товара        -- y
-Отображать общее значение рейтинга товара       -- n
+Отображать общее значение рейтинга товара       -- y
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
 Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
@@ -104,7 +104,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
             checkbox_EmptyStarsOfProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected()) {
+        if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
         WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
@@ -210,9 +210,9 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
                 "There are no empty rating stars in the product block!");
 
-        //Проверяем, что у товаров отсутствует общее значение рейтинга товара
-        softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
-                "There is common value of product rating but shouldn't in the product block!");
+        //Проверяем, что у товаров присутствует общее значение рейтинга товара
+        softAssert.assertTrue(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
+                "There is no common value of product rating in the product block!");
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),

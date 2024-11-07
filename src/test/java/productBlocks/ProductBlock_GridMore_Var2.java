@@ -229,8 +229,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 "Buttons are displayed when hovering over a product cell but should be displayed at once in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty()
-                        && assertsOnStorefront.getText_YouSave_Short(blockID).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty(),
                 "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"

@@ -165,7 +165,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
     public List<WebElement> getQuantityChanger(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
-                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + availabilityStatus));
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + quantityChanger));
     }
 
 

@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="The second test-case for product block &quot;Small items&quot; is ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="All three test-cases for product block &quot;Small items&quot; are ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ProductLists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -682,7 +684,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +703,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First test-case for Product blocks is totally ready!" />
     <MESSAGE value="Transferred asserts to the Class AssertsOnStorefront from 4 test-cases: GeneralSettings_ProductLists_GridListView and GeneralSettings_ColorScheme_ProductLists_AllCategoryLists." />
     <MESSAGE value="Continue work with the second test-case for product block &quot;Grid&quot;!" />
     <MESSAGE value="The second test-case for product block &quot;Grid&quot; is ready!" />
@@ -726,7 +727,8 @@
     <MESSAGE value="According to the new theme version and task #42785, I deleted the variable 'showInHeaderOnProductPage_Brand' (настройка &quot;Показывать в заголовке карточки товара&quot;)" />
     <MESSAGE value="The first test-case for product block &quot;Small items&quot; is ready!&#10;* Added some asserts for product blocks." />
     <MESSAGE value="The second test-case for product block &quot;Small items&quot; is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="The second test-case for product block &quot;Small items&quot; is ready!" />
+    <MESSAGE value="All three test-cases for product block &quot;Small items&quot; are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="All three test-cases for product block &quot;Small items&quot; are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

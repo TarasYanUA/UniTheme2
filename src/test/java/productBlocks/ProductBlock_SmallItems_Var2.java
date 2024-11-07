@@ -27,6 +27,7 @@ import testRunner.TestRunner;
 Отображать "Вы экономите"                       -- Полный вид
 
 2.2. UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Мелкие элементы"
+Количество строк в названии товара              -- 3
 Отображать код товара                           -- y
 Отображать статус наличия                       -- y
 Отображать модификатор количества               -- n
@@ -82,7 +83,7 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
         Actions scroll = new Actions(DriverProvider.getDriver());
         scroll.scrollToElement(themeSettingsProductLists.smallItems_NumberOfLinesInProductName);
         scroll.perform();
-        themeSettingsProductLists.selectSmallItems_NumberOfLinesInProductName("2");
+        themeSettingsProductLists.selectSmallItems_NumberOfLinesInProductName("3");
         if (!themeSettingsProductLists.smallItems_ProductCode.isSelected())
             themeSettingsProductLists.smallItems_ProductCode.click();
         if (!themeSettingsProductLists.smallItems_AvailabilityStatus.isSelected())

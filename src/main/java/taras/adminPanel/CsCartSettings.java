@@ -337,6 +337,18 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "input[id$='_products_properties_hide_add_to_cart_button']")
     public WebElement checkbox_HideAddToCartButton;
 
+    @FindBy(css = "input[id$='_products_properties_show_price']")
+    public WebElement checkbox_ShowPrice;
+
+    @FindBy(css = "input[id$='_products_properties_enable_quick_view']")
+    public WebElement checkbox_EnableQuickView;
+
+    @FindBy(css = "input[id$='_products_properties_item_quantity']")
+    public WebElement field_ItemQuantity;
+
+    @FindBy(css = "input[name='_products_properties_outside_navigation']")
+    public WebElement checkbox_OutsideNavigation;
+
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
 

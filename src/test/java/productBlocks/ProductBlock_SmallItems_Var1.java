@@ -50,7 +50,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
     String blockID;
 
     @Test(priority = 1)
-    public void setConfigurationsFor_ProductBlock_SmallElements_Var1() {
+    public void setConfigurationsFor_ProductBlock_SmallItems_Var1() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
         //Настраиваем блок товаров "Распродажа"
@@ -125,8 +125,8 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ProductBlock_SmallElements_Var1")
-    public void checkProductBlock_SmallElements_Var1(){
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ProductBlock_SmallItems_Var1")
+    public void checkProductBlock_SmallItems_Var1(){
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -181,6 +181,6 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         takeScreenShot("ProductBlock_SmallItems_Var1 (RTL)");
 
         softAssert.assertAll();
-        System.out.println("ProductBlock_SmallItems_Var1 passed successfully!");
+        System.out.println("ProductBlock_SmallItems_Var1 has passed successfully!");
     }
 }

@@ -343,10 +343,13 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = "input[id$='_products_properties_enable_quick_view']")
     public WebElement checkbox_EnableQuickView;
 
-    @FindBy(css = "input[id$='_products_properties_item_quantity']")
-    public WebElement field_ItemQuantity;
+    @FindBy(css = "input[id$='_products_properties_not_scroll_automatically']")
+    public WebElement checkbox_DoNotScrollAutomatically;
 
-    @FindBy(css = "input[name='_products_properties_outside_navigation']")
+    @FindBy(css = "input[id$='_products_properties_item_quantity']")
+    WebElement field_ItemQuantity;
+
+    @FindBy(css = "input[id$='_products_properties_outside_navigation']")
     public WebElement checkbox_OutsideNavigation;
 
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
@@ -407,6 +410,12 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         field_Limit.click();
         field_Limit.clear();
         field_Limit.sendKeys(value);
+    }
+
+    public void clickAndType_Field_ItemQuantity(String value){
+        field_ItemQuantity.click();
+        field_ItemQuantity.clear();
+        field_ItemQuantity.sendKeys(value);
     }
 
 

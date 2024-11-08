@@ -27,5 +27,8 @@ public interface DisableLazyLoadFromSection {
         if (DriverProvider.getDriver().findElement(By.cssSelector("input[id^='elm_grid_abt__ut2_use_lazy_load']")).isSelected())
             DriverProvider.getDriver().findElement(By.cssSelector("input[id^='elm_grid_abt__ut2_use_lazy_load']")).click();
         DriverProvider.getDriver().findElement(By.cssSelector("input[name='dispatch[block_manager.grid.update]']")).click();
+
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty())
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
     }
 }

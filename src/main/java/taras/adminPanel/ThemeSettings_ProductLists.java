@@ -47,31 +47,47 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     //Настройки для вида списка товаров "Сетка"
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_width.desktop']")
     WebElement settingProductIconWidth;
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.image_height.desktop']")
     WebElement settingProductIconHeight;
+
+    @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.lines_number_in_name_product.desktop")
+    WebElement grid_NumberOfLinesInProductName;
+    public void selectGrid_NumberOfLinesInProductName(String value) {
+        new Select(grid_NumberOfLinesInProductName).selectByValue(value);
+    }
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_sku.desktop']")
     public WebElement settingShowProductCode;
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_amount.desktop']")
     public WebElement settingDisplayAvailabilityStatus;
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_qty.desktop']")
     public WebElement settingShowQuantityChanger;
+
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.show_button_add_to_cart.desktop']")
     WebElement settingShowAddToCartButton;
+
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.grid_item_bottom_content.desktop']")
     WebElement settingAdditionalProductInformation;
+
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_content_on_hover.desktop']")
     public WebElement settingShowAdditionalInformationOnHover;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
     public WebElement settingShowBrandLogo_ListWithoutOptions;
+
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     WebElement settingSwitchProductImageWhenHovering;
+
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_gallery.desktop")
     public WebElement setting_ShowStandardImageGallery_Grid;
-    Select getSetting_ShowStandardImageGallery_Grid(){return new Select(setting_ShowStandardImageGallery_Grid);}
     public void selectSetting_ShowGalleryOfMiniIcons(String value){
-        getSetting_ShowStandardImageGallery_Grid().selectByValue(value);
+        new Select(setting_ShowStandardImageGallery_Grid).selectByValue(value);
     }
 
     @FindBy(id = "settings.abt__ut2.product_list.product_variations.allow_variations_selection.desktop")

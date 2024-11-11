@@ -150,9 +150,7 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
         productSettings.chooseAnyProduct();
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()) {
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
+        csCartSettings.closeNotificationIfPresent();
         productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -211,7 +209,7 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
                 "There is no text of a product tax in the product block!");
 
         //Проверяем, что Количество строк в названии товара -- 3
-        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName(blockID, 3).isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Scroller(blockID, 3).isEmpty(),
                 "Number of lines in the product name is not 3!");
 
         //Проверяем, что статус наличия отсутствует

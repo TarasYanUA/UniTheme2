@@ -107,6 +107,14 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
+    String numberOfLinesInProductName_Grid = " div[style^='--gl-lines-in-name-product: ";   //Настройка "Количество строк в названии товара"
+
+    public List<WebElement> getNumberOfLinesInProductName_Grid(String blockID, int number) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName_Grid + number + "']"));
+    }
+
+
     String productCode = " div[id*='product_code_']";    //Настройка "Отображать код товара"
 
     public List<WebElement> productCode(){
@@ -258,11 +266,20 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots;
 
 
-    String numberOfLinesInProductName = " div[style='--sl-lines-in-name-product: ";  //Настройка "Вид списка товаров "Скроллер" -- Количество строк в названии товара"
+    //Настройка "Вид списка товаров "Мелкие элементы" -- Количество строк в названии товара"
+    String numberOfLinesInProductName_SmallItems = " ul[style^='--si-lines-in-name-product: ";
 
-    public List<WebElement> getNumberOfLinesInProductName(String blockID, int number) {
+    public List<WebElement> getNumberOfLinesInProductName_SmallItems(String blockID, int number) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
-                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName + number + ";']"));
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName_SmallItems + number + "']"));
+    }
+
+    //Настройка "Вид списка товаров "Скроллер" -- Количество строк в названии товара"
+    String numberOfLinesInProductName_Scroller = " div[style='--sl-lines-in-name-product: ";
+
+    public List<WebElement> getNumberOfLinesInProductName_Scroller(String blockID, int number) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName_Scroller + number + ";']"));
     }
 
 

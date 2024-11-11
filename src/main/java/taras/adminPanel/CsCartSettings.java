@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, CheckMenuToBeActive {
     public CsCartSettings() {
@@ -21,6 +22,15 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
+
+    @FindBy(css = ".cm-notification-close")
+    public List<WebElement> closeNotification;
+
+    public void closeNotificationIfPresent() {
+        if (!closeNotification.isEmpty()) {
+            closeNotification.getFirst().click();
+        }
+    }
 
     public void clickSaveButtonOfSettings() {
         saveButtonOfSettings.click();

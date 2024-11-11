@@ -37,6 +37,7 @@ import java.util.List;
 Отображать "Вы экономите"                       -- Полный вид
 
 2.2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Сетка"
+Количество строк в названии товара              -- 4
 Отображать код товара                           -- n
 Отображать статус наличия                       -- n
 Отображать модификатор количества               -- n
@@ -120,6 +121,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         themeSettingsProductLists.selectSettingShowYouSave("full");
 
         //Работаем с настройками темы п.2.2
+        themeSettingsProductLists.selectGrid_NumberOfLinesInProductName("4");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
         if (checkboxSettingShowProductCode.isSelected()) {
             checkboxSettingShowProductCode.click();
@@ -233,6 +235,10 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
+
+        //Проверяем, что Количество строк в названии товара -- 4
+        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Grid(blockID, 4).isEmpty(),
+                "Number of lines in the product name is not 4!");
 
         //Проверяем, что код товара отсутствует
         softAssert.assertFalse(!assertsOnStorefront.getProductCode(blockID).isEmpty(),

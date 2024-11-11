@@ -11,8 +11,6 @@ import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
-import java.util.NoSuchElementException;
-
 /*
 1) Настройки блока товаров "Распродажа"
 Шаблон                      -- Мелкие элементы
@@ -117,11 +115,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
         productSettings.chooseAnyProduct();
-        try {
-            WebElement notificationClose = DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close"));
-            notificationClose.click();
-        } catch (NoSuchElementException e) {
-        }
+        csCartSettings.closeNotificationIfPresent();
         productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -156,6 +150,10 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
+
+        //Проверяем, что Количество строк в названии товара -- 2
+        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_SmallItems(blockID, 2).isEmpty(),
+                "Number of lines in the product name is not 2!");
 
         //Проверяем, что код товара присутствует
         softAssert.assertTrue(!assertsOnStorefront.getProductCode(blockID).isEmpty(),

@@ -115,9 +115,7 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
         productSettings.chooseAnyProduct();
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()) {
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
+        csCartSettings.closeNotificationIfPresent();
         productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
         csCartSettings.clickSaveButtonOfSettings();
     }
@@ -156,6 +154,10 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
+
+        //Проверяем, что Количество строк в названии товара -- 4
+        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_SmallItems(blockID, 4).isEmpty(),
+                "Number of lines in the product name is not 4!");
 
         //Проверяем, что код товара отсутствует
         softAssert.assertFalse(!assertsOnStorefront.getProductCode(blockID).isEmpty(),

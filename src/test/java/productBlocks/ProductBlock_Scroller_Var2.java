@@ -16,35 +16,35 @@ import testRunner.TestRunner;
 Шаблон                      -- Скроллер
 Показывать цену             -- y
 Включить быстрый просмотр   -- y
-Количество элементов        -- 5
-Внешняя навигация           -- n
+Количество элементов        -- 3
+Внешняя навигация           -- y
 Заполнение                  -- Товары со скидкой
-Макс. число элементов       -- 17
+Макс. число элементов       -- 15
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1. UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 4
+Формат отображения цен                          -- Вариант 3
 Отображать цену вверху                          -- n
-Отображать пустые звёзды рейтинга товара        -- y
+Отображать пустые звёзды рейтинга товара        -- n
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
-Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- y
-Отображать "Вы экономите"                       -- Сокращенный вид
+Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара -- n
+Отображать "Вы экономите"                       -- Полный вид
 
 2.2. UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Скроллер"
-Количество строк в названии товара              -- 2
+Количество строк в названии товара              -- 3
 Отображать статус наличия                       -- y
-Отображать модификатор количества               -- y
+Отображать модификатор количества               -- n
 Отображать кнопку "Быстрый просмотр"            -- y
 Не прокручивать автоматически                   -- y
-Отображать кнопку "Купить"                      -- Иконка корзины и текст
+Отображать кнопку "Купить"                      -- Только иконка корзины
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
 Тип обрамления товара в сетке                   -- Рамка с внешними отступами
-Добавить фон/маску для изображений товара       -- n
+Добавить фон/маску для изображений товара       -- y
 Использовать выравнивание элементов в товарной сетке --	y
-Насыщенность шрифта для названия товара         -- Нормальный
+Насыщенность шрифта для названия товара         -- Жирный
 
 4) Настраиваем налог для всех товаров
 
@@ -52,11 +52,11 @@ import testRunner.TestRunner;
 Включить быстрый просмотр                       -- y
 */
 
-public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLazyLoadFromSection {
+public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
 
     @Test(priority = 1)
-    public void setConfigurationsForProductBlock_Scroller_Var1() {
+    public void setConfigurationsForProductBlock_Scroller_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
 
         //Настраиваем блок товаров "Распродажа"
@@ -73,15 +73,15 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
             csCartSettings.checkbox_EnableQuickView.click();
         if(!csCartSettings.checkbox_DoNotScrollAutomatically.isSelected())
             csCartSettings.checkbox_DoNotScrollAutomatically.click();
-        csCartSettings.clickAndType_Field_ItemQuantity("5");
-        if(csCartSettings.checkbox_OutsideNavigation.isSelected())
+        csCartSettings.clickAndType_Field_ItemQuantity("3");
+        if(!csCartSettings.checkbox_OutsideNavigation.isSelected())
             csCartSettings.checkbox_OutsideNavigation.click();
         Actions scroll = new Actions(DriverProvider.getDriver());
         scroll.scrollToElement(csCartSettings.tabOfBlock_Content);
         scroll.perform();
         csCartSettings.tabOfBlock_Content.click();
         csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("17");
+        csCartSettings.clickAndType_Field_Limit("15");
         csCartSettings.tabOfBlock_BlockSettings.click();
         if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
             csCartSettings.checkbox_HideAddToCartButton.click();
@@ -89,13 +89,13 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected()) {
+        if (checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
@@ -110,22 +110,22 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         if (!checkboxSettingDisplayButtonWishList.isSelected()) {
             checkboxSettingDisplayButtonWishList.click();
         }
-        if(!themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
+        if(themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
             themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("short");
+        themeSettingsProductLists.selectSettingShowYouSave("full");
 
         //Работаем с настройками темы п.2.2
         Actions scrolling = new Actions(DriverProvider.getDriver());
         scrolling.scrollToElement(themeSettingsProductLists.scroller_AvailabilityStatus);
         scrolling.perform();
-        themeSettingsProductLists.selectScroller_NumberOfLinesInProductName("2");
+        themeSettingsProductLists.selectScroller_NumberOfLinesInProductName("3");
         if(!themeSettingsProductLists.scroller_AvailabilityStatus.isSelected())
             themeSettingsProductLists.scroller_AvailabilityStatus.click();
-        if(!themeSettingsProductLists.scroller_QuantityChanger.isSelected())
+        if(themeSettingsProductLists.scroller_QuantityChanger.isSelected())
             themeSettingsProductLists.scroller_QuantityChanger.click();
         if(!themeSettingsProductLists.scroller_QuickViewButton.isSelected())
             themeSettingsProductLists.scroller_QuickViewButton.click();
-        themeSettingsProductLists.selectScroller_AddToCartButton("icon_and_text");
+        themeSettingsProductLists.selectScroller_AddToCartButton("icon_button");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -135,11 +135,11 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
         colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
-        if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
+        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
         }
         colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("use");
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("normal");
+        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
@@ -163,8 +163,8 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         csCartSettings.clickSaveButtonOfSettings();
     }
 
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_Scroller_Var1")
-    public void checkProductBlock_Scroller_Var1() {
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_Scroller_Var2")
+    public void checkProductBlock_Scroller_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -179,14 +179,18 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         tab_OnSale.click();
         makePause();
 
-        //Проверяем, что у блока товаров "Количество элементов -- 5"
+        //Проверяем, что у блока товаров "Количество элементов -- 3"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .owl-item.active")).size(), 5,
-                "Number of elements is not equal 5 in the product block!");
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .owl-item.active")).size(), 3,
+                "Number of elements is not equal 3 in the product block!");
 
-        //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
-                "There are no empty stars in the product block!");
+        //Проверяем, что внешняя навигация присутствует
+        softAssert.assertTrue(!assertsOnStorefront.getOutsideNavigation(blockID).isEmpty(),
+                "There is no outside navigation in the product block!");
+
+        //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
+        softAssert.assertFalse(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
+                "There are empty stars but shouldn't in the product block!");
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
         softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
@@ -200,13 +204,13 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
                 "There is no button 'Add to comparison list' in the product block!");
 
-        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        softAssert.assertTrue(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed when hovering over a product cell in the product block!");
+        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
+        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
+                "Buttons are displayed when hovering over a product cell but should be displayed at once in the product block!");
 
-        //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Short(blockID).isEmpty(),
-                "The text 'You save' is not Short or missed in the product block!");
+        //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
+        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty(),
+                "The text 'You save' is not Full or missed in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
@@ -216,27 +220,26 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
                 "There is no availability status in the product block!");
 
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is no quantity Changer in the product block!");
+        //Проверяем, что модификатор количества отсутствует
+        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
+                "There is a quantity Changer but shouldn't in the product block!");
 
         //Проверяем, что быстрый просмотр присутствует
         softAssert.assertTrue(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),
                 "There is no Quick view button in the product block!");
 
-        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_IconOnly(blockID).isEmpty()
-                        && !assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
+        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
+        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly().isEmpty(),
+                "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
 
-        takeScreenShot("ProductBlock_Scroller_Var1");
+        takeScreenShot("ProductBlock_Scroller_Var2");
         stHomePage.selectLanguage_RTL();
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
-        takeScreenShot("ProductBlock_Scroller_Var1 (RTL)");
+        takeScreenShot("ProductBlock_Scroller_Var2 (RTL)");
 
         softAssert.assertAll();
-        System.out.println("ProductBlock_Scroller_Var1 has passed successfully!");
+        System.out.println("ProductBlock_Scroller_Var2 has passed successfully!");
     }
 }

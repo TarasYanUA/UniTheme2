@@ -316,6 +316,11 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public List<WebElement> enableQuickView;    //Настройка "Включить быстрый просмотр"
 
+    public List<WebElement> getQuickViewButton(String blockID){
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] a[class*='ut2-quick-view-button']"));
+    }
+
 
 
     //Настройки на странице редактирования товара
@@ -353,4 +358,11 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Hard drive']")
     public List<WebElement> showInHeaderOnProductPage_HardDrive;  //Настройка "Товары -- Характеристики -- Жесткий диск -- Показывать в заголовке карточки товара"
 
+    //Настройка "Внешняя навигация" в настройках блока
+    String outsideNavigation = " .owl-theme.ty-owl-controls";
+
+    public List<WebElement> getOutsideNavigation(String blockID){
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + outsideNavigation));
+    }
 }

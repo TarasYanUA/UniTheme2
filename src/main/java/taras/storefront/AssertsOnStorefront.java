@@ -258,6 +258,13 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots;
 
 
+    String numberOfLinesInProductName = " div[style='--sl-lines-in-name-product: ";  //Настройка "Вид списка товаров "Скроллер" -- Количество строк в названии товара"
+
+    public List<WebElement> getNumberOfLinesInProductName(String blockID, int number) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName + number + ";']"));
+    }
+
 
     //Настройки темы -- вкладка "Товар"
 

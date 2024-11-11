@@ -33,7 +33,7 @@ import testRunner.TestRunner;
 Отображать "Вы экономите"                       -- Полный вид
 
 2.2. UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Скроллер"
-Количество строк в названии товара              -- 3
+Количество строк в названии товара              -- 2
 Отображать статус наличия                       -- y
 Отображать модификатор количества               -- n
 Отображать кнопку "Быстрый просмотр"            -- y
@@ -118,7 +118,7 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         Actions scrolling = new Actions(DriverProvider.getDriver());
         scrolling.scrollToElement(themeSettingsProductLists.scroller_AvailabilityStatus);
         scrolling.perform();
-        themeSettingsProductLists.selectScroller_NumberOfLinesInProductName("3");
+        themeSettingsProductLists.selectScroller_NumberOfLinesInProductName("2");
         if(!themeSettingsProductLists.scroller_AvailabilityStatus.isSelected())
             themeSettingsProductLists.scroller_AvailabilityStatus.click();
         if(themeSettingsProductLists.scroller_QuantityChanger.isSelected())
@@ -215,6 +215,10 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
+
+        //Проверяем, что Количество строк в названии товара -- 2
+        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName(blockID, 2).isEmpty(),
+                "Number of lines in the product name is not 2!");
 
         //Проверяем, что статус наличия присутствует
         softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),

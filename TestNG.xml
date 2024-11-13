@@ -60,10 +60,10 @@
             <!--Тест-кейсы для Блоков товаров -->
             <!--<class name="productBlocks.ProductBlock_GridMore_Var1" />
             <class name="productBlocks.ProductBlock_GridMore_Var2" />
-            <class name="productBlocks.ProductBlock_GridMore_Var3" /> -->
+            <class name="productBlocks.ProductBlock_GridMore_Var3" />
             <class name="productBlocks.ProductBlock_SmallItems_Var1" />
             <class name="productBlocks.ProductBlock_SmallItems_Var2" />
-            <class name="productBlocks.ProductBlock_SmallItems_Var3" />
+            <class name="productBlocks.ProductBlock_SmallItems_Var3" /> -->
 
         </classes>
     </test>

@@ -2,6 +2,7 @@ package taras.adminPanel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
@@ -47,6 +48,8 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "input[name='block_data[properties][elements_per_column_third_level_view]']")
     private WebElement setting_NumberOfVisibleElementsIn_3LevelMenu;
     public void clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu(String value){
+        Actions actions = new Actions(DriverProvider.getDriver());
+        actions.moveToElement(setting_NumberOfVisibleElementsIn_3LevelMenu).build().perform();
         setting_NumberOfVisibleElementsIn_3LevelMenu.click();
         setting_NumberOfVisibleElementsIn_3LevelMenu.clear();
         setting_NumberOfVisibleElementsIn_3LevelMenu.sendKeys(value);

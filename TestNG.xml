@@ -18,9 +18,9 @@
             <class name="GeneralSettings_ProductPage_Cascade_Var3" />
 
             <!--Тест-кейсы для настроек Цветосхемы -->
-            <!--<class name="ColorSchemeSettings_Product_Var1" />
+            <class name="ColorSchemeSettings_Product_Var1" />
             <class name="ColorSchemeSettings_General_Var1" />
-            <class name="ColorSchemeSettings_General_Var2" /> -->
+            <class name="ColorSchemeSettings_General_Var2" />
 
             <!--Тест-кейсы для Меню на витрине -->
             <!--<class name="menu.Menu01_Horizontal_RowFilling_6columns" />
@@ -58,9 +58,9 @@
             <class name="menu.Menu51_FlyMenu_Var2" /> -->
 
             <!--Тест-кейсы для Блоков товаров -->
-            <class name="productBlocks.ProductBlock_GridMore_Var1" />
+            <!--<class name="productBlocks.ProductBlock_GridMore_Var1" />
             <class name="productBlocks.ProductBlock_GridMore_Var2" />
-            <class name="productBlocks.ProductBlock_GridMore_Var3" />
+            <class name="productBlocks.ProductBlock_GridMore_Var3" /> -->
             <class name="productBlocks.ProductBlock_SmallItems_Var1" />
             <class name="productBlocks.ProductBlock_SmallItems_Var2" />
             <class name="productBlocks.ProductBlock_SmallItems_Var3" />

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved some code for some tests.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved some code for menu of the theme.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +190,7 @@
     "git-widget-placeholder": "UniTheme__4.18.2b",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2_Mobile/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -218,17 +220,11 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
-    <configuration name="ProductBlock_GridMore_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Cascade_Var3">
+    <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -236,16 +232,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_Scroller_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorSchemeSettings_General_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -253,16 +243,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_Scroller_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_Product_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -270,16 +254,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_Scroller_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Cascade_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -287,16 +265,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_SmallItems_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_SmallItems_Var1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -306,19 +278,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var1" />
-      <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
-        <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var1" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var3" />
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
       </list>
     </recent_temporary>
   </component>
@@ -688,7 +660,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +679,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added new theme settings to three test-cases &quot;ProductBlock&quot;." />
     <MESSAGE value="Improved some asserts." />
     <MESSAGE value="Fixed some bugs in my tests for MENU.&#10;Adapted some code of MENU tests to the newest theme version." />
     <MESSAGE value="Made some corrections according to the newest changes in the theme." />
@@ -732,7 +703,8 @@
     <MESSAGE value="All three test-cases for product block &quot;Scroller&quot; are ready!&#10;Added some new asserts for the product block!" />
     <MESSAGE value="Added new settings and asserts to these settings!" />
     <MESSAGE value="Improved some code for some tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved some code for some tests." />
+    <MESSAGE value="Improved some code for menu of the theme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved some code for menu of the theme." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

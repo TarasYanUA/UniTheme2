@@ -110,7 +110,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productSettings.tab_QuantityDiscounts.click();
         if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2){
             productSettings.clickAndType_field_Quantity("3");
-            productSettings.clickAndType_field_Value("55200");
+            productSettings.clickAndType_field_Value("70200");
         }
         csCartSettings.clickSaveButtonOfSettings();
     }

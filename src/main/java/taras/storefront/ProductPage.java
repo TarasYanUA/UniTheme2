@@ -65,10 +65,12 @@ public class ProductPage extends AbstractPage {
         gearwheel_Language.click();
         language_RTL.click();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(gearwheel_Language).perform();
     }
 
     public WebElement hoverTab_Features(){

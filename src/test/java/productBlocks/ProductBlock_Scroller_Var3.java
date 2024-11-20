@@ -40,7 +40,7 @@ import java.util.List;
 Отображать статус наличия                       -- n
 Отображать модификатор количества               -- n
 Отображать кнопку "Быстрый просмотр"            -- n
-Отображать кнопку "Купить"                      -- Только иконка корзины
+Отображать кнопку "Купить"                      -- Только текст
 
 3) UniTheme2 -- Настройки цветосхемы -- вкладка "Списки товаров":
 Тип обрамления товара в сетке                   -- Рамка без внешних отступов
@@ -127,7 +127,7 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
             themeSettingsProductLists.scroller_QuantityChanger.click();
         if(themeSettingsProductLists.scroller_QuickViewButton.isSelected())
             themeSettingsProductLists.scroller_QuickViewButton.click();
-        themeSettingsProductLists.selectScroller_AddToCartButton("icon_button");
+        themeSettingsProductLists.selectScroller_AddToCartButton("text");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -145,14 +145,6 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
 
         //Настраиваем налог для всех товаров
         csCartSettings.setTaxesForAllProducts();
-
-        //Задаём товару "Wildwood city classic" длинное название
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
-        productSettings.chooseAnyProduct();
-        csCartSettings.closeNotificationIfPresent();
-        productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
-        csCartSettings.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_Scroller_Var3")

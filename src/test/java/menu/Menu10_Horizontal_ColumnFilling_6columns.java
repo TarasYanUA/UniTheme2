@@ -64,29 +64,37 @@ public class Menu10_Horizontal_ColumnFilling_6columns extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Колоночное заполнение
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
+
         //Проверяем, что колонок 6
         softAssert.assertTrue(!assertsOfMenu.sixColumns.isEmpty(),
                 "Menu columns are not equal 6 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu10.02 Menu10_Horizontal_ColumnFilling_6columns - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что Элементов второго уровня -- 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
                 "Number of elements of the 2-level is not 7!");
+
         //Проверяем, что Элементов третьего уровня -- 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 7,
                 "Number of elements of the third level is not 7!");
+
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
                 "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
+
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu10.04 Menu10_Horizontal_ColumnFilling_6columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

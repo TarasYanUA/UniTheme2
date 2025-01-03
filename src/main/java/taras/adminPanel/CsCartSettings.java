@@ -43,16 +43,6 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         return new StHomePage();
     }
 
-    @FindBy(xpath = "//span[text()='Модули']")
-    private WebElement menu_Addons;
-    @FindBy(id = "addons_downloaded_add_ons")
-    private WebElement menu_DownloadedAddons;
-
-    public void navigateTo_DownloadedAddonsPage() {
-        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
-        menu_DownloadedAddons.click();
-    }
-
 
     //Меню "Настройки"
     @FindBy(id = "administration")
@@ -252,16 +242,32 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
 
     //Меню "Модули -- Скачанные модули"
+    @FindBy(xpath = "//span[text()='Модули']")
+    private WebElement menu_Addons;
+
+    @FindBy(id = "addons_downloaded_add_ons")
+    private WebElement section_DownloadedAddons;
+
     @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
     private WebElement themeSectionsOnPage_DownloadedAddons;
+
     @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.settings']")
     private WebElement themeSettings;
+
     @FindBy(css = ".nav-tabs #products")
     public WebElement tab_Product;
+
     @FindBy(css = "#product_list")
     private WebElement tab_ProductLists;
+
     @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.less_settings']")
     private WebElement colorSchemeSettings;
+
+
+    public void navigateTo_DownloadedAddonsPage() {
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
+        section_DownloadedAddons.click();
+    }
 
     public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists() {
         navigateTo_DownloadedAddonsPage();

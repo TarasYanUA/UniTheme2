@@ -66,29 +66,37 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что колонок 3
         softAssert.assertTrue(!assertsOfMenu.threeColumns.isEmpty(),
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu34.02 Menu34_Vertical_RowFilling_3columns_CompactView - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
+
         //Проверяем, что Элементов третьего уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() >= 7,
                 "Number of elements of the third level is less than 7!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
+
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu34.04 Menu34_Vertical_RowFilling_3columns_CompactView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

@@ -90,7 +90,7 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu25.04 Menu25_Vertical_ColumnFilling_1column_CompactView - Menu Apparel");

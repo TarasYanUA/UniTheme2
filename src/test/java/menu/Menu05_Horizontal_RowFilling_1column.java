@@ -88,7 +88,7 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
                 "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu5.04 Menu05_Horizontal_RowFilling_1column - Menu Apparel");

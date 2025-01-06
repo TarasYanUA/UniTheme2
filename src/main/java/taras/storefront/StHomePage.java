@@ -67,19 +67,19 @@ public class StHomePage extends AbstractPage {
     @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
     public WebElement verticalMenu_menuButton_Categories;
 
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__products")
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__products")
     private WebElement verticalMenu_menuAllProducts;
 
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__electronics .menu-lvl-ctn")
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__electronics")
     private WebElement verticalMenu_menuElectronic;
 
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__apparel .menu-lvl-ctn")
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__apparel")
     private WebElement verticalMenu_menuApparel;
 
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__sport .menu-lvl-ctn")
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__sport")
     private WebElement verticalMenu_menuSportsAndOutdoors;
 
-    @FindBy(css = ".ut2-menu-vetrtical .ty-menu-item__media  .menu-lvl-ctn")
+    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__media ")
     private WebElement verticalMenu_menuVideoGames;
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0']")
@@ -138,15 +138,15 @@ public class StHomePage extends AbstractPage {
     private WebElement horizontalMenu_menuMenCloth;
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
     private WebElement horizontalMenu_menuWomanCloth;
-    @FindBy(css = ".ty-menu__wrapper .ty-menu-item__products")
+    @FindBy(css = ".ut2-menu__list .ty-menu-item__products")
     private WebElement horizontalMenu_menuAllProducts;
-    @FindBy(css = ".ty-menu__wrapper .ty-menu-item__apparel")
+    @FindBy(css = ".ut2-menu__list .ty-menu-item__apparel")
     private WebElement horizontalMenu_menuApparel;
-    @FindBy(css = ".ty-menu__wrapper .ty-menu-item__electronics")
+    @FindBy(css = ".ut2-menu__list .ty-menu-item__electronics")
     private WebElement horizontalMenu_menuElectronic;
-    @FindBy(css = ".ty-menu__wrapper .ty-menu-item__sport")
+    @FindBy(css = ".ut2-menu__list .ty-menu-item__sport")
     private WebElement horizontalMenu_menuSportsAndOutdoors;
-    @FindBy(css = ".ty-menu__wrapper .ty-menu-item__media")
+    @FindBy(css = ".ut2-menu__list .ty-menu-item__media")
     private WebElement horizontalMenu_menuVideoGames;
 
 

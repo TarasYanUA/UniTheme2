@@ -104,7 +104,7 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 5,
                 "There are less than 5 buttons 'More' in the elements of the second level of the menu!");
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu42.04 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics");

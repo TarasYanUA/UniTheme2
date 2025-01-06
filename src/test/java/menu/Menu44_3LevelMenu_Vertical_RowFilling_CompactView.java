@@ -82,23 +82,30 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что присутствует 1 колонка
         softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
                 "Menu columns are not equal 1 column!");
+
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu44.02 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu Electronic-Computers");
+
         //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
                 "Number of elements of the second level is not 5!");
-        //Проверяем, что Элементов третьего уровня -- 2
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 2,
-                "'Third level elements' are not equal 2!");
+
+        //Проверяем, что "Кол-во отображаемых элементов в 3-м уровне меню" -- 1
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 1,
+                "'Third level elements' are not equal 1!");
+
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
+
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu44.04 Menu44_3LevelMenu_Vertical_RowFilling_CompactView - Menu Electronic-CarElectronics");
 

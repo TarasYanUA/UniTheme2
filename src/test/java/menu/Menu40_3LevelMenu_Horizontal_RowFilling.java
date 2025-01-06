@@ -80,26 +80,33 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что колонок 5
         softAssert.assertTrue(!assertsOfMenu.fiveColumns.isEmpty(),
                 "Menu columns are not equal 5 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
+
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
                 "'Third level elements' are not equal 6!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
+
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu40.04 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics");
 

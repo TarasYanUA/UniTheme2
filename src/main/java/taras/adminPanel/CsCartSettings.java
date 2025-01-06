@@ -43,16 +43,6 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         return new StHomePage();
     }
 
-    @FindBy(xpath = "//span[text()='Модули']")
-    private WebElement menu_Addons;
-    @FindBy(id = "addons_downloaded_add_ons")
-    private WebElement menu_DownloadedAddons;
-
-    public void navigateTo_DownloadedAddonsPage() {
-        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
-        menu_DownloadedAddons.click();
-    }
-
 
     //Меню "Настройки"
     @FindBy(id = "administration")
@@ -177,8 +167,10 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement gearwheelOnCategoryPage;
     @FindBy(css = "a[href*='dispatch=categories.m_add']")
     public WebElement button_AddBulkCategory;
-    @FindBy(css = "select[name='categories_data[0][parent_id]']")
-    public WebElement categoryLocation;
+
+    @FindBy(css = "div[id*='location_category_'] .cs-icon--type-plus")
+    public WebElement button_CategoryLocation;
+
     @FindBy(css = ".span3")
     public WebElement field_CategoryName;
     @FindBy(css = ".btn-clone")
@@ -191,12 +183,15 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         section_Categories.click();
     }
 
-    private Select getCategoryLocation() {
-        return new Select(categoryLocation);
-    }
-
-    public void selectCategoryLocation_Computers() {
-        getCategoryLocation().selectByValue("167");
+    public void chooseCategoryLocation_Computers() {
+        button_CategoryLocation.click();
+        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
     }
 
     public void clickAndType_Field_CategoryName() {
@@ -252,16 +247,32 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
 
     //Меню "Модули -- Скачанные модули"
+    @FindBy(xpath = "//span[text()='Модули']")
+    private WebElement menu_Addons;
+
+    @FindBy(id = "addons_downloaded_add_ons")
+    private WebElement section_DownloadedAddons;
+
     @FindBy(xpath = "//tr[@id='addon_abt__unitheme2']//button[@class='btn dropdown-toggle']")
     private WebElement themeSectionsOnPage_DownloadedAddons;
+
     @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.settings']")
     private WebElement themeSettings;
+
     @FindBy(css = ".nav-tabs #products")
     public WebElement tab_Product;
+
     @FindBy(css = "#product_list")
     private WebElement tab_ProductLists;
+
     @FindBy(css = "div[class='btn-group dropleft open'] a[href$='abt__ut2.less_settings']")
     private WebElement colorSchemeSettings;
+
+
+    public void navigateTo_DownloadedAddonsPage() {
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
+        section_DownloadedAddons.click();
+    }
 
     public ThemeSettings_ProductLists navigateTo_ThemeSettings_tabProductLists() {
         navigateTo_DownloadedAddonsPage();

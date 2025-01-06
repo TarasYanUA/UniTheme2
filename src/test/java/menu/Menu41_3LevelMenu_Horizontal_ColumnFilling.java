@@ -81,28 +81,35 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Колоночное заполнение
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
+
         //Проверяем, что колонок 3
         softAssert.assertTrue(!assertsOfMenu.threeColumns.isEmpty(),
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu41.02 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
         softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Two.isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 2!");
+
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
+
         //Проверяем, что Элементов третьего уровня -- 4
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 4,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 4,
                 "'Third level elements' are not equal 4!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
+
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu41.04 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-CarElectronics");

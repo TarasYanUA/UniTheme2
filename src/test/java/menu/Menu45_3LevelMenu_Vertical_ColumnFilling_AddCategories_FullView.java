@@ -66,16 +66,9 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
-            csCartSettings.gearwheelOnCategoryPage.click();
-            csCartSettings.button_AddBulkCategory.click();
-            csCartSettings.chooseCategoryLocation_Computers();
-            csCartSettings.clickAndType_Field_CategoryName();
-            for(int i = 1; i < 80; i++) {
-                csCartSettings.button_Clone.click();
-            }
-            csCartSettings.button_Create.click();
-        }
+        csCartSettings.gearwheelOnCategoryPage.click();
+        csCartSettings.button_AddBulkCategory.click();
+        csCartSettings.addNewCategoryLocations_Computers();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         csCartSettings.navigateToSection_WebsiteLayouts();

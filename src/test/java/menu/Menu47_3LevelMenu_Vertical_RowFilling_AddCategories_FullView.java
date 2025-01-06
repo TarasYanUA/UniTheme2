@@ -56,7 +56,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
         mainMenuSettings.button_Save3LevelMenu.click();
         mainMenuSettings.selectLanguage_RTL();
         mainMenuSettings.arrowOfCategory.click();
-        mainMenuSettings.categoryComputers.click();
+        mainMenuSettings.categoryComputers_RTL.click();
         mainMenuSettings.menuTab_ABUniTheme2.click();
         if(DriverProvider.getDriver().findElements(By.cssSelector("img[src$='sports-bg-menu.jpg']")).isEmpty()) {
             mainMenuSettings.button_Html.click();
@@ -67,16 +67,9 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
             csCartSettings.gearwheelOnCategoryPage.click();
             csCartSettings.button_AddBulkCategory.click();
-            csCartSettings.chooseCategoryLocation_Computers();
-            csCartSettings.clickAndType_Field_CategoryName();
-            for(int i = 1; i < 80; i++) {
-                csCartSettings.button_Clone.click();
-            }
-            csCartSettings.button_Create.click();
-        }
+            csCartSettings.addNewCategoryLocations_Computers();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         csCartSettings.navigateToSection_WebsiteLayouts();

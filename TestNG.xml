@@ -38,14 +38,14 @@
             <class name="menu.Menu22_Vertical_ColumnFilling_2columns_FullView" />
             <class name="menu.Menu23_Vertical_ColumnFilling_1column_FullView" />
             <class name="menu.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
-            <class name="menu.Menu25_Vertical_ColumnFilling_1column_CompactView" /> -->
+            <class name="menu.Menu25_Vertical_ColumnFilling_1column_CompactView" />
             <class name="menu.Menu30_Vertical_RowFilling_5columns_FullView" />
             <class name="menu.Menu31_Vertical_RowFilling_4columns_FullView" />
             <class name="menu.Menu32_Vertical_RowFilling_2columns_FullView" />
             <class name="menu.Menu33_Vertical_RowFilling_1column_FullView" />
             <class name="menu.Menu34_Vertical_RowFilling_3columns_CompactView" />
-            <class name="menu.Menu35_Vertical_RowFilling_1column_CompactView" />
-            <!--<class name="menu.Menu40_3LevelMenu_Horizontal_RowFilling" />
+            <class name="menu.Menu35_Vertical_RowFilling_1column_CompactView" /> -->
+            <class name="menu.Menu40_3LevelMenu_Horizontal_RowFilling" />
             <class name="menu.Menu41_3LevelMenu_Horizontal_ColumnFilling" />
             <class name="menu.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView" />
             <class name="menu.Menu43_3LevelMenu_Vertical_RowFilling_FullView" />
@@ -54,7 +54,7 @@
             <class name="menu.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView" />
             <class name="menu.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
             <class name="menu.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
-            <class name="menu.Menu50_FlyMenu_Var1" />
+            <!--<class name="menu.Menu50_FlyMenu_Var1" />
             <class name="menu.Menu51_FlyMenu_Var2" /> -->
 
             <!--Тест-кейсы для Блоков товаров -->

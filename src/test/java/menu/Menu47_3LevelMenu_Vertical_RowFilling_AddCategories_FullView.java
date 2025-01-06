@@ -70,7 +70,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
         if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
             csCartSettings.gearwheelOnCategoryPage.click();
             csCartSettings.button_AddBulkCategory.click();
-            csCartSettings.selectCategoryLocation_Computers();
+            csCartSettings.chooseCategoryLocation_Computers();
             csCartSettings.clickAndType_Field_CategoryName();
             for(int i = 1; i < 80; i++) {
                 csCartSettings.button_Clone.click();

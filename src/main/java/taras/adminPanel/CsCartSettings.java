@@ -167,8 +167,10 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     public WebElement gearwheelOnCategoryPage;
     @FindBy(css = "a[href*='dispatch=categories.m_add']")
     public WebElement button_AddBulkCategory;
-    @FindBy(css = "select[name='categories_data[0][parent_id]']")
-    public WebElement categoryLocation;
+
+    @FindBy(css = "div[id*='location_category_'] .cs-icon--type-plus")
+    public WebElement button_CategoryLocation;
+
     @FindBy(css = ".span3")
     public WebElement field_CategoryName;
     @FindBy(css = ".btn-clone")
@@ -181,12 +183,15 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         section_Categories.click();
     }
 
-    private Select getCategoryLocation() {
-        return new Select(categoryLocation);
-    }
-
-    public void selectCategoryLocation_Computers() {
-        getCategoryLocation().selectByValue("167");
+    public void chooseCategoryLocation_Computers() {
+        button_CategoryLocation.click();
+        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
     }
 
     public void clickAndType_Field_CategoryName() {

@@ -92,7 +92,7 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
                 "There are buttons 'More' in the second level of the menu but shouldn't!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToHorizontalMenu_Apparel();

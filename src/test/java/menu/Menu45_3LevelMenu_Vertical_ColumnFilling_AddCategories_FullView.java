@@ -83,7 +83,6 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
@@ -113,7 +112,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
                 "Menu filling is not Column!");
 
         //Проверяем, что колонок 4
-        softAssert.assertTrue(!assertsOfMenu.fourColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
                 "Menu columns are not equal 4 columns!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7

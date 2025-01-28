@@ -160,6 +160,8 @@ public class ProductSettings extends AbstractPage {
     @FindBy(id = "pd_is_pbp")
     public WebElement setting_AllowPaymentByPoints;
     @FindBy(id = "qty_discounts")
+
+    //вкладка товара "Оптовые скидки"
     public WebElement tab_QuantityDiscounts;
     @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
     WebElement field_Quantity;

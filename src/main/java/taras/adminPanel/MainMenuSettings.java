@@ -18,12 +18,16 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = "div[data-ca-block-name='Главное меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu_LightV2;
+
     @FindBy(css = "div[data-ca-block-name='Категории'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_Categories_Light;
+
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
+
     @FindBy(css = "div[data-ca-block-name='Меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_FlyMenu_Default;
+
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;
 
@@ -48,18 +52,11 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = "input[type='checkbox'][name='block_data[properties][abt__menu_compact_view]']")
     public WebElement setting_CompactDisplayView;
+
     @FindBy(css = "input[type='checkbox'][name='block_data[properties][abt_menu_icon_items]']")
     public WebElement setting_ShowIconsForMenuItems;
-    @FindBy(css = "input[name='block_data[properties][no_hidden_elements_second_level_view]']")
-    private WebElement setting_NumberOfVisibleElementsIn_2LevelMenu;
 
-    public void clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu(String value) {
-        setting_NumberOfVisibleElementsIn_2LevelMenu.click();
-        setting_NumberOfVisibleElementsIn_2LevelMenu.clear();
-        setting_NumberOfVisibleElementsIn_2LevelMenu.sendKeys(value);
-    }
-
-    @FindBy(css = "input[name='block_data[properties][elements_per_column_third_level_view]']")
+    @FindBy(css = "input[name='block_data[properties][abt__no_hidden_elements_third_level_view]")
     private WebElement setting_NumberOfVisibleElementsIn_3LevelMenu;
 
     public void clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu(String value) {
@@ -99,6 +96,7 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = "li[id^='block_contents_'] a")
     public WebElement tab_Content;
+
     @FindBy(css = "select[id$='_content_menu']")
     private WebElement field_menuContent;
 
@@ -109,22 +107,30 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = "input[id$='_abt__ut2_fly_menu_properties_abt__ut2_show_title']")
     public WebElement setting_ShowTitle;
+
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
+
 
     //Настройки меню на странице "Веб-сайт -- Меню"
     @FindBy(xpath = "//a[contains(text(), 'AB: Main menu')]")
     public WebElement choose_MainMenu;
+
     @FindBy(xpath = "//a[text()='Электроника']")
     public WebElement chooseMenu_Electronics;
+
     @FindBy(xpath = "//div[contains(@class, 'ui-dialog-content')]//a[text()='AB: UniTheme2']")
     public WebElement menuTab_ABUniTheme2;
+
     @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__status_']")
     public WebElement setting_ActivateSettings;
+
     @FindBy(css = ".ui-dialog-content input[id*='abt__ut2_mwi__dropdown_']")
     public WebElement setting_Activate3LevelMenu;
+
     @FindBy(css = ".ui-dialog-content input[name='dispatch[static_data.update]']")
     public WebElement button_Save3LevelMenu;
+
     @FindBy(css = "span[id*='on_item_'] .icon-caret-right")
     public WebElement arrowOfCategory;
 
@@ -147,8 +153,10 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = "a[id*='wrap_content'] span")
     private WebElement languageButton;
+
     @FindBy(css = ".content-variant-wrap a[name='ar']")
     private WebElement languageRTL;
+
     @FindBy(css = ".content-variant-wrap a[name='ru']")
     private WebElement languageRU;
 

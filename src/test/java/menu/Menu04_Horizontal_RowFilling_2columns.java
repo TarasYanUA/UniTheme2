@@ -44,7 +44,6 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
@@ -64,23 +63,29 @@ public class Menu04_Horizontal_RowFilling_2columns extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что колонок 2
-        softAssert.assertTrue(!assertsOfMenu.twoColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("2").isEmpty(),
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu4.02 Menu04_Horizontal_RowFilling_2columns - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Элементов второго уровня -- 5
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
                 "Number of elements of the 2-level is not 5!");
+
         //Проверяем, что Элементов третьего уровня -- 0
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
                 "Number of elements of the third level of the menu is more than zero!");
+
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu4.04 Menu04_Horizontal_RowFilling_2columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

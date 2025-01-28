@@ -45,7 +45,6 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("30");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("30");
@@ -72,7 +71,7 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
                 "Menu filling is not Row!");
 
         //Проверяем, что колонок 3
-        softAssert.assertTrue(!assertsOfMenu.threeColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("3").isEmpty(),
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu34.02 Menu34_Vertical_RowFilling_3columns_CompactView - Menu Electronic");
@@ -82,7 +81,7 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
                 "There are no icons at the menu of the second level!");
 
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7

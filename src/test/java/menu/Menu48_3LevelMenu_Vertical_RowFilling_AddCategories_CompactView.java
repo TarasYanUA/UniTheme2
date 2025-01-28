@@ -64,7 +64,6 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
         if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
@@ -90,18 +89,23 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что колонок 1
-        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
                 "Menu columns are not equal 1 column!");
+
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
+
         //Проверяем, что Элементов третьего уровня -- не меньше 75
         softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 75,
                 "'Third level elements' are less than 75!");
+
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
-                "There is no button 'More [category]' in the third level of the menu!"); //Ошибка https://abteam.planfix.com/task/41448 п.3
+                "There is no button 'More [category]' in the third level of the menu!");
+
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu48.04 Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView - Electronic-CarElectronics");
 

@@ -44,7 +44,6 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
@@ -65,23 +64,29 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu35.02 Menu35_Vertical_RowFilling_1column_CompactView - Menu Electronic");
+
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
+
         //Проверяем, что Элементов второго уровня -- 5
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
                 "Number of elements of the second level is not 5!");
+
         //Проверяем, что Элементов третьего уровня -- 0
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
                 "Number of elements of the third level of the menu is more than zero!");
+
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu35.04 Menu35_Vertical_RowFilling_1column_CompactView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

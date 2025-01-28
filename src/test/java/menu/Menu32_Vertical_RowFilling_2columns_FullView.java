@@ -45,7 +45,6 @@ public class Menu32_Vertical_RowFilling_2columns_FullView extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
@@ -66,23 +65,29 @@ public class Menu32_Vertical_RowFilling_2columns_FullView extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что колонок 2
-        softAssert.assertTrue(!assertsOfMenu.twoColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("2").isEmpty(),
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu32.02 Menu32_Vertical_RowFilling_2columns_FullView - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Элементов второго уровня -- 5
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
                 "Number of elements of the second level is not 5!");
+
         //Проверяем, что Элементов третьего уровня -- 0
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
                 "Number of elements of the third level of the menu is more than zero!");
+
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu32.04 Menu32_Vertical_RowFilling_2columns_FullView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

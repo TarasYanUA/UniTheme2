@@ -82,7 +82,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
-    String text_YouSave_Full = "span.ty-save-price";
+    String text_YouSave_Full = "span.ty-save-price";    //Попробовать этот селектор .ty-save-price:not(.ut2-sld-short .ty-save-price)
     public List<WebElement> text_YouSave_Full(){
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Full));
     }
@@ -329,7 +329,7 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> miniThumbnailImagesAsGallery_Enabled;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
 
     @FindBy(css = ".ty-product-thumbnails")
-    public List<WebElement> miniThumbnailImages_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
+    public List<WebElement> miniThumbnailImagesAsGallery_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
 
     @FindBy(css = "div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")
     public List<WebElement> displayProductDetailsInTabs_Enabled;    //Настройка "Показывать информацию о товаре во вкладках" ВКЛ.

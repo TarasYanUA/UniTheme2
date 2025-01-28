@@ -61,7 +61,6 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
@@ -88,7 +87,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
                 "Menu filling is not Row!");
 
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
                 "Menu columns are not equal 1 column!");
 
         stHomePage.navigateToVerticalMenu_Electronic();

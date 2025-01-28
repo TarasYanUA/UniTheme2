@@ -44,7 +44,6 @@ public class Menu10_Horizontal_ColumnFilling_6columns extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("7");
@@ -70,7 +69,7 @@ public class Menu10_Horizontal_ColumnFilling_6columns extends TestRunner {
                 "Menu filling is not Column!");
 
         //Проверяем, что колонок 6
-        softAssert.assertTrue(!assertsOfMenu.sixColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("6").isEmpty(),
                 "Menu columns are not equal 6 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu10.02 Menu10_Horizontal_ColumnFilling_6columns - Menu Electronic");
@@ -80,7 +79,7 @@ public class Menu10_Horizontal_ColumnFilling_6columns extends TestRunner {
                 "There are no icons at the menu of the second level!");
 
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
 
         //Проверяем, что Элементов второго уровня -- 7

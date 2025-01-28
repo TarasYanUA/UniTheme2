@@ -61,7 +61,6 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("2");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
@@ -87,13 +86,13 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
                 "Menu filling is not Column!");
 
         //Проверяем, что колонок 3
-        softAssert.assertTrue(!assertsOfMenu.threeColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu41.02 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers");
 
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Two.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 2!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7

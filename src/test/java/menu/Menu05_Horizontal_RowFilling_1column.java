@@ -44,7 +44,6 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
@@ -64,32 +63,41 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
+
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
                 "Menu columns are not equal 1 column!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu5.02 Menu05_Horizontal_RowFilling_1column - Menu Electronic");
+
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons in the second level of the menu but shouldn't!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Five.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что Элементов второго уровня -- 3
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 3,
                 "Number of elements of the 2-level is not 3!");
+
         //Проверяем, что Элементов третьего уровня -- 6
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
                 "Number of elements of the third level is not 6!");
+
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
                 "There are less than 3 buttons 'More' in the elements of the second level of the menu!");
+
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
+
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu5.04 Menu05_Horizontal_RowFilling_1column - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

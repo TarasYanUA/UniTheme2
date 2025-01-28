@@ -1,8 +1,10 @@
 package taras.storefront;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
 import java.util.List;
 
@@ -11,47 +13,29 @@ public class AssertsOfMenu extends AbstractPage {
         super();
     }
 
-    @FindBy(css = ".ut2-mode_submenu_-row-filling")
-    public List<WebElement> rowFilling;                         //Настройка "Способ заполнения"
-
-    @FindBy(css = "li[data-settings-cols='6']")                 //Настройка "Максимальное количество колонок в строке"
-    public List<WebElement> sixColumns;
-
-    @FindBy(css = "li[data-settings-cols='5']")
-    public List<WebElement> fiveColumns;
-
-    @FindBy(css = "li[data-settings-cols='4']")
-    public List<WebElement> fourColumns;
-
-    @FindBy(css = "li[data-settings-cols='3']")
-    public List<WebElement> threeColumns;
-
-    @FindBy(css = "li[data-settings-cols='2']")
-    public List<WebElement> twoColumns;
-
-    @FindBy(css = "li[data-settings-cols='1']")
-    public List<WebElement> oneColumn;
+    @FindBy(css = ".ut2-menu__submenu__carrier.row-filling")
+    public List<WebElement> rowFilling;                         //Настройка "Способ заполнения -- Строчное"
 
     @FindBy(css = ".ut2-menu__2nd-list .ut2-mwi-icon-wrap .ut2-mwi-icon")
     public List<WebElement> iconsOfSecondLevel;                 //Настройка "Показывать иконки для пунктов меню второго уровня"
 
-    @FindBy(css = "div[style='--menu-items:5;']")
-    public List<WebElement> numberOfElementsIn3levelMenu_Five;  //Настройка "Кол-во отображаемых элементов в 3-м уровне меню" Оформлена ошибка https://abteam.planfix.com/task/41190
+    //Настройка "Столбцов в строке"
+    public List<WebElement> columnsPerRow(String number) {
+        return DriverProvider.getDriver().findElements(By.cssSelector("ul[style='--v-menu-columns: " + number + "']"));
+    }
 
-    @FindBy(css = "div[style='--menu-items:2;']")
-    public List<WebElement> numberOfElementsIn3levelMenu_Two;
-
-    @FindBy(css = "div[style='--menu-items:0;']")
-    public List<WebElement> numberOfElementsIn3levelMenu_Zero;
+    //Настройка "Количество видимых элементов в третьем уровне меню"
+    public List<WebElement> numberOfVisibleElementsIn_3levelMenu(String number) {
+        return DriverProvider.getDriver().findElements(By.cssSelector("div[style='--menu-items:" + number + ";']"));
+    }
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index]")
     public List<WebElement> numberOfElements_SecondLevel;       //Настройка "Элементы второго уровня"
 
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='0']//div[@class='ut2-menu__3rd-item ']")
+    @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0'] .ut2-menu__3rd-item")
     public List<WebElement> numberOfElements_ThirdLevel;        //Настройка "Элементы третьего уровня"
-    //В версии темы 4.18.3b появился лишний пробел в конце. Я создал задачу, чтобы этот пробел убрали https://abteam.planfix.com/task/50921
 
-    @FindBy(css = ".ut2-more")
+    @FindBy(css = ".ut2-menu .ut2-more-btn")
     public List<WebElement> button_MoreInElementsOf2levelMenu;
 
     @FindBy(xpath = "//span[@class='ut2-menu__more-cat-link__in'][contains(text(), 'Больше Электроника')]")
@@ -59,7 +43,7 @@ public class AssertsOfMenu extends AbstractPage {
 
     //Настройка "Кол-во отображаемых элементов в 3-м уровне меню"
     @FindBy(xpath = "//a[contains(@href, 'kompyutery/')]//../..//div[@class='ut2-menu__3rd-item']")
-    public List<WebElement> threeLevelMenu_elementsInThirdLevel; //Здесь есть ошибка в количестве, оформленная в задаче https://abteam.planfix.com/task/41448 пункт №2
+    public List<WebElement> threeLevelMenu_elementsInThirdLevel;
 
     @FindBy(css = ".ut2-menu__2nd-submenu__wrapper .ut2-menu__more-cat-link__in")
     public List<WebElement> threeLevelMenu_button_MoreCategory;

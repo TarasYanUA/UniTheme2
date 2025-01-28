@@ -120,7 +120,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
+        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
                 "Mini-icons are as a gallery but shouldn't!");
 
         //Проверяем, что информация о товаре отображается во вкладках

@@ -16,8 +16,7 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Колоночное заполнение + 4 колонки
 + Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 4
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10 (здесь эту настройку не проверяем)
++ Количество видимых элементов в третьем уровне меню -- 4
 + Элементы второго уровня -- 4
 + Элементы третьего уровня -- 4
 + Минимальная высота для меню -- 300
@@ -44,8 +43,7 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("4");
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("4");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("4");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");
@@ -64,29 +62,37 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Колоночное заполнение
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
+
         //Проверяем, что колонок 4
-        softAssert.assertTrue(!assertsOfMenu.fourColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
                 "Menu columns are not equal 4 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu12.02 Menu12_Horizontal_ColumnFilling_4columns - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Элементов второго уровня -- 4
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 4,
                 "Number of elements of the 2-level is not 4!");
+
         //Проверяем, что Элементов третьего уровня -- 4
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 4,
                 "Number of elements of the third level is not 4!");
+
         //Проверяем, что отсутствуют кнопки "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
                 "There are buttons 'More' in the elements of the second level of the menu but shouldn't!");
+
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
+
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu12.04 Menu12_Horizontal_ColumnFilling_4columns - Menu Apparel");
         stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();

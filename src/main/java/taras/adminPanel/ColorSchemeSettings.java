@@ -10,24 +10,32 @@ public class ColorSchemeSettings extends AbstractPage {
 
     @FindBy(css = "a[id^='sw_select_'][id$='_wrap_currency']")
     public WebElement fieldOfActiveColorScheme;
+
     @FindBy(xpath = "//div[@class=\"language-wrap\"]//a[contains(.,\"CS-Cart\")]")
     public WebElement activeColorScheme;
 
     //Вкладка "Общее"
     @FindBy(id = "settings.abt__ut2.general.use_rounding")
     private WebElement setting_General_RoundCornersForElements;
+
     @FindBy(id = "settings.abt__ut2.general.use_rounding_blocks")
     public WebElement setting_General_RoundCornersOfBlocks;
+
     @FindBy(id = "settings.abt__ut2.general.use_titles_uppercase")
     public WebElement setting_General_DisplayHeadersInCapitalLetters;
+
     @FindBy(id = "settings.abt__ut2.general.buttons.style")
     private WebElement setting_General_ButtonsStyle;
+
     @FindBy(id = "settings.abt__ut2.general.buttons.use_text_uppercase")
     public WebElement setting_General_DisplayTextInCapitalLetters;
+
     @FindBy(id = "settings.abt__ut2.general.buttons.use_shadow")
     public WebElement setting_General_AddShadow;
+
     @FindBy(id = "settings.abt__ut2.general.buttons.use_gradient")
     public WebElement setting_General_AddBulk;
+
     @FindBy(id = "settings.abt__ut2.general.buttons.use_icon_cart")
     private WebElement setting_General_CartIcon;
 

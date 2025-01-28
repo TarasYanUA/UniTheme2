@@ -47,16 +47,9 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
 
         //Добавляем категории для Электроники
         csCartSettings.navigateToSection_Categories();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".categories-company .icon-caret-right")).isEmpty()) {
-            csCartSettings.gearwheelOnCategoryPage.click();
-            csCartSettings.button_AddBulkCategory.click();
-            csCartSettings.chooseCategoryLocation_Computers();
-            csCartSettings.clickAndType_Field_CategoryName();
-            for(int i = 1; i < 80; i++) {
-                csCartSettings.button_Clone.click();
-            }
-            csCartSettings.button_Create.click();
-        }
+        csCartSettings.gearwheelOnCategoryPage.click();
+        csCartSettings.button_AddBulkCategory.click();
+        csCartSettings.addNewCategoryLocations_Computers();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         csCartSettings.navigateToSection_WebsiteLayouts();
@@ -68,10 +61,9 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
-        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
+        if (!mainMenuSettings.setting_CompactDisplayView.isSelected()) {
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("75");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
@@ -95,21 +87,27 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Колоночное заполнение
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
+
         //Проверяем, что колонок 1
-        softAssert.assertTrue(!assertsOfMenu.oneColumn.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
                 "Menu columns are not equal 1 column!");
+
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
+
         //Проверяем, что Элементов третьего уровня -- не меньше 75
         softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 75,
                 "'Third level elements' are less than 75!");
+
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
                 "There is no button 'More [category]' in the third level of the menu!");
+
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu46.04 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-CarElectronics");
 

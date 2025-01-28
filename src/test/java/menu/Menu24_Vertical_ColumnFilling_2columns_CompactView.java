@@ -45,7 +45,6 @@ public class Menu24_Vertical_ColumnFilling_2columns_CompactView extends TestRunn
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("2");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
@@ -66,32 +65,41 @@ public class Menu24_Vertical_ColumnFilling_2columns_CompactView extends TestRunn
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Колоночное заполнение
         softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Column!");
+
         //Проверяем, что колонок 2
-        softAssert.assertTrue(!assertsOfMenu.twoColumns.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("2").isEmpty(),
                 "Menu columns are not equal 2 columns!");
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu24.02 Menu24_Vertical_ColumnFilling_2columns_CompactView - Menu Electronic");
+
         //Проверяем, что у меню второго уровня присутствуют иконки
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOfElementsIn3levelMenu_Two.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 2!");
+
         //Проверяем, что Элементов второго уровня -- 5
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
                 "Number of elements of the second level is not 5!");
+
         //Проверяем, что Элементов третьего уровня -- 5
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 5,
                 "Number of elements of the third level is not 5!");
+
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
                 "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
+
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
+
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu24.04 Menu24_Vertical_ColumnFilling_2columns_CompactView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

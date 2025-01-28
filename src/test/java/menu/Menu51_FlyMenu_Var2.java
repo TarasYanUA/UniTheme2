@@ -37,7 +37,6 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_2LevelMenu("3");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
         if(mainMenuSettings.setting_ShowTitle.isSelected()){
             mainMenuSettings.setting_ShowTitle.click();
@@ -56,22 +55,28 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверка, что заголовок меню отсутствует
         softAssert.assertTrue(assertsOfMenu.flyMenu_title.isEmpty(),
                 "There is a title in the Fly menu but shouldn't!");
+
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.flyMenu_iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
+
         //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 3
         softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_SecondLevel.size() == 3 ||
                         assertsOfMenu.flyMenu_NumberOfElements_SecondLevelWithButtonMore.size() == 3,
                 "'Number of visible elements in the 2-level menu' is not 3!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
         softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_ThirdLevel.size() == 2,
                 "'Number of visible elements in the 3-level menu' is not 2!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMore.isEmpty(),
                 "There is no any button 'More' in the elements of the second level of the Fly menu!");
+
         //Проверяем, что присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
                 "There is no any button 'More [category]' in the second level of Fly menu!");

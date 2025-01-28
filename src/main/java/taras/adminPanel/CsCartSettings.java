@@ -183,7 +183,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         section_Categories.click();
     }
 
-    public void chooseCategoryLocation_Computers() {
+    public void addNewCategoryLocations_Computers() {
         button_CategoryLocation.click();
         DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
         try {
@@ -191,14 +191,18 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+        if(DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
+            DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+            field_CategoryName.click();
+            field_CategoryName.sendKeys("AutoTestCategory");
+            for(int i = 1; i < 80; i++) {
+                button_Clone.click();
+            }
+            button_Create.click();
+        } else {
+            DriverProvider.getDriver().findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-closethick']")).click();
+        }
     }
-
-    public void clickAndType_Field_CategoryName() {
-        field_CategoryName.click();
-        field_CategoryName.sendKeys("AutoTestCategory");
-    }
-
 
     //Меню "Товары -- Характеристики"
     @FindBy(id = "products_features")

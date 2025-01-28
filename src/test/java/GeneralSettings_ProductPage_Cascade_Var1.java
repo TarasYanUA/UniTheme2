@@ -128,7 +128,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
-        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImages_Disabled.isEmpty(),
+        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
                 "There is a mini-icons gallery but shouldn't!");
 
         //Проверяем, что информация о товаре отображается во вкладках

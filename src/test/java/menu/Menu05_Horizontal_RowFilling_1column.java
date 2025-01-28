@@ -16,8 +16,7 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Строчное заполнение + 1 колонка
 + Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
++ Количество видимых элементов в третьем уровне меню -- 5
 + Элементы второго уровня -- 3
 + Элементы третьего уровня -- 6
 + Минимальная высота для меню -- 500
@@ -44,7 +43,7 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("5");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
@@ -78,7 +77,7 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons in the second level of the menu but shouldn't!");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 5
         softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 5!");
 

@@ -15,8 +15,7 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Строчное заполнение + 5 колонок
 + Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 2
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
++ Количество видимых элементов в третьем уровне меню -- 2
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
 + Минимальная высота для меню -- 500
@@ -43,7 +42,7 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner {
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");

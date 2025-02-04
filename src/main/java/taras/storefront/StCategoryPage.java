@@ -51,7 +51,7 @@ public class StCategoryPage extends AbstractPage {
     public WebElement button_AddToComparisonList;
     @FindBy(css = ".cm-notification-close")
     public WebElement closeNotificationWindow;
-    @FindBy(css = ".ty-product-review-write-product-review-button")
+    @FindBy(css = ".ut2-pb__title .ty-product-review-write-product-review-button")
     private WebElement button_WriteReview;
     @FindBy(xpath = "(//button[contains(@class, 'ui-dialog-titlebar-close')])[2]")
     public WebElement closeWriteReview;
@@ -86,12 +86,11 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickQuickViewOfPhoneProduct(){
         quickViewOfPhoneProduct_Droid3.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         makePause();
     }
     public void clickQuickViewOfMenClothProduct(){
         quickViewOfMenClothProduct.click();
+        makePause();
     }
     public void clickListWithoutOptions_ProductListView(){
         listWithoutOptions_ProductListView.click();

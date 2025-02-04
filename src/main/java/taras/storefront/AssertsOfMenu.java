@@ -21,8 +21,8 @@ public class AssertsOfMenu extends AbstractPage {
 
     //Настройка "Столбцов в строке"
     public List<WebElement> columnsPerRow(String number) {
-        return DriverProvider.getDriver().findElements(By.cssSelector("ul[style='--v-menu-columns: " + number + "']"));
-    }
+        return DriverProvider.getDriver().findElements(By.cssSelector("ul[style='--menu-columns: " + number + "']"));
+    }   //Проверить этот селектор для Горинт и Вертик меню, потому что для Вертик меню может быть: ul[style='--v-menu-columns:
 
     //Настройка "Количество видимых элементов в третьем уровне меню"
     public List<WebElement> numberOfVisibleElementsIn_3levelMenu(String number) {

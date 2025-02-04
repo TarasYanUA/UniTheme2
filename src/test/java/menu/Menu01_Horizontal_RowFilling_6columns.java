@@ -21,6 +21,12 @@ import java.time.Duration;
 + Минимальная высота для меню -- 500
 */
 
+/*
+Кол-во отображаемых элементов в 3-м уровне меню
+заменить на:
+Количество видимых элементов в третьем уровне меню
+*/
+
 public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu01_Horizontal_RowFilling_6columns(){

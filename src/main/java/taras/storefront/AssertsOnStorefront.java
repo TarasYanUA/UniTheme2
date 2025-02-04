@@ -23,7 +23,7 @@ public class AssertsOnStorefront extends AbstractPage {
     String listWithoutOptions = ".ty-product-list";
     String compactList = ".ty-compact-list__content";
 
-    @FindBy(css = ".ut2-gl__body.content-on-hover.decolorize")
+    @FindBy(css = ".ut2-gl__body.decolorize")
     public List<WebElement> decolorizeOutOfStockProducts;   //Настройка "Обесцвечивать товары, которых нет в наличии"
 
     //Настройка "Отображать пустые звёзды рейтинга товара"
@@ -244,7 +244,7 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    @FindBy(css = ".ut2-gl__body.content-on-hover .icon-right-circle")
+    @FindBy(css = ".ut2-gl__image .icon-right-circle")
     public List<WebElement> gridList__ShowStandardImageGallery_Arrows;//Настройка "Вид списка "Сетка" -- "Отображать стандартную галерею изображений -- Навигация стрелками"
 
 
@@ -331,7 +331,7 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ty-product-thumbnails")
     public List<WebElement> miniThumbnailImagesAsGallery_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
 
-    @FindBy(css = "div[class='ty-tabs cm-j-tabs  clearfix'] ul[class='ty-tabs__list']")
+    @FindBy(css = ".ut2-pb__tabs .ty-tabs.cm-j-tabs")
     public List<WebElement> displayProductDetailsInTabs_Enabled;    //Настройка "Показывать информацию о товаре во вкладках" ВКЛ.
 
     @FindBy(css = ".tab-list-title")

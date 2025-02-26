@@ -43,7 +43,7 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("4");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("4");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");

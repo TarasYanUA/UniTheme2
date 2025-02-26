@@ -58,8 +58,13 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var2() {
-        //Работаем с CS-Cart настройками
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_WebsiteLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
         if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {

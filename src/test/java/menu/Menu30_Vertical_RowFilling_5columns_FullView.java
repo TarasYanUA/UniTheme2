@@ -16,12 +16,14 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 Вертикальное меню + Строчное заполнение + 5 колонок
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 0
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
++ Количество видимых элементов в третьем уровне меню -- 0
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
++ Показывать иконки для пунктов меню второго уровня -- нет
++ Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
+
+БАГ https://abteam.planfix.com/task/52034
 */
 
 public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
@@ -45,7 +47,7 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("0");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");

@@ -10,22 +10,22 @@ import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+
 import java.time.Duration;
 
 /*
 Работаем с макетом Light:
 Вертикальное меню + Строчное заполнение + 1 колонка + Компактный вид
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10  (здесь эту настройку не проверяем)
 + Элементы второго уровня -- 5
 + Элементы третьего уровня -- 0
++ Количество видимых элементов в третьем уровне меню -- 5
++ Показывать иконки для пунктов меню второго уровня -- нет
 + Минимальная высота для меню -- 600
 */
 
 public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu35_Vertical_RowFilling_1column_CompactView(){
+    public void setConfigurations_Menu35_Vertical_RowFilling_1column_CompactView() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_WebsiteLayouts();
@@ -38,15 +38,15 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
-        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("10");
+        if (mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()) {
+            mainMenuSettings.setting_ShowIconsForMenuItems.click();
+        }
+        if (!mainMenuSettings.setting_CompactDisplayView.isSelected()) {
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("600");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -54,7 +54,7 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu35_Vertical_RowFilling_1column_CompactView")
-    public void check_Menu35_Vertical_RowFilling_1column_CompactView(){
+    public void check_Menu35_Vertical_RowFilling_1column_CompactView() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);

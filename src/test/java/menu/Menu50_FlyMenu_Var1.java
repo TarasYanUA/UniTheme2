@@ -36,7 +36,7 @@ public class Menu50_FlyMenu_Var1 extends TestRunner{
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("10");
         if(!mainMenuSettings.setting_ShowTitle.isSelected()){
             mainMenuSettings.setting_ShowTitle.click();
         }

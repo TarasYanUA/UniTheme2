@@ -17,12 +17,10 @@ import java.time.Duration;
 Работаем с макетом Light:
 Вертикальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 5
-+ Компактный вид отображения -- нет
-+ Показывать иконки для пунктов меню второго уровня -- нет (в данном кейсе настройка бесполезна)
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 0
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 4
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
++ Количество видимых элементов в третьем уровне меню -- 1
++ Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
 */
 
@@ -56,15 +54,12 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("5");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("1");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("4");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -93,9 +88,9 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu42.02 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню --  0
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("0").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is more than zero!");
+        //Проверяем, что Количество видимых элементов в третьем уровне меню --  1
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 1!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,

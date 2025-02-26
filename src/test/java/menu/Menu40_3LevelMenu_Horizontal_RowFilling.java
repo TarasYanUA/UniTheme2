@@ -16,11 +16,9 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Строчное заполнение + 3-х уровневое меню
 + Количество колонок -- 5
-+ Показывать иконки для пунктов меню второго уровня -- да (в данном кейсе настройка бесполезна)
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
++ Количество видимых элементов в третьем уровне меню -- 4
 + Минимальная высота для меню -- 500
 */
 
@@ -54,15 +52,12 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("5");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -90,9 +85,9 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 5!");
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 4
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("4").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 4!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,

@@ -19,10 +19,9 @@ import java.time.Duration;
 
 Вертикальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 4
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 75
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 75
 + Элементы второго уровня -- 30
 + Элементы третьего уровня -- 80
++ Количество видимых элементов в третьем уровне меню -- 75
 + Минимальная высота для меню -- 500
 */
 public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView extends TestRunner {
@@ -80,12 +79,12 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("4");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("75");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -115,13 +114,13 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
                 "Menu columns are not equal 4 columns!");
 
-        //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
-                "Number of elements of the second level is less than 7!");
+        //Проверяем, что Элементов третьего уровня -- 80
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel_AllProducts.size() == 80,
+                "Number of elements of the third level is not 80!");
 
-        //Проверяем, что Элементов третьего уровня -- не меньше 75
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 75,
-                "'Third level elements' are less than 75!");
+        //Проверяем, что Элементов третьего уровня -- не меньше 7
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 7,
+                "'Third level elements' are less than 7!");
 
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),

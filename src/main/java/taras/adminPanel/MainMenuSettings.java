@@ -19,7 +19,7 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "div[data-ca-block-name='Главное меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu_LightV2;
 
-    @FindBy(css = "div[data-ca-block-name='Категории'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='Каталог товаров'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_Categories_Light;
 
     @FindBy(css = "a[id*='sw_case_settings_']")
@@ -57,14 +57,14 @@ public class MainMenuSettings extends AbstractPage {
     public WebElement setting_ShowIconsForMenuItems;
 
     @FindBy(css = "input[name='block_data[properties][abt__no_hidden_elements_third_level_view]")
-    private WebElement setting_NumberOfVisibleElementsIn_3LevelMenu;
+    private WebElement setting_NumberOfVisibleElementsInThirdLevelOfMenu;
 
-    public void clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu(String value) {
+    public void clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu(String value) {
         Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(setting_NumberOfVisibleElementsIn_3LevelMenu).build().perform();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.click();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.clear();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.sendKeys(value);
+        actions.moveToElement(setting_NumberOfVisibleElementsInThirdLevelOfMenu).build().perform();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.click();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.clear();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.sendKeys(value);
     }
 
     @FindBy(css = "input[name='block_data[properties][dropdown_second_level_elements]']")
@@ -148,6 +148,7 @@ public class MainMenuSettings extends AbstractPage {
 
     public void clickAndType_Field_HtmlContent() {
         field_HtmlContent.click();
+        field_HtmlContent.clear();
         field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
     }
 

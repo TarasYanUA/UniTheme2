@@ -22,7 +22,7 @@ public class AssertsOfMenu extends AbstractPage {
     //Настройка "Столбцов в строке"
     public List<WebElement> columnsPerRow(String number) {
         return DriverProvider.getDriver().findElements(By.cssSelector("ul[style='--menu-columns: " + number + "']"));
-    }   //Проверить этот селектор для Горинт и Вертик меню, потому что для Вертик меню может быть: ul[style='--v-menu-columns:
+    }
 
     //Настройка "Количество видимых элементов в третьем уровне меню"
     public List<WebElement> numberOfVisibleElementsIn_3levelMenu(String number) {
@@ -30,10 +30,13 @@ public class AssertsOfMenu extends AbstractPage {
     }
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index]")
-    public List<WebElement> numberOfElements_SecondLevel;       //Настройка "Элементы второго уровня"
+    public List<WebElement> numberOfElements_SecondLevel;       //Настройка "Элементы второго уровня" в категории "Электроника"
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0'] .ut2-menu__3rd-item")
     public List<WebElement> numberOfElements_ThirdLevel;        //Настройка "Элементы третьего уровня"
+
+    @FindBy(xpath = "//span[@class='ut2-menu__2nd-link__name'][text()='Электроника']/../../../..//div[@class='ut2-menu__3rd-item']")
+    public List<WebElement> numberOfElements_ThirdLevel_AllProducts; //Настройка "Элементы третьего уровня" в категории "Все товары -- Электроника"
 
     @FindBy(css = ".ut2-menu .ut2-more-btn")
     public List<WebElement> button_MoreInElementsOf2levelMenu;
@@ -42,13 +45,13 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> button_MoreCategoryInTheSecondLevel_MoreElectronics;
 
     //Настройка "Кол-во отображаемых элементов в 3-м уровне меню"
-    @FindBy(xpath = "//a[contains(@href, 'kompyutery/')]//../..//div[@class='ut2-menu__3rd-item']")
+    @FindBy(css = "li.ty-menu-item__electronics div[data-elem-index=\"1\"] .ut2-menu__3rd-item")
     public List<WebElement> threeLevelMenu_elementsInThirdLevel;
 
     @FindBy(css = ".ut2-menu__2nd-submenu__wrapper .ut2-menu__more-cat-link__in")
     public List<WebElement> threeLevelMenu_button_MoreCategory;
 
-    @FindBy(css = ".ut2-mode_2nd-submenu_-has-bottom-banner img[src$='electronics-bg-menu.jpg']")
+    @FindBy(css = ".ut2-menu__2nd-submenu img[src$='sports-bg-menu.jpg']")
     public List<WebElement> threeLevelMenu_banner;
 
 

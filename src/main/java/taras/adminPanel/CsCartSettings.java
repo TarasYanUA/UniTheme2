@@ -116,8 +116,8 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         menu_Settings.click();
         section_Taxes.click();
     }
-    
-    public void setTaxesForAllProducts(){   //Настраиваем налог для всех товаров
+
+    public void setTaxesForAllProducts() {   //Настраиваем налог для всех товаров
         navigateToCheckoutSettings();
         selectSetting_TaxCalculationMethodBasedOn("unit_price");
         clickSaveButtonOfSettings();
@@ -163,20 +163,27 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Товары -- Категории"
     @FindBy(id = "products_categories")
     private WebElement section_Categories;
+
     @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
     public WebElement gearwheelOnCategoryPage;
+
     @FindBy(css = "a[href*='dispatch=categories.m_add']")
     public WebElement button_AddBulkCategory;
 
-    @FindBy(css = "div[id*='location_category_'] .cs-icon--type-plus")
-    public WebElement button_CategoryLocation;
+    @FindBy(css = "a[id*='opener_picker_location_category_']")
+    WebElement button_CategoryLocation;
 
     @FindBy(css = ".span3")
     public WebElement field_CategoryName;
+
     @FindBy(css = ".btn-clone")
     public WebElement button_Clone;
+
     @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
     public WebElement button_Create;
+
+    @FindBy(xpath = "//span[@class='ui-button-icon ui-icon ui-icon-closethick']")
+    WebElement button_CrossOnTop;
 
     public void navigateToSection_Categories() {
         checkMenu_Products_ToBeActive();
@@ -184,23 +191,37 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     }
 
     public void addNewCategoryLocations_Computers() {
-        button_CategoryLocation.click();
-        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        if(DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
-            DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("select[name='categories_data[0][parent_id]']")).isEmpty()) {
+            DriverProvider.getDriver().findElement(By.cssSelector("select[name='categories_data[0][parent_id]']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("option[value=\"166\"]")).click();
             field_CategoryName.click();
             field_CategoryName.sendKeys("AutoTestCategory");
-            for(int i = 1; i < 80; i++) {
+            for (int i = 1; i < 80; i++) {
                 button_Clone.click();
             }
             button_Create.click();
+
         } else {
-            DriverProvider.getDriver().findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-closethick']")).click();
+            button_CategoryLocation.click();
+            if (!DriverProvider.getDriver().findElements(By.xpath("//span[text()='Магазин: CS-Cart']")).isEmpty())
+                DriverProvider.getDriver().findElement(By.xpath("//span[text()='Магазин: CS-Cart']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("#category_166")).click();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
+                DriverProvider.getDriver().findElement(By.cssSelector("#category_166")).click();
+                //field_BulkCategories_CategoryName.click();
+                field_CategoryName.click();
+                field_CategoryName.sendKeys("AutoTestCategory");
+                for (int i = 1; i < 80; i++) {
+                    button_Clone.click();
+                }
+                button_Create.click();
+            } else
+                button_CrossOnTop.click();
         }
     }
 
@@ -437,7 +458,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         field_Limit.sendKeys(value);
     }
 
-    public void clickAndType_Field_ItemQuantity(String value){
+    public void clickAndType_Field_ItemQuantity(String value) {
         field_ItemQuantity.click();
         field_ItemQuantity.clear();
         field_ItemQuantity.sendKeys(value);

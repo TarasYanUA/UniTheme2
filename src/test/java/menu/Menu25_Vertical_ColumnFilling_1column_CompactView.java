@@ -16,11 +16,10 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 Вертикальное меню + Колоночное заполнение + 1 колонка + Компактное меню
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 3
 + Элементы третьего уровня -- 6
++ Количество видимых элементов в третьем уровне меню -- 5
++ Показывать иконки для пунктов меню второго уровня -- нет
 + Минимальная высота для меню -- 300
 */
 
@@ -39,15 +38,15 @@ public class Menu25_Vertical_ColumnFilling_1column_CompactView extends TestRunne
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
-        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();

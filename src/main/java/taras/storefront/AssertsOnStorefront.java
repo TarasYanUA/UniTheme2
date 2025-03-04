@@ -82,7 +82,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
-    String text_YouSave_Full = "span.ty-save-price";    //Попробовать этот селектор .ty-save-price:not(.ut2-sld-short .ty-save-price)
+    String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
     public List<WebElement> text_YouSave_Full(){
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Full));
     }

@@ -95,7 +95,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    String text_YouSave_Short = ".ut2-sld-short span.ty-save-price";
+    String text_YouSave_Short = ".ut2-sld-short bdi.ty-save-price";
 
     public List<WebElement> text_YouSave_Short(){
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Short));

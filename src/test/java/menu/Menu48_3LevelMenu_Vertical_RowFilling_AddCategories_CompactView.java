@@ -19,10 +19,9 @@ import java.time.Duration;
 
 Горизонтальное меню + Строчное заполнение + 3-х уровневое меню + Компактный вид
 + Количество колонок -- 1
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 75
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 75
 + Элементы второго уровня -- 30
 + Элементы третьего уровня -- 80
++ Количество видимых элементов в третьем уровне меню -- 75 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 700
 */
 public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView extends TestRunner {
@@ -61,12 +60,12 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
         if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("80");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("700");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -86,6 +85,7 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+
         //Проверяем, что у меню Строчное заполнение
         softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
                 "Menu filling is not Row!");
@@ -98,9 +98,17 @@ public class Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView ext
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
 
-        //Проверяем, что Элементов третьего уровня -- не меньше 75
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 75,
-                "'Third level elements' are less than 75!");
+        //Проверяем, что Элементов третьего уровня -- 80
+        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel_AllProducts.size() == 80,
+                "Number of elements of the third level is not 80!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- не меньше 7
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 7,
+                "'Third level elements' at Cascade menu type are less than 7!");
+
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 75
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("75").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 75!");
 
         //Проверяем, что на третьем уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),

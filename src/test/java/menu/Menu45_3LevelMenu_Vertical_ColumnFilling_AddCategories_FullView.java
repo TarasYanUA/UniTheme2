@@ -43,6 +43,11 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
             mainMenuSettings.setting_Activate3LevelMenu.click();
         }
         mainMenuSettings.button_Save3LevelMenu.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //Добавляем баннер для меню "Компьютеры"
         mainMenuSettings.arrowOfCategory.click();
         mainMenuSettings.categoryComputers.click();

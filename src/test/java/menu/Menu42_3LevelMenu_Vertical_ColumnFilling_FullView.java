@@ -19,7 +19,7 @@ import java.time.Duration;
 + Количество колонок -- 5
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
-+ Количество видимых элементов в третьем уровне меню -- 1
++ Количество видимых элементов в третьем уровне меню -- 1 (не влияет на трехуровневое меню)
 + Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
 */
@@ -88,10 +88,6 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         stHomePage.navigateToVerticalMenu_Electronic();
         takeScreenShot("Menu42.02 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers");
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню --  1
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 1!");
-
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
@@ -99,6 +95,14 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         //Проверяем, что Элементов третьего уровня -- 6
         softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
                 "'Third level elements' are not equal 6!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 6
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
+                "'Third level elements' at Cascade menu type are not 6!");
+
+        //Проверяем, что Количество видимых элементов в третьем уровне меню --  1
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 1!");
 
         //Проверяем, что присутствует не меньше 5 кнопок "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 5,

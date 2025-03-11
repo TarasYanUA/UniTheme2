@@ -19,7 +19,7 @@ import java.time.Duration;
 + Количество колонок -- 3
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 5
-+ Количество видимых элементов в третьем уровне меню -- 2
++ Количество видимых элементов в третьем уровне меню -- 2 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 500
 */
 
@@ -86,10 +86,6 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu41.02 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 2!");
-
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
@@ -97,6 +93,14 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         //Проверяем, что Элементов третьего уровня -- 5
         softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
                 "'Third level elements' are not equal 5!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 5
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 5,
+                "'Third level elements' at Cascade menu type are not 5!");
+
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 2!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),

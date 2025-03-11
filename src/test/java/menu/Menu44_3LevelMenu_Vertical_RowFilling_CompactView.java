@@ -19,7 +19,7 @@ import java.time.Duration;
 + Количество колонок -- 1
 + Элементы второго уровня -- 5
 + Элементы третьего уровня -- 4
-+ Количество видимых элементов в третьем уровне меню -- 1
++ Количество видимых элементов в третьем уровне меню -- 1 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 500
 */
 
@@ -53,9 +53,9 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("1");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("1");
         if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
@@ -95,6 +95,10 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         //Проверяем, что Элементов третьего уровня -- 4
         softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 4,
                 "'Third level elements' are not equal 4!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 4
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 4,
+                "'Third level elements' at Cascade menu type are not 4!");
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню -- 1
         softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),

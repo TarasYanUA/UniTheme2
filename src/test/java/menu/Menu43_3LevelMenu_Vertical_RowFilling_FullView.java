@@ -18,7 +18,7 @@ import java.time.Duration;
 + Количество колонок -- 1
 + Элементы второго уровня -- 5
 + Элементы третьего уровня -- 5
-+ Количество видимых элементов в третьем уровне меню -- 5
++ Количество видимых элементов в третьем уровне меню -- 5 (не влияет на трехуровневое меню)
 + Компактный вид отображения -- нет
 + Минимальная высота для меню -- 500
 */
@@ -96,6 +96,10 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         //Проверяем, что Элементов третьего уровня -- 5
         softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
                 "'Third level elements' are not equal 5!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 5
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 5,
+                "'Third level elements' at Cascade menu type are not 5!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),

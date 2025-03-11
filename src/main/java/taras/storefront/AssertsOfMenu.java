@@ -44,7 +44,7 @@ public class AssertsOfMenu extends AbstractPage {
     @FindBy(xpath = "//span[@class='ut2-menu__more-cat-link__in'][contains(text(), 'Больше Электроника')]")
     public List<WebElement> button_MoreCategoryInTheSecondLevel_MoreElectronics;
 
-    //Настройка "Кол-во отображаемых элементов в 3-м уровне меню"
+    //Настройка "Элементы третьего уровня" для 3-х уровневого меню (Каскадный тип меню)
     @FindBy(css = "li.ty-menu-item__electronics div[data-elem-index=\"1\"] .ut2-menu__3rd-item")
     public List<WebElement> threeLevelMenu_elementsInThirdLevel;
 

@@ -18,7 +18,7 @@ import java.time.Duration;
 + Количество колонок -- 5
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
-+ Количество видимых элементов в третьем уровне меню -- 4
++ Количество видимых элементов в третьем уровне меню -- 4 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 500
 */
 
@@ -54,10 +54,10 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         mainMenuSettings.selectSetting_MaximumColumns("5");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -85,10 +85,6 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 4
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("4").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 4!");
-
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
@@ -96,6 +92,14 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         //Проверяем, что Элементов третьего уровня -- 6
         softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
                 "'Third level elements' are not equal 6!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 6
+        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
+                "'Third level elements' at Cascade menu type are not 6!");
+
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 4
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("4").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 4!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
         softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),

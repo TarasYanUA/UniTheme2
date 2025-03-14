@@ -15,13 +15,13 @@ import java.time.Duration;
 
 /*
 Работаем с макетом Default:
++ Элементы второго уровня -- 3
++ Элементы третьего уровня -- 4
++ Количество видимых элементов в третьем уровне меню -- 2
 + Показывать иконки для пунктов меню второго уровня --  нет
-+ Кол-во отображаемых элементов во 2-м уровне меню --   3
-+ Кол-во отображаемых элементов в 3-м уровне меню --    2
-+ Показать заголовок -- нет
 */
 
-public class Menu51_FlyMenu_Var2 extends TestRunner{
+public class Menu51_FlyMenu extends TestRunner{
     @Test(priority = 1)
     public void setConfiguration_Menu51_FlyMenu_Var2() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
@@ -34,12 +34,11 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         mainMenuSettings.menuSettings_buttonSettings.click();
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
-        if(mainMenuSettings.setting_ShowTitle.isSelected()){
-            mainMenuSettings.setting_ShowTitle.click();
         }
         mainMenuSettings.button_saveBlock.click();
     }
@@ -56,21 +55,20 @@ public class Menu51_FlyMenu_Var2 extends TestRunner{
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
 
-        //Проверка, что заголовок меню отсутствует
-        softAssert.assertTrue(assertsOfMenu.flyMenu_title.isEmpty(),
-                "There is a title in the Fly menu but shouldn't!");
-
         //Проверяем, что у меню второго уровня отсутствуют иконки
         softAssert.assertTrue(assertsOfMenu.flyMenu_iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
 
-        //Проверяем, что Кол-во отображаемых элементов во 2-м уровне меню -- 3
-        softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_SecondLevel.size() == 3 ||
-                        assertsOfMenu.flyMenu_NumberOfElements_SecondLevelWithButtonMore.size() == 3,
+        //Проверяем, что Элементов второго уровня -- 3
+        softAssert.assertEquals(assertsOfMenu.flyMenu_NumberOfElements_SecondLevel.size(), 3,
                 "'Number of visible elements in the 2-level menu' is not 3!");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(assertsOfMenu.flyMenu_NumberOfElements_ThirdLevel.size() == 2,
+        //Проверяем, что Элементов третьего уровня -- 4
+        softAssert.assertEquals(assertsOfMenu.flyMenu_NumberOfElements_ThirdLevel.size(), 4,
+                "Number of elements of the third level is not 4!");
+
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 2
+        softAssert.assertEquals(assertsOfMenu.flyMenu_numberOfVisibleElementsIn_3levelMenu.size(), 2,
                 "'Number of visible elements in the 3-level menu' is not 2!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню

@@ -25,7 +25,7 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
 
-    @FindBy(css = "div[data-ca-block-name='Меню'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='AB: FLY меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_FlyMenu_Default;
 
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")

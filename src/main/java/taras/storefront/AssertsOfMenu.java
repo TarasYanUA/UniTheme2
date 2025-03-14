@@ -56,20 +56,21 @@ public class AssertsOfMenu extends AbstractPage {
 
 
     //FLY menu
-    @FindBy(xpath = "//span[text()='Меню']")
-    public List<WebElement> flyMenu_title;
-
     @FindBy(css = ".img .ut2-lfl-icon")
     public List<WebElement> flyMenu_iconsOfSecondLevel;
 
-    @FindBy(css = ".ty-menu-item__electronics div[class*='ut2-lsl with-pic']:not(.ut2-lsl__show_more)")
+    @FindBy(css = ".ut2-lfl.ty-menu-item__electronics .ut2-tlw")
     public List<WebElement> flyMenu_NumberOfElements_SecondLevel;
 
     @FindBy(css = ".ty-menu-item__electronics div[class='ut2-lsl with-pic ut2-lsl__more']")
     public List<WebElement> flyMenu_NumberOfElements_SecondLevelWithButtonMore;
 
-    @FindBy(css = ".ty-menu-item__electronics .ut2-tlw a[href*='kompyutery']:not(.hidden)")
+    @FindBy(css = ".ty-menu-item__electronics .ut2-tlw a[href*='kompyutery']")
     public List<WebElement> flyMenu_NumberOfElements_ThirdLevel;
+
+    //Количество видимых элементов в третьем уровне меню
+    @FindBy(xpath = "//p//a[contains(@href, 'elektronika/kompyutery/')]/../..//div[@class='ut2-tlw']//a[contains(@href, 'elektronika/kompyutery/') and not(contains(@class, 'hidden'))]")
+    public List<WebElement> flyMenu_numberOfVisibleElementsIn_3levelMenu;
 
     @FindBy(css = ".ut2-lsl__more-link")
     public List<WebElement> flyMenu_ButtonMore;

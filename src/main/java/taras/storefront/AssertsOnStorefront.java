@@ -95,7 +95,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    String text_YouSave_Short = ".ut2-sld-short bdi.ty-save-price";
+    String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
 
     public List<WebElement> text_YouSave_Short(){
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Short));
@@ -213,7 +213,7 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    @FindBy(css = "div[class='ut2-gl__body content-on-hover']")
+    @FindBy(css = "div[class='ut2-gl__content content-on-hover']")
     public List<WebElement> gridList__AdditionalInformationOnHover;   //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
 
 

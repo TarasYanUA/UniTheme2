@@ -34,6 +34,11 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
     public void clickSaveButtonOfSettings() {
         saveButtonOfSettings.click();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public StHomePage navigateToStorefront() {

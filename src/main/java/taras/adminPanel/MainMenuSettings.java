@@ -25,7 +25,8 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
 
-    @FindBy(css = "div[data-ca-block-name='AB: FLY меню'] .bm-action-properties.action")
+    //@FindBy(css = "div[data-ca-block-name='AB: FLY меню'] .bm-action-properties.action") // установка ultru
+    @FindBy(css = "div[data-ca-block-name='Меню'] .bm-action-properties.action") //Демос
     public WebElement gearwheelOfTheBlock_FlyMenu_Default;
 
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
@@ -104,9 +105,6 @@ public class MainMenuSettings extends AbstractPage {
         field_menuContent.click();
         DriverProvider.getDriver().findElement(By.xpath("//option[contains(text(), 'Main menu')]")).click();
     }
-
-    @FindBy(css = "input[id$='_abt__ut2_fly_menu_properties_abt__ut2_show_title']")
-    public WebElement setting_ShowTitle;
 
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;

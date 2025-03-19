@@ -29,7 +29,7 @@ public class Menu50_FlyMenu extends TestRunner{
         csCartSettings.layout_Default.click();
         csCartSettings.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
-        mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default.click();
+        mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         mainMenuSettings.menuSettings_buttonSettings.click();

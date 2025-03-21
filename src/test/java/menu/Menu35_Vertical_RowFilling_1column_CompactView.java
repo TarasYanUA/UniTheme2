@@ -80,7 +80,7 @@ public class Menu35_Vertical_RowFilling_1column_CompactView extends TestRunner {
                 "There are icons at the menu of the second level but shouldn't!");
 
         //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
                 "Number of elements of the second level is not 5!");
 
         //Проверяем, что Элементов третьего уровня -- 0

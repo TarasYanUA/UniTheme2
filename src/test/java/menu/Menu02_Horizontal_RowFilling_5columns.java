@@ -79,11 +79,11 @@ public class Menu02_Horizontal_RowFilling_5columns extends TestRunner {
                 "There are icons at the menu of the second level but shouldn't!");
 
         //Проверяем, что Элементов второго уровня -- 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 7,
                 "Number of elements in the 2-level menu is not 7!");
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 6,
                 "Number of elements of the third level is not 6!");
 
         //Количество видимых элементов в третьем уровне меню -- 2

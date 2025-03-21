@@ -125,7 +125,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
                 "Number of elements of the second level is less than 7!");
 
         //Проверяем, что Элементов третьего уровня -- 80
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel_AllProducts.size() == 80,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel_AllProducts.size(), 80,
                 "'Third level elements' are not 80!");
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- не меньше 7

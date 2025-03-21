@@ -93,11 +93,11 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
                 "Number of elements of the second level is less than 7!");
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
                 "'Third level elements' are not equal 6!");
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 6
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 6,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
                 "'Third level elements' at Cascade menu type are not 6!");
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню --  1

@@ -81,7 +81,7 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner {
                 "There are icons at the menu of the second level but shouldn't!");
 
         //Проверяем, что Элементов второго уровня -- 3
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 3,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 3,
                 "Number of elements of the second level is not 3!");
 
         //Проверяем, что Элементов третьего уровня -- больше или равно 7 (хоть в настройке ставим 10)

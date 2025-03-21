@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted some code.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu04_Horizontal_RowFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu05_Horizontal_RowFilling_1column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu10_Horizontal_ColumnFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu10_Horizontal_ColumnFilling_6columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu11_Horizontal_ColumnFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu11_Horizontal_ColumnFilling_5columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu13_Horizontal_ColumnFilling_2columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu14_Horizontal_ColumnFilling_1column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu20_Vertical_ColumnFilling_4columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu20_Vertical_ColumnFilling_4columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu23_Vertical_ColumnFilling_1column_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu23_Vertical_ColumnFilling_1column_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu24_Vertical_ColumnFilling_2columns_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu24_Vertical_ColumnFilling_2columns_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu25_Vertical_ColumnFilling_1column_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu25_Vertical_ColumnFilling_1column_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu31_Vertical_RowFilling_4columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu31_Vertical_RowFilling_4columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu32_Vertical_RowFilling_2columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu32_Vertical_RowFilling_2columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu33_Vertical_RowFilling_1column_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu33_Vertical_RowFilling_1column_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu34_Vertical_RowFilling_3columns_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu35_Vertical_RowFilling_1column_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu35_Vertical_RowFilling_1column_CompactView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu40_3LevelMenu_Horizontal_RowFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu40_3LevelMenu_Horizontal_RowFilling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu41_3LevelMenu_Horizontal_ColumnFilling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu43_3LevelMenu_Vertical_RowFilling_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu43_3LevelMenu_Vertical_RowFilling_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu44_3LevelMenu_Vertical_RowFilling_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu44_3LevelMenu_Vertical_RowFilling_CompactView.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved asserts for Horizontal and Vertical menu." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -240,7 +211,7 @@
     "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
     "TestNG.ProductSection_GridMore_Var1.executor": "Run",
     "TestNG.UniTheme2/TestNG.xml.executor": "Run",
-    "git-widget-placeholder": "UniTheme__4.18.3b",
+    "git-widget-placeholder": "#10 on UniTheme__4.18.3b",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
@@ -273,7 +244,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu35_Vertical_RowFilling_1column_CompactView">
+  <component name="RunManager" selected="TestNG.Menu50_FlyMenu">
     <configuration name="Menu12_Horizontal_ColumnFilling_4columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -284,23 +255,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="menu" />
       <option name="MAIN_CLASS_NAME" value="menu.Menu12_Horizontal_ColumnFilling_4columns" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu24_Vertical_ColumnFilling_2columns_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="menu" />
-      <option name="MAIN_CLASS_NAME" value="menu.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -359,21 +313,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu50_FlyMenu" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
-      <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
       <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
       <item itemvalue="TestNG.Menu32_Vertical_RowFilling_2columns_FullView" />
       <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
+      <item itemvalue="TestNG.Menu50_FlyMenu" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Menu50_FlyMenu" />
         <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
         <item itemvalue="TestNG.Menu32_Vertical_RowFilling_2columns_FullView" />
         <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
         <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
-        <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
       </list>
     </recent_temporary>
   </component>
@@ -743,7 +714,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <option name="localTasksCounter" value="225" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -762,7 +733,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="According to the new theme version and task #42785, I deleted the variable 'showInHeaderOnProductPage_Brand' (настройка &quot;Показывать в заголовке карточки товара&quot;)" />
     <MESSAGE value="The first test-case for product block &quot;Small items&quot; is ready!&#10;* Added some asserts for product blocks." />
     <MESSAGE value="The second test-case for product block &quot;Small items&quot; is ready!" />
     <MESSAGE value="All three test-cases for product block &quot;Small items&quot; are ready!" />
@@ -787,7 +757,8 @@
     <MESSAGE value="Adapted Menu46-48." />
     <MESSAGE value="Adapted FlyMenu50-51." />
     <MESSAGE value="Adapted some code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted some code." />
+    <MESSAGE value="Improved asserts for Horizontal and Vertical menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved asserts for Horizontal and Vertical menu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

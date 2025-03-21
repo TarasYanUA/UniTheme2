@@ -90,7 +90,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         takeScreenShot("Menu43.02 Menu43_3LevelMenu_Vertical_RowFilling_FullView - Menu Electronic-Computers");
 
         //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
                 "Number of elements of the second level is not 5!");
 
         //Проверяем, что Элементов третьего уровня -- 5
@@ -98,7 +98,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
                 "'Third level elements' are not equal 5!");
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 5
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
                 "'Third level elements' at Cascade menu type are not 5!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"

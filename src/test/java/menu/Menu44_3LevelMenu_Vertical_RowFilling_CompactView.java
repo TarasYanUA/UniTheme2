@@ -97,7 +97,7 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
                 "'Third level elements' are not equal 4!");
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 4
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 4,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 4,
                 "'Third level elements' at Cascade menu type are not 4!");
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню -- 1

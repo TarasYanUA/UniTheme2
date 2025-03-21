@@ -95,7 +95,7 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
                 "'Third level elements' are not equal 5!");
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 5
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
                 "'Third level elements' at Cascade menu type are not 5!");
 
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2

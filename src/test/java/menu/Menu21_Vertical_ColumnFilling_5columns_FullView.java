@@ -91,7 +91,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
                 "Number of elements of the second level is less than 7!");
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 6,
                 "Number of elements of the third level is not 6!");
 
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню

@@ -80,11 +80,11 @@ public class Menu24_Vertical_ColumnFilling_2columns_CompactView extends TestRunn
                 "There are no icons at the menu of the second level!");
 
         //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
                 "Number of elements of the second level is not 5!");
 
         //Проверяем, что Элементов третьего уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 5,
                 "Number of elements of the third level is not 5!");
 
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2

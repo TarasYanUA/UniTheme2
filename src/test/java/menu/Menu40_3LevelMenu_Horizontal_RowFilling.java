@@ -102,7 +102,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
                 "'Number of visible elements in the 3-level menu' is not 4!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();

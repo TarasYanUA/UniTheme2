@@ -102,7 +102,7 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
                 "'Third level elements' at Cascade menu type are not 5!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();

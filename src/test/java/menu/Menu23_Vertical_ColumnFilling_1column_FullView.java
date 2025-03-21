@@ -93,11 +93,11 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner {
                 "'Number of visible elements in the 3-level menu' is not 6!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();

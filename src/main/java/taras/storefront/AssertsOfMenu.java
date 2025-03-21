@@ -39,10 +39,10 @@ public class AssertsOfMenu extends AbstractPage {
     public List<WebElement> numberOfElements_ThirdLevel_AllProducts; //Настройка "Элементы третьего уровня" в категории "Все товары -- Электроника"
 
     @FindBy(css = ".ut2-menu .ut2-more-btn")
-    public List<WebElement> button_MoreInElementsOf2levelMenu;
+    public List<WebElement> button_More_InElementsOf2levelMenu;
 
-    @FindBy(xpath = "//span[@class='ut2-menu__more-cat-link__in'][contains(text(), 'Больше Электроника')]")
-    public List<WebElement> button_MoreCategoryInTheSecondLevel_MoreElectronics;
+    @FindBy(xpath = "//span[@class='ut2-menu__more-cat-link__in'][contains(text(), 'Больше ')]")
+    public List<WebElement> button_MoreCategory_InTheSecondLevel;
 
     //Настройка "Элементы третьего уровня" для 3-х уровневого меню (Каскадный тип меню)
     @FindBy(css = "li.ty-menu-item__electronics div[data-elem-index=\"1\"] .ut2-menu__3rd-item")

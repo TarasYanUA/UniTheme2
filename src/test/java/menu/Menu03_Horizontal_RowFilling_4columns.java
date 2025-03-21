@@ -10,21 +10,22 @@ import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+
 import java.time.Duration;
 
 /*
 Работаем с макетом Light v2:
 Горизонтальное меню + Строчное заполнение + 4 колонки
-+ Показывать иконки для пунктов меню второго уровня -- да
-+ Количество видимых элементов в третьем уровне меню -- 4
 + Элементы второго уровня -- 4
 + Элементы третьего уровня -- 4
++ Количество видимых элементов в третьем уровне меню -- 4   //Здесь эту настройку не проверяем
++ Показывать иконки для пунктов меню второго уровня -- да
 + Минимальная высота для меню -- 300
 */
 
 public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurations_Menu03_Horizontal_RowFilling_4columns(){
+    public void setConfigurations_Menu03_Horizontal_RowFilling_4columns() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_WebsiteLayouts();
@@ -37,15 +38,15 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("4");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         mainMenuSettings.clickAndType_setting_SecondLevelElements("4");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
+        if (!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()) {
+            mainMenuSettings.setting_ShowIconsForMenuItems.click();
+        }
+        if (mainMenuSettings.setting_CompactDisplayView.isSelected()) {   //Выключаем Компактный вид для Горизонтального меню
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -53,7 +54,7 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu03_Horizontal_RowFilling_4columns")
-    public void check_Menu03_Horizontal_RowFilling_4columns(){
+    public void check_Menu03_Horizontal_RowFilling_4columns() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
@@ -86,11 +87,11 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
                 "Number of elements of the third level is not 4!");
 
         //Проверяем, что отсутствуют кнопки "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are buttons 'More' in the second level of the menu but shouldn't!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToHorizontalMenu_Apparel();

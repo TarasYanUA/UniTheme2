@@ -92,6 +92,10 @@ public class Menu32_Vertical_RowFilling_2columns_FullView extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 1!");
 
+        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 10,
+                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
+
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu32.04 Menu32_Vertical_RowFilling_2columns_FullView - Menu Apparel");
         stHomePage.navigateToVerticalMenu_SportsAndOutdoors();

@@ -79,10 +79,6 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 5!");
-
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
@@ -91,8 +87,12 @@ public class Menu34_Vertical_RowFilling_3columns_CompactView extends TestRunner 
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() >= 7,
                 "Number of elements of the third level is less than 7!");
 
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();

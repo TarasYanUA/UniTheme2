@@ -18,7 +18,7 @@ import java.time.Duration;
 Вертикальное меню + Колоночное заполнение + 5 колонок
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 6
-+ Количество видимых элементов в третьем уровне меню -- 00
++ Количество видимых элементов в третьем уровне меню -- 0
 + Показывать иконки для пунктов меню второго уровня -- нет
 + Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
@@ -95,7 +95,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
                 "Number of elements of the third level is not 6!");
 
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 10,
                 "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();

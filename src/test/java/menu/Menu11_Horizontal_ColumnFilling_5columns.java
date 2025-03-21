@@ -15,10 +15,10 @@ import java.time.Duration;
 /*
 Работаем с макетом Light v2:
 Горизонтальное меню + Колоночное заполнение + 5 колонок
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Количество видимых элементов в третьем уровне меню -- 2
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 4
++ Количество видимых элементов в третьем уровне меню -- 2
++ Показывать иконки для пунктов меню второго уровня -- нет
 + Минимальная высота для меню -- 500
 */
 
@@ -77,10 +77,6 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 2!");
-
         //Проверяем, что Элементов второго уровня -- 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 7,
                 "Number of elements of the 2-level is not 7!");
@@ -89,9 +85,17 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 4,
                 "Number of elements of the third level is not 4!");
 
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 2
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 2!");
+
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 10,
                 "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
+
+        //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
+                "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToHorizontalMenu_Apparel();
         takeScreenShot("Menu11.04 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel");

@@ -15,10 +15,10 @@ import java.time.Duration;
 /*
 Работаем с макетом Light v2:
 Горизонтальное меню + Колоночное заполнение + 1 колонка
-+ Показывать иконки для пунктов меню второго уровня -- нет
-+ Количество видимых элементов в третьем уровне меню -- 5
 + Элементы второго уровня -- 3
 + Элементы третьего уровня -- 6
++ Количество видимых элементов в третьем уровне меню -- 5
++ Показывать иконки для пунктов меню второго уровня -- нет
 + Минимальная высота для меню -- 500
 */
 
@@ -37,15 +37,17 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("1");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+
+
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -77,10 +79,6 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 5!");
-
         //Проверяем, что Элементов второго уровня -- 3
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 3,
                 "Number of elements of the 2-level is not 3!");
@@ -89,12 +87,16 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
                 "Number of elements of the third level is not 6!");
 
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 5
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 3,
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 3,
                 "There are less than 3 buttons 'More' in the elements of the 2-level menu!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the 2-level menu!");
 
         stHomePage.navigateToHorizontalMenu_Apparel();

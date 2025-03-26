@@ -18,7 +18,7 @@ import java.time.Duration;
 Вертикальное меню + Строчное заполнение + 5 колонок
 + Элементы второго уровня -- 7
 + Элементы третьего уровня -- 4
-+ Количество видимых элементов в третьем уровне меню -- 3   //Здесь эту настройку не проверяем
++ Количество видимых элементов в третьем уровне меню -- 3
 + Показывать иконки для пунктов меню второго уровня -- нет
 + Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
@@ -87,6 +87,14 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         //Проверяем, что Элементов третьего уровня -- 4
         softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 4,
                 "Number of elements of the third level are not 4!");
+
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 3
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("3").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 3!");
+
+        //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
+                "There are no buttons 'More' in the elements of the 2-level menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu30.04 Menu30_Vertical_RowFilling_5columns_FullView - Menu Apparel");

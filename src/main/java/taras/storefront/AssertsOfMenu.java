@@ -72,6 +72,6 @@ public class AssertsOfMenu extends AbstractPage {
     @FindBy(css = ".ut2-lsl__more-link")
     public List<WebElement> flyMenu_ButtonMore;
 
-    @FindBy(css = ".ut2-lsl__show_more")
+    @FindBy(css = ".ty-menu__submenu-alt-link")
     public List<WebElement> flyMenu_ButtonMoreCategories;
 }

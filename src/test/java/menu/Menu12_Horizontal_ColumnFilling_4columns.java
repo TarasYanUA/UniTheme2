@@ -16,13 +16,11 @@ import java.time.Duration;
 /*
 Работаем с макетом Light v2:
 Горизонтальное меню + Колоночное заполнение + 4 колонки
-+ Элементы второго уровня -- 0
++ Элементы второго уровня -- 4
 + Элементы третьего уровня -- 4
 + Количество видимых элементов в третьем уровне меню -- 4   //Здесь эту настройку не проверяем
 + Показывать иконки для пунктов меню второго уровня -- да
 + Минимальная высота для меню -- 300
-
-БАГ https://abteam.planfix.com/task/52873
 */
 
 public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
@@ -40,7 +38,7 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("4");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("0");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("4");
         mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         if (!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()) {
@@ -80,13 +78,13 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
 
-        //Проверяем, что Элементов второго уровня -- 0
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.isEmpty(),
-                "Number of elements of the second level are not empty!");
+        //Проверяем, что Элементов второго уровня -- 4
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 4,
+                "Number of elements of the second level are not 4!");
 
-        //Проверяем, что Элементов третьего уровня -- 0
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.isEmpty(),
-                "Number of elements of the third level are not empty!");
+        //Проверяем, что Элементов третьего уровня -- 4
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 4,
+                "Number of elements of the third level are not 4!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),

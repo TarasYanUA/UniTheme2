@@ -1,6 +1,7 @@
 package taras.storefront;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -93,12 +94,16 @@ public class StCategoryPage extends AbstractPage {
         makePause();
     }
     public void clickListWithoutOptions_ProductListView(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
         listWithoutOptions_ProductListView.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
         makePause();
     }
     public void clickCompactList_ProductListView(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
         compactList_ProductListView.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
@@ -117,7 +122,7 @@ public class StCategoryPage extends AbstractPage {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
     }
 
-    private WebElement hoverCloseQuickView(){return closeQuickView;}
+    public WebElement hoverCloseQuickView(){return closeQuickView;}
     public void clickCloseQuickView(){
         WebElement element = hoverCloseQuickView();
         Actions hoverToElement = new Actions(DriverProvider.getDriver());

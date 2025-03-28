@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed some asserts assertTrue on assertEquals.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Addapted some code in menu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOfMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu12_Horizontal_ColumnFilling_4columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu30_Vertical_RowFilling_5columns_FullView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,11 +324,11 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" />
-      <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
       <item itemvalue="TestNG.Menu12_Horizontal_ColumnFilling_4columns" />
+      <item itemvalue="TestNG.Menu30_Vertical_RowFilling_5columns_FullView" />
+      <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
     </list>
     <recent_temporary>
       <list>
@@ -712,7 +706,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <option name="localTasksCounter" value="228" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,8 +725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The second test-case for product block &quot;Small items&quot; is ready!" />
-    <MESSAGE value="All three test-cases for product block &quot;Small items&quot; are ready!" />
     <MESSAGE value="Started work with product block &quot;Scroller&quot; - ProductBlock_Scroller_Var1" />
     <MESSAGE value="The first test-case for product block &quot;Scroller&quot; is ready - ProductBlock_Scroller_Var1" />
     <MESSAGE value="The second test-case for product block &quot;Scroller&quot; is ready - ProductBlock_Scroller_Var2" />
@@ -756,7 +748,9 @@
     <MESSAGE value="Adapted some code." />
     <MESSAGE value="Improved asserts for Horizontal and Vertical menu." />
     <MESSAGE value="Changed some asserts assertTrue on assertEquals." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some asserts assertTrue on assertEquals." />
+    <MESSAGE value="Addepted some code in menu." />
+    <MESSAGE value="Addapted some code in menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Addapted some code in menu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

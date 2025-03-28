@@ -24,7 +24,7 @@ import testRunner.TestRunner;
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1. UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 4
+Формат отображения цен                          -- Вариант 6
 Отображать цену вверху                          -- n
 Отображать пустые звёзды рейтинга товара        -- y
 Отображать общее значение рейтинга товара       -- n
@@ -89,7 +89,7 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("col-rev-mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();

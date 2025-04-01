@@ -85,28 +85,20 @@ public class StCategoryPage extends AbstractPage {
         hoverMenClothProduct.moveToElement(elementOfMenClothProduct);
         hoverMenClothProduct.perform();
     }
-    public void clickQuickViewOfPhoneProduct(){
-        quickViewOfPhoneProduct_Droid3.click();
-        makePause();
-    }
-    public void clickQuickViewOfMenClothProduct(){
-        quickViewOfMenClothProduct.click();
-        makePause();
-    }
     public void clickListWithoutOptions_ProductListView(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
         listWithoutOptions_ProductListView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
         makePause();
     }
     public void clickCompactList_ProductListView(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
         compactList_ProductListView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
         makePause();
     }
     public WebElement moveToButtonAddToCart(){return buttonAddToCart;}
@@ -118,8 +110,20 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickButtonQuickView(){
         buttonQuickView.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+    }
+    public void clickQuickViewOfPhoneProduct(){
+        quickViewOfPhoneProduct_Droid3.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        makePause();
+    }
+    public void clickQuickViewOfMenClothProduct(){
+        quickViewOfMenClothProduct.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        makePause();
     }
 
     public WebElement hoverCloseQuickView(){return closeQuickView;}
@@ -139,7 +143,7 @@ public class StCategoryPage extends AbstractPage {
     }
     public void clickButton_WriteReview(){
         button_WriteReview.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-2")));
     }
 }

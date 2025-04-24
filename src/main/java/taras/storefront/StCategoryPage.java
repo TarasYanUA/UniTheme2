@@ -77,11 +77,8 @@ public class StCategoryPage extends AbstractPage {
 
 
     public void makePause(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Actions actions = new Actions(DriverProvider.getDriver());
+        actions.pause(2000);
     }
 
     public void hoverToPhoneProduct() {

@@ -28,23 +28,15 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;
 
-    public Select getSetting_FillingType() {
-        return new Select(setting_FillingType);
-    }
-
     public void selectSetting_FillingType(String value) {
-        getSetting_FillingType().selectByValue(value);
+        new Select(setting_FillingType).selectByValue(value);
     }
 
     @FindBy(css = "select[name='block_data[properties][abt__ut2_columns_count]']")
     private WebElement setting_MaximumColumns;
 
-    public Select getSetting_MaximumColumns() {
-        return new Select(setting_MaximumColumns);
-    }
-
     public void selectSetting_MaximumColumns(String value) {
-        getSetting_MaximumColumns().selectByValue(value);
+        new Select(setting_MaximumColumns).selectByValue(value);
     }
 
     @FindBy(css = "input[type='checkbox'][name='block_data[properties][abt__menu_compact_view]']")
@@ -148,12 +140,6 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = ".cm-skip-check-item.open")
     private WebElement field_HtmlContent;
 
-    public void clickAndType_Field_HtmlContent() {
-        field_HtmlContent.click();
-        field_HtmlContent.clear();
-        field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
-    }
-
     @FindBy(css = "a[id*='wrap_content'] span")
     private WebElement languageButton;
 
@@ -162,6 +148,13 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = ".content-variant-wrap a[name='ru']")
     private WebElement languageRU;
+
+
+    public void clickAndType_Field_HtmlContent() {
+        field_HtmlContent.click();
+        field_HtmlContent.clear();
+        field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
+    }
 
     public void selectLanguage_RTL() {
         try {

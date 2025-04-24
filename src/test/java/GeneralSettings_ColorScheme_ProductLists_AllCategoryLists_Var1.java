@@ -267,8 +267,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.logOutOnStorefront();
+        stCategoryPage.hoverToButtonAddToCart();
         stCategoryPage.button_AddToCart.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
 

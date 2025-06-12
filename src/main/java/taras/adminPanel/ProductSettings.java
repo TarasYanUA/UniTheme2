@@ -141,20 +141,22 @@ public class ProductSettings extends AbstractPage {
     }
 
     public void selectSetting_ProductTemplate(String value){
+        Actions scroll = new Actions(DriverProvider.getDriver());
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(setting_ProductTemplate), 0, 800).perform();
         new Select(setting_ProductTemplate).selectByValue(value);
     }
 
     public void hoverAndTypeField_ShortDescription(String value){
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(fieldName_ShortDescription), 0, 800).perform();
+        Actions scroll = new Actions(DriverProvider.getDriver());
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(fieldName_ShortDescription), 0, 1200).perform();
         field_ShortDescription.click();
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
     }
 
     public void hoverAndTypeField_PromoText(String value){
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.scrollToElement(fieldName_PromoText).perform();
+        Actions scroll = new Actions(DriverProvider.getDriver());
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(fieldName_PromoText), 0, 1200).perform();
         field_PromoText.click();
         field_PromoText.clear();
         field_PromoText.sendKeys(value);

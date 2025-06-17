@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -35,6 +36,7 @@ public class TestRunner {
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
+        makePause();
         getDriver().quit();
         DriverProvider.destroyDriver();
     }
@@ -46,11 +48,7 @@ public class TestRunner {
 
     public void takeScreenShot_withScroll(String screenshotName) {
         ((JavascriptExecutor) getDriver()).executeScript("scroll(0,130);");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        makePause();
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
@@ -60,11 +58,7 @@ public class TestRunner {
     }
 
     public void takeScreenShot(String screenshotName) {
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        makePause();
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
@@ -74,11 +68,8 @@ public class TestRunner {
     }
 
     public void makePause(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Actions actions = new Actions(DriverProvider.getDriver());
+        actions.pause(2000).perform();
     }
 
     public String getBlockID(String blockName) {

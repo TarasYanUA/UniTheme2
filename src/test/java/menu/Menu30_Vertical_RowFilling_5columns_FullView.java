@@ -16,11 +16,11 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 Вертикальное меню + Строчное заполнение + 5 колонок
++ Элементы второго уровня -- 7
++ Элементы третьего уровня -- 4
++ Количество видимых элементов в третьем уровне меню -- 3
 + Показывать иконки для пунктов меню второго уровня -- нет
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 0
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
-+ Элементы второго уровня -- 12
-+ Элементы третьего уровня -- 6
++ Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
 */
 
@@ -39,15 +39,15 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("row_filling");
         mainMenuSettings.selectSetting_MaximumColumns("5");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("7");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("3");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("6");
+        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -80,21 +80,21 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         softAssert.assertTrue(assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are icons at the menu of the second level but shouldn't!");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню --  0
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("0").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is more than zero!");
+        //Проверяем, что Элементов второго уровня -- 7
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 7,
+                "Number of elements of the second level are not 7!");
 
-        //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
-                "Number of elements of the second level is less than 7!");
+        //Проверяем, что Элементов третьего уровня -- 4
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 4,
+                "Number of elements of the third level are not 4!");
 
-        //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 6,
-                "Number of elements of the third level is not 6!");
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 3
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("3").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 3!");
 
-        //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
-                "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
+        //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
+                "There are no buttons 'More' in the elements of the 2-level menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();
         takeScreenShot("Menu30.04 Menu30_Vertical_RowFilling_5columns_FullView - Menu Apparel");

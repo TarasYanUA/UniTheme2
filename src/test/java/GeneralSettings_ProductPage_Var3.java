@@ -33,7 +33,6 @@ import java.time.Duration;
     * Отображать информацию о бренде товара     -- Не отображать
     * Количество отображаемых изображений галереи товара (для всех шаблонов страницы товара) -- 2
 - Настраиваем товар X-Box 360:
-    * Действие при нулевой цене                 -- Полный вид
     * Действие при отсутствии товара в наличии  -- Подписаться на уведомления
     * шаблон страницы товара                    -- 5 шт (кроме Каскада)
     * Краткое описание                          -- нет
@@ -181,6 +180,8 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productPage.shiftLanguage_EN();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
+        if(!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
+            DriverProvider.getDriver().findElement(By.cssSelector("#content_features .ab-smc")).click();
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));

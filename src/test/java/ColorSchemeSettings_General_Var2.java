@@ -25,8 +25,13 @@ import testRunner.TestRunner;
 public class ColorSchemeSettings_General_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_ColorSchemeSettings_General_Var2() {
-        //Настраиваем CS-Cart настройки
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_WebsiteLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Настраиваем CS-Cart настройки
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
         if (!checkboxThumbnailsGallery.isSelected()) {

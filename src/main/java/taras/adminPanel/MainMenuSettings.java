@@ -19,35 +19,24 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "div[data-ca-block-name='Главное меню'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_MainMenu_LightV2;
 
-    @FindBy(css = "div[data-ca-block-name='Категории'] .bm-action-properties.action")
+    @FindBy(css = "div[data-ca-block-name='Каталог товаров'] .bm-action-properties.action")
     public WebElement gearwheelOfTheBlock_Categories_Light;
 
     @FindBy(css = "a[id*='sw_case_settings_']")
     public WebElement menuSettings_buttonSettings;
 
-    @FindBy(css = "div[data-ca-block-name='Меню'] .bm-action-properties.action")
-    public WebElement gearwheelOfTheBlock_FlyMenu_Default;
-
     @FindBy(css = "select[name='block_data[properties][abt__ut2_filling_type]']")
     private WebElement setting_FillingType;
 
-    public Select getSetting_FillingType() {
-        return new Select(setting_FillingType);
-    }
-
     public void selectSetting_FillingType(String value) {
-        getSetting_FillingType().selectByValue(value);
+        new Select(setting_FillingType).selectByValue(value);
     }
 
     @FindBy(css = "select[name='block_data[properties][abt__ut2_columns_count]']")
     private WebElement setting_MaximumColumns;
 
-    public Select getSetting_MaximumColumns() {
-        return new Select(setting_MaximumColumns);
-    }
-
     public void selectSetting_MaximumColumns(String value) {
-        getSetting_MaximumColumns().selectByValue(value);
+        new Select(setting_MaximumColumns).selectByValue(value);
     }
 
     @FindBy(css = "input[type='checkbox'][name='block_data[properties][abt__menu_compact_view]']")
@@ -57,14 +46,14 @@ public class MainMenuSettings extends AbstractPage {
     public WebElement setting_ShowIconsForMenuItems;
 
     @FindBy(css = "input[name='block_data[properties][abt__no_hidden_elements_third_level_view]")
-    private WebElement setting_NumberOfVisibleElementsIn_3LevelMenu;
+    private WebElement setting_NumberOfVisibleElementsInThirdLevelOfMenu;
 
-    public void clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu(String value) {
+    public void clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu(String value) {
         Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(setting_NumberOfVisibleElementsIn_3LevelMenu).build().perform();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.click();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.clear();
-        setting_NumberOfVisibleElementsIn_3LevelMenu.sendKeys(value);
+        actions.moveToElement(setting_NumberOfVisibleElementsInThirdLevelOfMenu).build().perform();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.click();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.clear();
+        setting_NumberOfVisibleElementsInThirdLevelOfMenu.sendKeys(value);
     }
 
     @FindBy(css = "input[name='block_data[properties][dropdown_second_level_elements]']")
@@ -105,8 +94,13 @@ public class MainMenuSettings extends AbstractPage {
         DriverProvider.getDriver().findElement(By.xpath("//option[contains(text(), 'Main menu')]")).click();
     }
 
-    @FindBy(css = "input[id$='_abt__ut2_fly_menu_properties_abt__ut2_show_title']")
-    public WebElement setting_ShowTitle;
+    public void gearwheelOfTheBlock_FlyMenu_Default() {
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("div[data-ca-block-name='Меню'] .bm-action-properties.action")).isEmpty()) {
+            DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='Меню'] .bm-action-properties.action")).click();
+        } else {
+            DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='AB: FLY меню'] .bm-action-properties.action")).click();
+        }
+    }
 
     @FindBy(css = "input[name='dispatch[block_manager.update_block]']")
     public WebElement button_saveBlock;
@@ -146,11 +140,6 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = ".cm-skip-check-item.open")
     private WebElement field_HtmlContent;
 
-    public void clickAndType_Field_HtmlContent() {
-        field_HtmlContent.click();
-        field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
-    }
-
     @FindBy(css = "a[id*='wrap_content'] span")
     private WebElement languageButton;
 
@@ -159,6 +148,13 @@ public class MainMenuSettings extends AbstractPage {
 
     @FindBy(css = ".content-variant-wrap a[name='ru']")
     private WebElement languageRU;
+
+
+    public void clickAndType_Field_HtmlContent() {
+        field_HtmlContent.click();
+        field_HtmlContent.clear();
+        field_HtmlContent.sendKeys("<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\">" + "</p>");
+    }
 
     public void selectLanguage_RTL() {
         try {

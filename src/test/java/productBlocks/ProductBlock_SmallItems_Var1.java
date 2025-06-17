@@ -20,7 +20,7 @@ import testRunner.TestRunner;
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1. UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 4
+Формат отображения цен                          -- Вариант 5
 Отображать цену вверху                          -- n
 Отображать пустые звёзды рейтинга товара        -- y
 Отображать общее значение рейтинга товара       -- n
@@ -72,8 +72,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
-
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("col-rev");
         if (themeSettingsProductLists.settingPriceAtTheTop.isSelected())
             themeSettingsProductLists.settingPriceAtTheTop.click();
         if (!themeSettingsProductLists.settingEmptyStarsOfProductRating.isSelected())

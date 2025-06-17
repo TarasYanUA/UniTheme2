@@ -58,8 +58,13 @@ import static taras.constants.DriverProvider.getDriver;
 public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var2() {
-        //Работаем с CS-Cart настройками
+        //Настраиваем макет для тест-кейса
         CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToSection_WebsiteLayouts();
+        csCartSettings.layout_Lightv2.click();
+        csCartSettings.setLayoutAsDefault();
+
+        //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
         if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
@@ -276,6 +281,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.logOutOnStorefront();
+        stCategoryPage.hoverToButtonAddToCart();
         stCategoryPage.button_AddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
@@ -311,6 +317,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
+        stCategoryPage.hoverCloseQuickView();
         takeScreenShot("235 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
 

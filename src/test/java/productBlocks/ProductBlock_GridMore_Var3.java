@@ -27,7 +27,7 @@ import java.util.List;
 Спрятать кнопку добавления товара в корзину     -- n
 
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Формат отображения цен                          -- Вариант 1
+Формат отображения цен                          -- Вариант 8
 Отображать цену вверху                          -- y
 Отображать пустые звёзды рейтинга товара        -- y
 Отображать общее значение рейтинга товара       -- y
@@ -95,7 +95,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
+        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-os-fill");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (!checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
@@ -290,7 +290,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 500);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 400);
                 scroll.perform();
                 button_ShowMore.click();
 

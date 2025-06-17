@@ -16,12 +16,11 @@ import java.time.Duration;
 /*
 Работаем с макетом Light. В этом тест-кейсе используются значения по умолчанию:
 Вертикальное меню + Колоночное заполнение + 4 колонки
-+ Компактный вид отображения -- нет
-+ Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 30
 + Элементы второго уровня -- 30
 + Элементы третьего уровня -- 30
++ Количество видимых элементов в третьем уровне меню -- 5
++ Показывать иконки для пунктов меню второго уровня -- да
++ Компактный вид отображения -- нет
 + Минимальная высота для меню -- 600
 */
 
@@ -40,15 +39,15 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("4");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("30");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("30");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("30");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("30");
+        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("600");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -81,10 +80,6 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 5!");
-
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
@@ -93,8 +88,12 @@ public class Menu20_Vertical_ColumnFilling_4columns_FullView extends TestRunner 
         softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() >= 7,
                 "Number of elements of the third level is less than 7!");
 
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 5
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 5!");
+
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();

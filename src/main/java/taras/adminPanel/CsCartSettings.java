@@ -26,14 +26,19 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(css = ".cm-notification-close")
     public List<WebElement> closeNotification;
 
+
     public void closeNotificationIfPresent() {
-        if (!closeNotification.isEmpty()) {
+        if (!closeNotification.isEmpty())
             closeNotification.getFirst().click();
-        }
     }
 
     public void clickSaveButtonOfSettings() {
         saveButtonOfSettings.click();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public StHomePage navigateToStorefront() {
@@ -51,20 +56,28 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Настройки -- Общие настройки -- Внешний вид"
     @FindBy(css = "a[href$='section_id=General']")
     private WebElement section_GeneralSettings;
+
     @FindBy(css = "a[href*='section_id=Appearance']")
     private WebElement section_Appearance;
+
     @FindBy(id = "field___show_prices_taxed_clean_116")
     public WebElement setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
+
     @FindBy(css = "input[id*='field___thumbnails_gallery']")
     public WebElement setting_ThumbnailsGallery;
+
     @FindBy(id = "field___in_stock_field_146")
     public WebElement setting_NumberOfAvailableProducts;
+
     @FindBy(id = "field___product_details_in_tab_288")
     public WebElement setting_ProductDetailsInTab;
+
     @FindBy(id = "field___default_product_details_view_180")
     private WebElement setting_ProductPageView;
+
     @FindBy(css = "input[id*='field___enable_quick_view']")
     public WebElement setting_QuickView;
+
 
     public void navigateToAppearanceSettings() {
         menu_Settings.click();
@@ -72,18 +85,15 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         section_Appearance.click();
     }
 
-    private Select getSetting_ProductPageView() {
-        return new Select(setting_ProductPageView);
-    }
-
     public void selectSetting_ProductPageView(String value) {
-        getSetting_ProductPageView().selectByValue(value);
+        new Select(setting_ProductPageView).selectByValue(value);
     }
 
 
     //Меню "Настройки -- Общие настройки -- Оформить заказ"
     @FindBy(css = "a[href*='section_id=Checkout']")
     private WebElement section_Checkout;
+
     @FindBy(id = "field___tax_calculation_179")
     public WebElement setting_TaxCalculationMethodBasedOn;
 
@@ -101,23 +111,29 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Настройки -- Налоги"
     @FindBy(css = "a[href$='taxes.manage'] div")
     private WebElement section_Taxes;
+
     @FindBy(xpath = "//input[@type='checkbox'][@name='tax_data[7][price_includes_tax]']")
     public WebElement setting_priceIncludesTax;
+
     @FindBy(css = "tr[data-ct-tax-id='7'] td")
     public WebElement vat20;
+
     @FindBy(css = "a[data-ca-dispatch='dispatch[taxes.m_update]']")
     public WebElement button_saveTaxes;
+
     @FindBy(css = ".bulk-edit__btn.bulk-edit__btn--actions span")
     public WebElement button_Actions;
+
     @FindBy(css = "a[data-ca-dispatch=\"dispatch[taxes.apply_selected_taxes]\"]")
     public WebElement button_ApplySelectedTaxesToAllProducts;
+
 
     public void navigateToTaxes() {
         menu_Settings.click();
         section_Taxes.click();
     }
-    
-    public void setTaxesForAllProducts(){   //Настраиваем налог для всех товаров
+
+    public void setTaxesForAllProducts() {   //Настраиваем налог для всех товаров
         navigateToCheckoutSettings();
         selectSetting_TaxCalculationMethodBasedOn("unit_price");
         clickSaveButtonOfSettings();
@@ -152,6 +168,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     @FindBy(id = "products_products")
     private WebElement section_Products;
 
+
     public ProductSettings navigateToSection_Products() {
         checkMenu_Products_ToBeActive();
         section_Products.click();
@@ -163,20 +180,28 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     //Меню "Товары -- Категории"
     @FindBy(id = "products_categories")
     private WebElement section_Categories;
+
     @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
     public WebElement gearwheelOnCategoryPage;
+
     @FindBy(css = "a[href*='dispatch=categories.m_add']")
     public WebElement button_AddBulkCategory;
 
-    @FindBy(css = "div[id*='location_category_'] .cs-icon--type-plus")
-    public WebElement button_CategoryLocation;
+    @FindBy(css = "a[id*='opener_picker_location_category_']")
+    WebElement button_CategoryLocation;
 
     @FindBy(css = ".span3")
     public WebElement field_CategoryName;
+
     @FindBy(css = ".btn-clone")
     public WebElement button_Clone;
+
     @FindBy(css = "a[data-ca-dispatch='dispatch[categories.m_add]']")
     public WebElement button_Create;
+
+    @FindBy(xpath = "//span[@class='ui-button-icon ui-icon ui-icon-closethick']")
+    WebElement button_CrossOnTop;
+
 
     public void navigateToSection_Categories() {
         checkMenu_Products_ToBeActive();
@@ -184,47 +209,69 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
     }
 
     public void addNewCategoryLocations_Computers() {
-        button_CategoryLocation.click();
-        DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        if(DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
-            DriverProvider.getDriver().findElement(By.cssSelector("#category_167")).click();
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("select[name='categories_data[0][parent_id]']")).isEmpty()) {
+            DriverProvider.getDriver().findElement(By.cssSelector("select[name='categories_data[0][parent_id]']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("option[value=\"166\"]")).click();
             field_CategoryName.click();
             field_CategoryName.sendKeys("AutoTestCategory");
-            for(int i = 1; i < 80; i++) {
+            for (int i = 1; i < 80; i++) {
                 button_Clone.click();
             }
             button_Create.click();
         } else {
-            DriverProvider.getDriver().findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-closethick']")).click();
+            button_CategoryLocation.click();
+            if (!DriverProvider.getDriver().findElements(By.xpath("//span[text()='Магазин: CS-Cart']")).isEmpty())
+                DriverProvider.getDriver().findElement(By.xpath("//span[text()='Магазин: CS-Cart']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("#category_166")).click();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
+                DriverProvider.getDriver().findElement(By.cssSelector("#category_166")).click();
+                field_CategoryName.click();
+                field_CategoryName.sendKeys("AutoTestCategory");
+                for (int i = 1; i < 80; i++) {
+                    button_Clone.click();
+                }
+                button_Create.click();
+            } else
+                button_CrossOnTop.click();
         }
     }
 
     //Меню "Товары -- Характеристики"
     @FindBy(id = "products_features")
     private WebElement section_Features;
+
     @FindBy(css = "a[data-ca-external-click-id=\"opener_group18\"]")
     private WebElement featureBrand;
+
     @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
     public WebElement feature_HardDrive;
+
     @FindBy(css = "label[for='elm_feature_description_23']")
     private WebElement field_FeatureDescription_HardDrive;
+
     @FindBy(css = ".re-button.re-html.re-button-icon")
     private WebElement button_Html_HardDrive;
+
     @FindBy(css = ".cm-skip-check-item.open")
     private WebElement field_HtmlDescriptionOfFeature;
+
     @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
     public WebElement showInProductList;
+
     @FindBy(id = "elm_feature_display_on_product_18")
     public WebElement showOnFeaturesTab_Brand;
+
     @FindBy(id = "elm_feature_display_on_header_23")
     public WebElement showInHeaderOnProductPage_HardDisk;
+
     @FindBy(css = ".buttons-container-picker input[value='Сохранить']")
     public WebElement button_SaveFeature;
+
 
     public void navigateToSection_Features() {
         checkMenu_Products_ToBeActive();
@@ -437,7 +484,7 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         field_Limit.sendKeys(value);
     }
 
-    public void clickAndType_Field_ItemQuantity(String value){
+    public void clickAndType_Field_ItemQuantity(String value) {
         field_ItemQuantity.click();
         field_ItemQuantity.clear();
         field_ItemQuantity.sendKeys(value);

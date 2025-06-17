@@ -16,11 +16,10 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 Вертикальное меню + Колоночное заполнение + 2 колонки + Компактный вид
-+ Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 2
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10
 + Элементы второго уровня -- 5
 + Элементы третьего уровня -- 5
++ Количество видимых элементов в третьем уровне меню -- 2
++ Показывать иконки для пунктов меню второго уровня -- да
 + Минимальная высота для меню -- 700
 */
 
@@ -39,15 +38,15 @@ public class Menu24_Vertical_ColumnFilling_2columns_CompactView extends TestRunn
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("2");
-        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
+        if(!mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("700");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -80,24 +79,24 @@ public class Menu24_Vertical_ColumnFilling_2columns_CompactView extends TestRunn
         softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
                 "There are no icons at the menu of the second level!");
 
+        //Проверяем, что Элементов второго уровня -- 5
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
+                "Number of elements of the second level is not 5!");
+
+        //Проверяем, что Элементов третьего уровня -- 5
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 5,
+                "Number of elements of the third level is not 5!");
+
         //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
         softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
                 "'Number of visible elements in the 3-level menu' is not 2!");
 
-        //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
-                "Number of elements of the second level is not 5!");
-
-        //Проверяем, что Элементов третьего уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() == 5,
-                "Number of elements of the third level is not 5!");
-
         //Проверяем, что присутствует не меньше 10 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_MoreInElementsOf2levelMenu.size() >= 10,
+        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 10,
                 "There are less than 10 buttons 'More' in the elements of the second level of the menu!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
         stHomePage.navigateToVerticalMenu_Apparel();

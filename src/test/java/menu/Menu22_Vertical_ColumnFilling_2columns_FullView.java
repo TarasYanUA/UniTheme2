@@ -15,12 +15,11 @@ import java.time.Duration;
 /*
 Работаем с макетом Light:
 Вертикальное меню + Колоночное заполнение + 2 колонки
-+ Компактный вид отображения -- нет
-+ Показывать иконки для пунктов меню второго уровня -- да
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 5
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 10  (здесь эту настройку не проверяем)
 + Элементы второго уровня -- 5 (здесь данная настройка роли не играет по причине настройки ниже)
 + Элементы третьего уровня -- 0
++ Количество видимых элементов в третьем уровне меню -- 10  (здесь эту настройку не проверяем)
++ Показывать иконки для пунктов меню второго уровня -- да
++ Компактный вид отображения -- нет
 + Минимальная высота для меню -- 700
 */
 
@@ -39,15 +38,15 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("2");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("10");
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("10");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("0");
+        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
+            mainMenuSettings.setting_CompactDisplayView.click();
+        }
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("700");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -81,7 +80,7 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
                 "There are no icons at the menu of the second level!");
 
         //Проверяем, что Элементов второго уровня -- 5
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() == 5,
+        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 5,
                 "Number of elements of the 2-level is not 5!");
 
         //Проверяем, что Элементов третьего уровня -- 0

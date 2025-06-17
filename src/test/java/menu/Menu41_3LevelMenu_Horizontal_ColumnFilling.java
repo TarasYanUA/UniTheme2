@@ -17,11 +17,9 @@ import java.time.Duration;
 Работаем с макетом Light v2:
 Горизонтальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 3
-+ Показывать иконки для пунктов меню второго уровня -- да (в данном кейсе настройка бесполезна)
-+ Кол-во отображаемых элементов во 2-м уровне меню -- 2
-+ Кол-во отображаемых элементов в 3-м уровне меню -- 2
 + Элементы второго уровня -- 12
 + Элементы третьего уровня -- 5
++ Количество видимых элементов в третьем уровне меню -- 2 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 500
 */
 
@@ -55,15 +53,12 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         mainMenuSettings.menuSettings_buttonSettings.click();
         mainMenuSettings.selectSetting_FillingType("column_filling");
         mainMenuSettings.selectSetting_MaximumColumns("3");
+        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
+        mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
+        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsIn_3LevelMenu("2");
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("12");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
         mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -86,29 +81,33 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
                 "Menu filling is not Column!");
 
         //Проверяем, что колонок 3
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("3").isEmpty(),
                 "Menu columns are not equal 3 columns!");
         stHomePage.navigateToHorizontalMenu_Electronic();
         takeScreenShot("Menu41.02 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-Computers");
-
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 2!");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
         softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
                 "Number of elements of the second level is less than 7!");
 
-        //Проверяем, что Элементов третьего уровня -- 4
-        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 4,
-                "'Third level elements' are not equal 4!");
+        //Проверяем, что Элементов третьего уровня -- 5
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
+                "'Third level elements' are not equal 5!");
+
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 5
+        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 5,
+                "'Third level elements' at Cascade menu type are not 5!");
+
+        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 2
+        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("2").isEmpty(),
+                "'Number of visible elements in the 3-level menu' is not 2!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_MoreInElementsOf2levelMenu.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategoryInTheSecondLevel_MoreElectronics.isEmpty(),
+        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
         stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
         takeScreenShot("Menu41.04 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu Electronic-CarElectronics");

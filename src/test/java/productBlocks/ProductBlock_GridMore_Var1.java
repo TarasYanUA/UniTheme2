@@ -199,7 +199,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
                 scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
+                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 500);
                 scroll.perform();
                 button_ShowMore.click();
 

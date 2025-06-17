@@ -69,7 +69,7 @@ public class TestRunner {
 
     public void makePause(){
         Actions actions = new Actions(DriverProvider.getDriver());
-        actions.pause(2000);
+        actions.pause(2000).perform();
     }
 
     public String getBlockID(String blockName) {

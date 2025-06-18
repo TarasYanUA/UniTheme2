@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="* Updated pom file&#10;* Updated drivers&#10;* Changed some code for editing product page">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="* Updated pom file&#10;* Fixed some bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,111 +125,111 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Maven.UniTheme2 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ColorSchemeSettings_General_Var2.checkColorSchemeSettings_General_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ColorSchemeSettings_General_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ColorSchemeSettings_Product_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Debug&quot;,
-    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Debug&quot;,
-    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var1.checkProductLists_CompactList_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.setConfigurationsForProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ProductPage_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu01_Horizontal_RowFilling_6columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu02_Horizontal_RowFilling_5columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu03_Horizontal_RowFilling_4columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu04_Horizontal_RowFilling_2columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu05_Horizontal_RowFilling_1column.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu10_Horizontal_ColumnFilling_6columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu11_Horizontal_ColumnFilling_5columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu12_Horizontal_ColumnFilling_4columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu13_Horizontal_ColumnFilling_2columns.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu14_Horizontal_ColumnFilling_1column.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu23_Vertical_ColumnFilling_1column_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu30_Vertical_RowFilling_5columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu31_Vertical_RowFilling_4columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu32_Vertical_RowFilling_2columns_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu33_Vertical_RowFilling_1column_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu34_Vertical_RowFilling_3columns_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu35_Vertical_RowFilling_1column_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu40_3LevelMenu_Horizontal_RowFilling.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu50_FlyMenu.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu50_FlyMenu_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu51_FlyMenu.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Menu51_FlyMenu_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_GridMore_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_GridMore_Var2.checkProductBlock_GridMore_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_GridMore_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_GridMore_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_Scroller_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_Scroller_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_Scroller_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_SmallItems_Var1.checkProductBlock_SmallElements_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_SmallItems_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_SmallItems_Var2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductBlock_SmallItems_Var3.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductSection_GridMore_Var1.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.UniTheme2/TestNG.xml.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#10 on UniTheme__4.18.3b&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Maven.UniTheme2 [clean].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor": "Run",
+    "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
+    "TestNG.ColorSchemeSettings_General_Var2.checkColorSchemeSettings_General_Var2.executor": "Run",
+    "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
+    "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor": "Debug",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor": "Debug",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.checkProductLists_CompactList_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.setConfigurationsForProductLists_GridListView_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var1.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var2.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
+    "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
+    "TestNG.Menu01_Horizontal_RowFilling_6columns.executor": "Run",
+    "TestNG.Menu02_Horizontal_RowFilling_5columns.executor": "Run",
+    "TestNG.Menu03_Horizontal_RowFilling_4columns.executor": "Run",
+    "TestNG.Menu04_Horizontal_RowFilling_2columns.executor": "Run",
+    "TestNG.Menu05_Horizontal_RowFilling_1column.executor": "Run",
+    "TestNG.Menu10_Horizontal_ColumnFilling_6columns.executor": "Run",
+    "TestNG.Menu11_Horizontal_ColumnFilling_5columns.executor": "Run",
+    "TestNG.Menu12_Horizontal_ColumnFilling_4columns.executor": "Run",
+    "TestNG.Menu13_Horizontal_ColumnFilling_2columns.executor": "Run",
+    "TestNG.Menu14_Horizontal_ColumnFilling_1column.executor": "Run",
+    "TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.executor": "Run",
+    "TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor": "Run",
+    "TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.executor": "Run",
+    "TestNG.Menu23_Vertical_ColumnFilling_1column_FullView.executor": "Run",
+    "TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView.executor": "Run",
+    "TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView.executor": "Run",
+    "TestNG.Menu30_Vertical_RowFilling_5columns_FullView.executor": "Run",
+    "TestNG.Menu31_Vertical_RowFilling_4columns_FullView.executor": "Run",
+    "TestNG.Menu32_Vertical_RowFilling_2columns_FullView.executor": "Run",
+    "TestNG.Menu33_Vertical_RowFilling_1column_FullView.executor": "Run",
+    "TestNG.Menu34_Vertical_RowFilling_3columns_CompactView.executor": "Run",
+    "TestNG.Menu35_Vertical_RowFilling_1column_CompactView.executor": "Run",
+    "TestNG.Menu40_3LevelMenu_Horizontal_RowFilling.executor": "Run",
+    "TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.executor": "Run",
+    "TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.executor": "Run",
+    "TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView.executor": "Run",
+    "TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.executor": "Run",
+    "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
+    "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
+    "TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor": "Run",
+    "TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.executor": "Run",
+    "TestNG.Menu50_FlyMenu.executor": "Run",
+    "TestNG.Menu50_FlyMenu_Var1.executor": "Run",
+    "TestNG.Menu51_FlyMenu.executor": "Run",
+    "TestNG.Menu51_FlyMenu_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var1.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var2.checkProductBlock_GridMore_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var2.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor": "Run",
+    "TestNG.ProductBlock_GridMore_Var3.executor": "Run",
+    "TestNG.ProductBlock_Scroller_Var1.executor": "Run",
+    "TestNG.ProductBlock_Scroller_Var2.executor": "Run",
+    "TestNG.ProductBlock_Scroller_Var3.executor": "Run",
+    "TestNG.ProductBlock_SmallItems_Var1.checkProductBlock_SmallElements_Var1.executor": "Run",
+    "TestNG.ProductBlock_SmallItems_Var1.executor": "Run",
+    "TestNG.ProductBlock_SmallItems_Var2.executor": "Run",
+    "TestNG.ProductBlock_SmallItems_Var3.executor": "Run",
+    "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
+    "TestNG.ProductSection_GridMore_Var1.executor": "Run",
+    "TestNG.UniTheme2/TestNG.xml.executor": "Run",
+    "git-widget-placeholder": "#10 on UniTheme__4.18.3b",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\IDEA Projects\UniTheme2\src\test\resources" />
@@ -251,11 +248,11 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_GridMore_Var3">
-    <configuration name="GeneralSettings_ProductPage_Cascade_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Var3">
+    <configuration name="GeneralSettings_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var2" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -327,19 +324,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var2" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
       <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var2" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
         <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -709,7 +706,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="234" />
+    <option name="localTasksCounter" value="235" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved some code for menu of the theme." />
     <MESSAGE value="Improved some code." />
     <MESSAGE value="Adapt code of Menu to the newest theme version 4.18.3b." />
     <MESSAGE value="Step 2 to Adapt code of Menu to the newest theme version 4.18.3b." />
@@ -753,7 +749,8 @@
     <MESSAGE value="Improved the code and made it more readable." />
     <MESSAGE value="Use the class Actions and its function pause() instead of try and catch." />
     <MESSAGE value="* Updated pom file&#10;* Updated drivers&#10;* Changed some code for editing product page" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Updated pom file&#10;* Updated drivers&#10;* Changed some code for editing product page" />
+    <MESSAGE value="* Updated pom file&#10;* Fixed some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Updated pom file&#10;* Fixed some bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -767,6 +764,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java</url>
           <line>195</line>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

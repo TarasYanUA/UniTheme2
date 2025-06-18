@@ -1,8 +1,6 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
@@ -92,8 +90,11 @@ public class ProductSettings extends AbstractPage {
     @FindBy(css = "label[for='elm_product_promo_text']")
     WebElement fieldName_PromoText;
 
-    @FindBy(id = "redactor-uuid-2")
+    @FindBy(xpath = "//label[@for='elm_product_promo_text']/..//a[@alt='HTML']")
     WebElement field_PromoText;
+
+    @FindBy(xpath = "//label[@for='elm_product_promo_text']/..//textarea[@class=\"cm-skip-check-item open\"]")
+    WebElement promoTextArea;
 
 
     public void clickAndTypeField_ProductName(String value){
@@ -141,25 +142,29 @@ public class ProductSettings extends AbstractPage {
     }
 
     public void selectSetting_ProductTemplate(String value){
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(setting_ProductTemplate), 0, 800).perform();
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", setting_ProductTemplate);
         new Select(setting_ProductTemplate).selectByValue(value);
+
     }
 
     public void hoverAndTypeField_ShortDescription(String value){
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(fieldName_ShortDescription), 0, 1200).perform();
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_ShortDescription);
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_ShortDescription));
         field_ShortDescription.click();
         field_ShortDescription.clear();
         field_ShortDescription.sendKeys(value);
     }
 
     public void hoverAndTypeField_PromoText(String value){
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(fieldName_PromoText), 0, 1200).perform();
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_PromoText);
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_PromoText));
         field_PromoText.click();
-        field_PromoText.clear();
-        field_PromoText.sendKeys(value);
+        promoTextArea.click();
+        promoTextArea.clear();
+        promoTextArea.sendKeys(value);
     }
 
 

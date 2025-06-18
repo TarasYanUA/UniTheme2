@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
@@ -281,11 +282,9 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
     public void clickAndTypeField_DescriptionOfFeature(String value) {
         field_FeatureDescription_HardDrive.click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_FeatureDescription_HardDrive));
+        Actions scroll = new Actions(DriverProvider.getDriver());
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(field_FeatureDescription_HardDrive), 0, 50).perform();
         button_Html_HardDrive.click();
         field_HtmlDescriptionOfFeature.click();
         field_HtmlDescriptionOfFeature.clear();

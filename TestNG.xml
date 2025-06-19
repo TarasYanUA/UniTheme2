@@ -2,14 +2,14 @@
     <test name="Settings of UniTheme2">
         <classes>
             <!--Тест-кейсы для Общих настроек темы -->
-<!--            <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+            <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
             <class name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
             <class name="GeneralSettings_ProductLists_GridListView_Var1" />
             <class name="GeneralSettings_ProductLists_GridListView_Var2" />
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
             <class name="GeneralSettings_ProductLists_CompactList_Var1" />
-            <class name="GeneralSettings_ProductLists_CompactList_Var2" />-->
+            <class name="GeneralSettings_ProductLists_CompactList_Var2" />
             <class name="GeneralSettings_ProductPage_Var1" />
             <class name="GeneralSettings_ProductPage_Var2" />
             <class name="GeneralSettings_ProductPage_Var3" />
@@ -19,11 +19,11 @@
 
             <!--Тест-кейсы для настроек Цветосхемы -->
             <class name="ColorSchemeSettings_Product_Var1" />
-<!--            <class name="ColorSchemeSettings_General_Var1" />-->
-<!--            <class name="ColorSchemeSettings_General_Var2" />-->
+            <class name="ColorSchemeSettings_General_Var1" />
+            <class name="ColorSchemeSettings_General_Var2" />
 
             <!--Тест-кейсы для Меню на витрине -->
-            <!--<class name="menu.Menu01_Horizontal_RowFilling_6columns" />
+            <class name="menu.Menu01_Horizontal_RowFilling_6columns" />
             <class name="menu.Menu02_Horizontal_RowFilling_5columns" />
             <class name="menu.Menu03_Horizontal_RowFilling_4columns" />
             <class name="menu.Menu04_Horizontal_RowFilling_2columns" />
@@ -55,15 +55,15 @@
             <class name="menu.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView" />
             <class name="menu.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView" />
             <class name="menu.Menu50_FlyMenu" />
-            <class name="menu.Menu51_FlyMenu" /> -->
+            <class name="menu.Menu51_FlyMenu" />
 
             <!--Тест-кейсы для Блоков товаров -->
-<!--            <class name="productBlocks.ProductBlock_GridMore_Var1" />-->
-<!--            <class name="productBlocks.ProductBlock_GridMore_Var2" />-->
-<!--            <class name="productBlocks.ProductBlock_GridMore_Var3" />-->
-<!--            <class name="productBlocks.ProductBlock_SmallItems_Var1" />-->
-<!--            <class name="productBlocks.ProductBlock_SmallItems_Var2" />-->
-<!--            <class name="productBlocks.ProductBlock_SmallItems_Var3" />-->
+            <class name="productBlocks.ProductBlock_GridMore_Var1" />
+            <class name="productBlocks.ProductBlock_GridMore_Var2" />
+            <class name="productBlocks.ProductBlock_GridMore_Var3" />
+            <class name="productBlocks.ProductBlock_SmallItems_Var1" />
+            <class name="productBlocks.ProductBlock_SmallItems_Var2" />
+            <class name="productBlocks.ProductBlock_SmallItems_Var3" />
 
         </classes>
     </test>

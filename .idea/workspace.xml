@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="* Updated pom file&#10;* Fixed some bugs">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted methods:&#10;clickAndTypeField_DescriptionOfFeature,&#10;hoverAndTypeField_PromoText,&#10;hoverAndTypeField_ShortDescription,&#10;selectSetting_ProductTemplate&#10;according to CS-Cart 4.18.4 changes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="4.16.2b" />
                 <branch-info repo="$PROJECT_DIR$" source="UniTheme4.16.2.d" />
-                <branch-info repo="$PROJECT_DIR$" source="UniTheme_4.18.3b" />
+                <branch-info repo="$PROJECT_DIR$" source="UniTheme_4.18.4.a" />
               </list>
             </value>
           </entry>
@@ -68,7 +67,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UniTheme_4.18.2b" />
+        <entry key="$PROJECT_DIR$" value="UniTheme_4.18.3b" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -215,7 +214,7 @@
     "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
     "TestNG.ProductSection_GridMore_Var1.executor": "Run",
     "TestNG.UniTheme2/TestNG.xml.executor": "Run",
-    "git-widget-placeholder": "#10 on UniTheme__4.18.3b",
+    "git-widget-placeholder": "UniTheme__4.18.4.a",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
@@ -706,7 +705,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,7 +724,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved some code." />
     <MESSAGE value="Adapt code of Menu to the newest theme version 4.18.3b." />
     <MESSAGE value="Step 2 to Adapt code of Menu to the newest theme version 4.18.3b." />
     <MESSAGE value="Step 3 to Adapt code of Menu to the newest theme version 4.18.3b." />
@@ -750,7 +748,8 @@
     <MESSAGE value="Use the class Actions and its function pause() instead of try and catch." />
     <MESSAGE value="* Updated pom file&#10;* Updated drivers&#10;* Changed some code for editing product page" />
     <MESSAGE value="* Updated pom file&#10;* Fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Updated pom file&#10;* Fixed some bugs" />
+    <MESSAGE value="Adapted methods:&#10;clickAndTypeField_DescriptionOfFeature,&#10;hoverAndTypeField_PromoText,&#10;hoverAndTypeField_ShortDescription,&#10;selectSetting_ProductTemplate&#10;according to CS-Cart 4.18.4 changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted methods:&#10;clickAndTypeField_DescriptionOfFeature,&#10;hoverAndTypeField_PromoText,&#10;hoverAndTypeField_ShortDescription,&#10;selectSetting_ProductTemplate&#10;according to CS-Cart 4.18.4 changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -764,16 +763,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ProductPage_Var1.java</url>
           <line>195</line>
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java</url>
-          <line>163</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java</url>
-          <line>168</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -21,7 +21,7 @@ import testRunner.TestRunner;
 Отображать кнопку "Купить"  -- Иконка корзины и текст
 Содержимое под описанием    -- Список характеристик
 Отображать опции товара -- да
-Отображать логотип бренда   -- да
+Отображать бренд        -- Логотип
 Отображать стандартную галерею изображений --  Навигация точками
 Переключать изображение товара при движении мышки   -- Не переключать
 */
@@ -45,27 +45,20 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
-        if (!checkboxProductCode.isSelected()) {
+        if (!checkboxProductCode.isSelected())
             checkboxProductCode.click();
-        }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptions_AmountStatus;
-        if (!checkboxAmountStatus.isSelected()) {
+        if (!checkboxAmountStatus.isSelected())
             checkboxAmountStatus.click();
-        }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
-        if (!checkboxShowQuantity.isSelected()) {
+        if (!checkboxShowQuantity.isSelected())
             checkboxShowQuantity.click();
-        }
         themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_and_text");
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
-        if (!checkboxShowProductOptions.isSelected()) {
+        if (!checkboxShowProductOptions.isSelected())
             checkboxShowProductOptions.click();
-        }
-        WebElement checkboxBrandLogo = themeSettingsProductLists.settingShowBrandLogo_ListWithoutOptions;
-        if (!checkboxBrandLogo.isSelected()) {
-            checkboxBrandLogo.click();
-        }
+        themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("logo");
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("points");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();

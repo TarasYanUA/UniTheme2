@@ -30,7 +30,7 @@ import java.time.Duration;
 Отображать кнопку "Купить"              -- Иконка корзины и текст
 Дополнительная информация о товаре      -- Краткое описание и характеристики
 Отображать дополнительную информацию при наведении -- да
-Отображать логотип бренда               -- да
+Отображать бренд                        -- Логотип
 Показывать галерею мини-иконок товара в товарном списке --	Не отображать
 Переключать изображение товара при движении мышки       -- с полосками
 
@@ -50,47 +50,37 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if (!checkboxShowInProductList.isSelected()) {
+        if (!checkboxShowInProductList.isSelected())
             checkboxShowInProductList.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected()) {
+        if (!checkboxProductRating.isSelected())
             checkboxProductRating.click();
-        }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected()) {
+        if (checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
-        }
         themeSettingsProductLists.selectSettingShowYouSave("short");
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
-        if (!checkboxSettingShowProductCode.isSelected()) {
+        if (!checkboxSettingShowProductCode.isSelected())
             checkboxSettingShowProductCode.click();
-        }
         WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
-        if (!checkboxSettingDisplayAvailabilityStatus.isSelected()) {
+        if (!checkboxSettingDisplayAvailabilityStatus.isSelected())
             checkboxSettingDisplayAvailabilityStatus.click();
-        }
         WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
-        if (!checkboxSettingShowQuantityChanger.isSelected()) {
+        if (!checkboxSettingShowQuantityChanger.isSelected())
             checkboxSettingShowQuantityChanger.click();
-        }
         themeSettingsProductLists.selectSettingShowAddToCartButton("icon_and_text");
         themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
-        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
+        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
             checkboxSettingShowAdditionalInformationOnHover.click();
-        }
-        WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
-        if (!checkboxSettingShowBrandLogo.isSelected()) {
-            checkboxSettingShowBrandLogo.click();
-        }
+        themeSettingsProductLists.selectSettingShowBrandLogo("logo");
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();

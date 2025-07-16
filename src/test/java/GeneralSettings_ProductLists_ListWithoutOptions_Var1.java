@@ -16,7 +16,7 @@ UniTheme2 -- Настройки темы -- вкладка "Списки тов�
 Отображать кнопку "Купить"  -- Только Иконка корзины
 Содержимое под описанием    -- Список вариаций
 Отображать опции товара     -- нет
-Отображать логотип бренда   -- нет
+Отображать бренд            -- Название
 Отображать стандартную галерею изображений -- Не отображать
 Переключать изображение товара при движении мышки       -- С точками
 */
@@ -36,34 +36,27 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
+            csCartSettings.clickSaveButtonOfSettings();
         }
-        csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
-        if (checkboxProductCode.isSelected()) {
+        if (checkboxProductCode.isSelected())
             checkboxProductCode.click();
-        }
         WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptions_AmountStatus;
-        if (checkboxAmountStatus.isSelected()) {
+        if (checkboxAmountStatus.isSelected())
             checkboxAmountStatus.click();
-        }
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
-        if (!checkboxShowQuantity.isSelected()) {
+        if (!checkboxShowQuantity.isSelected())
             checkboxShowQuantity.click();
-        }
         themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_button");
         themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("variations");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
-        if (checkboxShowProductOptions.isSelected()) {
+        if (checkboxShowProductOptions.isSelected())
             checkboxShowProductOptions.click();
-        }
-        WebElement checkboxBrandLogo = themeSettingsProductLists.withoutOptions_BrandLogo;
-        if (checkboxBrandLogo.isSelected()) {
-            checkboxBrandLogo.click();
-        }
+        themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("name");
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("N");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("points");
         csCartSettings.clickSaveButtonOfSettings();

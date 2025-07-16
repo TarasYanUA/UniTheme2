@@ -91,11 +91,11 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(css = "input[id='settings.abt__ut2.product_list.products_multicolumns.show_content_on_hover.desktop']")
     public WebElement settingShowAdditionalInformationOnHover;
 
-    @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand_logo.desktop")
-    public WebElement settingShowBrandLogo;
+    @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand.desktop")
+    WebElement settingShowBrandLogo;
 
-    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
-    public WebElement settingShowBrandLogo_ListWithoutOptions;
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand.desktop")
+    WebElement settingShowBrandLogo_ListWithoutOptions;
 
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     WebElement settingSwitchProductImageWhenHovering;
@@ -133,6 +133,14 @@ public class ThemeSettings_ProductLists extends AbstractPage {
 
     public void selectSettingAdditionalProductInformation(String value){
         new Select(settingAdditionalProductInformation).selectByValue(value);
+    }
+
+    public void selectSettingShowBrandLogo(String value){
+        new Select(settingShowBrandLogo).selectByValue(value);
+    }
+
+    public void selectSettingShowBrandLogo_ListWithoutOptions(String value){
+        new Select(settingShowBrandLogo_ListWithoutOptions).selectByValue(value);
     }
 
     public void selectSetting_SwitchProductImageWhenHovering(String value){

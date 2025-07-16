@@ -44,7 +44,7 @@ import java.util.List;
 Отображать кнопку "Купить"                      -- Только иконка корзины
 Дополнительная информация о товаре              -- Список характеристик и вариаций
 Отображать дополнительную информацию при наведении -- y
-Отображать логотип бренда                       -- y
+Отображать бренд                                -- Название
 Показывать галерею мини-иконок товара в товарном списке -- Навигация точками
 Переключать изображение товара при движении мышки-- Не переключать (нужно для настройки выше)
 
@@ -89,34 +89,28 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if (!checkboxShowInProductList.isSelected()) {
+        if (!checkboxShowInProductList.isSelected())
             checkboxShowInProductList.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
-        if (checkboxPriceAtTheTop.isSelected()) {
+        if (checkboxPriceAtTheTop.isSelected())
             checkboxPriceAtTheTop.click();
-        }
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
-        if (checkboxProductRating.isSelected()) {
+        if (checkboxProductRating.isSelected())
             checkboxProductRating.click();
-        }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected()) {
+        if (checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
-        }
         WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected()) {
+        if (!checkboxSettingDisplayButtonComparisonList.isSelected())
             checkboxSettingDisplayButtonComparisonList.click();
-        }
         WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected()) {
+        if (!checkboxSettingDisplayButtonWishList.isSelected())
             checkboxSettingDisplayButtonWishList.click();
-        }
         if(themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
             themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
         themeSettingsProductLists.selectSettingShowYouSave("full");
@@ -124,27 +118,20 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         //Работаем с настройками темы п.2.2
         themeSettingsProductLists.selectGrid_NumberOfLinesInProductName("3");
         WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
-        if (!checkboxSettingShowProductCode.isSelected()) {
+        if (!checkboxSettingShowProductCode.isSelected())
             checkboxSettingShowProductCode.click();
-        }
         WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
-        if (!checkboxSettingDisplayAvailabilityStatus.isSelected()) {
+        if (!checkboxSettingDisplayAvailabilityStatus.isSelected())
             checkboxSettingDisplayAvailabilityStatus.click();
-        }
         WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
-        if (checkboxSettingShowQuantityChanger.isSelected()) {
+        if (checkboxSettingShowQuantityChanger.isSelected())
             checkboxSettingShowQuantityChanger.click();
-        }
         themeSettingsProductLists.selectSettingShowAddToCartButton("icon_button");
         themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_variations");
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
-        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected()) {
+        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
             checkboxSettingShowAdditionalInformationOnHover.click();
-        }
-        WebElement checkboxSettingShowBrandLogo = themeSettingsProductLists.settingShowBrandLogo;
-        if (!checkboxSettingShowBrandLogo.isSelected()) {
-            checkboxSettingShowBrandLogo.click();
-        }
+        themeSettingsProductLists.selectSettingShowBrandLogo("name");
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();
@@ -156,13 +143,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
         colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
-        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
+        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        }
         colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("use");
-        if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected()) {
+        if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
             colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
-        }
         colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
         csCartSettings.clickSaveButtonOfSettings();
 

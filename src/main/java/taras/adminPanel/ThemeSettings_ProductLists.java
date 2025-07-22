@@ -92,7 +92,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     public WebElement settingShowAdditionalInformationOnHover;
 
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand.desktop")
-    WebElement settingShowBrandLogo;
+    WebElement settingShowBrand;
 
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand.desktop")
     WebElement settingShowBrandLogo_ListWithoutOptions;
@@ -135,8 +135,8 @@ public class ThemeSettings_ProductLists extends AbstractPage {
         new Select(settingAdditionalProductInformation).selectByValue(value);
     }
 
-    public void selectSettingShowBrandLogo(String value){
-        new Select(settingShowBrandLogo).selectByValue(value);
+    public void selectSettingShowBrand(String value){
+        new Select(settingShowBrand).selectByValue(value);
     }
 
     public void selectSettingShowBrandLogo_ListWithoutOptions(String value){

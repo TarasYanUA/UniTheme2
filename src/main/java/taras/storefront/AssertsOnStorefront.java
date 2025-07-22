@@ -213,11 +213,11 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    @FindBy(css = "div[class='ut2-gl__content content-on-hover']")
+    @FindBy(css = "div[class='ut2-gl__item content-on-hover'] .ut2-lv__item-features")
     public List<WebElement> gridList__AdditionalInformationOnHover;   //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
 
 
-    String brandLogo = " .brand-img"; //Настройка "Отображать логотип бренда"
+    String brandLogo = " .brand-img"; //Настройка "Отображать бренд -- Логотип"
 
     public List<WebElement> gridList__BrandLogo(){
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + brandLogo));
@@ -230,6 +230,21 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> getBrandLogo(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + brandLogo));
+    }
+
+    String brandName = " .brand-name"; //Настройка "Отображать бренд -- Название"
+
+    public List<WebElement> gridList__BrandName(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + brandName));
+    }
+
+    public List<WebElement> listWithoutOptions__BrandName(){
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + brandName));
+    }
+
+    public List<WebElement> getBrandName(String blockID) {
+        return DriverProvider.getDriver().findElements(By.cssSelector(
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + brandName));
     }
 
 

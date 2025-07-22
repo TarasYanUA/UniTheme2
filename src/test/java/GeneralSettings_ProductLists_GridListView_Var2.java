@@ -23,7 +23,7 @@ import java.time.Duration;
 
 Ширина иконки товара (по умолчанию 240) --	400
 Высота иконки товара (по умолчанию 290) --	380
-
+Количество строк в названии товара      --  2
 Отображать код товара -- нет
 Отображать статус наличия -- нет
 Отображать модификатор количества -- нет
@@ -58,6 +58,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
         if (!checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
+        themeSettingsProductLists.selectGrid_NumberOfLinesInProductName("2");
         themeSettingsProductLists.selectSettingShowYouSave("full");
         themeSettingsProductLists.clickAndTypeSettingProductIconWidth("400");
         themeSettingsProductLists.clickAndTypeSettingProductIconHeight("380");
@@ -75,7 +76,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
             checkboxSettingShowAdditionalInformationOnHover.click();
-        themeSettingsProductLists.selectSettingShowBrandLogo("name");
+        themeSettingsProductLists.selectSettingShowBrand("name");
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
@@ -102,9 +103,9 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover in the product block!");
 
-        //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
-                "There is no brand logo in the product block!");
+        //Проверяем, что название бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandName().isEmpty(),
+                "There is no brand name in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
@@ -128,9 +129,9 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover on the category page 'GridList'!");
 
-        //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
-                "There is no brand logo on the category page 'GridList'!");
+        //Проверяем, что название бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandName().isEmpty(),
+                "There is no brand name on the category page 'GridList'!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
@@ -143,19 +144,19 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
 
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot_withScroll("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
+        takeScreenShot("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToMenClothProduct();
-        takeScreenShot_withScroll("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
+        takeScreenShot("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
-        takeScreenShot_withScroll("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
+        takeScreenShot("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RU();
         stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
-        takeScreenShot_withScroll("425 GS_ProductLists_GridListView_Var2 - QuickView");
+        takeScreenShot("425 GS_ProductLists_GridListView_Var2 - QuickView");
 
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var2 passed successfully!");

@@ -131,7 +131,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
         if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
             checkboxSettingShowAdditionalInformationOnHover.click();
-        themeSettingsProductLists.selectSettingShowBrandLogo("name");
+        themeSettingsProductLists.selectSettingShowBrand("name");
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         csCartSettings.clickSaveButtonOfSettings();

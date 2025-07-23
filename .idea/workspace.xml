@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted test-case GeneralSettings_ProductPage_Var3 according to the last theme changes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted test-case ColorSchemeSettings_General_Var1 according to the last theme changes.">
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +247,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ColorSchemeSettings_General_Var1">
+  <component name="RunManager" selected="TestNG.ColorSchemeSettings_General_Var2">
     <configuration name="ColorSchemeSettings_General_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -259,10 +259,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorSchemeSettings_General_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductLists_GridListView_Var2" />
+      <option name="MAIN_CLASS_NAME" value="ColorSchemeSettings_General_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -307,18 +307,18 @@
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
       <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
         <item itemvalue="TestNG.ColorSchemeSettings_General_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_ProductPage_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +355,7 @@
       <workItem from="1753099865406" duration="1982000" />
       <workItem from="1753102158542" duration="3550000" />
       <workItem from="1753172253447" duration="11719000" />
-      <workItem from="1753275029861" duration="6374000" />
+      <workItem from="1753275029861" duration="6796000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -700,7 +700,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,7 +731,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adapted the Menu to the newest theme version 4.18.3b. The first test-case is totally ready!" />
     <MESSAGE value="All Horizontal menus are adapted to the newest theme version 4.18.3b." />
     <MESSAGE value="Basic tests are adapted to the newest theme version 4.18.3b." />
     <MESSAGE value="* Menu20 - Menu45 adapted to the newest theme version.&#10;* Updated vocabularies in pom file." />
@@ -756,7 +755,8 @@
     <MESSAGE value="Transferred to Java24" />
     <MESSAGE value="Adapted test-cases setConfigurationsForProductLists_GridListView_Var1 and Var2 according to the last theme settings.&#10;Improved screenshots." />
     <MESSAGE value="Adapted test-case GeneralSettings_ProductPage_Var3 according to the last theme changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted test-case GeneralSettings_ProductPage_Var3 according to the last theme changes." />
+    <MESSAGE value="Adapted test-case ColorSchemeSettings_General_Var1 according to the last theme changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted test-case ColorSchemeSettings_General_Var1 according to the last theme changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

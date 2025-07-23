@@ -1,4 +1,3 @@
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
@@ -33,14 +32,10 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
 
         //Настраиваем CS-Cart настройки
         csCartSettings.navigateToAppearanceSettings();
-        WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
-        if (!checkboxThumbnailsGallery.isSelected()) {
-            checkboxThumbnailsGallery.click();
-        }
-        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
-        if (!checkboxSettingQuickView.isSelected()) {
-            checkboxSettingQuickView.click();
-        }
+        if (!csCartSettings.setting_ThumbnailsGallery.isSelected())
+            csCartSettings.setting_ThumbnailsGallery.click();
+        if (!csCartSettings.setting_QuickView.isSelected())
+            csCartSettings.setting_QuickView.click();
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Общее"
@@ -49,29 +44,24 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.selectSetting_General_RoundCornersForElements("do_not_use");
-        if(colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected()){
+        if (colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected())
             colorSchemeSettings.setting_General_RoundCornersOfBlocks.click();
-        }
-        if(colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.isSelected()){
+        if (colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.isSelected())
             colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.click();
-        }
         colorSchemeSettings.selectSetting_General_ButtonsStyle("use_border");
-        if(colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.isSelected()){
+        if (colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.isSelected())
             colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.click();
-        }
-        if(!colorSchemeSettings.setting_General_AddShadow.isSelected()){
+        if (!colorSchemeSettings.setting_General_AddShadow.isSelected())
             colorSchemeSettings.setting_General_AddShadow.click();
-        }
-        if(!colorSchemeSettings.setting_General_AddBulk.isSelected()){
+        if (!colorSchemeSettings.setting_General_AddBulk.isSelected())
             colorSchemeSettings.setting_General_AddBulk.click();
-        }
         colorSchemeSettings.selectSetting_General_CartIcon("type7");
         csCartSettings.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ColorSchemeSettings_General_Var2",
-    description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
-    public void checkColorSchemeSettings_General_Var2(){
+            description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
+    public void checkColorSchemeSettings_General_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
         StHomePage stHomePage = csCartSettings.navigateToStorefront();
         focusBrowserTab(1);
@@ -91,18 +81,18 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("1410 ColorSchemeSettings_General_Var2 - Category page");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot_withScroll("1415 ColorSchemeSettings_General_Var2 - QuickView");
+        takeScreenShot("1415 ColorSchemeSettings_General_Var2 - QuickView");
         stCategoryPage.clickButton_WriteReview();
-        takeScreenShot_withScroll("1420 ColorSchemeSettings_General_Var2 - Write review");
+        takeScreenShot("1420 ColorSchemeSettings_General_Var2 - Write review");
         stCategoryPage.closeWriteReview.click();
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RTL();
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("1425 ColorSchemeSettings_General_Var2 - Category page (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        takeScreenShot_withScroll("1430 ColorSchemeSettings_General_Var2 - QuickView (RTL)");
+        takeScreenShot("1430 ColorSchemeSettings_General_Var2 - QuickView (RTL)");
         stCategoryPage.clickButton_WriteReview();
-        takeScreenShot_withScroll("1435 ColorSchemeSettings_General_Var2 - Write review (RTL)");
+        takeScreenShot("1435 ColorSchemeSettings_General_Var2 - Write review (RTL)");
         System.out.println("ColorSchemeSettings_General_Var2 has passed successfully!");
     }
 }

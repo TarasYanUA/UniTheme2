@@ -44,39 +44,31 @@ import java.time.Duration;
 
 public class GeneralSettings_ProductPage_Var3 extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurationsForProductPage_Var3(){
+    public void setConfigurationsForProductPage_Var3() {
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToAppearanceSettings();
-        if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
+        if (csCartSettings.setting_ThumbnailsGallery.isSelected())
             csCartSettings.setting_ThumbnailsGallery.click();
-        }
-        if(csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
+        if (csCartSettings.setting_NumberOfAvailableProducts.isSelected())
             csCartSettings.setting_NumberOfAvailableProducts.click();
-        }
-        if(csCartSettings.setting_ProductDetailsInTab.isSelected()){
+        if (csCartSettings.setting_ProductDetailsInTab.isSelected())
             csCartSettings.setting_ProductDetailsInTab.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
-        if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
+        if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected())
             themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductCode.isSelected()){
+        if (!themeSettingsProduct.setting_ShowProductCode.isSelected())
             themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
+        if (themeSettingsProduct.setting_ShowProductFeatures.isSelected())
             themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
+        if (!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected())
             themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if(themeSettingsProduct.setting_ShowShortDescription.isSelected()){
+        if (themeSettingsProduct.setting_ShowShortDescription.isSelected())
             themeSettingsProduct.setting_ShowShortDescription.click();
-        }
         themeSettingsProduct.selectSetting_ShowYouSave("none");
         themeSettingsProduct.selectSetting_ShowProductBrand("none");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("2");
@@ -99,17 +91,17 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
         productSettings.tab_RewardPoints.click();
-        if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
+        if (!productSettings.setting_AllowPaymentByPoints.isSelected())
             productSettings.setting_AllowPaymentByPoints.click();
-        }
         productSettings.tab_QuantityDiscounts.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2){
+        if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
             productSettings.clickAndType_field_Quantity("3");
             productSettings.clickAndType_field_Value("22000");
         }
         csCartSettings.clickSaveButtonOfSettings();
     }
-//(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
+
+    //(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
     @Test
     public void checkSettingsOnProductPage_Var3() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -139,7 +131,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         //Проверяем, что логотип и название "Бренд" отсутствуют
         softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
-                && assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
+                        && assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
                 "There is a Brand logo or Brand name but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
@@ -152,7 +144,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         //Проверяем, что текст "Вы экономите" отсутствует
         softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Full().isEmpty()
-                && !assertsOnStorefront.text_YouSave_Short().isEmpty(),
+                        && !assertsOnStorefront.text_YouSave_Short().isEmpty(),
                 "There is a text 'You save' but shouldn't on the product page!");
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
@@ -182,7 +174,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         UtilsStorefront.closeNotificationIfExists();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
-        if(!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
             DriverProvider.getDriver().findElement(By.cssSelector("#content_features .ab-smc")).click();
         productPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

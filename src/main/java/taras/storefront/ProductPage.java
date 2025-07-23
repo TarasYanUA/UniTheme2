@@ -33,7 +33,7 @@ public class ProductPage extends AbstractPage {
     @FindBy(css = "a[id*='opener_ut2_features_dialog_']")
     public WebElement featureDescription;
 
-    @FindBy(css = "#subscribe_form_wrapper input")
+    @FindBy(css = "label[id*='label_sw_product_notify']")
     public WebElement checkbox_NotifyMe;
 
     @FindBy(css = ".ty-tabs__span")

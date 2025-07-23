@@ -12,6 +12,7 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
 import testRunner.TestRunner;
 
 import java.time.Duration;
@@ -108,8 +109,8 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         }
         csCartSettings.clickSaveButtonOfSettings();
     }
-
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
+//(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
+    @Test
     public void checkSettingsOnProductPage_Var3() {
         CsCartSettings csCartSettings = new CsCartSettings();
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
@@ -121,9 +122,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(1);
         productPage.cookie.click();
         productPage.shiftLanguage_EN();
+        UtilsStorefront.closeNotificationIfExists();
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
-        productPage.checkbox_NotifyMe.click();
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -168,7 +169,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         productPage.shiftLanguage_RTL();
-        productPage.checkbox_NotifyMe.click();
+        UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1105 GS_ProductPage_Var3 - Default template (RTL)");
 
         //Проверяем, что характеристики расположены в две колонки
@@ -178,6 +179,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot("1110 GS_ProductPage_Var3 - Product features, two columns (RTL)");
         productPage.shiftLanguage_EN();
+        UtilsStorefront.closeNotificationIfExists();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
         if(!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
@@ -193,41 +195,37 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
         productPage.shiftLanguage_RTL();
-        productPage.checkbox_NotifyMe.click();
+        UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
         productPage.shiftLanguage_RTL();
-        productPage.checkbox_NotifyMe.click();
+        UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        productPage.checkbox_NotifyMe.click();
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
         productPage.shiftLanguage_RTL();
-        productPage.checkbox_NotifyMe.click();
+        UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
         csCartSettings.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
-        productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1155 GS_ProductPage_Var3 - Gallery template");
         productPage.shiftLanguage_RTL();
-        productPage.checkbox_NotifyMe.click();
+        UtilsStorefront.closeNotificationIfExists();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
 

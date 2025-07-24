@@ -255,8 +255,8 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 "Additional information is displayed without mouse hover in the product block!");
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
-                "There is no brand logo in the product block!");
+        softAssert.assertTrue(!assertsOnStorefront.getBrandName(blockID).isEmpty(),
+                "There is no brand name in the product block!");
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),

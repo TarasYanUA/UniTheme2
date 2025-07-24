@@ -253,9 +253,10 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
                 "Additional information is displayed without mouse hover on the category page!");
 
-        //Проверяем, что логотип бренда отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
-                "There is a brand logo but shouldn't in the product block!");
+        //Проверяем, что логотип и название бренда отсутствуют
+        softAssert.assertFalse(!assertsOnStorefront.getBrandLogo(blockID).isEmpty()
+                && !assertsOnStorefront.getBrandName(blockID).isEmpty(),
+                "There is a brand logo or brand name but shouldn't in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 13 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted test-case ProductBlock_GridMore_Var1 according to the last theme changes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted test-cases ProductBlock_GridMore_Var2 and Var3 according to the last theme changes.">
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -374,7 +373,7 @@
       <workItem from="1753102158542" duration="3550000" />
       <workItem from="1753172253447" duration="11719000" />
       <workItem from="1753275029861" duration="8874000" />
-      <workItem from="1753339294267" duration="6352000" />
+      <workItem from="1753339294267" duration="6697000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -719,7 +718,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="242" />
+    <option name="localTasksCounter" value="243" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,7 +749,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="* Menu20 - Menu45 adapted to the newest theme version.&#10;* Updated vocabularies in pom file." />
     <MESSAGE value="Improved and adapted the assert of &quot;You save&quot; Full view." />
     <MESSAGE value="Adapted the assert of &quot;You save&quot; Short view." />
     <MESSAGE value="Improved Three-level menu Menu40-45.&#10;Adapted Menu46." />
@@ -775,7 +773,8 @@
     <MESSAGE value="Adapted test-case ColorSchemeSettings_General_Var1 according to the last theme changes." />
     <MESSAGE value="Adapted test-case ColorSchemeSettings_General_Var2 according to the last theme changes." />
     <MESSAGE value="Adapted test-case ProductBlock_GridMore_Var1 according to the last theme changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted test-case ProductBlock_GridMore_Var1 according to the last theme changes." />
+    <MESSAGE value="Adapted test-cases ProductBlock_GridMore_Var2 and Var3 according to the last theme changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted test-cases ProductBlock_GridMore_Var2 and Var3 according to the last theme changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -802,8 +801,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java</url>
-          <line>257</line>
+          <line>258</line>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java</url>

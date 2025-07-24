@@ -84,8 +84,14 @@ public class ProductSettings extends AbstractPage {
     @FindBy(css = "label[for='elm_product_short_descr']")
     WebElement fieldName_ShortDescription;
 
+    @FindBy(xpath = "//label[@for='elm_product_short_descr']/..//i[@class='re-icon-html']")
+    WebElement buttonHtml_ShortDescription;
+
     @FindBy(id = "redactor-uuid-1")
     WebElement field_ShortDescription;
+
+    @FindBy(xpath = "//div[@id='redactor-uuid-1']/..//textarea[@class='cm-skip-check-item open']")
+    WebElement fieldHtml_ShortDescription;
 
     @FindBy(css = "label[for='elm_product_promo_text']")
     WebElement fieldName_PromoText;
@@ -152,9 +158,10 @@ public class ProductSettings extends AbstractPage {
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_ShortDescription);
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_ShortDescription));
-        field_ShortDescription.click();
-        field_ShortDescription.clear();
-        field_ShortDescription.sendKeys(value);
+        buttonHtml_ShortDescription.click();
+        fieldHtml_ShortDescription.click();
+        fieldHtml_ShortDescription.clear();
+        fieldHtml_ShortDescription.sendKeys(value);
     }
 
     public void hoverAndTypeField_PromoText(String value){

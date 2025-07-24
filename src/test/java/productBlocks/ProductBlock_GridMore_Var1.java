@@ -6,10 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.ColorSchemeSettings;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.DisableLazyLoadFromSection;
-import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
@@ -56,6 +53,8 @@ import java.util.List;
 Насыщенность шрифта для названия товара         -- Нормальный
 
 4) Настраиваем налог для всех товаров
+
+5) Добавляем Краткое описание товару Ice Queen
 */
 
 public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLazyLoadFromSection {
@@ -85,7 +84,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
             csCartSettings.checkbox_HideAddToCartButton.click();
         csCartSettings.button_saveBlock.click();
 
-        //Работаем с настройками характеристики Бренд
+/*        //Работаем с настройками характеристики Бренд
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
@@ -152,7 +151,17 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.setTaxesForAllProducts();
+        csCartSettings.setTaxesForAllProducts();*/
+
+        //Добавляем Краткое описание товару Ice Queen
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        productSettings.clickAndType_SearchFieldOfProduct("Ice Queen");
+        productSettings.chooseAnyProduct();
+        if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty())
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
+        productSettings.hoverAndTypeField_ShortDescription(
+                "Рюкзак Camelbak - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
+        csCartSettings.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")

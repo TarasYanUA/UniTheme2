@@ -213,7 +213,7 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    @FindBy(css = "div[class='ut2-gl__item content-on-hover'] .ut2-lv__item-features")
+    @FindBy(css = "div[class='ut2-gl__item content-on-hover']")
     public List<WebElement> gridList__AdditionalInformationOnHover;   //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
 
 

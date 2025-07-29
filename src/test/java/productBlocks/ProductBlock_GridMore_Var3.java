@@ -6,10 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.ColorSchemeSettings;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.DisableLazyLoadFromSection;
-import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
@@ -85,12 +82,13 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         csCartSettings.button_saveBlock.click();
 
         //Работаем с настройками характеристики Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if (!checkboxShowInProductList.isSelected())
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.clickFeatureBrand();
+        WebElement checkboxShowInProductList = featuresPage.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-        csCartSettings.clickSaveButtonOfSettings();
+            csCartSettings.clickSaveButtonOfSettings();
+        }
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();

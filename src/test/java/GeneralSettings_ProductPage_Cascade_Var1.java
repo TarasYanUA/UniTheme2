@@ -3,6 +3,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.CsCart_Features;
 import taras.adminPanel.ProductSettings;
 import taras.adminPanel.ThemeSettings_Product;
 import taras.constants.DriverProvider;
@@ -85,13 +86,13 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристики Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkbox_ShowOnFeaturesTab_Brand = csCartSettings.showOnFeaturesTab_Brand;
-        if(!checkbox_ShowOnFeaturesTab_Brand.isSelected()){
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.clickFeatureBrand();
+        WebElement checkbox_ShowOnFeaturesTab_Brand = featuresPage.showOnFeaturesTab_Brand;
+        if (!checkbox_ShowOnFeaturesTab_Brand.isSelected()) {
             checkbox_ShowOnFeaturesTab_Brand.click();
+            csCartSettings.clickSaveButtonOfSettings();
         }
-        csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
+import taras.adminPanel.CsCart_Features;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
@@ -41,13 +42,15 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_GridListView_Var2() {
         CsCartSettings csCartSettings = new CsCartSettings();
+
         //Работаем с настройками характеристики Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if (!checkboxShowInProductList.isSelected())
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.clickFeatureBrand();
+        WebElement checkboxShowInProductList = featuresPage.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-        csCartSettings.clickSaveButtonOfSettings();
+            csCartSettings.clickSaveButtonOfSettings();
+        }
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();

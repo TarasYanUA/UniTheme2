@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.ColorSchemeSettings;
 import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.CsCart_Features;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -46,6 +47,13 @@ import static taras.constants.DriverProvider.getDriver;
 Насыщенность шрифта для названия товара --	Нормальный
 
 4) Настраиваем налог для всех товаров
+
+5) Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет":
+* На странице редактирования характеристики:
+    Вариации как один товар
+    Внешний вид - Изображения
+    Тип фильтра - Цвет
+* Работаем с товаров "Apple - iPhone 5c 32GB Cell Phone"
 
 Проверяем проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -139,25 +147,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.navigateToCheckoutSettings();
-        csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
-        csCartSettings.clickSaveButtonOfSettings();
-        csCartSettings.navigateToTaxes();
-        WebElement checkboxPriceIncludesTax = csCartSettings.setting_priceIncludesTax;
-        if (checkboxPriceIncludesTax.isSelected()) {
-            checkboxPriceIncludesTax.click();
-            csCartSettings.button_saveTaxes.click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            csCartSettings.vat20.click();
-            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
-            csCartSettings.button_Actions.click();
-            csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
-        }
+        csCartSettings.setTaxesForAllProducts();
+
+        //Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет"
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.setFeatureColorForVariations();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")

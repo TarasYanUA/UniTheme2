@@ -1,10 +1,7 @@
 package taras.adminPanel;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
@@ -12,7 +9,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -26,6 +22,9 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
 
     @FindBy(css = ".cm-notification-close")
     public List<WebElement> closeNotification;
+
+    @FindBy(id = "products_features")
+    WebElement section_Features;
 
 
     public void closeNotificationIfPresent() {
@@ -47,6 +46,13 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         String[] url = currentUrl.split("admin.php");
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.open('" + url[0] + "')");
         return new StHomePage();
+    }
+
+    public CsCart_Features navigateToSection_Features() {
+        checkMenu_Products_ToBeActive();
+        section_Features.click();
+        checkPageOnEngLang();
+        return new CsCart_Features();
     }
 
 
@@ -240,59 +246,6 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
             } else
                 button_CrossOnTop.click();
         }
-    }
-
-    //Меню "Товары -- Характеристики"
-    @FindBy(id = "products_features")
-    private WebElement section_Features;
-
-    @FindBy(css = "a[data-ca-external-click-id=\"opener_group18\"]")
-    private WebElement featureBrand;
-
-    @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
-    public WebElement feature_HardDrive;
-
-    @FindBy(css = "label[for='elm_feature_description_23']")
-    private WebElement field_FeatureDescription_HardDrive;
-
-    @FindBy(css = ".re-button.re-html.re-button-icon")
-    private WebElement button_Html_HardDrive;
-
-    @FindBy(css = ".cm-skip-check-item.open")
-    private WebElement field_HtmlDescriptionOfFeature;
-
-    @FindBy(css = "input[id='elm_feature_display_on_catalog_18']")
-    public WebElement showInProductList;
-
-    @FindBy(id = "elm_feature_display_on_product_18")
-    public WebElement showOnFeaturesTab_Brand;
-
-    @FindBy(id = "elm_feature_display_on_header_23")
-    public WebElement showInHeaderOnProductPage_HardDisk;
-
-    @FindBy(css = ".buttons-container-picker input[value='Сохранить']")
-    public WebElement button_SaveFeature;
-
-
-    public void navigateToSection_Features() {
-        checkMenu_Products_ToBeActive();
-        section_Features.click();
-        checkPageOnEngLang();
-    }
-
-    public void clickAndTypeField_DescriptionOfFeature(String value) {
-        field_FeatureDescription_HardDrive.click();
-        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_FeatureDescription_HardDrive));
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(field_FeatureDescription_HardDrive), 0, 50).perform();
-        button_Html_HardDrive.click();
-        field_HtmlDescriptionOfFeature.click();
-        field_HtmlDescriptionOfFeature.clear();
-        field_HtmlDescriptionOfFeature.sendKeys(value);
-    }
-
-    public void clickFeatureBrand() {
-        featureBrand.click();
     }
 
 

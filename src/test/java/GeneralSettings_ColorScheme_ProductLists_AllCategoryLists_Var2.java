@@ -141,25 +141,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.navigateToCheckoutSettings();
-        csCartSettings.selectSetting_TaxCalculationMethodBasedOn("unit_price");
-        csCartSettings.clickSaveButtonOfSettings();
-        csCartSettings.navigateToTaxes();
-        WebElement checkboxPriceIncludesTax = csCartSettings.setting_priceIncludesTax;
-        if (checkboxPriceIncludesTax.isSelected()) {
-            checkboxPriceIncludesTax.click();
-            csCartSettings.button_saveTaxes.click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            csCartSettings.vat20.click();
-            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(2)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
-            csCartSettings.button_Actions.click();
-            csCartSettings.button_ApplySelectedTaxesToAllProducts.click();
-        }
+        csCartSettings.setTaxesForAllProducts();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")

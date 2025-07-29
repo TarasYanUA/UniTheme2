@@ -2,6 +2,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.CsCart_Features;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -31,9 +32,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         csCartSettings.setLayoutAsDefault();
 
         //Работаем с настройками характеристики Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.clickFeatureBrand();
+        WebElement checkboxShowInProductList = featuresPage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
             csCartSettings.clickSaveButtonOfSettings();

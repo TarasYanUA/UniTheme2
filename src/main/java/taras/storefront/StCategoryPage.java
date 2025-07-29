@@ -50,10 +50,10 @@ public class StCategoryPage extends AbstractPage {
     public WebElement buttonQuickView;
 
     @FindBy(css = "button[id*='button_cart']")
-    public WebElement buttonAddToCart;
+    public WebElement button_GeneralAddToCart;
 
-    @FindBy(css = ".ty-btn__add-to-cart")
-    public WebElement button_AddToCart;
+    @FindBy(css = ".ty-icon.ut2-icon-use_icon_cart")
+    public WebElement button_VariationAddToCart;
 
     @FindBy(css = ".ty-btn__secondary.cm-notification-close")
     public WebElement button_ContinueShopping;
@@ -129,7 +129,7 @@ public class StCategoryPage extends AbstractPage {
 
     public void hoverToButtonAddToCart() {
         Actions hoverToElement = new Actions(DriverProvider.getDriver());
-        hoverToElement.moveToElement(buttonAddToCart);
+        hoverToElement.moveToElement(button_GeneralAddToCart);
         hoverToElement.perform();
     }
 

@@ -4,16 +4,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.ColorSchemeSettings;
-import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
-import taras.adminPanel.CsCartSettings;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
 import java.time.Duration;
+
 import static taras.constants.DriverProvider.getDriver;
 
 /* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=718159332
@@ -44,8 +43,18 @@ import static taras.constants.DriverProvider.getDriver;
 Использовать выравнивание элементов в товарной сетке --	нет
 Эффект увеличения ячейки при наведении --	нет
 Насыщенность шрифта для названия товара --	Жирный
+    * Раздел Модуль "Вариации товаров":
+Максимальное количество отображаемых вариаций товара -- 10
+Тип отображения вариаций -- Миниатюры
 
 4) Настраиваем налог для всех товаров
+
+5) Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет":
+* На странице редактирования характеристики:
+    Вариации как один товар
+    Внешний вид - Изображения
+    Тип фильтра - Цвет
+* Работаем с товарами "Apple - iPhone 5c 32GB Cell Phone" и "Droid 3"
 
 Проверяем проходит на следующих страницах:
 - Блок товаров на Главной странице + RTL
@@ -67,60 +76,51 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Работаем с CS-Cart настройками
         csCartSettings.navigateToAppearanceSettings();
         WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
-        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected()) {
+        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected())
             checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
-        }
         WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
-        if (!checkboxThumbnailsGallery.isSelected()) {
+        if (!checkboxThumbnailsGallery.isSelected())
             checkboxThumbnailsGallery.click();
-        }
         WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
-        if (!checkboxSettingQuickView.isSelected()) {
+        if (!checkboxSettingQuickView.isSelected())
             checkboxSettingQuickView.click();
-        }
         csCartSettings.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
-        if (checkboxOutOfStockProducts.isSelected()) {
+        if (checkboxOutOfStockProducts.isSelected())
             checkboxOutOfStockProducts.click();
-        }
         themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
-        if (!checkboxPriceAtTheTop.isSelected()) {
+        if (!checkboxPriceAtTheTop.isSelected())
             checkboxPriceAtTheTop.click();
-        }
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
-        if (checkboxProductRating.isSelected()) {
+        if (checkboxProductRating.isSelected())
             checkboxProductRating.click();
-        }
         WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
+        if (!checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
-        }
         themeSettingsProductLists.selectSettingDisplayCartStatus("counter");
         WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
-        if (!checkboxSettingDisplayStatusesForButtons.isSelected()) {
+        if (!checkboxSettingDisplayStatusesForButtons.isSelected())
             checkboxSettingDisplayStatusesForButtons.click();
-        }
         WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected()) {
+        if (!checkboxSettingDisplayButtonComparisonList.isSelected())
             checkboxSettingDisplayButtonComparisonList.click();
-        }
         WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected()) {
+        if (!checkboxSettingDisplayButtonWishList.isSelected())
             checkboxSettingDisplayButtonWishList.click();
-        }
         WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse;
-        if (checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected()) {
+        if (checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected())
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
-        }
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("arrows");
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("arrows");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
+        themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
+        themeSettingsProductLists.selectProductVariations_TypeOfVariationsView("thumbnails");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
@@ -130,18 +130,29 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
         colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
-        if(!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()){
+        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        }
         colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("do_not_use");
-        if(colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected()){
+        if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
             colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
-        }
         colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
         csCartSettings.setTaxesForAllProducts();
+
+        //Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет"
+        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        featuresPage.setFeatureColorForVariations();
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        productSettings.clickAndType_SearchFieldOfProduct("Apple - iPhone 5c 32GB Cell Phone");
+        productSettings.chooseAnyProduct();
+        productSettings.clickAndTypeField_ProductName("Apple - iPhone 5c 32GB Cell Phone");
+        productSettings.selectAllVariations();
+        csCartSettings.navigateToSection_Products();
+        productSettings.clickAndType_SearchFieldOfProduct("Droid 3");
+        productSettings.chooseAnyProduct();
+        productSettings.selectAllVariations();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")
@@ -160,7 +171,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
                 "Image gallery of the product is not with arrows navigation in the product block!");
-        
+
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
                 "There is no common value of product rating in the product block!");
@@ -242,7 +253,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no text of a product tax on the category 'Phones'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
-        if(assertsOnStorefront.statusesForButton_AddToWishList.isEmpty()) {
+        if (assertsOnStorefront.statusesForButton_AddToWishList.isEmpty()) {
             stCategoryPage.button_AddToWishList.click();
             (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                     .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
@@ -252,7 +263,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no status for the button 'Add to wish list'!");
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
-        if(assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty()) {
+        if (assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty()) {
             stCategoryPage.button_AddToComparisonList.click();
             (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                     .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
@@ -261,20 +272,30 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty(),
                 "There is no status for the button 'Add to comparison list'!");
 
+        //Проверяем, что у товаров присутствует новый вид Вариаций
+        softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_MaximumQuantityOfProductsVariations().isEmpty(),
+                "There is no new view of product variations on the category 'Phones', Grid list!");
+
+        //Проверяем, что тип отображения новых вариаций -- Миниатюры
+        softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
+                "Product variations are not with Thumbnails on the category 'Phones', Grid list!");
+
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
         stHomePage.logOutOnStorefront();
         stCategoryPage.hoverToButtonAddToCart();
-        stCategoryPage.button_AddToCart.click();
+        stCategoryPage.button_GeneralAddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
+
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
                 "There is no status for the button 'Add to cart' as 'Number of products' on the category page!");
 
-        if(!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()){
-            for(int i=0; i<stCategoryPage.notification_AlertSuccess.size(); i++){
+        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
+            for (int i = 0; i < stCategoryPage.notification_AlertSuccess.size(); i++) {
                 stCategoryPage.closeNotification_AlertSuccess.click();
-            }}
+            }
+        }
         stCategoryPage.hoverToPhoneProduct();
         takeScreenShot("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
         stHomePage.selectLanguage_RTL();
@@ -325,6 +346,14 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'List without options'!");
+
+        //Проверяем, что у товаров присутствует новый вид Вариаций
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__prodVar_MaximumQuantityOfProductsVariations().isEmpty(),
+                "There is no new view of product variations on the category 'Phones', ListWithoutOptions!");
+
+        //Проверяем, что тип отображения новых вариаций -- Миниатюры
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
+                "Product variations are not with Thumbnails on the category 'Phones', ListWithoutOptions!");
 
         makePause();
         takeScreenShot_withScroll("240 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions (RTL)");

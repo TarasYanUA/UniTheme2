@@ -22,7 +22,9 @@ import java.util.NoSuchElementException;
 import static taras.constants.DriverProvider.getDriver;
 
 public class CsCart_Features extends AbstractPage {
-    public CsCart_Features() {super(); }
+    public CsCart_Features() {
+        super();
+    }
 
     //Меню "Товары -- Характеристики"
     @FindBy(id = "products_features")
@@ -162,7 +164,9 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "/../..//input[contains(@name, '[variant]')]"));
-        fieldName.click(); fieldName.clear(); fieldName.sendKeys(color);
+        fieldName.click();
+        fieldName.clear();
+        fieldName.sendKeys(color);
 
         DriverProvider.getDriver().findElement(By
                 .xpath("//tr[@id='extra_feature_549_" + findLastColorPickerNumber() + "']/..//a[@name='add']")).click();
@@ -218,7 +222,9 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//input[contains(@name, '[variant]')]"));
-        fieldName.click(); fieldName.clear(); fieldName.sendKeys(color);
+        fieldName.click();
+        fieldName.clear();
+        fieldName.sendKeys(color);
 
         saveColorFeatureSettings.click();
     }
@@ -234,7 +240,9 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//input[contains(@name, '[variant]')]"));
-        fieldName.click(); fieldName.clear(); fieldName.sendKeys(name);
+        fieldName.click();
+        fieldName.clear();
+        fieldName.sendKeys(name);
 
         new Select(DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//select[contains(@name, '[abt__ut2_color_style]')]")))

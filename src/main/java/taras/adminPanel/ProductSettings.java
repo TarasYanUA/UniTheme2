@@ -9,10 +9,13 @@ import taras.storefront.ProductPage;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.time.Duration;
 
 public class ProductSettings extends AbstractPage {
-    public ProductSettings(){super();}
+    public ProductSettings() {
+        super();
+    }
 
     @FindBy(css = "input[form='search_filters_form']")
     WebElement searchFieldOfProduct;
@@ -27,7 +30,7 @@ public class ProductSettings extends AbstractPage {
     WebElement previewButton;
 
 
-    public void clickAndType_SearchFieldOfProduct(String value){
+    public void clickAndType_SearchFieldOfProduct(String value) {
         searchFieldOfProduct.click();
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
@@ -38,15 +41,16 @@ public class ProductSettings extends AbstractPage {
         }
     }
 
-    public ProductPage navigateToProductPage(){
-        gearwheelOfProduct.click();
-        previewButton.click();
-        return new ProductPage();
-    }
-    public void chooseAnyProduct(){
+    public void chooseAnyProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(chooseAnyProduct));
         chooseAnyProduct.click();
+    }
+
+    public ProductPage navigateToProductPage() {
+        gearwheelOfProduct.click();
+        previewButton.click();
+        return new ProductPage();
     }
 
 
@@ -103,31 +107,31 @@ public class ProductSettings extends AbstractPage {
     WebElement promoTextArea;
 
 
-    public void clickAndTypeField_ProductName(String value){
+    public void clickAndTypeField_ProductName(String value) {
         field_ProductName.click();
         field_ProductName.clear();
         field_ProductName.sendKeys(value);
     }
 
-    public void clickAndTypeField_Price(String value){
+    public void clickAndTypeField_Price(String value) {
         field_Price.click();
         field_Price.clear();
         field_Price.sendKeys(value);
     }
 
-    public void clickAndTypeField_ListPrice(String value){
+    public void clickAndTypeField_ListPrice(String value) {
         field_ListPrice.click();
         field_ListPrice.clear();
         field_ListPrice.sendKeys(value);
     }
 
-    public void clickAndTypeField_InStock(String value){
+    public void clickAndTypeField_InStock(String value) {
         field_InStock.click();
         field_InStock.clear();
         field_InStock.sendKeys(value);
     }
 
-    public void setPricePerUnit(String value1, String value2, String value3){
+    public void setPricePerUnit(String value1, String value2, String value3) {
         field_UnitName.click();
         field_UnitName.clear();
         field_UnitName.sendKeys(value1);
@@ -139,22 +143,22 @@ public class ProductSettings extends AbstractPage {
         field_PricePerUnit.sendKeys(value3);
     }
 
-    public void selectSetting_ZeroPriceAction(String value){
+    public void selectSetting_ZeroPriceAction(String value) {
         new Select(setting_ZeroPriceAction).selectByValue(value);
     }
 
-    public void selectSetting_OutOfStockActions(String value){
+    public void selectSetting_OutOfStockActions(String value) {
         new Select(setting_OutOfStockActions).selectByValue(value);
     }
 
-    public void selectSetting_ProductTemplate(String value){
+    public void selectSetting_ProductTemplate(String value) {
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", setting_ProductTemplate);
         new Select(setting_ProductTemplate).selectByValue(value);
 
     }
 
-    public void hoverAndTypeField_ShortDescription(String value){
+    public void hoverAndTypeField_ShortDescription(String value) {
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_ShortDescription);
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_ShortDescription));
@@ -164,7 +168,7 @@ public class ProductSettings extends AbstractPage {
         fieldHtml_ShortDescription.sendKeys(value);
     }
 
-    public void hoverAndTypeField_PromoText(String value){
+    public void hoverAndTypeField_PromoText(String value) {
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_PromoText);
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_PromoText));
@@ -194,14 +198,57 @@ public class ProductSettings extends AbstractPage {
     WebElement field_Value;
 
 
-    public void clickAndType_field_Quantity(String value){
+    public void clickAndType_field_Quantity(String value) {
         field_Quantity.click();
         field_Quantity.clear();
         field_Quantity.sendKeys(value);
     }
-    public void clickAndType_field_Value(String value){
+
+    public void clickAndType_field_Value(String value) {
         field_Value.click();
         field_Value.clear();
         field_Value.sendKeys(value);
+    }
+
+
+    //Вкладка товара "Вариации"
+    @FindBy(css = "a[href*='dispatch=product_variations.manage']")
+    WebElement tab_Variations;
+
+    @FindBy(id = "opener_update_product_group")
+    WebElement button_AddVariations;
+
+
+    public void selectAllVariations() {
+        tab_Variations.click();
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_variations_pagination .no-items")).isEmpty()) {
+            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
+                    .until(ExpectedConditions.visibilityOf(button_AddVariations))
+                    .click();
+            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-title")));
+            WebElement field_findFeaturesForVariations = DriverProvider.getDriver().findElement(By
+                    .cssSelector(".object-picker__select-group--features .select2-search--inline input"));
+            JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+            js.executeScript("arguments[0].click();", field_findFeaturesForVariations);
+
+            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".select2-results__options")));
+            DriverProvider.getDriver().findElement(By
+                    .xpath("//div[@class='object-picker__selection-product-feature']//span[text()='Цвет']"))
+                    .click();
+            js.executeScript("arguments[0].click();", field_findFeaturesForVariations);
+
+            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".cm-variations-generator_add-all-variants")))
+                    .click();
+            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[id*='tools_tab_create_new'] a")))
+                    .click();
+
+            WebElement button_SaveProductVariations = DriverProvider.getDriver().findElement(By
+                    .cssSelector("#tools_variations_btn.btn-primary.cm-submit"));
+            button_SaveProductVariations.click();
+        }
     }
 }

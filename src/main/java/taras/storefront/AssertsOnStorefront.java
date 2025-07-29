@@ -29,7 +29,7 @@ public class AssertsOnStorefront extends AbstractPage {
     //Настройка "Отображать пустые звёзды рейтинга товара"
     String emptyStarsOfProductRating = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full=\"0\"]";
 
-    public List<WebElement> emptyStarsOfProductRating(){
+    public List<WebElement> emptyStarsOfProductRating() {
         return DriverProvider.getDriver().findElements(By.cssSelector(emptyStarsOfProductRating));
     }
 
@@ -41,7 +41,7 @@ public class AssertsOnStorefront extends AbstractPage {
     //Настройка "Отображать общее значение рейтинга товара"
     String commonValueOfProductRating = ".ut2-show-rating-num";
 
-    public List<WebElement> commonValueOfProductRating(){
+    public List<WebElement> commonValueOfProductRating() {
         return DriverProvider.getDriver().findElements(By.cssSelector(commonValueOfProductRating));
     }
 
@@ -63,7 +63,7 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
     @FindBy(css = ".ut2-added-to-cart[data-added-amount='1']")
-    public List<WebElement> statusesForButton_AddToCart_Number; //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"
+    public List<WebElement> statusesForButton_AddToCart_Number;     //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"
 
     @FindBy(css = "a.ut2-add-to-wish.active")
     public List<WebElement> statusesForButton_AddToWishList;        //Настройка "Отображать статусы для кнопок... "Добавить в избранное"
@@ -83,7 +83,8 @@ public class AssertsOnStorefront extends AbstractPage {
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
     String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
-    public List<WebElement> text_YouSave_Full(){
+
+    public List<WebElement> text_YouSave_Full() {
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Full));
     }
 
@@ -97,7 +98,7 @@ public class AssertsOnStorefront extends AbstractPage {
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
     String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
 
-    public List<WebElement> text_YouSave_Short(){
+    public List<WebElement> text_YouSave_Short() {
         return DriverProvider.getDriver().findElements(By.cssSelector(text_YouSave_Short));
     }
 
@@ -117,15 +118,15 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String productCode = " div[id*='product_code_']";    //Настройка "Отображать код товара"
 
-    public List<WebElement> productCode(){
+    public List<WebElement> productCode() {
         return DriverProvider.getDriver().findElements(By.cssSelector(productCode));
     }
 
-    public List<WebElement> productCode_GridList(){
+    public List<WebElement> productCode_GridList() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + productCode));
     }
 
-    public List<WebElement> productCode_ListWithoutOptions(){
+    public List<WebElement> productCode_ListWithoutOptions() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + productCode));
     }
 
@@ -139,11 +140,11 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String availabilityStatus = " .ty-qty-in-stock.ty-control-group__item"; //Настройка "Отображать статус наличия"
 
-    public List<WebElement> availabilityStatus_GridList(){
+    public List<WebElement> availabilityStatus_GridList() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + availabilityStatus));
     }
 
-    public List<WebElement> availabilityStatus_ListWithoutOptions(){
+    public List<WebElement> availabilityStatus_ListWithoutOptions() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + availabilityStatus));
     }
 
@@ -157,17 +158,17 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-   String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";    //Настройка "Отображать модификатор количества"
+    String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";    //Настройка "Отображать модификатор количества"
 
-    public List<WebElement> quantityChanger_GridList(){
+    public List<WebElement> quantityChanger_GridList() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + quantityChanger));
     }
 
-    public List<WebElement> quantityChanger_ListWithoutOptions(){
+    public List<WebElement> quantityChanger_ListWithoutOptions() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + quantityChanger));
     }
 
-    public List<WebElement> quantityChanger_CompactList(){
+    public List<WebElement> quantityChanger_CompactList() {
         return DriverProvider.getDriver().findElements(By.cssSelector(compactList + quantityChanger));
     }
 
@@ -179,15 +180,15 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String showAddToCartButton_IconOnly = " .ut2-icon-use_icon_cart";    //Настройка "Отображать кнопку "Купить" -- Только иконка корзины"
 
-    public List<WebElement> gridList__ShowAddToCartButton_IconOnly(){
+    public List<WebElement> gridList__ShowAddToCartButton_IconOnly() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + showAddToCartButton_IconOnly));
     }
 
-    public List<WebElement> listWithoutOptions__ShowAddToCartButton_IconOnly(){
+    public List<WebElement> listWithoutOptions__ShowAddToCartButton_IconOnly() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showAddToCartButton_IconOnly));
     }
 
-    public List<WebElement> compactList__ShowAddToCartButton_IconOnly(){
+    public List<WebElement> compactList__ShowAddToCartButton_IconOnly() {
         return DriverProvider.getDriver().findElements(By.cssSelector(compactList + showAddToCartButton_IconOnly));
     }
 
@@ -199,11 +200,11 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";   //Настройка "Отображать кнопку "Купить" -- Только текст"
 
-    public List<WebElement> listWithoutOptions__ShowAddToCartButton_TextOnly(){
+    public List<WebElement> listWithoutOptions__ShowAddToCartButton_TextOnly() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showAddToCartButton_TextOnly));
     }
 
-    public List<WebElement> compactList__ShowAddToCartButton_TextOnly(){
+    public List<WebElement> compactList__ShowAddToCartButton_TextOnly() {
         return DriverProvider.getDriver().findElements(By.cssSelector(compactList + showAddToCartButton_TextOnly));
     }
 
@@ -219,11 +220,11 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String brandLogo = " .brand-img"; //Настройка "Отображать бренд -- Логотип"
 
-    public List<WebElement> gridList__BrandLogo(){
+    public List<WebElement> gridList__BrandLogo() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + brandLogo));
     }
 
-    public List<WebElement> listWithoutOptions__BrandLogo(){
+    public List<WebElement> listWithoutOptions__BrandLogo() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + brandLogo));
     }
 
@@ -234,11 +235,11 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String brandName = " .brand-name"; //Настройка "Отображать бренд -- Название"
 
-    public List<WebElement> gridList__BrandName(){
+    public List<WebElement> gridList__BrandName() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + brandName));
     }
 
-    public List<WebElement> listWithoutOptions__BrandName(){
+    public List<WebElement> listWithoutOptions__BrandName() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + brandName));
     }
 
@@ -250,11 +251,11 @@ public class AssertsOnStorefront extends AbstractPage {
 
     String showStandardImageGallery = " .owl-pagination";   //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
 
-    public List<WebElement> gridList__ShowStandardImageGallery_Dots(){
+    public List<WebElement> gridList__ShowStandardImageGallery_Dots() {
         return DriverProvider.getDriver().findElements(By.cssSelector(gridList + showStandardImageGallery));
     }
 
-    public List<WebElement> listWithoutOptions__ShowStandardImageGallery(){
+    public List<WebElement> listWithoutOptions__ShowStandardImageGallery() {
         return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showStandardImageGallery));
     }
 
@@ -262,10 +263,8 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-gl__image .icon-right-circle")
     public List<WebElement> gridList__ShowStandardImageGallery_Arrows;//Настройка "Вид списка "Сетка" -- "Отображать стандартную галерею изображений -- Навигация стрелками"
 
-
     @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")
     public List<WebElement> gridList__SwitchProductImage_WithStripes; //Настройка "Вид списка "Сетка" -- "Переключать изображение товара при движении мышки -- с полосками"
-
 
     @FindBy(css = ".ut2-lv__item-features")
     public List<WebElement> listWithoutOptions__ContentUnderDescription_VariationList;  //Настройка "Вид списка "Список без опций" -- Содержимое под описанием -- Список вариаций
@@ -273,11 +272,11 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-pl__feature")
     public List<WebElement> listWithoutOptions__ContentUnderDescription_FeatureList;  //Настройка "Вид списка "Список без опций" -- Содержимое под описанием -- Список характеристик
 
-
     @FindBy(css = ".cm-picker-product-options")
     public List<WebElement> listWithoutOptions__ShowProductOptions; //Настройка "Вид списка "Список без опций" -- Отображать опции товара"
 
-    @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']") //Настройка "Вид списка "Список без опций" -- Переключать изображение товара при движении мышки -- С точками
+    @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']")
+    //Настройка "Вид списка "Список без опций" -- Переключать изображение товара при движении мышки -- С точками
     public List<WebElement> listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots;
 
 
@@ -297,6 +296,38 @@ public class AssertsOnStorefront extends AbstractPage {
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + numberOfLinesInProductName_Scroller + number + ";']"));
     }
 
+    //Новый вид вариаций для модуля "Вариации товаров"
+    String prodVar_NewProductVariations = " div[class*='ut2-lv__features-item lv-hover-items']";
+
+    public List<WebElement> gridList__prodVar_MaximumQuantityOfProductsVariations() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + prodVar_NewProductVariations));
+    }
+
+    public List<WebElement> listWithoutOptions__prodVar_MaximumQuantityOfProductsVariations() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + prodVar_NewProductVariations));
+    }
+
+    //Настройка "Тип отображения вариаций -- Цвета"
+    String prodVar_TypeOfVariationsView_Colors = " [data-display='color']";
+
+    public List<WebElement> gridList__prodVar_TypeOfVariationsView_Colors() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + prodVar_TypeOfVariationsView_Colors));
+    }
+
+    public List<WebElement> listWithoutOptions__prodVar_TypeOfVariationsView_Colors() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + prodVar_TypeOfVariationsView_Colors));
+    }
+
+    //Настройка "Тип отображения вариаций -- Миниатюры"
+    String prodVar_TypeOfVariationsView_Thumbnails = " [data-display='thumbnails']";
+
+    public List<WebElement> gridList__prodVar_TypeOfVariationsView_Thumbnails() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + prodVar_TypeOfVariationsView_Thumbnails));
+    }
+
+    public List<WebElement> listWithoutOptions__prodVar_TypeOfVariationsView_Thumbnails() {
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + prodVar_TypeOfVariationsView_Thumbnails));
+    }
 
     //Настройки темы -- вкладка "Товар"
 
@@ -325,13 +356,12 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> numberOfDisplayedImagesOfProductGallery_2;  //Настройка "Количество отображаемых изображений галереи товара -- 2"
 
 
-
     //Настройки -- Общие настройки -- Внешний вид
 
     //Текст налога "[цена налога] + Вкл налог". Настройка "Показывать цены с налогом на страницах категорий и товаров"
     String pricesWithTaxes = "span[id*='line_product_price_']";
 
-    public List<WebElement> pricesWithTaxes(){
+    public List<WebElement> pricesWithTaxes() {
         return DriverProvider.getDriver().findElements(By.cssSelector(pricesWithTaxes));
     }
 
@@ -344,7 +374,7 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> miniThumbnailImagesAsGallery_Enabled;   //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
 
     @FindBy(css = ".ty-product-thumbnails")
-    public List<WebElement> miniThumbnailImagesAsGallery_Disabled;           //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
+    public List<WebElement> miniThumbnailImagesAsGallery_Disabled;  //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
 
     @FindBy(css = ".ut2-pb__tabs .ty-tabs.cm-j-tabs")
     public List<WebElement> displayProductDetailsInTabs_Enabled;    //Настройка "Показывать информацию о товаре во вкладках" ВКЛ.
@@ -355,11 +385,10 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public List<WebElement> enableQuickView;    //Настройка "Включить быстрый просмотр"
 
-    public List<WebElement> getQuickViewButton(String blockID){
+    public List<WebElement> getQuickViewButton(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] a[class*='ut2-quick-view-button']"));
     }
-
 
 
     //Настройки на странице редактирования товара
@@ -368,7 +397,7 @@ public class AssertsOnStorefront extends AbstractPage {
     public List<WebElement> product_PromoText;  //Настройка "Промо-текст"
 
     @FindBy(css = ".ty-price-per-unit")
-    public List<WebElement> pricePerUnit;   //Настройка "Цена за единицу"
+    public List<WebElement> pricePerUnit;       //Настройка "Цена за единицу"
 
     @FindBy(css = ".ty-price-curency__input")
     public List<WebElement> zeroPriceAction_AskCustomerToEnterPrice;    //Настройка "Действие при нулевой цене -- Попросить покупателя ввести цену"
@@ -385,14 +414,13 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-pb__note")
     public List<WebElement> promoText;  //Настройка "Промо текст"
 
-
     @FindBy(css = ".ty-reward-group")
     public List<WebElement> product_allowPaymentByPoints;   //Вкладка "Бонусные баллы" -- Настройка "Разрешить оплату баллами"
 
 
     //ДРУГОЕ
     @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Brand']")
-    public List<WebElement> showInHeaderOnProductPage_Brand;  //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
+    public List<WebElement> showInHeaderOnProductPage_Brand;      //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
 
     @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Hard drive']")
     public List<WebElement> showInHeaderOnProductPage_HardDrive;  //Настройка "Товары -- Характеристики -- Жесткий диск -- Показывать в заголовке карточки товара"
@@ -400,7 +428,7 @@ public class AssertsOnStorefront extends AbstractPage {
     //Настройка "Внешняя навигация" в настройках блока
     String outsideNavigation = " .owl-theme.ty-owl-controls";
 
-    public List<WebElement> getOutsideNavigation(String blockID){
+    public List<WebElement> getOutsideNavigation(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
                 "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "']" + outsideNavigation));
     }

@@ -1,9 +1,11 @@
 package taras.adminPanel;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
 public class ThemeSettings_ProductLists extends AbstractPage {
     public ThemeSettings_ProductLists(){super();}
@@ -279,5 +281,24 @@ public class ThemeSettings_ProductLists extends AbstractPage {
 
     public void selectScroller_AddToCartButton (String value){
         new Select(scroller_AddToCartButton).selectByValue(value);
+    }
+
+    //Настройки для модуля "Вариации товаров"
+    @FindBy(id = "settings.abt__ut2.product_list.product_variations.limit")
+    WebElement productVariations_MaximumQuantityOfProductsVariations;
+
+    @FindBy(id = "settings.abt__ut2.product_list.product_variations.display_color_separately")
+    WebElement productVariations_TypeOfVariationsView;
+
+    public void setProductVariations_MaximumQuantityOfProductsVariations(String number){
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", productVariations_MaximumQuantityOfProductsVariations);
+        productVariations_MaximumQuantityOfProductsVariations.click();
+        productVariations_MaximumQuantityOfProductsVariations.clear();
+        productVariations_MaximumQuantityOfProductsVariations.sendKeys(number);
+    }
+
+    public void selectProductVariations_TypeOfVariationsView(String value){
+        new Select(productVariations_TypeOfVariationsView).selectByValue(value);
     }
 }

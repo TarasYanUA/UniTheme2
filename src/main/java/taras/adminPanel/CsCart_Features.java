@@ -123,9 +123,9 @@ public class CsCart_Features extends AbstractPage {
         setMulticolor("Red-Black", "#ff0000", "#000000");
         setMulticolor("Blue-Yellow", "#4a86e8", "#ffff00");
 
-        setThumbnail("Ceramic tiles", "https://www.artfile.ru/i.php?i=20946&md=&res=1024x1024");
-        setThumbnail("Marbled", "https://www.artfile.ru/i.php?i=222879&md=&res=1024x1024");
-        setThumbnail("Tigrine", "https://www.artfile.ru/i.php?i=282194&md=&res=1024x1024");
+        setThumbnail("Ceramic tiles", "https://i.artfile.ru/s/20946_250911_41_ArtFile_ru.jpg");
+        setThumbnail("Marbled", "https://i.artfile.ru/s/222879_130313_96_ArtFile_ru.jpg");
+        setThumbnail("Tigrine", "https://i.artfile.ru/s/282194_011011_53_ArtFile_ru.jpg");
     }
 
     void setColorIfDefault(String color, String dataColor) {

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment=" Added new functionality and appearance of Variations:&#10; * UniTheme2 settings for Variations&#10; * Asserts on storefront on the category page">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed a bug with url for variations thumbnails.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCart_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCart_Features.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +248,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
@@ -331,8 +330,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -367,7 +365,8 @@
       <workItem from="1753771696584" duration="25020000" />
       <workItem from="1753863551532" duration="7000" />
       <workItem from="1754289662685" duration="8069000" />
-      <workItem from="1754378924352" duration="7151000" />
+      <workItem from="1754378924352" duration="11481000" />
+      <workItem from="1754570550920" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -712,7 +711,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="245" />
+    <option name="localTasksCounter" value="246" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -743,7 +742,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved Three-level menu Menu40-45.&#10;Adapted Menu46." />
     <MESSAGE value="Adapted Menu46-48." />
     <MESSAGE value="Adapted FlyMenu50-51." />
     <MESSAGE value="Adapted some code." />
@@ -768,7 +766,8 @@
     <MESSAGE value="Adapted test-cases ProductBlock_GridMore_Var2 and Var3 according to the last theme changes." />
     <MESSAGE value=" Added new functionality and appearance of Variations:&#10; * Created a new class CsCart_Features&#10; * Transferred all variables and methods from the class CsCartSettings into the new class&#10; * Added code for new functionality of variations" />
     <MESSAGE value=" Added new functionality and appearance of Variations:&#10; * UniTheme2 settings for Variations&#10; * Asserts on storefront on the category page" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Added new functionality and appearance of Variations:&#10; * UniTheme2 settings for Variations&#10; * Asserts on storefront on the category page" />
+    <MESSAGE value="Fixed a bug with url for variations thumbnails." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug with url for variations thumbnails." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -800,8 +799,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="71" />
+          <line>265</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java</url>
+          <line>261</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

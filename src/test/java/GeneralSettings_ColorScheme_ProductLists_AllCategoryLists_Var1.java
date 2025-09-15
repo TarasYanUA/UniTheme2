@@ -136,7 +136,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.setTaxesForAllProducts();
+        //csCartSettings.setTaxesForAllProducts();
 
         //Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет"
         CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();

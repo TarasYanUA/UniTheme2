@@ -157,7 +157,6 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         takeScreenShot("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
         stCategoryPage.clickCloseQuickView();
         stHomePage.selectLanguage_RU();
-        stCategoryPage.hoverToMenClothProduct();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         takeScreenShot("425 GS_ProductLists_GridListView_Var2 - QuickView");
 

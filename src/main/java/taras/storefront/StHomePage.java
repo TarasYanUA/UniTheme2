@@ -73,22 +73,22 @@ public class StHomePage extends AbstractPage {
 
 
     //Разделы меню на витрине
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-dropdown-box__title")
+    @FindBy(css = ".top-menu-grid-vertical .ty-dropdown-box__title")
     public WebElement verticalMenu_menuButton_Categories;
 
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__products")
+    @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__products")
     private WebElement verticalMenu_menuAllProducts;
 
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__electronics")
+    @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__electronics")
     private WebElement verticalMenu_menuElectronic;
 
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__apparel")
+    @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__apparel")
     private WebElement verticalMenu_menuApparel;
 
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__sport")
+    @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__sport")
     private WebElement verticalMenu_menuSportsAndOutdoors;
 
-    @FindBy(css = ".top-menu-grid-vetrtical .ty-menu-item__media ")
+    @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__media ")
     private WebElement verticalMenu_menuVideoGames;
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0']")

@@ -89,7 +89,7 @@ public class StCategoryPage extends AbstractPage {
         WebDriver driver = DriverProvider.getDriver();
 
         Actions scroll = new Actions(driver);
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(phoneProduct_Droid3), 0, 400)
+        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(phoneProduct_Droid3), 0, 200)
                 .moveToElement(phoneProduct_Droid3).perform();
         scroll.moveToElement(quickViewOfPhoneProduct_Droid3).perform();
     }

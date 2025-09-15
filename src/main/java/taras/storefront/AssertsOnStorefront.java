@@ -269,7 +269,7 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = ".ut2-lv__item-features")
     public List<WebElement> listWithoutOptions__ContentUnderDescription_VariationList;  //Настройка "Вид списка "Список без опций" -- Содержимое под описанием -- Список вариаций
 
-    @FindBy(css = ".ut2-pl__feature")
+    @FindBy(css = ".ut2-features-list")
     public List<WebElement> listWithoutOptions__ContentUnderDescription_FeatureList;  //Настройка "Вид списка "Список без опций" -- Содержимое под описанием -- Список характеристик
 
     @FindBy(css = ".cm-picker-product-options")
@@ -419,10 +419,10 @@ public class AssertsOnStorefront extends AbstractPage {
 
 
     //ДРУГОЕ
-    @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Brand']")
+    @FindBy(xpath = "//div[@class='ut2-features-list']//em[text()='Brand']")
     public List<WebElement> showInHeaderOnProductPage_Brand;      //Настройка "Товары -- Характеристики -- Бренд -- Показывать в заголовке карточки товара"
 
-    @FindBy(xpath = "//div[@class='ty-features-list']//em[text()='Hard drive']")
+    @FindBy(xpath = "//div[@class='ut2-features-list']//em[text()='Hard drive']")
     public List<WebElement> showInHeaderOnProductPage_HardDrive;  //Настройка "Товары -- Характеристики -- Жесткий диск -- Показывать в заголовке карточки товара"
 
     //Настройка "Внешняя навигация" в настройках блока

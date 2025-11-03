@@ -222,13 +222,14 @@ public class ProductSettings extends AbstractPage {
     public void selectAllVariations() {
         tab_Variations.click();
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_variations_pagination .no-items")).isEmpty()) {
+            CsCartSettings.closeAllNotifications();
             new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOf(button_AddVariations))
                     .click();
             new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-title")));
             WebElement field_findFeaturesForVariations = DriverProvider.getDriver().findElement(By
-                    .cssSelector(".object-picker__select-group--features .select2-search--inline input"));
+                    .cssSelector("#generate_variations_container .select2-selection--multiple"));
             JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
             js.executeScript("arguments[0].click();", field_findFeaturesForVariations);
 

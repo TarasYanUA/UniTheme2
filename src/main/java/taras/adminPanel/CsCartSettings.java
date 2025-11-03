@@ -55,6 +55,15 @@ public class CsCartSettings extends AbstractPage implements CheckPageOnEngLang, 
         return new CsCart_Features();
     }
 
+    public static void closeAllNotifications() {
+        while (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()) {
+            DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).getFirst().click();
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException ignored) {}
+        }
+    }
+
 
     //Меню "Настройки"
     @FindBy(id = "administration")

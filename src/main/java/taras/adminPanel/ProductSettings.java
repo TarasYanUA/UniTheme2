@@ -31,6 +31,7 @@ public class ProductSettings extends AbstractPage {
 
 
     public void clickAndType_SearchFieldOfProduct(String value) {
+        CsCartSettings.closeAllNotifications();
         searchFieldOfProduct.click();
         searchFieldOfProduct.sendKeys(value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updated pom file. Updated drivers.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made adaptation to CS-Cart 4.19.1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,11 +249,11 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_GridMore_Var3">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductPage_Cascade_Var2">
+    <configuration name="GeneralSettings_ProductPage_Cascade_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ProductPage_Cascade_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -333,20 +331,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3" />
       <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
       <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
-      <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ProductPage_Cascade_Var2" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
         <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
         <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -737,7 +735,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -768,7 +766,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved asserts for Horizontal and Vertical menu." />
     <MESSAGE value="Changed some asserts assertTrue on assertEquals." />
     <MESSAGE value="Addepted some code in menu." />
     <MESSAGE value="Addapted some code in menu." />
@@ -793,7 +790,8 @@
     <MESSAGE value="Updated drivers and pom vocabularies." />
     <MESSAGE value="Some improvements." />
     <MESSAGE value="Updated pom file. Updated drivers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pom file. Updated drivers." />
+    <MESSAGE value="Made adaptation to CS-Cart 4.19.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made adaptation to CS-Cart 4.19.1." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -820,7 +818,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java</url>
-          <line>230</line>
+          <line>231</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

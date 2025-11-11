@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -68,26 +69,20 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var2() {
         //Настраиваем макет для тест-кейса
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Lightv2.click();
+        layoutPage.setLayoutAsDefault();
 
         //Работаем с CS-Cart настройками
-        csCartSettings.navigateToAppearanceSettings();
-        WebElement checkboxDisplayPricesWithTaxesOnCategoryAndProductPages = csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages;
-        if (!checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.isSelected())
-            checkboxDisplayPricesWithTaxesOnCategoryAndProductPages.click();
-        WebElement checkboxThumbnailsGallery = csCartSettings.setting_ThumbnailsGallery;
-        if (!checkboxThumbnailsGallery.isSelected())
-            checkboxThumbnailsGallery.click();
-        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
-        if (!checkboxSettingQuickView.isSelected())
-            checkboxSettingQuickView.click();
-        csCartSettings.clickSaveButtonOfSettings();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_DisplayPricesWithTaxesOnCategoryAndProductPages, true);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, true);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_QuickView, true);
+        basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected())
@@ -121,35 +116,35 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
         themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
         themeSettingsProductLists.selectProductVariations_TypeOfVariationsView("thumbnails");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
+        new Select(colorSchemeSettings.setting_FrameType).selectByValue("none");
         if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("do_not_use");
+        new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("do_not_use");
         if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
             colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
         csCartSettings.setTaxesForAllProducts();
 
         //Настраиваем характеристику "Цвет" с типом отображения вариаций как "Цвет"
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.setFeatureColorForVariations();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Apple - iPhone 5c 32GB Cell Phone");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_ProductName("Apple - iPhone 5c 32GB Cell Phone");
         productSettings.selectAllVariations();
-        csCartSettings.navigateToSection_Products();
+        basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Droid 3");
         productSettings.chooseAnyProduct();
         productSettings.selectAllVariations();
@@ -157,8 +152,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var2")
     public void checkProductLists_AllCategoryLists_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

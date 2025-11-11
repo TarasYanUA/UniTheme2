@@ -6,11 +6,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
 import java.time.Duration;
 
-public class UtilsAdm {
+public class UtilsAdm extends AbstractPage {
+
     public static void makePause(int duration) {
         try {
             Thread.sleep(duration);
@@ -51,8 +53,14 @@ public class UtilsAdm {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
     }
 
-    public static void scrollToElementAndBelow(WebElement webElement, int below) {
+    public static void scrollToElementAndScrollBelow(WebElement webElement, int below) {
         Actions scroll = new Actions(DriverProvider.getDriver());
         scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(webElement), 0, below).perform();
+    }
+
+    public static void hoverAndNavigateAndClick(WebElement webElement) {
+        Actions actions = new Actions(DriverProvider.getDriver());
+        actions.moveToElement(webElement).perform();
+        webElement.click();
     }
 }

@@ -1,10 +1,8 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.CsCart_Features;
-import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
+import taras.adminPanel.*;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
 import testRunner.TestRunner;
@@ -40,31 +38,25 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_CascadeGallery_Var2(){
         //Настраиваем CS-Cart настройки
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
-        if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
-            csCartSettings.setting_ThumbnailsGallery.click();
-        }
-        if(!csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
-            csCartSettings.setting_NumberOfAvailableProducts.click();
-        }
-        csCartSettings.selectSetting_ProductPageView("abt__ut2_cascade_gallery_template");
-        if(!csCartSettings.setting_ProductDetailsInTab.isSelected()){
-            csCartSettings.setting_ProductDetailsInTab.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
+        BasicPage basicPage = new BasicPage();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, false);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, true);
+        new Select(csCartSettings.setting_ProductPageView).selectByValue("abt__ut2_cascade_gallery_template");
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, true);
+        basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристики Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
-        featuresPage.clickFeatureBrand();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
         WebElement checkbox_ShowOnFeaturesTab_Brand = featuresPage.showOnFeaturesTab_Brand;
         if (!checkbox_ShowOnFeaturesTab_Brand.isSelected()) {
             checkbox_ShowOnFeaturesTab_Brand.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Настраиваем UniTheme настройки
-        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
+        ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
@@ -83,10 +75,10 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("name");
         themeSettingsProduct.selectSetting_CombinationsOfProductGalleryImageFormations("2");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("0");
@@ -95,13 +87,13 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         productSettings.selectSetting_OutOfStockActions("B");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_CascadeGallery_Var2")
     public void checkSettingsOnProductPage_CascadeGallery_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        BasicPage basicPage = new BasicPage();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();

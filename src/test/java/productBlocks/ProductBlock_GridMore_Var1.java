@@ -62,27 +62,27 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        csCartSettings.navigateToBlockSettings("Распродажа");
-        csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
+        basicPage.navigateToBlockSettings("Распродажа");
+        basicPage.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
         makePause();
-        csCartSettings.button_SettingsOfTemplate.click();
-        if (csCartSettings.checkbox_ShowItemNumber.isSelected())
-            csCartSettings.checkbox_ShowItemNumber.click();
-        csCartSettings.clickAndType_Field_NumberOfColumnsInList("5");
-        csCartSettings.selectSetting_LoadingType("onclick");
-        csCartSettings.tabOfBlock_Content.click();
-        csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("17");
-        csCartSettings.tabOfBlock_BlockSettings.click();
-        if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
-            csCartSettings.checkbox_HideAddToCartButton.click();
-        csCartSettings.button_saveBlock.click();
+        basicPage.button_SettingsOfTemplate.click();
+        if (basicPage.checkbox_ShowItemNumber.isSelected())
+            basicPage.checkbox_ShowItemNumber.click();
+        basicPage.clickAndType_Field_NumberOfColumnsInList("5");
+        basicPage.selectSetting_LoadingType("onclick");
+        basicPage.tabOfBlock_Content.click();
+        basicPage.selectSetting_Filling("on_sale");
+        basicPage.clickAndType_Field_Limit("17");
+        basicPage.tabOfBlock_BlockSettings.click();
+        if (basicPage.checkbox_HideAddToCartButton.isSelected())
+            basicPage.checkbox_HideAddToCartButton.click();
+        basicPage.button_saveBlock.click();
 
 /*        //Работаем с настройками характеристики Бренд
         csCartSettings.navigateToSection_Features();
@@ -154,23 +154,23 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         csCartSettings.setTaxesForAllProducts();*/
 
         //Добавляем Краткое описание товару Ice Queen
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Ice Queen");
         productSettings.chooseAnyProduct();
         if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty())
             DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
         productSettings.hoverAndTypeField_ShortDescription(
                 "Рюкзак Camelbak - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")
     public void checkProductBlock_GridMore_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

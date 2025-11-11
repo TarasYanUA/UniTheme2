@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import java.io.File;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class TestRunner {
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
-        makePause();
+        UtilsAdm.makePause(2000);
         getDriver().quit();
         DriverProvider.destroyDriver();
     }

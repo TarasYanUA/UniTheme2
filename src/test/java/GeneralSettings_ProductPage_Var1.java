@@ -4,10 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.CsCart_Features;
-import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
@@ -47,26 +44,20 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_GeneralSettings_ProductPage_Var1(){
         //Настраиваем макет для тест-кейса
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Lightv2.click();
+        basicPage.setLayoutAsDefault();
 
         //Настраиваем CS-Cart настройки
-        csCartSettings.navigateToAppearanceSettings();
-        if(!csCartSettings.setting_ThumbnailsGallery.isSelected()){
-            csCartSettings.setting_ThumbnailsGallery.click();
-        }
-        if(csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
-            csCartSettings.setting_NumberOfAvailableProducts.click();
-        }
-        if(!csCartSettings.setting_ProductDetailsInTab.isSelected()){
-            csCartSettings.setting_ProductDetailsInTab.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, true);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, false);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, true);
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
-        csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        basicPage.navigateTo_ThemeSettings_tabProductLists();
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
@@ -87,10 +78,10 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         }
         themeSettingsProduct.selectSetting_ShowYouSave("short");
         themeSettingsProduct.selectSetting_ShowProductBrand("logo");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристик Жесткий диск и Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.feature_HardDrive.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
@@ -100,7 +91,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         featuresPage.button_SaveFeature.click();
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000.00");
@@ -117,17 +108,17 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
             productSettings.setting_AllowPaymentByPoints.click();
         }
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_GeneralSettings_ProductPage_Var1")
     public void checkGeneralSettings_ProductPage_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        BasicPage basicPage = new BasicPage();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_ListPrice("15000");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
@@ -201,7 +192,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("bigpicture_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("925 GS_ProductPage_Var1 - Big picture");
@@ -209,7 +200,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         takeScreenShot_withScroll("930 GS_ProductPage_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("935 GS_ProductPage_Var1 - Big picture flat");
@@ -217,7 +208,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         takeScreenShot_withScroll("940 GS_ProductPage_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("945 GS_ProductPage_Var1 - Three columned");
@@ -225,7 +216,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         takeScreenShot_withScroll("950 GS_ProductPage_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         takeScreenShot_withScroll("955 GS_ProductPage_Var1 - Gallery template");

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -28,10 +28,10 @@ public class Menu32_Vertical_RowFilling_2columns_FullView extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu32_Vertical_RowFilling_2columns_FullView() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Light.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Light.click();
+        basicPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -56,8 +56,8 @@ public class Menu32_Vertical_RowFilling_2columns_FullView extends TestRunner {
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu32_Vertical_RowFilling_2columns_FullView")
     public void check_Menu32_Vertical_RowFilling_2columns_FullView() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

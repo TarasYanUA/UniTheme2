@@ -1,8 +1,8 @@
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.CsCart_Features;
+import taras.adminPanel.BasicPage;
+import taras.adminPanel.FeaturePage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -30,19 +30,19 @@ import testRunner.TestRunner;
 public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Работаем с настройками характеристики Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
-        featuresPage.clickFeatureBrand();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
         WebElement checkboxShowInProductList = featuresPage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
         themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
@@ -63,13 +63,13 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("logo");
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("points");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var2")
     public void checkProductLists_ListWithoutOptions_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

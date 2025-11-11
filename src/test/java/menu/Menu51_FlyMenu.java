@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -25,10 +25,10 @@ public class Menu51_FlyMenu extends TestRunner{
     @Test(priority = 1)
     public void setConfiguration_Menu51_FlyMenu_Var2() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Default.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Default.click();
+        basicPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -45,8 +45,8 @@ public class Menu51_FlyMenu extends TestRunner{
 
     @Test(priority = 2, dependsOnMethods = "setConfiguration_Menu51_FlyMenu_Var2")
     public void check_Menu51_FlyMenu_Var2(){
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.button_FlyMenu.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

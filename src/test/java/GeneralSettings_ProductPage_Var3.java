@@ -5,9 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
@@ -46,18 +44,15 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Var3() {
         //Настраиваем CS-Cart настройки
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
-        if (csCartSettings.setting_ThumbnailsGallery.isSelected())
-            csCartSettings.setting_ThumbnailsGallery.click();
-        if (csCartSettings.setting_NumberOfAvailableProducts.isSelected())
-            csCartSettings.setting_NumberOfAvailableProducts.click();
-        if (csCartSettings.setting_ProductDetailsInTab.isSelected())
-            csCartSettings.setting_ProductDetailsInTab.click();
-        csCartSettings.clickSaveButtonOfSettings();
+        BasicPage basicPage = new BasicPage();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, false);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, false);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, false);
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
-        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
+        ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
         if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected())
             themeSettingsProduct.setting_ShowQuantityChanger.click();
@@ -76,10 +71,10 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000");
@@ -98,18 +93,18 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
             productSettings.clickAndType_field_Quantity("3");
             productSettings.clickAndType_field_Value("22000");
         }
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     //(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
     @Test
     public void checkSettingsOnProductPage_Var3() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        BasicPage basicPage = new BasicPage();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_ListPrice("15000");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
@@ -184,7 +179,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("bigpicture_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
@@ -193,7 +188,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
@@ -202,7 +197,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
@@ -211,7 +206,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");

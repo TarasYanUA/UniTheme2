@@ -5,7 +5,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
+import taras.adminPanel.CategoryPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -28,8 +29,8 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
     @Test(priority = 1)
     public void setConfigurations_Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView() {
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateTo_WebsiteMenuPage();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateTo_WebsiteMenuPage();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
@@ -45,15 +46,15 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         mainMenuSettings.button_Save3LevelMenu.click();
 
         //Добавляем категории для Электроники
-        csCartSettings.navigateToSection_Categories();
-        csCartSettings.gearwheelOnCategoryPage.click();
-        csCartSettings.button_AddBulkCategory.click();
-        csCartSettings.addNewCategoryLocations_Computers();
+        CategoryPage categoryPage = basicPage.navigateToSection_Categories();
+        categoryPage.gearwheelOnCategoryPage.click();
+        categoryPage.button_AddBulkCategory.click();
+        categoryPage.addNewCategoryLocations_Computers();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Light.click();
-        csCartSettings.setLayoutAsDefault();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Light.click();
+        basicPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
@@ -75,8 +76,8 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView")
     public void check_Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

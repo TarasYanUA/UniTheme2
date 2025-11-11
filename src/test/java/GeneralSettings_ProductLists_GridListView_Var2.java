@@ -4,11 +4,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCart_Features;
+import taras.adminPanel.FeaturePage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.ThemeSettings_ShowMore;
 import taras.constants.DriverProvider;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -41,19 +41,19 @@ import java.time.Duration;
 public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_GridListView_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Работаем с настройками характеристики Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
-        featuresPage.clickFeatureBrand();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
         WebElement checkboxShowInProductList = featuresPage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected())
@@ -86,13 +86,13 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
         if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
             themeSettings_showMore.setting_AllowForProductLists.click();
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var2")
     public void checkProductLists_GridListView_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

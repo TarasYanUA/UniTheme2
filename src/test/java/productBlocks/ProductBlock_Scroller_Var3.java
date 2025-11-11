@@ -3,6 +3,7 @@ package productBlocks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
@@ -59,38 +60,38 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
 
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_Scroller_Var3() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        csCartSettings.navigateToBlockSettings("Распродажа");
-        csCartSettings.selectSetting_BlockTemplate("blocks/products/products_scroller.tpl");
+        basicPage.navigateToBlockSettings("Распродажа");
+        basicPage.selectSetting_BlockTemplate("blocks/products/products_scroller.tpl");
         makePause();
-        csCartSettings.button_SettingsOfTemplate.click();
-        if(!csCartSettings.checkbox_ShowPrice.isSelected())
-            csCartSettings.checkbox_ShowPrice.click();
-        if(csCartSettings.checkbox_EnableQuickView.isSelected())
-            csCartSettings.checkbox_EnableQuickView.click();
-        if(!csCartSettings.checkbox_DoNotScrollAutomatically.isSelected())
-            csCartSettings.checkbox_DoNotScrollAutomatically.click();
-        csCartSettings.clickAndType_Field_ItemQuantity("4");
-        if(!csCartSettings.checkbox_OutsideNavigation.isSelected())
-            csCartSettings.checkbox_OutsideNavigation.click();
+        basicPage.button_SettingsOfTemplate.click();
+        if(!basicPage.checkbox_ShowPrice.isSelected())
+            basicPage.checkbox_ShowPrice.click();
+        if(basicPage.checkbox_EnableQuickView.isSelected())
+            basicPage.checkbox_EnableQuickView.click();
+        if(!basicPage.checkbox_DoNotScrollAutomatically.isSelected())
+            basicPage.checkbox_DoNotScrollAutomatically.click();
+        basicPage.clickAndType_Field_ItemQuantity("4");
+        if(!basicPage.checkbox_OutsideNavigation.isSelected())
+            basicPage.checkbox_OutsideNavigation.click();
         Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollToElement(csCartSettings.tabOfBlock_Content);
+        scroll.scrollToElement(basicPage.tabOfBlock_Content);
         scroll.perform();
-        csCartSettings.tabOfBlock_Content.click();
-        csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("13");
-        csCartSettings.tabOfBlock_BlockSettings.click();
-        if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
-            csCartSettings.checkbox_HideAddToCartButton.click();
-        csCartSettings.button_saveBlock.click();
+        basicPage.tabOfBlock_Content.click();
+        basicPage.selectSetting_Filling("on_sale");
+        basicPage.clickAndType_Field_Limit("13");
+        basicPage.tabOfBlock_BlockSettings.click();
+        if (basicPage.checkbox_HideAddToCartButton.isSelected())
+            basicPage.checkbox_HideAddToCartButton.click();
+        basicPage.button_saveBlock.click();
 
         //Работаем с настройками темы п.2.1
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.selectSettingPriceDisplayFormat("col-os-fill");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (!checkboxPriceAtTheTop.isSelected()) {
@@ -128,32 +129,32 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
         if(themeSettingsProductLists.scroller_QuickViewButton.isSelected())
             themeSettingsProductLists.scroller_QuickViewButton.click();
         themeSettingsProductLists.selectScroller_AddToCartButton("text");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("solid_without_margins");
+        new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
         if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("do_not_use");
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("do_not_use");
+        new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.setTaxesForAllProducts();
+        basicPage.setTaxesForAllProducts();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_Scroller_Var3")
     public void checkProductBlock_Scroller_Var3() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

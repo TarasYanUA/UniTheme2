@@ -14,8 +14,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class CsCart_Features extends AbstractPage {
-    public CsCart_Features() {
+public class FeaturePage extends AbstractPage {
+    public FeaturePage() {
         super();
     }
 
@@ -24,7 +24,7 @@ public class CsCart_Features extends AbstractPage {
     WebElement section_Features;
 
     @FindBy(css = "a[data-ca-external-click-id=\"opener_group18\"]")
-    WebElement featureBrand;
+    public WebElement featureBrand;
 
     @FindBy(css = "a[data-ca-external-click-id=\"opener_group23\"]")
     public WebElement feature_HardDrive;
@@ -78,13 +78,9 @@ public class CsCart_Features extends AbstractPage {
     public void clickAndTypeField_DescriptionOfFeature(String value) {
         field_FeatureDescription_HardDrive.click();
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_FeatureDescription_HardDrive));
-        UtilsAdm.scrollToElementAndBelow(field_FeatureDescription_HardDrive, 50);
+        UtilsAdm.scrollToElementAndScrollBelow(field_FeatureDescription_HardDrive, 50);
         button_Html_HardDrive.click();
         UtilsAdm.clickAndType(field_HtmlDescriptionOfFeature, value);
-    }
-
-    public void clickFeatureBrand() {
-        featureBrand.click();
     }
 
     public void setFeatureColorForVariations() {

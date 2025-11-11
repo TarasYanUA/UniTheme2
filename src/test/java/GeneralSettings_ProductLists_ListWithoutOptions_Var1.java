@@ -1,8 +1,9 @@
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.CsCart_Features;
+import taras.adminPanel.BasicPage;
+import taras.adminPanel.FeaturePage;
+import taras.adminPanel.LayoutPage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -26,22 +27,22 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
     @Test(priority = 1)
     public void setConfigurationsForProductLists_ListWithoutOptions_Var1() {
         //Настраиваем макет для тест-кейса
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Lightv2.click();
+        layoutPage.setLayoutAsDefault();
 
         //Работаем с настройками характеристики Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
-        featuresPage.clickFeatureBrand();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
         WebElement checkboxShowInProductList = featuresPage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
         if (checkboxProductCode.isSelected())
@@ -60,13 +61,13 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("name");
         themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("N");
         themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("points");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_ListWithoutOptions_Var1")
     public void checkProductLists_ListWithoutOptions_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

@@ -40,15 +40,15 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_ColorSchemeSettings_Product_Var1() {
         //Настраиваем CS-Cart настройки
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
-        if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
-            csCartSettings.setting_ThumbnailsGallery.click();
-            csCartSettings.clickSaveButtonOfSettings();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToAppearanceSettings();
+        if(basicPage.setting_ThumbnailsGallery.isSelected()){
+            basicPage.setting_ThumbnailsGallery.click();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Настраиваем UniTheme настройки, вкладка "Товар"
-        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
+        ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
@@ -65,18 +65,18 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
         themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки, вкладка "Списки товаров"
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
         themeSettingsProductLists.clickTabProductLists();
         if(!themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.isSelected()){
             themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Настраиваем UniTheme цветосхему, вкладка "Товар"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
@@ -87,10 +87,10 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         if(!colorSchemeSettings.setting_ProductBorderForProductImages.isSelected()){
             colorSchemeSettings.setting_ProductBorderForProductImages.click();
         }
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
         productSettings.chooseAnyProduct();
         if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
@@ -112,13 +112,13 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
             productSettings.clickAndType_field_Quantity("3");
             productSettings.clickAndType_field_Value("70200");
         }
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_ColorSchemeSettings_Product_Var1")
     public void checkColorSchemeSettings_Product_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        BasicPage basicPage = new BasicPage();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
         productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();
@@ -179,7 +179,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         //Другие шаблоны страницы товара
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("bigpicture_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("1210 ColorSchemeSettings_Product_Var1 - Big picture");
@@ -187,7 +187,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         takeScreenShot_withScroll("1215 ColorSchemeSettings_Product_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("1220 ColorSchemeSettings_Product_Var1 - Big picture flat");
@@ -195,7 +195,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         takeScreenShot_withScroll("1225 ColorSchemeSettings_Product_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("1230 ColorSchemeSettings_Product_Var1 - Three columned");
@@ -203,7 +203,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         takeScreenShot_withScroll("1235 ColorSchemeSettings_Product_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         takeScreenShot_withScroll("1240 ColorSchemeSettings_Product_Var1 - Gallery template");

@@ -1,11 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ProductSettings;
-import taras.adminPanel.ThemeSettings_Product;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.ProductPage;
@@ -41,22 +40,16 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Cascade_Var3(){
         //Настраиваем CS-Cart настройки
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAppearanceSettings();
-        if(csCartSettings.setting_ThumbnailsGallery.isSelected()){
-            csCartSettings.setting_ThumbnailsGallery.click();
-        }
-        if(csCartSettings.setting_NumberOfAvailableProducts.isSelected()){
-            csCartSettings.setting_NumberOfAvailableProducts.click();
-        }
-        csCartSettings.selectSetting_ProductPageView("abt__ut2_cascade_gallery_template");
-        if(csCartSettings.setting_ProductDetailsInTab.isSelected()){
-            csCartSettings.setting_ProductDetailsInTab.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
+        BasicPage basicPage = new BasicPage();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, false);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, false);
+        new Select(csCartSettings.setting_ProductPageView).selectByValue("abt__ut2_cascade_gallery_template");
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, false);
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
-        ThemeSettings_Product themeSettingsProduct = csCartSettings.navigateTo_ThemeSettings_tabProduct();
+        ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
@@ -75,10 +68,10 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("none");
         themeSettingsProduct.selectSetting_CombinationsOfProductGalleryImageFormations("3");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         productSettings.clickAndTypeField_Price("10000");
@@ -97,13 +90,13 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
             productSettings.clickAndType_field_Quantity("3");
             productSettings.clickAndType_field_Value("22000");
         }
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Cascade_Var3")
     public void checkSettingsOnProductPage_Cascade_Var3() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        BasicPage basicPage = new BasicPage();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
         ProductPage productPage = productSettings.navigateToProductPage();

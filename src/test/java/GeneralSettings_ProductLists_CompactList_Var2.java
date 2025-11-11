@@ -1,7 +1,7 @@
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -24,8 +24,8 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_CompactList_Var2() {
         //Работаем с настройками темы
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        BasicPage basicPage = new BasicPage();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (!checkboxProductRating.isSelected()) {
@@ -48,13 +48,13 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
             checkboxQuantityModifier.click();
         }
         themeSettingsProductLists.selectCompactList_buttonAddToCart("none");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var2")
     public void checkProductLists_CompactList_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
         stHomePage.navigateToHorizontalMenu_GameConsoles();

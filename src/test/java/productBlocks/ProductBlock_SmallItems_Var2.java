@@ -3,6 +3,7 @@ package productBlocks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
@@ -48,28 +49,28 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
 
     @Test(priority = 1)
     public void setConfigurationsFor_ProductBlock_SmallItems_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        csCartSettings.navigateToBlockSettings("Распродажа");
-        csCartSettings.selectSetting_BlockTemplate("blocks/products/products_small_items.tpl");
+        basicPage.navigateToBlockSettings("Распродажа");
+        basicPage.selectSetting_BlockTemplate("blocks/products/products_small_items.tpl");
         makePause();
-        csCartSettings.button_SettingsOfTemplate.click();
-        if (csCartSettings.checkbox_ShowItemNumber.isSelected())
-            csCartSettings.checkbox_ShowItemNumber.click();
-        csCartSettings.tabOfBlock_Content.click();
-        csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("15");
-        csCartSettings.tabOfBlock_BlockSettings.click();
-        if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
-            csCartSettings.checkbox_HideAddToCartButton.click();
-        csCartSettings.button_saveBlock.click();
+        basicPage.button_SettingsOfTemplate.click();
+        if (basicPage.checkbox_ShowItemNumber.isSelected())
+            basicPage.checkbox_ShowItemNumber.click();
+        basicPage.tabOfBlock_Content.click();
+        basicPage.selectSetting_Filling("on_sale");
+        basicPage.clickAndType_Field_Limit("15");
+        basicPage.tabOfBlock_BlockSettings.click();
+        if (basicPage.checkbox_HideAddToCartButton.isSelected())
+            basicPage.checkbox_HideAddToCartButton.click();
+        basicPage.button_saveBlock.click();
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
 
         if (themeSettingsProductLists.settingPriceAtTheTop.isSelected())
@@ -91,40 +92,40 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
         if (themeSettingsProductLists.smallItems_QuantityChanger.isSelected())
             themeSettingsProductLists.smallItems_QuantityChanger.click();
         themeSettingsProductLists.selectSmallItems_AddToCartButton("icon_button");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
+        new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
         if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
         }
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.setTaxesForAllProducts();
+        basicPage.setTaxesForAllProducts();
 
         //Задаём товару "Wildwood city classic" длинное название
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
         productSettings.chooseAnyProduct();
-        csCartSettings.closeNotificationIfPresent();
+        UtilsAdm.closeAllNotifications();
         productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ProductBlock_SmallItems_Var2")
     public void checkProductBlock_SmallItems_Var2(){
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

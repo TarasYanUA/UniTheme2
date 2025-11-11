@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -27,10 +27,10 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu03_Horizontal_RowFilling_4columns() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Lightv2.click();
+        basicPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -55,8 +55,8 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu03_Horizontal_RowFilling_4columns")
     public void check_Menu03_Horizontal_RowFilling_4columns() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.navigateToHorizontalMenu_AllProducts();
         takeScreenShot("Menu3.00 Menu03_Horizontal_RowFilling_4columns - Menu AllProducts");

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -27,8 +27,8 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu41_3LevelMenu_Horizontal_ColumnFilling(){
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateTo_WebsiteMenuPage();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateTo_WebsiteMenuPage();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
@@ -44,9 +44,9 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
         mainMenuSettings.button_Save3LevelMenu.click();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Lightv2.click();
+        basicPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
@@ -67,8 +67,8 @@ public class Menu41_3LevelMenu_Horizontal_ColumnFilling extends TestRunner {
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu41_3LevelMenu_Horizontal_ColumnFilling")
     public void check_Menu41_3LevelMenu_Horizontal_ColumnFilling(){
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.navigateToHorizontalMenu_AllProducts();
         takeScreenShot("Menu41.00 Menu41_3LevelMenu_Horizontal_ColumnFilling - Menu AllProducts");

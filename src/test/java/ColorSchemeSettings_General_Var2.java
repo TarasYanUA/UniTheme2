@@ -1,6 +1,6 @@
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import taras.adminPanel.ColorSchemeSettings;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.*;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -25,45 +25,43 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_ColorSchemeSettings_General_Var2() {
         //Настраиваем макет для тест-кейса
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Lightv2.click();
+        layoutPage.setLayoutAsDefault();
 
         //Настраиваем CS-Cart настройки
-        csCartSettings.navigateToAppearanceSettings();
-        if (!csCartSettings.setting_ThumbnailsGallery.isSelected())
-            csCartSettings.setting_ThumbnailsGallery.click();
-        if (!csCartSettings.setting_QuickView.isSelected())
-            csCartSettings.setting_QuickView.click();
-        csCartSettings.clickSaveButtonOfSettings();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, true);
+        UtilsAdm.setCheckboxState(csCartSettings.setting_QuickView, true);
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Общее"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
-        colorSchemeSettings.selectSetting_General_RoundCornersForElements("do_not_use");
+        new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("do_not_use");
         if (colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected())
             colorSchemeSettings.setting_General_RoundCornersOfBlocks.click();
         if (colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.isSelected())
             colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.click();
-        colorSchemeSettings.selectSetting_General_ButtonsStyle("use_border");
+        new Select(colorSchemeSettings.setting_General_ButtonsStyle).selectByValue("use_border");
         if (colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.isSelected())
             colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.click();
         if (!colorSchemeSettings.setting_General_AddShadow.isSelected())
             colorSchemeSettings.setting_General_AddShadow.click();
         if (!colorSchemeSettings.setting_General_AddBulk.isSelected())
             colorSchemeSettings.setting_General_AddBulk.click();
-        colorSchemeSettings.selectSetting_General_CartIcon("type7");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_General_CartIcon).selectByValue("type7");
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ColorSchemeSettings_General_Var2",
             description = "Здесь проверок нет, так как настройки цветосхемы отсутствуют в коде")
     public void checkColorSchemeSettings_General_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

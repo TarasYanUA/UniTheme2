@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
@@ -60,39 +61,39 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         makePause();
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        csCartSettings.navigateToBlockSettings("Распродажа");
-        csCartSettings.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
+        basicPage.navigateToBlockSettings("Распродажа");
+        basicPage.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
         makePause();
-        csCartSettings.button_SettingsOfTemplate.click();
-        if (csCartSettings.checkbox_ShowItemNumber.isSelected())
-            csCartSettings.checkbox_ShowItemNumber.click();
-        csCartSettings.clickAndType_Field_NumberOfColumnsInList("4");
-        csCartSettings.selectSetting_LoadingType("onclick");
-        csCartSettings.tabOfBlock_Content.click();
-        csCartSettings.selectSetting_Filling("on_sale");
-        csCartSettings.clickAndType_Field_Limit("15");
-        csCartSettings.tabOfBlock_BlockSettings.click();
-        if (csCartSettings.checkbox_HideAddToCartButton.isSelected())
-            csCartSettings.checkbox_HideAddToCartButton.click();
-        csCartSettings.button_saveBlock.click();
+        basicPage.button_SettingsOfTemplate.click();
+        if (basicPage.checkbox_ShowItemNumber.isSelected())
+            basicPage.checkbox_ShowItemNumber.click();
+        basicPage.clickAndType_Field_NumberOfColumnsInList("4");
+        basicPage.selectSetting_LoadingType("onclick");
+        basicPage.tabOfBlock_Content.click();
+        basicPage.selectSetting_Filling("on_sale");
+        basicPage.clickAndType_Field_Limit("15");
+        basicPage.tabOfBlock_BlockSettings.click();
+        if (basicPage.checkbox_HideAddToCartButton.isSelected())
+            basicPage.checkbox_HideAddToCartButton.click();
+        basicPage.button_saveBlock.click();
 
         //Работаем с настройками характеристики Бренд
-        CsCart_Features featuresPage = csCartSettings.navigateToSection_Features();
-        featuresPage.clickFeatureBrand();
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
         WebElement checkboxShowInProductList = featuresPage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-            csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
         }
 
         //Работаем с настройками темы п.2.1
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.selectSettingPriceDisplayFormat("mix");
         WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
         if (checkboxPriceAtTheTop.isSelected())
@@ -133,34 +134,35 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("points");
         themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.fieldOfActiveColorScheme.click();
         colorSchemeSettings.activeColorScheme.click();
         makePause();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
+        new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
         if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
             colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("use");
+        new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("use");
         if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
             colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("bold");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.setTaxesForAllProducts();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var2")
     public void checkProductBlock_GridMore_Var2() {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import taras.adminPanel.CsCartSettings;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
@@ -27,8 +27,8 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
     @Test(priority = 1)
     public void setConfigurations_Menu44_3LevelMenu_Vertical_RowFilling_CompactView(){
         //Настраиваем 3-х уровневое меню на странице "Дизайн -- Меню"
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateTo_WebsiteMenuPage();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateTo_WebsiteMenuPage();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
@@ -44,9 +44,9 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
         mainMenuSettings.button_Save3LevelMenu.click();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Light.click();
-        csCartSettings.setLayoutAsDefault();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Light.click();
+        basicPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
@@ -67,8 +67,8 @@ public class Menu44_3LevelMenu_Vertical_RowFilling_CompactView extends TestRunne
 
     @Test(priority = 2, dependsOnMethods = "setConfigurations_Menu44_3LevelMenu_Vertical_RowFilling_CompactView")
     public void check_Menu44_3LevelMenu_Vertical_RowFilling_CompactView(){
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.navigateToVerticalMenu_AllProducts();

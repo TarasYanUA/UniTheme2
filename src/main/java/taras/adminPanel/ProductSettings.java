@@ -31,15 +31,10 @@ public class ProductSettings extends AbstractPage {
 
 
     public void clickAndType_SearchFieldOfProduct(String value) {
-        CsCartSettings.closeAllNotifications();
-        searchFieldOfProduct.click();
-        searchFieldOfProduct.sendKeys(value);
+        UtilsAdm.closeAllNotifications();
+        UtilsAdm.clickAndType(searchFieldOfProduct, value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        UtilsAdm.makePause(4000);
     }
 
     public void chooseAnyProduct() {
@@ -223,7 +218,7 @@ public class ProductSettings extends AbstractPage {
     public void selectAllVariations() {
         tab_Variations.click();
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_variations_pagination .no-items")).isEmpty()) {
-            CsCartSettings.closeAllNotifications();
+            UtilsAdm.closeAllNotifications();
             new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOf(button_AddVariations))
                     .click();

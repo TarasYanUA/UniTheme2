@@ -4,8 +4,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
+import taras.adminPanel.BasicPage;
 import taras.adminPanel.CsCartSettings;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -33,21 +35,18 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductLists_CompactList_Var1() {
         //Настраиваем макет для тест-кейса
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToSection_WebsiteLayouts();
-        csCartSettings.layout_Lightv2.click();
-        csCartSettings.setLayoutAsDefault();
+        BasicPage basicPage = new BasicPage();
+        basicPage.navigateToSection_WebsiteLayouts();
+        basicPage.layout_Lightv2.click();
+        basicPage.setLayoutAsDefault();
 
         //Работаем с настройками CS-Cart
-        csCartSettings.navigateToAppearanceSettings();
-        WebElement checkboxSettingQuickView = csCartSettings.setting_QuickView;
-        if (!checkboxSettingQuickView.isSelected()) {
-            checkboxSettingQuickView.click();
-        }
-        csCartSettings.clickSaveButtonOfSettings();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        UtilsAdm.setCheckboxState(csCartSettings.setting_QuickView, true);
+        basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками темы
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.clickTabProductLists();
         WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected()) {
@@ -70,13 +69,13 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
             checkboxQuantityModifier.click();
         }
         themeSettingsProductLists.selectCompactList_buttonAddToCart("icon");
-        csCartSettings.clickSaveButtonOfSettings();
+        basicPage.clickSaveButtonOfSettings();
     }
 
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_CompactList_Var1")
     public void checkProductLists_CompactList_Var1() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        StHomePage stHomePage = csCartSettings.navigateToStorefront();
+        BasicPage basicPage = new BasicPage();
+        StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.cookie.click();
         stHomePage.navigateToHorizontalMenu_GameConsoles();

@@ -1,10 +1,7 @@
 package taras.adminPanel;
 
-import org.apache.commons.io.FileUtils;
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -12,14 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import static taras.constants.DriverProvider.getDriver;
 
 public class CsCart_Features extends AbstractPage {
     public CsCart_Features() {
@@ -85,12 +78,9 @@ public class CsCart_Features extends AbstractPage {
     public void clickAndTypeField_DescriptionOfFeature(String value) {
         field_FeatureDescription_HardDrive.click();
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_FeatureDescription_HardDrive));
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(field_FeatureDescription_HardDrive), 0, 50).perform();
+        UtilsAdm.scrollToElementAndBelow(field_FeatureDescription_HardDrive, 50);
         button_Html_HardDrive.click();
-        field_HtmlDescriptionOfFeature.click();
-        field_HtmlDescriptionOfFeature.clear();
-        field_HtmlDescriptionOfFeature.sendKeys(value);
+        UtilsAdm.clickAndType(field_HtmlDescriptionOfFeature, value);
     }
 
     public void clickFeatureBrand() {
@@ -99,13 +89,11 @@ public class CsCart_Features extends AbstractPage {
 
     public void setFeatureColorForVariations() {
         featureColor.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         setting_VariationsAsOneProduct.click();
         new Select(setting_FeatureStyle).selectByValue("dropdown_images");
         new Select(setting_FilterType).selectByValue("color");
-        if (!showInProductList_Color.isSelected())
-            showInProductList_Color.click();
+        UtilsAdm.setCheckboxState(showInProductList_Color, true);
         tab_Variants.click();
 
         setColorIfDefault("Green", "#00ff00");
@@ -164,9 +152,7 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "/../..//input[contains(@name, '[variant]')]"));
-        fieldName.click();
-        fieldName.clear();
-        fieldName.sendKeys(color);
+        UtilsAdm.clickAndType(fieldName, color);
 
         DriverProvider.getDriver().findElement(By
                 .xpath("//tr[@id='extra_feature_549_" + findLastColorPickerNumber() + "']/..//a[@name='add']")).click();
@@ -187,20 +173,9 @@ public class CsCart_Features extends AbstractPage {
         return lastId.replaceAll(".*feature_value_color_picker_", ""); // извлекаем все числа после 'feature_value_color_picker_'
     }
 
-
-    public void takeScreenShot(String screenshotName) {
-        File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     void setMulticolor(String color, String dataColorOne, String dataColorTwo) {
         featureColor.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         tab_Variants.click();
         button_AddVariantList.click();
 
@@ -222,17 +197,14 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//input[contains(@name, '[variant]')]"));
-        fieldName.click();
-        fieldName.clear();
-        fieldName.sendKeys(color);
+        UtilsAdm.clickAndType(fieldName, color);
 
         saveColorFeatureSettings.click();
     }
 
     void setThumbnail(String name, String imageUrl) {
         featureColor.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         tab_Variants.click();
         button_AddVariantList.click();
 
@@ -240,9 +212,7 @@ public class CsCart_Features extends AbstractPage {
 
         WebElement fieldName = DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//input[contains(@name, '[variant]')]"));
-        fieldName.click();
-        fieldName.clear();
-        fieldName.sendKeys(name);
+        UtilsAdm.clickAndType(fieldName, name);
 
         new Select(DriverProvider.getDriver().findElement(By
                 .xpath(lastPicker + "//select[contains(@name, '[abt__ut2_color_style]')]")))

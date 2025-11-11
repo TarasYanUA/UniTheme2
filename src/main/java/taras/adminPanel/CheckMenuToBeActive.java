@@ -3,6 +3,7 @@ package taras.adminPanel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import taras.constants.DriverProvider;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -17,12 +18,9 @@ public interface CheckMenuToBeActive {
         try {
             if (elements.isEmpty())
                 menu.click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            UtilsAdm.makePause(1000);
         } catch (NoSuchElementException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -41,11 +39,7 @@ public interface CheckMenuToBeActive {
         if (!firstElement.isEmpty() || !secondElement.isEmpty()) {
             // Если хотя бы один элемент присутствует, выполняем действие
             DriverProvider.getDriver().findElement(By.xpath("//span[text()='_ab__addons']")).click();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            UtilsAdm.makePause(1000);
         }
     }
 }

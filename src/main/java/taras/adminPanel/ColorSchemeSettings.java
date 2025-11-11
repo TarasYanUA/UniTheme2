@@ -6,7 +6,9 @@ import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 
 public class ColorSchemeSettings extends AbstractPage {
-    public ColorSchemeSettings(){super();}
+    public ColorSchemeSettings() {
+        super();
+    }
 
     @FindBy(css = "a[id^='sw_select_'][id$='_wrap_currency']")
     public WebElement fieldOfActiveColorScheme;
@@ -41,13 +43,15 @@ public class ColorSchemeSettings extends AbstractPage {
     private WebElement setting_General_CartIcon;
 
 
-    public void selectSetting_General_RoundCornersForElements (String value){
+    public void selectSetting_General_RoundCornersForElements(String value) {
         new Select(setting_General_RoundCornersForElements).selectByValue(value);
     }
-    public void selectSetting_General_ButtonsStyle (String value){
+
+    public void selectSetting_General_ButtonsStyle(String value) {
         new Select(setting_General_ButtonsStyle).selectByValue(value);
     }
-    public void selectSetting_General_CartIcon (String value){
+
+    public void selectSetting_General_CartIcon(String value) {
         new Select(setting_General_CartIcon).selectByValue(value);
     }
 
@@ -72,13 +76,17 @@ public class ColorSchemeSettings extends AbstractPage {
     private WebElement setting_ProductLists_FontWeightForProductName;
 
 
-    public void selectSetting_FrameType(String value){
+    public void selectSetting_FrameType(String value) {
         new Select(setting_FrameType).selectByValue(value);
     }
 
-    public void selectSetting_ProductLists_ElementsAlignment(String value){new Select(setting_ProductLists_ElementsAlignment).selectByValue(value);}
+    public void selectSetting_ProductLists_ElementsAlignment(String value) {
+        new Select(setting_ProductLists_ElementsAlignment).selectByValue(value);
+    }
 
-    public void selectSetting_ProductLists_FontWeightForProductName(String value){new Select(setting_ProductLists_FontWeightForProductName).selectByValue(value);}
+    public void selectSetting_ProductLists_FontWeightForProductName(String value) {
+        new Select(setting_ProductLists_FontWeightForProductName).selectByValue(value);
+    }
 
 
     //Вкладка "Товар"

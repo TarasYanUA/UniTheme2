@@ -156,7 +156,8 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
         productSettings.chooseAnyProduct();
         UtilsAdm.closeAllNotifications();
-        productSettings.clickAndTypeField_ProductName("Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
+        UtilsAdm.clickAndType(productSettings.field_ProductName,
+                "Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
         basicPage.clickSaveButtonOfSettings();
     }
 

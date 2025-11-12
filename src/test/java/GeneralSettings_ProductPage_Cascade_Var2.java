@@ -81,10 +81,10 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("0");
-        productSettings.clickAndTypeField_InStock("0");
-        productSettings.selectSetting_ZeroPriceAction("A");
-        productSettings.selectSetting_OutOfStockActions("B");
+        UtilsAdm.clickAndType(productSettings.field_Price,"0");
+        UtilsAdm.clickAndType(productSettings.field_InStock,"0");
+        new Select(productSettings.setting_ZeroPriceAction).selectByValue("A");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("B");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         basicPage.clickSaveButtonOfSettings();

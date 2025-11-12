@@ -96,8 +96,8 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
         }
-        productSettings.clickAndTypeField_Price("33000.00");
-        productSettings.clickAndTypeField_InStock("20");
+        UtilsAdm.clickAndType(productSettings.field_Price,"33000.00");
+        UtilsAdm.clickAndType(productSettings.field_InStock,"20");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
@@ -108,9 +108,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
             productSettings.setting_AllowPaymentByPoints.click();
         }
         productSettings.tab_QuantityDiscounts.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2){
-            productSettings.clickAndType_field_Quantity("3");
-            productSettings.clickAndType_field_Value("70200");
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
+            UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
+            UtilsAdm.clickAndType(productSettings.field_Value, "70200");
         }
         basicPage.clickSaveButtonOfSettings();
     }

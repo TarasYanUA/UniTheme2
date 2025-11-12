@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -86,10 +87,10 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("0");
-        productSettings.clickAndTypeField_InStock("0");
-        productSettings.selectSetting_ZeroPriceAction("A");
-        productSettings.selectSetting_OutOfStockActions("B");
+        UtilsAdm.clickAndType(productSettings.field_Price,"0");
+        UtilsAdm.clickAndType(productSettings.field_InStock,"0");
+        new Select(productSettings.setting_ZeroPriceAction).selectByValue("A");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("B");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");

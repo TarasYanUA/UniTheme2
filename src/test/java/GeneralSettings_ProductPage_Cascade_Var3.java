@@ -38,7 +38,7 @@ import testRunner.TestRunner;
 
 public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
     @Test(priority = 1)
-    public void setConfigurationsForProductPage_Cascade_Var3(){
+    public void setConfigurationsForProductPage_Cascade_Var3() {
         //Настраиваем CS-Cart настройки
         BasicPage basicPage = new BasicPage();
         CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
@@ -51,19 +51,19 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
-        if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
+        if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected()) {
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
-        if(!themeSettingsProduct.setting_ShowProductCode.isSelected()){
+        if (!themeSettingsProduct.setting_ShowProductCode.isSelected()) {
             themeSettingsProduct.setting_ShowProductCode.click();
         }
-        if(themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
+        if (themeSettingsProduct.setting_ShowProductFeatures.isSelected()) {
             themeSettingsProduct.setting_ShowProductFeatures.click();
         }
-        if(!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
+        if (!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()) {
             themeSettingsProduct.setting_FeaturesInTwoColumns.click();
         }
-        if(themeSettingsProduct.setting_ShowShortDescription.isSelected()){
+        if (themeSettingsProduct.setting_ShowShortDescription.isSelected()) {
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
         themeSettingsProduct.selectSetting_ShowProductBrand("none");
@@ -74,21 +74,21 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("10000");
-        productSettings.clickAndTypeField_InStock("0");
-        productSettings.selectSetting_OutOfStockActions("S");
+        UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
+        UtilsAdm.clickAndType(productSettings.field_InStock, "0");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
         productSettings.hoverAndTypeField_ShortDescription("");
         productSettings.hoverAndTypeField_PromoText("");
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
         productSettings.tab_RewardPoints.click();
-        if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
+        if (!productSettings.setting_AllowPaymentByPoints.isSelected()) {
             productSettings.setting_AllowPaymentByPoints.click();
         }
         productSettings.tab_QuantityDiscounts.click();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2){
-            productSettings.clickAndType_field_Quantity("3");
-            productSettings.clickAndType_field_Value("22000");
+        if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
+            UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
+            UtilsAdm.clickAndType(productSettings.field_Value, "22000");
         }
         basicPage.clickSaveButtonOfSettings();
     }
@@ -120,7 +120,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
 
         //Проверяем, что название и логотип "Бренд" отсутствует
         softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
-                && !assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
+                        && !assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
                 "There is a Brand name or Brand logo but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара

@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -94,11 +95,11 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("10000.00");
-        productSettings.clickAndTypeField_InStock("20");
-        productSettings.selectSetting_ZeroPriceAction("R");
+        UtilsAdm.clickAndType(productSettings.field_Price,"10000.00");
+        UtilsAdm.clickAndType(productSettings.field_InStock,"20");
+        new Select(productSettings.setting_ZeroPriceAction).selectByValue("R");
         productSettings.setPricePerUnit("игровые приставки", "3", "3");
-        productSettings.selectSetting_OutOfStockActions("N");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("N");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
@@ -117,7 +118,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_ListPrice("15000");
+        UtilsAdm.clickAndType(productSettings.field_ListPrice,"15000");
         basicPage.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);

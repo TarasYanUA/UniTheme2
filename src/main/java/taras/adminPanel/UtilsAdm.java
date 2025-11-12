@@ -1,6 +1,7 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
@@ -62,5 +63,10 @@ public class UtilsAdm extends AbstractPage {
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(webElement).perform();
         webElement.click();
+    }
+
+    public static void scrollIntoCenter(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", element);
     }
 }

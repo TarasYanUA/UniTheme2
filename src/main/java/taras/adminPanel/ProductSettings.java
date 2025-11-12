@@ -52,19 +52,19 @@ public class ProductSettings extends AbstractPage {
 
     //Вкладка товара "Общее"
     @FindBy(id = "product_description_product")
-    WebElement field_ProductName;
+    public WebElement field_ProductName;
 
     @FindBy(id = "elm_price_price")
-    WebElement field_Price;
+    public WebElement field_Price;
 
     @FindBy(id = "elm_list_price")
-    WebElement field_ListPrice;
+    public WebElement field_ListPrice;
 
     @FindBy(id = "elm_in_stock")
-    WebElement field_InStock;
+    public WebElement field_InStock;
 
     @FindBy(id = "elm_zero_price_action")
-    WebElement setting_ZeroPriceAction;
+    public WebElement setting_ZeroPriceAction;
 
     @FindBy(id = "elm_product_unit_name")
     WebElement field_UnitName;
@@ -76,7 +76,7 @@ public class ProductSettings extends AbstractPage {
     WebElement field_PricePerUnit;
 
     @FindBy(id = "elm_out_of_stock_actions")
-    WebElement setting_OutOfStockActions;
+    public WebElement setting_OutOfStockActions;
 
     @FindBy(id = "elm_details_layout")
     WebElement setting_ProductTemplate;
@@ -103,75 +103,29 @@ public class ProductSettings extends AbstractPage {
     WebElement promoTextArea;
 
 
-    public void clickAndTypeField_ProductName(String value) {
-        field_ProductName.click();
-        field_ProductName.clear();
-        field_ProductName.sendKeys(value);
-    }
-
-    public void clickAndTypeField_Price(String value) {
-        field_Price.click();
-        field_Price.clear();
-        field_Price.sendKeys(value);
-    }
-
-    public void clickAndTypeField_ListPrice(String value) {
-        field_ListPrice.click();
-        field_ListPrice.clear();
-        field_ListPrice.sendKeys(value);
-    }
-
-    public void clickAndTypeField_InStock(String value) {
-        field_InStock.click();
-        field_InStock.clear();
-        field_InStock.sendKeys(value);
-    }
-
     public void setPricePerUnit(String value1, String value2, String value3) {
-        field_UnitName.click();
-        field_UnitName.clear();
-        field_UnitName.sendKeys(value1);
-        field_UnitsInProduct.click();
-        field_UnitsInProduct.clear();
-        field_UnitsInProduct.sendKeys(value2);
-        field_PricePerUnit.click();
-        field_PricePerUnit.clear();
-        field_PricePerUnit.sendKeys(value3);
-    }
-
-    public void selectSetting_ZeroPriceAction(String value) {
-        new Select(setting_ZeroPriceAction).selectByValue(value);
-    }
-
-    public void selectSetting_OutOfStockActions(String value) {
-        new Select(setting_OutOfStockActions).selectByValue(value);
+        UtilsAdm.clickAndType(field_UnitName, value1);
+        UtilsAdm.clickAndType(field_UnitsInProduct, value2);
+        UtilsAdm.clickAndType(field_PricePerUnit, value3);
     }
 
     public void selectSetting_ProductTemplate(String value) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
-        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", setting_ProductTemplate);
+        UtilsAdm.scrollIntoCenter(setting_ProductTemplate);
         new Select(setting_ProductTemplate).selectByValue(value);
-
     }
 
     public void hoverAndTypeField_ShortDescription(String value) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
-        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_ShortDescription);
+        UtilsAdm.scrollIntoCenter(fieldName_ShortDescription);
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_ShortDescription));
         buttonHtml_ShortDescription.click();
-        fieldHtml_ShortDescription.click();
-        fieldHtml_ShortDescription.clear();
-        fieldHtml_ShortDescription.sendKeys(value);
+        UtilsAdm.clickAndType(fieldHtml_ShortDescription, value);
     }
 
     public void hoverAndTypeField_PromoText(String value) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
-        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", fieldName_PromoText);
+        UtilsAdm.scrollIntoCenter(fieldName_PromoText);
         new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(field_PromoText));
         field_PromoText.click();
-        promoTextArea.click();
-        promoTextArea.clear();
-        promoTextArea.sendKeys(value);
+        UtilsAdm.clickAndType(promoTextArea, value);
     }
 
 
@@ -188,23 +142,10 @@ public class ProductSettings extends AbstractPage {
 
     //Вкладка товара "Оптовые скидки"
     @FindBy(css = "#box_add_qty_discount .cm-value-decimal")
-    WebElement field_Quantity;
+    public WebElement field_Quantity;
 
     @FindBy(css = "#box_add_qty_discount .cm-numeric")
-    WebElement field_Value;
-
-
-    public void clickAndType_field_Quantity(String value) {
-        field_Quantity.click();
-        field_Quantity.clear();
-        field_Quantity.sendKeys(value);
-    }
-
-    public void clickAndType_field_Value(String value) {
-        field_Value.click();
-        field_Value.clear();
-        field_Value.sendKeys(value);
-    }
+    public WebElement field_Value;
 
 
     //Вкладка товара "Вариации"
@@ -222,8 +163,7 @@ public class ProductSettings extends AbstractPage {
             new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOf(button_AddVariations))
                     .click();
-            new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-title")));
+            UtilsAdm.waitForPopUpWindow();
             WebElement field_findFeaturesForVariations = DriverProvider.getDriver().findElement(By
                     .cssSelector("#generate_variations_container .select2-selection--multiple"));
             JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();

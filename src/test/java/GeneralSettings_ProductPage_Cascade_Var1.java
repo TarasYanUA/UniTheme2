@@ -90,11 +90,11 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("10000.00");
-        productSettings.clickAndTypeField_InStock("20");
-        productSettings.selectSetting_ZeroPriceAction("R");
+        UtilsAdm.clickAndType(productSettings.field_Price,"10000.00");
+        UtilsAdm.clickAndType(productSettings.field_InStock,"20");
+        new Select(productSettings.setting_ZeroPriceAction).selectByValue("R");
         productSettings.setPricePerUnit("шт", "3", "1");
-        productSettings.selectSetting_OutOfStockActions("N");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("N");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
         Actions actions = new Actions(DriverProvider.getDriver());

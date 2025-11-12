@@ -142,7 +142,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Apple - iPhone 5c 32GB Cell Phone");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_ProductName("Apple - iPhone 5c 32GB Cell Phone");
+        UtilsAdm.clickAndType(productSettings.field_ProductName, "Apple - iPhone 5c 32GB Cell Phone");
         productSettings.selectAllVariations();
         basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Droid 3");

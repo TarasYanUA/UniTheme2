@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -77,9 +78,9 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_Price("10000");
-        productSettings.clickAndTypeField_InStock("0");
-        productSettings.selectSetting_OutOfStockActions("S");
+        UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
+        UtilsAdm.clickAndType(productSettings.field_InStock, "0");
+        new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("");
         productSettings.hoverAndTypeField_PromoText("");
@@ -90,8 +91,8 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
             productSettings.setting_AllowPaymentByPoints.click();
         productSettings.tab_QuantityDiscounts.click();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
-            productSettings.clickAndType_field_Quantity("3");
-            productSettings.clickAndType_field_Value("22000");
+            UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
+            UtilsAdm.clickAndType(productSettings.field_Value, "22000");
         }
         basicPage.clickSaveButtonOfSettings();
     }
@@ -103,7 +104,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        productSettings.clickAndTypeField_ListPrice("15000");
+        UtilsAdm.clickAndType(productSettings.field_ListPrice, "15000");
         basicPage.clickSaveButtonOfSettings();
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);

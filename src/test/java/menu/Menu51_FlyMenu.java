@@ -6,7 +6,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
+import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -26,16 +28,16 @@ public class Menu51_FlyMenu extends TestRunner{
     public void setConfiguration_Menu51_FlyMenu_Var2() {
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
         BasicPage basicPage = new BasicPage();
-        basicPage.navigateToSection_WebsiteLayouts();
-        basicPage.layout_Default.click();
-        basicPage.setLayoutAsDefault();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Default.click();
+        layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         mainMenuSettings.menuSettings_buttonSettings.click();
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("3");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("4");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();

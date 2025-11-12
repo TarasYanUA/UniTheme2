@@ -2,11 +2,14 @@ package menu;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
+import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -44,23 +47,22 @@ public class Menu43_3LevelMenu_Vertical_RowFilling_FullView extends TestRunner {
         mainMenuSettings.button_Save3LevelMenu.click();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
-        basicPage.navigateToSection_WebsiteLayouts();
-        basicPage.layout_Light.click();
-        basicPage.setLayoutAsDefault();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Light.click();
+        layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         mainMenuSettings.menuSettings_buttonSettings.click();
-        mainMenuSettings.selectSetting_FillingType("row_filling");
-        mainMenuSettings.selectSetting_MaximumColumns("1");
-
-        mainMenuSettings.clickAndType_setting_SecondLevelElements("5");
-        mainMenuSettings.clickAndType_setting_ThirdLevelElements("5");
+        new Select(mainMenuSettings.setting_FillingType).selectByValue("row_filling");
+        new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("1");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "5");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "5");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        mainMenuSettings.clickAndType_setting_MinimumHeightForMenu("500");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

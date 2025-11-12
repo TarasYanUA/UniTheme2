@@ -66,7 +66,7 @@ public class CsCartSettings extends AbstractPage {
             button_saveTaxes.click();
             UtilsAdm.makePause(1500);
             vat20.click();
-            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5)))
                     .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".btn-group.bulk-edit__wrapper")));
             button_Actions.click();
             button_ApplySelectedTaxesToAllProducts.click();

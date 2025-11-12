@@ -35,8 +35,7 @@ public class CategoryPage extends AbstractPage {
         if (!DriverProvider.getDriver().findElements(By.cssSelector("select[name='categories_data[0][parent_id]']")).isEmpty()) {
             DriverProvider.getDriver().findElement(By.cssSelector("select[name='categories_data[0][parent_id]']")).click();
             DriverProvider.getDriver().findElement(By.cssSelector("option[value=\"166\"]")).click();
-            field_CategoryName.click();
-            field_CategoryName.sendKeys("AutoTestCategory");
+            UtilsAdm.clickAndType(field_CategoryName,"AutoTestCategory");
             for (int i = 1; i < 80; i++) {
                 button_Clone.click();
             }
@@ -49,8 +48,7 @@ public class CategoryPage extends AbstractPage {
             UtilsAdm.makePause(2000);
             if (DriverProvider.getDriver().findElements(By.xpath("//label[text()='AutoTestCategory']")).isEmpty()) {
                 DriverProvider.getDriver().findElement(By.cssSelector("#category_166")).click();
-                field_CategoryName.click();
-                field_CategoryName.sendKeys("AutoTestCategory");
+                UtilsAdm.clickAndType(field_CategoryName,"AutoTestCategory");
                 for (int i = 1; i < 80; i++) {
                     button_Clone.click();
                 }

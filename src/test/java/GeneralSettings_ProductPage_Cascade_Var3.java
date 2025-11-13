@@ -102,7 +102,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
         productPage.checkbox_NotifyMe.click();
@@ -150,7 +150,7 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
                 "Features are located in one column instead of two!");
         takeScreenShot("Cascade3.20 GS_ProductPage_Cascade_Var3 - Product features, two columns");
 
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade3.25 GS_ProductPage_Var3 - Cascade template (RTL)");
         productPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");

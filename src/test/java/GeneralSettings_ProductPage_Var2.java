@@ -106,7 +106,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -165,7 +165,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
                 "There is no Promo-text!");
 
         takeScreenShot_withScroll("1000 GS_ProductPage_Var2 - Default template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1005 GS_ProductPage_Var2 - Default template (RTL)");
 
         //Проверяем, что характеристики расположены в две колонки
@@ -173,7 +173,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".fg-two-col")).isEmpty(),
                 "Features are located in one column instead of two!");
         takeScreenShot("1010 GS_ProductPage_Var2 - Product features, two columns (RTL)");
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("1015 GS_ProductPage_Var2 - Product features, two columns");
         productPage.featureDescription.click();
@@ -188,7 +188,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("1025 GS_ProductPage_Var2 - Big picture");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1030 GS_ProductPage_Var2 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
@@ -196,7 +196,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("1035 GS_ProductPage_Var2 - Big picture flat");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1040 GS_ProductPage_Var2 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
@@ -204,7 +204,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("1045 GS_ProductPage_Var2 - Three columned");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1050 GS_ProductPage_Var2 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
@@ -212,7 +212,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         takeScreenShot_withScroll("1055 GS_ProductPage_Var2 - Gallery template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1060 GS_ProductPage_Var2 - Gallery template (RTL)");
 
         softAssert.assertAll();

@@ -99,7 +99,7 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -149,7 +149,7 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
                 "There is no Promo-text!");
 
         takeScreenShot_withScroll("Cascade2.10 GS_ProductPage_Var2 - Cascade template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade2.15 GS_ProductPage_Var2 - Cascade template (RTL)");
 
         //Проверяем характеристики
@@ -159,7 +159,7 @@ public class GeneralSettings_ProductPage_Cascade_Var2 extends TestRunner {
                 "Features are located in one column instead of two!");
 
         takeScreenShot("Cascade2.20 GS_ProductPage_Var2 - Product features, two columns (RTL)");
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("Cascade2.25 GS_ProductPage_Var2 - Product features, two columns");
 

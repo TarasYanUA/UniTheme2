@@ -109,7 +109,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         UtilsStorefront.closeNotificationIfExists();
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
@@ -156,7 +156,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
                 "Number of displayed images of the product gallery is not 2!");
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1105 GS_ProductPage_Var3 - Default template (RTL)");
 
@@ -166,7 +166,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
                 "Features are located in one column instead of two!");
 
         takeScreenShot("1110 GS_ProductPage_Var3 - Product features, two columns (RTL)");
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         UtilsStorefront.closeNotificationIfExists();
         productPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
@@ -184,7 +184,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
@@ -193,7 +193,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
@@ -202,7 +202,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         UtilsStorefront.closeNotificationIfExists();
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
@@ -212,7 +212,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(5);
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1155 GS_ProductPage_Var3 - Gallery template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         UtilsStorefront.closeNotificationIfExists();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");

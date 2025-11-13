@@ -2,7 +2,7 @@ package taras.storefront;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -10,19 +10,15 @@ import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 
 public class ProductPage extends AbstractPage {
-    public ProductPage(){super();}
+    public ProductPage() {
+        super();
+    }
 
     @FindBy(css = ".cm-btn-success")
     public WebElement cookie;
 
     @FindBy(css = "a[id*='sw_select'][id*='wrap_language']")
     private WebElement gearwheel_Language;
-
-    @FindBy(css = "a[data-ca-name=\"en\"]")
-    private WebElement language_EN;
-
-    @FindBy(css = "a[data-ca-name=\"ar\"]")
-    private WebElement language_RTL;
 
     @FindBy(css = "#features a")
     private WebElement tab_Features;
@@ -37,7 +33,7 @@ public class ProductPage extends AbstractPage {
     public WebElement checkbox_NotifyMe;
 
     @FindBy(css = ".ty-tabs__span")
-    private WebElement blockWithProducts_MostPopular;
+    public WebElement blockWithProducts_MostPopular;
 
     @FindBy(css = "a[id*='opener_ut2_select_options'] .ut2-icon-use_icon_cart")
     public WebElement buttonAddToCart_ProductWithOptions;
@@ -46,53 +42,23 @@ public class ProductPage extends AbstractPage {
     public WebElement closePopUpWindow;
 
 
-    public void hoverToBlockWithProducts(){
-        Actions hoverProduct = new Actions(DriverProvider.getDriver());
-        hoverProduct.moveToElement(blockWithProducts_MostPopular);
-        hoverProduct.perform();
-    }
-
-    public void shiftLanguage_EN(){
+    public void selectLanguage(String ruArEn) {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
-        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
+        UtilsAdm.closeAllNotifications();
         gearwheel_Language.click();
-        language_EN.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void shiftLanguage_RTL(){
-        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,0);");
-        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()){
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
-        gearwheel_Language.click();
-        language_RTL.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        DriverProvider.getDriver().findElement(By.cssSelector("a[data-ca-name='" + ruArEn + "']")).click();
+        UtilsAdm.makePause(2000);
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(gearwheel_Language).perform();
     }
 
-    public void scrollToAndClickTab_Features(){
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(tab_Features), 0, 600);
-        scroll.perform();
+    public void scrollToAndClickTab_Features() {
+        UtilsAdm.scrollToElementAndScrollBelow(tab_Features, 600);
         tab_Features.click();
     }
 
-    public void scrollToAndClickTab_FeaturesForNonTabs(){
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(tab_FeaturesForNonTabs), 0, 50);
-        scroll.perform();
+    public void scrollToAndClickTab_FeaturesForNonTabs() {
+        UtilsAdm.scrollToElementAndScrollBelow(tab_FeaturesForNonTabs, 50);
         tab_FeaturesForNonTabs.click();
     }
 }

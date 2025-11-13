@@ -59,14 +59,14 @@ public class UtilsAdm extends AbstractPage {
         scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(webElement), 0, below).perform();
     }
 
+    public static void scrollIntoCenter(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", element);
+    }
+
     public static void hoverAndNavigateAndClick(WebElement webElement) {
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(webElement).perform();
         webElement.click();
-    }
-
-    public static void scrollIntoCenter(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
-        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", element);
     }
 }

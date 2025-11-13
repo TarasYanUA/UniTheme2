@@ -125,7 +125,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -155,7 +155,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
                 "Number of displayed images of the product gallery is not 2 on the product page!");
 
         takeScreenShot_withScroll("1200 ColorSchemeSettings_Product_Var1 - Default template");
-        productPage.hoverToBlockWithProducts();
+        UtilsAdm.scrollToElementAndScrollBelow(productPage.blockWithProducts_MostPopular, 100);
         makePause();
         productPage.buttonAddToCart_ProductWithOptions.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -167,9 +167,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
 
         takeScreenShot("1202 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
         productPage.closePopUpWindow.click();
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1205 ColorSchemeSettings_Product_Var1 - Default template (RTL)");
-        productPage.hoverToBlockWithProducts();
+        UtilsAdm.scrollToElementAndScrollBelow(productPage.blockWithProducts_MostPopular, 100);
         makePause();
         productPage.buttonAddToCart_ProductWithOptions.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
@@ -184,7 +184,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("1210 ColorSchemeSettings_Product_Var1 - Big picture");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1215 ColorSchemeSettings_Product_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
@@ -192,7 +192,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("1220 ColorSchemeSettings_Product_Var1 - Big picture flat");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1225 ColorSchemeSettings_Product_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
@@ -200,7 +200,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("1230 ColorSchemeSettings_Product_Var1 - Three columned");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1235 ColorSchemeSettings_Product_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
@@ -208,7 +208,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         takeScreenShot_withScroll("1240 ColorSchemeSettings_Product_Var1 - Gallery template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("1245 ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
         softAssert.assertAll();
         System.out.println("ColorSchemeSettings_Product_Var1 passed successfully on the product page!");

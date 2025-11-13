@@ -115,7 +115,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         ProductPage productPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         productPage.cookie.click();
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -156,7 +156,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points on the product page!");
         takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Cascade template");
-        productPage.shiftLanguage_RTL();
+        productPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Cascade template (RTL)");
 
         //Проверяем характеристики
@@ -166,7 +166,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
                 "Features are located in two columns instead of one!");
 
         takeScreenShot("Cascade1.20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
-        productPage.shiftLanguage_EN();
+        productPage.selectLanguage("en");
         productPage.scrollToAndClickTab_Features();
         takeScreenShot("Cascade1.25 GS_ProductPage_Cascade_Var1 - Product features, one column");
 

@@ -1,10 +1,8 @@
 package taras.adminPanel;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
-import taras.constants.DriverProvider;
 
 public class ThemeSettings_ShowMore extends AbstractPage {
     public ThemeSettings_ShowMore() {super();}
@@ -15,12 +13,4 @@ public class ThemeSettings_ShowMore extends AbstractPage {
 
     @FindBy(id = "settings.abt__ut2.load_more.product_list")
     public WebElement setting_AllowForProductLists;
-
-
-    public void navigateTo_ThemeSettings_tabShowMore() {
-        Actions scrollToElement = new Actions(DriverProvider.getDriver());
-        scrollToElement.moveToElement(tab_ShowMore);
-        scrollToElement.perform();
-        tab_ShowMore.click();
-    }
 }

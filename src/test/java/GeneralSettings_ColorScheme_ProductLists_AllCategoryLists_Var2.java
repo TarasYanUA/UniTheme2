@@ -83,39 +83,39 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxOutOfStockProducts = themeSettingsProductLists.settingOutOfStockProducts;
+        themeSettingsProductLists.tabProductLists.click();
+        WebElement checkboxOutOfStockProducts = themeSettingsProductLists.setting_OutOfStockProducts;
         if (checkboxOutOfStockProducts.isSelected())
             checkboxOutOfStockProducts.click();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
+        new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
+        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.setting_PriceAtTheTop;
         if (!checkboxPriceAtTheTop.isSelected())
             checkboxPriceAtTheTop.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
         if (checkboxProductRating.isSelected())
             checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
         if (!checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
-        themeSettingsProductLists.selectSettingDisplayCartStatus("counter");
-        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.settingDisplayStatusesForButtons;
+        new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("counter");
+        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.setting_DisplayStatusesForButtons;
         if (!checkboxSettingDisplayStatusesForButtons.isSelected())
             checkboxSettingDisplayStatusesForButtons.click();
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
+        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.setting_DisplayButtonComparisonList;
         if (!checkboxSettingDisplayButtonComparisonList.isSelected())
             checkboxSettingDisplayButtonComparisonList.click();
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
+        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.setting_DisplayButtonWishList;
         if (!checkboxSettingDisplayButtonWishList.isSelected())
             checkboxSettingDisplayButtonWishList.click();
-        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse;
+        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse;
         if (checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected())
             checkboxSettingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("arrows");
-        themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("arrows");
-        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
-        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
+        new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("arrows");
+        new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("arrows");
+        new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
+        new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("N");
         themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
-        themeSettingsProductLists.selectProductVariations_TypeOfVariationsView("thumbnails");
+        new Select(themeSettingsProductLists.productVariations_TypeOfVariationsView).selectByValue("thumbnails");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

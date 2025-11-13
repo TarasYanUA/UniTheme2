@@ -1,4 +1,5 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
@@ -26,12 +27,12 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         //Работаем с настройками темы
         BasicPage basicPage = new BasicPage();
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        themeSettingsProductLists.tabProductLists.click();
+        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
         if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
-        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
         if (!checkboxCommonValueOfProductRating.isSelected()) {
             checkboxCommonValueOfProductRating.click();
         }
@@ -47,7 +48,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         if (!checkboxQuantityModifier.isSelected()) {
             checkboxQuantityModifier.click();
         }
-        themeSettingsProductLists.selectCompactList_buttonAddToCart("none");
+        new Select(themeSettingsProductLists.compactList_buttonAddToCart).selectByValue("none");
         basicPage.clickSaveButtonOfSettings();
     }
 

@@ -50,7 +50,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
             e.printStackTrace();
         }
         //Добавляем баннер для меню "Компьютеры"
-        mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers,"img[src$='sports-bg-menu.jpg']");
+        mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers,"img[src$='electronics-bg-menu.jpg']");
         mainMenuSettings.selectLanguage("ar");
         mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers_RTL, "img[src$='sports-bg-menu.jpg']");
         mainMenuSettings.selectLanguage("ru");

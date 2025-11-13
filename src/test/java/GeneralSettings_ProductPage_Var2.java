@@ -63,7 +63,7 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
+        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "109");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -79,8 +79,8 @@ public class GeneralSettings_ProductPage_Var2 extends TestRunner {
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
-        themeSettingsProduct.selectSetting_ShowYouSave("full");
-        themeSettingsProduct.selectSetting_ShowProductBrand("name");
+        new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("full");
+        new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("name");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара

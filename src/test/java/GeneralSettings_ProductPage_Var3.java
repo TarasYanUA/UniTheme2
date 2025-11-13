@@ -54,7 +54,7 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
+        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
         if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected())
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         if (!themeSettingsProduct.setting_ShowProductCode.isSelected())
@@ -65,13 +65,13 @@ public class GeneralSettings_ProductPage_Var3 extends TestRunner {
             themeSettingsProduct.setting_FeaturesInTwoColumns.click();
         if (themeSettingsProduct.setting_ShowShortDescription.isSelected())
             themeSettingsProduct.setting_ShowShortDescription.click();
-        themeSettingsProduct.selectSetting_ShowYouSave("none");
-        themeSettingsProduct.selectSetting_ShowProductBrand("none");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
+        new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("none");
+        new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("none");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_DefaultTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_BigPictureTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_BigPictureFlatTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_GalleryTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_ThreeColumnsTemplate).selectByValue("2");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара

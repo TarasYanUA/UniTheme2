@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -60,33 +61,33 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.clickTabProductLists();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        themeSettingsProductLists.tabProductLists.click();
+        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
         if (!checkboxProductRating.isSelected())
             checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
         if (checkboxSettingCommonValueOfProductRating.isSelected())
             checkboxSettingCommonValueOfProductRating.click();
-        themeSettingsProductLists.selectSettingShowYouSave("short");
-        themeSettingsProductLists.clickAndTypeSettingProductIconWidth("200");
-        themeSettingsProductLists.clickAndTypeSettingProductIconHeight("200");
-        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
+        new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
+        UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconWidth, "200");
+        UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconHeight, "200");
+        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.setting_ShowProductCode;
         if (!checkboxSettingShowProductCode.isSelected())
             checkboxSettingShowProductCode.click();
-        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
+        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.setting_DisplayAvailabilityStatus;
         if (!checkboxSettingDisplayAvailabilityStatus.isSelected())
             checkboxSettingDisplayAvailabilityStatus.click();
-        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
+        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.setting_ShowQuantityChanger;
         if (!checkboxSettingShowQuantityChanger.isSelected())
             checkboxSettingShowQuantityChanger.click();
-        themeSettingsProductLists.selectSettingShowAddToCartButton("icon_and_text");
-        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
+        new Select(themeSettingsProductLists.setting_ShowAddToCartButton).selectByValue("icon_and_text");
+        new Select(themeSettingsProductLists.setting_AdditionalProductInformation).selectByValue("features_and_description");
+        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.setting_ShowAdditionalInformationOnHover;
         if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
             checkboxSettingShowAdditionalInformationOnHover.click();
-        themeSettingsProductLists.selectSettingShowBrand("logo");
-        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("N");
-        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("lines");
+        new Select(themeSettingsProductLists.setting_ShowBrand).selectByValue("logo");
+        new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("N");
+        new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
         themeSettings_showMore.navigateTo_ThemeSettings_tabShowMore();
         if (themeSettings_showMore.setting_AllowForProductLists.isSelected())

@@ -92,43 +92,43 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("col-os-fill");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
+        new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col-os-fill");
+        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.setting_PriceAtTheTop;
         if (!checkboxPriceAtTheTop.isSelected()) {
             checkboxPriceAtTheTop.click();
         }
-        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
+        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
         if (!checkboxProductRating.isSelected()) {
             checkboxProductRating.click();
         }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
+        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
         if (!checkboxSettingCommonValueOfProductRating.isSelected()) {
             checkboxSettingCommonValueOfProductRating.click();
         }
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
+        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.setting_DisplayButtonComparisonList;
         if (!checkboxSettingDisplayButtonComparisonList.isSelected()) {
             checkboxSettingDisplayButtonComparisonList.click();
         }
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
+        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.setting_DisplayButtonWishList;
         if (!checkboxSettingDisplayButtonWishList.isSelected()) {
             checkboxSettingDisplayButtonWishList.click();
         }
-        if(themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
-            themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("full");
+        if(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse.isSelected())
+            themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse.click();
+        new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("full");
 
         //Работаем с настройками темы п.2.2
         Actions scrolling = new Actions(DriverProvider.getDriver());
         scrolling.scrollToElement(themeSettingsProductLists.scroller_AvailabilityStatus);
         scrolling.perform();
-        themeSettingsProductLists.selectScroller_NumberOfLinesInProductName("3");
+        new Select(themeSettingsProductLists.scroller_NumberOfLinesInProductName).selectByValue("3");
         if(themeSettingsProductLists.scroller_AvailabilityStatus.isSelected())
             themeSettingsProductLists.scroller_AvailabilityStatus.click();
         if(themeSettingsProductLists.scroller_QuantityChanger.isSelected())
             themeSettingsProductLists.scroller_QuantityChanger.click();
         if(themeSettingsProductLists.scroller_QuickViewButton.isSelected())
             themeSettingsProductLists.scroller_QuickViewButton.click();
-        themeSettingsProductLists.selectScroller_AddToCartButton("text");
+        new Select(themeSettingsProductLists.scroller_AddToCartButton).selectByValue("text");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

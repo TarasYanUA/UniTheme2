@@ -73,27 +73,26 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("col");
-
-        if (!themeSettingsProductLists.settingPriceAtTheTop.isSelected())
-            themeSettingsProductLists.settingPriceAtTheTop.click();
-        if (!themeSettingsProductLists.settingEmptyStarsOfProductRating.isSelected())
-            themeSettingsProductLists.settingEmptyStarsOfProductRating.click();
-        if (!themeSettingsProductLists.settingCommonValueOfProductRating.isSelected())
-            themeSettingsProductLists.settingCommonValueOfProductRating.click();
-        themeSettingsProductLists.selectSettingShowYouSave("short");
+        new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
+        if (!themeSettingsProductLists.setting_PriceAtTheTop.isSelected())
+            themeSettingsProductLists.setting_PriceAtTheTop.click();
+        if (!themeSettingsProductLists.setting_EmptyStarsOfProductRating.isSelected())
+            themeSettingsProductLists.setting_EmptyStarsOfProductRating.click();
+        if (!themeSettingsProductLists.setting_CommonValueOfProductRating.isSelected())
+            themeSettingsProductLists.setting_CommonValueOfProductRating.click();
+        new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
 
         Actions scroll = new Actions(DriverProvider.getDriver());
         scroll.scrollToElement(themeSettingsProductLists.smallItems_NumberOfLinesInProductName);
         scroll.perform();
-        themeSettingsProductLists.selectSmallItems_NumberOfLinesInProductName("4");
+        new Select(themeSettingsProductLists.smallItems_NumberOfLinesInProductName).selectByValue("4");
         if (themeSettingsProductLists.smallItems_ProductCode.isSelected())
             themeSettingsProductLists.smallItems_ProductCode.click();
         if (themeSettingsProductLists.smallItems_AvailabilityStatus.isSelected())
             themeSettingsProductLists.smallItems_AvailabilityStatus.click();
         if (themeSettingsProductLists.smallItems_QuantityChanger.isSelected())
             themeSettingsProductLists.smallItems_QuantityChanger.click();
-        themeSettingsProductLists.selectSmallItems_AddToCartButton("text");
+        new Select(themeSettingsProductLists.smallItems_AddToCartButton).selectByValue("text");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"

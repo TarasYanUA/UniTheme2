@@ -61,7 +61,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         basicPage.navigateTo_ThemeSettings_tabProductLists();
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("109");
+        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "109");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -77,8 +77,8 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
-        themeSettingsProduct.selectSetting_ShowYouSave("short");
-        themeSettingsProduct.selectSetting_ShowProductBrand("logo");
+        new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("short");
+        new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("logo");
         basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристик Жесткий диск и Бренд

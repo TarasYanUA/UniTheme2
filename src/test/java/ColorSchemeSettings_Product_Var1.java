@@ -1,5 +1,6 @@
 import  org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -49,7 +50,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
 
         //Настраиваем UniTheme настройки, вкладка "Товар"
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("");
+        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
         if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -59,17 +60,17 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
-        themeSettingsProduct.selectSetting_ShowProductBrand("name");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_DefaultTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_BigPictureFlatTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_GalleryTemplate("2");
-        themeSettingsProduct.selectSetting_NumberOfDisplayedImages_ThreeColumnsTemplate("2");
+        new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("name");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_DefaultTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_BigPictureTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_BigPictureFlatTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_GalleryTemplate).selectByValue("2");
+        new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_ThreeColumnsTemplate).selectByValue("2");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки, вкладка "Списки товаров"
         ThemeSettings_ProductLists themeSettingsProductLists = new ThemeSettings_ProductLists();
-        themeSettingsProductLists.clickTabProductLists();
+        themeSettingsProductLists.tabProductLists.click();
         if(!themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.isSelected()){
             themeSettingsProductLists.setting_AllowToSelectVariationsAndOptions.click();
             basicPage.clickSaveButtonOfSettings();

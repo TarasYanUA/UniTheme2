@@ -1,9 +1,11 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.FeaturePage;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -43,9 +45,9 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.clickTabProductLists();
-        themeSettingsProductLists.clickAndTypeWithoutOptionsIconWidth("400");
-        themeSettingsProductLists.clickAndTypeWithoutOptionsIconHeight("200");
+        themeSettingsProductLists.tabProductLists.click();
+        UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconWidth, "400");
+        UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconHeight, "200");
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
         if (!checkboxProductCode.isSelected())
             checkboxProductCode.click();
@@ -55,14 +57,14 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
         if (!checkboxShowQuantity.isSelected())
             checkboxShowQuantity.click();
-        themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_and_text");
-        themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("features");
+        new Select(themeSettingsProductLists.withoutOptions_ShowButtonAddToCart).selectByValue("icon_and_text");
+        new Select(themeSettingsProductLists.withoutOptions_ContentUnderDescription).selectByValue("features");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
         if (!checkboxShowProductOptions.isSelected())
             checkboxShowProductOptions.click();
-        themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("logo");
-        themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("points");
-        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("N");
+        new Select(themeSettingsProductLists.setting_ShowBrandLogo_ListWithoutOptions).selectByValue("logo");
+        new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("points");
+        new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("N");
         basicPage.clickSaveButtonOfSettings();
     }
 

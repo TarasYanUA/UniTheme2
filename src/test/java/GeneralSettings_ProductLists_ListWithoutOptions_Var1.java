@@ -1,4 +1,5 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
@@ -43,7 +44,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.clickTabProductLists();
+        themeSettingsProductLists.tabProductLists.click();
         WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
         if (checkboxProductCode.isSelected())
             checkboxProductCode.click();
@@ -53,14 +54,14 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
         if (!checkboxShowQuantity.isSelected())
             checkboxShowQuantity.click();
-        themeSettingsProductLists.selectWithoutOptions_ShowButtonAddToCart("icon_button");
-        themeSettingsProductLists.selectWithoutOptionsContentUnderDescription("variations");
+        new Select(themeSettingsProductLists.withoutOptions_ShowButtonAddToCart).selectByValue("icon_button");
+        new Select(themeSettingsProductLists.withoutOptions_ContentUnderDescription).selectByValue("variations");
         WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
         if (checkboxShowProductOptions.isSelected())
             checkboxShowProductOptions.click();
-        themeSettingsProductLists.selectSettingShowBrandLogo_ListWithoutOptions("name");
-        themeSettingsProductLists.selectWithoutOptions_ShowStandardImageGallery("N");
-        themeSettingsProductLists.selectWithoutOptions_SwitchProductImageWhenHovering("points");
+        new Select(themeSettingsProductLists.setting_ShowBrandLogo_ListWithoutOptions).selectByValue("name");
+        new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("N");
+        new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("points");
         basicPage.clickSaveButtonOfSettings();
     }
 

@@ -57,7 +57,7 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         basicPage.navigateTo_ThemeSettings_tabProductLists();
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
-        themeSettingsProduct.clickAndTypeSetting_CustomBlockID("106");
+        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "106");
         if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         }
@@ -73,8 +73,8 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
             themeSettingsProduct.setting_ShowShortDescription.click();
         }
-        themeSettingsProduct.selectSetting_ShowProductBrand("logo");
-        themeSettingsProduct.selectSetting_CombinationsOfProductGalleryImageFormations("1");
+        new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("logo");
+        new Select(themeSettingsProduct.setting_CombinationsOfProductGalleryImageFormations).selectByValue("1");
         basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристики Бренд

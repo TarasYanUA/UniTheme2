@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
-import taras.storefront.ProductPage;
+import taras.storefront.StProductPage;
 import testRunner.TestRunner;
 
 import java.time.Duration;
@@ -41,7 +41,7 @@ import java.time.Duration;
     * Оптовые цены                              -- нет
 */
 
-public class GeneralSettings_ProductPage_Var1 extends TestRunner {
+public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsFor_GeneralSettings_ProductPage_Var1(){
         //Настраиваем макет для тест-кейса
@@ -120,10 +120,10 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_ListPrice,"15000");
         basicPage.clickSaveButtonOfSettings();
-        ProductPage productPage = productSettings.navigateToProductPage();
+        StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
-        productPage.cookie.click();
-        productPage.selectLanguage("en");
+        stProductPage.cookie.click();
+        stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -173,19 +173,19 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
                 "There is no Reward points!");
 
         takeScreenShot_withScroll("900 GS_ProductPage_Var1 - Default template");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("905 GS_ProductPage_Var1 - Default template (RTL)");
 
         //Проверяем, что характеристики расположены в одну колонку
-        productPage.scrollToAndClickTab_Features();
+        stProductPage.scrollToAndClickTab_Features();
         softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Disabled.isEmpty(),
                 "Features are located in two columns instead of one!");
 
         takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");
-        productPage.selectLanguage("en");
-        productPage.scrollToAndClickTab_Features();
+        stProductPage.selectLanguage("en");
+        stProductPage.scrollToAndClickTab_Features();
         takeScreenShot("915 GS_ProductPage_Var1 - Product features, one column");
-        productPage.featureDescription.click();
+        stProductPage.featureDescription.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
         takeScreenShot("920 GS_ProductPage_Var1 - Feature description, one column");
@@ -197,7 +197,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
         takeScreenShot_withScroll("925 GS_ProductPage_Var1 - Big picture");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("930 GS_ProductPage_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
@@ -205,7 +205,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
         takeScreenShot_withScroll("935 GS_ProductPage_Var1 - Big picture flat");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("940 GS_ProductPage_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
@@ -213,7 +213,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
         takeScreenShot_withScroll("945 GS_ProductPage_Var1 - Three columned");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("950 GS_ProductPage_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
@@ -221,7 +221,7 @@ public class GeneralSettings_ProductPage_Var1 extends TestRunner {
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
         takeScreenShot_withScroll("955 GS_ProductPage_Var1 - Gallery template");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("960 GS_ProductPage_Var1 - Gallery template (RTL)");
 
         softAssert.assertAll();

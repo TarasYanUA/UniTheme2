@@ -60,7 +60,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stHomePage.cookie.click();
         stHomePage.navigateToHorizontalMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.clickCompactList_ProductListView();
+        stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();

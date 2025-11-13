@@ -2,31 +2,21 @@ package taras.storefront;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
 import java.time.Duration;
 import java.util.List;
 
-import static taras.constants.DriverProvider.getDriver;
-
 public class StCategoryPage extends AbstractPage {
     public StCategoryPage() {
         super();
     }
-
-    @FindBy(css = "a[title='Droid 3']")
-    private WebElement phoneProduct_Droid3;
-
-    @FindBy(css = "a[href*='nike']")
-    private WebElement clothProduct;
 
     @FindBy(css = "form[name='product_form_280']")
     private WebElement menClothProduct;
@@ -37,14 +27,17 @@ public class StCategoryPage extends AbstractPage {
     @FindBy(xpath = "//form[@name='product_form_280']//a[@data-ca-target-id='product_quick_view']")
     private WebElement quickViewOfMenClothProduct;
 
+    @FindBy(xpath = "//form[@name='product_form_34']//a[@data-ca-target-id='product_quick_view']")
+    private WebElement quickViewOfWomanClothProduct;
+
     @FindBy(css = ".ui-button-icon.ui-icon")
-    private WebElement closeQuickView;
+    public WebElement closeQuickView;
 
     @FindBy(css = ".ty-icon.ut2-icon-products-without-options")
-    private WebElement listWithoutOptions_ProductListView;
+    public WebElement listWithoutOptions_ProductListView;
 
     @FindBy(css = ".ty-icon.ut2-icon-short-list")
-    private WebElement compactList_ProductListView;
+    public WebElement compactList_ProductListView;
 
     @FindBy(css = "a[class*='ut2-quick-view-button']")
     public WebElement buttonQuickView;
@@ -80,100 +73,39 @@ public class StCategoryPage extends AbstractPage {
     public WebElement closeWriteReview;
 
 
-    public void makePause() {
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.pause(2000);
+    public void hoverToProduct(String productTitle) {
+        WebElement product = DriverProvider.getDriver().findElement(By.xpath("//a[contains(@title, '" + productTitle + "')]"));
+        WebElement quickView = DriverProvider.getDriver().findElement(By.xpath(product + "/../../..//a//a[@data-ca-target-id='product_quick_view']"));
+
+        UtilsAdm.scrollToElementAndScrollBelow(product, 20);
+        UtilsAdm.scrollToElementAndScrollBelow(quickView, 0);
     }
 
-    public void hoverToPhoneProduct() {
-        WebDriver driver = DriverProvider.getDriver();
-
-        Actions scroll = new Actions(driver);
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(phoneProduct_Droid3), 0, 200)
-                .moveToElement(phoneProduct_Droid3).perform();
-        scroll.moveToElement(quickViewOfPhoneProduct_Droid3).perform();
-    }
-
-    public void hoverToClothProduct() {
-        Actions hoverClothProduct = new Actions(DriverProvider.getDriver());
-        hoverClothProduct.moveToElement(clothProduct);
-        hoverClothProduct.perform();
-    }
-
-    public void hoverToMenClothProduct() {
-        WebDriver driver = DriverProvider.getDriver();
-
-        Actions scroll = new Actions(driver);
-        scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(menClothProduct), 0, 400)
-                .moveToElement(menClothProduct).perform();
-        scroll.moveToElement(quickViewOfMenClothProduct).perform();
-    }
-
-    public void clickListWithoutOptions_ProductListView() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
-        listWithoutOptions_ProductListView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
-        makePause();
-    }
-
-    public void clickCompactList_ProductListView() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
-        compactList_ProductListView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
-        makePause();
-    }
-
-    public void hoverToButtonAddToCart() {
-        Actions hoverToElement = new Actions(DriverProvider.getDriver());
-        hoverToElement.moveToElement(button_GeneralAddToCart);
-        hoverToElement.perform();
+    public void selectProductListView(WebElement element) {
+        ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
+        element.click();
+        UtilsStorefront.waitForSpinnerDisappear();
     }
 
     public void clickButtonQuickView() {
         buttonQuickView.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
+        UtilsStorefront.waitForSpinnerDisappear();
     }
 
     public void clickQuickViewOfPhoneProduct() {
         quickViewOfPhoneProduct_Droid3.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
-
-        new Actions(DriverProvider.getDriver())
-            .moveToElement(closeQuickView).perform();
+        UtilsStorefront.waitForSpinnerDisappear();
+        UtilsAdm.scrollToElementAndScrollBelow(closeQuickView, 0);
     }
 
     public void clickQuickViewOfMenClothProduct() {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
-
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(menClothProduct).perform();
-        actions.moveToElement(quickViewOfMenClothProduct).perform();
-
-        quickViewOfMenClothProduct.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
-        makePause();
+        UtilsAdm.scrollToElementAndScrollBelow(menClothProduct, 0);
+        UtilsAdm.hoverAndNavigateAndClick(quickViewOfMenClothProduct);
+        UtilsStorefront.waitForSpinnerDisappear();
     }
 
-    public WebElement hoverCloseQuickView() {
-        return closeQuickView;
-    }
-
-    public void clickCloseQuickView() {
-        WebElement element = hoverCloseQuickView();
-        Actions hoverToElement = new Actions(DriverProvider.getDriver());
-        hoverToElement.moveToElement(element);
-        hoverToElement.perform();
-        closeQuickView.click();
-    }
-
-    public void clickButton_WriteReview() {
+    public void openWindow_WriteReview() {
         button_WriteReview.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-2")));

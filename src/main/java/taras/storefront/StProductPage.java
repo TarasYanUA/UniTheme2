@@ -1,7 +1,6 @@
 package taras.storefront;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
 import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,8 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 
-public class ProductPage extends AbstractPage {
-    public ProductPage() {
+public class StProductPage extends AbstractPage {
+    public StProductPage() {
         super();
     }
 
@@ -48,8 +47,7 @@ public class ProductPage extends AbstractPage {
         gearwheel_Language.click();
         DriverProvider.getDriver().findElement(By.cssSelector("a[data-ca-name='" + ruArEn + "']")).click();
         UtilsAdm.makePause(2000);
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(gearwheel_Language).perform();
+        UtilsAdm.scrollToElementAndScrollBelow(gearwheel_Language, 0);
     }
 
     public void scrollToAndClickTab_Features() {

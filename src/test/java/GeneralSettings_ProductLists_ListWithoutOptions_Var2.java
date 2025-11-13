@@ -78,7 +78,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         //Категория "Мужская одежда"
         stHomePage.navigateToHorizontalMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.clickListWithoutOptions_ProductListView();
+        stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();

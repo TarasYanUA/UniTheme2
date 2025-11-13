@@ -10,12 +10,12 @@
             <class name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
             <class name="GeneralSettings_ProductLists_CompactList_Var1" />
             <class name="GeneralSettings_ProductLists_CompactList_Var2" />
-            <class name="GeneralSettings_ProductPage_Var1" />
-            <class name="GeneralSettings_ProductPage_Var2" />
-            <class name="GeneralSettings_ProductPage_Var3" />
-            <class name="GeneralSettings_ProductPage_Cascade_Var1" />
-            <class name="GeneralSettings_ProductPage_Cascade_Var2" />
-            <class name="GeneralSettings_ProductPage_Cascade_Var3" />-->
+            <class name="GeneralSettings_St_ProductPage_Var1" />
+            <class name="GeneralSettings_St_ProductPage_Var2" />
+            <class name="GeneralSettings_St_ProductPage_Var3" />
+            <class name="GeneralSettings_St_ProductPage_Cascade_Var1" />
+            <class name="GeneralSettings_St_ProductPage_Cascade_Var2" />
+            <class name="GeneralSettings_St_ProductPage_Cascade_Var3" />-->
 
             <!--Тест-кейсы для настроек Цветосхемы -->
 <!--            <class name="ColorSchemeSettings_Product_Var1" />-->

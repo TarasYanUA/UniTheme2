@@ -2,10 +2,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.BasicPage;
-import taras.adminPanel.FeaturePage;
-import taras.adminPanel.LayoutPage;
-import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.*;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -75,9 +72,8 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Категория "Мужская одежда"
         stHomePage.navigateToHorizontalMenu_MenCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.clickListWithoutOptions_ProductListView();
-        makePause();
-        stCategoryPage.clickListWithoutOptions_ProductListView(); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
+        stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
+        stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();

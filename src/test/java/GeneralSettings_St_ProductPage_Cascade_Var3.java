@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
-import taras.storefront.ProductPage;
+import taras.storefront.StProductPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
@@ -36,7 +36,7 @@ import testRunner.TestRunner;
     * Оптовые цены -- да
 */
 
-public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
+public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_Cascade_Var3() {
         //Настраиваем CS-Cart настройки
@@ -99,13 +99,13 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
-        ProductPage productPage = productSettings.navigateToProductPage();
+        StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
-        productPage.cookie.click();
-        productPage.selectLanguage("en");
+        stProductPage.cookie.click();
+        stProductPage.selectLanguage("en");
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
-        productPage.checkbox_NotifyMe.click();
+        stProductPage.checkbox_NotifyMe.click();
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -140,22 +140,22 @@ public class GeneralSettings_ProductPage_Cascade_Var3 extends TestRunner {
                 "There is no Reward points!");
 
         takeScreenShot_withScroll("Cascade3.10 GS_ProductPage_Cascade_Var3 - Cascade template");
-        productPage.checkbox_NotifyMe.click();
+        stProductPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("Cascade3.15 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me'");
-        productPage.scrollToAndClickTab_FeaturesForNonTabs();
+        stProductPage.scrollToAndClickTab_FeaturesForNonTabs();
 
         //Проверяем, что характеристики расположены в две колонки
         softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
                 "Features are located in one column instead of two!");
         takeScreenShot("Cascade3.20 GS_ProductPage_Cascade_Var3 - Product features, two columns");
 
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade3.25 GS_ProductPage_Var3 - Cascade template (RTL)");
-        productPage.checkbox_NotifyMe.click();
+        stProductPage.checkbox_NotifyMe.click();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot_withScroll("Cascade3.30 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me' (RTL)");
-        productPage.scrollToAndClickTab_FeaturesForNonTabs();
+        stProductPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("Cascade3.35 GS_ProductPage_Cascade_Var3 - Product features, two columns (RTL)");
 
         softAssert.assertAll();

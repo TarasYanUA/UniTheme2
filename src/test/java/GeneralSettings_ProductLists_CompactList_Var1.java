@@ -81,7 +81,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stHomePage.cookie.click();
         stHomePage.navigateToHorizontalMenu_GameConsoles();
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.clickCompactList_ProductListView();
+        stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -93,7 +93,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Проверяем, что Быстрый просмотр присутствует
         softAssert.assertTrue(!assertsOnStorefront.enableQuickView.isEmpty(),
                 "There is no button 'Quick view' on the category page 'Compact list'!");
-        stCategoryPage.hoverToButtonAddToCart();
+        UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
 
         //Проверяем, что кнопка "Купить" присутствует
         softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty(),
@@ -102,9 +102,9 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
         takeScreenShot_withScroll("705 GS_ProductLists_CompactList_Var1 - QuickView");
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToButtonAddToCart();
+        UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
         takeScreenShot_withScroll("710 GS_ProductLists_CompactList_Var1 (RTL)");
         stCategoryPage.clickButtonQuickView();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

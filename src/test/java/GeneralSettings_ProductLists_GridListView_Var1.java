@@ -174,19 +174,19 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "Switch is not with stripes or there is no Switch at all on the category page!");
 
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("310 GS_ProductLists_GridListView_Var1 - PhoneCategory");
 
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("315 GS_ProductLists_GridListView_Var1 - PhoneCategory (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("320 GS_ProductLists_GridListView_Var1 - QuickView (RTL)");
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage_RU();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot("325 GS_ProductLists_GridListView_Var1 - QuickView");
 

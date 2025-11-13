@@ -6,7 +6,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
-import taras.storefront.ProductPage;
+import taras.storefront.StProductPage;
 import testRunner.TestRunner;
 
 /*
@@ -36,7 +36,7 @@ import testRunner.TestRunner;
     * Оптовые цены -- нет
 */
 
-public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
+public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
     @Test(priority = 1)
     public void setConfigurationsForProductPage_CascadeGallery_Var1(){
         //Настраиваем макет для тест-кейса
@@ -112,10 +112,10 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
         productSettings.chooseAnyProduct();
-        ProductPage productPage = productSettings.navigateToProductPage();
+        StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
-        productPage.cookie.click();
-        productPage.selectLanguage("en");
+        stProductPage.cookie.click();
+        stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -156,18 +156,18 @@ public class GeneralSettings_ProductPage_Cascade_Var1 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points on the product page!");
         takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Cascade template");
-        productPage.selectLanguage("ar");
+        stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Cascade template (RTL)");
 
         //Проверяем характеристики
-        productPage.scrollToAndClickTab_Features();
+        stProductPage.scrollToAndClickTab_Features();
         //Проверяем, что характеристики расположены в одну колонку
         softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Disabled.isEmpty(),
                 "Features are located in two columns instead of one!");
 
         takeScreenShot("Cascade1.20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
-        productPage.selectLanguage("en");
-        productPage.scrollToAndClickTab_Features();
+        stProductPage.selectLanguage("en");
+        stProductPage.scrollToAndClickTab_Features();
         takeScreenShot("Cascade1.25 GS_ProductPage_Cascade_Var1 - Product features, one column");
 
         softAssert.assertAll();

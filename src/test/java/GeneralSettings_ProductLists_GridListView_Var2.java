@@ -144,16 +144,16 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "Gallery of mini icons is not with points on the category page 'GridList'!");
 
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.hoverToMenClothProduct();
+        stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
         takeScreenShot("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToMenClothProduct();
+        stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
         takeScreenShot("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage_RU();
         stCategoryPage.clickQuickViewOfMenClothProduct();
         takeScreenShot("425 GS_ProductLists_GridListView_Var2 - QuickView");

@@ -223,10 +223,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'Woman cloth'!");
 
-        stCategoryPage.hoverToClothProduct();
+        stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("110 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory");
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToClothProduct();
+        stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("115 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
@@ -263,7 +263,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.logOutOnStorefront();
-        stCategoryPage.hoverToButtonAddToCart();
+        UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
         stCategoryPage.button_GeneralAddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
@@ -277,28 +277,28 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 stCategoryPage.closeNotification_AlertSuccess.click();
             }
         }
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
         stHomePage.selectLanguage_RU();
 
         //Быстрый просмотр в категории "Телефоны"
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("130 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView");
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("135 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView (RTL)");
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
 
         //Других два шаблона страницы категории
-        stCategoryPage.clickListWithoutOptions_ProductListView();
+        stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
 
         //Проверяем, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
@@ -342,7 +342,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         makePause();
         stHomePage.selectLanguage_RU();
         takeScreenShot_withScroll("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
-        stCategoryPage.clickCompactList_ProductListView();
+        stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),

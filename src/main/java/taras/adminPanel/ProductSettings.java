@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
-import taras.storefront.ProductPage;
+import taras.storefront.StProductPage;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -43,10 +43,10 @@ public class ProductSettings extends AbstractPage {
         chooseAnyProduct.click();
     }
 
-    public ProductPage navigateToProductPage() {
+    public StProductPage navigateToProductPage() {
         gearwheelOfProduct.click();
         previewButton.click();
-        return new ProductPage();
+        return new StProductPage();
     }
 
 

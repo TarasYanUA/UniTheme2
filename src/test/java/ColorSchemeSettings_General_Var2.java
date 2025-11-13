@@ -76,20 +76,20 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
         StCategoryPage stCategoryPage = new StCategoryPage();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("1410 ColorSchemeSettings_General_Var2 - Category page");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot("1415 ColorSchemeSettings_General_Var2 - QuickView");
-        stCategoryPage.clickButton_WriteReview();
+        stCategoryPage.openWindow_WriteReview();
         takeScreenShot("1420 ColorSchemeSettings_General_Var2 - Write review");
         stCategoryPage.closeWriteReview.click();
-        stCategoryPage.clickCloseQuickView();
+        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage_RTL();
-        stCategoryPage.hoverToPhoneProduct();
+        stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("1425 ColorSchemeSettings_General_Var2 - Category page (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot("1430 ColorSchemeSettings_General_Var2 - QuickView (RTL)");
-        stCategoryPage.clickButton_WriteReview();
+        stCategoryPage.openWindow_WriteReview();
         takeScreenShot("1435 ColorSchemeSettings_General_Var2 - Write review (RTL)");
         System.out.println("ColorSchemeSettings_General_Var2 has passed successfully!");
     }

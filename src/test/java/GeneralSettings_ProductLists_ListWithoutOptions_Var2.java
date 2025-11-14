@@ -117,7 +117,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
                 "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("605 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory (RTL)");
 
         softAssert.assertAll();

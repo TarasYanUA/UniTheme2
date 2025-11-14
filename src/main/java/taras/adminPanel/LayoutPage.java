@@ -29,7 +29,7 @@ public class LayoutPage extends AbstractPage {
 
 
     public void setLayoutAsDefault() {
-        UtilsAdm.hoverAndNavigateAndClick(gearwheelOfActiveLayout);
+        UtilsAdm.hoverNavigateAndClick(gearwheelOfActiveLayout);
         if (!DriverProvider.getDriver().findElements(By.cssSelector(".with-menu.active a[href*='block_manager.set_default_layout']")).isEmpty()) {
             button_makeByDefault.click();
             UtilsAdm.makePause(1500);

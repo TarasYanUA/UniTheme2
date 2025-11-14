@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
+import taras.storefront.UtilsStorefront;
 
 import java.time.Duration;
 
@@ -64,9 +65,9 @@ public class UtilsAdm extends AbstractPage {
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", element);
     }
 
-    public static void hoverAndNavigateAndClick(WebElement webElement) {
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(webElement).perform();
+    public static void hoverNavigateAndClick(WebElement webElement) {
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(webElement).perform();
         webElement.click();
     }
 }

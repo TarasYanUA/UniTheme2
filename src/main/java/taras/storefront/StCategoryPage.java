@@ -101,7 +101,7 @@ public class StCategoryPage extends AbstractPage {
     public void clickQuickViewOfMenClothProduct() {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
         UtilsAdm.scrollToElementAndScrollBelow(menClothProduct, 0);
-        UtilsAdm.hoverAndNavigateAndClick(quickViewOfMenClothProduct);
+        UtilsAdm.hoverNavigateAndClick(quickViewOfMenClothProduct);
         UtilsStorefront.waitForSpinnerDisappear();
     }
 

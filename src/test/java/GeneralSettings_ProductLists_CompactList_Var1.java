@@ -102,8 +102,8 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
         takeScreenShot_withScroll("705 GS_ProductLists_CompactList_Var1 - QuickView");
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
-        stHomePage.selectLanguage_RTL();
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
+        stHomePage.selectLanguage("ar");
         UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
         takeScreenShot_withScroll("710 GS_ProductLists_CompactList_Var1 (RTL)");
         stCategoryPage.clickButtonQuickView();

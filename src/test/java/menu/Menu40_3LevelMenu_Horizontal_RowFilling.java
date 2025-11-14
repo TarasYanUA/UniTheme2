@@ -13,6 +13,8 @@ import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
+
 import java.time.Duration;
 
 /*
@@ -72,7 +74,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
-        stHomePage.navigateToHorizontalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu40.00 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts");
 
         SoftAssert softAssert = new SoftAssert();
@@ -85,7 +87,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         //Проверяем, что колонок 5
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
                 "Menu columns are not equal 5 columns!");
-        stHomePage.navigateToHorizontalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
@@ -108,15 +110,15 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
-        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu40.04 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics");
 
-        stHomePage.selectLanguage_RTL();
-        stHomePage.navigateToHorizontalMenu_AllProducts();
+        stHomePage.selectLanguage("ar");
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu40.06 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts (RTL)");
-        stHomePage.navigateToHorizontalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu40.08 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers (RTL)");
-        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu40.10 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }

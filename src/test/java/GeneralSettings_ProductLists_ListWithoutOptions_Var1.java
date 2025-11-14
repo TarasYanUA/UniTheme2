@@ -95,7 +95,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
                 "Image switcher is not with Dots on the category page 'ListWithoutOptions'!");
 
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("505 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");
 
         softAssert.assertAll();

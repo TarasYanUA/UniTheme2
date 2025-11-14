@@ -92,7 +92,7 @@ public class Menu50_FlyMenu extends TestRunner{
         takeScreenShot("Menu50.08 Menu50_FlyMenu_Var1 - Menu VideoGames");
         stHomePage.button_CloseFlyMenu.click();
 
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.button_FlyMenu.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));

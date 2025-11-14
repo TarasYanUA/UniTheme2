@@ -2,10 +2,12 @@ package taras.storefront;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
+import taras.constants.DriverProvider;
 
 import java.time.Duration;
 import java.util.List;
@@ -37,5 +39,10 @@ public class UtilsStorefront extends AbstractPage {
         (new WebDriverWait((getDriver()), Duration.ofSeconds(10)))
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
         UtilsAdm.makePause(2000);
+    }
+
+    public static void hoverOverElement(WebElement webElement) {
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(webElement).perform();
     }
 }

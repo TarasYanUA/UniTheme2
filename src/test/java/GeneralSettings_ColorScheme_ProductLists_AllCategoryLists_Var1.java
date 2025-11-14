@@ -187,10 +187,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no text of a product tax in the product block!");
 
         takeScreenShot("100 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("105 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Категория "Женская одежда"
         stHomePage.navigateToHorizontalMenu_WomanCloth();
@@ -225,10 +225,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("110 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("115 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
@@ -279,23 +279,23 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         }
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("125 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("130 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView");
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
-        stHomePage.selectLanguage_RTL();
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("135 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView (RTL)");
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
 
         //Других два шаблона страницы категории
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
@@ -340,7 +340,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         Actions actions = new Actions(DriverProvider.getDriver());
         actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
         makePause();
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
         takeScreenShot_withScroll("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
@@ -365,7 +365,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no text of a product tax on the category 'Compact list'!");
 
         takeScreenShot_withScroll("150 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("155 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 passed successfully!");

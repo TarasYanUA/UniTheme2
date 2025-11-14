@@ -10,6 +10,7 @@ import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
 
 import java.time.Duration;
 
@@ -79,9 +80,9 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.navigateToVerticalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu46.00 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - AllProducts");
-        stHomePage.navigateToVerticalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu46.02 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-Computers");
 
         SoftAssert softAssert = new SoftAssert();
@@ -115,17 +116,17 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
                 "There is no button 'More [category]' in the third level of the menu!");
 
-        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu46.04 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-CarElectronics");
 
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.navigateToVerticalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu46.06 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - AllProducts (RTL)");
-        stHomePage.navigateToVerticalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu46.08 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-Computers (RTL)");
-        stHomePage.navigateToMenu_ThreeLevelMenu_CarElectronics();
+        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu46.10 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }

@@ -13,6 +13,8 @@ import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
+
 import java.time.Duration;
 
 /*
@@ -60,7 +62,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
-        stHomePage.navigateToHorizontalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu11.00 Menu11_Horizontal_ColumnFilling_5columns - Menu AllProducts");
 
         SoftAssert softAssert = new SoftAssert();
@@ -73,7 +75,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         //Проверяем, что колонок 5
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
                 "Menu columns are not equal 5 columns!");
-        stHomePage.navigateToHorizontalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu11.02 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic");
 
         //Проверяем, что у меню второго уровня отсутствуют иконки
@@ -100,21 +102,21 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
-        stHomePage.navigateToHorizontalMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Apparel);
         takeScreenShot("Menu11.04 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel");
-        stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
         takeScreenShot("Menu11.06 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors");
-        stHomePage.navigateToHorizontalMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
         takeScreenShot("Menu11.08 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames");
 
-        stHomePage.selectLanguage_RTL();
-        stHomePage.navigateToHorizontalMenu_Electronic();
+        stHomePage.selectLanguage("ar");
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu11.10 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic (RTL)");
-        stHomePage.navigateToHorizontalMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Apparel);
         takeScreenShot("Menu11.12 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel (RTL)");
-        stHomePage.navigateToHorizontalMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
         takeScreenShot("Menu11.14 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors (RTL)");
-        stHomePage.navigateToHorizontalMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
         takeScreenShot("Menu11.16 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

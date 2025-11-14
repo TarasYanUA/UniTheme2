@@ -2,8 +2,8 @@ package taras.storefront;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.FindBy;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
@@ -21,55 +21,16 @@ public class StHomePage extends AbstractPage {
     public WebElement cookie;
 
     @FindBy(css = "a[id*='wrap_language']")
-    private WebElement languageButton;
-
-    @FindBy(css = ".ty-select-block__list-item a[data-ca-name='ar']")
-    private WebElement languageRTL;
-
-    @FindBy(css = ".ty-select-block__list-item a[data-ca-name='ru']")
-    private WebElement languageRU;
+    public WebElement languageButton;
 
     @FindBy(css = "div[id^='account_info_']")
-    private WebElement accountOnTop;
+    WebElement accountOnTop;
 
     @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")
-    private WebElement button_LogOut;
+    WebElement button_LogOut;
 
     @FindBy(css = "div.ty-mainbox-container.clearfix")
-    private WebElement blockWithProducts;
-
-
-    public void logOutOnStorefront() {
-        Actions scrollToBlock = new Actions(DriverProvider.getDriver());
-        scrollToBlock.moveToElement(accountOnTop);
-        scrollToBlock.perform();
-        accountOnTop.click();
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
-            button_LogOut.click();
-        }
-    }
-
-    public void selectLanguage_RTL() {
-        languageButton.click();
-        languageRTL.click();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(languageButton).perform();
-    }
-
-    public void selectLanguage_RU() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(languageButton));
-        languageButton.click();
-        languageRU.click();
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(languageButton).perform();
-    }
-
-    public void scrollToBlockWithProducts() {
-        Actions scrollToBlock = new Actions(DriverProvider.getDriver());
-        scrollToBlock.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(blockWithProducts), 0, 800);
-        scrollToBlock.perform();
-    }
+    public WebElement blockWithProducts;
 
 
     //Разделы меню на витрине
@@ -77,146 +38,91 @@ public class StHomePage extends AbstractPage {
     public WebElement verticalMenu_menuButton_Categories;
 
     @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__products")
-    private WebElement verticalMenu_menuAllProducts;
+    public WebElement verticalMenu_AllProducts;
 
     @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__electronics")
-    private WebElement verticalMenu_menuElectronic;
+    public WebElement verticalMenu_Electronic;
 
     @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__apparel")
-    private WebElement verticalMenu_menuApparel;
+    public WebElement verticalMenu_Apparel;
 
     @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__sport")
-    private WebElement verticalMenu_menuSportsAndOutdoors;
+    public WebElement verticalMenu_SportsAndOutdoors;
 
     @FindBy(css = ".top-menu-grid-vertical .ty-menu-item__media ")
-    private WebElement verticalMenu_menuVideoGames;
+    public WebElement verticalMenu_VideoGames;
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='0']")
-    private WebElement threeLevelMenu_Computers;
+    public WebElement threeLevelMenu_Computers;
 
     @FindBy(css = ".ty-menu-item__electronics div[data-elem-index='1']")
-    private WebElement threeLevelMenu_CarElectronics;
-
-
-    public void navigateToVerticalMenu_AllProducts() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(verticalMenu_menuAllProducts);
-        hover.perform();
-    }
-
-    public void navigateToVerticalMenu_Electronic() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(verticalMenu_menuElectronic);
-        hover.perform();
-    }
-
-    public void navigateToVerticalMenu_Apparel() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(verticalMenu_menuApparel);
-        hover.perform();
-    }
-
-    public void navigateToVerticalMenu_SportsAndOutdoors() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(verticalMenu_menuSportsAndOutdoors);
-        hover.perform();
-    }
-
-    public void navigateToVerticalMenu_VideoGames() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(verticalMenu_menuVideoGames);
-        hover.perform();
-    }
-
-    public void navigateToMenu_ThreeLevelMenu_Computers() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(threeLevelMenu_Computers);
-        hover.perform();
-    }
-
-    public void navigateToMenu_ThreeLevelMenu_CarElectronics() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(threeLevelMenu_CarElectronics);
-        hover.perform();
-    }
-
+    public WebElement threeLevelMenu_CarElectronics;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']//span")
-    private WebElement horizontalMenu_menuPhones;
+    public WebElement horizontalMenu_menuPhones;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']//span")
-    private WebElement horizontalMenu_menuGameConsoles;
+    WebElement horizontalMenu_menuGameConsoles;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
-    private WebElement horizontalMenu_menuMenCloth;
+    public WebElement horizontalMenu_MenCloth;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
-    private WebElement horizontalMenu_menuWomanCloth;
+    public WebElement horizontalMenu_WomanCloth;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__products")
-    private WebElement horizontalMenu_menuAllProducts;
+    public WebElement horizontalMenu_AllProducts;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__apparel")
-    private WebElement horizontalMenu_menuApparel;
+    public WebElement horizontalMenu_Apparel;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__electronics")
-    private WebElement horizontalMenu_menuElectronic;
+    public WebElement horizontalMenu_Electronic;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__sport")
-    private WebElement horizontalMenu_menuSportsAndOutdoors;
+    public WebElement horizontalMenu_SportsAndOutdoors;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__media")
-    private WebElement horizontalMenu_menuVideoGames;
+    public WebElement horizontalMenu_VideoGames;
 
 
-    public void navigateToHorizontalMenu_AllProducts() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(horizontalMenu_menuAllProducts);
-        hover.perform();
+    public void logOutOnStorefront() {
+        UtilsAdm.hoverNavigateAndClick(accountOnTop);
+        if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
+            button_LogOut.click();
+        }
     }
 
-    public void navigateToHorizontalMenu_Electronic() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(horizontalMenu_menuElectronic);
-        hover.perform();
+    public void selectLanguage(String ruEnAr) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(languageButton));
+        languageButton.click();
+        DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr +"']")).click();
+        UtilsStorefront.hoverOverElement(languageButton);
+    }
+
+    public void scrollToBlockWithProducts() {
+        UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
     }
 
     public void navigateToHorizontalMenu_Phones() {
-        navigateToHorizontalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
         horizontalMenu_menuPhones.click();
     }
 
     public void navigateToHorizontalMenu_GameConsoles() {
-        navigateToHorizontalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
         horizontalMenu_menuGameConsoles.click();
     }
 
-    public void navigateToHorizontalMenu_Apparel() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(horizontalMenu_menuApparel);
-        hover.perform();
-    }
-
     public void navigateToHorizontalMenu_MenCloth() {
-        navigateToHorizontalMenu_Apparel();
-        horizontalMenu_menuMenCloth.click();
+        UtilsStorefront.hoverOverElement(horizontalMenu_Apparel);
+        horizontalMenu_MenCloth.click();
     }
 
     public void navigateToHorizontalMenu_WomanCloth() {
-        navigateToHorizontalMenu_Apparel();
-        horizontalMenu_menuWomanCloth.click();
-    }
-
-    public void navigateToHorizontalMenu_SportsAndOutdoors() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(horizontalMenu_menuSportsAndOutdoors);
-        hover.perform();
-    }
-
-    public void navigateToHorizontalMenu_VideoGames() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(horizontalMenu_menuVideoGames);
-        hover.perform();
+        UtilsStorefront.hoverOverElement(horizontalMenu_Apparel);
+        horizontalMenu_WomanCloth.click();
     }
 
 
@@ -228,19 +134,19 @@ public class StHomePage extends AbstractPage {
     public WebElement button_CloseFlyMenu;
 
     @FindBy(css = ".ut2-lfl.ty-menu-item__products p")
-    private WebElement flyMenu_AllProducts;
+    public WebElement flyMenu_AllProducts;
 
     @FindBy(css = ".ut2-lfl.ty-menu-item__electronics p")
-    private WebElement flyMenu_Electronics;
+    public WebElement flyMenu_Electronics;
 
     @FindBy(css = ".ut2-lfl.ty-menu-item__apparel p")
-    private WebElement flyMenu_Apparel;
+    public WebElement flyMenu_Apparel;
 
     @FindBy(css = ".ut2-lfl.ty-menu-item__sport p")
-    private WebElement flyMenu_SportsAndOutdoors;
+    public WebElement flyMenu_SportsAndOutdoors;
 
     @FindBy(css = ".ut2-lfl.ty-menu-item__media p")
-    private WebElement flyMenu_VideoGames;
+    public WebElement flyMenu_VideoGames;
 
 
     public void navigateToFlyMenu_AllProducts() {

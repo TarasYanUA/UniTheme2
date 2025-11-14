@@ -232,7 +232,7 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
                 "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         takeScreenShot("ProductBlock_Scroller_Var1");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();

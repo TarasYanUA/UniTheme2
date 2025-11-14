@@ -267,7 +267,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__item")).size() <= 15,
                 "Max number of products increases 15 products in the block!");
 
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
         makePause();

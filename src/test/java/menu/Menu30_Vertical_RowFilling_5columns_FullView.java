@@ -13,6 +13,7 @@ import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
 
 import java.time.Duration;
 
@@ -63,7 +64,7 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.navigateToVerticalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu30.00 Menu30_Vertical_RowFilling_5columns_FullView - Menu AllProducts");
 
         SoftAssert softAssert = new SoftAssert();
@@ -76,7 +77,7 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         //Проверяем, что колонок 5
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
                 "Menu columns are not equal 5 columns!");
-        stHomePage.navigateToVerticalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu30.02 Menu30_Vertical_RowFilling_5columns_FullView - Menu Electronic");
 
         //Проверяем, что у меню второго уровня отсутствуют иконки
@@ -99,25 +100,25 @@ public class Menu30_Vertical_RowFilling_5columns_FullView extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
-        stHomePage.navigateToVerticalMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Apparel);
         takeScreenShot("Menu30.04 Menu30_Vertical_RowFilling_5columns_FullView - Menu Apparel");
-        stHomePage.navigateToVerticalMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
         takeScreenShot("Menu30.06 Menu30_Vertical_RowFilling_5columns_FullView - Menu SportsAndOutdoors");
-        stHomePage.navigateToVerticalMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_VideoGames);
         takeScreenShot("Menu30.08 Menu30_Vertical_RowFilling_5columns_FullView - Menu VideoGames");
 
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.verticalMenu_menuButton_Categories.click();
-        stHomePage.navigateToVerticalMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu30.10 Menu30_Vertical_RowFilling_5columns_FullView - Menu AllProducts (RTL)");
-        stHomePage.navigateToVerticalMenu_Electronic();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu30.12 Menu30_Vertical_RowFilling_5columns_FullView - Menu Electronic (RTL)");
-        stHomePage.navigateToVerticalMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Apparel);
         takeScreenShot("Menu30.14 Menu30_Vertical_RowFilling_5columns_FullView - Menu Apparel (RTL)");
-        stHomePage.navigateToVerticalMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
         takeScreenShot("Menu30.16 Menu30_Vertical_RowFilling_5columns_FullView - Menu SportsAndOutdoors (RTL)");
-        stHomePage.navigateToVerticalMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_VideoGames);
         takeScreenShot("Menu30.18 Menu30_Vertical_RowFilling_5columns_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

@@ -68,10 +68,10 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("1300 ColorSchemeSettings_General_Var1 - Block with products");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("1305 ColorSchemeSettings_General_Var1 - Block with products (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
@@ -83,8 +83,8 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
         stCategoryPage.openWindow_WriteReview();
         takeScreenShot("1320 ColorSchemeSettings_General_Var1 - Write review");
         stCategoryPage.closeWriteReview.click();
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
-        stHomePage.selectLanguage_RTL();
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("1325 ColorSchemeSettings_General_Var1 - Category page (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();

@@ -91,7 +91,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
                 "There is the button 'Add to cart' but shouldn't on the category page 'CompactList'!");
 
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("805 GS_ProductLists_CompactLists_Var2 (RTL)");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");

@@ -81,7 +81,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("points");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
-        UtilsAdm.hoverAndNavigateAndClick(themeSettings_showMore.tab_ShowMore);
+        UtilsAdm.hoverNavigateAndClick(themeSettings_showMore.tab_ShowMore);
         if(themeSettings_showMore.setting_AllowForProductLists.isSelected())
             themeSettings_showMore.setting_AllowForProductLists.click();
         basicPage.clickSaveButtonOfSettings();
@@ -118,10 +118,10 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "Gallery of mini icons is not with points in the product block!");
 
         takeScreenShot("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("405 GS_ProductLists_GridListView_Var2 - BlockWithProducts (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Категория "Мужская одежда"
         stHomePage.navigateToHorizontalMenu_MenCloth();
@@ -146,15 +146,15 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
         takeScreenShot("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
         takeScreenShot("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("420 GS_ProductLists_GridListView_Var2 - QuickView (RTL)");
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
-        stHomePage.selectLanguage_RU();
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
+        stHomePage.selectLanguage("ru");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         takeScreenShot("425 GS_ProductLists_GridListView_Var2 - QuickView");
 

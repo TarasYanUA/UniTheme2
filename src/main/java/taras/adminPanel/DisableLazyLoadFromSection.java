@@ -12,7 +12,7 @@ public interface DisableLazyLoadFromSection {
 
         String block = "div[data-ca-block-name='" + blockName + "'] ~ div[class*='grid-control-menu'] div[class*='bm-action-properties']";
         WebElement specifiedBlock = DriverProvider.getDriver().findElement(By.cssSelector(block));
-        UtilsAdm.hoverAndNavigateAndClick(specifiedBlock);
+        UtilsAdm.hoverNavigateAndClick(specifiedBlock);
 
         UtilsAdm.waitForPopUpWindow();
         WebElement lazyloadInSection = DriverProvider.getDriver().findElement(By.cssSelector("input[id^='elm_grid_abt__ut2_use_lazy_load']"));

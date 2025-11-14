@@ -89,7 +89,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("N");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
-        UtilsAdm.hoverAndNavigateAndClick(themeSettings_showMore.tab_ShowMore);
+        UtilsAdm.hoverNavigateAndClick(themeSettings_showMore.tab_ShowMore);
         if (themeSettings_showMore.setting_AllowForProductLists.isSelected())
             themeSettings_showMore.setting_AllowForProductLists.click();
         basicPage.clickSaveButtonOfSettings();
@@ -137,10 +137,10 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "Switch is not with stripes or there is no Switch at all in the product block!");
 
         takeScreenShot("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         takeScreenShot("305 GS_ProductLists_GridListView_Var1 - BlockWithProducts (RTL)");
-        stHomePage.selectLanguage_RU();
+        stHomePage.selectLanguage("ru");
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
@@ -177,15 +177,15 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("310 GS_ProductLists_GridListView_Var1 - PhoneCategory");
 
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("315 GS_ProductLists_GridListView_Var1 - PhoneCategory (RTL)");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot("320 GS_ProductLists_GridListView_Var1 - QuickView (RTL)");
-        UtilsAdm.hoverAndNavigateAndClick(stCategoryPage.closeQuickView);
-        stHomePage.selectLanguage_RU();
+        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
+        stHomePage.selectLanguage("ru");
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot("325 GS_ProductLists_GridListView_Var1 - QuickView");

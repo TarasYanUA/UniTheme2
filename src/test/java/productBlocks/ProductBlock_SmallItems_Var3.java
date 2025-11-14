@@ -178,7 +178,7 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
                 "The button 'Add to cart' is not as 'Text only' or even missed in the product block!");
 
         takeScreenShot("ProductBlock_SmallItems_Var3");
-        stHomePage.selectLanguage_RTL();
+        stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();

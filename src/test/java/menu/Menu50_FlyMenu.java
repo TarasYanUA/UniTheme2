@@ -12,6 +12,8 @@ import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.storefront.UtilsStorefront;
+
 import java.time.Duration;
 
 /*
@@ -32,8 +34,6 @@ public class Menu50_FlyMenu extends TestRunner{
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
         mainMenuSettings.menuSettings_buttonSettings.click();
         UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "6");
         UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
@@ -49,9 +49,7 @@ public class Menu50_FlyMenu extends TestRunner{
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
-        stHomePage.button_FlyMenu.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));
+        stHomePage.openFlyMenu();
         
         SoftAssert softAssert = new SoftAssert();
         AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
@@ -80,31 +78,29 @@ public class Menu50_FlyMenu extends TestRunner{
         softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
                 "There is no any button 'More [category]' in the second level of Fly menu!");
 
-        stHomePage. navigateToFlyMenu_AllProducts();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu50.00 Menu50_FlyMenu_Var1 - Menu AllProducts");
-        stHomePage.navigateToFlyMenu_Electronics();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu50.02 Menu50_FlyMenu_Var1 - Menu Electronics");
-        stHomePage.navigateToFlyMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu50.04 Menu50_FlyMenu_Var1 - Menu Apparel");
-        stHomePage.navigateToFlyMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu50.06 Menu50_FlyMenu_Var1 - Menu SportsAndOutdoors");
-        stHomePage.navigateToFlyMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu50.08 Menu50_FlyMenu_Var1 - Menu VideoGames");
         stHomePage.button_CloseFlyMenu.click();
 
         stHomePage.selectLanguage("ar");
-        stHomePage.button_FlyMenu.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));
-        stHomePage.navigateToFlyMenu_AllProducts();
+        stHomePage.openFlyMenu();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu50.10 Menu50_FlyMenu_Var1 - Menu AllProducts (RTL)");
-        stHomePage.navigateToFlyMenu_Electronics();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu50.12 Menu50_FlyMenu_Var1 - Menu Electronics (RTL)");
-        stHomePage.navigateToFlyMenu_Apparel();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu50.14 Menu50_FlyMenu_Var1 - Menu Apparel (RTL)");
-        stHomePage.navigateToFlyMenu_SportsAndOutdoors();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu50.16 Menu50_FlyMenu_Var1 - Menu SportsAndOutdoors (RTL)");
-        stHomePage.navigateToFlyMenu_VideoGames();
+        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu50.18 Menu50_FlyMenu_Var1 - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

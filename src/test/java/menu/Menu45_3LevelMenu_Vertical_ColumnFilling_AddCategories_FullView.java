@@ -35,8 +35,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
         if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
             mainMenuSettings.setting_ActivateSettings.click();
@@ -67,8 +66,7 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         layoutPage.layout_Light.click();
         layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("4");

@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
-import taras.storefront.UtilsStorefront;
 
 import java.time.Duration;
 
@@ -53,6 +52,11 @@ public class UtilsAdm extends AbstractPage {
     public static void waitForPopUpWindow() {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+    }
+
+    public static void waitForTitleBarWindow() {
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
     }
 
     public static void scrollToElementAndScrollBelow(WebElement webElement, int below) {

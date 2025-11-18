@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made refactoring of the code for the classes: StCategoryPage, StProductPage.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made refactoring of the code for the classes: StHomePage.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/DisableLazyLoadFromSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/DisableLazyLoadFromSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/UtilsStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/UtilsStorefront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_CompactList_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu01_Horizontal_RowFilling_6columns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu02_Horizontal_RowFilling_5columns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu03_Horizontal_RowFilling_4columns.java" afterDir="false" />
@@ -55,15 +42,6 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu50_FlyMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu51_FlyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -792,7 +770,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="258" />
+    <option name="localTasksCounter" value="259" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -823,7 +801,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Use the class Actions and its function pause() instead of try and catch." />
     <MESSAGE value="* Updated pom file&#10;* Updated drivers&#10;* Changed some code for editing product page" />
     <MESSAGE value="* Updated pom file&#10;* Fixed some bugs" />
     <MESSAGE value="Adapted methods:&#10;clickAndTypeField_DescriptionOfFeature,&#10;hoverAndTypeField_PromoText,&#10;hoverAndTypeField_ShortDescription,&#10;selectSetting_ProductTemplate&#10;according to CS-Cart 4.18.4 changes." />
@@ -848,7 +825,8 @@
     <MESSAGE value="Made refactoring of the code for the classes ThemeSettings." />
     <MESSAGE value="Made refactoring of the code for the class ProductPage." />
     <MESSAGE value="Made refactoring of the code for the classes: StCategoryPage, StProductPage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for the classes: StCategoryPage, StProductPage." />
+    <MESSAGE value="Made refactoring of the code for the classes: StHomePage." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for the classes: StHomePage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

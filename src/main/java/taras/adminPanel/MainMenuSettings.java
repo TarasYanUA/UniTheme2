@@ -72,6 +72,7 @@ public class MainMenuSettings extends AbstractPage {
         } else {
             DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='AB: FLY меню'] .bm-action-properties.action")).click();
         }
+        UtilsAdm.waitForTitleBarWindow();
     }
 
 

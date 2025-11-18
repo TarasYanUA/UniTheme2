@@ -1,21 +1,15 @@
 package menu;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 import taras.storefront.UtilsStorefront;
-
-import java.time.Duration;
 
 /*
 Работаем с макетом Light v2:
@@ -37,8 +31,7 @@ public class Menu13_Horizontal_ColumnFilling_2columns extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("2");

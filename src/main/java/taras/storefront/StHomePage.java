@@ -1,7 +1,6 @@
 package taras.storefront;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
@@ -59,16 +58,16 @@ public class StHomePage extends AbstractPage {
     public WebElement threeLevelMenu_CarElectronics;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='3']//span")
-    public WebElement horizontalMenu_menuPhones;
+    WebElement horizontalMenu_Phones;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']//span")
-    WebElement horizontalMenu_menuGameConsoles;
+    WebElement horizontalMenu_GameConsoles;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
-    public WebElement horizontalMenu_MenCloth;
+    WebElement horizontalMenu_MenCloth;
 
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
-    public WebElement horizontalMenu_WomanCloth;
+    WebElement horizontalMenu_WomanCloth;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__products")
     public WebElement horizontalMenu_AllProducts;
@@ -97,7 +96,7 @@ public class StHomePage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(languageButton));
         languageButton.click();
-        DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr +"']")).click();
+        DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr + "']")).click();
         UtilsStorefront.hoverOverElement(languageButton);
     }
 
@@ -107,12 +106,12 @@ public class StHomePage extends AbstractPage {
 
     public void navigateToHorizontalMenu_Phones() {
         UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
-        horizontalMenu_menuPhones.click();
+        horizontalMenu_Phones.click();
     }
 
     public void navigateToHorizontalMenu_GameConsoles() {
         UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
-        horizontalMenu_menuGameConsoles.click();
+        horizontalMenu_GameConsoles.click();
     }
 
     public void navigateToHorizontalMenu_MenCloth() {
@@ -128,7 +127,7 @@ public class StHomePage extends AbstractPage {
 
     //Fly меню на витрине
     @FindBy(css = ".ut2-icon-outline-menu")
-    public WebElement button_FlyMenu;
+    WebElement button_FlyMenu;
 
     @FindBy(css = ".ut2-sw-w .ut2-icon-baseline-close")
     public WebElement button_CloseFlyMenu;
@@ -149,32 +148,9 @@ public class StHomePage extends AbstractPage {
     public WebElement flyMenu_VideoGames;
 
 
-    public void navigateToFlyMenu_AllProducts() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(flyMenu_AllProducts).perform();
-    }
-
-    public void navigateToFlyMenu_Electronics() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(flyMenu_Electronics);
-        hover.perform();
-    }
-
-    public void navigateToFlyMenu_Apparel() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(flyMenu_Apparel);
-        hover.perform();
-    }
-
-    public void navigateToFlyMenu_SportsAndOutdoors() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(flyMenu_SportsAndOutdoors);
-        hover.perform();
-    }
-
-    public void navigateToFlyMenu_VideoGames() {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(flyMenu_VideoGames);
-        hover.perform();
+    public void openFlyMenu() {
+        button_FlyMenu.click();
+        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));
     }
 }

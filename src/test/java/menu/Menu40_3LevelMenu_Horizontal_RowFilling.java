@@ -36,8 +36,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
         if(!mainMenuSettings.setting_ActivateSettings.isSelected()){
             mainMenuSettings.setting_ActivateSettings.click();
@@ -52,8 +51,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         layoutPage.layout_Lightv2.click();
         layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("row_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("5");

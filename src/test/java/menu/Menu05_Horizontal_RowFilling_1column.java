@@ -37,8 +37,7 @@ public class Menu05_Horizontal_RowFilling_1column extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("row_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("1");

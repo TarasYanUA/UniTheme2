@@ -7,15 +7,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 
 public class BrowserFactory {
-    private static Properties getProperties(){
+    private static Properties getProperties() {
         String current = System.getProperty("user.dir");
-        String separator = System.getProperty("file.separator");
+        String separator = FileSystems.getDefault().getSeparator();
         String resourcesFolder = "src" + separator + "test" + separator + "resources";
         String resourcesFile = "data.properties";
         Path file = Paths.get(current + separator + resourcesFolder + separator + resourcesFile);
@@ -29,7 +30,7 @@ public class BrowserFactory {
         return properties;
     }
 
-    public WebDriver createDriver(){
+    public WebDriver createDriver() {
         WebDriver webDriver;
         BrowserType browserType = BrowserType.valueOf(getProperties().getProperty("browser"));
         switch (browserType) {

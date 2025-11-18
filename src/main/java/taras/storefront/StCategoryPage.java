@@ -11,7 +11,6 @@ import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
 import java.time.Duration;
-import java.util.List;
 
 public class StCategoryPage extends AbstractPage {
     public StCategoryPage() {

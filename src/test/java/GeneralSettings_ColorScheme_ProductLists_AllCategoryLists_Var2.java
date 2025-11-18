@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -84,32 +83,16 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxOutOfStockProducts = themeSettingsProductLists.setting_OutOfStockProducts;
-        if (checkboxOutOfStockProducts.isSelected())
-            checkboxOutOfStockProducts.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_OutOfStockProducts, false);
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.setting_PriceAtTheTop;
-        if (!checkboxPriceAtTheTop.isSelected())
-            checkboxPriceAtTheTop.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (checkboxProductRating.isSelected())
-            checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (!checkboxSettingCommonValueOfProductRating.isSelected())
-            checkboxSettingCommonValueOfProductRating.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("counter");
-        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.setting_DisplayStatusesForButtons;
-        if (!checkboxSettingDisplayStatusesForButtons.isSelected())
-            checkboxSettingDisplayStatusesForButtons.click();
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.setting_DisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected())
-            checkboxSettingDisplayButtonComparisonList.click();
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.setting_DisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected())
-            checkboxSettingDisplayButtonWishList.click();
-        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse;
-        if (checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected())
-            checkboxSettingDisplayButtonsWhenHoveringMouse.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayStatusesForButtons, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse, false);
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("arrows");
         new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("arrows");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
@@ -123,11 +106,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("none");
-        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
-            colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, true);
         new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("do_not_use");
-        if (colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
-            colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover, false);
         new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
         basicPage.clickSaveButtonOfSettings();
 
@@ -276,7 +257,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
         stCategoryPage.button_ContinueShopping.click();
-
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
                 "There is no status for the button 'Add to cart' as 'Number of products' on the category page!");
 
@@ -305,7 +285,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.clickQuickViewOfPhoneProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-icon-right-open-thin")));
-        stCategoryPage.hoverCloseQuickView();
         takeScreenShot("235 GS_CS_ProductLists_AllCategoryLists_Var2 - QuickView (RTL)");
         UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
 

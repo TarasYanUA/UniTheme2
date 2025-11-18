@@ -8,11 +8,9 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
-import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
 
 import java.time.Duration;
 
@@ -35,8 +33,8 @@ public class Menu51_FlyMenu extends TestRunner{
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         mainMenuSettings.menuSettings_buttonSettings.click();
-        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
@@ -80,15 +78,15 @@ public class Menu51_FlyMenu extends TestRunner{
         softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
                 "There is no any button 'More [category]' in the second level of Fly menu!");
 
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu51.00 Menu51_FlyMenu_Var2 - Menu AllProducts");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu51.02 Menu51_FlyMenu_Var2 - Menu Electronics");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu51.04 Menu51_FlyMenu_Var2 - Menu Apparel");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu51.06 Menu51_FlyMenu_Var2 - Menu SportsAndOutdoors");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu51.08 Menu51_FlyMenu_Var2 - Menu VideoGames");
         stHomePage.button_CloseFlyMenu.click();
 
@@ -96,15 +94,15 @@ public class Menu51_FlyMenu extends TestRunner{
         stHomePage.openFlyMenu();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ut2-lfl.ty-menu-item__products p")));
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu51.10 Menu51_FlyMenu_Var2 - Menu AllProducts (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu51.12 Menu51_FlyMenu_Var2 - Menu Electronics (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu51.14 Menu51_FlyMenu_Var2 - Menu Apparel (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu51.16 Menu51_FlyMenu_Var2 - Menu SportsAndOutdoors (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu51.18 Menu51_FlyMenu_Var2 - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

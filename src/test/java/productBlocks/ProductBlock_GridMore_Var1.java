@@ -84,7 +84,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
             basicPage.checkbox_HideAddToCartButton.click();
         basicPage.button_saveBlock.click();
 
-/*        //Работаем с настройками характеристики Бренд
+        //Работаем с настройками характеристики Бренд
         csCartSettings.navigateToSection_Features();
         csCartSettings.clickFeatureBrand();
         WebElement checkboxShowInProductList = csCartSettings.showInProductList;
@@ -137,9 +137,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
         ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
         if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
@@ -151,7 +149,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         csCartSettings.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        csCartSettings.setTaxesForAllProducts();*/
+        csCartSettings.setTaxesForAllProducts();
 
         //Добавляем Краткое описание товару Ice Queen
         ProductSettings productSettings = basicPage.navigateToSection_Products();

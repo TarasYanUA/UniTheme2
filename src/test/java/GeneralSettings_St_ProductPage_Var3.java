@@ -11,7 +11,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
 import testRunner.TestRunner;
 
 import java.time.Duration;
@@ -47,14 +46,14 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Настраиваем CS-Cart настройки
         BasicPage basicPage = new BasicPage();
         CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
-        UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, false);
-        UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, false);
-        UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, false);
+        taras.adminPanel.UtilsAdm.setCheckboxState(csCartSettings.setting_ThumbnailsGallery, false);
+        taras.adminPanel.UtilsAdm.setCheckboxState(csCartSettings.setting_NumberOfAvailableProducts, false);
+        taras.adminPanel.UtilsAdm.setCheckboxState(csCartSettings.setting_ProductDetailsInTab, false);
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
-        UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
+        taras.adminPanel.UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
         if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected())
             themeSettingsProduct.setting_ShowQuantityChanger.click();
         if (!themeSettingsProduct.setting_ShowProductCode.isSelected())
@@ -78,8 +77,8 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
-        UtilsAdm.clickAndType(productSettings.field_InStock, "0");
+        taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
+        taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_InStock, "0");
         new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("");
@@ -91,8 +90,8 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
             productSettings.setting_AllowPaymentByPoints.click();
         productSettings.tab_QuantityDiscounts.click();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
-            UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
-            UtilsAdm.clickAndType(productSettings.field_Value, "22000");
+            taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
+            taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_Value, "22000");
         }
         basicPage.clickSaveButtonOfSettings();
     }
@@ -104,13 +103,13 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
         productSettings.chooseAnyProduct();
-        UtilsAdm.clickAndType(productSettings.field_ListPrice, "15000");
+        taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_ListPrice, "15000");
         basicPage.clickSaveButtonOfSettings();
         StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         stProductPage.cookie.click();
         stProductPage.selectLanguage("en");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
 
@@ -157,7 +156,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         stProductPage.selectLanguage("ar");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         takeScreenShot_withScroll("1105 GS_ProductPage_Var3 - Default template (RTL)");
 
         //Проверяем, что характеристики расположены в две колонки
@@ -167,7 +166,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot("1110 GS_ProductPage_Var3 - Product features, two columns (RTL)");
         stProductPage.selectLanguage("en");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         stProductPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
@@ -185,7 +184,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(2);
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
         stProductPage.selectLanguage("ar");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
@@ -194,7 +193,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(3);
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
         stProductPage.selectLanguage("ar");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
@@ -203,7 +202,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(4);
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
         stProductPage.selectLanguage("ar");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
@@ -213,7 +212,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1155 GS_ProductPage_Var3 - Gallery template");
         stProductPage.selectLanguage("ar");
-        UtilsStorefront.closeNotificationIfExists();
+        UtilsAdm.closeNotificationIfExists();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
 

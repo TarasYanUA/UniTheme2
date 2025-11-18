@@ -117,9 +117,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("none");
         if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())

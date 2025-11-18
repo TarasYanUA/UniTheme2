@@ -137,9 +137,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
         if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())

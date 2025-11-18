@@ -1,21 +1,13 @@
 package menu;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
-import taras.adminPanel.UtilsAdm;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
-
-import java.time.Duration;
 
 /*
 Работаем с макетом Light v2:
@@ -37,7 +29,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        UtilsAdm.waitForTitleBarWindow();
+        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("5");
@@ -48,9 +40,9 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
         }
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "12");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "12");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();
@@ -61,7 +53,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu11.00 Menu11_Horizontal_ColumnFilling_5columns - Menu AllProducts");
 
         SoftAssert softAssert = new SoftAssert();
@@ -74,7 +66,7 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         //Проверяем, что колонок 5
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
                 "Menu columns are not equal 5 columns!");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu11.02 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic");
 
         //Проверяем, что у меню второго уровня отсутствуют иконки
@@ -101,21 +93,21 @@ public class Menu11_Horizontal_ColumnFilling_5columns extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
                 "There is no button 'More [category]' in the second level of the menu!");
 
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Apparel);
         takeScreenShot("Menu11.04 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
         takeScreenShot("Menu11.06 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
         takeScreenShot("Menu11.08 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames");
 
         stHomePage.selectLanguage("ar");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu11.10 Menu11_Horizontal_ColumnFilling_5columns - Menu Electronic (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Apparel);
         takeScreenShot("Menu11.12 Menu11_Horizontal_ColumnFilling_5columns - Menu Apparel (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_SportsAndOutdoors);
         takeScreenShot("Menu11.14 Menu11_Horizontal_ColumnFilling_5columns - Menu SportsAndOutdoors (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
         takeScreenShot("Menu11.16 Menu11_Horizontal_ColumnFilling_5columns - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

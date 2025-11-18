@@ -1,20 +1,12 @@
 package menu;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
-import taras.adminPanel.UtilsAdm;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
-
-import java.time.Duration;
 
 /*
 Работаем с макетом Default:
@@ -35,8 +27,8 @@ public class Menu50_FlyMenu extends TestRunner{
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         mainMenuSettings.menuSettings_buttonSettings.click();
-        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "6");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "6");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
@@ -78,29 +70,29 @@ public class Menu50_FlyMenu extends TestRunner{
         softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
                 "There is no any button 'More [category]' in the second level of Fly menu!");
 
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu50.00 Menu50_FlyMenu_Var1 - Menu AllProducts");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu50.02 Menu50_FlyMenu_Var1 - Menu Electronics");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu50.04 Menu50_FlyMenu_Var1 - Menu Apparel");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu50.06 Menu50_FlyMenu_Var1 - Menu SportsAndOutdoors");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu50.08 Menu50_FlyMenu_Var1 - Menu VideoGames");
         stHomePage.button_CloseFlyMenu.click();
 
         stHomePage.selectLanguage("ar");
         stHomePage.openFlyMenu();
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu50.10 Menu50_FlyMenu_Var1 - Menu AllProducts (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Electronics);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Electronics);
         takeScreenShot("Menu50.12 Menu50_FlyMenu_Var1 - Menu Electronics (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_Apparel);
         takeScreenShot("Menu50.14 Menu50_FlyMenu_Var1 - Menu Apparel (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_SportsAndOutdoors);
         takeScreenShot("Menu50.16 Menu50_FlyMenu_Var1 - Menu SportsAndOutdoors (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.flyMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.flyMenu_VideoGames);
         takeScreenShot("Menu50.18 Menu50_FlyMenu_Var1 - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

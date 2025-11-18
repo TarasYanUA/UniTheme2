@@ -38,9 +38,7 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
 
         //Настраиваем UniTheme цветосхему, вкладка "Общее"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("do_not_use");
         if (colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected())
             colorSchemeSettings.setting_General_RoundCornersOfBlocks.click();

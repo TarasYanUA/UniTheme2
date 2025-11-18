@@ -1,18 +1,11 @@
 package menu;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
-
-import java.time.Duration;
 
 /*
 Работаем с макетом Light:
@@ -34,7 +27,7 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
-        UtilsAdm.waitForTitleBarWindow();
+        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
         if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
             mainMenuSettings.setting_ActivateSettings.click();
@@ -55,17 +48,17 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         layoutPage.layout_Light.click();
         layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        UtilsAdm.waitForTitleBarWindow();
+        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("1");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "80");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "80");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
         if (!mainMenuSettings.setting_CompactDisplayView.isSelected()) {
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "700");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "700");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();
@@ -78,9 +71,9 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu46.00 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - AllProducts");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu46.02 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-Computers");
 
         SoftAssert softAssert = new SoftAssert();
@@ -114,17 +107,17 @@ public class Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView 
         softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
                 "There is no button 'More [category]' in the third level of the menu!");
 
-        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
+        UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu46.04 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-CarElectronics");
 
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.selectLanguage("ar");
         stHomePage.verticalMenu_menuButton_Categories.click();
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu46.06 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - AllProducts (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu46.08 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-Computers (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
+        UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu46.10 Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView - Electronic-CarElectronics (RTL)");
         softAssert.assertAll();
     }

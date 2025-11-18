@@ -77,32 +77,32 @@ public class StCategoryPage extends AbstractPage {
         WebElement product = DriverProvider.getDriver().findElement(By.xpath("//a[contains(@title, '" + productTitle + "')]"));
         WebElement quickView = DriverProvider.getDriver().findElement(By.xpath(product + "/../../..//a//a[@data-ca-target-id='product_quick_view']"));
 
-        UtilsAdm.scrollToElementAndScrollBelow(product, 20);
-        UtilsAdm.scrollToElementAndScrollBelow(quickView, 0);
+        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(product, 20);
+        UtilsAdm.hoverOverElement(quickView);
     }
 
     public void selectProductListView(WebElement element) {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
         element.click();
-        UtilsStorefront.waitForSpinnerDisappear();
+        UtilsAdm.waitForSpinnerDisappear();
     }
 
     public void clickButtonQuickView() {
         buttonQuickView.click();
-        UtilsStorefront.waitForSpinnerDisappear();
+        UtilsAdm.waitForSpinnerDisappear();
     }
 
     public void clickQuickViewOfPhoneProduct() {
         quickViewOfPhoneProduct_Droid3.click();
-        UtilsStorefront.waitForSpinnerDisappear();
-        UtilsAdm.scrollToElementAndScrollBelow(closeQuickView, 0);
+        UtilsAdm.waitForSpinnerDisappear();
+        UtilsAdm.hoverOverElement(closeQuickView);
     }
 
     public void clickQuickViewOfMenClothProduct() {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
-        UtilsAdm.scrollToElementAndScrollBelow(menClothProduct, 0);
-        UtilsAdm.hoverNavigateAndClick(quickViewOfMenClothProduct);
-        UtilsStorefront.waitForSpinnerDisappear();
+        UtilsAdm.hoverOverElement(menClothProduct);
+        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(quickViewOfMenClothProduct);
+        UtilsAdm.waitForSpinnerDisappear();
     }
 
     public void openWindow_WriteReview() {

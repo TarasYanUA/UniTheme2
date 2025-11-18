@@ -1,21 +1,13 @@
 package menu;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
-import taras.adminPanel.UtilsAdm;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
-import taras.storefront.UtilsStorefront;
-
-import java.time.Duration;
 
 /*
 Работаем с макетом Light:
@@ -38,12 +30,12 @@ public class Menu31_Vertical_RowFilling_4columns_FullView extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        UtilsAdm.waitForTitleBarWindow();
+        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("row_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("4");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
-        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "30");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "30");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
@@ -51,7 +43,7 @@ public class Menu31_Vertical_RowFilling_4columns_FullView extends TestRunner {
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "600");
+        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "600");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();
@@ -63,7 +55,7 @@ public class Menu31_Vertical_RowFilling_4columns_FullView extends TestRunner {
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
         stHomePage.verticalMenu_menuButton_Categories.click();
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu31.00 Menu31_Vertical_RowFilling_4columns_FullView - Menu AllProducts");
 
         SoftAssert softAssert = new SoftAssert();
@@ -76,7 +68,7 @@ public class Menu31_Vertical_RowFilling_4columns_FullView extends TestRunner {
         //Проверяем, что колонок 4
         softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
                 "Menu columns are not equal 4 columns!");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu31.02 Menu31_Vertical_RowFilling_4columns_FullView - Menu Electronic");
 
         //Проверяем, что у меню второго уровня присутствуют иконки
@@ -99,25 +91,25 @@ public class Menu31_Vertical_RowFilling_4columns_FullView extends TestRunner {
         softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
                 "There are no buttons 'More' in the elements of the 2-level menu!");
 
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Apparel);
         takeScreenShot("Menu31.04 Menu31_Vertical_RowFilling_4columns_FullView - Menu Apparel");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
         takeScreenShot("Menu31.06 Menu31_Vertical_RowFilling_4columns_FullView - Menu SportsAndOutdoors");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_VideoGames);
         takeScreenShot("Menu31.08 Menu31_Vertical_RowFilling_4columns_FullView - Menu VideoGames");
 
         stHomePage.verticalMenu_menuButton_Categories.click();
         stHomePage.selectLanguage("ar");
         stHomePage.verticalMenu_menuButton_Categories.click();
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_AllProducts);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu31.10 Menu31_Vertical_RowFilling_4columns_FullView - Menu AllProducts (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Electronic);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu31.12 Menu31_Vertical_RowFilling_4columns_FullView - Menu Electronic (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_Apparel);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Apparel);
         takeScreenShot("Menu31.14 Menu31_Vertical_RowFilling_4columns_FullView - Menu Apparel (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_SportsAndOutdoors);
         takeScreenShot("Menu31.16 Menu31_Vertical_RowFilling_4columns_FullView - Menu SportsAndOutdoors (RTL)");
-        UtilsStorefront.hoverOverElement(stHomePage.verticalMenu_VideoGames);
+        UtilsAdm.hoverOverElement(stHomePage.verticalMenu_VideoGames);
         takeScreenShot("Menu31.18 Menu31_Vertical_RowFilling_4columns_FullView - Menu VideoGames (RTL)");
         softAssert.assertAll();
     }

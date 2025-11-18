@@ -78,9 +78,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
 
         //Настраиваем UniTheme цветосхему, вкладка "Товар"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_Product.click();
         if (!colorSchemeSettings.setting_ProductMaskForProductImages.isSelected()) {
             colorSchemeSettings.setting_ProductMaskForProductImages.click();

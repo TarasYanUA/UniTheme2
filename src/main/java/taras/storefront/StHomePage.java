@@ -2,7 +2,6 @@ package taras.storefront;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
@@ -86,7 +85,7 @@ public class StHomePage extends AbstractPage {
 
 
     public void logOutOnStorefront() {
-        UtilsAdm.hoverNavigateAndClick(accountOnTop);
+        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(accountOnTop);
         if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
             button_LogOut.click();
         }
@@ -97,30 +96,30 @@ public class StHomePage extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(languageButton));
         languageButton.click();
         DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr + "']")).click();
-        UtilsStorefront.hoverOverElement(languageButton);
+        UtilsAdm.hoverOverElement(languageButton);
     }
 
     public void scrollToBlockWithProducts() {
-        UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
+        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
     }
 
     public void navigateToHorizontalMenu_Phones() {
-        UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
+        UtilsAdm.hoverOverElement(horizontalMenu_Electronic);
         horizontalMenu_Phones.click();
     }
 
     public void navigateToHorizontalMenu_GameConsoles() {
-        UtilsStorefront.hoverOverElement(horizontalMenu_Electronic);
+        UtilsAdm.hoverOverElement(horizontalMenu_Electronic);
         horizontalMenu_GameConsoles.click();
     }
 
     public void navigateToHorizontalMenu_MenCloth() {
-        UtilsStorefront.hoverOverElement(horizontalMenu_Apparel);
+        UtilsAdm.hoverOverElement(horizontalMenu_Apparel);
         horizontalMenu_MenCloth.click();
     }
 
     public void navigateToHorizontalMenu_WomanCloth() {
-        UtilsStorefront.hoverOverElement(horizontalMenu_Apparel);
+        UtilsAdm.hoverOverElement(horizontalMenu_Apparel);
         horizontalMenu_WomanCloth.click();
     }
 

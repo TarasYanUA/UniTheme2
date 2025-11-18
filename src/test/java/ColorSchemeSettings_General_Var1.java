@@ -38,21 +38,14 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
 
         //Настраиваем UniTheme цветосхему, вкладка "Общее"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
-        colorSchemeSettings.fieldOfActiveColorScheme.click();
-        colorSchemeSettings.activeColorScheme.click();
-        makePause();
+        colorSchemeSettings.selectActiveColorScheme();
         new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("full");
-        if (!colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected())
-            colorSchemeSettings.setting_General_RoundCornersOfBlocks.click();
-        if (!colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.isSelected())
-            colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_RoundCornersOfBlocks, true);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters, true);
         new Select(colorSchemeSettings.setting_General_ButtonsStyle).selectByValue("use_background");
-        if (!colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.isSelected())
-            colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.click();
-        if (colorSchemeSettings.setting_General_AddShadow.isSelected())
-            colorSchemeSettings.setting_General_AddShadow.click();
-        if (colorSchemeSettings.setting_General_AddBulk.isSelected())
-            colorSchemeSettings.setting_General_AddBulk.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayTextInCapitalLetters, true);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_AddShadow, false);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_AddBulk, false);
         new Select(colorSchemeSettings.setting_General_CartIcon).selectByValue("type1");
         basicPage.clickSaveButtonOfSettings();
     }

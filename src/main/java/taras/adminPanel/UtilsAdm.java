@@ -62,6 +62,11 @@ public class UtilsAdm extends AbstractPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
     }
 
+    public static void hoverOverElement(WebElement webElement) {
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(webElement).perform();
+    }
+
     public static void scrollToElementAndScrollBelow(WebElement webElement, int below) {
         Actions scroll = new Actions(DriverProvider.getDriver());
         scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(webElement), 0, below).perform();
@@ -98,10 +103,5 @@ public class UtilsAdm extends AbstractPage {
         (new WebDriverWait((getDriver()), Duration.ofSeconds(10)))
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
         taras.adminPanel.UtilsAdm.makePause(2000);
-    }
-
-    public static void hoverOverElement(WebElement webElement) {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(webElement).perform();
     }
 }

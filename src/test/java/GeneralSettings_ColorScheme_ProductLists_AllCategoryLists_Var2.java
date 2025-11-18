@@ -248,9 +248,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что присутствует статус у кнопки "Избранное"
         if (assertsOnStorefront.statusesForButton_AddToWishList.isEmpty()) {
             stCategoryPage.button_AddToWishList.click();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
-            stCategoryPage.closeNotificationWindow.click();
+            UtilsAdm.closeAllNotifications();
         }
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToWishList.isEmpty(),
                 "There is no status for the button 'Add to wish list'!");
@@ -258,9 +256,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что присутствует статус у кнопки "Сравнение"
         if (assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty()) {
             stCategoryPage.button_AddToComparisonList.click();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close")));
-            stCategoryPage.closeNotificationWindow.click();
+            UtilsAdm.closeAllNotifications();
         }
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty(),
                 "There is no status for the button 'Add to comparison list'!");
@@ -284,11 +280,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
                 "There is no status for the button 'Add to cart' as 'Number of products' on the category page!");
 
-        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
-            for (int i = 0; i < stCategoryPage.notification_AlertSuccess.size(); i++) {
-                stCategoryPage.closeNotification_AlertSuccess.click();
-            }
-        }
+        stHomePage.closeNotification_AlertSuccess();
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("220 GS_CS_ProductLists_AllCategoryLists_Var2 - PhonesCategory");
         stHomePage.selectLanguage("ar");
@@ -348,7 +340,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
                 "Product variations are not with Thumbnails on the category 'Phones', ListWithoutOptions!");
 
-        makePause();
+        UtilsAdm.makePause(2000);
         takeScreenShot_withScroll("240 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions (RTL)");
         stHomePage.selectLanguage("ru");
         takeScreenShot_withScroll("245 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions");

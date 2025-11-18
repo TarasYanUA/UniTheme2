@@ -40,17 +40,12 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
         new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("do_not_use");
-        if (colorSchemeSettings.setting_General_RoundCornersOfBlocks.isSelected())
-            colorSchemeSettings.setting_General_RoundCornersOfBlocks.click();
-        if (colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.isSelected())
-            colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_RoundCornersOfBlocks, false);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters, false);
         new Select(colorSchemeSettings.setting_General_ButtonsStyle).selectByValue("use_border");
-        if (colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.isSelected())
-            colorSchemeSettings.setting_General_DisplayTextInCapitalLetters.click();
-        if (!colorSchemeSettings.setting_General_AddShadow.isSelected())
-            colorSchemeSettings.setting_General_AddShadow.click();
-        if (!colorSchemeSettings.setting_General_AddBulk.isSelected())
-            colorSchemeSettings.setting_General_AddBulk.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayTextInCapitalLetters, false);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_AddShadow, true);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_AddBulk, true);
         new Select(colorSchemeSettings.setting_General_CartIcon).selectByValue("type7");
         basicPage.clickSaveButtonOfSettings();
     }
@@ -81,7 +76,6 @@ public class ColorSchemeSettings_General_Var2 extends TestRunner {
         stCategoryPage.openWindow_WriteReview();
         takeScreenShot("1420 ColorSchemeSettings_General_Var2 - Write review");
         stCategoryPage.closeWriteReview.click();
-        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("1425 ColorSchemeSettings_General_Var2 - Category page (RTL)");

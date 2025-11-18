@@ -15,9 +15,6 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
 
-    @FindBy(css = ".cm-notification-close")
-    public List<WebElement> closeNotification;
-
     @FindBy(id = "administration")
     private WebElement menu_Settings;
 

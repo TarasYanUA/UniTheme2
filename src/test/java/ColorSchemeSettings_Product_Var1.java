@@ -1,17 +1,12 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.constants.DriverProvider;
-import org.openqa.selenium.interactions.Actions;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
 
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=2110746700
@@ -42,24 +37,18 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
     public void setConfigurations_ColorSchemeSettings_Product_Var1() {
         //Настраиваем CS-Cart настройки
         BasicPage basicPage = new BasicPage();
-        basicPage.navigateToAppearanceSettings();
-        if (basicPage.setting_ThumbnailsGallery.isSelected()) {
-            basicPage.setting_ThumbnailsGallery.click();
+        CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
+        if (csCartSettings.setting_ThumbnailsGallery.isSelected()) {
+            csCartSettings.setting_ThumbnailsGallery.click();
             basicPage.clickSaveButtonOfSettings();
         }
 
         //Настраиваем UniTheme настройки, вкладка "Товар"
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
-        if (!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()) {
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if (!themeSettingsProduct.setting_ShowProductCode.isSelected()) {
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if (!themeSettingsProduct.setting_ShowShortDescription.isSelected()) {
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, true);
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("name");
         new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_DefaultTemplate).selectByValue("2");
         new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_BigPictureTemplate).selectByValue("2");
@@ -80,32 +69,22 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_Product.click();
-        if (!colorSchemeSettings.setting_ProductMaskForProductImages.isSelected()) {
-            colorSchemeSettings.setting_ProductMaskForProductImages.click();
-        }
-        if (!colorSchemeSettings.setting_ProductBorderForProductImages.isSelected()) {
-            colorSchemeSettings.setting_ProductBorderForProductImages.click();
-        }
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductMaskForProductImages, true);
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductBorderForProductImages, true);
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
         productSettings.chooseAnyProduct();
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()) {
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
-        }
+        UtilsAdm.closeAllNotifications();
         UtilsAdm.clickAndType(productSettings.field_Price, "33000.00");
         UtilsAdm.clickAndType(productSettings.field_InStock, "20");
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
-        productSettings.tab_RewardPoints.click();
-        if (!productSettings.setting_AllowPaymentByPoints.isSelected()) {
-            productSettings.setting_AllowPaymentByPoints.click();
-        }
+        UtilsAdm.hoverNavigateAndClick(productSettings.tab_RewardPoints);
+        UtilsAdm.setCheckboxState(productSettings.setting_AllowPaymentByPoints, true);
         productSettings.tab_QuantityDiscounts.click();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
             UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
@@ -154,10 +133,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
 
         takeScreenShot_withScroll("1200 ColorSchemeSettings_Product_Var1 - Default template");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);
-        makePause();
+        UtilsAdm.makePause(2000);
         stProductPage.buttonAddToCart_ProductWithOptions.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
 
         //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).isEmpty(),
@@ -168,10 +146,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("1205 ColorSchemeSettings_Product_Var1 - Default template (RTL)");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);
-        makePause();
+        UtilsAdm.makePause(2000);
         stProductPage.buttonAddToCart_ProductWithOptions.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         takeScreenShot("1207 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options (RTL)");
         stProductPage.closePopUpWindow.click();
 

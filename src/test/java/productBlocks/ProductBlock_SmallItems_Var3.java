@@ -55,11 +55,11 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        makePause();
+        UtilsAdm.makePause(2000);
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         basicPage.navigateToBlockSettings("Распродажа");
         basicPage.selectSetting_BlockTemplate("blocks/products/products_small_items.tpl");
-        makePause();
+        UtilsAdm.makePause(2000);
         basicPage.button_SettingsOfTemplate.click();
         if (!basicPage.checkbox_ShowItemNumber.isSelected())
             basicPage.checkbox_ShowItemNumber.click();

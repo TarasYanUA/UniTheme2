@@ -1,6 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -83,32 +81,16 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Работаем с настройками темы (в основном идут по умолчанию)
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxOutOfStockProducts = themeSettingsProductLists.setting_OutOfStockProducts;
-        if (!checkboxOutOfStockProducts.isSelected())
-            checkboxOutOfStockProducts.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_OutOfStockProducts, true);
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-mix");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.setting_PriceAtTheTop;
-        if (checkboxPriceAtTheTop.isSelected())
-            checkboxPriceAtTheTop.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected())
-            checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected())
-            checkboxSettingCommonValueOfProductRating.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("check-icon");
-        WebElement checkboxSettingDisplayStatusesForButtons = themeSettingsProductLists.setting_DisplayStatusesForButtons;
-        if (checkboxSettingDisplayStatusesForButtons.isSelected())
-            checkboxSettingDisplayStatusesForButtons.click();
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.setting_DisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected())
-            checkboxSettingDisplayButtonComparisonList.click();
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.setting_DisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected())
-            checkboxSettingDisplayButtonWishList.click();
-        WebElement checkboxSettingDisplayButtonsWhenHoveringMouse = themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse;
-        if (!checkboxSettingDisplayButtonsWhenHoveringMouse.isSelected())
-            checkboxSettingDisplayButtonsWhenHoveringMouse.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayStatusesForButtons, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse, true);
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("lines");
         themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
@@ -120,11 +102,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("none");
-        if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
-            colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, false);
         new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("use");
-        if (!colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
-            colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover, true);
         new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("normal");
         basicPage.clickSaveButtonOfSettings();
 
@@ -261,7 +241,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.logOutOnStorefront();
-        UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
+        UtilsAdm.hoverOverElement(stCategoryPage.button_GeneralAddToCart);
         stCategoryPage.button_GeneralAddToCart.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
@@ -270,11 +250,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         softAssert.assertTrue(!assertsOnStorefront.getStatusesForButtonAddToCartIcon().isEmpty(),
                 "There is no status as 'Icon' for the button 'Add to cart' on the category 'Phones'!");
 
-        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
-            for (int i = 0; i < stCategoryPage.notification_AlertSuccess.size(); i++) {
-                stCategoryPage.closeNotification_AlertSuccess.click();
-            }
-        }
+        stHomePage.closeNotification_AlertSuccess();
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
         stHomePage.selectLanguage("ar");
@@ -285,13 +261,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Быстрый просмотр в категории "Телефоны"
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("130 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView");
         UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
-        stCategoryPage.hoverCloseQuickView();
         takeScreenShot_withScroll("135 GS_CS_ProductLists_AllCategoryLists_Var1 - QuickView (RTL)");
         UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
 
@@ -335,9 +309,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Product variations are not with Colors on the category 'Phones', ListWithoutOptions!");
 
         takeScreenShot_withScroll("140 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper"))).build().perform();
-        makePause();
+        UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper")));
+        UtilsAdm.makePause(2000);
         stHomePage.selectLanguage("ru");
         takeScreenShot_withScroll("145 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions");
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);

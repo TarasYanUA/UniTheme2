@@ -76,7 +76,6 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
         stCategoryPage.openWindow_WriteReview();
         takeScreenShot("1320 ColorSchemeSettings_General_Var1 - Write review");
         stCategoryPage.closeWriteReview.click();
-        UtilsAdm.hoverNavigateAndClick(stCategoryPage.closeQuickView);
         stHomePage.selectLanguage("ar");
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("1325 ColorSchemeSettings_General_Var1 - Category page (RTL)");

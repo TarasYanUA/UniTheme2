@@ -64,11 +64,11 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        makePause();
+        UtilsAdm.makePause(2000);
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         basicPage.navigateToBlockSettings("Распродажа");
         basicPage.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        makePause();
+        UtilsAdm.makePause(2000);
         basicPage.button_SettingsOfTemplate.click();
         if (basicPage.checkbox_ShowItemNumber.isSelected())
             basicPage.checkbox_ShowItemNumber.click();
@@ -165,7 +165,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
-        makePause();
+        UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров 6 колонок. Настройка блока "Количество колонок в списке -- 6"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
@@ -264,7 +264,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         stHomePage.selectLanguage("ar");
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
-        makePause();
+        UtilsAdm.makePause(2000);
 
         int numRTL = 1;
         while (true) {

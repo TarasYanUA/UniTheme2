@@ -66,11 +66,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        makePause();
+        UtilsAdm.makePause(2000);
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         basicPage.navigateToBlockSettings("Распродажа");
         basicPage.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        makePause();
+        UtilsAdm.makePause(2000);
         basicPage.button_SettingsOfTemplate.click();
         if (basicPage.checkbox_ShowItemNumber.isSelected())
             basicPage.checkbox_ShowItemNumber.click();
@@ -155,8 +155,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Ice Queen");
         productSettings.chooseAnyProduct();
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty())
-            DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
+        UtilsAdm.closeAllNotifications();
         productSettings.hoverAndTypeField_ShortDescription(
                 "Рюкзак Camelbak - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
         basicPage.clickSaveButtonOfSettings();
@@ -176,7 +175,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
-        makePause();
+        UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
@@ -278,7 +277,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         stHomePage.selectLanguage("ar");
         WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
         tab_OnSaleRTL.click();
-        makePause();
+        UtilsAdm.makePause(2000);
 
         int numRTL = 1;
         while (true) {

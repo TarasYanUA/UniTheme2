@@ -62,11 +62,11 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
 
         //Настраиваем блок товаров "Распродажа"
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        makePause();
+        UtilsAdm.makePause(2000);
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
         basicPage.navigateToBlockSettings("Распродажа");
         basicPage.selectSetting_BlockTemplate("blocks/products/products_scroller.tpl");
-        makePause();
+        UtilsAdm.makePause(2000);
         basicPage.button_SettingsOfTemplate.click();
         if(!basicPage.checkbox_ShowPrice.isSelected())
             basicPage.checkbox_ShowPrice.click();
@@ -173,7 +173,7 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         stHomePage.scrollToBlockWithProducts();
         WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
         tab_OnSale.click();
-        makePause();
+        UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров "Количество элементов -- 3"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By

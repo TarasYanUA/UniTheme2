@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -49,7 +48,7 @@ public class TestRunner {
 
     public void takeScreenShot_withScroll(String screenshotName) {
         ((JavascriptExecutor) getDriver()).executeScript("scroll(0,130);");
-        makePause();
+        UtilsAdm.makePause(2000);
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
@@ -59,18 +58,13 @@ public class TestRunner {
     }
 
     public void takeScreenShot(String screenshotName) {
-        makePause();
+        UtilsAdm.makePause(2000);
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void makePause(){
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.pause(2000).perform();
     }
 
     public String getBlockID(String blockName) {

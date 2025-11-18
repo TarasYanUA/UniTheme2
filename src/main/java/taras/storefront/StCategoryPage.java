@@ -51,20 +51,11 @@ public class StCategoryPage extends AbstractPage {
     @FindBy(css = ".ty-btn__secondary.cm-notification-close")
     public WebElement button_ContinueShopping;
 
-    @FindBy(css = ".notification-content.alert")
-    public List<WebElement> notification_AlertSuccess;
-
-    @FindBy(css = ".close.cm-notification-close")
-    public WebElement closeNotification_AlertSuccess;
-
     @FindBy(css = ".ut2-add-to-wish")
     public WebElement button_AddToWishList;
 
     @FindBy(css = ".ut2-add-to-compare")
     public WebElement button_AddToComparisonList;
-
-    @FindBy(css = ".cm-notification-close")
-    public WebElement closeNotificationWindow;
 
     @FindBy(css = ".ut2-pb__title .ty-product-review-write-product-review-button")
     private WebElement button_WriteReview;

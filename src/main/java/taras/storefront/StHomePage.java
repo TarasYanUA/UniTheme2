@@ -2,6 +2,7 @@ package taras.storefront;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
@@ -9,6 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
+import java.util.List;
+
+import static taras.constants.DriverProvider.getDriver;
 
 public class StHomePage extends AbstractPage {
     public StHomePage() {
@@ -29,6 +33,12 @@ public class StHomePage extends AbstractPage {
 
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     public WebElement blockWithProducts;
+
+    @FindBy(css = ".notification-content.alert")
+    List<WebElement> notification_AlertSuccess;
+
+    @FindBy(css = ".close.cm-notification-close")
+    WebElement closeNotification_AlertSuccess;
 
 
     //Разделы меню на витрине
@@ -83,6 +93,14 @@ public class StHomePage extends AbstractPage {
     @FindBy(css = ".ut2-menu__list .ty-menu-item__media")
     public WebElement horizontalMenu_VideoGames;
 
+
+    public void closeNotification_AlertSuccess() {
+        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
+            for (int i = 0; i < notification_AlertSuccess.size(); i++) {
+                closeNotification_AlertSuccess.click();
+            }
+        }
+    }
 
     public void logOutOnStorefront() {
         taras.adminPanel.UtilsAdm.hoverNavigateAndClick(accountOnTop);

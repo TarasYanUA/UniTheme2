@@ -58,21 +58,11 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "109");
-        if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductCode.isSelected()){
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, true);
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("name");
         new Select(themeSettingsProduct.setting_CombinationsOfProductGalleryImageFormations).selectByValue("2");
         basicPage.clickSaveButtonOfSettings();

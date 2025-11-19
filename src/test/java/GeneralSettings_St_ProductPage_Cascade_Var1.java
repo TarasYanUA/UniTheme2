@@ -1,10 +1,8 @@
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
@@ -58,21 +56,11 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "106");
-        if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if(themeSettingsProduct.setting_ShowProductCode.isSelected()){
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, true);
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("logo");
         new Select(themeSettingsProduct.setting_CombinationsOfProductGalleryImageFormations).selectByValue("1");
         basicPage.clickSaveButtonOfSettings();
@@ -97,12 +85,8 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         new Select(productSettings.setting_OutOfStockActions).selectByValue("N");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
-        productSettings.tab_RewardPoints.click();
-        if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
-            productSettings.setting_AllowPaymentByPoints.click();
-        }
+        UtilsAdm.hoverNavigateAndClick(productSettings.tab_RewardPoints);
+        UtilsAdm.setCheckboxState(productSettings.setting_AllowPaymentByPoints, true);
         basicPage.clickSaveButtonOfSettings();
     }
 
@@ -155,6 +139,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points on the product page!");
+
         takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Cascade template");
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Cascade template (RTL)");

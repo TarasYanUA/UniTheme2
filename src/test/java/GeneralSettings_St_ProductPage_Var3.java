@@ -1,9 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
@@ -12,8 +9,6 @@ import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
 
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
@@ -54,16 +49,11 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         taras.adminPanel.UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
-        if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected())
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        if (!themeSettingsProduct.setting_ShowProductCode.isSelected())
-            themeSettingsProduct.setting_ShowProductCode.click();
-        if (themeSettingsProduct.setting_ShowProductFeatures.isSelected())
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        if (!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected())
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        if (themeSettingsProduct.setting_ShowShortDescription.isSelected())
-            themeSettingsProduct.setting_ShowShortDescription.click();
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, false);
         new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("none");
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("none");
         new Select(themeSettingsProduct.setting_NumberOfDisplayedImages_DefaultTemplate).selectByValue("2");
@@ -83,11 +73,8 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("");
         productSettings.hoverAndTypeField_PromoText("");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
-        productSettings.tab_RewardPoints.click();
-        if (!productSettings.setting_AllowPaymentByPoints.isSelected())
-            productSettings.setting_AllowPaymentByPoints.click();
+        UtilsAdm.hoverNavigateAndClick(productSettings.tab_RewardPoints);
+        UtilsAdm.setCheckboxState(productSettings.setting_AllowPaymentByPoints, true);
         productSettings.tab_QuantityDiscounts.click();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
             taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_Quantity, "3");
@@ -172,8 +159,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
             DriverProvider.getDriver().findElement(By.cssSelector("#content_features .ab-smc")).click();
         stProductPage.featureDescription.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         takeScreenShot("1120 GS_ProductPage_Var3 - Feature description, two columns");
 
         //Другие шаблоны страницы товара

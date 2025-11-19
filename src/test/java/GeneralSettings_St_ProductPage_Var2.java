@@ -1,7 +1,5 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
@@ -9,8 +7,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
 
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
@@ -54,31 +50,19 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
         //Работаем с настройками характеристик Жесткий диск и Бренд
         FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.feature_HardDrive.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         featuresPage.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        if (!featuresPage.showInHeaderOnProductPage_HardDisk.isSelected())
-            featuresPage.showInHeaderOnProductPage_HardDisk.click();
+        UtilsAdm.setCheckboxState(featuresPage.showInHeaderOnProductPage_HardDisk, true);
         featuresPage.button_SaveFeature.click();
 
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "109");
-        if(!themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductCode.isSelected()){
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, true);
         new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("full");
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("name");
         basicPage.clickSaveButtonOfSettings();
@@ -177,8 +161,7 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
         stProductPage.scrollToAndClickTab_Features();
         takeScreenShot("1015 GS_ProductPage_Var2 - Product features, two columns");
         stProductPage.featureDescription.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         takeScreenShot("1020 GS_ProductPage_Var2 - Feature description, two columns");
 
         //Другие шаблоны страницы товара

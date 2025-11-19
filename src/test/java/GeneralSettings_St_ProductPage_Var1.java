@@ -1,17 +1,10 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
-import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
 
 /*
 ссылка на чеклист: https://docs.google.com/spreadsheets/d/19qsT6Hm83Kdt1Fh1WMS96sBfyp3wouEMEv17FyEglh0/edit#gid=0
@@ -46,9 +39,9 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
     public void setConfigurationsFor_GeneralSettings_ProductPage_Var1(){
         //Настраиваем макет для тест-кейса
         BasicPage basicPage = new BasicPage();
-        basicPage.navigateToSection_WebsiteLayouts();
-        basicPage.layout_Lightv2.click();
-        basicPage.setLayoutAsDefault();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Lightv2.click();
+        layoutPage.setLayoutAsDefault();
 
         //Настраиваем CS-Cart настройки
         CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
@@ -62,21 +55,11 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         ThemeSettings_Product themeSettingsProduct = new ThemeSettings_Product();
         themeSettingsProduct.tab_Product.click();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "109");
-        if(themeSettingsProduct.setting_ShowQuantityChanger.isSelected()){
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if(themeSettingsProduct.setting_ShowProductCode.isSelected()){
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if(!themeSettingsProduct.setting_ShowProductFeatures.isSelected()){
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if(themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()){
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if(!themeSettingsProduct.setting_ShowShortDescription.isSelected()){
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, true);
         new Select(themeSettingsProduct.setting_ShowYouSave).selectByValue("short");
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("logo");
         basicPage.clickSaveButtonOfSettings();
@@ -84,11 +67,9 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         //Работаем с настройками характеристик Жесткий диск и Бренд
         FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.feature_HardDrive.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        UtilsAdm.waitForPopUpWindow();
         featuresPage.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        if (!featuresPage.showInHeaderOnProductPage_HardDisk.isSelected())
-            featuresPage.showInHeaderOnProductPage_HardDisk.click();
+        UtilsAdm.setCheckboxState(featuresPage.showInHeaderOnProductPage_HardDisk, true);
         featuresPage.button_SaveFeature.click();
 
         //Настраиваем страницу товара
@@ -103,12 +84,8 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         productSettings.selectSetting_ProductTemplate("default_template");
         productSettings.hoverAndTypeField_ShortDescription("Здесь написано краткое описание товара!");
         productSettings.hoverAndTypeField_PromoText("Только до конца недели! Выберите диск с игрой в подарок!");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
-        productSettings.tab_RewardPoints.click();
-        if(!productSettings.setting_AllowPaymentByPoints.isSelected()){
-            productSettings.setting_AllowPaymentByPoints.click();
-        }
+        UtilsAdm.hoverNavigateAndClick(productSettings.tab_RewardPoints);
+        UtilsAdm.setCheckboxState(productSettings.setting_AllowPaymentByPoints, true);
         basicPage.clickSaveButtonOfSettings();
     }
 
@@ -186,8 +163,7 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         stProductPage.scrollToAndClickTab_Features();
         takeScreenShot("915 GS_ProductPage_Var1 - Product features, one column");
         stProductPage.featureDescription.click();
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-titlebar")));
+        UtilsAdm.waitForTitleBarWindow();
         takeScreenShot("920 GS_ProductPage_Var1 - Feature description, one column");
 
         //Другие шаблоны страницы товара

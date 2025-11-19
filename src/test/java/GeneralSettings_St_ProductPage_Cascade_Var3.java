@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -51,21 +50,11 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         //Настраиваем UniTheme настройки
         ThemeSettings_Product themeSettingsProduct = basicPage.navigateTo_ThemeSettings_tabProduct();
         UtilsAdm.clickAndType(themeSettingsProduct.setting_CustomBlockID, "");
-        if (themeSettingsProduct.setting_ShowQuantityChanger.isSelected()) {
-            themeSettingsProduct.setting_ShowQuantityChanger.click();
-        }
-        if (!themeSettingsProduct.setting_ShowProductCode.isSelected()) {
-            themeSettingsProduct.setting_ShowProductCode.click();
-        }
-        if (themeSettingsProduct.setting_ShowProductFeatures.isSelected()) {
-            themeSettingsProduct.setting_ShowProductFeatures.click();
-        }
-        if (!themeSettingsProduct.setting_FeaturesInTwoColumns.isSelected()) {
-            themeSettingsProduct.setting_FeaturesInTwoColumns.click();
-        }
-        if (themeSettingsProduct.setting_ShowShortDescription.isSelected()) {
-            themeSettingsProduct.setting_ShowShortDescription.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowQuantityChanger, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowProductFeatures, false);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_FeaturesInTwoColumns, true);
+        UtilsAdm.setCheckboxState(themeSettingsProduct.setting_ShowShortDescription, false);
         new Select(themeSettingsProduct.setting_ShowProductBrand).selectByValue("none");
         new Select(themeSettingsProduct.setting_CombinationsOfProductGalleryImageFormations).selectByValue("3");
         basicPage.clickSaveButtonOfSettings();
@@ -79,12 +68,8 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
         productSettings.hoverAndTypeField_ShortDescription("");
         productSettings.hoverAndTypeField_PromoText("");
-        Actions actions = new Actions(DriverProvider.getDriver());
-        actions.moveToElement(productSettings.tab_RewardPoints).build().perform();
-        productSettings.tab_RewardPoints.click();
-        if (!productSettings.setting_AllowPaymentByPoints.isSelected()) {
-            productSettings.setting_AllowPaymentByPoints.click();
-        }
+        UtilsAdm.hoverNavigateAndClick(productSettings.tab_RewardPoints);
+        UtilsAdm.setCheckboxState(productSettings.setting_AllowPaymentByPoints, true);
         productSettings.tab_QuantityDiscounts.click();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#content_qty_discounts  .cm-row-item")).size() < 2) {
             UtilsAdm.clickAndType(productSettings.field_Quantity, "3");

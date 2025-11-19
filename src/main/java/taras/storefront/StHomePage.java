@@ -41,6 +41,39 @@ public class StHomePage extends AbstractPage {
     WebElement closeNotification_AlertSuccess;
 
 
+    public void closeNotification_AlertSuccess() {
+        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
+            for (int i = 0; i < notification_AlertSuccess.size(); i++) {
+                closeNotification_AlertSuccess.click();
+            }
+        }
+    }
+
+    public void logOutOnStorefront() {
+        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(accountOnTop);
+        if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
+            button_LogOut.click();
+        }
+    }
+
+    public void selectLanguage(String ruEnAr) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(languageButton));
+        languageButton.click();
+        DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr + "']")).click();
+        UtilsAdm.hoverOverElement(languageButton);
+    }
+
+    public void scrollToBlockWithProducts() {
+        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
+    }
+
+    public void openProductBlock(String blockName) {
+        DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']")).click();
+        UtilsAdm.makePause(2000);
+    }
+
+
     //Разделы меню на витрине
     @FindBy(css = ".top-menu-grid-vertical .ty-dropdown-box__title")
     public WebElement verticalMenu_menuButton_Categories;
@@ -93,33 +126,6 @@ public class StHomePage extends AbstractPage {
     @FindBy(css = ".ut2-menu__list .ty-menu-item__media")
     public WebElement horizontalMenu_VideoGames;
 
-
-    public void closeNotification_AlertSuccess() {
-        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
-            for (int i = 0; i < notification_AlertSuccess.size(); i++) {
-                closeNotification_AlertSuccess.click();
-            }
-        }
-    }
-
-    public void logOutOnStorefront() {
-        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(accountOnTop);
-        if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
-            button_LogOut.click();
-        }
-    }
-
-    public void selectLanguage(String ruEnAr) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(languageButton));
-        languageButton.click();
-        DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-block__list-item a[data-ca-name='" + ruEnAr + "']")).click();
-        UtilsAdm.hoverOverElement(languageButton);
-    }
-
-    public void scrollToBlockWithProducts() {
-        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
-    }
 
     public void navigateToHorizontalMenu_Phones() {
         UtilsAdm.hoverOverElement(horizontalMenu_Electronic);

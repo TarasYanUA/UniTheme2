@@ -62,36 +62,23 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected())
-            checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected())
-            checkboxSettingCommonValueOfProductRating.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
         UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconWidth, "200");
         UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconHeight, "200");
-        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.setting_ShowProductCode;
-        if (!checkboxSettingShowProductCode.isSelected())
-            checkboxSettingShowProductCode.click();
-        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.setting_DisplayAvailabilityStatus;
-        if (!checkboxSettingDisplayAvailabilityStatus.isSelected())
-            checkboxSettingDisplayAvailabilityStatus.click();
-        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.setting_ShowQuantityChanger;
-        if (!checkboxSettingShowQuantityChanger.isSelected())
-            checkboxSettingShowQuantityChanger.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayAvailabilityStatus, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowQuantityChanger, true);
         new Select(themeSettingsProductLists.setting_ShowAddToCartButton).selectByValue("icon_and_text");
         new Select(themeSettingsProductLists.setting_AdditionalProductInformation).selectByValue("features_and_description");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.setting_ShowAdditionalInformationOnHover;
-        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
-            checkboxSettingShowAdditionalInformationOnHover.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowAdditionalInformationOnHover, true);
         new Select(themeSettingsProductLists.setting_ShowBrand).selectByValue("logo");
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("N");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
         UtilsAdm.hoverNavigateAndClick(themeSettings_showMore.tab_ShowMore);
-        if (themeSettings_showMore.setting_AllowForProductLists.isSelected())
-            themeSettings_showMore.setting_AllowForProductLists.click();
+        UtilsAdm.setCheckboxState(themeSettings_showMore.setting_AllowForProductLists, false);
         basicPage.clickSaveButtonOfSettings();
     }
 
@@ -189,7 +176,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         stCategoryPage.hoverToProduct("Droid 3");
         stCategoryPage.clickQuickViewOfPhoneProduct();
         takeScreenShot("325 GS_ProductLists_GridListView_Var1 - QuickView");
-
 
         softAssert.assertAll();
         System.out.println("GeneralSettings_ProductLists_GridListView_Var1 passed successfully!");

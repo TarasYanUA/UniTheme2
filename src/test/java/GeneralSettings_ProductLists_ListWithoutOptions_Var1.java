@@ -42,20 +42,12 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
-        if (checkboxProductCode.isSelected())
-            checkboxProductCode.click();
-        WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptions_AmountStatus;
-        if (checkboxAmountStatus.isSelected())
-            checkboxAmountStatus.click();
-        WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
-        if (!checkboxShowQuantity.isSelected())
-            checkboxShowQuantity.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ProductCode, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_AmountStatus, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowQuantity, true);
         new Select(themeSettingsProductLists.withoutOptions_ShowButtonAddToCart).selectByValue("icon_button");
         new Select(themeSettingsProductLists.withoutOptions_ContentUnderDescription).selectByValue("variations");
-        WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
-        if (checkboxShowProductOptions.isSelected())
-            checkboxShowProductOptions.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowProductOptions, false);
         new Select(themeSettingsProductLists.setting_ShowBrandLogo_ListWithoutOptions).selectByValue("name");
         new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("N");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("points");

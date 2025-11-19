@@ -1,9 +1,9 @@
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -28,26 +28,11 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected()) {
-            checkboxProductRating.click();
-        }
-        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (!checkboxCommonValueOfProductRating.isSelected()) {
-            checkboxCommonValueOfProductRating.click();
-        }
-        WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
-        if (!checkboxProductCode.isSelected()) {
-            checkboxProductCode.click();
-        }
-        WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
-        if (!checkboxAvailabilityStatus.isSelected()) {
-            checkboxAvailabilityStatus.click();
-        }
-        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityChanger;
-        if (!checkboxQuantityModifier.isSelected()) {
-            checkboxQuantityModifier.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_productCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_availabilityStatus, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_quantityChanger, true);
         new Select(themeSettingsProductLists.compactList_buttonAddToCart).selectByValue("none");
         basicPage.clickSaveButtonOfSettings();
     }

@@ -131,8 +131,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
 
         //Блок товаров "Распродажа" на главной странице
         stHomePage.scrollToBlockWithProducts();
-        WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
-        tab_OnSale.click();
+        stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
@@ -174,8 +173,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         takeScreenShot("ProductBlock_SmallItems_Var1");
         stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
-        WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
-        tab_OnSaleRTL.click();
+        stHomePage.openProductBlock("On Sale");
         takeScreenShot("ProductBlock_SmallItems_Var1 (RTL)");
 
         softAssert.assertAll();

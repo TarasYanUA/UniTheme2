@@ -48,20 +48,12 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         themeSettingsProductLists.tabProductLists.click();
         UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconWidth, "400");
         UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconHeight, "200");
-        WebElement checkboxProductCode = themeSettingsProductLists.withoutOptions_ProductCode;
-        if (!checkboxProductCode.isSelected())
-            checkboxProductCode.click();
-        WebElement checkboxAmountStatus = themeSettingsProductLists.withoutOptions_AmountStatus;
-        if (!checkboxAmountStatus.isSelected())
-            checkboxAmountStatus.click();
-        WebElement checkboxShowQuantity = themeSettingsProductLists.withoutOptions_ShowQuantity;
-        if (!checkboxShowQuantity.isSelected())
-            checkboxShowQuantity.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_AmountStatus, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowQuantity, true);
         new Select(themeSettingsProductLists.withoutOptions_ShowButtonAddToCart).selectByValue("icon_and_text");
         new Select(themeSettingsProductLists.withoutOptions_ContentUnderDescription).selectByValue("features");
-        WebElement checkboxShowProductOptions = themeSettingsProductLists.withoutOptions_ShowProductOptions;
-        if (!checkboxShowProductOptions.isSelected())
-            checkboxShowProductOptions.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowProductOptions, true);
         new Select(themeSettingsProductLists.setting_ShowBrandLogo_ListWithoutOptions).selectByValue("logo");
         new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("points");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("N");

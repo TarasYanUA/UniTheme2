@@ -173,8 +173,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Блок товаров "Распродажа" на главной странице
         stHomePage.scrollToBlockWithProducts();
-        WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
-        tab_OnSale.click();
+        stHomePage.openProductBlock("Распродажа");
         UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
@@ -184,14 +183,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         int num = 1;
         while (true) {
+            WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
-
-                Actions scroll = new Actions(DriverProvider.getDriver());
-                scroll.moveToElement(tab_OnSale);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 500);
-                scroll.perform();
+                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 500);
                 button_ShowMore.click();
 
                 takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock " + num);
@@ -275,20 +271,19 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "Max number of products increases 17 products in the block!");
 
         stHomePage.selectLanguage("ar");
-        WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
-        tab_OnSaleRTL.click();
+        stHomePage.openProductBlock("On Sale");
         UtilsAdm.makePause(2000);
 
         int numRTL = 1;
         while (true) {
+            WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
+
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
 
                 Actions scroll = new Actions(DriverProvider.getDriver());
-                scroll.moveToElement(tab_OnSaleRTL);
-                scroll.scrollFromOrigin(WheelInput.ScrollOrigin.fromElement(button_ShowMore), 0, 600);
-                scroll.perform();
+                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 600);
                 button_ShowMore.click();
 
                 takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock (RTL) " + numRTL);

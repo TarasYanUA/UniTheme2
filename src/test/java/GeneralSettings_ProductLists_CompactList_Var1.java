@@ -1,14 +1,10 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
-import taras.adminPanel.BasicPage;
-import taras.adminPanel.CsCartSettings;
-import taras.adminPanel.ThemeSettings_ProductLists;
-import taras.adminPanel.UtilsAdm;
+import taras.adminPanel.*;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -37,38 +33,25 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
     public void setConfigurationsForProductLists_CompactList_Var1() {
         //Настраиваем макет для тест-кейса
         BasicPage basicPage = new BasicPage();
-        basicPage.navigateToSection_WebsiteLayouts();
-        basicPage.layout_Lightv2.click();
-        basicPage.setLayoutAsDefault();
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        layoutPage.layout_Lightv2.click();
+        layoutPage.setLayoutAsDefault();
 
         //Работаем с настройками CS-Cart
         CsCartSettings csCartSettings = basicPage.navigateToAppearanceSettings();
-        UtilsAdm.setCheckboxState(csCartSettings.setting_QuickView, true);
-        basicPage.clickSaveButtonOfSettings();
+        if (!csCartSettings.setting_QuickView.isSelected()) {
+            csCartSettings.setting_QuickView.click();
+            basicPage.clickSaveButtonOfSettings();
+        }
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (checkboxProductRating.isSelected()) {
-            checkboxProductRating.click();
-        }
-        WebElement checkboxCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (checkboxCommonValueOfProductRating.isSelected()) {
-            checkboxCommonValueOfProductRating.click();
-        }
-        WebElement checkboxProductCode = themeSettingsProductLists.compactList_productCode;
-        if (checkboxProductCode.isSelected()) {
-            checkboxProductCode.click();
-        }
-        WebElement checkboxAvailabilityStatus = themeSettingsProductLists.compactList_availabilityStatus;
-        if (checkboxAvailabilityStatus.isSelected()) {
-            checkboxAvailabilityStatus.click();
-        }
-        WebElement checkboxQuantityModifier = themeSettingsProductLists.compactList_quantityChanger;
-        if (!checkboxQuantityModifier.isSelected()) {
-            checkboxQuantityModifier.click();
-        }
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_productCode, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_availabilityStatus, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_quantityChanger, true);
         new Select(themeSettingsProductLists.compactList_buttonAddToCart).selectByValue("icon");
         basicPage.clickSaveButtonOfSettings();
     }

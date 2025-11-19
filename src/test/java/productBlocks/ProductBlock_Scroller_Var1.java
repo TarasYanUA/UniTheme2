@@ -171,9 +171,7 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
 
         //Блок товаров "Распродажа" на главной странице
         stHomePage.scrollToBlockWithProducts();
-        WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
-        tab_OnSale.click();
-        UtilsAdm.makePause(2000);
+        stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у блока товаров "Количество элементов -- 5"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
@@ -232,8 +230,7 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         takeScreenShot("ProductBlock_Scroller_Var1");
         stHomePage.selectLanguage("ar");
         stHomePage.scrollToBlockWithProducts();
-        WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
-        tab_OnSaleRTL.click();
+        stHomePage.openProductBlock("On Sale");
         takeScreenShot("ProductBlock_Scroller_Var1 (RTL)");
 
         softAssert.assertAll();

@@ -1,3 +1,5 @@
+package productLists;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
@@ -91,6 +93,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         takeScreenShot_withScroll("505 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");
 
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ProductLists_ListWithoutOptions_Var1 passed successfully!");
+        System.out.println("productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var1 passed successfully!");
     }
 }

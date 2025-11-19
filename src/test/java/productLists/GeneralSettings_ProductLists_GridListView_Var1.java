@@ -1,3 +1,5 @@
+package productLists;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -178,6 +180,6 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         takeScreenShot("325 GS_ProductLists_GridListView_Var1 - QuickView");
 
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ProductLists_GridListView_Var1 passed successfully!");
+        System.out.println("productLists.GeneralSettings_ProductLists_GridListView_Var1 passed successfully!");
     }
 }

@@ -1,3 +1,5 @@
+package productPage;
+
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;

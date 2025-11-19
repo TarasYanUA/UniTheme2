@@ -1,3 +1,5 @@
+package productPage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
@@ -131,7 +133,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.numberOfDisplayedImagesOfProductGallery_2.isEmpty(),
                 "Number of displayed images of the product gallery is not 2 on the product page!");
 
-        takeScreenShot_withScroll("1200 ColorSchemeSettings_Product_Var1 - Default template");
+        takeScreenShot_withScroll("1200 productPage.ColorSchemeSettings_Product_Var1 - Default template");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);
         UtilsAdm.makePause(2000);
         stProductPage.buttonAddToCart_ProductWithOptions.click();
@@ -141,15 +143,15 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).isEmpty(),
                 "There is no quantity changer in pop-up window of the product with options on the product page!");
 
-        takeScreenShot("1202 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
+        takeScreenShot("1202 productPage.ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
         stProductPage.closePopUpWindow.click();
         stProductPage.selectLanguage("ar");
-        takeScreenShot_withScroll("1205 ColorSchemeSettings_Product_Var1 - Default template (RTL)");
+        takeScreenShot_withScroll("1205 productPage.ColorSchemeSettings_Product_Var1 - Default template (RTL)");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);
         UtilsAdm.makePause(2000);
         stProductPage.buttonAddToCart_ProductWithOptions.click();
         UtilsAdm.waitForPopUpWindow();
-        takeScreenShot("1207 ColorSchemeSettings_Product_Var1 - Pop-up window of product with options (RTL)");
+        takeScreenShot("1207 productPage.ColorSchemeSettings_Product_Var1 - Pop-up window of product with options (RTL)");
         stProductPage.closePopUpWindow.click();
 
         //Другие шаблоны страницы товара
@@ -158,34 +160,34 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(2);
-        takeScreenShot_withScroll("1210 ColorSchemeSettings_Product_Var1 - Big picture");
+        takeScreenShot_withScroll("1210 productPage.ColorSchemeSettings_Product_Var1 - Big picture");
         stProductPage.selectLanguage("ar");
-        takeScreenShot_withScroll("1215 ColorSchemeSettings_Product_Var1 - Big picture (RTL)");
+        takeScreenShot_withScroll("1215 productPage.ColorSchemeSettings_Product_Var1 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
         basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(3);
-        takeScreenShot_withScroll("1220 ColorSchemeSettings_Product_Var1 - Big picture flat");
+        takeScreenShot_withScroll("1220 productPage.ColorSchemeSettings_Product_Var1 - Big picture flat");
         stProductPage.selectLanguage("ar");
-        takeScreenShot_withScroll("1225 ColorSchemeSettings_Product_Var1 - Big picture flat (RTL)");
+        takeScreenShot_withScroll("1225 productPage.ColorSchemeSettings_Product_Var1 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
         basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(4);
-        takeScreenShot_withScroll("1230 ColorSchemeSettings_Product_Var1 - Three columned");
+        takeScreenShot_withScroll("1230 productPage.ColorSchemeSettings_Product_Var1 - Three columned");
         stProductPage.selectLanguage("ar");
-        takeScreenShot_withScroll("1235 ColorSchemeSettings_Product_Var1 - Three columned (RTL)");
+        takeScreenShot_withScroll("1235 productPage.ColorSchemeSettings_Product_Var1 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
         basicPage.clickSaveButtonOfSettings();
         productSettings.navigateToProductPage();
         focusBrowserTab(5);
-        takeScreenShot_withScroll("1240 ColorSchemeSettings_Product_Var1 - Gallery template");
+        takeScreenShot_withScroll("1240 productPage.ColorSchemeSettings_Product_Var1 - Gallery template");
         stProductPage.selectLanguage("ar");
-        takeScreenShot_withScroll("1245 ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
+        takeScreenShot_withScroll("1245 productPage.ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
         softAssert.assertAll();
-        System.out.println("ColorSchemeSettings_Product_Var1 passed successfully on the product page!");
+        System.out.println("productPage.ColorSchemeSettings_Product_Var1 passed successfully on the product page!");
     }
 }

@@ -1,3 +1,5 @@
+package productLists;
+
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
@@ -79,6 +81,6 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("805 GS_ProductLists_CompactLists_Var2 (RTL)");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
+        System.out.println("productLists.GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
     }
 }

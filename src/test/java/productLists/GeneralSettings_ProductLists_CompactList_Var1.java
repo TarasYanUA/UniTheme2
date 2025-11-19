@@ -1,3 +1,5 @@
+package productLists;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -94,6 +96,6 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("715 GS_ProductLists_CompactList_Var1 - QuickView (RTL)");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
+        System.out.println("productLists.GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
     }
 }

@@ -258,7 +258,7 @@
     <configuration name="GeneralSettings_St_ProductPage_Cascade_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_St_ProductPage_Cascade_Var2" />
+      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Cascade_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />

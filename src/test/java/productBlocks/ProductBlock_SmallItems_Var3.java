@@ -2,7 +2,6 @@ package productBlocks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -54,44 +53,33 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
-        disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        UtilsAdm.makePause(2000);
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        disableLazyLoadFromSection("Распродажа");
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        basicPage.navigateToBlockSettings("Распродажа");
-        basicPage.selectSetting_BlockTemplate("blocks/products/products_small_items.tpl");
-        UtilsAdm.makePause(2000);
-        basicPage.button_SettingsOfTemplate.click();
-        if (!basicPage.checkbox_ShowItemNumber.isSelected())
-            basicPage.checkbox_ShowItemNumber.click();
-        basicPage.tabOfBlock_Content.click();
-        basicPage.selectSetting_Filling("on_sale");
-        basicPage.clickAndType_Field_Limit("13");
-        basicPage.tabOfBlock_BlockSettings.click();
-        if (basicPage.checkbox_HideAddToCartButton.isSelected())
-            basicPage.checkbox_HideAddToCartButton.click();
-        basicPage.button_saveBlock.click();
+        layoutPage.navigateTo_BlockSettings("Распродажа");
+        new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_small_items.tpl");
+        UtilsAdm.makePause(1000);
+        layoutPage.button_SettingsOfTemplate.click();
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowItemNumber, true);
+        UtilsAdm.hoverNavigateAndClick(layoutPage.tabOfBlock_Content);
+        new Select(layoutPage.setting_Filling).selectByValue("on_sale");
+        UtilsAdm.clickAndType(layoutPage.field_Limit, "13");
+        UtilsAdm.hoverNavigateAndClick(layoutPage.tabOfBlock_Settings);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
+        layoutPage.button_saveBlock.click();
 
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
-        if (!themeSettingsProductLists.setting_PriceAtTheTop.isSelected())
-            themeSettingsProductLists.setting_PriceAtTheTop.click();
-        if (!themeSettingsProductLists.setting_EmptyStarsOfProductRating.isSelected())
-            themeSettingsProductLists.setting_EmptyStarsOfProductRating.click();
-        if (!themeSettingsProductLists.setting_CommonValueOfProductRating.isSelected())
-            themeSettingsProductLists.setting_CommonValueOfProductRating.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
-
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollToElement(themeSettingsProductLists.smallItems_NumberOfLinesInProductName);
-        scroll.perform();
+        UtilsAdm.hoverOverElement(themeSettingsProductLists.smallItems_NumberOfLinesInProductName);
         new Select(themeSettingsProductLists.smallItems_NumberOfLinesInProductName).selectByValue("4");
-        if (themeSettingsProductLists.smallItems_ProductCode.isSelected())
-            themeSettingsProductLists.smallItems_ProductCode.click();
-        if (themeSettingsProductLists.smallItems_AvailabilityStatus.isSelected())
-            themeSettingsProductLists.smallItems_AvailabilityStatus.click();
-        if (themeSettingsProductLists.smallItems_QuantityChanger.isSelected())
-            themeSettingsProductLists.smallItems_QuantityChanger.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.smallItems_ProductCode, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.smallItems_AvailabilityStatus, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.smallItems_QuantityChanger, false);
         new Select(themeSettingsProductLists.smallItems_AddToCartButton).selectByValue("text");
         basicPage.clickSaveButtonOfSettings();
 
@@ -100,14 +88,13 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
-        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
-            colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        }
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, true);
         new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
         basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
-        basicPage.setTaxesForAllProducts();
+        CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.setTaxesForAllProducts();
 
         //Задаём товару "Wildwood city classic" длинное название
         ProductSettings productSettings = basicPage.navigateToSection_Products();

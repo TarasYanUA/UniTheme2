@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Improved method clickAndType_SearchFieldOfProduct">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made refactoring for classes: ProductBlock_Scroller_">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -738,7 +738,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="270" />
+    <option name="localTasksCounter" value="271" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +769,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value=" Added new functionality and appearance of Variations:&#10; * UniTheme2 settings for Variations&#10; * Asserts on storefront on the category page" />
     <MESSAGE value="Fixed a bug with url for variations thumbnails." />
     <MESSAGE value="Updated drivers and pom vocabularies." />
     <MESSAGE value="Some improvements." />
@@ -794,6 +793,7 @@
     <MESSAGE value="Made refactoring for classes: ProductBlock_GridMore_" />
     <MESSAGE value="Made refactoring for classes: ProductBlock_Scroller_Var1" />
     <MESSAGE value="Improved method clickAndType_SearchFieldOfProduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved method clickAndType_SearchFieldOfProduct" />
+    <MESSAGE value="Made refactoring for classes: ProductBlock_Scroller_" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring for classes: ProductBlock_Scroller_" />
   </component>
 </project>

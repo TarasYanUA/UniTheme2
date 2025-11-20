@@ -42,25 +42,25 @@ public class LayoutPage extends AbstractPage {
     public WebElement button_SettingsOfTemplate;
 
     @FindBy(css = "select[id$='_products_template']")
-    WebElement setting_BlockTemplate;
+    public WebElement setting_BlockTemplate;
 
     @FindBy(css = "input[id$='_products_properties_item_number']")
     public WebElement checkbox_ShowItemNumber;
 
     @FindBy(css = "input[id$='_products_properties_number_of_columns']")
-    WebElement field_NumberOfColumnsInList;
+    public WebElement field_NumberOfColumnsInList;
 
     @FindBy(css = "select[id$='_products_properties_abt__ut2_loading_type']")
-    WebElement setting_LoadingType;
+    public WebElement setting_LoadingType;
 
     @FindBy(css = "li[id^='block_contents_'] a")
     public WebElement tabOfBlock_Content;
 
     @FindBy(css = "select[id$='_content_items_filling']")
-    WebElement setting_Filling;
+    public WebElement setting_Filling;
 
     @FindBy(css = "input[id$='_content_items_properties_items_limit']")
-    WebElement field_Limit;
+    public WebElement field_Limit;
 
     @FindBy(css = "li[id^='block_settings_']")
     public WebElement tabOfBlock_BlockSettings;

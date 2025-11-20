@@ -6,8 +6,7 @@ import taras.constants.DriverProvider;
 
 public interface DisableLazyLoadFromSection {
     default void disableLazyLoadFromSection (String blockName) {
-        BasicPage basicPage = new BasicPage();
-        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        LayoutPage layoutPage = new LayoutPage();
         layoutPage.layout_TabHomePage.click();
 
         String block = "div[data-ca-block-name='" + blockName + "'] ~ div[class*='grid-control-menu'] div[class*='bm-action-properties']";
@@ -20,5 +19,6 @@ public interface DisableLazyLoadFromSection {
         DriverProvider.getDriver().findElement(By.cssSelector("input[name='dispatch[block_manager.grid.update]']")).click();
 
         UtilsAdm.closeAllNotifications();
+        UtilsAdm.makePause(2000);
     }
 }

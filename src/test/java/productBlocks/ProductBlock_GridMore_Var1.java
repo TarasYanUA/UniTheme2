@@ -2,8 +2,7 @@ package productBlocks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
@@ -65,90 +64,69 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        UtilsAdm.makePause(2000);
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        basicPage.navigateToBlockSettings("Распродажа");
-        basicPage.selectSetting_BlockTemplate("blocks/products/ab__grid_list.tpl");
-        UtilsAdm.makePause(2000);
-        basicPage.button_SettingsOfTemplate.click();
-        if (basicPage.checkbox_ShowItemNumber.isSelected())
-            basicPage.checkbox_ShowItemNumber.click();
-        basicPage.clickAndType_Field_NumberOfColumnsInList("5");
-        basicPage.selectSetting_LoadingType("onclick");
-        basicPage.tabOfBlock_Content.click();
-        basicPage.selectSetting_Filling("on_sale");
-        basicPage.clickAndType_Field_Limit("17");
-        basicPage.tabOfBlock_BlockSettings.click();
-        if (basicPage.checkbox_HideAddToCartButton.isSelected())
-            basicPage.checkbox_HideAddToCartButton.click();
-        basicPage.button_saveBlock.click();
+        layoutPage.navigateTo_BlockSettings("Распродажа");
+        new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/ab__grid_list.tpl");
+        UtilsAdm.makePause(1000);
+        layoutPage.button_SettingsOfTemplate.click();
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowItemNumber, false);
+        UtilsAdm.clickAndType(layoutPage.field_NumberOfColumnsInList, "5");
+        UtilsAdm.clickAndType(layoutPage.setting_LoadingType, "onclick");
+        layoutPage.tabOfBlock_Content.click();
+        new Select(layoutPage.setting_Filling).selectByValue("on_sale");
+        UtilsAdm.clickAndType(layoutPage.field_Limit, "17");
+        layoutPage.tabOfBlock_BlockSettings.click();
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
+        layoutPage.button_saveBlock.click();
 
         //Работаем с настройками характеристики Бренд
-        csCartSettings.navigateToSection_Features();
-        csCartSettings.clickFeatureBrand();
-        WebElement checkboxShowInProductList = csCartSettings.showInProductList;
-        if (!checkboxShowInProductList.isSelected())
+        FeaturePage featuresPage = basicPage.navigateToSection_Features();
+        featuresPage.featureBrand.click();
+        WebElement checkboxShowInProductList = featuresPage.showInProductList;
+        if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
-        csCartSettings.clickSaveButtonOfSettings();
+            basicPage.clickSaveButtonOfSettings();
+        }
 
         //Работаем с настройками темы п.2.1
-        ThemeSettings_ProductLists themeSettingsProductLists = csCartSettings.navigateTo_ThemeSettings_tabProductLists();
-        themeSettingsProductLists.selectSettingPriceDisplayFormat("row-mix");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.settingPriceAtTheTop;
-        if (checkboxPriceAtTheTop.isSelected())
-            checkboxPriceAtTheTop.click();
-        WebElement checkboxProductRating = themeSettingsProductLists.settingEmptyStarsOfProductRating;
-        if (!checkboxProductRating.isSelected())
-            checkboxProductRating.click();
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.settingCommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected())
-            checkboxSettingCommonValueOfProductRating.click();
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.settingDisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected())
-            checkboxSettingDisplayButtonComparisonList.click();
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.settingDisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected())
-            checkboxSettingDisplayButtonWishList.click();
-        if(!themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.isSelected())
-            themeSettingsProductLists.settingDisplayButtonsWhenHoveringMouse.click();
-        themeSettingsProductLists.selectSettingShowYouSave("short");
+        ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
+        new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-mix");
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse, true);
+        new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
 
         //Работаем с настройками темы п.2.2
-        themeSettingsProductLists.selectGrid_NumberOfLinesInProductName("1");
-        WebElement checkboxSettingShowProductCode = themeSettingsProductLists.settingShowProductCode;
-        if (!checkboxSettingShowProductCode.isSelected())
-            checkboxSettingShowProductCode.click();
-        WebElement checkboxSettingDisplayAvailabilityStatus = themeSettingsProductLists.settingDisplayAvailabilityStatus;
-        if (!checkboxSettingDisplayAvailabilityStatus.isSelected())
-            checkboxSettingDisplayAvailabilityStatus.click();
-        WebElement checkboxSettingShowQuantityChanger = themeSettingsProductLists.settingShowQuantityChanger;
-        if (!checkboxSettingShowQuantityChanger.isSelected())
-            checkboxSettingShowQuantityChanger.click();
-        themeSettingsProductLists.selectSettingShowAddToCartButton("icon_and_text");
-        themeSettingsProductLists.selectSettingAdditionalProductInformation("features_and_description");
-        WebElement checkboxSettingShowAdditionalInformationOnHover = themeSettingsProductLists.settingShowAdditionalInformationOnHover;
-        if (!checkboxSettingShowAdditionalInformationOnHover.isSelected())
-            checkboxSettingShowAdditionalInformationOnHover.click();
-        themeSettingsProductLists.selectSettingShowBrand("logo");
-        themeSettingsProductLists.selectSetting_ShowGalleryOfMiniIcons("arrows");
-        themeSettingsProductLists.selectSetting_SwitchProductImageWhenHovering("N");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(themeSettingsProductLists.grid_NumberOfLinesInProductName).selectByValue("1");
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowProductCode, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayAvailabilityStatus, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowQuantityChanger, true);
+        new Select(themeSettingsProductLists.setting_ShowAddToCartButton).selectByValue("icon_and_text");
+        new Select(themeSettingsProductLists.setting_AdditionalProductInformation).selectByValue("features_and_description");
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_ShowAdditionalInformationOnHover, true);
+        new Select(themeSettingsProductLists.setting_ShowBrand).selectByValue("logo");
+        new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("arrows");
+        new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
-        ColorSchemeSettings colorSchemeSettings = csCartSettings.navigateTo_ColorSchemeSettings();
+        ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
-        colorSchemeSettings.selectSetting_FrameType("solid_with_margins");
-        if (colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected())
-            colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        colorSchemeSettings.selectSetting_ProductLists_ElementsAlignment("use");
-        if (!colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.isSelected())
-            colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover.click();
-        colorSchemeSettings.selectSetting_ProductLists_FontWeightForProductName("normal");
-        csCartSettings.clickSaveButtonOfSettings();
+        new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, false);
+        new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("use");
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_ExpandGridItemOnHover, true);
+        new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("normal");
+        basicPage.clickSaveButtonOfSettings();
 
         //Настраиваем налог для всех товаров
+        CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.setTaxesForAllProducts();
 
         //Добавляем Краткое описание товару Ice Queen
@@ -174,28 +152,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         //Блок товаров "Распродажа" на главной странице
         stHomePage.scrollToBlockWithProducts();
         stHomePage.openProductBlock("Распродажа");
-        UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column5")).size(), 5,
                 "Number of columns is not equal 5 in the product block!");
 
-        int num = 1;
-        while (true) {
-            WebElement tab_OnSale = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']"));
-            List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
-            if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
-                WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
-                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 500);
-                button_ShowMore.click();
-
-                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock " + num);
-                num++;
-            } else {
-                break;
-            }
-        }
+        clickButton_ShowMore(500, "ProductBlock_GridMore_Var1 - ProductBlock ");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
@@ -272,28 +235,25 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         stHomePage.selectLanguage("ar");
         stHomePage.openProductBlock("On Sale");
-        UtilsAdm.makePause(2000);
+        clickButton_ShowMore(600, "ProductBlock_GridMore_Var1 - ProductBlock (RTL) ");
+        softAssert.assertAll();
+        System.out.println("ProductBlock_GridMore_Var1 passed successfully!");
+    }
 
-        int numRTL = 1;
+    void clickButton_ShowMore(int scrollBelow, String screenName) {
+        int num = 1;
         while (true) {
-            WebElement tab_OnSaleRTL = DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='On Sale']"));
-
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
-                WebElement button_ShowMore = buttons.getFirst(); // Берем первый элемент из списка
-
-                Actions scroll = new Actions(DriverProvider.getDriver());
-                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 600);
+                WebElement button_ShowMore = buttons.getFirst();
+                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, scrollBelow);
                 button_ShowMore.click();
 
-                takeScreenShot("ProductBlock_GridMore_Var1 - ProductBlock (RTL) " + numRTL);
-                numRTL++;
+                takeScreenShot(screenName + num);
+                num++;
             } else {
                 break;
             }
         }
-
-        softAssert.assertAll();
-        System.out.println("ProductBlock_GridMore_Var1 passed successfully!");
     }
 }

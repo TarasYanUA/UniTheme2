@@ -66,11 +66,11 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_scroller.tpl");
         UtilsAdm.makePause(1000);
         layoutPage.button_SettingsOfTemplate.click();
-        UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowPrice, true );
-        UtilsAdm.setCheckboxState(layoutPage.checkbox_EnableQuickView, true );
-        UtilsAdm.setCheckboxState(layoutPage.checkbox_DoNotScrollAutomatically, true );
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowPrice, true);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_EnableQuickView, true);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_DoNotScrollAutomatically, true);
         UtilsAdm.clickAndType(layoutPage.field_ItemQuantity, "5");
-        UtilsAdm.setCheckboxState(layoutPage.checkbox_OutsideNavigation, false );
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_OutsideNavigation, false);
         UtilsAdm.hoverNavigateAndClick(layoutPage.tabOfBlock_Content);
         new Select(layoutPage.setting_Filling).selectByValue("on_sale");
         UtilsAdm.clickAndType(layoutPage.field_Limit, "17");

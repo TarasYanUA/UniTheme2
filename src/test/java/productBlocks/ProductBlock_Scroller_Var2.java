@@ -1,7 +1,6 @@
 package productBlocks;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -61,58 +60,34 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         BasicPage basicPage = new BasicPage();
 
         //Настраиваем блок товаров "Распродажа"
-        disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        UtilsAdm.makePause(2000);
+        LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
+        disableLazyLoadFromSection("Распродажа");
         blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
-        basicPage.navigateToBlockSettings("Распродажа");
-        basicPage.selectSetting_BlockTemplate("blocks/products/products_scroller.tpl");
-        UtilsAdm.makePause(2000);
-        basicPage.button_SettingsOfTemplate.click();
-        if(!basicPage.checkbox_ShowPrice.isSelected())
-            basicPage.checkbox_ShowPrice.click();
-        if(!basicPage.checkbox_EnableQuickView.isSelected())
-            basicPage.checkbox_EnableQuickView.click();
-        if(!basicPage.checkbox_DoNotScrollAutomatically.isSelected())
-            basicPage.checkbox_DoNotScrollAutomatically.click();
-        basicPage.clickAndType_Field_ItemQuantity("3");
-        if(!basicPage.checkbox_OutsideNavigation.isSelected())
-            basicPage.checkbox_OutsideNavigation.click();
-        Actions scroll = new Actions(DriverProvider.getDriver());
-        scroll.scrollToElement(basicPage.tabOfBlock_Content);
-        scroll.perform();
-        basicPage.tabOfBlock_Content.click();
-        basicPage.selectSetting_Filling("on_sale");
-        basicPage.clickAndType_Field_Limit("15");
-        basicPage.tabOfBlock_BlockSettings.click();
-        if (basicPage.checkbox_HideAddToCartButton.isSelected())
-            basicPage.checkbox_HideAddToCartButton.click();
-        basicPage.button_saveBlock.click();
+        layoutPage.navigateTo_BlockSettings("Распродажа");
+        new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_scroller.tpl");
+        UtilsAdm.makePause(1000);
+        layoutPage.button_SettingsOfTemplate.click();
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowPrice, true);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_EnableQuickView, true);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_DoNotScrollAutomatically, true);
+        UtilsAdm.clickAndType(layoutPage.field_ItemQuantity, "3");
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_OutsideNavigation, true);
+        UtilsAdm.hoverNavigateAndClick(layoutPage.tabOfBlock_Content);
+        new Select(layoutPage.setting_Filling).selectByValue("on_sale");
+        UtilsAdm.clickAndType(layoutPage.field_Limit, "15");
+        UtilsAdm.hoverNavigateAndClick(layoutPage.tabOfBlock_Settings);
+        UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
+        layoutPage.button_saveBlock.click();
 
         //Работаем с настройками темы п.2.1
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("mix");
-        WebElement checkboxPriceAtTheTop = themeSettingsProductLists.setting_PriceAtTheTop;
-        if (checkboxPriceAtTheTop.isSelected()) {
-            checkboxPriceAtTheTop.click();
-        }
-        WebElement checkboxProductRating = themeSettingsProductLists.setting_EmptyStarsOfProductRating;
-        if (checkboxProductRating.isSelected()) {
-            checkboxProductRating.click();
-        }
-        WebElement checkboxSettingCommonValueOfProductRating = themeSettingsProductLists.setting_CommonValueOfProductRating;
-        if (checkboxSettingCommonValueOfProductRating.isSelected()) {
-            checkboxSettingCommonValueOfProductRating.click();
-        }
-        WebElement checkboxSettingDisplayButtonComparisonList = themeSettingsProductLists.setting_DisplayButtonComparisonList;
-        if (!checkboxSettingDisplayButtonComparisonList.isSelected()) {
-            checkboxSettingDisplayButtonComparisonList.click();
-        }
-        WebElement checkboxSettingDisplayButtonWishList = themeSettingsProductLists.setting_DisplayButtonWishList;
-        if (!checkboxSettingDisplayButtonWishList.isSelected()) {
-            checkboxSettingDisplayButtonWishList.click();
-        }
-        if(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse.isSelected())
-            themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse, false);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("full");
 
         //Работаем с настройками темы п.2.2
@@ -120,12 +95,9 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         scrolling.scrollToElement(themeSettingsProductLists.scroller_AvailabilityStatus);
         scrolling.perform();
         new Select(themeSettingsProductLists.scroller_NumberOfLinesInProductName).selectByValue("2");
-        if(!themeSettingsProductLists.scroller_AvailabilityStatus.isSelected())
-            themeSettingsProductLists.scroller_AvailabilityStatus.click();
-        if(themeSettingsProductLists.scroller_QuantityChanger.isSelected())
-            themeSettingsProductLists.scroller_QuantityChanger.click();
-        if(!themeSettingsProductLists.scroller_QuickViewButton.isSelected())
-            themeSettingsProductLists.scroller_QuickViewButton.click();
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.scroller_AvailabilityStatus, true);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.scroller_QuantityChanger, false);
+        UtilsAdm.setCheckboxState(themeSettingsProductLists.scroller_QuickViewButton, true);
         new Select(themeSettingsProductLists.scroller_AddToCartButton).selectByValue("icon_button");
         basicPage.clickSaveButtonOfSettings();
 
@@ -134,9 +106,7 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         colorSchemeSettings.selectActiveColorScheme();
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
-        if (!colorSchemeSettings.setting_ProductLists_MaskForProductImages.isSelected()) {
-            colorSchemeSettings.setting_ProductLists_MaskForProductImages.click();
-        }
+        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, true);
         new Select(colorSchemeSettings.setting_ProductLists_ElementsAlignment).selectByValue("use");
         new Select(colorSchemeSettings.setting_ProductLists_FontWeightForProductName).selectByValue("bold");
         basicPage.clickSaveButtonOfSettings();
@@ -170,7 +140,6 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         //Блок товаров "Распродажа" на главной странице
         stHomePage.scrollToBlockWithProducts();
         stHomePage.openProductBlock("Распродажа");
-        UtilsAdm.makePause(2000);
 
         //Проверяем, что у блока товаров "Количество элементов -- 3"
         softAssert.assertEquals(DriverProvider.getDriver().findElements(By

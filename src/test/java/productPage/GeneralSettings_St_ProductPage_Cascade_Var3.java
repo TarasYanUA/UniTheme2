@@ -64,7 +64,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
-        productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
         UtilsAdm.clickAndType(productSettings.field_InStock, "0");
         new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
@@ -85,7 +84,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Titan");
-        productSettings.chooseAnyProduct();
         StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         stProductPage.cookie.click();

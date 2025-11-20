@@ -39,7 +39,7 @@ public class ProductSettings extends AbstractPage {
         UtilsAdm.closeAllNotifications();
     }
 
-    public void chooseAnyProduct() {
+    void chooseAnyProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(chooseAnyProduct));
         chooseAnyProduct.click();

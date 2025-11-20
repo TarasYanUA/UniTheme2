@@ -118,12 +118,10 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         featuresPage.setFeatureColorForVariations();
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Apple - iPhone 5c 32GB Cell Phone");
-        productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_ProductName, "Apple - iPhone 5c 32GB Cell Phone");
         productSettings.selectAllVariations();
         basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Droid 3");
-        productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_ProductName, "Droid 3");
         productSettings.selectAllVariations();
     }

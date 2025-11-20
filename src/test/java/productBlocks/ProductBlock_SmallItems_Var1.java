@@ -1,7 +1,5 @@
 package productBlocks;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -112,8 +110,6 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         //Задаём товару "Wildwood city classic" длинное название
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Wildwood city classic");
-        productSettings.chooseAnyProduct();
-        UtilsAdm.closeAllNotifications();
         UtilsAdm.clickAndType(productSettings.field_ProductName,
                 "Wildwood city classic - Мы завезли настоящую американскую классику! Круизеры Drifter. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона");
         basicPage.clickSaveButtonOfSettings();

@@ -77,7 +77,6 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_Price,"10000.00");
         UtilsAdm.clickAndType(productSettings.field_InStock,"20");
         new Select(productSettings.setting_ZeroPriceAction).selectByValue("R");
@@ -96,7 +95,6 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct();
         UtilsAdm.clickAndType(productSettings.field_ListPrice,"15000");
         basicPage.clickSaveButtonOfSettings();
         StProductPage stProductPage = productSettings.navigateToProductPage();

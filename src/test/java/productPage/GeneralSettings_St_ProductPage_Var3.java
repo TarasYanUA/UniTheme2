@@ -68,7 +68,6 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct();
         taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_Price, "10000.00");
         taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_InStock, "0");
         new Select(productSettings.setting_OutOfStockActions).selectByValue("S");
@@ -91,7 +90,6 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("X-Box 360");
-        productSettings.chooseAnyProduct();
         taras.adminPanel.UtilsAdm.clickAndType(productSettings.field_ListPrice, "15000");
         basicPage.clickSaveButtonOfSettings();
         StProductPage stProductPage = productSettings.navigateToProductPage();

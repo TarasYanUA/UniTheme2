@@ -78,8 +78,6 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
-        productSettings.chooseAnyProduct();
-        UtilsAdm.closeAllNotifications();
         UtilsAdm.clickAndType(productSettings.field_Price, "33000.00");
         UtilsAdm.clickAndType(productSettings.field_InStock, "20");
         productSettings.selectSetting_ProductTemplate("default_template");
@@ -100,7 +98,6 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("NX200");
-        productSettings.chooseAnyProduct();
         StProductPage stProductPage = productSettings.navigateToProductPage();
         focusBrowserTab(1);
         stProductPage.cookie.click();

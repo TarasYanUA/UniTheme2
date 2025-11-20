@@ -132,8 +132,6 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         //Добавляем Краткое описание товару Ice Queen
         ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.clickAndType_SearchFieldOfProduct("Ice Queen");
-        productSettings.chooseAnyProduct();
-        UtilsAdm.closeAllNotifications();
         productSettings.hoverAndTypeField_ShortDescription(
                 "Рюкзак Camelbak - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
         basicPage.clickSaveButtonOfSettings();

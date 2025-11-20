@@ -74,7 +74,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         layoutPage.tabOfBlock_Content.click();
         new Select(layoutPage.setting_Filling).selectByValue("on_sale");
         UtilsAdm.clickAndType(layoutPage.field_Limit, "13");
-        layoutPage.tabOfBlock_BlockSettings.click();
+        layoutPage.tabOfBlock_Settings.click();
         UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
         layoutPage.button_saveBlock.click();
 

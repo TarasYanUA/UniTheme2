@@ -63,7 +63,7 @@ public class LayoutPage extends AbstractPage {
     public WebElement field_Limit;
 
     @FindBy(css = "li[id^='block_settings_']")
-    public WebElement tabOfBlock_BlockSettings;
+    public WebElement tabOfBlock_Settings;
 
     @FindBy(css = "input[id$='_products_properties_hide_add_to_cart_button']")
     public WebElement checkbox_HideAddToCartButton;
@@ -78,7 +78,7 @@ public class LayoutPage extends AbstractPage {
     public WebElement checkbox_DoNotScrollAutomatically;
 
     @FindBy(css = "input[id$='_products_properties_item_quantity']")
-    WebElement field_ItemQuantity;
+    public WebElement field_ItemQuantity;
 
     @FindBy(css = "input[id$='_products_properties_outside_navigation']")
     public WebElement checkbox_OutsideNavigation;

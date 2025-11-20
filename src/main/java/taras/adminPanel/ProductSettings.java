@@ -35,6 +35,8 @@ public class ProductSettings extends AbstractPage {
         UtilsAdm.clickAndType(searchFieldOfProduct, value);
         searchFieldOfProduct.sendKeys(Keys.ENTER);
         UtilsAdm.makePause(4000);
+        chooseAnyProduct();
+        UtilsAdm.closeAllNotifications();
     }
 
     public void chooseAnyProduct() {

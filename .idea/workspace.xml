@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Created packages for test-cases.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made refactoring for classes: ProductBlock_GridMore_">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/DisableLazyLoadFromSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/DisableLazyLoadFromSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -739,7 +740,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="267" />
+    <option name="localTasksCounter" value="268" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -770,7 +771,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adapted test-case ProductBlock_GridMore_Var1 according to the last theme changes." />
     <MESSAGE value="Adapted test-cases ProductBlock_GridMore_Var2 and Var3 according to the last theme changes." />
     <MESSAGE value=" Added new functionality and appearance of Variations:&#10; * Created a new class CsCart_Features&#10; * Transferred all variables and methods from the class CsCartSettings into the new class&#10; * Added code for new functionality of variations" />
     <MESSAGE value=" Added new functionality and appearance of Variations:&#10; * UniTheme2 settings for Variations&#10; * Asserts on storefront on the category page" />
@@ -795,6 +795,7 @@
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_ProductLists_." />
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_St_ProductPage_." />
     <MESSAGE value="Created packages for test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created packages for test-cases." />
+    <MESSAGE value="Made refactoring for classes: ProductBlock_GridMore_" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring for classes: ProductBlock_GridMore_" />
   </component>
 </project>

@@ -95,7 +95,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(1);
         stProductPage.cookie.click();
         stProductPage.selectLanguage("en");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
 
@@ -142,7 +142,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         stProductPage.selectLanguage("ar");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         takeScreenShot_withScroll("1105 GS_ProductPage_Var3 - Default template (RTL)");
 
         //Проверяем, что характеристики расположены в две колонки
@@ -152,7 +152,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
 
         takeScreenShot("1110 GS_ProductPage_Var3 - Product features, two columns (RTL)");
         stProductPage.selectLanguage("en");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         stProductPage.scrollToAndClickTab_FeaturesForNonTabs();
         takeScreenShot("1115 GS_ProductPage_Var3 - Product features, two columns");
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_features .ab-smc")).isEmpty())
@@ -169,7 +169,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(2);
         takeScreenShot_withScroll("1125 GS_ProductPage_Var3 - Big picture");
         stProductPage.selectLanguage("ar");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         takeScreenShot_withScroll("1130 GS_ProductPage_Var3 - Big picture (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_flat_template");
@@ -178,7 +178,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(3);
         takeScreenShot_withScroll("1135 GS_ProductPage_Var3 - Big picture flat");
         stProductPage.selectLanguage("ar");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         takeScreenShot_withScroll("1140 GS_ProductPage_Var3 - Big picture flat (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_three_columns_template");
@@ -187,7 +187,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         focusBrowserTab(4);
         takeScreenShot_withScroll("1145 GS_ProductPage_Var3 - Three columned");
         stProductPage.selectLanguage("ar");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         takeScreenShot_withScroll("1150 GS_ProductPage_Var3 - Three columned (RTL)");
         focusBrowserTab(0);
         productSettings.selectSetting_ProductTemplate("abt__ut2_bigpicture_gallery_template");
@@ -197,7 +197,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1155 GS_ProductPage_Var3 - Gallery template");
         stProductPage.selectLanguage("ar");
-        UtilsAdm.closeNotificationIfExists();
+        UtilsAdm.closeNotificationOnStorefront();
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
 

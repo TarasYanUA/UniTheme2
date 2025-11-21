@@ -71,7 +71,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("points");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
-        UtilsAdm.hoverNavigateAndClick(themeSettings_showMore.tab_ShowMore);
+        themeSettings_showMore.openTab_ShowMore();
         UtilsAdm.setCheckboxState(themeSettings_showMore.setting_AllowForProductLists, false);
         basicPage.clickSaveButtonOfSettings();
     }
@@ -137,7 +137,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
         takeScreenShot("410 GS_ProductLists_GridListView_Var2 - MenClothCategory");
         stHomePage.selectLanguage("ar");
-        stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");
+        stCategoryPage.hoverToProduct("T-shirt, Color: Black");
         takeScreenShot("415 GS_ProductLists_GridListView_Var2 - MenClothCategory (RTL)");
         stCategoryPage.clickQuickViewOfMenClothProduct();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))

@@ -99,7 +99,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
 
         //Проверяем, что логотип бренда присутствует
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__BrandLogo().isEmpty(),
-                "There is no product logo on the category page 'ListWithoutOptions'!");
+                "There is no brand logo on the category page 'ListWithoutOptions'!");
 
         //Проверяем, что стандартная галерея изображений товара с навигацией точками
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowStandardImageGallery().isEmpty(),

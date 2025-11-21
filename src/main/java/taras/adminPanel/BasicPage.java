@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
-import java.util.List;
 
 public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
     public BasicPage() {

@@ -83,7 +83,7 @@ public class UtilsAdm extends AbstractPage {
         webElement.click();
     }
 
-    public static void closeNotificationIfExists() {    //Пришлось это добавить из-за ошибки CS-Cart в 4.18.4
+    public static void closeNotificationOnStorefront() {    //Пришлось это добавить из-за ошибки CS-Cart в 4.18.4
         List<WebElement> notification = getDriver().findElements(By.cssSelector(".notification-body-extended"));
 
         if (!notification.isEmpty()) {

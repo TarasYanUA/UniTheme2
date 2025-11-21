@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Checked working capacity of classes: ColorSchemeSettings_General_">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Checked working capacity of classes: productPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ShowMore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/ThemeSettings_ShowMore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_GridListView_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_GridListView_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_GridListView_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_GridListView_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_ListWithoutOptions_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_ListWithoutOptions_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,17 +266,17 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_St_ProductPage_Var2">
-    <configuration name="GeneralSettings_St_ProductPage_Cascade_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productPage.*" />
+          <option name="PATTERN" value="productLists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productPage" />
-      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Cascade_Var3" />
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_GridListView_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -275,16 +284,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_St_ProductPage_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productPage.*" />
+          <option name="PATTERN" value="productLists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productPage" />
-      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Var1" />
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_GridListView_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -292,52 +301,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_St_ProductPage_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productPage.*" />
+          <option name="PATTERN" value="productLists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productPage" />
-      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_St_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productPage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productPage" />
-      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Var3" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productPage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productPage" />
-      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Var3" />
-      <option name="METHOD_NAME" value="checkSettingsOnProductPage_Var3" />
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_GridListView_Var2" />
+      <option name="METHOD_NAME" value="checkProductLists_GridListView_Var2" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productLists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productLists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -346,19 +355,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Cascade_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3" />
-      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Cascade_Var3" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_GridListView_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -749,7 +758,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="274" />
+    <option name="localTasksCounter" value="275" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -780,7 +789,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated pom file. Updated drivers." />
     <MESSAGE value="Made adaptation to CS-Cart 4.19.1." />
     <MESSAGE value="Made refactoring of the code for the first few admin classes." />
     <MESSAGE value="Made refactoring of the code for the second few admin classes. Mostly worked with BasicPage class." />
@@ -805,6 +813,7 @@
     <MESSAGE value="Made refactoring for classes: ProductBlock_SmallItems_" />
     <MESSAGE value="Made refactoring for all menu classes." />
     <MESSAGE value="Checked working capacity of classes: ColorSchemeSettings_General_" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checked working capacity of classes: ColorSchemeSettings_General_" />
+    <MESSAGE value="Checked working capacity of classes: productPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checked working capacity of classes: productPage" />
   </component>
 </project>

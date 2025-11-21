@@ -203,7 +203,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("210 GS_CS_ProductLists_AllCategoryLists_Var2 - WomanClothCategory");
         stHomePage.selectLanguage("ar");
-        stCategoryPage.hoverToProduct("Женская майка Nike");
+        stCategoryPage.hoverToProduct("Tank Top");
         takeScreenShot_withScroll("215 GS_CS_ProductLists_AllCategoryLists_Var2 - WomanClothCategory (RTL)");
         stHomePage.selectLanguage("ru");
 

@@ -88,6 +88,10 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots.isEmpty(),
                 "Image switcher is not with Dots on the category page 'ListWithoutOptions'!");
 
+        //Проверяем, что логотип бренда присутствует
+        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__BrandName().isEmpty(),
+                "There is no brand name on the category page 'ListWithoutOptions'!");
+
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("505 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory (RTL)");

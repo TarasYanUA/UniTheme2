@@ -160,6 +160,11 @@ public class ProductSettings extends AbstractPage {
 
     public void selectAllVariations() {
         tab_Variations.click();
+
+        BasicPage basicPage = new BasicPage();
+        if (!DriverProvider.getDriver().findElements(By.cssSelector("div.product-variations__notification:not(.hidden)")).isEmpty())
+            basicPage.clickSaveButtonOfSettings();
+
         if (!DriverProvider.getDriver().findElements(By.cssSelector("#content_variations_pagination .no-items")).isEmpty()) {
             UtilsAdm.closeAllNotifications();
             new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(8))

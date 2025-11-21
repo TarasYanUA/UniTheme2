@@ -79,7 +79,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         new Select(themeSettingsProductLists.setting_ShowStandardImageGallery_Grid).selectByValue("N");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         ThemeSettings_ShowMore themeSettings_showMore = new ThemeSettings_ShowMore();
-        UtilsAdm.hoverNavigateAndClick(themeSettings_showMore.tab_ShowMore);
+        themeSettings_showMore.openTab_ShowMore();
         UtilsAdm.setCheckboxState(themeSettings_showMore.setting_AllowForProductLists, false);
         basicPage.clickSaveButtonOfSettings();
     }

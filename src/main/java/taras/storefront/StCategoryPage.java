@@ -65,9 +65,10 @@ public class StCategoryPage extends AbstractPage {
 
     public void hoverToProduct(String productTitle) {
         WebElement product = DriverProvider.getDriver().findElement(By.xpath("//a[contains(@title, '" + productTitle + "')]"));
-        WebElement quickView = DriverProvider.getDriver().findElement(By.xpath(product + "/../../..//a//a[@data-ca-target-id='product_quick_view']"));
+        WebElement quickView = DriverProvider.getDriver().findElement(By.xpath("//a[contains(@title, '" +
+                productTitle + "')]" + "/../../..//a[@data-ca-target-id='product_quick_view']"));
 
-        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(product, 20);
+        UtilsAdm.hoverOverElement(product);
         UtilsAdm.hoverOverElement(quickView);
     }
 
@@ -91,7 +92,7 @@ public class StCategoryPage extends AbstractPage {
     public void clickQuickViewOfMenClothProduct() {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("window.scrollTo(0, 0);");
         UtilsAdm.hoverOverElement(menClothProduct);
-        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(quickViewOfMenClothProduct);
+        UtilsAdm.hoverNavigateAndClick(quickViewOfMenClothProduct);
         UtilsAdm.waitForSpinnerDisappear();
     }
 

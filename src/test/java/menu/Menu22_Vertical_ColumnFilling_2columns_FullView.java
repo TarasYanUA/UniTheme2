@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
@@ -30,20 +31,16 @@ public class Menu22_Vertical_ColumnFilling_2columns_FullView extends TestRunner 
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("2");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "5");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "0");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "5");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "0");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("10");
-        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "700");
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ShowIconsForMenuItems, true);
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "700");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
@@ -29,20 +30,16 @@ public class Menu03_Horizontal_RowFilling_4columns extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("row_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("4");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "4");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "4");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
-        if (!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()) {
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
-        if (mainMenuSettings.setting_CompactDisplayView.isSelected()) {   //Выключаем Компактный вид для Горизонтального меню
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "300");
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ShowIconsForMenuItems, true);
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);   //Выключаем Компактный вид для Горизонтального меню
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

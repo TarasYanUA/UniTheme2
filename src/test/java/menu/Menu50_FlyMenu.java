@@ -5,6 +5,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
@@ -27,12 +28,10 @@ public class Menu50_FlyMenu extends TestRunner{
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_FlyMenu_Default();
         mainMenuSettings.menuSettings_buttonSettings.click();
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "6");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "6");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
-        if(!mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ShowIconsForMenuItems, true);
         mainMenuSettings.button_saveBlock.click();
     }
 

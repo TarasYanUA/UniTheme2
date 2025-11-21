@@ -30,18 +30,11 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
         mainMenuSettings.chooseMenu_Electronics.click();
         taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
-        if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
-            mainMenuSettings.setting_ActivateSettings.click();
-        }
-        if (!mainMenuSettings.setting_Activate3LevelMenu.isSelected()) {
-            mainMenuSettings.setting_Activate3LevelMenu.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ActivateSettings, true);
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_Activate3LevelMenu, true);
         mainMenuSettings.button_Save3LevelMenu.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        UtilsAdm.makePause(2000);
+
         //Добавляем баннер для меню "Компьютеры"
         mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers,"img[src$='electronics-bg-menu.jpg']");
         mainMenuSettings.selectLanguage("ar");
@@ -66,9 +59,7 @@ public class Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView extend
         taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
         taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "80");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);
         taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();

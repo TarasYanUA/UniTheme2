@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
 
@@ -29,14 +30,10 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
-        if(!mainMenuSettings.setting_ActivateSettings.isSelected()){
-            mainMenuSettings.setting_ActivateSettings.click();
-        }
-        if(!mainMenuSettings.setting_Activate3LevelMenu.isSelected()){
-            mainMenuSettings.setting_Activate3LevelMenu.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ActivateSettings, true);
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_Activate3LevelMenu, true);
         mainMenuSettings.button_Save3LevelMenu.click();
 
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"
@@ -44,17 +41,15 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         layoutPage.layout_Light.click();
         layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("5");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "12");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "12");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("1");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "300");
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "300");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

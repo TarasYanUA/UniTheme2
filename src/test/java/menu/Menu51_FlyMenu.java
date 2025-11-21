@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
@@ -36,9 +37,7 @@ public class Menu51_FlyMenu extends TestRunner{
         taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
         taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "4");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("2");
-        if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
-            mainMenuSettings.setting_ShowIconsForMenuItems.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ShowIconsForMenuItems, false);
         mainMenuSettings.button_saveBlock.click();
     }
 

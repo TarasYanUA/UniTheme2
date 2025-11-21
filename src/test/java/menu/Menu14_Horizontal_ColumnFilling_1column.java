@@ -8,6 +8,7 @@ import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.storefront.AssertsOfMenu;
 import taras.storefront.StHomePage;
+import taras.adminPanel.UtilsAdm;
 
 /*
 Работаем с макетом Light v2:
@@ -29,12 +30,12 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         layoutPage.setLayoutAsDefault();
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.gearwheelOfTheBlock_MainMenu_LightV2.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("1");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "3");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("5");
         if(mainMenuSettings.setting_ShowIconsForMenuItems.isSelected()){
             mainMenuSettings.setting_ShowIconsForMenuItems.click();
@@ -42,7 +43,7 @@ public class Menu14_Horizontal_ColumnFilling_1column extends TestRunner {
         if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
             mainMenuSettings.setting_CompactDisplayView.click();
         }
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

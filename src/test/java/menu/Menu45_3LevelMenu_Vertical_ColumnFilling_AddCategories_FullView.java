@@ -28,20 +28,12 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         MainMenuSettings mainMenuSettings = new MainMenuSettings();
         mainMenuSettings.choose_MainMenu.click();
         mainMenuSettings.chooseMenu_Electronics.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuTab_ABUniTheme2.click();
-        if (!mainMenuSettings.setting_ActivateSettings.isSelected()) {
-            mainMenuSettings.setting_ActivateSettings.click();
-        }
-        if (!mainMenuSettings.setting_Activate3LevelMenu.isSelected()) {
-            mainMenuSettings.setting_Activate3LevelMenu.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_ActivateSettings, true);
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_Activate3LevelMenu, true);
         mainMenuSettings.button_Save3LevelMenu.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         //Добавляем баннер для меню "Компьютеры"
         mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers,"img[src$='electronics-bg-menu.jpg']");
         mainMenuSettings.selectLanguage("ar");
@@ -59,17 +51,15 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         layoutPage.layout_Light.click();
         layoutPage.setLayoutAsDefault();
         mainMenuSettings.gearwheelOfTheBlock_Categories_Light.click();
-        taras.adminPanel.UtilsAdm.waitForTitleBarWindow();
+        UtilsAdm.waitForTitleBarWindow();
         mainMenuSettings.menuSettings_buttonSettings.click();
         new Select(mainMenuSettings.setting_FillingType).selectByValue("column_filling");
         new Select(mainMenuSettings.setting_MaximumColumns).selectByValue("4");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "80");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "30");
+        UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "80");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("75");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
-        taras.adminPanel.UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);
+        UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
         mainMenuSettings.button_saveBlock.click();

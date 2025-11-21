@@ -47,7 +47,7 @@ public class StProductPage extends AbstractPage {
         gearwheel_Language.click();
         DriverProvider.getDriver().findElement(By.cssSelector("a[data-ca-name='" + ruArEn + "']")).click();
         UtilsAdm.makePause(2000);
-        UtilsAdm.scrollToElementAndScrollBelow(gearwheel_Language, 0);
+        UtilsAdm.hoverOverElement(gearwheel_Language);
     }
 
     public void scrollToAndClickTab_Features() {

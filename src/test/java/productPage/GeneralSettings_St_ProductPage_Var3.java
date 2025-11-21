@@ -84,8 +84,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         basicPage.clickSaveButtonOfSettings();
     }
 
-    //(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
-    @Test
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductPage_Var3")
     public void checkSettingsOnProductPage_Var3() {
         BasicPage basicPage = new BasicPage();
         ProductSettings productSettings = basicPage.navigateToSection_Products();

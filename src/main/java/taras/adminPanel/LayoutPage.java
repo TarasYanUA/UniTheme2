@@ -89,6 +89,6 @@ public class LayoutPage extends AbstractPage {
 
     public void navigateTo_BlockSettings(String blockName) {
         DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='" + blockName + "'] div[class*='bm-action-properties']")).click();
-        UtilsAdm.waitForPopUpWindow();
+        UtilsAdm.waitForTitleBarWindow();
     }
 }

@@ -58,9 +58,13 @@ public class UtilsAdm extends AbstractPage {
     }
 
     public static void waitForTitleBarWindow() {
-        (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar")));
+        WebElement lastElement = new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(5))
+                .until(d -> {
+                    List<WebElement> elems = d.findElements(By.cssSelector(".ui-dialog-titlebar"));
+                    return elems.isEmpty() ? null : elems.getLast();
+                });
     }
+
 
     public static void hoverOverElement(WebElement webElement) {
         Actions hover = new Actions(DriverProvider.getDriver());

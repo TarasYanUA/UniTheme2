@@ -10,6 +10,7 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
+
 import java.util.List;
 
 /*
@@ -73,14 +74,13 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         layoutPage.button_SettingsOfTemplate.click();
         UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowItemNumber, false);
         UtilsAdm.clickAndType(layoutPage.field_NumberOfColumnsInList, "5");
-        UtilsAdm.clickAndType(layoutPage.setting_LoadingType, "onclick");
+        new Select(layoutPage.setting_LoadingType).selectByValue("onclick");
         layoutPage.tabOfBlock_Content.click();
         new Select(layoutPage.setting_Filling).selectByValue("on_sale");
         UtilsAdm.clickAndType(layoutPage.field_Limit, "17");
         layoutPage.tabOfBlock_Settings.click();
         UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
         layoutPage.button_saveBlock.click();
-
         //Работаем с настройками характеристики Бренд
         FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.featureBrand.click();
@@ -156,7 +156,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column5")).size(), 5,
                 "Number of columns is not equal 5 in the product block!");
 
-        clickButton_ShowMore(500, "ProductBlock_GridMore_Var1 - ProductBlock ");
+        clickButton_ShowMore( "ProductBlock_GridMore_Var1 - ProductBlock ", "Распродажа");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
@@ -209,7 +209,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID +"'] .product-description")).isEmpty()
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .product-description")).isEmpty()
                         && !DriverProvider.getDriver().findElements(By
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty(),
                 "Additional information about products is not 'Short description and features' in the block!");
@@ -233,23 +233,26 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         stHomePage.selectLanguage("ar");
         stHomePage.openProductBlock("On Sale");
-        clickButton_ShowMore(600, "ProductBlock_GridMore_Var1 - ProductBlock (RTL) ");
+        clickButton_ShowMore("ProductBlock_GridMore_Var1 - ProductBlock (RTL) ", "On Sale");
         softAssert.assertAll();
         System.out.println("ProductBlock_GridMore_Var1 passed successfully!");
     }
 
-    void clickButton_ShowMore(int scrollBelow, String screenName) {
+    void clickButton_ShowMore(String screenName, String blockName) {
         int num = 1;
         while (true) {
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst();
-                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, scrollBelow);
-                button_ShowMore.click();
-
+                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 30);
                 takeScreenShot(screenName + num);
+                UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(By
+                        .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']")));
+                button_ShowMore.click();
+                UtilsAdm.waitForSpinnerDisappear();
                 num++;
             } else {
+                takeScreenShot(screenName + "final");
                 break;
             }
         }

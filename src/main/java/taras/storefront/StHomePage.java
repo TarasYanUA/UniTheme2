@@ -65,12 +65,14 @@ public class StHomePage extends AbstractPage {
     }
 
     public void scrollToBlockWithProducts() {
-        taras.adminPanel.UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
+        UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
     }
 
     public void openProductBlock(String blockName) {
-        DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']")).click();
-        UtilsAdm.makePause(2000);
+        WebElement block = DriverProvider.getDriver().findElement(By
+                .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']"));
+        UtilsAdm.hoverNavigateAndClick(block);
+        UtilsAdm.makePause(200);
     }
 
 

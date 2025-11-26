@@ -71,7 +71,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         layoutPage.button_SettingsOfTemplate.click();
         UtilsAdm.setCheckboxState(layoutPage.checkbox_ShowItemNumber, false);
         UtilsAdm.clickAndType(layoutPage.field_NumberOfColumnsInList, "4");
-        UtilsAdm.clickAndType(layoutPage.setting_LoadingType, "onclick");
+        new Select(layoutPage.setting_LoadingType).selectByValue("onclick");
         layoutPage.tabOfBlock_Content.click();
         new Select(layoutPage.setting_Filling).selectByValue("on_sale");
         UtilsAdm.clickAndType(layoutPage.field_Limit, "15");
@@ -147,7 +147,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column4")).size(), 4,
                 "Number of columns is not equal 4 in the product block!");
 
-        clickButton_ShowMore(400, "ProductBlock_GridMore_Var2 - ProductBlock ");
+        clickButton_ShowMore("ProductBlock_GridMore_Var2 - ProductBlock ", "Распродажа");
 
         //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
         softAssert.assertFalse(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
@@ -223,23 +223,26 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         stHomePage.selectLanguage("ar");
         stHomePage.openProductBlock("On Sale");
-        clickButton_ShowMore(550, "ProductBlock_GridMore_Var2 - ProductBlock (RTL) ");
+        clickButton_ShowMore("ProductBlock_GridMore_Var2 - ProductBlock (RTL) ", "On Sale");
         softAssert.assertAll();
         System.out.println("ProductBlock_GridMore_Var2 passed successfully!");
     }
 
-    void clickButton_ShowMore(int scrollBelow, String screenName) {
+    void clickButton_ShowMore(String screenName, String blockName) {
         int num = 1;
         while (true) {
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
             if (!buttons.isEmpty() && buttons.getFirst().isDisplayed()) {
                 WebElement button_ShowMore = buttons.getFirst();
-                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, scrollBelow);
-                button_ShowMore.click();
-
+                UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 30);
                 takeScreenShot(screenName + num);
+                UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(By
+                        .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']")));
+                button_ShowMore.click();
+                UtilsAdm.waitForSpinnerDisappear();
                 num++;
             } else {
+                takeScreenShot(screenName + "final");
                 break;
             }
         }

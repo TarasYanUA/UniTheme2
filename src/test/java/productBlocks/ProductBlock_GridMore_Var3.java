@@ -44,6 +44,8 @@ import java.util.List;
 Отображать стандартную галерею изображений      -- Не отображать
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
+Скруглить углы для элементов интерфейса         -- Не использовать
+Скруглить углы блоков, окон, баннеров           -- Не использовать
 Тип обрамления товара в сетке                   -- Рамка без внешних отступов
 Добавить фон/маску для изображений товара       -- y
 Использовать выравнивание элементов в товарной сетке --	n
@@ -113,6 +115,8 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
+        new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("do_not_use");
+        new Select(colorSchemeSettings.setting_General_RoundCornersOfBlocks).selectByValue("do_not_use");
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_without_margins");
         UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, true);

@@ -46,6 +46,8 @@ import java.util.List;
 Переключать изображение товара при движении мышки-- Не переключать (нужно для настройки выше)
 
 3) UniTheme2 -- Настройки цветосхемы            -- вкладка "Списки товаров":
+Скруглить углы для элементов интерфейса         -- Сильная округлость
+Скруглить углы блоков, окон, баннеров           -- Сильная округлость
 Тип обрамления товара в сетке                   -- Рамка с внешними отступами
 Добавить фон/маску для изображений товара       -- n
 Использовать выравнивание элементов в товарной сетке --	y
@@ -118,6 +120,8 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         //Настраиваем UniTheme цветосхему, вкладка "Списки товаров"
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
+        new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("full");
+        new Select(colorSchemeSettings.setting_General_RoundCornersOfBlocks).selectByValue("full");
         colorSchemeSettings.tab_ProductLists.click();
         new Select(colorSchemeSettings.setting_FrameType).selectByValue("solid_with_margins");
         UtilsAdm.setCheckboxState(colorSchemeSettings.setting_ProductLists_MaskForProductImages, false);

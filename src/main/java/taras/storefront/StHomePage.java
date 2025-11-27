@@ -72,7 +72,7 @@ public class StHomePage extends AbstractPage {
         WebElement block = DriverProvider.getDriver().findElement(By
                 .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']"));
         UtilsAdm.hoverNavigateAndClick(block);
-        UtilsAdm.makePause(200);
+        UtilsAdm.makePause(2000);
     }
 
 

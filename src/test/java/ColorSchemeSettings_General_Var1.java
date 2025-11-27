@@ -12,7 +12,7 @@ import testRunner.TestRunner;
 
 2) UniTheme2 -- Настройки цветосхемы -- вкладка "Общее":
 Скруглить углы для элементов интерфейса --  Полностью скруглить
-Скруглить углы блоков, окон, баннеров --    да
+Скруглить углы блоков, окон, баннеров --    Полностью скруглить
 Отображать заголовки заглавными буквами --  да
 Стиль --    Использовать фоновую заливку
 Отображать текст заглавными буквами --  да
@@ -40,7 +40,7 @@ public class ColorSchemeSettings_General_Var1 extends TestRunner {
         ColorSchemeSettings colorSchemeSettings = basicPage.navigateTo_ColorSchemeSettings();
         colorSchemeSettings.selectActiveColorScheme();
         new Select(colorSchemeSettings.setting_General_RoundCornersForElements).selectByValue("full");
-        UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_RoundCornersOfBlocks, true);
+        new Select(colorSchemeSettings.setting_General_RoundCornersOfBlocks).selectByValue("full");
         UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayHeadersInCapitalLetters, true);
         new Select(colorSchemeSettings.setting_General_ButtonsStyle).selectByValue("use_background");
         UtilsAdm.setCheckboxState(colorSchemeSettings.setting_General_DisplayTextInCapitalLetters, true);

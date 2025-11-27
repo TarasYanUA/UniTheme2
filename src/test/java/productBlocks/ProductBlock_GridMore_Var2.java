@@ -199,7 +199,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
 
         //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty()
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-features-list")).isEmpty()
                 && !DriverProvider.getDriver().findElements(By
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-lv__item-features")).isEmpty(),
                 "Additional information about products is not 'Features and Variations list' in the block!");

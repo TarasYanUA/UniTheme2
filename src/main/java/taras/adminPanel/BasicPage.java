@@ -113,6 +113,11 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
         return new LayoutPage();
     }
 
+    public void selectLanguageForAdminElement(String ruArEn) {
+        DriverProvider.getDriver().findElement(By.cssSelector(".content-variant-wrap--language span")).click();
+        DriverProvider.getDriver().findElement(By.cssSelector(".content-variant-wrap--language a[name='" + ruArEn + "']")).click();
+    }
+
 
     //Меню "Модули -- Скачанные модули"
     @FindBy(xpath = "//span[text()='Модули']")

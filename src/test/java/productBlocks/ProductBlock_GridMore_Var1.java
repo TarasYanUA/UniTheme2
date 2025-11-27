@@ -81,6 +81,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         layoutPage.tabOfBlock_Settings.click();
         UtilsAdm.setCheckboxState(layoutPage.checkbox_HideAddToCartButton, false);
         layoutPage.button_saveBlock.click();
+
         //Работаем с настройками характеристики Бренд
         FeaturePage featuresPage = basicPage.navigateToSection_Features();
         featuresPage.featureBrand.click();
@@ -131,9 +132,10 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Добавляем Краткое описание товару Ice Queen
         ProductSettings productSettings = basicPage.navigateToSection_Products();
+        basicPage.selectLanguageForAdminElement("ru");
         productSettings.clickAndType_SearchFieldOfProduct("Ice Queen");
         productSettings.hoverAndTypeField_ShortDescription(
-                "Рюкзак Camelbak - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
+                "Рюкзак Camelback - женский рюкзак идеально подходящий для активного отдыха в зимний период времени. Общий объём 16,4 литра, что позволяет вместить необходимый багаж. В этом рюкзаке есть отделение для воды с системой, не позволяющей ей замерзнуть. Резервуар для воды 2 литра.");
         basicPage.clickSaveButtonOfSettings();
     }
 
@@ -209,9 +211,9 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
 
         //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
         softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .product-description")).isEmpty()
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-product-description")).isEmpty()
                         && !DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-gl__feature")).isEmpty(),
+                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-features-list")).isEmpty(),
                 "Additional information about products is not 'Short description and features' in the block!");
 
         //Проверяем, что дополнительная информация отображается при наведении

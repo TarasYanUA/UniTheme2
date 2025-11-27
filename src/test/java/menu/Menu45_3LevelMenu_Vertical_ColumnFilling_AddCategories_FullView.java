@@ -36,9 +36,9 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
 
         //Добавляем баннер для меню "Компьютеры"
         mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers,"img[src$='electronics-bg-menu.jpg']");
-        mainMenuSettings.selectLanguage("ar");
+        basicPage.selectLanguageForAdminElement("ar");
         mainMenuSettings.addBannerToMenu(mainMenuSettings.categoryComputers_RTL, "img[src$='sports-bg-menu.jpg']");
-        mainMenuSettings.selectLanguage("ru");
+        basicPage.selectLanguageForAdminElement("ru");
 
         //Добавляем категории для Электроники
         CategoryPage categoryPage = basicPage.navigateToSection_Categories();

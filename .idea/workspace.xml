@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed bug with some asserts.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made fixes with colorscheme setting to round blocks and buttons.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/MainMenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,17 +260,17 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_SmallItems_Var3">
-    <configuration name="ProductBlock_Scroller_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Menu50_FlyMenu">
+    <configuration name="Menu20_Vertical_ColumnFilling_4columns_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
+          <option name="PATTERN" value="menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var2" />
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu20_Vertical_ColumnFilling_4columns_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -280,16 +278,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_Scroller_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu24_Vertical_ColumnFilling_2columns_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
+          <option name="PATTERN" value="menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var3" />
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -297,16 +295,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_SmallItems_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu35_Vertical_RowFilling_1column_CompactView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
+          <option name="PATTERN" value="menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_SmallItems_Var1" />
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu35_Vertical_RowFilling_1column_CompactView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -314,16 +312,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_SmallItems_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
+          <option name="PATTERN" value="menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_SmallItems_Var2" />
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -331,16 +329,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_SmallItems_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu50_FlyMenu" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productBlocks.*" />
+          <option name="PATTERN" value="menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_SmallItems_Var3" />
+      <option name="PACKAGE_NAME" value="menu" />
+      <option name="MAIN_CLASS_NAME" value="menu.Menu50_FlyMenu" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -350,19 +348,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-      <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
-      <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
-      <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
+      <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
+      <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
+      <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
+      <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
+      <item itemvalue="TestNG.Menu50_FlyMenu" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
-        <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
-        <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
+        <item itemvalue="TestNG.Menu50_FlyMenu" />
+        <item itemvalue="TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView" />
+        <item itemvalue="TestNG.Menu35_Vertical_RowFilling_1column_CompactView" />
+        <item itemvalue="TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView" />
+        <item itemvalue="TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView" />
       </list>
     </recent_temporary>
   </component>
@@ -753,7 +751,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="278" />
+    <option name="localTasksCounter" value="279" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,7 +782,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made refactoring of the code for the ProductSettings class." />
     <MESSAGE value="Made refactoring of the code for the ThemeSettings_ProductLists class." />
     <MESSAGE value="Made refactoring of the code for the classes ThemeSettings." />
     <MESSAGE value="Made refactoring of the code for the class ProductPage." />
@@ -809,6 +806,7 @@
     <MESSAGE value="Checked working capacity of classes: productLists" />
     <MESSAGE value="Checked working capacity of classes: ProductBlock_GridMore_" />
     <MESSAGE value="Fixed bug with some asserts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with some asserts." />
+    <MESSAGE value="Made fixes with colorscheme setting to round blocks and buttons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made fixes with colorscheme setting to round blocks and buttons." />
   </component>
 </project>

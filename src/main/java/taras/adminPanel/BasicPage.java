@@ -114,6 +114,7 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
     }
 
     public void selectLanguageForAdminElement(String ruArEn) {
+        UtilsAdm.closeAllNotifications();
         DriverProvider.getDriver().findElement(By.cssSelector(".content-variant-wrap--language span")).click();
         DriverProvider.getDriver().findElement(By.cssSelector(".content-variant-wrap--language a[name='" + ruArEn + "']")).click();
     }

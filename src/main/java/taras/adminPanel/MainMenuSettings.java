@@ -98,10 +98,10 @@ public class MainMenuSettings extends AbstractPage {
     @FindBy(css = "span[id*='on_item_'] .icon-caret-right")
     public WebElement arrowOfCategory;
 
-    @FindBy(xpath = "//div[@class='items-container multi-level longtap-selection']//a[text()='Компьютеры']")
+    @FindBy(xpath = "//a[text()='Компьютеры']")
     public WebElement categoryComputers;
 
-    @FindBy(xpath = "//div[@class='items-container multi-level longtap-selection']//a[text()='Computers']")
+    @FindBy(xpath = "//a[text()='Computers']")
     public WebElement categoryComputers_RTL;
 
     @FindBy(css = ".re-icon-html")
@@ -124,11 +124,5 @@ public class MainMenuSettings extends AbstractPage {
                     "<p><img src=\"design/themes/abt__unitheme2/media/images/abt__unitheme2/sports-bg-menu.jpg\"></p>");
         }
         button_Save3LevelMenu.click();
-    }
-
-    public void selectLanguage(String ruArEn) {
-        UtilsAdm.closeAllNotifications();
-        languageButton.click();
-        DriverProvider.getDriver().findElement(By.cssSelector("div[data-language='" + ruArEn + "']")).click();
     }
 }

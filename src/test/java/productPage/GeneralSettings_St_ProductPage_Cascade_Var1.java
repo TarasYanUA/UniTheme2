@@ -68,9 +68,9 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристики Бренд
-        FeaturePage featuresPage = basicPage.navigateToSection_Features();
-        featuresPage.featureBrand.click();
-        WebElement checkbox_ShowOnFeaturesTab_Brand = featuresPage.showOnFeaturesTab_Brand;
+        FeaturePage featurePage = basicPage.navigateToSection_Features();
+        featurePage.featureBrand.click();
+        WebElement checkbox_ShowOnFeaturesTab_Brand = featurePage.showOnFeaturesTab_Brand;
         if (!checkbox_ShowOnFeaturesTab_Brand.isSelected()) {
             checkbox_ShowOnFeaturesTab_Brand.click();
             basicPage.clickSaveButtonOfSettings();

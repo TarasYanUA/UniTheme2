@@ -44,9 +44,9 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         BasicPage basicPage = new BasicPage();
 
         //Работаем с настройками характеристики Бренд
-        FeaturePage featuresPage = basicPage.navigateToSection_Features();
-        featuresPage.featureBrand.click();
-        WebElement checkboxShowInProductList = featuresPage.showInProductList;
+        FeaturePage featurePage = basicPage.navigateToSection_Features();
+        featurePage.featureBrand.click();
+        WebElement checkboxShowInProductList = featurePage.showInProductList;
         if (!checkboxShowInProductList.isSelected()) {
             checkboxShowInProductList.click();
             basicPage.clickSaveButtonOfSettings();

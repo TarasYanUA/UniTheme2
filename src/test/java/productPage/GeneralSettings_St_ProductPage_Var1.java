@@ -67,12 +67,12 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         basicPage.clickSaveButtonOfSettings();
 
         //Работаем с настройками характеристик Жесткий диск и Бренд
-        FeaturePage featuresPage = basicPage.navigateToSection_Features();
-        featuresPage.feature_HardDrive.click();
+        FeaturePage featurePage = basicPage.navigateToSection_Features();
+        featurePage.feature_HardDrive.click();
         UtilsAdm.waitForPopUpWindow();
-        featuresPage.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
-        UtilsAdm.setCheckboxState(featuresPage.showInHeaderOnProductPage_HardDisk, true);
-        featuresPage.button_SaveFeature.click();
+        featurePage.clickAndTypeField_DescriptionOfFeature("Для характеристики, которая просто позволяет указать какое-нибудь дополнительное свойство товара. Например, у футболок это может быть \"Ткань\". Если вы создадите фильтр по этой характеристике, покупатели увидят, что она есть, и смогут легко найти по ней нужный товар.");
+        UtilsAdm.setCheckboxState(featurePage.showInHeaderOnProductPage_HardDisk, true);
+        featurePage.button_SaveFeature.click();
 
         //Настраиваем страницу товара
         ProductSettings productSettings = basicPage.navigateToSection_Products();

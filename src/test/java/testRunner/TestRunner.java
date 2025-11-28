@@ -8,7 +8,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 import taras.adminPanel.UtilsAdm;
+import taras.asserts.CollectAssertMessages;
 import taras.constants.DriverProvider;
 import java.io.File;
 import java.io.IOException;
@@ -20,11 +22,17 @@ import static taras.constants.Constants.BASIC_URL;
 import static taras.constants.DriverProvider.getDriver;
 
 public class TestRunner {
+    private SoftAssert softAssert;
+
     @BeforeMethod
     public void prepareBrowser() {
         getDriver().get(BASIC_URL);
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //Общая задержка
         getDriver().manage().window().maximize();    //Размер браузера на весь экран
+
+        softAssert = new SoftAssert();
+        CollectAssertMessages.setSoftAssertions(softAssert);
+
         getDriver().findElement(By.cssSelector(".btn.btn-primary")).click();
         getDriver().findElement(By.id("bp_off_bottom_panel")).click(); //Закрываем нижнюю панель
     }
@@ -36,6 +44,15 @@ public class TestRunner {
             FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) + ".jpg"));
         }
+
+        softAssert = CollectAssertMessages.getSoftAssertions();
+        try {
+            softAssert.assertAll();
+        } catch (AssertionError e) {
+            System.out.println("\nОшибки в asserts:");
+            System.out.println(e.getMessage());
+        }
+
         UtilsAdm.makePause(2000);
         getDriver().quit();
         DriverProvider.destroyDriver();

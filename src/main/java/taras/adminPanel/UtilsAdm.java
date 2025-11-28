@@ -27,6 +27,7 @@ public class UtilsAdm extends AbstractPage {
 
     public static void checkPageOnEngLang() {
         if (DriverProvider.getDriver().findElements(By.cssSelector("#sw_select_en_wrap_content")).isEmpty()) {
+            UtilsAdm.closeAllNotifications();
             DriverProvider.getDriver().findElement(By.cssSelector("a[id^='sw_select_'][id$='_wrap_content']")).click();
             DriverProvider.getDriver().findElement(By.cssSelector("#content_top_navigation .popup-icons a[name='en']")).click();
         }

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -125,8 +126,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         UtilsAdm.clickAndType(productSettings.field_ProductName, "Droid 3");
         productSettings.selectAllVariations();
     }
-
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
+//(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
+    @Test
     public void checkProductLists_AllCategoryLists_Var1() {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
@@ -138,6 +139,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.scrollToBlockWithProducts();
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров переключатель изображений с полосками
@@ -174,8 +176,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.navigateToHorizontalMenu_WomanCloth();
 
         //Проверяем, что на странице присутствует обесцвеченный товар
-        softAssert.assertTrue(!assertsOnStorefront.decolorizeOutOfStockProducts.isEmpty(),
-                "There is no decolorized product on the category 'Woman cloth'!");
+        asserts_productLists.assertElementPresence(asserts_productLists.decolorizeOutOfStockProducts,
+                "on the category 'Woman cloth'!", true);
 
         //Проверяем, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),

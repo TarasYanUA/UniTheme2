@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -140,6 +141,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.scrollToBlockWithProducts();
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
@@ -176,9 +178,9 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.navigateToHorizontalMenu_WomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
 
-        //Проверяем, что на странице отсутствует обесцвеченный товар.
-        softAssert.assertFalse(!assertsOnStorefront.decolorizeOutOfStockProducts.isEmpty(),
-                "There is a decolorized product on the category 'Woman cloth' but shouldn't!");
+        //Проверяем, что на странице отсутствует обесцвеченный товар
+        asserts_productLists.assertElementPresence(asserts_productLists.decolorizeOutOfStockProducts,
+                "on the category 'Woman cloth'!", false);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),

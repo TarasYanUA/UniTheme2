@@ -147,8 +147,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes in the product block!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There are no empty stars in the product block!");
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.emptyStarsOfProductRating,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
@@ -176,16 +179,22 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stHomePage.navigateToHorizontalMenu_WomanCloth();
 
         //Проверяем, что на странице присутствует обесцвеченный товар
-        asserts_productLists.assertElementPresence(asserts_productLists.decolorizeOutOfStockProducts,
-                "on the category 'Woman cloth'!", true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.decolorizeOutOfStockProducts,
+                "on the category 'Woman cloth'!",
+                true);
 
         //Проверяем, что у товаров переключатель изображений с полосками
         softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
                 "Gallery of product images is not with Stripes on the category 'Woman cloth'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There are no empty stars on the category 'Woman cloth'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating,
+                "on the category 'Woman cloth'!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
@@ -218,8 +227,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes on the category 'Phones'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There are no empty stars on the category 'Phones'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating,
+                "on the category 'Phones'!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
@@ -279,8 +291,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Gallery of product images is not with Stripes on the category 'List without options'!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There are no empty stars on the category 'List without options'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.emptyStarsOfProductRating,
+                "on the category 'List without options'!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
@@ -318,8 +333,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There are no empty stars on the category 'Compact list'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.emptyStarsOfProductRating,
+                "on the category 'Compact list'!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),

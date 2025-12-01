@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -105,6 +106,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
     public void checkProductBlock_SmallItems_Var1() {
         BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
@@ -116,8 +118,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        softAssert.assertTrue(!assertsOnStorefront.getEmptyStarsOfProductRating(blockID).isEmpty(),
-                "There are no empty stars in the product block!");
+        asserts_productLists.assertElementInProductBlock(asserts_productLists.emptyStarsOfProductRating, blockID, true);
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
         softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),

@@ -179,8 +179,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         StCategoryPage stCategoryPage = new StCategoryPage();
 
         //Проверяем, что на странице отсутствует обесцвеченный товар
-        asserts_productLists.assertElementPresence(asserts_productLists.decolorizeOutOfStockProducts,
-                "on the category 'Woman cloth'!", false);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.decolorizeOutOfStockProducts,
+                "on the category 'Woman cloth'!",
+                false);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),

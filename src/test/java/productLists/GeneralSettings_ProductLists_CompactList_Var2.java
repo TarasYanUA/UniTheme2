@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.UtilsAdm;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -50,11 +51,14 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что пустые звезды рейтинга присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.emptyStarsOfProductRating().isEmpty(),
-                "There is no empty rating stars on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.emptyStarsOfProductRating,
+                "on the category 'Compact list'!", true);
 
         //Проверяем, что общее значение рейтинга присутствует
         softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),

@@ -126,8 +126,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         UtilsAdm.clickAndType(productSettings.field_ProductName, "Droid 3");
         productSettings.selectAllVariations();
     }
-//(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
-    @Test
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_AllCategoryLists_Var1")
     public void checkProductLists_AllCategoryLists_Var1() {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();

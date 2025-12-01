@@ -12,11 +12,26 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         super();
     }
 
-    SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+    private SoftAssert getSoftAssert() {
+        return CollectAssertMessages.getSoftAssertions();
+    }
+
+
+    private String blockID;
+
+    public void setBlockID(String blockID) {
+        this.blockID = blockID;
+    }
+
+    public String getProductBlockSelector() {
+        return "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] ";
+    }
+
 
     public static final String gridList = ".grid-list ";
     public static final String listWO = ".ty-product-list ";
     public static final String compactList = ".ty-compact-list__item ";
+    public static final String productBlock = "productBlock";
 
 
     //Настройка "Обесцвечивать товары, которых нет в наличии"
@@ -47,7 +62,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 : absenceMessages.get(selector);
 
         if (message == null) {
-            softAssert.fail("No assert message found for selector: " + selector + location);
+            getSoftAssert().fail("No assert message found for selector: " + selector);
             return;
         }
 
@@ -55,12 +70,13 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
             case gridList -> gridList + selector;
             case listWO -> listWO + selector;
             case compactList -> compactList + selector;
+            case productBlock -> getProductBlockSelector() + selector;
             default -> selector;
         };
 
-        softAssert.assertTrue(
+        getSoftAssert().assertTrue(
                 !shouldExist == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
-                message + location
+                message + location + "\n" + finalSelector
         );
     }
 
@@ -80,7 +96,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         if (message == null)
             throw new IllegalArgumentException("No assert message found for selector: " + selector);
 
-        softAssert.assertTrue(!shouldExist == DriverProvider.getDriver()
+        getSoftAssert().assertTrue(!shouldExist == DriverProvider.getDriver()
                 .findElements(By.cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + selector))
                 .isEmpty(), message);
     }

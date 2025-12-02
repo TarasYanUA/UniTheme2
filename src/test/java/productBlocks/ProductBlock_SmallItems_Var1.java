@@ -45,6 +45,7 @@ import testRunner.TestRunner;
 
 public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
+    Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
 
     @Test(priority = 1)
     public void setConfigurationsFor_ProductBlock_SmallItems_Var1() {
@@ -52,8 +53,9 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
 
         //Настраиваем блок товаров "Распродажа"
         LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
-        disableLazyLoadFromSection("Распродажа");
-        blockID = getBlockID("Распродажа");  //Получаем ID нужного блока товаров
+        disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
+        blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
+        asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_small_items.tpl");
         UtilsAdm.makePause(1000);
@@ -106,7 +108,6 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
     public void checkProductBlock_SmallItems_Var1() {
         BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
-        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
@@ -118,7 +119,11 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
-        asserts_productLists.assertElementInProductBlock(asserts_productLists.emptyStarsOfProductRating, blockID, true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.emptyStarsOfProductRating,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
         softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),

@@ -79,25 +79,4 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 message + location + "\n" + finalSelector
         );
     }
-
-    public void assertElementInProductBlock(String selector, String blockID, boolean shouldExist) {
-        Map<String, String> presenceMessages = Map.ofEntries(
-                Map.entry(emptyStarsOfProductRating, "There are no empty stars in the product block!")
-        );
-
-        Map<String, String> absenceMessages = Map.ofEntries(
-                Map.entry(emptyStarsOfProductRating, "There are empty stars but shouldn't in the product block!")
-        );
-
-        String message = shouldExist
-                ? presenceMessages.get(selector)
-                : absenceMessages.get(selector);
-
-        if (message == null)
-            throw new IllegalArgumentException("No assert message found for selector: " + selector);
-
-        getSoftAssert().assertTrue(!shouldExist == DriverProvider.getDriver()
-                .findElements(By.cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + selector))
-                .isEmpty(), message);
-    }
 }

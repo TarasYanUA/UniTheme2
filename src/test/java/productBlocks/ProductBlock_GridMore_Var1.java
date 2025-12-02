@@ -71,8 +71,8 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         //Настраиваем блок товаров "Распродажа"
         LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
-        blockID = getBlockID("Распродажа");   //Получаем ID нужного блока товаров
-        asserts_productLists.setBlockID(blockID);       //Передаём blockID в класс с проверками
+        blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
+        asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/ab__grid_list.tpl");
         UtilsAdm.makePause(1000);

@@ -16,8 +16,6 @@ import testRunner.TestRunner;
 
 import java.time.Duration;
 
-import static taras.constants.DriverProvider.getDriver;
-
 /* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=718159332
 
 Проверяем следующих настроек:
@@ -232,20 +230,31 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no text of a product tax on the category 'Phones'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
-        if (assertsOnStorefront.statusesForButton_AddToWishList.isEmpty()) {
-            stCategoryPage.button_AddToWishList.click();
-            UtilsAdm.closeAllNotifications();
-        }
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToWishList.isEmpty(),
-                "There is no status for the button 'Add to wish list'!");
+        stCategoryPage.addProductToWishList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.statusesForButton_AddToWishList,
+                "on the category 'Phones'!",
+                true
+        );
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
-        if (assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty()) {
-            stCategoryPage.button_AddToComparisonList.click();
-            UtilsAdm.closeAllNotifications();
-        }
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty(),
-                "There is no status for the button 'Add to comparison list'!");
+        stCategoryPage.addProductToComparisonList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.statusesForButton_AddToComparisonList,
+                "on the category 'Phones'!",
+                true);
+
+        //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
+        stHomePage.logOutOnStorefront();
+        stCategoryPage.buyGeneralProduct();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.statusesForButton_AddToCart_Number,
+                "on the category 'Phones'!",
+                true
+        );
 
         //Проверяем, что у товаров присутствует новый вид Вариаций
         softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_MaximumQuantityOfProductsVariations().isEmpty(),
@@ -254,16 +263,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что тип отображения новых вариаций -- Миниатюры
         softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
                 "Product variations are not with Thumbnails on the category 'Phones', Grid list!");
-
-        //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
-        stHomePage.logOutOnStorefront();
-        UtilsAdm.scrollToElementAndScrollBelow(stCategoryPage.button_GeneralAddToCart, 0);
-        stCategoryPage.button_GeneralAddToCart.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
-        stCategoryPage.button_ContinueShopping.click();
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
-                "There is no status for the button 'Add to cart' as 'Number of products' on the category page!");
 
         stHomePage.closeNotification_AlertSuccess();
         stCategoryPage.hoverToProduct("Droid 3");
@@ -301,16 +300,29 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no common value of product rating on the category 'List without options'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToWishList.isEmpty(),
-                "There is no status for the button 'Add to wish list' on the category 'List without options'!");
+        stCategoryPage.addProductToWishList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.statusesForButton_AddToWishList,
+                "on the category 'List without options'!",
+                true
+        );
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty(),
-                "There is no status for the button 'Add to comparison list' on the category 'List without options'!");
+        stCategoryPage.addProductToComparisonList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.statusesForButton_AddToComparisonList,
+                "on the category 'List without options'!",
+                true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
-                "There is no status for the button 'Add to cart' on the category 'List without options'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.statusesForButton_AddToCart_Number,
+                "on the category 'List without options'!",
+                true
+        );
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
@@ -335,16 +347,29 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "There is no common value of product rating on the category 'Compact list'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToWishList.isEmpty(),
-                "There is no status for the button 'Add to wish list' on the category 'Compact list'!");
+        stCategoryPage.addProductToWishList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.statusesForButton_AddToWishList,
+                "on the category 'Compact list'!",
+                true
+        );
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToComparisonList.isEmpty(),
-                "There is no status for the button 'Add to comparison list' on the category 'Compact list'!");
+        stCategoryPage.addProductToComparisonList();
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.statusesForButton_AddToComparisonList,
+                "on the category 'Compact list'!",
+                true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
-        softAssert.assertTrue(!assertsOnStorefront.statusesForButton_AddToCart_Number.isEmpty(),
-                "There is no status for the button 'Add to cart' on the category 'Compact list'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.statusesForButton_AddToCart_Number,
+                "on the category 'Compact list'!",
+                true
+        );
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),

@@ -7,10 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.adminPanel.UtilsAdm;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
 import java.time.Duration;
+
+import static taras.constants.DriverProvider.getDriver;
 
 public class StCategoryPage extends AbstractPage {
     public StCategoryPage() {
@@ -44,17 +47,14 @@ public class StCategoryPage extends AbstractPage {
     @FindBy(css = "button[id*='button_cart']")
     public WebElement button_GeneralAddToCart;
 
-    @FindBy(css = ".ty-icon.ut2-icon-use_icon_cart")
-    public WebElement button_VariationAddToCart;
-
     @FindBy(css = ".ty-btn__secondary.cm-notification-close")
-    public WebElement button_ContinueShopping;
+    WebElement button_ContinueShopping;
 
     @FindBy(css = ".ut2-add-to-wish")
-    public WebElement button_AddToWishList;
+    WebElement button_AddToWishList;
 
     @FindBy(css = ".ut2-add-to-compare")
-    public WebElement button_AddToComparisonList;
+    WebElement button_AddToComparisonList;
 
     @FindBy(css = ".ut2-pb__title .ty-product-review-write-product-review-button")
     private WebElement button_WriteReview;
@@ -96,9 +96,36 @@ public class StCategoryPage extends AbstractPage {
         UtilsAdm.waitForSpinnerDisappear();
     }
 
+    public void buyGeneralProduct() {
+        UtilsAdm.hoverNavigateAndClick(button_GeneralAddToCart);
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
+        button_ContinueShopping.click();
+    }
+
     public void openWindow_WriteReview() {
         button_WriteReview.click();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(8)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-2")));
+    }
+
+    public void addProductToWishList() {
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+        if (DriverProvider.getDriver()
+                .findElements(By.cssSelector(asserts_productLists.statusesForButton_AddToWishList))
+                .isEmpty()) {
+            button_AddToWishList.click();
+            UtilsAdm.closeAllNotifications();
+        }
+    }
+
+    public void addProductToComparisonList() {
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+        if (DriverProvider.getDriver()
+                .findElements(By.cssSelector(asserts_productLists.statusesForButton_AddToComparisonList))
+                .isEmpty()) {
+            button_AddToComparisonList.click();
+            UtilsAdm.closeAllNotifications();
+        }
     }
 }

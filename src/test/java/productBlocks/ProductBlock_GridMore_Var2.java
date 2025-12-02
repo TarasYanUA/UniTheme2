@@ -164,8 +164,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара
-        softAssert.assertFalse(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
-                "There is common value of product rating but shouldn't in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.commonValueOfProductRating,
+                "in the product block!",
+                false);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),

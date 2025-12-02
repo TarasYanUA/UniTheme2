@@ -1,9 +1,7 @@
 package productLists;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
@@ -13,10 +11,6 @@ import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import java.time.Duration;
-
-import static taras.constants.DriverProvider.getDriver;
 
 /* ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1YPAkjqk12kPh7LBDU1tq7qdwLmCo-Rly00TdfW8h-Wo/edit#gid=718159332
 
@@ -66,6 +60,7 @@ import static taras.constants.DriverProvider.getDriver;
 */
 
 public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 extends TestRunner {
+
     @Test(priority = 1)
     public void setConfigurationsForProductLists_AllCategoryLists_Var1() {
         //Настраиваем макет для тест-кейса
@@ -255,14 +250,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.logOutOnStorefront();
-        UtilsAdm.hoverOverElement(stCategoryPage.button_GeneralAddToCart);
-        stCategoryPage.button_GeneralAddToCart.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(8)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-content.cm-notification-content-extended")));
-        stCategoryPage.button_ContinueShopping.click();
-
-        softAssert.assertTrue(!assertsOnStorefront.getStatusesForButtonAddToCartIcon().isEmpty(),
-                "There is no status as 'Icon' for the button 'Add to cart' on the category 'Phones'!");
+        stCategoryPage.buyGeneralProduct();
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.getStatusesForButtonAddToCartIcon(),
+                "on the category 'Phones'!",
+                true
+                );
 
         stHomePage.closeNotification_AlertSuccess();
         stCategoryPage.hoverToProduct("Droid 3");
@@ -310,8 +304,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "Buttons are not displayed when hovering over a product cell on the category 'List without options'!");
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
-        softAssert.assertTrue(!assertsOnStorefront.getStatusesForButtonAddToCartIcon().isEmpty(),
-                "There is no status as 'Icon' for the button 'Add to cart' on the category 'List without options'!");
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.getStatusesForButtonAddToCartIcon(),
+                "on the category 'List without options'!",
+                true
+        );
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
@@ -348,8 +346,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "There is no button 'Add to comparison list' on the category 'Compact list'!");
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
-        softAssert.assertTrue(!assertsOnStorefront.getStatusesForButtonAddToCartIcon().isEmpty(),
-                "There is no status as 'Icon' for the button 'Add to cart' on the category 'Compact list'!");
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.getStatusesForButtonAddToCartIcon(),
+                "on the category 'Compact list'!",
+                true
+        );
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),

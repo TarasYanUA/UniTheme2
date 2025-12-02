@@ -68,7 +68,7 @@ public class AssertsOnStorefront extends AbstractPage {
     @FindBy(css = "a.ut2-add-to-wish.active")
     public List<WebElement> statusesForButton_AddToWishList;        //Настройка "Отображать статусы для кнопок... "Добавить в избранное"
 
-    @FindBy(css = "a.ut2-add-to-wish.active")
+    @FindBy(css = "a.ut2-add-to-compare.active")
     public List<WebElement> statusesForButton_AddToComparisonList;  //Настройка "Отображать статусы для кнопок... "Добавить в список сравнения"
 
     @FindBy(css = ".ut2-add-to-wish")

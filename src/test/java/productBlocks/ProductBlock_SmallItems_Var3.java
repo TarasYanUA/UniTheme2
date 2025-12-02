@@ -133,8 +133,11 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
                 true);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
-                "There is no common value of product rating in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.commonValueOfProductRating,
+                "in the product block!",
+                true);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Short(blockID).isEmpty(),

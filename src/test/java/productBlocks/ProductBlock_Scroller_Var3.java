@@ -153,8 +153,11 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.getCommonValueOfProductRating(blockID).isEmpty(),
-                "There is no common value of product rating in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.commonValueOfProductRating,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),

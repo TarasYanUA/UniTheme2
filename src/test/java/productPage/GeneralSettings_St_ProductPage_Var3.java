@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -100,6 +101,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         stHomePage.logOutOnStorefront();
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки не в виде галереи
@@ -124,9 +126,17 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
                 "There is no product code!");
 
         //Проверяем, что текст "Вы экономите" отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Full().isEmpty()
-                        && !assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "There is a text 'You save' but shouldn't on the product page!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productPage,
+                asserts_productLists.text_YouSave_Full,
+                "on the product page!",
+                false);
+
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productPage,
+                asserts_productLists.text_YouSave_Short,
+                "on the product page!",
+                false);
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),

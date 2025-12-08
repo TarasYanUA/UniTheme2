@@ -160,20 +160,32 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что кнопка "Избранное" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
-                "There is no button 'Add to wish list' in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.button_AddToWishList,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
-                "There is no button 'Add to comparison list' in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.button_AddToComparisonList,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
-        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are displayed when hovering over a product cell but should be displayed at once in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.buttonsAreDisplayedOnHover,
+                "in the product block!",
+                false);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty(),
-                "The text 'You save' is not Full or missed in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.text_YouSave_Full,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),

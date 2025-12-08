@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -88,6 +89,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.openProductBlock("Распродажа");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что дополнительная информация отображается при наведении
@@ -99,9 +101,11 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "There is no brand name in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
-                && assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "The text 'You save' is not Full or missed in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.text_YouSave_Full,
+                "in the product block!",
+                true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
@@ -125,9 +129,11 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 "There is no brand name on the category page 'GridList'!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Full().isEmpty()
-                        && assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "The text 'You save' is not Full or missed on the category page 'GridList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.text_YouSave_Full,
+                "on the category page Grid list!",
+                true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),

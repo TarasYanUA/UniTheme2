@@ -3,6 +3,7 @@ package taras.asserts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
@@ -36,6 +37,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public static final String listWO = ".ty-product-list ";
     public static final String compactList = ".ty-compact-list__item ";
     public static final String productBlock = "productBlock";
+    public static final String productPage = ".ty-product-block";
 
 
     //Настройка "Обесцвечивать товары, которых нет в наличии"
@@ -85,8 +87,42 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     //Настройка "Отображать статусы для кнопок... "Добавить в список сравнения"
     public String statusesForButton_AddToComparisonList = "a.ut2-add-to-compare.active";
 
+    //Настройка "Отображать кнопку "Добавить в избранное"
+    public String button_AddToWishList = ".ut2-add-to-wish";
 
-    public void assertElementPresence(String list, String selector, String location, boolean shouldExist) {
+    //Настройка "Отображать кнопку "Добавить в список сравнения""
+    public String button_AddToComparisonList = ".ut2-add-to-compare";
+
+    //Настройка "Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара"
+    public String buttonsAreDisplayedOnHover = ".ut2-w-c-q__buttons.w_c_q-hover";
+
+    //Настройка "Отображать "Вы экономите -- Полный вид"
+    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
+
+    //Настройка "Отображать "Вы экономите -- Сокращенный вид"
+    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
+
+    //Настройка "Количество строк в названии товара"
+    public String numberOfLinesInProductName_Grid = "div[style^='--gl-lines-in-name-product: ";
+
+
+    private String resolveAssertMessage(String selector,
+                                        boolean elementsAreEmpty,
+                                        Map<String, String> presenceMessages,
+                                        Map<String, String> absenceMessages) {
+
+        String message = elementsAreEmpty
+                ? presenceMessages.get(selector)
+                : absenceMessages.get(selector);
+
+        if (message == null) {
+            getSoftAssert().fail("No assert message found for selector: " + selector);
+        }
+
+        return message;
+    }
+
+    public void assertElementPresence(String list, String selector, String location, boolean elementsAreEmpty) {
         Map<String, String> presenceMessages = Map.ofEntries(
                 Map.entry(decolorizeOutOfStockProducts, "There are no decolorized products "),
                 Map.entry(emptyStarsOfProductRating, "There are no empty stars "),
@@ -94,7 +130,13 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(getStatusesForButtonAddToCartIcon(), "There is no status as 'Icon' for the button 'Add to cart' "),
                 Map.entry(statusesForButton_AddToCart_Number, "There is no status as 'Number of products' for the button 'Add to cart' "),
                 Map.entry(statusesForButton_AddToWishList, "There is no status for the button 'Add to wish list' "),
-                Map.entry(statusesForButton_AddToComparisonList, "There is no status for the button 'Add to comparison list' ")
+                Map.entry(statusesForButton_AddToComparisonList, "There is no status for the button 'Add to comparison list' "),
+                Map.entry(button_AddToWishList, "There are no buttons 'Add to wish list' "),
+                Map.entry(button_AddToComparisonList, "There are no buttons 'Add to comparison list' "),
+                Map.entry(buttonsAreDisplayedOnHover, "Buttons are not displayed when hovering over a product cell "),
+                Map.entry(text_YouSave_Full, "The text 'You save' is not 'Full' or missed "),
+                Map.entry(text_YouSave_Short, "The text 'You save' is not 'Short' or missed ")
+
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(
@@ -102,17 +144,16 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(emptyStarsOfProductRating, "There are empty stars but shouldn't "),
                 Map.entry(commonValueOfProductRating, "There are common values of product rating but shouldn't "),
                 Map.entry(getStatusesForButtonAddToCartIcon(), "There is a status as 'Icon' for button 'Add to cart' but shouldn't "),
-                Map.entry(statusesForButton_AddToCart_Number, "There is a status as 'Number of products' for button 'Add to cart' but shouldn't ")
+                Map.entry(statusesForButton_AddToCart_Number, "There is a status as 'Number of products' for button 'Add to cart' but shouldn't "),
+                Map.entry(buttonsAreDisplayedOnHover, "Buttons are displayed when hovering over a product cell but should be displayed at once "),
+                Map.entry(text_YouSave_Full, "There is a text 'You save' as 'Full' but shouldn't "),
+                Map.entry(text_YouSave_Short, "There is a text 'You save' as 'Short' but shouldn't ")
+
         );
 
-        String message = shouldExist
-                ? presenceMessages.get(selector)
-                : absenceMessages.get(selector);
-
-        if (message == null) {
-            getSoftAssert().fail("No assert message found for selector: " + selector);
+        String message = resolveAssertMessage(selector, elementsAreEmpty, presenceMessages, absenceMessages);
+        if (message == null)
             return;
-        }
 
         String finalSelector = switch (list) {
             case gridList -> gridList + selector;
@@ -123,7 +164,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         };
 
         getSoftAssert().assertTrue(
-                !shouldExist == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
+                !elementsAreEmpty == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
                 message + location + "\n" + finalSelector
         );
     }

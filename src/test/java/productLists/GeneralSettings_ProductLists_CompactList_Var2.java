@@ -61,8 +61,11 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
                 "on the category 'Compact list'!", true);
 
         //Проверяем, что общее значение рейтинга присутствует
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
-                "There is no common value of product rating on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.commonValueOfProductRating,
+                "on the category 'Compact list'!",
+                true);
 
         //Проверяем, что код товара присутствует
         softAssert.assertTrue(!assertsOnStorefront.productCode_CompactList.isEmpty(),

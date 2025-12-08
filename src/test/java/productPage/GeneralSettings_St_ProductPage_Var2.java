@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -93,6 +94,7 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки не в виде галереи
@@ -132,9 +134,17 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
                 "There is no product Short description!");
 
         //Проверяем, что текст "Вы экономите" отсутствует по причине нулевой цены
-        softAssert.assertFalse(!assertsOnStorefront.text_YouSave_Short().isEmpty()
-                && !assertsOnStorefront.text_YouSave_Full().isEmpty(),
-                "There is a text 'You save' but shouldn't on the product page!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productPage,
+                asserts_productLists.text_YouSave_Full,
+                "on the product page!",
+                false);
+
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productPage,
+                asserts_productLists.text_YouSave_Short,
+                "on the product page!",
+                false);
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
         softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),

@@ -147,20 +147,32 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Image gallery of the product is not with arrows navigation in the product block!");
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
-                "There is no common value of product rating in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.commonValueOfProductRating,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
-                "There is no button 'Add to wish list' in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.button_AddToWishList,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
-                "There is no button 'Add to comparison list' in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.button_AddToComparisonList,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
-        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed at once, but only when hovering over a product cell in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.buttonsAreDisplayedOnHover,
+                "in the product block!",
+                false);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
@@ -188,16 +200,25 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "Image gallery of the product is not with arrows navigation on the category 'Woman cloth'!");
 
         //Проверяем, что кнопка "Избранное" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
-                "There is no button 'Add to wish list' on the category 'Woman cloth'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.button_AddToWishList,
+                "on the category 'Woman cloth'!",
+                true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
-                "There is no button 'Add to comparison list' on the category 'Woman cloth'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.button_AddToComparisonList,
+                "on the category 'Woman cloth'!",
+                true);
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
-        softAssert.assertFalse(!assertsOnStorefront.buttonsAreDisplayedOnHover.isEmpty(),
-                "Buttons are not displayed at once but only when hovering over a product cell on the category 'Woman cloth'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.buttonsAreDisplayedOnHover,
+                "on the category 'Woman cloth'!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
@@ -214,16 +235,25 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.navigateToHorizontalMenu_Phones();
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
-                "There is no common value of product rating on the category 'Phones'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.commonValueOfProductRating,
+                "on the category 'Phones'!",
+                true);
 
         //Проверяем, что кнопка "Избранное" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToWishList.isEmpty(),
-                "There is no button 'Add to wish list' on the category 'Phones'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.button_AddToWishList,
+                "on the category 'Phones'!",
+                true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.button_AddToComparisonList.isEmpty(),
-                "There is no button 'Add to comparison list' on the category 'Phones'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.button_AddToComparisonList,
+                "on the category 'Phones'!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
@@ -296,8 +326,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
-                "There is no common value of product rating on the category 'List without options'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.commonValueOfProductRating,
+                "on the category 'List without options'!",
+                true);
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
         stCategoryPage.addProductToWishList();
@@ -343,8 +376,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
-        softAssert.assertTrue(!assertsOnStorefront.commonValueOfProductRating().isEmpty(),
-                "There is no common value of product rating on the category 'Compact list'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.commonValueOfProductRating,
+                "on the category 'Compact list'!",
+                true);
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
         stCategoryPage.addProductToWishList();

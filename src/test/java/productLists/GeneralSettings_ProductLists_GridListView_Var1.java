@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -94,7 +95,9 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
         DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
+
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
@@ -118,8 +121,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no brand logo in the product block!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "The text 'You save' is not Short or missed in the product block!");
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.text_YouSave_Short,
+                "in the product block!",
+                true);
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
         softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
@@ -155,8 +161,11 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "There is no brand logo on the category page!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "The text 'You save' is not Short or missed on the category page!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.text_YouSave_Short,
+                "on the category page Grid list!",
+                true);
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
         softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),

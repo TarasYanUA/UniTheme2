@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
@@ -103,6 +104,7 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что мини-иконки в виде галереи
@@ -133,9 +135,12 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
 
-        //Проверяем, что текст "Вы экономите" присутствует и  "Сокращенный вид"
-        softAssert.assertTrue(!assertsOnStorefront.text_YouSave_Short().isEmpty(),
-                "The text 'You save' is not Short or missed on the product page!");
+        //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productPage,
+                asserts_productLists.text_YouSave_Short,
+                "on the product page!",
+                true);
 
         //Проверяем, что присутствует Цена за единицу
         softAssert.assertTrue(!assertsOnStorefront.pricePerUnit.isEmpty(),

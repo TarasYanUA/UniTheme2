@@ -131,8 +131,11 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
                 false);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
-        softAssert.assertTrue(!assertsOnStorefront.getText_YouSave_Full(blockID).isEmpty(),
-                "The text 'You save' is not Full or missed in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.text_YouSave_Full,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),

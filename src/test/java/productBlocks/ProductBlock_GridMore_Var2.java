@@ -236,7 +236,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "in the product block!",
                 true);
 
@@ -260,8 +260,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
-                "Gallery of mini icons is not with points in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.standardImageGallery_Dots,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),

@@ -102,7 +102,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 "",
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "in the product block!",
                 true);
 
@@ -114,8 +114,11 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
-                "Gallery of mini icons is not with points in the product block!");
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.standardImageGallery_Dots,
+                "in the product block!",
+                true);
 
         takeScreenShot("400 GS_ProductLists_GridListView_Var2 - BlockWithProducts");
         stHomePage.selectLanguage("ar");
@@ -136,7 +139,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "on the category page 'Grid list'!",
                 true);
 
@@ -148,8 +151,11 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
                 true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Dots().isEmpty(),
-                "Gallery of mini icons is not with points on the category page 'GridList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.standardImageGallery_Dots,
+                "on the category page 'Grid list'!",
+                true);
 
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToProduct("Футболка, Цвет: Черный");

@@ -40,6 +40,7 @@ import java.time.Duration;
 */
 
 public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
+    
     @Test(priority = 1)
     public void setConfigurationsForProductLists_GridListView_Var1() {
         //Настраиваем макет для тест-кейса
@@ -123,28 +124,31 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.quantityChanger,
                 "in the product block!",
                 true);
 
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "",
+                asserts_productLists.additionalInformationOnHover,
                 "in the product block!",
                 true);
 
         //Проверяем, что логотип бренда присутствует
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.brandLogo,
                 "in the product block!",
                 true);
 
-        //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
-        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
-                "Switch is not with stripes or there is no Switch at all in the product block!");
+        //Проверяем, что у товаров переключатель изображений с полосками
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.switchProductImage_withStripes,
+                "in the product block!",
+                true);
 
         takeScreenShot("300 GS_ProductLists_GridListView_Var1 - BlockWithProducts");
         stHomePage.selectLanguage("ar");
@@ -186,7 +190,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "on the category page 'Grid list'!",
                 true);
 
@@ -197,9 +201,12 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
                 "on the category page 'Grid list'!",
                 true);
 
-        //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок
-        softAssert.assertTrue(!assertsOnStorefront.gridList__SwitchProductImage_WithStripes.isEmpty(),
-                "Switch is not with stripes or there is no Switch at all on the category page!");
+        //Проверяем, что у товаров переключатель изображений с полосками
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.switchProductImage_withStripes,
+                "on the category 'List without options'!",
+                true);
 
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.hoverToProduct("Droid 3");

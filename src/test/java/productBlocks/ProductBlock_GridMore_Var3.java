@@ -234,7 +234,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "in the product block!",
                 true);
 

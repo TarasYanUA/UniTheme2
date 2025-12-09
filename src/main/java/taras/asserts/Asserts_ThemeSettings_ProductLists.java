@@ -120,7 +120,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";
 
     //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
-    public String gridList__AdditionalInformationOnHover = "div[class='ut2-gl__item content-on-hover']";
+    public String additionalInformationOnHover = "div[class='ut2-gl__item content-on-hover']";
 
     //Проверяем настройку "Дополнительная информация о товаре -- Описание"
     public String additionalProductInformation_Description = " .ut2-product-description";
@@ -136,6 +136,15 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
     //Настройка "Отображать бренд -- Название"
     public String brandName = " .brand-name";
+
+    //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
+    public String standardImageGallery_Dots = " .owl-pagination";
+
+    //Настройка "Отображать стандартную галерею изображений -- Навигация стрелками"
+    public String standardImageGallery_Arrows = " .ut2-gl__image .icon-right-circle";
+
+    //Настройка "Переключать изображение товара при движении мышки -- с полосками"
+    public String switchProductImage_withStripes = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";
 
 
     private String resolveAssertMessage(String selector,
@@ -172,12 +181,15 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(quantityChanger, "There are no Quantity changers "),
                 Map.entry(showAddToCartButton_IconOnly, "The buttons 'Add to cart' are not as 'Icon only' or missed "),
                 Map.entry(showAddToCartButton_TextOnly, "The buttons 'Add to cart' are not as 'Text only' or missed "),
-                Map.entry(gridList__AdditionalInformationOnHover, "Additional information is displayed without mouse hover "),
+                Map.entry(additionalInformationOnHover, "Additional information is displayed without mouse hover "),
                 Map.entry(additionalProductInformation_Description, "Additional information about products is not 'Description' "),
                 Map.entry(additionalProductInformation_Features, "Additional information about products is not 'Features list' "),
                 Map.entry(additionalProductInformation_Variations, "Additional information about products is not 'Variations list' "),
                 Map.entry(brandLogo, "There is no brand logo "),
-                Map.entry(brandName, "There is no brand name ")
+                Map.entry(brandName, "There is no brand name "),
+                Map.entry(standardImageGallery_Dots, "Gallery of mini icons is not with 'Points' navigation "),
+                Map.entry(standardImageGallery_Arrows, "Gallery of mini icons is not with 'Arrows' navigation "),
+                Map.entry(switchProductImage_withStripes, "Gallery of product images is not with 'Stripes' ")
 
         );
 
@@ -217,8 +229,6 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 message + location + "\n" + finalSelector
         );
     }
-
-
 
     public void assertNumberOfElements(String list, String selector, int quantity, String location) {
         Map<String, String> selectorMessages = Map.ofEntries(

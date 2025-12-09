@@ -249,19 +249,19 @@ public class AssertsOnStorefront extends AbstractPage {
     }
 
 
-    String showStandardImageGallery = " .owl-pagination";   //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
+    String showStandardImageGallery_Dots = " .owl-pagination";   //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
 
     public List<WebElement> gridList__ShowStandardImageGallery_Dots() {
-        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + showStandardImageGallery));
+        return DriverProvider.getDriver().findElements(By.cssSelector(gridList + showStandardImageGallery_Dots));
     }
 
     public List<WebElement> listWithoutOptions__ShowStandardImageGallery() {
-        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showStandardImageGallery));
+        return DriverProvider.getDriver().findElements(By.cssSelector(listWithoutOptions + showStandardImageGallery_Dots));
     }
 
 
     @FindBy(css = ".ut2-gl__image .icon-right-circle")
-    public List<WebElement> gridList__ShowStandardImageGallery_Arrows;//Настройка "Вид списка "Сетка" -- "Отображать стандартную галерею изображений -- Навигация стрелками"
+    public List<WebElement> gridList__ShowStandardImageGallery_Arrows;
 
     @FindBy(css = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']")
     public List<WebElement> gridList__SwitchProductImage_WithStripes; //Настройка "Вид списка "Сетка" -- "Переключать изображение товара при движении мышки -- с полосками"

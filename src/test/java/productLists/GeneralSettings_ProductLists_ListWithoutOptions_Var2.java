@@ -119,6 +119,13 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
                 "on the category page 'List without options'!",
                 true);
 
+        //Проверяем, что стандартная галерея изображений товара с навигацией точками
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.standardImageGallery_Dots,
+                "on the category page 'List without options'!",
+                true);
+
         //Проверяем, что содержимое под описанием это список характеристик
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ContentUnderDescription_FeatureList.isEmpty(),
                 "The content under description is not a Feature list on the category page 'ListWithoutOptions'!");
@@ -126,10 +133,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         //Проверяем, что опции товара присутствуют
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowProductOptions.isEmpty(),
                 "There is no product options on the category page 'ListWithoutOptions'!");
-
-        //Проверяем, что стандартная галерея изображений товара с навигацией точками
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowStandardImageGallery().isEmpty(),
-                "Gallery of mini icons is not with points on the category page 'ListWithoutOptions'!");
 
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage("ar");

@@ -252,7 +252,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.gridList__AdditionalInformationOnHover,
+                asserts_productLists.additionalInformationOnHover,
                 "in the product block!",
                 true);
 
@@ -276,8 +276,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
-                "Image gallery of the product is not with arrows navigation in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.standardImageGallery_Arrows,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),

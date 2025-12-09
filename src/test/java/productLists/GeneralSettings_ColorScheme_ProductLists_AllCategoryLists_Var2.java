@@ -142,10 +142,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
-                "Image gallery of the product is not with arrows navigation in the product block!");
-
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
@@ -174,6 +170,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "in the product block!",
                 false);
 
+        //Проверяем, что у товаров присутствует галерея изображений и она стрелками
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.standardImageGallery_Arrows,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax in the product block!");
@@ -195,10 +198,6 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "on the category 'Woman cloth'!",
                 false);
 
-        //Проверяем, что у товаров присутствует галерея изображений и она стрелками
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
-                "Image gallery of the product is not with arrows navigation on the category 'Woman cloth'!");
-
         //Проверяем, что кнопка "Избранное" присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
@@ -217,6 +216,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.buttonsAreDisplayedOnHover,
+                "on the category 'Woman cloth'!",
+                true);
+
+        //Проверяем, что у товаров присутствует галерея изображений и она стрелками
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.standardImageGallery_Arrows,
                 "on the category 'Woman cloth'!",
                 true);
 

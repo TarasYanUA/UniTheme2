@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
@@ -69,20 +70,27 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_CompactList().isEmpty(),
-                "There is no quantity changer on the category page 'Compact list'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.quantityChanger,
+                "on the category page 'Compact list'!",
+                true);
+
+        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "on the category page 'Compact list'!",
+                true);
 
         //Проверяем, что Быстрый просмотр присутствует
         softAssert.assertTrue(!assertsOnStorefront.enableQuickView.isEmpty(),
                 "There is no button 'Quick view' on the category page 'Compact list'!");
         UtilsAdm.hoverOverElement(stCategoryPage.button_GeneralAddToCart);
-
-        //Проверяем, что кнопка "Купить" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty(),
-                "There is no button 'Add to cart' on the category page 'Compact list'!");
 
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();

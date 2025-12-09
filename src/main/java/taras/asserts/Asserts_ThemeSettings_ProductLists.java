@@ -3,7 +3,6 @@ package taras.asserts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
@@ -105,6 +104,39 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     //Настройка "Количество строк в названии товара"
     public String numberOfLinesInProductName_Grid = "div[style^='--gl-lines-in-name-product: ";
 
+    //Настройка "Отображать код товара"
+    public String productCode = " div[id*='product_code_']";
+
+    //Настройка "Отображать статус наличия"
+    public String availabilityStatus = " .ty-qty-in-stock.ty-control-group__item";
+
+    //Настройка "Отображать модификатор количества"
+    public String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";
+
+    //Настройка "Отображать кнопку "Купить" -- Только иконка корзины"
+    public String showAddToCartButton_IconOnly = " .ut2-icon-use_icon_cart";
+
+    //Настройка "Отображать кнопку "Купить" -- Только текст"
+    public String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";
+
+    //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
+    public String gridList__AdditionalInformationOnHover = "div[class='ut2-gl__item content-on-hover']";
+
+    //Проверяем настройку "Дополнительная информация о товаре -- Описание"
+    public String additionalProductInformation_Description = " .ut2-product-description";
+
+    //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик"
+    public String additionalProductInformation_Features = " .ut2-features-list";
+
+    //Проверяем настройку "Дополнительная информация о товаре -- Список вариаций"
+    public String additionalProductInformation_Variations = " .ut2-lv__item-features";
+
+    //Настройка "Отображать бренд -- Логотип"
+    public String brandLogo = " .brand-img";
+
+    //Настройка "Отображать бренд -- Название"
+    public String brandName = " .brand-name";
+
 
     private String resolveAssertMessage(String selector,
                                         boolean elementsAreEmpty,
@@ -115,9 +147,8 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 ? presenceMessages.get(selector)
                 : absenceMessages.get(selector);
 
-        if (message == null) {
+        if (message == null)
             getSoftAssert().fail("No assert message found for selector: " + selector);
-        }
 
         return message;
     }
@@ -135,7 +166,18 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(button_AddToComparisonList, "There are no buttons 'Add to comparison list' "),
                 Map.entry(buttonsAreDisplayedOnHover, "Buttons are not displayed when hovering over a product cell "),
                 Map.entry(text_YouSave_Full, "The text 'You save' is not 'Full' or missed "),
-                Map.entry(text_YouSave_Short, "The text 'You save' is not 'Short' or missed ")
+                Map.entry(text_YouSave_Short, "The text 'You save' is not 'Short' or missed "),
+                Map.entry(productCode, "There are no product codes "),
+                Map.entry(availabilityStatus, "There are no availability statuses "),
+                Map.entry(quantityChanger, "There are no Quantity changers "),
+                Map.entry(showAddToCartButton_IconOnly, "The buttons 'Add to cart' are not as 'Icon only' or missed "),
+                Map.entry(showAddToCartButton_TextOnly, "The buttons 'Add to cart' are not as 'Text only' or missed "),
+                Map.entry(gridList__AdditionalInformationOnHover, "Additional information is displayed without mouse hover "),
+                Map.entry(additionalProductInformation_Description, "Additional information about products is not 'Description' "),
+                Map.entry(additionalProductInformation_Features, "Additional information about products is not 'Features list' "),
+                Map.entry(additionalProductInformation_Variations, "Additional information about products is not 'Variations list' "),
+                Map.entry(brandLogo, "There is no brand logo "),
+                Map.entry(brandName, "There is no brand name ")
 
         );
 
@@ -147,7 +189,14 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(statusesForButton_AddToCart_Number, "There is a status as 'Number of products' for button 'Add to cart' but shouldn't "),
                 Map.entry(buttonsAreDisplayedOnHover, "Buttons are displayed when hovering over a product cell but should be displayed at once "),
                 Map.entry(text_YouSave_Full, "There is a text 'You save' as 'Full' but shouldn't "),
-                Map.entry(text_YouSave_Short, "There is a text 'You save' as 'Short' but shouldn't ")
+                Map.entry(text_YouSave_Short, "There is a text 'You save' as 'Short' but shouldn't "),
+                Map.entry(productCode, "There are product codes but shouldn't "),
+                Map.entry(availabilityStatus, "There are availability statuses but shouldn't "),
+                Map.entry(quantityChanger, "There are Quantity changers but shouldn't "),
+                Map.entry(showAddToCartButton_IconOnly, "The buttons 'Add to cart' are as 'Icon only' but shouldn't "),
+                Map.entry(showAddToCartButton_TextOnly, "The buttons 'Add to cart' are as 'Text only' but shouldn't "),
+                Map.entry(brandLogo, "There is a brand logo but shouldn't "),
+                Map.entry(brandName, "There is a brand name but shouldn't ")
 
         );
 
@@ -166,6 +215,32 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         getSoftAssert().assertTrue(
                 !elementsAreEmpty == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
                 message + location + "\n" + finalSelector
+        );
+    }
+
+
+
+    public void assertNumberOfElements(String list, String selector, int quantity, String location) {
+        Map<String, String> selectorMessages = Map.ofEntries(
+                Map.entry(numberOfLinesInProductName_Grid, "Number of lines is not " + quantity)
+
+        );
+
+        String message = selectorMessages.get(selector);
+        if (message == null)
+            getSoftAssert().fail("No assert message found for selector: " + selector);
+
+        String finalSelector = switch (list) {
+            case gridList -> gridList + selector + quantity + "']";
+            case listWO -> listWO + selector + quantity + "']";
+            case compactList -> compactList + selector + quantity + "']";
+            case productBlock -> getProductBlockSelector() + selector + quantity + "']";
+            default -> selector + quantity + "']";
+        };
+
+        getSoftAssert().assertTrue(
+                !DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
+                message + " " + location + "\n" + finalSelector
         );
     }
 }

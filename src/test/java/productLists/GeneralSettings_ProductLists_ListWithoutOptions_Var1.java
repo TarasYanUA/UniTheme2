@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
@@ -70,15 +71,29 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_ListWithoutOptions().isEmpty(),
-                "There is no quantity charger on the product cell on the category page 'ListWithoutOptions'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.quantityChanger,
+                "on the category page 'List without options'!",
+                true);
 
         //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowAddToCartButton_IconOnly().isEmpty(),
-                "The button 'Add to cart' is not Icon only or even missed on the category page 'ListWithoutOptions'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "on the category page 'List without options'!",
+                true);
+
+        //Проверяем, что логотип бренда присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.brandName,
+                "on the category page 'List without options'!",
+                true);
 
         //Проверяем, что содержимое под описанием это список вариаций
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ContentUnderDescription_VariationList.isEmpty(),
@@ -87,10 +102,6 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Проверяем, что переключатель изображений товара в виде точек
         softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots.isEmpty(),
                 "Image switcher is not with Dots on the category page 'ListWithoutOptions'!");
-
-        //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__BrandName().isEmpty(),
-                "There is no brand name on the category page 'ListWithoutOptions'!");
 
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage("ar");

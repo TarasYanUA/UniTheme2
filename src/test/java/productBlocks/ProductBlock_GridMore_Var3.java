@@ -196,46 +196,75 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
+        //Проверяем, что Количество строк в названии товара -- 4
+        asserts_productLists.assertNumberOfElements(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.numberOfLinesInProductName_Grid,
+                4,
+                "in the product block!");
+
+        //Проверяем, что код товара отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.productCode,
+                "in the product block!",
+                false);
+
+        //Проверяем, что статус наличия отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                false);
+
+        //Проверяем, что модификатор количества отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                false);
+
+        //Проверяем, что кнопка "Купить" в виде "Только текст"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "in the product block!",
+                true);
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "in the product block!",
+                true);
+
+        //Проверяем, что логотип и название бренда отсутствуют
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.brandLogo,
+                "in the product block!",
+                false);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.brandName,
+                "in the product block!",
+                false);
+
+        //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.additionalProductInformation_Features,
+                "in the product block!",
+                true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.additionalProductInformation_Variations,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
-
-        //Проверяем, что Количество строк в названии товара -- 4
-        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Grid(blockID, 4).isEmpty(),
-                "Number of lines in the product name is not 4!");
-
-        //Проверяем, что код товара отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getProductCode(blockID).isEmpty(),
-                "There is a product code but shouldn't in the product block!");
-
-        //Проверяем, что статус наличия отсутствует
-        List<WebElement> availabilityStatus = assertsOnStorefront.getAvailabilityStatus(blockID);
-        softAssert.assertFalse(!availabilityStatus.isEmpty(),
-                "There is an availability status but shouldn't in the product block ID " + blockID);
-
-        //Проверяем, что модификатор количества отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is a quantity Changer but shouldn't in the product block!");
-
-        //Проверяем, что кнопка "Купить" в виде "Только текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' is not as 'Text only' or even missed in the product block!");
-
-        //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик и вариаций"
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-features-list")).isEmpty()
-                && !DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-lv__item-features")).isEmpty(),
-                "Additional information about products is not 'Features and Variations list' in the block!");
-
-        //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover on the category page!");
-
-        //Проверяем, что логотип и название бренда отсутствуют
-        softAssert.assertFalse(!assertsOnStorefront.getBrandLogo(blockID).isEmpty()
-                && !assertsOnStorefront.getBrandName(blockID).isEmpty(),
-                "There is a brand logo or brand name but shouldn't in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 13 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

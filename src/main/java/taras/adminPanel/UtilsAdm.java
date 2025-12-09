@@ -85,6 +85,7 @@ public class UtilsAdm extends AbstractPage {
     public static void hoverNavigateAndClick(WebElement webElement) {
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(webElement).perform();
+        makePause(500);
         webElement.click();
     }
 

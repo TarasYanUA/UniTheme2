@@ -195,6 +195,27 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
+        //Проверяем, что статус наличия присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
+
+        //Проверяем, что модификатор количества отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                false);
+
+        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
@@ -203,21 +224,9 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Scroller(blockID, 2).isEmpty(),
                 "Number of lines in the product name is not 2!");
 
-        //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
-                "There is no availability status in the product block!");
-
-        //Проверяем, что модификатор количества отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is a quantity Changer but shouldn't in the product block!");
-
         //Проверяем, что быстрый просмотр присутствует
         softAssert.assertTrue(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),
                 "There is no Quick view button in the product block!");
-
-        //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly().isEmpty(),
-                "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
 
         takeScreenShot("ProductBlock_Scroller_Var2");
         stHomePage.selectLanguage("ar");

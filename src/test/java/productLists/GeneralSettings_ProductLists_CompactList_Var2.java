@@ -68,21 +68,37 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
                 true);
 
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.productCode_CompactList.isEmpty(),
-                "There is no product code on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.productCode,
+                "on the category page 'Compact list'!",
+                true);
 
         //Проверяем, что статус товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_CompactList.isEmpty(),
-                "There is no availability status on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.availabilityStatus,
+                "on the category page 'Compact list'!",
+                true);
 
         //Проверяем, что модификатор количества отсутствует по причине отсутствия кнопки "Купить"
-        softAssert.assertFalse(!assertsOnStorefront.quantityChanger_CompactList().isEmpty(),
-                "There is a quantity charger but shouldn't on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.quantityChanger,
+                "on the category page 'Compact list'!",
+                false);
 
         //Проверяем, что кнопка "Купить" отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.compactList__ShowAddToCartButton_IconOnly().isEmpty()
-                && !assertsOnStorefront.compactList__ShowAddToCartButton_TextOnly().isEmpty(),
-                "There is the button 'Add to cart' but shouldn't on the category page 'CompactList'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "on the category page 'Compact list'!",
+                false);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "on the category page 'Compact list'!",
+                false);
 
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");
         stHomePage.selectLanguage("ar");

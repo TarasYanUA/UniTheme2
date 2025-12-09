@@ -1,7 +1,6 @@
 package productBlocks;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -12,8 +11,6 @@ import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
-
-import java.util.List;
 
 /*
 1) Настройки блока товаров "Распродажа"
@@ -187,6 +184,27 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
+        //Проверяем, что статус наличия отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                false);
+
+        //Проверяем, что модификатор количества отсутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                false);
+
+        //Проверяем, что кнопка "Купить" в виде "Только текст"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
@@ -195,22 +213,9 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Scroller(blockID, 3).isEmpty(),
                 "Number of lines in the product name is not 3!");
 
-        //Проверяем, что статус наличия отсутствует
-        List<WebElement> availabilityStatus = assertsOnStorefront.getAvailabilityStatus(blockID);
-        softAssert.assertFalse(!availabilityStatus.isEmpty(),
-                "There is an availability status but shouldn't in the product block ID " + blockID);
-
-        //Проверяем, что модификатор количества отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is a quantity Changer but shouldn't in the product block!");
-
         //Проверяем, что быстрый просмотр отсутствует
         softAssert.assertFalse(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),
                 "There is a Quick view button but shouldn't in the product block!");
-
-        //Проверяем, что кнопка "Купить" в виде "Только текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' is not as 'Text only' or even missed in the product block!");
 
         takeScreenShot("ProductBlock_Scroller_Var3");
         stHomePage.selectLanguage("ar");

@@ -209,49 +209,79 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
-        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
-                "There is no text of a product tax in the product block!");
-
         //Проверяем, что Количество строк в названии товара -- 1
-        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Grid(blockID, 1).isEmpty(),
-                "Number of lines in the product name is not 1!");
+        asserts_productLists.assertNumberOfElements(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.numberOfLinesInProductName_Grid,
+                1,
+                "in the product block!");
 
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getProductCode(blockID).isEmpty(),
-                "There is no product code in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.productCode,
+                "in the product block!",
+                true);
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
-                "There is no availability status in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
 
         //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is no quantity Changer in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                true);
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_IconOnly(blockID).isEmpty()
-                        && !assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
-
-        //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-product-description")).isEmpty()
-                        && !DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ut2-features-list")).isEmpty(),
-                "Additional information about products is not 'Short description and features' in the block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "in the product block!",
+                true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "in the product block!",
+                true);
 
         //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "in the product block!",
+                true);
 
         //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getBrandLogo(blockID).isEmpty(),
-                "There is no brand logo in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.brandLogo,
+                "in the product block!",
+                true);
+
+        //Проверяем настройку "Дополнительная информация о товаре -- Краткое описание и характеристики"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.additionalProductInformation_Description,
+                "in the product block!",
+                true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.additionalProductInformation_Features,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         softAssert.assertTrue(!assertsOnStorefront.gridList__ShowStandardImageGallery_Arrows.isEmpty(),
                 "Image gallery of the product is not with arrows navigation in the product block!");
+
+        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
+        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
+                "There is no text of a product tax in the product block!");
 
         //Проверяем, что Максимальное число элементов -- 17 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

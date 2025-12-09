@@ -146,20 +146,32 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
                 "Number of lines in the product name is not 3!");
 
         //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getProductCode(blockID).isEmpty(),
-                "There is no product code in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.productCode,
+                "in the product block!",
+                true);
 
         //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
-                "There is no availability status in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
 
         //Проверяем, что модификатор количества отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is a quantity Changer but shouldn't in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                false);
 
         //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
-        softAssert.assertTrue(!assertsOnStorefront.gridList__ShowAddToCartButton_IconOnly().isEmpty(),
-                "The button 'Add to cart' is not as 'Icon only' or even missed in the product block!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "in the product block!",
+                true);
 
         takeScreenShot("ProductBlock_SmallItems_Var2");
         stHomePage.selectLanguage("ar");

@@ -139,6 +139,39 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
                 "in the product block!",
                 true);
 
+        //Проверяем, что код товара присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.productCode,
+                "in the product block!",
+                true);
+
+        //Проверяем, что статус наличия присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
+
+        //Проверяем, что модификатор количества присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                true);
+
+        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "in the product block!",
+                true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
@@ -146,23 +179,6 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         //Проверяем, что Количество строк в названии товара -- 2
         softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_SmallItems(blockID, 2).isEmpty(),
                 "Number of lines in the product name is not 2!");
-
-        //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getProductCode(blockID).isEmpty(),
-                "There is no product code in the product block!");
-
-        //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
-                "There is no availability status in the product block!");
-
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is no quantity Changer in the product block!");
-
-        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_IconOnly(blockID).isEmpty()
-                        && !assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         takeScreenShot("ProductBlock_SmallItems_Var1");
         stHomePage.selectLanguage("ar");

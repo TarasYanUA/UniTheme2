@@ -92,18 +92,24 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover in the product block!");
-
-        //Проверяем, что название бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandName().isEmpty(),
-                "There is no brand name in the product block!");
-
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.gridList,
+                "",
                 asserts_productLists.text_YouSave_Full,
+                "in the product block!",
+                true);
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "in the product block!",
+                true);
+
+        //Проверяем, что название бренда присутствует
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.brandName,
                 "in the product block!",
                 true);
 
@@ -120,19 +126,25 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Категория "Мужская одежда"
         stHomePage.navigateToHorizontalMenu_MenCloth();
 
-        //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover on the category page 'GridList'!");
-
-        //Проверяем, что название бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandName().isEmpty(),
-                "There is no brand name on the category page 'GridList'!");
-
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.text_YouSave_Full,
                 "on the category page Grid list!",
+                true);
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что название бренда присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.brandName,
+                "on the category page 'Grid list'!",
                 true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек

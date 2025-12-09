@@ -188,6 +188,32 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
+        //Проверяем, что статус наличия присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
+
+        //Проверяем, что модификатор количества присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                true);
+
+        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_IconOnly,
+                "in the product block!",
+                true);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.showAddToCartButton_TextOnly,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
@@ -196,22 +222,9 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Scroller(blockID, 1).isEmpty(),
                 "Number of lines in the product name is not 1!");
 
-        //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getAvailabilityStatus(blockID).isEmpty(),
-                "There is no availability status in the product block!");
-
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getQuantityChanger(blockID).isEmpty(),
-                "There is no quantity Changer in the product block!");
-
         //Проверяем, что быстрый просмотр присутствует
         softAssert.assertTrue(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),
                 "There is no Quick view button in the product block!");
-
-        //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
-        softAssert.assertTrue(!assertsOnStorefront.getShowAddToCartButton_IconOnly(blockID).isEmpty()
-                        && !assertsOnStorefront.getShowAddToCartButton_TextOnly(blockID).isEmpty(),
-                "The button 'Add to cart' does not have a view 'Icon of the Cart and text'!");
 
         takeScreenShot("ProductBlock_Scroller_Var1");
         stHomePage.selectLanguage("ar");

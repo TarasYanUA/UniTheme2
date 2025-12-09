@@ -100,30 +100,45 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
-        //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.productCode().isEmpty(),
-                "There is no product code in the product block!");
-
-        //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_GridList().isEmpty(),
-                "There is no availability status in the product block!");
-
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_GridList().isEmpty(),
-                "There is no quantity Changer in the product block!");
-
-        //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover in the product block!");
-
-        //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
-                "There is no brand logo in the product block!");
-
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         asserts_productLists.assertElementPresence(
                 "",
                 asserts_productLists.text_YouSave_Short,
+                "in the product block!",
+                true);
+
+        //Проверяем, что код товара присутствует
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.productCode,
+                "in the product block!",
+                true);
+
+        //Проверяем, что статус наличия присутствует
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.availabilityStatus,
+                "in the product block!",
+                true);
+
+        //Проверяем, что модификатор количества присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.quantityChanger,
+                "in the product block!",
+                true);
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "in the product block!",
+                true);
+
+        //Проверяем, что логотип бренда присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.brandLogo,
                 "in the product block!",
                 true);
 
@@ -140,31 +155,46 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
 
-        //Проверяем, что код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.productCode_GridList().isEmpty(),
-                "There is no product code on the category page!");
-
-        //Проверяем, что статус наличия присутствует
-        softAssert.assertTrue(!assertsOnStorefront.availabilityStatus_GridList().isEmpty(),
-                "There is no availability status on the category page!");
-
-        //Проверяем, что модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.quantityChanger_GridList().isEmpty(),
-                "There is no quantity Changer on the category page!");
-
-        //Проверяем, что дополнительная информация отображается при наведении
-        softAssert.assertTrue(!assertsOnStorefront.gridList__AdditionalInformationOnHover.isEmpty(),
-                "Additional information is displayed without mouse hover on the category page!");
-
-        //Проверяем, что логотип бренда присутствует
-        softAssert.assertTrue(!assertsOnStorefront.gridList__BrandLogo().isEmpty(),
-                "There is no brand logo on the category page!");
-
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.text_YouSave_Short,
-                "on the category page Grid list!",
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что код товара присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.productCode,
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что статус наличия присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.availabilityStatus,
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что модификатор количества присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.quantityChanger,
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что дополнительная информация отображается при наведении
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.gridList__AdditionalInformationOnHover,
+                "on the category page 'Grid list'!",
+                true);
+
+        //Проверяем, что логотип бренда присутствует
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.brandLogo,
+                "on the category page 'Grid list'!",
                 true);
 
         //Проверяем, что переключатель изображений товара присутствует и он в виде Полосок

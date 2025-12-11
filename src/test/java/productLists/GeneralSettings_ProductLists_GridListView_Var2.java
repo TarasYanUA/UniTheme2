@@ -133,28 +133,28 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.text_YouSave_Full,
-                "on the category page Grid list!",
+                "on the category page 'Men cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.additionalInformationOnHover,
-                "on the category page 'Grid list'!",
+                "on the category page 'Men cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что название бренда присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.brandName,
-                "on the category page 'Grid list'!",
+                "on the category page 'Men cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что галерея мини-иконок товара в виде точек
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.standardImageGallery_Dots,
-                "on the category page 'Grid list'!",
+                "on the category page 'Men cloth', 'Grid list'!",
                 true);
 
         StCategoryPage stCategoryPage = new StCategoryPage();

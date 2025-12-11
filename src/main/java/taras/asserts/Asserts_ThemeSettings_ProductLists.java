@@ -40,13 +40,13 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
 
     //Настройка "Обесцвечивать товары, которых нет в наличии"
-    public String decolorizeOutOfStockProducts = ".ut2-gl__body.decolorize";
+    public String decolorizeOutOfStockProducts = " .ut2-gl__body.decolorize";
 
     //Настройка "Отображать пустые звёзды рейтинга товара"
-    public String emptyStarsOfProductRating = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
+    public String emptyStarsOfProductRating = " div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
 
     //Настройка "Отображать общее значение рейтинга товара"
-    public String commonValueOfProductRating = ".ut2-show-rating-num";
+    public String commonValueOfProductRating = " .ut2-show-rating-num";
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
     public String getStatusesForButtonAddToCartIcon() {
@@ -78,31 +78,37 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"
-    public String statusesForButton_AddToCart_Number = ".ut2-added-to-cart[data-added-amount='1']";
+    public String statusesForButton_AddToCart_Number = " .ut2-added-to-cart[data-added-amount='1']";
 
     //Настройка "Отображать статусы для кнопок... "Добавить в избранное"
-    public String statusesForButton_AddToWishList = "a.ut2-add-to-wish.active";
+    public String statusesForButton_AddToWishList = " a.ut2-add-to-wish.active";
 
     //Настройка "Отображать статусы для кнопок... "Добавить в список сравнения"
-    public String statusesForButton_AddToComparisonList = "a.ut2-add-to-compare.active";
+    public String statusesForButton_AddToComparisonList = " a.ut2-add-to-compare.active";
 
     //Настройка "Отображать кнопку "Добавить в избранное"
-    public String button_AddToWishList = ".ut2-add-to-wish";
+    public String button_AddToWishList = " .ut2-add-to-wish";
 
     //Настройка "Отображать кнопку "Добавить в список сравнения""
-    public String button_AddToComparisonList = ".ut2-add-to-compare";
+    public String button_AddToComparisonList = " .ut2-add-to-compare";
 
     //Настройка "Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара"
-    public String buttonsAreDisplayedOnHover = ".ut2-w-c-q__buttons.w_c_q-hover";
+    public String buttonsAreDisplayedOnHover = " .ut2-w-c-q__buttons.w_c_q-hover";
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
-    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
+    public String text_YouSave_Full = " .ty-save-price:not(.ut2-sld-short .ty-save-price)";
 
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
+    public String text_YouSave_Short = " .ut2-sld-short .ty-save-price";
 
     //Настройка "Количество строк в названии товара"
-    public String numberOfLinesInProductName_Grid = "div[style^='--gl-lines-in-name-product: ";
+    public String numberOfLinesInProductName = " div[style^='--gl-lines-in-name-product: ";
+
+    //Настройка "Вид списка товаров "Мелкие элементы" -- Количество строк в названии товара"
+    public String smallItems_NumberOfLinesInProductName = " ul[style^='--si-lines-in-name-product: ";
+
+    //Настройка "Вид списка товаров "Скроллер" -- Количество строк в названии товара"
+    public String scroller_NumberOfLinesInProductName = " div[style^='--sl-lines-in-name-product: ";
 
     //Настройка "Отображать код товара"
     public String productCode = " div[id*='product_code_']";
@@ -120,7 +126,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";
 
     //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
-    public String additionalInformationOnHover = "div[class='ut2-gl__item content-on-hover']";
+    public String additionalInformationOnHover = " div[class='ut2-gl__item content-on-hover']";
 
     //Проверяем настройку "Дополнительная информация о товаре -- Описание"
     public String additionalProductInformation_Description = " .ut2-product-description";
@@ -144,7 +150,22 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public String standardImageGallery_Arrows = " .ut2-gl__image .icon-right-circle";
 
     //Настройка "Переключать изображение товара при движении мышки -- с полосками"
-    public String switchProductImage_withStripes = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";
+    public String switchProductImage_withStripes = " div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";
+
+    //Настройка "Переключать изображение товара при движении мышки -- с точками"
+    public String switchProductImage_withDots = " div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']";
+
+    //Настройка "Вид списка "Список без опций" -- Отображать опции товара"
+    public String listWithoutOptions__ShowProductOptions = " .cm-picker-product-options";
+
+    //Новый вид вариаций для модуля "Вариации товаров"
+    public String prodVar_NewProductVariations = " div[class*='ut2-lv__features-item lv-hover-items']";
+
+    //Настройка "Модуль "Вариации товаров" -- Тип отображения вариаций -- Цвета"
+    public String prodVar_TypeOfVariationsView_Colors = " [data-display='color']";
+
+    //Настройка "Модуль "Вариации товаров" -- Тип отображения вариаций -- Миниатюры"
+    public String prodVar_TypeOfVariationsView_Thumbnails = " [data-display='thumbnails']";
 
 
     private String resolveAssertMessage(String selector,
@@ -189,8 +210,11 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(brandName, "There is no brand name "),
                 Map.entry(standardImageGallery_Dots, "Gallery of mini icons is not with 'Points' navigation "),
                 Map.entry(standardImageGallery_Arrows, "Gallery of mini icons is not with 'Arrows' navigation "),
-                Map.entry(switchProductImage_withStripes, "Gallery of product images is not with 'Stripes' ")
-
+                Map.entry(switchProductImage_withStripes, "Gallery of product images is not with 'Stripes' "),
+                Map.entry(switchProductImage_withDots, "Image switcher is not with 'Dots' "),
+                Map.entry(listWithoutOptions__ShowProductOptions, "There are no product options "),
+                Map.entry(prodVar_TypeOfVariationsView_Colors, "Product variations are not as 'Colors' "),
+                Map.entry(prodVar_TypeOfVariationsView_Thumbnails, "Product variations are not as 'Thumbnails' ")
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(
@@ -209,7 +233,6 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(showAddToCartButton_TextOnly, "The buttons 'Add to cart' are as 'Text only' but shouldn't "),
                 Map.entry(brandLogo, "There is a brand logo but shouldn't "),
                 Map.entry(brandName, "There is a brand name but shouldn't ")
-
         );
 
         String message = resolveAssertMessage(selector, elementsAreEmpty, presenceMessages, absenceMessages);
@@ -232,7 +255,9 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
     public void assertNumberOfElements(String list, String selector, int quantity, String location) {
         Map<String, String> selectorMessages = Map.ofEntries(
-                Map.entry(numberOfLinesInProductName_Grid, "Number of lines is not " + quantity)
+                Map.entry(numberOfLinesInProductName, "Number of lines in the product name is not " + quantity),
+                Map.entry(smallItems_NumberOfLinesInProductName, "Number of lines in the product name is not " + quantity),
+                Map.entry(scroller_NumberOfLinesInProductName, "Number of lines in the product name is not " + quantity)
 
         );
 

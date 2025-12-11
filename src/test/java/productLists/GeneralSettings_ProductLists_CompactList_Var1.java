@@ -77,14 +77,14 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.quantityChanger,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 true);
 
         //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.showAddToCartButton_IconOnly,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 true);
 
         //Проверяем, что Быстрый просмотр присутствует

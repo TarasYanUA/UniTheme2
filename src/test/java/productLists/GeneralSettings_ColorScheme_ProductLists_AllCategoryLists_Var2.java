@@ -195,40 +195,40 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.decolorizeOutOfStockProducts,
-                "on the category 'Woman cloth'!",
+                "on the category 'Woman cloth', 'Grid list'!",
                 false);
 
         //Проверяем, что кнопка "Избранное" присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.button_AddToWishList,
-                "on the category 'Woman cloth'!",
+                "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.button_AddToComparisonList,
-                "on the category 'Woman cloth'!",
+                "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.buttonsAreDisplayedOnHover,
-                "on the category 'Woman cloth'!",
+                "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.standardImageGallery_Arrows,
-                "on the category 'Woman cloth'!",
+                "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Woman cloth'!");
+                "There is no text of a product tax on the category 'Woman cloth', 'Grid list'!");
 
         stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("210 GS_CS_ProductLists_AllCategoryLists_Var2 - WomanClothCategory");
@@ -244,42 +244,37 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.commonValueOfProductRating,
-                "on the category 'Phones'!",
+                "on the category 'Phones', 'Grid list'!",
                 true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.button_AddToWishList,
-                "on the category 'Phones'!",
+                "on the category 'Phones', 'Grid list'!",
                 true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.button_AddToComparisonList,
-                "on the category 'Phones'!",
+                "on the category 'Phones', 'Grid list'!",
                 true);
-
-        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Phones'!");
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
         stCategoryPage.addProductToWishList();
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.statusesForButton_AddToWishList,
-                "on the category 'Phones'!",
-                true
-        );
+                "on the category 'Phones', 'Grid list'!",
+                true);
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
         stCategoryPage.addProductToComparisonList();
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.statusesForButton_AddToComparisonList,
-                "on the category 'Phones'!",
+                "on the category 'Phones', 'Grid list'!",
                 true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
@@ -288,17 +283,26 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.statusesForButton_AddToCart_Number,
-                "on the category 'Phones'!",
-                true
-        );
+                "on the category 'Phones', 'Grid list'!",
+                true);
 
         //Проверяем, что у товаров присутствует новый вид Вариаций
-        softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_MaximumQuantityOfProductsVariations().isEmpty(),
-                "There is no new view of product variations on the category 'Phones', Grid list!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.prodVar_NewProductVariations,
+                "on the category 'Phones', 'Grid list'!",
+                true);
 
         //Проверяем, что тип отображения новых вариаций -- Миниатюры
-        softAssert.assertTrue(!assertsOnStorefront.gridList__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
-                "Product variations are not with Thumbnails on the category 'Phones', Grid list!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.prodVar_TypeOfVariationsView_Thumbnails,
+                "on the category 'Phones', 'Grid list'!",
+                true);
+
+        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
+        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
+                "There is no text of a product tax on the category 'Phones', 'Grid list'!");
 
         stHomePage.closeNotification_AlertSuccess();
         stCategoryPage.hoverToProduct("Droid 3");
@@ -335,7 +339,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.commonValueOfProductRating,
-                "on the category 'List without options'!",
+                "on the category 'Phones', 'List without options'!",
                 true);
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
@@ -343,37 +347,41 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.statusesForButton_AddToWishList,
-                "on the category 'List without options'!",
-                true
-        );
+                "on the category 'Phones', 'List without options'!",
+                true);
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
         stCategoryPage.addProductToComparisonList();
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.statusesForButton_AddToComparisonList,
-                "on the category 'List without options'!",
+                "on the category 'Phones', 'List without options'!",
                 true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.statusesForButton_AddToCart_Number,
-                "on the category 'List without options'!",
-                true
-        );
+                "on the category 'Phones', 'List without options'!",
+                true);
+
+        //Проверяем, что у товаров присутствует новый вид Вариаций
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.prodVar_NewProductVariations,
+                "on the category 'Phones', 'List without options'!",
+                true);
+
+        //Проверяем, что тип отображения новых вариаций -- Миниатюры
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.prodVar_TypeOfVariationsView_Colors,
+                "on the category 'Phones', 'List without options'!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
                 "There is no text of a product tax on the category 'List without options'!");
-
-        //Проверяем, что у товаров присутствует новый вид Вариаций
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__prodVar_MaximumQuantityOfProductsVariations().isEmpty(),
-                "There is no new view of product variations on the category 'Phones', ListWithoutOptions!");
-
-        //Проверяем, что тип отображения новых вариаций -- Миниатюры
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__prodVar_TypeOfVariationsView_Thumbnails().isEmpty(),
-                "Product variations are not with Thumbnails on the category 'Phones', ListWithoutOptions!");
 
         UtilsAdm.makePause(2000);
         takeScreenShot_withScroll("240 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions (RTL)");
@@ -385,7 +393,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.commonValueOfProductRating,
-                "on the category 'Compact list'!",
+                "on the category 'Phones', 'Compact list'!",
                 true);
 
         //Проверяем, что присутствует статус у кнопки "Избранное"
@@ -393,29 +401,27 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.statusesForButton_AddToWishList,
-                "on the category 'Compact list'!",
-                true
-        );
+                "on the category 'Phones', 'Compact list'!",
+                true);
 
         //Проверяем, что присутствует статус у кнопки "Сравнение"
         stCategoryPage.addProductToComparisonList();
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.statusesForButton_AddToComparisonList,
-                "on the category 'Compact list'!",
+                "on the category 'Phones', 'Compact list'!",
                 true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде количества товаров
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.statusesForButton_AddToCart_Number,
-                "on the category 'Compact list'!",
-                true
-        );
+                "on the category 'Phones', 'Compact list'!",
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Compact list'!");
+                "There is no text of a product tax on the category 'Phones', 'Compact list'!");
 
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage("ar");

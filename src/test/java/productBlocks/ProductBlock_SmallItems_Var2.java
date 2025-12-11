@@ -137,14 +137,6 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
                 "in the product block!",
                 true);
 
-        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
-                "There is no text of a product tax in the product block!");
-
-        //Проверяем, что Количество строк в названии товара -- 3
-        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_SmallItems(blockID, 3).isEmpty(),
-                "Number of lines in the product name is not 3!");
-
         //Проверяем, что код товара присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
@@ -172,6 +164,18 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
                 asserts_productLists.showAddToCartButton_IconOnly,
                 "in the product block!",
                 true);
+
+        //Проверяем, что Количество строк в названии товара -- 3
+        asserts_productLists.assertNumberOfElements(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.smallItems_NumberOfLinesInProductName,
+                3,
+                "in the product block!"
+        );
+
+        //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
+        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
+                "There is no text of a product tax in the product block!");
 
         takeScreenShot("ProductBlock_SmallItems_Var2");
         stHomePage.selectLanguage("ar");

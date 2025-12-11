@@ -64,40 +64,40 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.commonValueOfProductRating,
-                "on the category 'Compact list'!",
+                "on the category 'Game consoles', 'Compact list'!",
                 true);
 
         //Проверяем, что код товара присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.productCode,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 true);
 
         //Проверяем, что статус товара присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.availabilityStatus,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 true);
 
         //Проверяем, что модификатор количества отсутствует по причине отсутствия кнопки "Купить"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.quantityChanger,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 false);
 
         //Проверяем, что кнопка "Купить" отсутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.showAddToCartButton_IconOnly,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 false);
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
                 asserts_productLists.showAddToCartButton_TextOnly,
-                "on the category page 'Compact list'!",
+                "on the category page 'Game consoles', 'Compact list'!",
                 false);
 
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");

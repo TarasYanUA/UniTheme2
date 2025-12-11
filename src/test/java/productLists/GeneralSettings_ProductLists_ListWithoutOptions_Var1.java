@@ -78,30 +78,36 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.quantityChanger,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что кнопка "Купить" в виде "Только иконка корзины"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.showAddToCartButton_IconOnly,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
+
+        //Проверяем, что содержимое под описанием это список вариаций
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.additionalProductInformation_Variations,
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что логотип бренда присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.brandName,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
-        //Проверяем, что содержимое под описанием это список вариаций
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ContentUnderDescription_VariationList.isEmpty(),
-                "The content under description is not a Variation list on the category page 'ListWithoutOptions'!");
-
         //Проверяем, что переключатель изображений товара в виде точек
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__SwitchProductImageWhenHoveringMousePointer_Dots.isEmpty(),
-                "Image switcher is not with Dots on the category page 'ListWithoutOptions'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.switchProductImage_withDots,
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
 
         takeScreenShot_withScroll("500 GS_ProductLists_ListWithoutOptions_Var1 - MenClothCategory");
         stHomePage.selectLanguage("ar");

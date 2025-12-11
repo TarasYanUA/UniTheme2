@@ -205,13 +205,16 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
                 "in the product block!",
                 true);
 
+        //Проверяем, что Количество строк в названии товара -- 2
+        asserts_productLists.assertNumberOfElements(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.scroller_NumberOfLinesInProductName,
+                3,
+                "in the product block!");
+
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
                 "There is no text of a product tax in the product block!");
-
-        //Проверяем, что Количество строк в названии товара -- 3
-        softAssert.assertTrue(!assertsOnStorefront.getNumberOfLinesInProductName_Scroller(blockID, 3).isEmpty(),
-                "Number of lines in the product name is not 3!");
 
         //Проверяем, что быстрый просмотр отсутствует
         softAssert.assertFalse(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),

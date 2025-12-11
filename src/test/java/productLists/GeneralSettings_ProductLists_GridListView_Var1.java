@@ -163,49 +163,49 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.text_YouSave_Short,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что код товара присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.productCode,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что статус наличия присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.availabilityStatus,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.quantityChanger,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что дополнительная информация отображается при наведении
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.additionalInformationOnHover,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что логотип бренда присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.brandLogo,
-                "on the category page 'Grid list'!",
+                "on the category page 'Phones, 'Grid list'!",
                 true);
 
         //Проверяем, что у товаров переключатель изображений с полосками
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.switchProductImage_withStripes,
-                "on the category 'List without options'!",
+                "on the category 'Phones, 'Grid list'!",
                 true);
 
         StCategoryPage stCategoryPage = new StCategoryPage();

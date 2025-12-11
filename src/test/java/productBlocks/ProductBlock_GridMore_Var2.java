@@ -201,7 +201,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         //Проверяем, что Количество строк в названии товара -- 3
         asserts_productLists.assertNumberOfElements(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.numberOfLinesInProductName_Grid,
+                asserts_productLists.numberOfLinesInProductName,
                 3,
                 "in the product block!");
 

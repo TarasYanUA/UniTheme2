@@ -83,56 +83,62 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.productCode,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что статус наличия присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.availabilityStatus,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.quantityChanger,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что кнопка "Купить" в виде "Иконка корзины и текст"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.showAddToCartButton_IconOnly,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.showAddToCartButton_TextOnly,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
+
+        //Проверяем, что содержимое под описанием это список характеристик
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.additionalProductInformation_Features,
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что логотип бренда присутствует
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.brandLogo,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
         //Проверяем, что стандартная галерея изображений товара с навигацией точками
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.standardImageGallery_Dots,
-                "on the category page 'List without options'!",
+                "on the category page 'Men cloth', 'List without options'!",
                 true);
 
-        //Проверяем, что содержимое под описанием это список характеристик
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ContentUnderDescription_FeatureList.isEmpty(),
-                "The content under description is not a Feature list on the category page 'ListWithoutOptions'!");
-
         //Проверяем, что опции товара присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.listWithoutOptions__ShowProductOptions.isEmpty(),
-                "There is no product options on the category page 'ListWithoutOptions'!");
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.listWithoutOptions__ShowProductOptions,
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
 
         takeScreenShot_withScroll("600 GS_ProductLists_ListWithoutOptions_Var2 - MenClothCategory");
         stHomePage.selectLanguage("ar");

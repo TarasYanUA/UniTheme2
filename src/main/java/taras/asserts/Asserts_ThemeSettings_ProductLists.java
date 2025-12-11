@@ -36,17 +36,16 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public static final String listWO = ".ty-product-list ";
     public static final String compactList = ".ty-compact-list__item ";
     public static final String productBlock = "productBlock";
-    public static final String productPage = ".ty-product-block";
 
 
     //Настройка "Обесцвечивать товары, которых нет в наличии"
-    public String decolorizeOutOfStockProducts = " .ut2-gl__body.decolorize";
+    public String decolorizeOutOfStockProducts = ".ut2-gl__body.decolorize";
 
     //Настройка "Отображать пустые звёзды рейтинга товара"
-    public String emptyStarsOfProductRating = " div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
+    public String emptyStarsOfProductRating = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
 
     //Настройка "Отображать общее значение рейтинга товара"
-    public String commonValueOfProductRating = " .ut2-show-rating-num";
+    public String commonValueOfProductRating = ".ut2-show-rating-num";
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
     public String getStatusesForButtonAddToCartIcon() {
@@ -78,94 +77,94 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Количество товаров"
-    public String statusesForButton_AddToCart_Number = " .ut2-added-to-cart[data-added-amount='1']";
+    public String statusesForButton_AddToCart_Number = ".ut2-added-to-cart[data-added-amount='1']";
 
     //Настройка "Отображать статусы для кнопок... "Добавить в избранное"
-    public String statusesForButton_AddToWishList = " a.ut2-add-to-wish.active";
+    public String statusesForButton_AddToWishList = "a.ut2-add-to-wish.active";
 
     //Настройка "Отображать статусы для кнопок... "Добавить в список сравнения"
-    public String statusesForButton_AddToComparisonList = " a.ut2-add-to-compare.active";
+    public String statusesForButton_AddToComparisonList = "a.ut2-add-to-compare.active";
 
     //Настройка "Отображать кнопку "Добавить в избранное"
-    public String button_AddToWishList = " .ut2-add-to-wish";
+    public String button_AddToWishList = ".ut2-add-to-wish";
 
     //Настройка "Отображать кнопку "Добавить в список сравнения""
-    public String button_AddToComparisonList = " .ut2-add-to-compare";
+    public String button_AddToComparisonList = ".ut2-add-to-compare";
 
     //Настройка "Отображать кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" при наведении на ячейку товара"
-    public String buttonsAreDisplayedOnHover = " .ut2-w-c-q__buttons.w_c_q-hover";
+    public String buttonsAreDisplayedOnHover = ".ut2-w-c-q__buttons.w_c_q-hover";
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
-    public String text_YouSave_Full = " .ty-save-price:not(.ut2-sld-short .ty-save-price)";
+    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
 
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    public String text_YouSave_Short = " .ut2-sld-short .ty-save-price";
+    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
 
     //Настройка "Количество строк в названии товара"
-    public String numberOfLinesInProductName = " div[style^='--gl-lines-in-name-product: ";
+    public String numberOfLinesInProductName = "div[style^='--gl-lines-in-name-product: ";
 
     //Настройка "Вид списка товаров "Мелкие элементы" -- Количество строк в названии товара"
-    public String smallItems_NumberOfLinesInProductName = " ul[style^='--si-lines-in-name-product: ";
+    public String smallItems_NumberOfLinesInProductName = "ul[style^='--si-lines-in-name-product: ";
 
     //Настройка "Вид списка товаров "Скроллер" -- Количество строк в названии товара"
-    public String scroller_NumberOfLinesInProductName = " div[style^='--sl-lines-in-name-product: ";
+    public String scroller_NumberOfLinesInProductName = "div[style^='--sl-lines-in-name-product: ";
 
     //Настройка "Отображать код товара"
-    public String productCode = " div[id*='product_code_']";
+    public String productCode = "div[id*='product_code_']";
 
     //Настройка "Отображать статус наличия"
-    public String availabilityStatus = " .ty-qty-in-stock.ty-control-group__item";
+    public String availabilityStatus = ".ty-qty-in-stock.ty-control-group__item";
 
     //Настройка "Отображать модификатор количества"
-    public String quantityChanger = " div[class='ty-center ty-value-changer cm-value-changer']";
+    public String quantityChanger = "div[class='ty-center ty-value-changer cm-value-changer']";
 
     //Настройка "Отображать кнопку "Купить" -- Только иконка корзины"
-    public String showAddToCartButton_IconOnly = " .ut2-icon-use_icon_cart";
+    public String showAddToCartButton_IconOnly = ".ut2-icon-use_icon_cart";
 
     //Настройка "Отображать кнопку "Купить" -- Только текст"
-    public String showAddToCartButton_TextOnly = " .ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";
+    public String showAddToCartButton_TextOnly = ".ty-btn__primary.ty-btn__add-to-cart.cm-form-dialog-closer";
 
     //Настройка "Вид списка "Сетка" -- "Отображать дополнительную информацию при наведении"
-    public String additionalInformationOnHover = " div[class='ut2-gl__item content-on-hover']";
+    public String additionalInformationOnHover = "div[class='ut2-gl__item content-on-hover']";
 
     //Проверяем настройку "Дополнительная информация о товаре -- Описание"
-    public String additionalProductInformation_Description = " .ut2-product-description";
+    public String additionalProductInformation_Description = ".ut2-product-description";
 
     //Проверяем настройку "Дополнительная информация о товаре -- Список характеристик"
-    public String additionalProductInformation_Features = " .ut2-features-list";
+    public String additionalProductInformation_Features = ".ut2-features-list";
 
     //Проверяем настройку "Дополнительная информация о товаре -- Список вариаций"
-    public String additionalProductInformation_Variations = " .ut2-lv__item-features";
+    public String additionalProductInformation_Variations = ".ut2-lv__item-features";
 
     //Настройка "Отображать бренд -- Логотип"
-    public String brandLogo = " .brand-img";
+    public String brandLogo = ".brand-img";
 
     //Настройка "Отображать бренд -- Название"
-    public String brandName = " .brand-name";
+    public String brandName = ".brand-name";
 
     //Настройка "Отображать стандартную галерею изображений -- Навигация точками"
-    public String standardImageGallery_Dots = " .owl-pagination";
+    public String standardImageGallery_Dots = ".owl-pagination";
 
     //Настройка "Отображать стандартную галерею изображений -- Навигация стрелками"
-    public String standardImageGallery_Arrows = " .ut2-gl__image .icon-right-circle";
+    public String standardImageGallery_Arrows = ".ut2-gl__image .icon-right-circle";
 
     //Настройка "Переключать изображение товара при движении мышки -- с полосками"
-    public String switchProductImage_withStripes = " div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";
+    public String switchProductImage_withStripes = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";
 
     //Настройка "Переключать изображение товара при движении мышки -- с точками"
-    public String switchProductImage_withDots = " div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']";
+    public String switchProductImage_withDots = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery points']";
 
     //Настройка "Вид списка "Список без опций" -- Отображать опции товара"
-    public String listWithoutOptions__ShowProductOptions = " .cm-picker-product-options";
+    public String listWithoutOptions__ShowProductOptions = ".cm-picker-product-options";
 
     //Новый вид вариаций для модуля "Вариации товаров"
-    public String prodVar_NewProductVariations = " div[class*='ut2-lv__features-item lv-hover-items']";
+    public String prodVar_NewProductVariations = "div[class*='ut2-lv__features-item lv-hover-items']";
 
     //Настройка "Модуль "Вариации товаров" -- Тип отображения вариаций -- Цвета"
-    public String prodVar_TypeOfVariationsView_Colors = " [data-display='color']";
+    public String prodVar_TypeOfVariationsView_Colors = "[data-display='color']";
 
     //Настройка "Модуль "Вариации товаров" -- Тип отображения вариаций -- Миниатюры"
-    public String prodVar_TypeOfVariationsView_Thumbnails = " [data-display='thumbnails']";
+    public String prodVar_TypeOfVariationsView_Thumbnails = "[data-display='thumbnails']";
 
 
     private String resolveAssertMessage(String selector,

@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
@@ -92,7 +93,29 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        //Проверяем, что присутствует ID пользовательского блока
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.customBlockID,
+                "on the product page 'Titan'!",
+                true);
+
+        //Проверяем, что Модификатор количества присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.quantityChanger,
+                "on the product page 'Titan'!",
+                true);
+
+        //Проверяем, что код товара присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productCode,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
@@ -114,18 +137,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is no feature Brand on the feature list!");
 
-        //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!assertsOnStorefront.customBlockID.isEmpty(),
-                "There is no Custom block!");
-
-        //Проверяем, что Модификатор количества присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showQuantityChanger.isEmpty(),
-                "There is no Quantity changer on the product page!");
-
-        //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
-                "There is no product code on the product page!");
-
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
@@ -142,11 +153,13 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade2.15 GS_ProductPage_Var2 - Cascade template (RTL)");
 
-        //Проверяем характеристики
+        //Проверяем, что характеристики товара расположены в две колонки
         stProductPage.scrollToAndClickTab_Features();
-        //Проверяем, что характеристики расположены в две колонки
-        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
-                "Features are located in one column instead of two!");
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.featuresInTwoColumns_Enabled,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot("Cascade2.20 GS_ProductPage_Var2 - Product features, two columns (RTL)");
         stProductPage.selectLanguage("en");

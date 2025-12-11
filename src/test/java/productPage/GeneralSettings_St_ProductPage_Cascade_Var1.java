@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
@@ -102,7 +103,15 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        //Проверяем, что присутствует ID пользовательского блока
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.customBlockID,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
@@ -119,10 +128,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is no feature Brand on the feature list!");
-
-        //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!assertsOnStorefront.customBlockID.isEmpty(),
-                "There is no Custom block on the product page!");
 
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
@@ -144,11 +149,13 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("Cascade1.15 GS_ProductPage_Cascade_Var1 - Cascade template (RTL)");
 
-        //Проверяем характеристики
+        //Проверяем, что характеристики товара расположены в одну колонку
         stProductPage.scrollToAndClickTab_Features();
-        //Проверяем, что характеристики расположены в одну колонку
-        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Disabled.isEmpty(),
-                "Features are located in two columns instead of one!");
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.featuresInTwoColumns_Disabled,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot("Cascade1.20 GS_ProductPage_Cascade_Var1 - Product features, one column (RTL)");
         stProductPage.selectLanguage("en");

@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
-import taras.asserts.Asserts_ThemeSettings_ProductLists;
+import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
@@ -104,8 +104,15 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
-        Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+        Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        //Проверяем, что присутствует ID пользовательского блока
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.customBlockID,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что мини-иконки в виде галереи
         softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Enabled.isEmpty(),
@@ -127,19 +134,15 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_HardDrive.isEmpty(),
                 "There is no feature Hard drive on the feature list!");
 
-        //Проверяем, что присутствует ID пользовательского блока
-        softAssert.assertTrue(!assertsOnStorefront.customBlockID.isEmpty(),
-                "There is no Custom block on the product page!");
-
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
-        asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productPage,
-                asserts_productLists.text_YouSave_Short,
-                "on the product page!",
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.text_YouSave_Short,
+                "on the product page 'Titan'!",
                 true);
 
         //Проверяем, что присутствует Цена за единицу
@@ -158,10 +161,13 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("905 GS_ProductPage_Var1 - Default template (RTL)");
 
-        //Проверяем, что характеристики расположены в одну колонку
+        //Проверяем, что характеристики товара расположены в одну колонку
         stProductPage.scrollToAndClickTab_Features();
-        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Disabled.isEmpty(),
-                "Features are located in two columns instead of one!");
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.featuresInTwoColumns_Disabled,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");
         stProductPage.selectLanguage("en");

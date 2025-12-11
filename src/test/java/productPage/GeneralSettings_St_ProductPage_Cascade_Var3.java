@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -93,7 +94,15 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         stProductPage.checkbox_NotifyMe.click();
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        //Проверяем, что код товара присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productCode,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
@@ -112,10 +121,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
                 "There is a feature Brand on the feature list but shouldn't!");
 
-        //Проверяем, что Код товара присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showProductCode.isEmpty(),
-                "There is no product code!");
-
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),
                 "There is no field 'Sign up for notification'!");
@@ -130,9 +135,14 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         takeScreenShot("Cascade3.15 GS_ProductPage_Cascade_Var3 - Checkbox 'Notify me'");
         stProductPage.scrollToAndClickTab_FeaturesForNonTabs();
 
-        //Проверяем, что характеристики расположены в две колонки
-        softAssert.assertTrue(!assertsOnStorefront.showFeaturesInTwoColumns_Enabled.isEmpty(),
-                "Features are located in one column instead of two!");
+        //Проверяем, что характеристики товара расположены в две колонки
+        stProductPage.scrollToAndClickTab_Features();
+        asserts_product.assertElementPresence(
+                "",
+                asserts_product.featuresInTwoColumns_Enabled,
+                "on the product page 'Titan'!",
+                true);
+
         takeScreenShot("Cascade3.20 GS_ProductPage_Cascade_Var3 - Product features, two columns");
 
         stProductPage.selectLanguage("ar");

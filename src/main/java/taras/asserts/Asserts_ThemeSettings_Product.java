@@ -33,6 +33,12 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
     //Настройка "Отображать характеристики в две колонки" ОТКЛ.
     public String featuresInTwoColumns_Disabled = "div[class='cm-ab-similar-filter-container ']";
 
+    //Настройка "Отображать "Вы экономите -- Полный вид"
+    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
+
+    //Настройка "Отображать "Вы экономите -- Сокращенный вид"
+    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
+
     //Настройка "Отображать информацию о бренде товара -- Отображать название бренда товара"
     public String productBrandInformation_Name = ".ut2-pb__product-brand-name";
 
@@ -41,15 +47,6 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
 
     //Настройка "Количество отображаемых изображений галереи товара -- 2"
     public String numberOfDisplayedImagesOfProductGallery_2 = ".images-2";
-
-
-
-    //Настройка "Отображать "Вы экономите -- Полный вид"
-    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
-
-    //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
-
 
 
     private String resolveAssertMessage(String selector,
@@ -74,13 +71,11 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
                 Map.entry(productCode, "There is no Product Code "),
                 Map.entry(featuresInTwoColumns_Enabled, "Features are shown in one column instead of two "),
                 Map.entry(featuresInTwoColumns_Disabled, "Features are shown in two columns instead of one "),
+                Map.entry(text_YouSave_Full, "The text 'You save' is not 'Full' or missed "),
+                Map.entry(text_YouSave_Short, "The text 'You save' is not 'Short' or missed "),
                 Map.entry(productBrandInformation_Name, "The feature Brand is not as 'Name' or missed "),
                 Map.entry(productBrandInformation_Logo, "The feature Brand is not as 'Logo' or missed "),
-                Map.entry(numberOfDisplayedImagesOfProductGallery_2, "Number of displayed images of the product gallery is not 2 "),
-
-
-                Map.entry(text_YouSave_Full, "The text 'You save' is not 'Full' or missed "),
-                Map.entry(text_YouSave_Short, "The text 'You save' is not 'Short' or missed ")
+                Map.entry(numberOfDisplayedImagesOfProductGallery_2, "Number of displayed images of the product gallery is not 2 ")
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(

@@ -33,14 +33,22 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
     //Настройка "Отображать характеристики в две колонки" ОТКЛ.
     public String featuresInTwoColumns_Disabled = "div[class='cm-ab-similar-filter-container ']";
 
+    //Настройка "Отображать информацию о бренде товара -- Отображать название бренда товара"
+    public String productBrandInformation_Name = ".ut2-pb__product-brand-name";
+
+    //Настройка "Отображать информацию о бренде товара -- Отображать логотип бренда товара"
+    public String productBrandInformation_Logo = ".ut2-pb__product-brand";
+
+    //Настройка "Количество отображаемых изображений галереи товара -- 2"
+    public String numberOfDisplayedImagesOfProductGallery_2 = ".images-2";
 
 
 
     //Настройка "Отображать "Вы экономите -- Полный вид"
-    public String text_YouSave_Full = " .ty-save-price:not(.ut2-sld-short .ty-save-price)";
+    public String text_YouSave_Full = ".ty-save-price:not(.ut2-sld-short .ty-save-price)";
 
     //Настройка "Отображать "Вы экономите -- Сокращенный вид"
-    public String text_YouSave_Short = " .ut2-sld-short .ty-save-price";
+    public String text_YouSave_Short = ".ut2-sld-short .ty-save-price";
 
 
 
@@ -59,13 +67,16 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
         return message;
     }
 
-    public void assertElementPresence(String list, String selector, String location, boolean elementsAreEmpty) {
+    public void assertElementPresence(String list, String selector, String location, boolean elementExists) {
         Map<String, String> presenceMessages = Map.ofEntries(
                 Map.entry(customBlockID, "There is no Custom block "),
                 Map.entry(quantityChanger, "There is no Quantity changer "),
                 Map.entry(productCode, "There is no Product Code "),
                 Map.entry(featuresInTwoColumns_Enabled, "Features are shown in one column instead of two "),
                 Map.entry(featuresInTwoColumns_Disabled, "Features are shown in two columns instead of one "),
+                Map.entry(productBrandInformation_Name, "The feature Brand is not as 'Name' or missed "),
+                Map.entry(productBrandInformation_Logo, "The feature Brand is not as 'Logo' or missed "),
+                Map.entry(numberOfDisplayedImagesOfProductGallery_2, "Number of displayed images of the product gallery is not 2 "),
 
 
                 Map.entry(text_YouSave_Full, "The text 'You save' is not 'Full' or missed "),
@@ -74,10 +85,12 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
 
         Map<String, String> absenceMessages = Map.ofEntries(
                 Map.entry(text_YouSave_Full, "There is a text 'You save' as 'Full' but shouldn't "),
-                Map.entry(text_YouSave_Short, "There is a text 'You save' as 'Short' but shouldn't ")
+                Map.entry(text_YouSave_Short, "There is a text 'You save' as 'Short' but shouldn't "),
+                Map.entry(productBrandInformation_Name, "The feature Brand is as 'Name' but shouldn't "),
+                Map.entry(productBrandInformation_Logo, "The feature Brand is as 'Logo' but shouldn't ")
         );
 
-        String message = resolveAssertMessage(selector, elementsAreEmpty, presenceMessages, absenceMessages);
+        String message = resolveAssertMessage(selector, elementExists, presenceMessages, absenceMessages);
         if (message == null)
             return;
 
@@ -87,7 +100,7 @@ public class Asserts_ThemeSettings_Product extends AbstractPage {
         };
 
         getSoftAssert().assertTrue(
-                !elementsAreEmpty == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
+                elementExists == !DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
                 message + location + "\n" + finalSelector
         );
     }

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_ProductLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var3.java" afterDir="false" />
@@ -756,7 +757,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="290" />
+    <option name="localTasksCounter" value="291" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -787,7 +788,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1." />
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2." />
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_ProductLists_." />
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_St_ProductPage_." />
@@ -812,16 +812,17 @@
     <MESSAGE value="Make a global work with asserts.&#10;Added new asserts and its methods." />
     <MESSAGE value="Continue a global work with asserts." />
     <MESSAGE value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
+    <MESSAGE value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java</url>
-          <line>349</line>
-          <properties field="showProductBrandInformation_Name" class="taras.storefront.AssertsOnStorefront" />
-          <option name="timeStamp" value="109" />
+          <line>361</line>
+          <properties field="pricesWithTaxes" class="taras.storefront.AssertsOnStorefront" />
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

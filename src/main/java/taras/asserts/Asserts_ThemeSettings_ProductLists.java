@@ -182,7 +182,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         return message;
     }
 
-    public void assertElementPresence(String list, String selector, String location, boolean elementsAreEmpty) {
+    public void assertElementPresence(String list, String selector, String location, boolean elementExists) {
         Map<String, String> presenceMessages = Map.ofEntries(
                 Map.entry(decolorizeOutOfStockProducts, "There are no decolorized products "),
                 Map.entry(emptyStarsOfProductRating, "There are no empty stars "),
@@ -234,7 +234,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(brandName, "There is a brand name but shouldn't ")
         );
 
-        String message = resolveAssertMessage(selector, elementsAreEmpty, presenceMessages, absenceMessages);
+        String message = resolveAssertMessage(selector, elementExists, presenceMessages, absenceMessages);
         if (message == null)
             return;
 
@@ -247,7 +247,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
         };
 
         getSoftAssert().assertTrue(
-                !elementsAreEmpty == DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
+                elementExists == !DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
                 message + location + "\n" + finalSelector
         );
     }

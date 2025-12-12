@@ -108,8 +108,20 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         asserts_product.assertElementPresence(
                 Asserts_ThemeSettings_Product.productPage,
                 asserts_product.productCode,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
                 true);
+
+        //Проверяем, что логотип и название "Бренд" отсутствуют
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Name,
+                "on the product page 'X-Box 360'!",
+                false);
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Logo,
+                "on the product page 'X-Box 360'!",
+                false);
 
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
@@ -118,11 +130,6 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Проверяем, что информация о товаре отображается не во вкладках
         softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
                 "Product information is displayed in tabs but shouldn't!");
-
-        //Проверяем, что логотип и название "Бренд" отсутствуют
-        softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
-                        && assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
-                "There is a Brand logo or Brand name but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
         softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
@@ -140,6 +147,13 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
                 "on the product page 'Titan'!",
                 false);
 
+        //Проверяем, что Количество отображаемых изображений галереи товара - 2
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.numberOfDisplayedImagesOfProductGallery_2,
+                "on the product page 'Titan'!",
+                true);
+
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),
                 "There is no field 'Sign up for notification'!");
@@ -147,10 +161,6 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points!");
-
-        //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        softAssert.assertTrue(!assertsOnStorefront.numberOfDisplayedImagesOfProductGallery_2.isEmpty(),
-                "Number of displayed images of the product gallery is not 2!");
 
         takeScreenShot_withScroll("1100 GS_ProductPage_Var3 - Default template");
         stProductPage.selectLanguage("ar");

@@ -113,6 +113,13 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
                 "on the product page 'Titan'!",
                 true);
 
+        //Проверяем, что логотип характеристики "Бренд" присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Logo,
+                "on the product page 'Titan'!",
+                true);
+
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
                 "There is a mini-icons gallery but shouldn't!");
@@ -120,10 +127,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
                 "Product information is displayed not in tabs!");
-
-        //Проверяем, что логотип характеристики "Бренд" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
-                "There is no Brand logo on the product page!");
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),

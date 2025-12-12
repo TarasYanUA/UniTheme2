@@ -111,7 +111,14 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         asserts_product.assertElementPresence(
                 "",
                 asserts_product.customBlockID,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что логотип характеристики "Бренд" присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Logo,
+                "on the product page 'X-Box 360'!",
                 true);
 
         //Проверяем, что мини-иконки в виде галереи
@@ -121,10 +128,6 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         //Проверяем, что информация о товаре отображается во вкладках
         softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
                 "Product information is displayed not in tabs!");
-
-        //Проверяем, что логотип характеристики "Бренд" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
-                "There is no Brand logo on product page!");
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
         softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),

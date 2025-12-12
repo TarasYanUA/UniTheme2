@@ -104,6 +104,18 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
                 "on the product page 'Titan'!",
                 true);
 
+        //Проверяем, что логотип и название "Бренд" отсутствуют
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Name,
+                "on the product page 'Titan'!",
+                false);
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Logo,
+                "on the product page 'Titan'!",
+                false);
+
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
                 "There is a mini-icons gallery but shouldn't!");
@@ -111,11 +123,6 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         //Проверяем, что информация о товаре отображается не во вкладках
         softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
                 "Product information is displayed in tabs but shouldn't!");
-
-        //Проверяем, что название и логотип "Бренд" отсутствует
-        softAssert.assertFalse(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty()
-                        && !assertsOnStorefront.showProductBrandInformation_Logo.isEmpty(),
-                "There is a Brand name or Brand logo but shouldn't!");
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
         softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),

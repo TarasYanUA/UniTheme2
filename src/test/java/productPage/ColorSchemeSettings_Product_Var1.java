@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -104,15 +105,26 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         stProductPage.selectLanguage("en");
 
         SoftAssert softAssert = new SoftAssert();
+        Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
+        //Проверяем, что название характеристики "Бренд" присутствует
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.productBrandInformation_Name,
+                "on the product page 'NX200'!",
+                true);
+
+        //Проверяем, что Количество отображаемых изображений галереи товара - 2
+        asserts_product.assertElementPresence(
+                Asserts_ThemeSettings_Product.productPage,
+                asserts_product.numberOfDisplayedImagesOfProductGallery_2,
+                "on the product page 'NX200'!",
+                true);
 
         //Проверяем, что мини-иконки не в виде галереи
         softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
                 "Mini-icons are as a gallery but shouldn't on the product page!");
-
-        //Проверяем, что название характеристики "Бренд" присутствует
-        softAssert.assertTrue(!assertsOnStorefront.showProductBrandInformation_Name.isEmpty(),
-                "The feature Brand is not as Name on the product page!");
 
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
@@ -125,10 +137,6 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         //Проверяем, что Бонусные баллы присутствуют
         softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
                 "There is no Reward points on the product page!");
-
-        //Проверяем, что Количество отображаемых изображений галереи товара - 2
-        softAssert.assertTrue(!assertsOnStorefront.numberOfDisplayedImagesOfProductGallery_2.isEmpty(),
-                "Number of displayed images of the product gallery is not 2 on the product page!");
 
         takeScreenShot_withScroll("1200 productPage.ColorSchemeSettings_Product_Var1 - Default template");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);

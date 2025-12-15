@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -93,6 +94,7 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что присутствует ID пользовательского блока
@@ -123,26 +125,6 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
                 "on the product page 'X-Box 360'!",
                 true);
 
-        //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
-                "Mini-icons are as a gallery but shouldn't!");
-
-        //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
-                "Product information is not displayed in tabs!");
-
-        //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
-                "There is no feature Brand on the feature list!");
-
-        //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_HardDrive.isEmpty(),
-                "There is no feature Hard drive on the feature list!");
-
-        //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
-                "There is no product Short description!");
-
         //Проверяем, что текст "Вы экономите" отсутствует по причине нулевой цены
         asserts_product.assertElementPresence(
                 Asserts_ThemeSettings_Product.productPage,
@@ -154,6 +136,38 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
                 asserts_product.text_YouSave_Short,
                 "on the product page!",
                 false);
+
+        //Проверяем, что мини-иконки не в виде галереи
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что информация о товаре отображается во вкладках
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.displayProductDetailsInTabs_Enabled,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.showInHeaderOnProductPage_Brand,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.showInHeaderOnProductPage_HardDrive,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что присутствует Краткое описание товара
+        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
+                "There is no product Short description!");
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
         softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),

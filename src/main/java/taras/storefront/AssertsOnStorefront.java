@@ -387,7 +387,7 @@ public class AssertsOnStorefront extends AbstractPage {
 
     public List<WebElement> getQuickViewButton(String blockID) {
         return DriverProvider.getDriver().findElements(By.cssSelector(
-                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] a[class*='ut2-quick-view-button']"));
+                "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] " + enableQuickView));
     }
 
 

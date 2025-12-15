@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -94,6 +95,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что присутствует ID пользовательского блока
@@ -125,24 +127,33 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
                 true);
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
-        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
-                "There is a mini-icons gallery but shouldn't!");
-
-        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
-        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
-                "Out of stock action is not 'Buy in advance'!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что информация о товаре отображается во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Enabled.isEmpty(),
-                "Product information is not displayed in tabs!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.displayProductDetailsInTabs_Enabled,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        softAssert.assertTrue(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
-                "There is no feature Brand on the feature list!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.showInHeaderOnProductPage_Brand,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что присутствует Краткое описание товара
         softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
                 "There is no product Short description!");
+
+        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
+                "Out of stock action is not 'Buy in advance'!");
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
         softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),

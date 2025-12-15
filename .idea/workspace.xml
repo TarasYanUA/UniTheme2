@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -750,7 +769,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="292" />
+    <option name="localTasksCounter" value="293" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -811,11 +830,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java</url>
-          <line>361</line>
-          <properties field="pricesWithTaxes" class="taras.storefront.AssertsOnStorefront" />
-          <option name="timeStamp" value="115" />
+          <line>430</line>
+          <properties class="taras.storefront.AssertsOnStorefront" method="getOutsideNavigation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -102,6 +103,7 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
@@ -123,36 +125,45 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
                 "on the product page 'X-Box 360'!",
                 false);
 
-        //Проверяем, что мини-иконки не в виде галереи
-        softAssert.assertTrue(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
-                "Mini-icons are as a gallery but shouldn't!");
-
-        //Проверяем, что информация о товаре отображается не во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
-                "Product information is displayed in tabs but shouldn't!");
-
-        //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
-                "There is a feature Brand on the feature list but shouldn't!");
-
         //Проверяем, что текст "Вы экономите" отсутствует
         asserts_product.assertElementPresence(
                 Asserts_ThemeSettings_Product.productPage,
                 asserts_product.text_YouSave_Full,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
                 false);
         asserts_product.assertElementPresence(
                 Asserts_ThemeSettings_Product.productPage,
                 asserts_product.text_YouSave_Short,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
                 false);
 
         //Проверяем, что Количество отображаемых изображений галереи товара - 2
         asserts_product.assertElementPresence(
                 Asserts_ThemeSettings_Product.productPage,
                 asserts_product.numberOfDisplayedImagesOfProductGallery_2,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
                 true);
+
+        //Проверяем, что мини-иконки не в виде галереи
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что информация о товаре отображается не во вкладках
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.displayProductDetailsInTabs_Disabled,
+                "on the product page 'X-Box 360'!",
+                true);
+
+        //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.showInHeaderOnProductPage_Brand,
+                "on the product page 'X-Box 360'!",
+                false);
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),

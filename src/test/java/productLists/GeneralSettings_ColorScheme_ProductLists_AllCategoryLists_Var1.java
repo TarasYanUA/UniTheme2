@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -135,6 +136,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
@@ -173,8 +175,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax in the product block!");
+        asserts_csCartSettings.assertElementPresence(
+                "",
+                asserts_csCartSettings.pricesWithTaxes,
+                "in the product block!",
+                true);
 
         takeScreenShot("100 GS_CS_ProductLists_AllCategoryLists_Var1 - BlockWithProducts");
         stHomePage.selectLanguage("ar");
@@ -228,8 +233,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Woman cloth'!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.gridList,
+                asserts_csCartSettings.pricesWithTaxes,
+                "on the category 'Woman cloth', 'Grid list'!",
+                true);
 
         stCategoryPage.hoverToProduct("Женская майка Nike");
         takeScreenShot_withScroll("110 GS_CS_ProductLists_AllCategoryLists_Var1 - WomanClothCategory");
@@ -284,8 +292,11 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Phones', 'Grid list'!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.gridList,
+                asserts_csCartSettings.pricesWithTaxes,
+                "on the category 'Phones', 'Grid list'!",
+                true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         stHomePage.logOutOnStorefront();
@@ -362,22 +373,24 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что тип отображения новых вариаций -- Цвета
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.gridList,
+                Asserts_ThemeSettings_ProductLists.listWO,
                 asserts_productLists.prodVar_TypeOfVariationsView_Colors,
                 "on the category 'Phones', 'List without options'!",
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'List without options'!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.listWO,
+                asserts_csCartSettings.pricesWithTaxes,
+                "on the category 'Phones', 'List without options'!",
+                true);
 
         //Проверяем, что у кнопки "В корзину" отображается статус в виде иконки
         asserts_productLists.assertElementPresence(
                 "",
                 asserts_productLists.getStatusesForButtonAddToCartIcon(),
                 "on the category 'Phones', 'List without options'!",
-                true
-        );
+                true);
 
         takeScreenShot_withScroll("140 GS_CS_ProductLists_AllCategoryLists_Var1 - ListWithoutOptions (RTL)");
         UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(By.cssSelector(".ty-select-wrapper")));
@@ -412,12 +425,14 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "",
                 asserts_productLists.getStatusesForButtonAddToCartIcon(),
                 "on the category 'Phones', 'Compact list'!",
-                true
-        );
+                true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.pricesWithTaxes().isEmpty(),
-                "There is no text of a product tax on the category 'Phones', 'Compact list'!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.listWO,
+                asserts_csCartSettings.pricesWithTaxes,
+                "on the category 'Phones', 'Compact list'!",
+                true);
 
         takeScreenShot_withScroll("150 GS_CS_ProductLists_AllCategoryLists_Var1 - CompactList_ProductListView");
         stHomePage.selectLanguage("ar");

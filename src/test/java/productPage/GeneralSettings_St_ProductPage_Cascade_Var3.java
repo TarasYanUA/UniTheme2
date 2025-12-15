@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -95,6 +96,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
@@ -117,16 +119,25 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
                 false);
 
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
-        softAssert.assertFalse(!assertsOnStorefront.miniThumbnailImagesAsGallery_Disabled.isEmpty(),
-                "There is a mini-icons gallery but shouldn't!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что информация о товаре отображается не во вкладках
-        softAssert.assertTrue(!assertsOnStorefront.displayProductDetailsInTabs_Disabled.isEmpty(),
-                "Product information is displayed in tabs but shouldn't!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.displayProductDetailsInTabs_Disabled,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что характеристика "Бренд" отсутствует в заголовке карточки товара
-        softAssert.assertFalse(!assertsOnStorefront.showInHeaderOnProductPage_Brand.isEmpty(),
-                "There is a feature Brand on the feature list but shouldn't!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productPage,
+                asserts_csCartSettings.showInHeaderOnProductPage_Brand,
+                "on the product page 'Titan'!",
+                false);
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
         softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -71,6 +72,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
 
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что модификатор количества присутствует
@@ -88,10 +90,13 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
                 true);
 
         //Проверяем, что Быстрый просмотр присутствует
-        softAssert.assertTrue(!assertsOnStorefront.enableQuickView.isEmpty(),
-                "There is no button 'Quick view' on the category page 'Compact list'!");
-        UtilsAdm.hoverOverElement(stCategoryPage.button_GeneralAddToCart);
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.compactList,
+                asserts_csCartSettings.enableQuickView,
+                "on the category page 'Game consoles', 'Compact list'!",
+                true);
 
+        UtilsAdm.hoverOverElement(stCategoryPage.button_GeneralAddToCart);
         takeScreenShot_withScroll("700 GS_ProductLists_CompactList_Var1");
         stCategoryPage.clickButtonQuickView();
         takeScreenShot_withScroll("705 GS_ProductLists_CompactList_Var1 - QuickView");

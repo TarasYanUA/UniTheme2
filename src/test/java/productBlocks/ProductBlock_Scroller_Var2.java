@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -56,6 +57,7 @@ import testRunner.TestRunner;
 public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
     Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+    Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
 
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_Scroller_Var2() {
@@ -149,10 +151,6 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
                         .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .owl-item.active")).size(), 3,
                 "Number of elements is not equal 3 in the product block!");
 
-        //Проверяем, что внешняя навигация присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getOutsideNavigation(blockID).isEmpty(),
-                "There is no outside navigation in the product block!");
-
         //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
@@ -224,12 +222,25 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
                 "in the product block!");
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
-                "There is no text of a product tax in the product block!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.pricesWithTaxes,
+                "in the product block!",
+                true);
 
         //Проверяем, что быстрый просмотр присутствует
-        softAssert.assertTrue(!assertsOnStorefront.getQuickViewButton(blockID).isEmpty(),
-                "There is no Quick view button in the product block!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.enableQuickView,
+                "in the product block!",
+                true);
+
+        //Проверяем, что внешняя навигация присутствует
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.outsideNavigation,
+                "in the product block!",
+                true);
 
         takeScreenShot("ProductBlock_Scroller_Var2");
         stHomePage.selectLanguage("ar");

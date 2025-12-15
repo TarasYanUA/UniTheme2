@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
+import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -60,6 +61,7 @@ import java.util.List;
 public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLazyLoadFromSection {
     String blockID;
     Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+    Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
 
     @Test(priority = 1)
     public void setConfigurationsForProductBlock_GridMore_Var2() {
@@ -267,8 +269,11 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
                 true);
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
-        softAssert.assertTrue(!assertsOnStorefront.getPricesWithTaxes(blockID).isEmpty(),
-                "There is no text of a product tax in the product block!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.pricesWithTaxes,
+                "in the product block!",
+                true);
 
         //Проверяем, что Максимальное число элементов -- 15 (не превышает это значение)
         softAssert.assertTrue(DriverProvider.getDriver().findElements(By

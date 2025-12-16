@@ -5,6 +5,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
+import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -95,6 +96,7 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+        Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что присутствует ID пользовательского блока
@@ -165,21 +167,33 @@ public class GeneralSettings_St_ProductPage_Var2 extends TestRunner {
                 "on the product page 'X-Box 360'!",
                 true);
 
-        //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
-                "There is no product Short description!");
+        //Проверяем, что Промо-текст присутствует
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.promoText,
+                "on the product page 'X-Box 360'!",
+                true);
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),
-                "There is no field 'Enter your price'!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.zeroPriceAction_AskCustomerToEnterPrice,
+                "on the product page 'X-Box 360'!",
+                true);
 
-        //Проверяем, что Действие при отсутствии товара в наличии - Предзаказ
-        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
-                "There is no field 'On backorder'!");
+        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.outOfStockActions_BuyInAdvance,
+                "on the product page 'X-Box 360'!",
+                true);
 
-        //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!assertsOnStorefront.product_PromoText.isEmpty(),
-                "There is no Promo-text!");
+        //Проверяем, что присутствует Краткое описание товара
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.shortDescription,
+                "on the product page 'X-Box 360'!",
+                true);
 
         takeScreenShot_withScroll("1000 GS_ProductPage_Var2 - Default template");
         stProductPage.selectLanguage("ar");

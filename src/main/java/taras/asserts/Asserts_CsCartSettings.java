@@ -59,6 +59,7 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
     //Настройка "Внешняя навигация" в настройках блока
     public String outsideNavigation = ".owl-theme.ty-owl-controls";
 
+
     private String resolveAssertMessage(String selector,
                                         boolean elementsAreEmpty,
                                         Map<String, String> presenceMessages,
@@ -89,7 +90,7 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
 
         Map<String, String> absenceMessages = Map.ofEntries(
                 Map.entry(enableQuickView, "There is a 'Quick view' button but shouldn't "),
-                Map.entry(showInHeaderOnProductPage_Brand, "There is a feature 'Brand' in the product header but shouldn't")
+                Map.entry(showInHeaderOnProductPage_Brand, "There is a feature 'Brand' in the product header but shouldn't ")
         );
 
         String message = resolveAssertMessage(selector, elementExists, presenceMessages, absenceMessages);

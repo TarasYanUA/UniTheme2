@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
+import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -106,6 +107,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+        Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что присутствует ID пользовательского блока
@@ -143,21 +145,33 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
                 "on the product page 'Titan'!",
                 true);
 
-        //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
-                "There is no product Short description on the product page!");
+        //Проверяем, что Промо-текст присутствует
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.promoText,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что присутствует Цена за единицу
-        softAssert.assertTrue(!assertsOnStorefront.pricePerUnit.isEmpty(),
-                "There is no Price per unit on the product page!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.pricePerUnit,
+                "on the product page 'Titan'!",
+                true);
 
-        //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!assertsOnStorefront.promoText.isEmpty(),
-                "There is no Promo-text on the product page!");
+        //Проверяем, что присутствует Краткое описание товара
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.shortDescription,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
-                "There is no Reward points on the product page!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.allowPaymentByPoints,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot_withScroll("Cascade1.10 GS_ProductPage_Cascade_Var1 - Cascade template");
         stProductPage.selectLanguage("ar");

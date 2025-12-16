@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
+import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -108,6 +109,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+        Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что название характеристики "Бренд" присутствует
@@ -131,17 +133,26 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
                 "on the product page 'NX200'!",
                 true);
 
-        //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
-                "There is no product Short description on the product page!");
-
         //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!assertsOnStorefront.product_PromoText.isEmpty(),
-                "There is no Promo-text on the product page!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.promoText,
+                "on the product page 'NX200'!",
+                true);
+
+        //Проверяем, что присутствует Краткое описание товара
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.shortDescription,
+                "on the product page 'NX200'!",
+                true);
 
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
-                "There is no Reward points on the product page!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.allowPaymentByPoints,
+                "on the product page 'NX200'!",
+                true);
 
         takeScreenShot_withScroll("1200 productPage.ColorSchemeSettings_Product_Var1 - Default template");
         UtilsAdm.scrollToElementAndScrollBelow(stProductPage.blockWithProducts_MostPopular, 100);

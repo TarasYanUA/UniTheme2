@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
+import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
 import taras.storefront.AssertsOnStorefront;
@@ -97,6 +98,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+        Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
@@ -140,12 +142,18 @@ public class GeneralSettings_St_ProductPage_Cascade_Var3 extends TestRunner {
                 false);
 
         //Проверяем, что Действие при отсутствии товара в наличии - Подписаться на уведомления
-        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_SignUpForNotification.isEmpty(),
-                "There is no field 'Sign up for notification'!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.outOfStockActions_SignUpForNotification,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что Бонусные баллы присутствуют
-        softAssert.assertTrue(!assertsOnStorefront.product_allowPaymentByPoints.isEmpty(),
-                "There is no Reward points!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.allowPaymentByPoints,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot_withScroll("Cascade3.10 GS_ProductPage_Cascade_Var3 - Cascade template");
         stProductPage.checkbox_NotifyMe.click();

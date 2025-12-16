@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
+import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
@@ -96,6 +97,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+        Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
         AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что присутствует ID пользовательского блока
@@ -147,21 +149,33 @@ public class GeneralSettings_St_ProductPage_Cascade_Var2 extends TestRunner {
                 "on the product page 'Titan'!",
                 true);
 
-        //Проверяем, что присутствует Краткое описание товара
-        softAssert.assertTrue(!assertsOnStorefront.product_ShortDescription.isEmpty(),
-                "There is no product Short description!");
-
-        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
-        softAssert.assertTrue(!assertsOnStorefront.outOfStockActions_BuyInAdvance.isEmpty(),
-                "Out of stock action is not 'Buy in advance'!");
+        //Проверяем, что Промо-текст присутствует
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.promoText,
+                "on the product page 'Titan'!",
+                true);
 
         //Проверяем, что Действие при нулевой цене -- Попросить покупателя ввести цену
-        softAssert.assertTrue(!assertsOnStorefront.zeroPriceAction_AskCustomerToEnterPrice.isEmpty(),
-                "There is no field 'Enter your price'!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.zeroPriceAction_AskCustomerToEnterPrice,
+                "on the product page 'Titan'!",
+                true);
 
-        //Проверяем, что Промо-текст присутствует
-        softAssert.assertTrue(!assertsOnStorefront.promoText.isEmpty(),
-                "There is no Promo-text!");
+        //Проверяем, что настройка "Действие при отсутствии товара в наличии -- Предзаказ"
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.outOfStockActions_BuyInAdvance,
+                "on the product page 'Titan'!",
+                true);
+
+        //Проверяем, что присутствует Краткое описание товара
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.shortDescription,
+                "on the product page 'Titan'!",
+                true);
 
         takeScreenShot_withScroll("Cascade2.10 GS_ProductPage_Var2 - Cascade template");
         stProductPage.selectLanguage("ar");

@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Continue a global work with asserts:&#10;Finished the class Asserts_CsCartSettings.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_SmallItems_Var3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_CompactList_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productLists/GeneralSettings_ProductLists_CompactList_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/ColorSchemeSettings_Product_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productPage/GeneralSettings_St_ProductPage_Cascade_Var2.java" afterDir="false" />
@@ -769,7 +757,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <option name="localTasksCounter" value="294" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,7 +788,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_ProductLists_." />
     <MESSAGE value="Made refactoring of the code for test classes: GeneralSettings_St_ProductPage_." />
     <MESSAGE value="Created packages for test-cases." />
     <MESSAGE value="Made refactoring for classes: ProductBlock_GridMore_" />
@@ -825,21 +812,7 @@
     <MESSAGE value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
     <MESSAGE value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product." />
-    <option name="LAST_COMMIT_MESSAGE" value="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/AssertsOnStorefront.java</url>
-          <line>430</line>
-          <properties class="taras.storefront.AssertsOnStorefront" method="getOutsideNavigation">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_CsCartSettings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue a global work with asserts:&#10;Finished the class Asserts_CsCartSettings." />
   </component>
 </project>

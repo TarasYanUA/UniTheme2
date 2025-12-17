@@ -1,14 +1,10 @@
 package productBlocks;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
-import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
@@ -109,8 +105,6 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ProductBlock_SmallItems_Var3")
     public void checkProductBlock_SmallItems_Var3(){
         BasicPage basicPage = new BasicPage();
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
@@ -121,8 +115,11 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что номера элементов отображаются в блоке товаров
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2-hit")).isEmpty(),
-                "There are no item numbers in the product block!");
+        asserts_csCartSettings.assertElementPresence(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.block_ShowItemNumber,
+                "in the product block!",
+                true);
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
@@ -193,7 +190,6 @@ public class ProductBlock_SmallItems_Var3 extends TestRunner implements DisableL
         stHomePage.openProductBlock("On Sale");
         takeScreenShot("ProductBlock_SmallItems_Var3 (RTL)");
 
-        softAssert.assertAll();
         System.out.println("ProductBlock_SmallItems_Var3 has passed successfully!");
     }
 }

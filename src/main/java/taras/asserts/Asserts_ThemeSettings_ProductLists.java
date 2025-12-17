@@ -257,7 +257,6 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(numberOfLinesInProductName, "Number of lines in the product name is not " + quantity),
                 Map.entry(smallItems_NumberOfLinesInProductName, "Number of lines in the product name is not " + quantity),
                 Map.entry(scroller_NumberOfLinesInProductName, "Number of lines in the product name is not " + quantity)
-
         );
 
         String message = selectorMessages.get(selector);

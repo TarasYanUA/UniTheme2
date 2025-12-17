@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -70,10 +68,8 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
-        SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(
@@ -108,7 +104,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ty-product-review-product-rating-overview-short")));
         takeScreenShot_withScroll("715 GS_ProductLists_CompactList_Var1 - QuickView (RTL)");
-        softAssert.assertAll();
+
         System.out.println("productLists.GeneralSettings_ProductLists_CompactList_Var1 passed successfully!");
     }
 }

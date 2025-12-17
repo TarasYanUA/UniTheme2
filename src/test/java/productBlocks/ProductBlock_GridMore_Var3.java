@@ -150,9 +150,11 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у блока товаров 6 колонок. Настройка блока "Количество колонок в списке -- 6"
-        softAssert.assertEquals(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column6")).size(), 6,
-                "Number of columns is not equal 6 in the product block!");
+        asserts_csCartSettings.assertNumberOfElements(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.block_NumberOfColumnsInList,
+                6,
+                "in the product block!");
 
         clickButton_ShowMore("ProductBlock_GridMore_Var3 - ProductBlock ", "Распродажа");
 

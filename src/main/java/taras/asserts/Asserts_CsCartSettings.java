@@ -60,6 +60,18 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
     public String outsideNavigation = ".owl-theme.ty-owl-controls";
 
 
+    //Настройки блоков
+
+    //Настройка блока "Количество колонок в списке"
+    public String block_NumberOfColumnsInList = "div[class='ty-column";
+
+    //Настройка блока "Количество элементов"
+    public String block_NumberOfElements = ".owl-item.active";
+
+    //Настройка блока "Показать номер элемента"
+    public String block_ShowItemNumber = ".ut2-hit";
+
+
     private String resolveAssertMessage(String selector,
                                         boolean elementsAreEmpty,
                                         Map<String, String> presenceMessages,
@@ -85,7 +97,8 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
                 Map.entry(enableQuickView, "There is no button 'Quick view' "),
                 Map.entry(showInHeaderOnProductPage_Brand, "There is no feature 'Brand' in the product header "),
                 Map.entry(showInHeaderOnProductPage_HardDrive, "There is no feature 'Hard drive' in the product header "),
-                Map.entry(outsideNavigation, "There is no outside navigation ")
+                Map.entry(outsideNavigation, "There is no outside navigation "),
+                Map.entry(block_ShowItemNumber, "There are no item numbers ")
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(
@@ -109,6 +122,54 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
         getSoftAssert().assertTrue(
                 elementExists == !DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
                 message + location + "\n" + finalSelector
+        );
+    }
+
+    public void assertNumberOfElements(String list, String selector, int quantity, String location) {
+        Map<String, String> selectorMessages = Map.ofEntries(
+                Map.entry(block_NumberOfColumnsInList, "Number of columns is not equal " + quantity)
+        );
+
+        String message = selectorMessages.get(selector);
+        if (message == null)
+            getSoftAssert().fail("No assert message found for selector: " + selector);
+
+        String finalSelector = switch (list) {
+            case gridList -> gridList + selector + quantity + "']";
+            case listWO -> listWO + selector + quantity + "']";
+            case compactList -> compactList + selector + quantity + "']";
+            case productBlock -> getProductBlockSelector() + selector + quantity + "']";
+            default -> selector + quantity + "']";
+        };
+
+        getSoftAssert().assertTrue(
+                !DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).isEmpty(),
+                message + " " + location + "\n" + finalSelector
+        );
+    }
+
+
+
+    public void assertSizeOfElements(String list, String selector, int size, String location) {
+        Map<String, String> selectorMessages = Map.ofEntries(
+                Map.entry(block_NumberOfElements, "Number of elements is not equal " + size)
+        );
+
+        String message = selectorMessages.get(selector);
+        if (message == null)
+            getSoftAssert().fail("No assert message found for selector: " + selector);
+
+        String finalSelector = switch (list) {
+            case gridList -> gridList + selector;
+            case listWO -> listWO + selector;
+            case compactList -> compactList + selector;
+            case productBlock -> getProductBlockSelector() + selector;
+            default -> selector;
+        };
+
+        getSoftAssert().assertEquals(
+                DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).size(), size,
+                message + " " + location + "\n" + finalSelector
         );
     }
 }

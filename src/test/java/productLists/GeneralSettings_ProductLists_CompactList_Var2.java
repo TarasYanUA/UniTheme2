@@ -1,13 +1,11 @@
 package productLists;
 
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.ThemeSettings_ProductLists;
 import taras.adminPanel.UtilsAdm;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -50,9 +48,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
 
-        SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что пустые звезды рейтинга присутствуют
         asserts_productLists.assertElementPresence(
@@ -103,7 +99,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         takeScreenShot_withScroll("800 GS_ProductLists_CompactList_Var2");
         stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("805 GS_ProductLists_CompactLists_Var2 (RTL)");
-        softAssert.assertAll();
+
         System.out.println("productLists.GeneralSettings_ProductLists_CompactList_Var2 passed successfully!");
     }
 }

@@ -2,14 +2,12 @@ package productPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import testRunner.TestRunner;
 
@@ -106,11 +104,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         stProductPage.cookie.click();
         stProductPage.selectLanguage("en");
 
-        SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что название характеристики "Бренд" присутствует
         asserts_product.assertElementPresence(
@@ -161,8 +157,11 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         UtilsAdm.waitForPopUpWindow();
 
         //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
-        softAssert.assertTrue(!DriverProvider.getDriver().findElements(By.cssSelector(".ut2_select_variation__buttons .ty-value-changer")).isEmpty(),
-                "There is no quantity changer in pop-up window of the product with options on the product page!");
+        asserts_productPage.assertElementPresence(
+                Asserts_ProductPage.productPage,
+                asserts_productPage.quantityChangerInOptionWindow,
+                "",
+                true);
 
         takeScreenShot("1202 productPage.ColorSchemeSettings_Product_Var1 - Pop-up window of product with options");
         stProductPage.closePopUpWindow.click();
@@ -208,7 +207,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         takeScreenShot_withScroll("1240 productPage.ColorSchemeSettings_Product_Var1 - Gallery template");
         stProductPage.selectLanguage("ar");
         takeScreenShot_withScroll("1245 productPage.ColorSchemeSettings_Product_Var1 - Gallery template (RTL)");
-        softAssert.assertAll();
+
         System.out.println("productPage.ColorSchemeSettings_Product_Var1 passed successfully on the product page!");
     }
 }

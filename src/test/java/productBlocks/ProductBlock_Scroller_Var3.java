@@ -1,15 +1,12 @@
 package productBlocks;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
@@ -124,8 +121,6 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_Scroller_Var3")
     public void checkProductBlock_Scroller_Var3() {
         BasicPage basicPage = new BasicPage();
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
@@ -136,9 +131,11 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у блока товаров "Количество элементов -- 4"
-        softAssert.assertEquals(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .owl-item.active")).size(), 4,
-                "Number of elements is not equal 4 in the product block!");
+        asserts_csCartSettings.assertSizeOfElements(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.block_NumberOfElements,
+                4,
+                "in the product block!");
 
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
@@ -237,7 +234,6 @@ public class ProductBlock_Scroller_Var3 extends TestRunner implements DisableLaz
         stHomePage.openProductBlock("On Sale");
         takeScreenShot("ProductBlock_Scroller_Var3 (RTL)");
 
-        softAssert.assertAll();
         System.out.println("ProductBlock_Scroller_Var3 has passed successfully!");
     }
 }

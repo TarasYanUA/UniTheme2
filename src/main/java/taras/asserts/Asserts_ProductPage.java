@@ -38,6 +38,9 @@ public class Asserts_ProductPage extends AbstractPage {
     //Вкладка "Бонусные баллы" -- Настройка "Разрешить оплату баллами"
     public String allowPaymentByPoints = ".ty-reward-group";
 
+    //Модификатор количества во всплывающем окне покупки товара с опциями
+    public String quantityChangerInOptionWindow = ".ut2_select_variation__buttons .ty-value-changer";
+
 
     private String resolveAssertMessage(String selector,
                                         boolean elementsAreEmpty,
@@ -62,7 +65,8 @@ public class Asserts_ProductPage extends AbstractPage {
                 Map.entry(outOfStockActions_BuyInAdvance, "Out of stock action is not 'Buy in advance' "),
                 Map.entry(outOfStockActions_SignUpForNotification, "There is no field 'Sign up for notification' "),
                 Map.entry(shortDescription, "There is no product Short description "),
-                Map.entry(allowPaymentByPoints, "There are no Reward points ")
+                Map.entry(allowPaymentByPoints, "There are no Reward points "),
+                Map.entry(quantityChangerInOptionWindow, "There is no quantity changer in pop-up window of the product with options!")
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(

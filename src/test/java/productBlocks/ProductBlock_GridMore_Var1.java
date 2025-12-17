@@ -9,7 +9,6 @@ import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
@@ -151,8 +150,8 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")
     public void checkProductBlock_GridMore_Var1() {
         BasicPage basicPage = new BasicPage();
+        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         SoftAssert softAssert = new SoftAssert();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
@@ -163,9 +162,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         stHomePage.openProductBlock("Распродажа");
 
         //Проверяем, что у блока товаров 5 колонок. Настройка блока "Количество колонок в списке -- 5"
-        softAssert.assertEquals(DriverProvider.getDriver().findElements(By
-                        .cssSelector("div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] .ty-column5")).size(), 5,
-                "Number of columns is not equal 5 in the product block!");
+        asserts_csCartSettings.assertNumberOfElements(
+                Asserts_CsCartSettings.productBlock,
+                asserts_csCartSettings.block_NumberOfColumnsInList,
+                5,
+                "in the product block!");
 
         clickButton_ShowMore( "ProductBlock_GridMore_Var1 - ProductBlock ", "Распродажа");
 

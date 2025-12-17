@@ -2,11 +2,9 @@ package productBlocks;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
@@ -107,8 +105,6 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
     @Test(priority = 2, dependsOnMethods = "setConfigurationsFor_ProductBlock_SmallItems_Var2")
     public void checkProductBlock_SmallItems_Var2(){
         BasicPage basicPage = new BasicPage();
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);
@@ -187,7 +183,6 @@ public class ProductBlock_SmallItems_Var2 extends TestRunner implements DisableL
         stHomePage.openProductBlock("On Sale");
         takeScreenShot("ProductBlock_SmallItems_Var2 (RTL)");
 
-        softAssert.assertAll();
         System.out.println("ProductBlock_SmallItems_Var2 has passed successfully!");
     }
 }

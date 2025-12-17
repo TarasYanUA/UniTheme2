@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StCategoryPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -139,10 +137,8 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Блок товаров на главной странице
         stHomePage.scrollToBlockWithProducts();
 
-        SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
@@ -446,7 +442,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         takeScreenShot_withScroll("250 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView");
         stHomePage.selectLanguage("ar");
         takeScreenShot_withScroll("255 GS_CS_ProductLists_AllCategoryLists_Var2 - CompactList_ProductListView (RTL)");
-        softAssert.assertAll();
+
         System.out.println("productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 passed successfully!");
     }
 }

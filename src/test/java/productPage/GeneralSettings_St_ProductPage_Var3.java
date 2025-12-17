@@ -3,14 +3,12 @@ package productPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StProductPage;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
@@ -102,11 +100,9 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         StHomePage stHomePage = new StHomePage();
         stHomePage.logOutOnStorefront();
 
-        SoftAssert softAssert = new SoftAssert();
         Asserts_ThemeSettings_Product asserts_product = new Asserts_ThemeSettings_Product();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         Asserts_ProductPage asserts_productPage = new Asserts_ProductPage();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         //Проверяем, что код товара присутствует
         asserts_product.assertElementPresence(
@@ -245,7 +241,6 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         ((JavascriptExecutor) DriverProvider.getDriver()).executeScript("scroll(0,550);");
         takeScreenShot("1160 GS_ProductPage_Var3 - Gallery template (RTL)");
 
-        softAssert.assertAll();
         System.out.println("GeneralSettings_ProductPage_Var3 passed successfully!");
     }
 }

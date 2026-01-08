@@ -148,8 +148,6 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
         );
     }
 
-
-
     public void assertSizeOfElements(String list, String selector, int size, String location) {
         Map<String, String> selectorMessages = Map.ofEntries(
                 Map.entry(block_NumberOfElements, "Number of elements is not equal " + size)
@@ -170,6 +168,35 @@ public class Asserts_CsCartSettings extends Asserts_ProductPage {
         getSoftAssert().assertEquals(
                 DriverProvider.getDriver().findElements(By.cssSelector(finalSelector)).size(), size,
                 message + " " + location + "\n" + finalSelector
+        );
+    }
+
+    public void assertsForXpath(String list, String selector, String location, boolean elementExists) {
+        Map<String, String> presenceMessages = Map.ofEntries(
+                Map.entry(showInHeaderOnProductPage_Brand, "There is no feature 'Brand' in the product header "),
+                Map.entry(showInHeaderOnProductPage_HardDrive, "There is no feature 'Hard drive' in the product header ")
+                );
+
+        Map<String, String> absenceMessages = Map.ofEntries(
+                Map.entry(showInHeaderOnProductPage_Brand, "There is a feature 'Brand' in the product header but shouldn't ")
+        );
+
+        String message = resolveAssertMessage(selector, elementExists, presenceMessages, absenceMessages);
+        if (message == null)
+            return;
+
+        String finalSelector = switch (list) {
+            case productPage -> productPage + selector;
+            case gridList -> gridList + selector;
+            case listWO -> listWO + selector;
+            case compactList -> compactList + selector;
+            case productBlock -> getProductBlockSelector() + selector;
+            default -> selector;
+        };
+
+        getSoftAssert().assertTrue(
+                elementExists == !DriverProvider.getDriver().findElements(By.xpath(finalSelector)).isEmpty(),
+                message + location + "\n" + finalSelector
         );
     }
 }

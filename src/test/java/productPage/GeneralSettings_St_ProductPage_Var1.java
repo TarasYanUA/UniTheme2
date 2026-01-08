@@ -143,14 +143,14 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
                 true);
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        asserts_csCartSettings.assertElementPresence(
+        asserts_csCartSettings.assertsForXpath(
                 Asserts_CsCartSettings.productPage,
                 asserts_csCartSettings.showInHeaderOnProductPage_Brand,
                 "on the product page 'X-Box 360'!",
                 true);
 
         //Проверяем, что характеристика "Жесткий диск" присутствует в заголовке карточки товара
-        asserts_csCartSettings.assertElementPresence(
+        asserts_csCartSettings.assertsForXpath(
                 Asserts_CsCartSettings.productPage,
                 asserts_csCartSettings.showInHeaderOnProductPage_HardDrive,
                 "on the product page 'X-Box 360'!",

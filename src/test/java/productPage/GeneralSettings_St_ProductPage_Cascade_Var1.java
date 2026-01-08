@@ -135,7 +135,7 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
                 true);
 
         //Проверяем, что характеристика "Бренд" присутствует в заголовке карточки товара
-        asserts_csCartSettings.assertElementPresence(
+        asserts_csCartSettings.assertsForXpath(
                 Asserts_CsCartSettings.productPage,
                 asserts_csCartSettings.showInHeaderOnProductPage_Brand,
                 "on the product page 'Titan'!",

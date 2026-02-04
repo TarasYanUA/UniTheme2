@@ -65,6 +65,7 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
         asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
+        asserts_csCartSettings.setBlockID(blockID);           //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_scroller.tpl");
         UtilsAdm.makePause(1000);

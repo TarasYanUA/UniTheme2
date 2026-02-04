@@ -7,11 +7,11 @@
 
 **Условия для работоспособности авто-тестов:**
 1) Следить за актуальными версиями браузеров и их драйверов в этом проекте (папка src -- test -- resources);
-2) Следить за актуальностью библиотек (файл pom.xml) 
+2) Следить за актуальностью библиотек (файл pom.xml). Сайт https://mvnrepository.com/
 3) В класс Constants добавить актуальную ссылку, на которой будут запускаться авто-тесты.
 
 
-Сайт для chromedriver: https://getwebdriver.com/
+Сайт для chromedriver: https://googlechromelabs.github.io/chrome-for-testing/
 
 Сайт для msedgedriver: https://developer.microsoft.com/ru-ru/microsoft-edge/tools/webdriver/?form=MA13LH
 

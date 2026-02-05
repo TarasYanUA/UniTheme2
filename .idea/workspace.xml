@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updated libraries in pom file.&#10;Updated all drivers.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed bug in three test-cases ProductBlock_Scroller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_Scroller_Var3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +259,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_Scroller_Var2">
+  <component name="RunManager" selected="TestNG.ProductBlock_GridMore_Var3">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -277,24 +277,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productLists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-      <option name="METHOD_NAME" value="checkProductLists_AllCategoryLists_Var2" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductBlock_GridMore_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -305,6 +287,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="productBlocks" />
       <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var1" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductBlock_GridMore_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productBlocks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productBlocks" />
+      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -348,19 +347,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
       <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
       <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductBlock_GridMore_Var3" />
+        <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
         <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
         <item itemvalue="TestNG.ProductBlock_SmallItems_Var3" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -751,7 +750,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="298" />
+    <option name="localTasksCounter" value="299" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -782,7 +781,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved method clickAndType_SearchFieldOfProduct" />
     <MESSAGE value="Made refactoring for classes: ProductBlock_Scroller_" />
     <MESSAGE value="Made refactoring for classes: ProductBlock_SmallItems_" />
     <MESSAGE value="Made refactoring for all menu classes." />
@@ -807,7 +805,8 @@
     <MESSAGE value="Continue a global work with asserts:&#10;cleared, fixed classes that combined with productBlocks, productLists, productPage." />
     <MESSAGE value="Fixed some asserts." />
     <MESSAGE value="Updated libraries in pom file.&#10;Updated all drivers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated libraries in pom file.&#10;Updated all drivers." />
+    <MESSAGE value="Fixed bug in three test-cases ProductBlock_Scroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in three test-cases ProductBlock_Scroller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -826,6 +825,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java</url>
           <line>140</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

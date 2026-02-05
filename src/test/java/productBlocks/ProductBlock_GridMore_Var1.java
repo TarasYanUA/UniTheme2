@@ -74,6 +74,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
         asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
+        asserts_csCartSettings.setBlockID(blockID);           //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/ab__grid_list.tpl");
         UtilsAdm.makePause(1000);
@@ -150,7 +151,6 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
     @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductBlock_GridMore_Var1")
     public void checkProductBlock_GridMore_Var1() {
         BasicPage basicPage = new BasicPage();
-        Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
         SoftAssert softAssert = new SoftAssert();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();

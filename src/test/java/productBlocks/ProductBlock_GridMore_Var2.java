@@ -9,7 +9,6 @@ import taras.adminPanel.*;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
-import taras.storefront.AssertsOnStorefront;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 import java.util.List;
@@ -72,6 +71,7 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
         asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
+        asserts_csCartSettings.setBlockID(blockID);           //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/ab__grid_list.tpl");
         UtilsAdm.makePause(1000);
@@ -141,7 +141,6 @@ public class ProductBlock_GridMore_Var2 extends TestRunner implements DisableLaz
     public void checkProductBlock_GridMore_Var2() {
         BasicPage basicPage = new BasicPage();
         SoftAssert softAssert = new SoftAssert();
-        AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
         StHomePage stHomePage = basicPage.navigateToStorefront();
         focusBrowserTab(1);

@@ -2,15 +2,14 @@ package menu;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.*;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
 
 /*
 Работаем с макетом Light:
 * Добавляем много категорий в третий уровень Fly меню
-* Добавляем банер в третий уровень Fly меню
+* Добавляем баннер в третий уровень Fly меню
 
 Вертикальное меню + Колоночное заполнение + 3-х уровневое меню
 + Количество колонок -- 4
@@ -19,6 +18,7 @@ import taras.storefront.StHomePage;
 + Количество видимых элементов в третьем уровне меню -- 75 (не влияет на трехуровневое меню)
 + Минимальная высота для меню -- 500
 */
+
 public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView extends TestRunner {
     @Test(priority = 1)
     public void setConfigurations_Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView() {
@@ -77,40 +77,31 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_Computers);
         takeScreenShot("Menu45.02 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-Computers");
 
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
         //Проверяем, что у меню Колоночное заполнение
-        softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
-                "Menu filling is not Column!");
+        asserts_menu.assertElementPresence(asserts_menu.rowFilling, false);
 
         //Проверяем, что колонок 4
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("4").isEmpty(),
-                "Menu columns are not equal 4 columns!");
+        asserts_menu.assertNumberOfElements(asserts_menu.columnsPerRow, 4);
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
-                "Number of elements of the second level is less than 7!");
+        asserts_menu.assertMoreOrEqual(asserts_menu.numberOfElements_SecondLevel, 7);
 
         //Проверяем, что Элементов третьего уровня -- 80
-        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel_AllProducts.size(), 80,
-                "Number of elements of the third level is not 80!");
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 80);
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size() >= 7,
-                "'Third level elements' at Cascade menu type are less than 7!");
+        asserts_menu.assertMoreOrEqual(asserts_menu.cascadeMenu_elementsInThirdLevel, 7);
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню -- 75
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("75").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 75!");
+        asserts_menu.assertNumberOfElements(asserts_menu.flyMenu_numberOfVisibleElements,75);
 
-        //Проверяем, что присутствует кнопка "Больше [категория]" на третьем уровне меню
-        softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_button_MoreCategory.isEmpty(),
-                "There is no button 'More [category]' in the third level of the menu!");
+        //Проверяем, что присутствует кнопка "Больше [категория]" для 3-х уровневого меню (Каскадный тип меню)
+        asserts_menu.assertElementPresence(asserts_menu.cascadeMenu_MoreCategory, true);
 
         //Проверяем, что присутствует баннер на третьем уровне меню
-        softAssert.assertTrue(!assertsOfMenu.threeLevelMenu_banner.isEmpty(),
-                "There is no banner in the third level of the menu!");
+        asserts_menu.assertElementPresence(asserts_menu.banner_InThirdLevel, true);
 
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu45.04 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-CarElectronics");
@@ -125,6 +116,5 @@ public class Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView ext
         takeScreenShot("Menu45.08 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-Computers (RTL)");
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu45.10 Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView - Electronic-CarElectronics (RTL)");
-        softAssert.assertAll();
     }
 }

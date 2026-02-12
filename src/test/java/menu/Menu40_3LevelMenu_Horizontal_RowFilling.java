@@ -2,12 +2,11 @@ package menu;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
 
 /*
@@ -47,9 +46,7 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         UtilsAdm.clickAndType(mainMenuSettings.setting_SecondLevelElements, "12");
         UtilsAdm.clickAndType(mainMenuSettings.setting_ThirdLevelElements, "6");
         mainMenuSettings.clickAndType_setting_NumberOfVisibleElementsInThirdLevelOfMenu("4");
-        if(mainMenuSettings.setting_CompactDisplayView.isSelected()){   //Выключаем Компактный вид для Горизонтального меню
-            mainMenuSettings.setting_CompactDisplayView.click();
-        }
+        UtilsAdm.setCheckboxState(mainMenuSettings.setting_CompactDisplayView, false);   //Выключаем Компактный вид для Горизонтального меню
         UtilsAdm.clickAndType(mainMenuSettings.setting_MinimumHeightForMenu, "500");
         mainMenuSettings.tab_Content.click();
         mainMenuSettings.selectMenuContent_MainMenu();
@@ -64,38 +61,31 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu40.00 Menu40_3LevelMenu_Horizontal_RowFilling - Menu AllProducts");
 
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
         //Проверяем, что у меню Строчное заполнение
-        softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
-                "Menu filling is not Row!");
+        asserts_menu.assertElementPresence(asserts_menu.rowFilling, true);
 
         //Проверяем, что колонок 5
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
-                "Menu columns are not equal 5 columns!");
+        asserts_menu.assertNumberOfElements(asserts_menu.columnsPerRow, 5);
+
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu40.02 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
-                "Number of elements of the second level is less than 7!");
+        asserts_menu.assertMoreOrEqual(asserts_menu.numberOfElements_SecondLevel, 7);
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
-                "'Third level elements' are not equal 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 6);
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 6
-        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
-                "'Third level elements' at Cascade menu type are not 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.cascadeMenu_elementsInThirdLevel, 6);
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 4
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("4").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 4!");
+        //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) Количество видимых элементов -- 4
+        asserts_menu.assertSizeOfElements(asserts_menu.flyMenu_numberOfVisibleElements, 4);
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
-                "There are no buttons 'More' in the elements of the 2-level menu!");
+        asserts_menu.assertElementPresence(asserts_menu.button_More_InElementsOfSecondLevel, true);
 
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu40.04 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics");
@@ -107,6 +97,5 @@ public class Menu40_3LevelMenu_Horizontal_RowFilling extends TestRunner {
         takeScreenShot("Menu40.08 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-Computers (RTL)");
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu40.10 Menu40_3LevelMenu_Horizontal_RowFilling - Menu Electronic-CarElectronics (RTL)");
-        softAssert.assertAll();
     }
 }

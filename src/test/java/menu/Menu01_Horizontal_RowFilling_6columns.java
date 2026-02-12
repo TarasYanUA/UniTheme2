@@ -1,12 +1,11 @@
 package menu;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
 
 /*
@@ -59,38 +58,31 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_AllProducts);
         takeScreenShot("Menu1.00 Menu01_Horizontal_RowFilling_6columns - Menu AllProducts");
 
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
         //Проверяем, что у меню Строчное заполнение
-        softAssert.assertTrue(!assertsOfMenu.rowFilling.isEmpty(),
-                "Menu filling is not Row!");
+        asserts_menu.assertElementPresence(asserts_menu.rowFilling, true);
 
         //Проверяем, что колонок 6
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("6").isEmpty(),
-                "Menu columns are not equal 6 columns!");
+        asserts_menu.assertNumberOfElements(asserts_menu.columnsPerRow, 6);
+
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Electronic);
         takeScreenShot("Menu1.02 Menu01_Horizontal_RowFilling_6columns - Menu Electronic");
 
         //Проверяем, что у меню второго уровня есть иконки
-        softAssert.assertTrue(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
-                "There are no icons at the menu of the second level!");
+        asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, true);
 
         //Проверяем, что Элементов второго уровня -- 7
-        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 7,
-                "Number of elements of the second level is not 7!");
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_SecondLevel, 7);
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertEquals(assertsOfMenu.numberOfElements_ThirdLevel.size(), 6,
-                "Number of elements of the third level is not 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 6);
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню -- 5
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("5").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 5!");
+        asserts_menu.assertNumberOfElements(asserts_menu.numberOfVisibleElementsIn_ThirdLevel, 5);
 
         //Проверяем, что присутствует не меньше 3 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 3,
-                "There are less than three buttons 'More' in the elements of the second level of the menu!");
+        asserts_menu.assertMoreOrEqual(asserts_menu.button_More_InElementsOfSecondLevel, 3);
 
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_Apparel);
         takeScreenShot("Menu1.04 Menu01_Horizontal_RowFilling_6columns - Menu Apparel");
@@ -108,6 +100,5 @@ public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
         takeScreenShot("Menu1.14 Menu01_Horizontal_RowFilling_6columns - Menu SportsAndOutdoors (RTL)");
         UtilsAdm.hoverOverElement(stHomePage.horizontalMenu_VideoGames);
         takeScreenShot("Menu1.16 Menu01_Horizontal_RowFilling_6columns - Menu VideoGames (RTL)");
-        softAssert.assertAll();
     }
 }

@@ -2,12 +2,11 @@ package menu;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
 
 /*
@@ -55,42 +54,34 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner {
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu23.00 Menu23_Vertical_ColumnFilling_1column_FullView - Menu AllProducts");
 
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
         //Проверяем, что у меню Колоночное заполнение
-        softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
-                "Menu filling is not Column!");
+        asserts_menu.assertElementPresence(asserts_menu.rowFilling, false);
 
         //Проверяем, что присутствует 1 колонка
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("1").isEmpty(),
-                "Menu columns are not equal 1 column!");
+        asserts_menu.assertNumberOfElements(asserts_menu.columnsPerRow, 1);
+
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu23.02 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Electronic");
 
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        softAssert.assertFalse(!assertsOfMenu.iconsOfSecondLevel.isEmpty(),
-                "There are icons at the menu of the second level but shouldn't!");
+        asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, false);
 
         //Проверяем, что Элементов второго уровня -- 3
-        softAssert.assertEquals(assertsOfMenu.numberOfElements_SecondLevel.size(), 3,
-                "Number of elements of the second level is not 3!");
+        asserts_menu.assertNumberOfElements(asserts_menu.numberOfElements_SecondLevel, 3);
 
         //Проверяем, что Элементов третьего уровня -- больше или равно 7 (хоть в настройке ставим 10)
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_ThirdLevel.size() >= 7,
-                "Number of elements of the third level is more than 7!");
+        asserts_menu.assertMoreOrEqual(asserts_menu.numberOfElements_ThirdLevel_Electronics, 7);
 
-        //Проверяем, что Кол-во отображаемых элементов в 3-м уровне меню -- 6
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("6").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 6!");
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 6
+        asserts_menu.assertNumberOfElements(asserts_menu.numberOfVisibleElementsIn_ThirdLevel, 6);
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.button_More_InElementsOf2levelMenu.isEmpty(),
-                "There are no buttons 'More' in the elements of the 2-level menu!");
+        asserts_menu.assertElementPresence(asserts_menu.button_More_InElementsOfSecondLevel, true);
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
-                "There is no button 'More [category]' in the second level of the menu!");
+        asserts_menu.assertElementPresence(asserts_menu.button_MoreCategory_InSecondLevel, true);
 
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Apparel);
         takeScreenShot("Menu23.04 Menu23_Vertical_ColumnFilling_1column_FullView - Menu Apparel");
@@ -112,6 +103,5 @@ public class Menu23_Vertical_ColumnFilling_1column_FullView extends TestRunner {
         takeScreenShot("Menu23.16 Menu23_Vertical_ColumnFilling_1column_FullView - Menu SportsAndOutdoors (RTL)");
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_VideoGames);
         takeScreenShot("Menu23.18 Menu23_Vertical_ColumnFilling_1column_FullView - Menu VideoGames (RTL)");
-        softAssert.assertAll();
     }
 }

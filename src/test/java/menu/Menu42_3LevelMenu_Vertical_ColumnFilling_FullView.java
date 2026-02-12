@@ -2,12 +2,11 @@ package menu;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
 
 /*
@@ -64,42 +63,34 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_AllProducts);
         takeScreenShot("Menu42.00 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu AllProducts");
 
-        SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
         //Проверяем, что у меню Колоночное заполнение
-        softAssert.assertTrue(assertsOfMenu.rowFilling.isEmpty(),
-                "Menu filling is not Column!");
+        asserts_menu.assertElementPresence(asserts_menu.rowFilling, false);
 
         //Проверяем, что колонок 5
-        softAssert.assertTrue(!assertsOfMenu.columnsPerRow("5").isEmpty(),
-                "Menu columns are not equal 5 columns!");
+        asserts_menu.assertNumberOfElements(asserts_menu.columnsPerRow, 5);
+
         UtilsAdm.hoverOverElement(stHomePage.verticalMenu_Electronic);
         takeScreenShot("Menu42.02 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers");
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
-        softAssert.assertTrue(assertsOfMenu.numberOfElements_SecondLevel.size() >= 7,
-                "Number of elements of the second level is less than 7!");
+            asserts_menu.assertMoreOrEqual(asserts_menu.numberOfElements_SecondLevel, 7);
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
-                "'Third level elements' are not equal 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 6);
 
         //Проверяем, что в 3-х уровневом меню (Каскадный тип меню) "Элементы третьего уровня" -- 6
-        softAssert.assertEquals(assertsOfMenu.threeLevelMenu_elementsInThirdLevel.size(), 6,
-                "'Third level elements' at Cascade menu type are not 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.cascadeMenu_elementsInThirdLevel, 6);
 
-        //Проверяем, что Количество видимых элементов в третьем уровне меню --  1
-        softAssert.assertTrue(!assertsOfMenu.numberOfVisibleElementsIn_3levelMenu("1").isEmpty(),
-                "'Number of visible elements in the 3-level menu' is not 1!");
+        //Проверяем, что Количество видимых элементов в третьем уровне меню -- 1
+        asserts_menu.assertNumberOfElements(asserts_menu.flyMenu_numberOfVisibleElements,1);
 
-        //Проверяем, что присутствует не меньше 5 кнопок "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(assertsOfMenu.button_More_InElementsOf2levelMenu.size() >= 5,
-                "There are less than 5 buttons 'More' in the elements of the second level of the menu!");
+        //Проверяем, что кнопок "Ещё" у элементов во 2-м уровне меню -- не меньше 5
+        asserts_menu.assertMoreOrEqual(asserts_menu.button_More_InElementsOfSecondLevel, 5);
 
         //Проверяем, что во втором уровне меню присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.button_MoreCategory_InTheSecondLevel.isEmpty(),
-                "There is no button 'More [category]' in the second level of the menu!");
+        asserts_menu.assertElementPresence(asserts_menu.button_MoreCategory_InSecondLevel, true);
 
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu42.04 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics");
@@ -113,6 +104,5 @@ public class Menu42_3LevelMenu_Vertical_ColumnFilling_FullView extends TestRunne
         takeScreenShot("Menu42.08 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-Computers (RTL)");
         UtilsAdm.hoverOverElement(stHomePage.threeLevelMenu_CarElectronics);
         takeScreenShot("Menu42.10 Menu42_3LevelMenu_Vertical_ColumnFilling_FullView - Menu Electronic-CarElectronics (RTL)");
-        softAssert.assertAll();
     }
 }

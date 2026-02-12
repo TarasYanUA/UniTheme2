@@ -2,11 +2,12 @@ package taras.asserts;
 
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
+import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
 import java.util.Map;
 
-public class Asserts_CsCartSettings extends Asserts_ProductPage {
+public class Asserts_CsCartSettings extends AbstractPage {
     public Asserts_CsCartSettings() {super();}
 
     private SoftAssert getSoftAssert() {

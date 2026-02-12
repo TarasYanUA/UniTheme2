@@ -1,12 +1,14 @@
 package menu;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.adminPanel.BasicPage;
 import taras.adminPanel.LayoutPage;
 import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
-import taras.storefront.AssertsOfMenu;
+import taras.asserts.Asserts_Menu;
+import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 
 /*
@@ -43,31 +45,27 @@ public class Menu50_FlyMenu extends TestRunner{
         stHomePage.openFlyMenu();
         
         SoftAssert softAssert = new SoftAssert();
-        AssertsOfMenu assertsOfMenu = new AssertsOfMenu();
+        Asserts_Menu asserts_menu = new Asserts_Menu();
 
-        //Проверяем, что у меню второго уровня есть иконки
-        softAssert.assertTrue(!assertsOfMenu.flyMenu_iconsOfSecondLevel.isEmpty(),
-                "There are no icons at the menu of the second level!");
+        //Проверяем, что у меню второго уровня присутствуют иконки
+        asserts_menu.assertElementPresence(asserts_menu.flyMenu_iconsOfSecondLevel, true);
 
         //Проверяем, что Элементов второго уровня -- 6
-        softAssert.assertEquals(assertsOfMenu.flyMenu_NumberOfElements_SecondLevel.size(), 6,
-                "Number of elements of the second level is not 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.flyMenu_NumberOfElements_SecondLevel, 6);
 
         //Проверяем, что Элементов третьего уровня -- 6
-        softAssert.assertEquals(assertsOfMenu.flyMenu_NumberOfElements_ThirdLevel.size(), 6,
-                "Number of elements of the third level is not 6!");
+        asserts_menu.assertSizeOfElements(asserts_menu.flyMenu_NumberOfElements_ThirdLevel, 6);
 
         //Проверяем, что Количество видимых элементов в третьем уровне меню -- 4
-        softAssert.assertEquals(assertsOfMenu.flyMenu_numberOfVisibleElementsIn_3levelMenu.size(), 4,
+        softAssert.assertEquals(DriverProvider.getDriver().findElements(By
+                        .xpath(asserts_menu.flyMenu_numberOfVisibleElements)).size(), 4,
                 "'Number of visible elements in the 3-level menu' is not 4!");
 
         //Проверяем, что присутствует кнопка "Ещё" у элементов во 2-м уровне меню
-        softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMore.isEmpty(),
-                "There are no buttons 'More' in the elements of the 2-level of Fly menu!");
+        asserts_menu.assertElementPresence(asserts_menu.flyMenu_ButtonMore, true);
 
         //Проверяем, что присутствует кнопка "Больше [категория]"
-        softAssert.assertTrue(!assertsOfMenu.flyMenu_ButtonMoreCategories.isEmpty(),
-                "There is no any button 'More [category]' in the second level of Fly menu!");
+        asserts_menu.assertElementPresence(asserts_menu.flyMenu_ButtonMoreCategories, true);
 
         UtilsAdm.hoverOverElement(stHomePage.flyMenu_AllProducts);
         takeScreenShot("Menu50.00 Menu50_FlyMenu_Var1 - Menu AllProducts");

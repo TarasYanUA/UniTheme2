@@ -8,6 +8,7 @@ import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
 import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
+import testRunner.TestRunner;
 
 /*
 Работаем с макетом Light. В этом тест-кейсе используются значения по умолчанию:

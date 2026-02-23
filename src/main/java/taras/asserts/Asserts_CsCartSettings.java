@@ -27,6 +27,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
 
 
     public static final String productPage = ".ty-product-block ";
+    public static final String productPage_xpath = "//div[@class='ut2-pb ty-product-block ut2-big-image'] ";
     public static final String gridList = ".grid-list ";
     public static final String listWO = ".ty-product-list ";
     public static final String compactList = ".ty-compact-list__item ";
@@ -187,7 +188,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
             return;
 
         String finalSelector = switch (list) {
-            case productPage -> productPage + selector;
+            case productPage_xpath -> productPage_xpath + selector;
             case gridList -> gridList + selector;
             case listWO -> listWO + selector;
             case compactList -> compactList + selector;

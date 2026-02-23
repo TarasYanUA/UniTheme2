@@ -7,6 +7,7 @@ import taras.adminPanel.MainMenuSettings;
 import taras.adminPanel.UtilsAdm;
 import taras.asserts.Asserts_Menu;
 import taras.storefront.StHomePage;
+import testRunner.TestRunner;
 
 /*
 Работаем с макетом Light v2. В этом тест-кейсе используются значения по умолчанию:
@@ -25,6 +26,7 @@ import taras.storefront.StHomePage;
 */
 
 public class Menu01_Horizontal_RowFilling_6columns extends TestRunner {
+
     @Test(priority = 1)
     public void setConfigurations_Menu01_Horizontal_RowFilling_6columns(){
         //Настраиваем меню на странице "Дизайн -- Макеты -- вкладка "По умолчанию"

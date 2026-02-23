@@ -193,7 +193,7 @@ public class GeneralSettings_St_ProductPage_Var1 extends TestRunner {
         asserts_product.assertElementPresence(
                 "",
                 asserts_product.featuresInTwoColumns_Disabled,
-                "on the product page 'Titan'!",
+                "on the product page 'X-Box 360'!",
                 true);
 
         takeScreenShot("910 GS_ProductPage_Var1 - Product features, one column (RTL)");

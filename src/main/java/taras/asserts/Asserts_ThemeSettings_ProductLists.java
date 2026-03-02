@@ -212,6 +212,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
                 Map.entry(switchProductImage_withStripes, "Gallery of product images is not with 'Stripes' "),
                 Map.entry(switchProductImage_withDots, "Image switcher is not with 'Dots' "),
                 Map.entry(listWithoutOptions__ShowProductOptions, "There are no product options "),
+                Map.entry(prodVar_NewProductVariations, "There is no new view of product variations "),
                 Map.entry(prodVar_TypeOfVariationsView_Colors, "Product variations are not as 'Colors' "),
                 Map.entry(prodVar_TypeOfVariationsView_Thumbnails, "Product variations are not as 'Thumbnails' ")
         );

@@ -56,6 +56,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         disableLazyLoadFromSection("Распродажа");   //Выключаем LazyLoad в секции с блоком
         blockID = getBlockID("Распродажа");         //Получаем ID нужного блока товаров
         asserts_productLists.setBlockID(blockID);             //Передаём blockID в класс с проверками
+        asserts_csCartSettings.setBlockID(blockID);           //Передаём blockID в класс с проверками
         layoutPage.navigateTo_BlockSettings("Распродажа");
         new Select(layoutPage.setting_BlockTemplate).selectByValue("blocks/products/products_small_items.tpl");
         UtilsAdm.makePause(1000);

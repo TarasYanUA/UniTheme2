@@ -170,6 +170,7 @@ public class FeaturePage extends AbstractPage {
     }
 
     void setMulticolor(String color, String dataColorOne, String dataColorTwo) {
+        DriverProvider.getDriver().navigate().refresh();
         featureColor.click();
         UtilsAdm.waitForPopUpWindow();
         tab_Variants.click();
@@ -199,6 +200,7 @@ public class FeaturePage extends AbstractPage {
     }
 
     void setThumbnail(String name, String imageUrl) {
+        DriverProvider.getDriver().navigate().refresh();
         featureColor.click();
         UtilsAdm.waitForPopUpWindow();
         tab_Variants.click();

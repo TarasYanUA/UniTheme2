@@ -123,9 +123,9 @@ public class GeneralSettings_St_ProductPage_Cascade_Var1 extends TestRunner {
         //Проверяем, что мини-иконки в виде галереи отсутствуют в шаблоне "Каскадная галерея"
         asserts_csCartSettings.assertElementPresence(
                 Asserts_CsCartSettings.productPage,
-                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery,
                 "on the product page 'Titan'!",
-                true);
+                false);
 
         //Проверяем, что информация о товаре отображается во вкладках
         asserts_csCartSettings.assertElementPresence(

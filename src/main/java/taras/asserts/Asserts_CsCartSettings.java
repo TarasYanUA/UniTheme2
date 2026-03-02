@@ -29,7 +29,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
     public static final String productPage = ".ty-product-block ";
     public static final String productPage_xpath = "//div[@class='ut2-pb ty-product-block ut2-big-image'] ";
     public static final String gridList = ".grid-list ";
-    public static final String listWO = ".ty-product-list ";
+    public static final String listWO = ".ty-compact-list ";
     public static final String compactList = ".ty-compact-list__item ";
     public static final String productBlock = "productBlock";
 
@@ -38,10 +38,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
     public String pricesWithTaxes = "span[id*='line_product_price_']";
 
     //Настройка "Показывать мини-иконки в виде галереи" ВКЛ.
-    public String miniThumbnailImagesAsGallery_Enabled = ".ty-product-thumbnails_gallery";
-
-    //Настройка "Показывать мини-иконки в виде галереи" ОТКЛ.
-    public String miniThumbnailImagesAsGallery_Disabled = ".ty-product-thumbnails";
+    public String miniThumbnailImagesAsGallery = ".ty-product-thumbnails_gallery";
 
     //Настройка "Показывать информацию о товаре во вкладках" ВКЛ.
     public String displayProductDetailsInTabs_Enabled = ".ut2-pb__tabs .ty-tabs.cm-j-tabs";
@@ -92,8 +89,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
     public void assertElementPresence(String list, String selector, String location, boolean elementExists) {
         Map<String, String> presenceMessages = Map.ofEntries(
                 Map.entry(pricesWithTaxes, "There is no text of a product tax "),
-                Map.entry(miniThumbnailImagesAsGallery_Enabled, "Mini-icons are not as a 'Gallery' "),
-                Map.entry(miniThumbnailImagesAsGallery_Disabled, "Mini-icons are as a 'Gallery' but shouldn't "),
+                Map.entry(miniThumbnailImagesAsGallery, "Mini-icons are not as a 'Gallery' "),
                 Map.entry(displayProductDetailsInTabs_Enabled, "Product information is not displayed in tabs "),
                 Map.entry(displayProductDetailsInTabs_Disabled, "Product information is displayed in tabs but shouldn't "),
                 Map.entry(enableQuickView, "There is no button 'Quick view' "),
@@ -104,6 +100,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
         );
 
         Map<String, String> absenceMessages = Map.ofEntries(
+                Map.entry(miniThumbnailImagesAsGallery, "Mini-icons are as a 'Gallery' but shouldn't "),
                 Map.entry(enableQuickView, "There is a 'Quick view' button but shouldn't "),
                 Map.entry(showInHeaderOnProductPage_Brand, "There is a feature 'Brand' in the product header but shouldn't ")
         );

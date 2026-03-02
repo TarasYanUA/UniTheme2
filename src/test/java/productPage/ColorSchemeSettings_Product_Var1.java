@@ -125,9 +125,9 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
         //Проверяем, что мини-иконки не в виде галереи
         asserts_csCartSettings.assertElementPresence(
                 Asserts_CsCartSettings.productPage,
-                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery,
                 "on the product page 'NX200'!",
-                true);
+                false);
 
         //Проверяем, что Промо-текст присутствует
         asserts_productPage.assertElementPresence(
@@ -158,7 +158,7 @@ public class ColorSchemeSettings_Product_Var1 extends TestRunner {
 
         //Проверяем, что модификатор количества присутствует во всплывающем окне покупки товара с опциями
         asserts_productPage.assertElementPresence(
-                Asserts_ProductPage.productPage,
+                "",
                 asserts_productPage.quantityChangerInOptionWindow,
                 "",
                 true);

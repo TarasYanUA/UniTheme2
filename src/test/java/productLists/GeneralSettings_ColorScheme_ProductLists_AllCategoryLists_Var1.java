@@ -90,6 +90,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonsWhenHoveringMouse, true);
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("lines");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("lines");
+        new Select(themeSettingsProductLists.compactList_buttonAddToCart).selectByValue("icon");
         themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
         new Select(themeSettingsProductLists.productVariations_TypeOfVariationsView).selectByValue("color");
         basicPage.clickSaveButtonOfSettings();

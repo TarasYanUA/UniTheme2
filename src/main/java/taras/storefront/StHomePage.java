@@ -107,10 +107,10 @@ public class StHomePage extends AbstractPage {
     @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__electronics')]//div[@data-elem-index='6']//span")
     WebElement horizontalMenu_GameConsoles;
 
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='0']//span")
     WebElement horizontalMenu_MenCloth;
 
-    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']")
+    @FindBy(xpath = "//li[contains(@class, 'ty-menu-item__apparel')]//div[@data-elem-index='1']//span")
     WebElement horizontalMenu_WomanCloth;
 
     @FindBy(css = ".ut2-menu__list .ty-menu-item__products")

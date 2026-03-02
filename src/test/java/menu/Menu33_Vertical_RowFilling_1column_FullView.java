@@ -70,7 +70,7 @@ public class Menu33_Vertical_RowFilling_1column_FullView extends TestRunner {
         asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, false);
 
         //Проверяем, что Элементов второго уровня -- 3
-        asserts_menu.assertNumberOfElements(asserts_menu.numberOfElements_SecondLevel, 3);
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_SecondLevel, 3);
 
         //Проверяем, что Элементов третьего уровня -- 6
         asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 6);

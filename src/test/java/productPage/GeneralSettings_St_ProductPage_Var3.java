@@ -145,9 +145,9 @@ public class GeneralSettings_St_ProductPage_Var3 extends TestRunner {
         //Проверяем, что мини-иконки не в виде галереи
         asserts_csCartSettings.assertElementPresence(
                 Asserts_CsCartSettings.productPage,
-                asserts_csCartSettings.miniThumbnailImagesAsGallery_Disabled,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery,
                 "on the product page 'X-Box 360'!",
-                true);
+                false);
 
         //Проверяем, что информация о товаре отображается не во вкладках
         asserts_csCartSettings.assertElementPresence(

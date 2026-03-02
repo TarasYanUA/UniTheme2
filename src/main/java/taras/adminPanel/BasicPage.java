@@ -63,6 +63,11 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
         return new StHomePage();
     }
 
+    public void navigateToMenuSettings() {
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
+        menu_Settings.click();
+    }
+
     public FeaturePage navigateToSection_Features() {
         checkMenu_Products_ToBeActive();
         section_Features.click();
@@ -71,20 +76,20 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
     }
 
     public CsCartSettings navigateToAppearanceSettings() {
-        menu_Settings.click();
+        navigateToMenuSettings();
         section_GeneralSettings.click();
         section_Appearance.click();
         return new CsCartSettings();
     }
 
     public void navigateToCheckoutSettings() {
-        menu_Settings.click();
+        navigateToMenuSettings();
         section_GeneralSettings.click();
         section_Checkout.click();
     }
 
     public void navigateToTaxes() {
-        menu_Settings.click();
+        navigateToMenuSettings();
         section_Taxes.click();
     }
 

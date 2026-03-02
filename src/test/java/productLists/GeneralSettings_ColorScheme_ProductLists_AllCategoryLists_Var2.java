@@ -97,6 +97,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("arrows");
         new Select(themeSettingsProductLists.setting_SwitchProductImageWhenHovering).selectByValue("N");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("N");
+        new Select(themeSettingsProductLists.compactList_buttonAddToCart).selectByValue("icon");
         themeSettingsProductLists.setProductVariations_MaximumQuantityOfProductsVariations("10");
         new Select(themeSettingsProductLists.productVariations_TypeOfVariationsView).selectByValue("thumbnails");
         basicPage.clickSaveButtonOfSettings();
@@ -142,35 +143,35 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.commonValueOfProductRating,
                 "in the product block!",
                 true);
 
         //Проверяем, что кнопка "Избранное" присутствует
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.button_AddToWishList,
                 "in the product block!",
                 true);
 
         //Проверяем, что кнопка "Сравнить" присутствует
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.button_AddToComparisonList,
                 "in the product block!",
                 true);
 
         //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.buttonsAreDisplayedOnHover,
                 "in the product block!",
                 false);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         asserts_productLists.assertElementPresence(
-                Asserts_ThemeSettings_ProductLists.productBlock,
+                "",
                 asserts_productLists.standardImageGallery_Arrows,
                 "in the product block!",
                 true);
@@ -213,12 +214,12 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
                 "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
-        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются при наведении на ячейку товара
+        //Проверяем, что кнопки "Быстрый просмотр, Добавить в избранное, Добавить в список сравнения" отображаются СРАЗУ, а не при наведении на ячейку товара
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
                 asserts_productLists.buttonsAreDisplayedOnHover,
                 "on the category 'Woman cloth', 'Grid list'!",
-                true);
+                false);
 
         //Проверяем, что у товаров присутствует галерея изображений и она стрелками
         asserts_productLists.assertElementPresence(
@@ -328,7 +329,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что присутствуют мини-иконки в виде галереи
         asserts_csCartSettings.assertElementPresence(
                 "",
-                asserts_csCartSettings.miniThumbnailImagesAsGallery_Enabled,
+                asserts_csCartSettings.miniThumbnailImagesAsGallery,
                 "in the quick view window!",
                 true);
 
@@ -385,7 +386,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Проверяем, что тип отображения новых вариаций -- Миниатюры
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
-                asserts_productLists.prodVar_TypeOfVariationsView_Colors,
+                asserts_productLists.prodVar_TypeOfVariationsView_Thumbnails,
                 "on the category 'Phones', 'List without options'!",
                 true);
 

@@ -68,7 +68,7 @@ public class Menu12_Horizontal_ColumnFilling_4columns extends TestRunner {
         asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, true);
 
         //Проверяем, что Элементов второго уровня -- 4
-        asserts_menu.assertNumberOfElements(asserts_menu.numberOfElements_SecondLevel, 4);
+        asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_SecondLevel, 4);
 
         //Проверяем, что Элементов третьего уровня -- 4
         asserts_menu.assertSizeOfElements(asserts_menu.numberOfElements_ThirdLevel_Electronics, 4);

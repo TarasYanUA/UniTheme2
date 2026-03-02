@@ -35,10 +35,10 @@ public class CsCartSettings extends AbstractPage {
 
 
     //Меню "Настройки -- Налоги"
-    @FindBy(xpath = "//input[@type='checkbox'][@name='tax_data[7][price_includes_tax]']")
+    @FindBy(xpath = "//input[@type='checkbox'][@name='tax_data[8][price_includes_tax]']")
     public WebElement setting_priceIncludesTax;
 
-    @FindBy(css = "tr[data-ct-tax-id='7'] td")
+    @FindBy(css = "tr[data-ct-tax-id='8'] td")
     public WebElement vat20;
 
     @FindBy(css = "a[data-ca-dispatch='dispatch[taxes.m_update]']")

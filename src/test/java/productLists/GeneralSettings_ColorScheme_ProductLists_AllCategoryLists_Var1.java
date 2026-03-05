@@ -426,7 +426,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
 
         //Проверяем, что у товаров присутствует текст "[цена налога] + Вкл налог"
         asserts_csCartSettings.assertElementPresence(
-                Asserts_CsCartSettings.listWO,
+                Asserts_CsCartSettings.compactList,
                 asserts_csCartSettings.pricesWithTaxes,
                 "on the category 'Phones', 'Compact list'!",
                 true);

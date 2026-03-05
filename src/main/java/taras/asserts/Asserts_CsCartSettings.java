@@ -29,7 +29,7 @@ public class Asserts_CsCartSettings extends AbstractPage {
     public static final String productPage = ".ty-product-block ";
     public static final String productPage_xpath = "//div[@class='ut2-pb ty-product-block ut2-big-image'] ";
     public static final String gridList = ".grid-list ";
-    public static final String listWO = ".ty-compact-list ";
+    public static final String listWO = ".ty-product-list ";
     public static final String compactList = ".ty-compact-list__item ";
     public static final String productBlock = "productBlock";
 

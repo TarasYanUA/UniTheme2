@@ -59,7 +59,7 @@ public class UtilsAdm extends AbstractPage {
     }
 
     public static void waitForTitleBarWindow() {
-        WebElement lastElement = new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(5))
+        new WebDriverWait(DriverProvider.getDriver(), Duration.ofSeconds(5))
                 .until(d -> {
                     List<WebElement> elems = d.findElements(By.cssSelector(".ui-dialog-titlebar"));
                     return elems.isEmpty() ? null : elems.getLast();
@@ -83,8 +83,7 @@ public class UtilsAdm extends AbstractPage {
     }
 
     public static void hoverNavigateAndClick(WebElement webElement) {
-        Actions hover = new Actions(DriverProvider.getDriver());
-        hover.moveToElement(webElement).perform();
+        hoverOverElement(webElement);
         makePause(500);
         webElement.click();
     }
@@ -95,7 +94,7 @@ public class UtilsAdm extends AbstractPage {
         if (!notification.isEmpty()) {
             getDriver().findElement(By.cssSelector(".cm-notification-close bdi")).click();
 
-            new WebDriverWait(getDriver(), Duration.ofSeconds(2)).until(driver -> true);
+            new WebDriverWait(getDriver(), Duration.ofSeconds(2)).until(_ -> true);
 
             List<WebElement> closeNotification_AlertSuccess = getDriver()
                     .findElements(By.cssSelector(".close.cm-notification-close"));

@@ -69,9 +69,13 @@ public class StHomePage extends AbstractPage {
     }
 
     public void openProductBlock(String blockName) {
-        WebElement block = DriverProvider.getDriver().findElement(By
+        List<WebElement> block = DriverProvider.getDriver().findElements(By
                 .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']"));
-        UtilsAdm.hoverNavigateAndClick(block);
+
+        UtilsAdm.hoverNavigateAndClick(!block.isEmpty()
+                ? block.getFirst()
+                : DriverProvider.getDriver().findElement(By
+                .xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")));
         UtilsAdm.makePause(2000);
     }
 

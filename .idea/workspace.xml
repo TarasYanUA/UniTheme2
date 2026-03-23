@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed some bugs in asserts.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,11 +248,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IDEA_Projects\UniTheme2\src\test\resources" />
       <recent name="C:\IdeaProjects\UniTheme2\src\test\resources" />
       <recent name="E:\IDEA Projects\UniTheme2\src\test\resources" />
       <recent name="C:\Idea Projects\UniTheme2\src\test\resources" />
       <recent name="E:\IDEA Projects\UniTheme2v3\src\test\resources" />
-      <recent name="E:\IDEA Projects\UniTheme2" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -262,24 +264,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productLists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.ProductBlock_GridMore_Var1">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -298,7 +283,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_GridMore_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productLists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductBlock_GridMore_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -307,7 +309,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var2" />
+      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -351,19 +353,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.ProductBlock_GridMore_Var2" />
       <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
       <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
+        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
         <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
         <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
-        <item itemvalue="TestNG.ProductBlock_GridMore_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
       </list>
     </recent_temporary>
   </component>
@@ -373,8 +375,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -420,7 +422,19 @@
       <workItem from="1772534079189" duration="14000" />
       <workItem from="1772544985718" duration="977000" />
       <workItem from="1772613070244" duration="8684000" />
-      <workItem from="1772701514442" duration="2852000" />
+      <workItem from="1772701514442" duration="2974000" />
+      <workItem from="1772707615843" duration="37000" />
+      <workItem from="1772805592267" duration="756000" />
+      <workItem from="1773150191377" duration="309000" />
+      <workItem from="1773150567350" duration="613000" />
+      <workItem from="1773240744888" duration="64000" />
+      <workItem from="1773319365831" duration="948000" />
+      <workItem from="1773320326085" duration="17000" />
+      <workItem from="1773320363384" duration="622000" />
+      <workItem from="1773321293129" duration="6000" />
+      <workItem from="1773744564016" duration="73000" />
+      <workItem from="1774021621576" duration="626000" />
+      <workItem from="1774270192115" duration="1321000" />
     </task>
     <task id="LOCAL-00001" summary="Created project!">
       <created>1670233666928</created>
@@ -765,7 +779,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="302" />
+    <option name="localTasksCounter" value="303" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,7 +810,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Checked working capacity of classes: ColorSchemeSettings_General_" />
     <MESSAGE value="Checked working capacity of classes: productPage" />
     <MESSAGE value="Checked working capacity of classes: productLists" />
     <MESSAGE value="Checked working capacity of classes: ProductBlock_GridMore_" />
@@ -821,7 +834,8 @@
     <MESSAGE value="Fixed bugs in asserts in test-cases combined with product blocks." />
     <MESSAGE value="Deleted one TestRunner and matched menu tests to only one TestRunner." />
     <MESSAGE value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
-    <option name="LAST_COMMIT_MESSAGE" value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
+    <MESSAGE value="Fixed some bugs in asserts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs in asserts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,7 +847,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java</url>
-          <line>112</line>
+          <line>116</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

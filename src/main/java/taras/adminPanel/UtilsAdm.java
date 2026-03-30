@@ -47,8 +47,10 @@ public class UtilsAdm extends AbstractPage {
     }
 
     public static void closeAllNotifications() {
-        while (!DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).isEmpty()) {
-            DriverProvider.getDriver().findElements(By.cssSelector(".cm-notification-close")).getFirst().click();
+        List<WebElement> alertNotifications = DriverProvider.getDriver().findElements(By.cssSelector(".close.cm-notification-close"));
+
+        while (!alertNotifications.isEmpty()) {
+            alertNotifications.getFirst().click();
             makePause(500);
         }
     }

@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
 import java.util.List;
 
-import static taras.constants.DriverProvider.getDriver;
-
 public class StHomePage extends AbstractPage {
     public StHomePage() {
         super();
@@ -34,17 +32,14 @@ public class StHomePage extends AbstractPage {
     @FindBy(css = "div.ty-mainbox-container.clearfix")
     public WebElement blockWithProducts;
 
-    @FindBy(css = ".notification-content.alert")
-    List<WebElement> notification_AlertSuccess;
-
     @FindBy(css = ".close.cm-notification-close")
-    WebElement closeNotification_AlertSuccess;
+    List<WebElement> closeNotification_AlertSuccess;
 
 
     public void closeNotification_AlertSuccess() {
-        if (!getDriver().findElements(By.cssSelector(".notification-content.alert")).isEmpty()) {
-            for (int i = 0; i < notification_AlertSuccess.size(); i++) {
-                closeNotification_AlertSuccess.click();
+        if (!closeNotification_AlertSuccess.isEmpty()) {
+            for (int i = 0; i < closeNotification_AlertSuccess.size(); i++) {
+                closeNotification_AlertSuccess.getLast().click();
             }
         }
     }

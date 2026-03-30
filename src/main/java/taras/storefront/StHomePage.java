@@ -36,10 +36,10 @@ public class StHomePage extends AbstractPage {
     List<WebElement> closeNotification_AlertSuccess;
 
 
-    public void closeNotification_AlertSuccess() {
+    public void closeAllNotifications() {
         if (!closeNotification_AlertSuccess.isEmpty()) {
             for (int i = 0; i < closeNotification_AlertSuccess.size(); i++) {
-                closeNotification_AlertSuccess.getLast().click();
+                closeNotification_AlertSuccess.getFirst().click();
             }
         }
     }

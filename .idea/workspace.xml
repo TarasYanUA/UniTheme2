@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updated chrome driver.&#10;Added condition for product block name on RTL language.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -350,12 +347,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
       <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
       <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
+      <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
     </list>
     <recent_temporary>
       <list>
@@ -776,7 +773,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="304" />
+    <option name="localTasksCounter" value="305" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -807,7 +804,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Checked working capacity of classes: productLists" />
     <MESSAGE value="Checked working capacity of classes: ProductBlock_GridMore_" />
     <MESSAGE value="Fixed bug with some asserts." />
     <MESSAGE value="Made fixes with colorscheme setting to round blocks and buttons." />
@@ -832,7 +828,8 @@
     <MESSAGE value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
     <MESSAGE value="Fixed some bugs in asserts." />
     <MESSAGE value="Updated chrome driver.&#10;Added condition for product block name on RTL language." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated chrome driver.&#10;Added condition for product block name on RTL language." />
+    <MESSAGE value="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -844,7 +841,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java</url>
-          <line>114</line>
+          <line>111</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

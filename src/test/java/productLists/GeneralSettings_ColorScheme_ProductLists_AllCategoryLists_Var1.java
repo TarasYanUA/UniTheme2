@@ -304,7 +304,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
                 "on the category 'Phones', 'Grid list'!",
                 true);
 
-        stHomePage.closeNotification_AlertSuccess();
+        stHomePage.closeAllNotifications();
         stCategoryPage.hoverToProduct("Droid 3");
         takeScreenShot("120 GS_CS_ProductLists_AllCategoryLists_Var1 - PhonesCategory");
         stHomePage.selectLanguage("ar");

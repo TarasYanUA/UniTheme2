@@ -19,7 +19,7 @@ public class StProductPage extends AbstractPage {
     @FindBy(css = "a[id*='sw_select'][id*='wrap_language']")
     private WebElement gearwheel_Language;
 
-    @FindBy(css = "#features a")
+    @FindBy(css = "#features")
     private WebElement tab_Features;
 
     @FindBy(id = "content_features")
@@ -51,7 +51,7 @@ public class StProductPage extends AbstractPage {
     }
 
     public void scrollToAndClickTab_Features() {
-        UtilsAdm.scrollToElementAndScrollBelow(tab_Features, 600);
+        UtilsAdm.scrollToElementAndScrollBelow(tab_Features, 100);
         tab_Features.click();
     }
 

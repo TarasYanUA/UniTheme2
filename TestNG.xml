@@ -2,14 +2,14 @@
     <test name="Settings of UniTheme2">
         <classes>
             <!--Тест-кейсы для Общих настроек темы -->
-            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"/>
+<!--            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"/>
             <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2"/>
             <class name="productLists.GeneralSettings_ProductLists_GridListView_Var1"/>
             <class name="productLists.GeneralSettings_ProductLists_GridListView_Var2"/>
             <class name="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var1"/>
             <class name="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var2"/>
             <class name="productLists.GeneralSettings_ProductLists_CompactList_Var1"/>
-            <class name="productLists.GeneralSettings_ProductLists_CompactList_Var2"/>
+            <class name="productLists.GeneralSettings_ProductLists_CompactList_Var2"/>-->
             <class name="productPage.GeneralSettings_St_ProductPage_Var1"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Var2"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Var3"/>

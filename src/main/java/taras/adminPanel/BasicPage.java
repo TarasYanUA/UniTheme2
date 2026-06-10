@@ -47,8 +47,14 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
     @FindBy(id = "website_themes")
     private WebElement menu_Themes;
 
+    @FindBy(xpath = "//span[text()='Маркетинг']")
+    private WebElement menu_Marketing;
+
     @FindBy(css = ".nav__actions-bar a[href$='block_manager.manage']")
     private WebElement section_Layouts;
+
+    @FindBy(css = "#marketing_banners")
+    private WebElement section_Banners;
 
 
     public void clickSaveButtonOfSettings() {
@@ -116,6 +122,12 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
         menu_Themes.click();
         section_Layouts.click();
         return new LayoutPage();
+    }
+
+    public BannerPage navigateToSection_Banners() {
+        checkMenuToBeActive("dispatch=promotions.manage", menu_Marketing);
+        section_Banners.click();
+        return new BannerPage();
     }
 
     public void selectLanguageForAdminElement(String ruArEn) {

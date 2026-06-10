@@ -111,6 +111,6 @@ public class UtilsAdm extends AbstractPage {
     public static void waitForSpinnerDisappear() {
         (new WebDriverWait((getDriver()), Duration.ofSeconds(10)))
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div#ajax_loading_box[style = 'display: block;']")));
-        taras.adminPanel.UtilsAdm.makePause(2000);
+        UtilsAdm.makePause(2000);
     }
 }

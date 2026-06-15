@@ -82,24 +82,26 @@ public class BannerPage extends AbstractPage {
 
 
     public void createNewAdvancedBannerWithProducts(String bannerName, String backgroundColor) {
-        UtilsAdm.closeAllNotifications();
-        button_PlusBanner.click();
-        button_AddAdvancedBanner.click();
-        field_BannerName.sendKeys(bannerName);
-        new Select(setting_BannerBlockSettings_VerticalAlignment).selectByValue("center");
-        new Select(setting_BannerBlockSettings_HorizontalAlignment).selectByValue("center");
-        UtilsAdm.setCheckboxState(setting_ContentOnFullWidth, true);
-        field_BannerTitle.sendKeys(bannerName);
-        new Select(setting_ObjectInside_DisplayedObject).selectByValue("products");
-        new Select(setting_ObjectInside_Template).selectByValue("grid_items");
-        new Select(setting_ObjectInside_Columns).selectByValue("1");
-        selectProductsForBanner();
-        UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);
-        UtilsAdm.setCheckboxState(checkbox_BannerBackground_BackgroundColor, true);
-        colorPicker_BannerBackground_BackgroundColor.click();
-        UtilsAdm.clickAndType(printColorCode_BannerBackground, backgroundColor);
-        button_BannerBackground_ChooseColor.click();
-        createBanner();
+        if (DriverProvider.getDriver().findElements(By.xpath("//a[text()='" + bannerName + "']")).isEmpty()) {
+            UtilsAdm.closeAllNotifications();
+            button_PlusBanner.click();
+            button_AddAdvancedBanner.click();
+            field_BannerName.sendKeys(bannerName);
+            new Select(setting_BannerBlockSettings_VerticalAlignment).selectByValue("center");
+            new Select(setting_BannerBlockSettings_HorizontalAlignment).selectByValue("center");
+            UtilsAdm.setCheckboxState(setting_ContentOnFullWidth, true);
+            field_BannerTitle.sendKeys(bannerName);
+            new Select(setting_ObjectInside_DisplayedObject).selectByValue("products");
+            new Select(setting_ObjectInside_Template).selectByValue("grid_items");
+            new Select(setting_ObjectInside_Columns).selectByValue("1");
+            selectProductsForBanner();
+            UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);
+            UtilsAdm.setCheckboxState(checkbox_BannerBackground_BackgroundColor, true);
+            colorPicker_BannerBackground_BackgroundColor.click();
+            UtilsAdm.clickAndType(printColorCode_BannerBackground, backgroundColor);
+            button_BannerBackground_ChooseColor.click();
+            createBanner();
+        }
     }
 
     private void selectProductsForBanner() {
@@ -119,7 +121,7 @@ public class BannerPage extends AbstractPage {
         for (String product : products) {
             UtilsAdm.clickAndType(field_searchProduct, product);
             button_SearchProduct.click();
-            UtilsAdm.waitForSpinnerDisappear();
+            UtilsAdm.makePause(500);
             if (!checkbox_CheckAllProducts.isEmpty()) {
                 UtilsAdm.setCheckboxState(checkbox_CheckAllProducts.getFirst(), true);
                 button_AddSelectedProducts.click();

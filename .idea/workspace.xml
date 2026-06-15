@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made some little fixes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Class ProductsAtBanners_Grid_1Column - the first auto banner is created!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BasicPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/UtilsAdm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/colorSchemeSettings/ColorSchemeSettings_General_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ColorSchemeSettings_General_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/colorSchemeSettings/ColorSchemeSettings_General_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +108,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="3.60263356288165E-41" />
+      <entry key="MS500" value="8.385309412073271E-9" />
+      <entry key="S2" value="0.01340589292466318" />
+      <entry key="S5" value="0.26407472621316186" />
+      <entry key="S10" value="0.7241375174044095" />
+      <entry key="S30" value="1.5525717240474575" />
+      <entry key="S60" value="2.3832220089162157" />
+      <entry key="M2" value="3.507630439337067" />
+      <entry key="M5" value="5.135798839343622" />
+      <entry key="M10" value="7.862736583097929" />
+      <entry key="M15" value="11.568345266075779" />
+      <entry key="M30" value="22.74105076946564" />
+      <entry key="H1" value="38.26755351360307" />
+      <entry key="H2" value="54.46294797214339" />
+      <entry key="H4" value="67.39668759397242" />
+      <entry key="D1" value="82.38524443091026" />
+      <entry key="W1" value="85.4690245071906" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000386756291" />
+      <entry key="S2" value="1.014023594541676" />
+      <entry key="S5" value="1.1814444710103178" />
+      <entry key="S10" value="1.4259722875229877" />
+      <entry key="S30" value="1.7734405047782351" />
+      <entry key="S60" value="2.012628312193808" />
+      <entry key="M2" value="2.3316814723798425" />
+      <entry key="M5" value="3.334198228094365" />
+      <entry key="M10" value="6.6874259009273445" />
+      <entry key="M15" value="11.01558721141354" />
+      <entry key="M30" value="22.512985224265698" />
+      <entry key="H1" value="35.80757654259103" />
+      <entry key="H2" value="47.13358036912984" />
+      <entry key="H4" value="54.957562635368184" />
+      <entry key="D1" value="63.135955960003656" />
+      <entry key="W1" value="64.72846520439913" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.237743505603062E-4" />
+      <entry key="MS500" value="0.16539643865732115" />
+      <entry key="S2" value="0.6534269970217235" />
+      <entry key="S5" value="1.186620598313689" />
+      <entry key="S10" value="1.9331623753895926" />
+      <entry key="S30" value="3.206514101623101" />
+      <entry key="S60" value="4.320042556189183" />
+      <entry key="M2" value="5.791772448344914" />
+      <entry key="M5" value="8.44269768016812" />
+      <entry key="M10" value="14.524569171909645" />
+      <entry key="M15" value="22.55553002920515" />
+      <entry key="M30" value="45.22294589450627" />
+      <entry key="H1" value="74.04857526665543" />
+      <entry key="H2" value="101.57803876471642" />
+      <entry key="H4" value="122.3430695509069" />
+      <entry key="D1" value="145.5189817176764" />
+      <entry key="W1" value="150.1971625955625" />
+    </decayedShown>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -240,6 +289,7 @@
     &quot;TestNG.ProductsAtBanners_Grid_1Column.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.Test01.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.UniTheme2/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;UniTheme__4.20.1.a&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
@@ -380,7 +430,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33813.25" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -783,7 +834,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="309" />
+    <option name="localTasksCounter" value="310" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -814,7 +865,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made fixes with colorscheme setting to round blocks and buttons." />
     <MESSAGE value="Checked working capacity of classes: menu." />
     <MESSAGE value="Changed featuresPage on featurePage" />
     <MESSAGE value="Started a global work with asserts. Refactor all asserts." />
@@ -839,7 +889,8 @@
     <MESSAGE value="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
     <MESSAGE value="Fixed method closeAllNotifications." />
     <MESSAGE value="Made some little fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some little fixes." />
+    <MESSAGE value="Class ProductsAtBanners_Grid_1Column - the first auto banner is created!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class ProductsAtBanners_Grid_1Column - the first auto banner is created!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

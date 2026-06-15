@@ -3,11 +3,16 @@ package taras.adminPanel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 
+import java.util.List;
+
 public class LayoutPage extends AbstractPage {
-    public LayoutPage() {super();}
+    public LayoutPage() {
+        super();
+    }
 
     @FindBy(css = "a[href$='block_manager.manage&s_layout=5']")
     public WebElement layout_Light;
@@ -26,6 +31,30 @@ public class LayoutPage extends AbstractPage {
 
     @FindBy(xpath = "//a[text()='Домашняя страница']")
     public WebElement layout_TabHomePage;
+
+    @FindBy(css = "li[id^='create_new_blocks']")
+    WebElement tab_CreateNewBlock;
+
+    @FindBy(css = "div[data-ca-block-name='Баннеры'] .select-block-box")
+    WebElement newBlockTemplate_Banners;
+
+    @FindBy(id = "block_0_0_banners_name")
+    WebElement field_BlockTitle;
+
+    @FindBy(id = "block_0_0_banners_template")
+    WebElement blockTemplate;
+
+    @FindBy(css = "a[href*='dispatch=banners.picker']")
+    WebElement blockButton_AddBanners;
+
+    @FindBy(id = "elm_name")
+    WebElement searchBannerByName;
+
+    @FindBy(css = "input[name='dispatch[banners.picker]']")
+    WebElement blockButton_Search;
+
+    @FindBy(css = ".buttons-container-picker input[value='Создать']")
+    WebElement blockButton_Create;
 
 
     public void setLayoutAsDefault() {
@@ -90,5 +119,54 @@ public class LayoutPage extends AbstractPage {
     public void navigateTo_BlockSettings(String blockName) {
         DriverProvider.getDriver().findElement(By.cssSelector("div[data-ca-block-name='" + blockName + "'] div[class*='bm-action-properties']")).click();
         UtilsAdm.waitForTitleBarWindow();
+    }
+
+    public String getLayoutIDByBlockName(String blockName) {
+        String layoutID = DriverProvider.getDriver()
+                .findElement(By.xpath("//div[@title='" + blockName + "']/../.."))
+                .getAttribute("id");
+
+        System.out.println("ID макета: " + layoutID);
+        return layoutID;
+    }
+
+    public void switchOffAllBlocksAtLayout(String layoutID) {
+        WebElement myLayout = DriverProvider.getDriver()
+                .findElement(By.id(layoutID));
+
+        List<WebElement> buttons_SwitchOff = myLayout.findElements(By
+                .cssSelector("div[data-ca-block-name] div.cm-tooltip.cm-action.bm-action-switch.action:not(.switch-off)"));
+
+        for (WebElement button_SwitchOff : buttons_SwitchOff)
+            button_SwitchOff.click();
+    }
+
+    public void createNewBlockWithBannerAtLayout(String layoutID, String bannerName) {
+        WebElement myLayout = DriverProvider.getDriver()
+                .findElement(By.id(layoutID));
+
+        if (myLayout.findElements(By.cssSelector("div[title='" + bannerName + "']")).isEmpty()) {
+        UtilsAdm.hoverNavigateAndClick(myLayout.findElement(By.cssSelector(".cs-icon--type-plus")));
+        myLayout.findElement(By.cssSelector(".bm-action-add-block")).click();
+        UtilsAdm.waitForPopUpWindow();
+
+            tab_CreateNewBlock.click();
+            UtilsAdm.scrollIntoCenter(newBlockTemplate_Banners);
+            newBlockTemplate_Banners.click();
+            UtilsAdm.waitForSpinnerDisappear();
+            UtilsAdm.clickAndType(field_BlockTitle, bannerName);
+            new Select(blockTemplate).selectByVisibleText("AB: Расширенный баннер");
+            UtilsAdm.makePause(1000);
+            tabOfBlock_Content.click();
+            blockButton_AddBanners.click();
+            UtilsAdm.waitForSpinnerDisappear();
+            UtilsAdm.clickAndType(searchBannerByName, bannerName);
+            blockButton_Search.click();
+            UtilsAdm.waitForSpinnerDisappear();
+            DriverProvider.getDriver().findElement(By.cssSelector("div[id*='pagination_objects'] input[name='block_items[]']")).click();
+            DriverProvider.getDriver().findElement(By.cssSelector("input[value='Добавить баннеры и закрыть']")).click();
+            blockButton_Create.click();
+            UtilsAdm.waitForSpinnerDisappear();
+        }
     }
 }

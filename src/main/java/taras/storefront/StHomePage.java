@@ -29,7 +29,7 @@ public class StHomePage extends AbstractPage {
     @FindBy(css = ".ty-account-info__buttons a[href*='auth.logout']")
     WebElement button_LogOut;
 
-    @FindBy(css = "div.ty-mainbox-container.clearfix")
+    @FindBy(css = "div[id*='simple_products_scroller']")
     public WebElement blockWithProducts;
 
     @FindBy(css = ".close.cm-notification-close")

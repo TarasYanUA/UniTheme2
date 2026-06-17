@@ -28,7 +28,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     }
 
     public String getProductBlockSelector() {
-        return "div[id^='content_abt__ut2_grid_tab_'][id$='" + blockID + "'] ";
+        return ".ut2-a__products-banner div[id*='" + blockID + "'] ";
     }
 
 
@@ -49,7 +49,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
     //Настройка "Отображать статусы для кнопок "Купить" -- Иконка"
     public String getStatusesForButtonAddToCartIcon() {
-        UtilsAdm.makePause(2000);
+        UtilsAdm.makePause(1000);
         JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
 
         List<WebElement> cartButtons = DriverProvider.getDriver()

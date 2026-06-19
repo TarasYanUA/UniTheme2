@@ -51,7 +51,7 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         stHomePage.cookie.click();
 
         UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
-        takeScreenShot("01 " + bannerName);
+        takeScreenShot(bannerName + " 01");
 
         //Проверяем, что у баннера 1 колонка
         assertsBanners.assertElementPresence(assertsBanners.columnsOfProducts_1);
@@ -67,6 +67,6 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
 
         stHomePage.selectLanguage("ar");
         UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
-        takeScreenShot("02(RTL) " + bannerName);
+        takeScreenShot(bannerName + " 02(RTL)");
     }
 }

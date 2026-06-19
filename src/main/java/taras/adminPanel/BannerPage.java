@@ -50,6 +50,9 @@ public class BannerPage extends AbstractPage {
     @FindBy(id = "elm_banner_abt__ut2_products_grid_columns")
     WebElement setting_ObjectInside_Columns;
 
+    @FindBy(id = "elm_banner_abt__ut2_products_small_items_rows")
+    By setting_ObjectInside_Rows;
+
     @FindBy(css = "a[data-ca-external-click-id=\"opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list\"]")
     WebElement setting_ObjectInside_ProductPicker;
 
@@ -81,7 +84,11 @@ public class BannerPage extends AbstractPage {
     WebElement button_BannerBackground_ChooseColor;
 
 
-    public void createNewAdvancedBannerWithProducts(String bannerName, String template, String columns, String backgroundColor) {
+    public void createNewAdvancedBannerWithProducts(String bannerName,
+                                                    String template,
+                                                    String columns,
+                                                    String rows,
+                                                    String backgroundColor) {
         if (DriverProvider.getDriver().findElements(By.xpath("//a[text()='" + bannerName + "']")).isEmpty()) {
             UtilsAdm.closeAllNotifications();
             button_PlusBanner.click();
@@ -90,10 +97,15 @@ public class BannerPage extends AbstractPage {
             new Select(setting_BannerBlockSettings_VerticalAlignment).selectByValue("center");
             new Select(setting_BannerBlockSettings_HorizontalAlignment).selectByValue("center");
             UtilsAdm.setCheckboxState(setting_ContentOnFullWidth, true);
+
             field_BannerTitle.sendKeys(bannerName);
             new Select(setting_ObjectInside_DisplayedObject).selectByValue("products");
             new Select(setting_ObjectInside_Template).selectByValue(template);
             new Select(setting_ObjectInside_Columns).selectByValue(columns);
+
+            if (!DriverProvider.getDriver().findElements(setting_ObjectInside_Rows).isEmpty())
+                new Select(DriverProvider.getDriver().findElement(setting_ObjectInside_Rows)).selectByValue(rows);
+
             selectProductsForBanner();
             UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);
             UtilsAdm.setCheckboxState(checkbox_BannerBackground_BackgroundColor, true);

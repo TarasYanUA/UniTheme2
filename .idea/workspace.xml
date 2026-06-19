@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Class ProductsAtBanners_Grid_1Column - the first test-case is totally ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_2Columns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_3Columns.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Three test-cases for banner in &quot;Grid&quot; template are totally ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,61 +109,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000000000004" />
-      <entry key="S5" value="1.0000007429662436" />
-      <entry key="S10" value="1.0008619549153086" />
-      <entry key="S30" value="1.0965189404979707" />
-      <entry key="S60" value="1.4554829170512575" />
-      <entry key="M2" value="3.1257957900847657" />
-      <entry key="M5" value="8.431230295219857" />
-      <entry key="M10" value="13.759132099504647" />
-      <entry key="M15" value="18.272277703266564" />
-      <entry key="M30" value="31.2554554986606" />
-      <entry key="H1" value="54.480797945435754" />
-      <entry key="H2" value="90.71523420524403" />
-      <entry key="H4" value="131.4821264918155" />
-      <entry key="D1" value="194.18409890740153" />
-      <entry key="W1" value="209.31481534114957" />
+      <entry key="MS100" value="1.000000000000001" />
+      <entry key="MS500" value="1.0010111632646588" />
+      <entry key="S2" value="1.202240909924369" />
+      <entry key="S5" value="1.858525262487138" />
+      <entry key="S10" value="2.776399965367279" />
+      <entry key="S30" value="4.554730907797835" />
+      <entry key="S60" value="5.835444639827339" />
+      <entry key="M2" value="7.191389801456502" />
+      <entry key="M5" value="8.61027070654557" />
+      <entry key="M10" value="9.775372525025208" />
+      <entry key="M15" value="11.725647805009153" />
+      <entry key="M30" value="21.351757403387026" />
+      <entry key="H1" value="44.135434239925985" />
+      <entry key="H2" value="83.55305276388883" />
+      <entry key="H4" value="131.38574089456247" />
+      <entry key="D1" value="210.50899056081113" />
+      <entry key="W1" value="230.43395299089923" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.0493251754697348E-230" />
-      <entry key="S2" value="3.200571422447009E-58" />
-      <entry key="S5" value="1.0048263361741254E-23" />
-      <entry key="S10" value="3.169899582280369E-12" />
-      <entry key="S30" value="1.4689775837926344E-4" />
-      <entry key="S60" value="0.012120673241637145" />
-      <entry key="M2" value="0.11126518317190486" />
-      <entry key="M5" value="0.5912273740986451" />
-      <entry key="M10" value="2.061944783613416" />
-      <entry key="M15" value="3.981795876306059" />
-      <entry key="M30" value="9.411978486924475" />
-      <entry key="H1" value="19.59877234275437" />
-      <entry key="H2" value="38.5505873686512" />
-      <entry key="H4" value="61.609489266894485" />
-      <entry key="D1" value="97.74896101580109" />
-      <entry key="W1" value="106.45670866697643" />
+      <entry key="MS100" value="4.982245850292578E-128" />
+      <entry key="MS500" value="3.583229259430276E-26" />
+      <entry key="S2" value="6.779688497440875E-7" />
+      <entry key="S5" value="0.00628427775197194" />
+      <entry key="S10" value="0.14707977817785067" />
+      <entry key="S30" value="1.5509016783831602" />
+      <entry key="S60" value="3.151627316739401" />
+      <entry key="M2" value="4.639933855390499" />
+      <entry key="M5" value="5.920565822459371" />
+      <entry key="M10" value="6.470852979918265" />
+      <entry key="M15" value="6.887480458095215" />
+      <entry key="M30" value="9.259062432028413" />
+      <entry key="H1" value="16.908812568270243" />
+      <entry key="H2" value="34.49727430096123" />
+      <entry key="H4" value="59.05467188106222" />
+      <entry key="D1" value="102.04508168310223" />
+      <entry key="W1" value="113.03102394303731" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.7526233737055336" />
-      <entry key="MS500" value="0.9447470409972061" />
-      <entry key="S2" value="0.9858909615070793" />
-      <entry key="S5" value="0.9943330512833162" />
-      <entry key="S10" value="0.9980199732192594" />
-      <entry key="S30" value="1.0955439364829211" />
-      <entry key="S60" value="1.4657978938940461" />
-      <entry key="M2" value="3.2312693905804357" />
-      <entry key="M5" value="9.012784533761995" />
-      <entry key="M10" value="15.808260323464024" />
-      <entry key="M15" value="22.2381478066994" />
-      <entry key="M30" value="40.64795291970683" />
-      <entry key="H1" value="74.0589730268095" />
-      <entry key="H2" value="129.24604074003463" />
-      <entry key="H4" value="193.07608464604246" />
-      <entry key="D1" value="291.9289975919387" />
-      <entry key="W1" value="315.77089269833033" />
+      <entry key="MS100" value="0.0024381456033242123" />
+      <entry key="MS500" value="0.301145477982225" />
+      <entry key="S2" value="0.9273733643069307" />
+      <entry key="S5" value="1.6410118104270095" />
+      <entry key="S10" value="2.6733180070341076" />
+      <entry key="S30" value="5.884635410762596" />
+      <entry key="S60" value="8.810694805490215" />
+      <entry key="M2" value="11.708180566861667" />
+      <entry key="M5" value="14.467723709751809" />
+      <entry key="M10" value="16.2113869012352" />
+      <entry key="M15" value="18.58820328450476" />
+      <entry key="M30" value="30.59338911384262" />
+      <entry key="H1" value="61.0274289838935" />
+      <entry key="H2" value="118.03300692901416" />
+      <entry key="H4" value="190.42568186924294" />
+      <entry key="D1" value="312.549853695637" />
+      <entry key="W1" value="343.46430976529933" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -844,7 +841,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="313" />
+    <option name="localTasksCounter" value="314" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -875,7 +872,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started a global work with asserts. Refactor all asserts." />
     <MESSAGE value="Make a global work with asserts.&#10;Improved method assertElementPresence in the class Asserts_ThemeSettings_ProductLists" />
     <MESSAGE value="Make a global work with asserts.&#10;Combined two assert methods in one. Product block into the general method." />
     <MESSAGE value="Make a global work with asserts.&#10;Added new asserts and its methods." />
@@ -900,7 +896,8 @@
     <MESSAGE value="Class ProductsAtBanners_Grid_1Column - the first auto banner is created!" />
     <MESSAGE value="Class ProductsAtBanners_Grid_1Column - made work in admin panel." />
     <MESSAGE value="Class ProductsAtBanners_Grid_1Column - the first test-case is totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class ProductsAtBanners_Grid_1Column - the first test-case is totally ready!" />
+    <MESSAGE value="Three test-cases for banner in &quot;Grid&quot; template are totally ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Three test-cases for banner in &quot;Grid&quot; template are totally ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

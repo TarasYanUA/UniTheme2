@@ -26,6 +26,7 @@ public class ProductsAtBanners_Grid_3Columns extends TestRunner {
                 bannerName,
                 "grid_items",
                 "3",
+                null,
                 "ead1dc");
 
         //Работаем на странице "Макеты"

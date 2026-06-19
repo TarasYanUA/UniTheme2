@@ -50,8 +50,7 @@ public class BannerPage extends AbstractPage {
     @FindBy(id = "elm_banner_abt__ut2_products_grid_columns")
     WebElement setting_ObjectInside_Columns;
 
-    @FindBy(id = "elm_banner_abt__ut2_products_small_items_rows")
-    By setting_ObjectInside_Rows;
+    private final By setting_ObjectInside_Rows = By.id("elm_banner_abt__ut2_products_small_items_rows");
 
     @FindBy(css = "a[data-ca-external-click-id=\"opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list\"]")
     WebElement setting_ObjectInside_ProductPicker;

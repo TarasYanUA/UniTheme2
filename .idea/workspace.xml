@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Three test-cases for banner in &quot;Grid&quot; template are totally ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_UnlimitedRow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_2Columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_2Columns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_3Columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_3Columns.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,61 +114,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000000000001" />
-      <entry key="MS500" value="1.0010111632646588" />
-      <entry key="S2" value="1.202240909924369" />
-      <entry key="S5" value="1.858525262487138" />
-      <entry key="S10" value="2.776399965367279" />
-      <entry key="S30" value="4.554730907797835" />
-      <entry key="S60" value="5.835444639827339" />
-      <entry key="M2" value="7.191389801456502" />
-      <entry key="M5" value="8.61027070654557" />
-      <entry key="M10" value="9.775372525025208" />
-      <entry key="M15" value="11.725647805009153" />
-      <entry key="M30" value="21.351757403387026" />
-      <entry key="H1" value="44.135434239925985" />
-      <entry key="H2" value="83.55305276388883" />
-      <entry key="H4" value="131.38574089456247" />
-      <entry key="D1" value="210.50899056081113" />
-      <entry key="W1" value="230.43395299089923" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.882521476836524E-204" />
+      <entry key="S2" value="1.3029961666415238E-51" />
+      <entry key="S5" value="4.42625312004316E-21" />
+      <entry key="S10" value="6.730093314100729E-11" />
+      <entry key="S30" value="4.984717540981912E-4" />
+      <entry key="S60" value="0.03251972644249788" />
+      <entry key="M2" value="0.3747888613841472" />
+      <entry key="M5" value="2.356330315193105" />
+      <entry key="M10" value="5.56232504265567" />
+      <entry key="M15" value="8.695833152084711" />
+      <entry key="M30" value="17.62975836220502" />
+      <entry key="H1" value="36.071663554884495" />
+      <entry key="H2" value="73.90880640603261" />
+      <entry key="H4" value="129.1992374075365" />
+      <entry key="D1" value="237.5611475998863" />
+      <entry key="W1" value="267.5348810089538" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.982245850292578E-128" />
-      <entry key="MS500" value="3.583229259430276E-26" />
-      <entry key="S2" value="6.779688497440875E-7" />
-      <entry key="S5" value="0.00628427775197194" />
-      <entry key="S10" value="0.14707977817785067" />
-      <entry key="S30" value="1.5509016783831602" />
-      <entry key="S60" value="3.151627316739401" />
-      <entry key="M2" value="4.639933855390499" />
-      <entry key="M5" value="5.920565822459371" />
-      <entry key="M10" value="6.470852979918265" />
-      <entry key="M15" value="6.887480458095215" />
-      <entry key="M30" value="9.259062432028413" />
-      <entry key="H1" value="16.908812568270243" />
-      <entry key="H2" value="34.49727430096123" />
-      <entry key="H4" value="59.05467188106222" />
-      <entry key="D1" value="102.04508168310223" />
-      <entry key="W1" value="113.03102394303731" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000000007474348" />
+      <entry key="S60" value="1.0000273414688954" />
+      <entry key="M2" value="1.005307165720065" />
+      <entry key="M5" value="1.1666942593070075" />
+      <entry key="M10" value="1.7616184306879399" />
+      <entry key="M15" value="2.4561403644300617" />
+      <entry key="M30" value="4.628542653957105" />
+      <entry key="H1" value="10.05888300990363" />
+      <entry key="H2" value="24.560655942380855" />
+      <entry key="H4" value="49.891843308120066" />
+      <entry key="D1" value="104.5265105144749" />
+      <entry key="W1" value="120.1397743197893" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0024381456033242123" />
-      <entry key="MS500" value="0.301145477982225" />
-      <entry key="S2" value="0.9273733643069307" />
-      <entry key="S5" value="1.6410118104270095" />
-      <entry key="S10" value="2.6733180070341076" />
-      <entry key="S30" value="5.884635410762596" />
-      <entry key="S60" value="8.810694805490215" />
-      <entry key="M2" value="11.708180566861667" />
-      <entry key="M5" value="14.467723709751809" />
-      <entry key="M10" value="16.2113869012352" />
-      <entry key="M15" value="18.58820328450476" />
-      <entry key="M30" value="30.59338911384262" />
-      <entry key="H1" value="61.0274289838935" />
-      <entry key="H2" value="118.03300692901416" />
-      <entry key="H4" value="190.42568186924294" />
-      <entry key="D1" value="312.549853695637" />
-      <entry key="W1" value="343.46430976529933" />
+      <entry key="MS100" value="3.48425332095892E-16" />
+      <entry key="MS500" value="8.098823689594156E-4" />
+      <entry key="S2" value="0.16869627233507362" />
+      <entry key="S5" value="0.4907295319267396" />
+      <entry key="S10" value="0.7005209004881355" />
+      <entry key="S30" value="0.8886168326173455" />
+      <entry key="S60" value="0.9746235799724909" />
+      <entry key="M2" value="1.348644920418831" />
+      <entry key="M5" value="3.5048286735774616" />
+      <entry key="M10" value="7.308328846402877" />
+      <entry key="M15" value="11.136311381089266" />
+      <entry key="M30" value="22.24276161002674" />
+      <entry key="H1" value="46.11543326691305" />
+      <entry key="H2" value="98.4538780030822" />
+      <entry key="H4" value="179.07677090224874" />
+      <entry key="D1" value="342.08298801969113" />
+      <entry key="W1" value="387.6738953590523" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -284,9 +289,13 @@
     "TestNG.ProductBlock_SmallItems_Var3.executor": "Run",
     "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
     "TestNG.ProductSection_GridMore_Var1.executor": "Run",
+    "TestNG.ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column.executor": "Run",
     "TestNG.ProductsAtBanners_Grid_1Column.executor": "Run",
     "TestNG.ProductsAtBanners_Grid_2Columns.executor": "Run",
     "TestNG.ProductsAtBanners_Grid_3Columns.executor": "Run",
+    "TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor": "Run",
+    "TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor": "Run",
+    "TestNG.ProductsAtBanners_SmallItems_1Column_UnlimitedRow.executor": "Run",
     "TestNG.Test01.executor": "Run",
     "TestNG.UniTheme2/TestNG.xml.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -327,42 +336,8 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductsAtBanners_Grid_3Columns">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productLists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="productLists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductsAtBanners_Grid_1Column" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow">
+    <configuration name="ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -372,7 +347,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
       <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Grid_1Column" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="checkProductsAtBanners_Grid_1Column" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -413,21 +389,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductsAtBanners_SmallElements_1Column_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="banners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="banners" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="banners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="banners" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <option name="METHOD_NAME" value="checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column" />
       <item itemvalue="TestNG.ProductsAtBanners_Grid_2Columns" />
       <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns" />
-      <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column" />
         <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns" />
         <item itemvalue="TestNG.ProductsAtBanners_Grid_2Columns" />
-        <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -841,7 +852,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="314" />
+    <option name="localTasksCounter" value="315" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

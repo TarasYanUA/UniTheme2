@@ -56,14 +56,17 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
         takeScreenShot(bannerName + " 01");
 
+        //Проверяем, то шаблон у товаров "Сетка"
+        assertsBanners.assertElementPresence(assertsBanners.templateOfProducts_Grid);
+
         //Проверяем, что у баннера 1 колонка
-        assertsBanners.assertElementPresence(assertsBanners.columnsOfProducts_1);
+        assertsBanners.assertNumberOfColumns(assertsBanners.columnsOfProducts_Grid, 1);
 
         //Проверяем у баннера наличие названия
         assertsBanners.assertElementPresence(assertsBanners.bannerTitle);
 
         //Проверяем у баннера наличие 7 товаров
-        assertsBanners.assertNumberOfProducts(7);
+        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Grid, 7);
 
         //Проверяем у баннера наличие скроллера
         assertsBanners.assertElementPresence(assertsBanners.productScroller);

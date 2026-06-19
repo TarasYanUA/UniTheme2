@@ -11,23 +11,23 @@ import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
-public class ProductsAtBanners_Grid_2Columns extends TestRunner {
-    String bannerName = "Auto banner with products - Grid_2Columns";
+public class ProductsAtBanners_SmallElements_1Column_UnlimitedRow extends TestRunner {
+    String bannerName = "Auto banner with products - SmallElements_1Column_UnlimitedRow";
     String blockID;
     Asserts_Banners assertsBanners = new Asserts_Banners();
 
     @Test(priority = 1)
-    public void setProductsAtBanners_Grid_2Columns() {
+    public void setProductsAtBanners_SmallElements_1Column_UnlimitedRow() {
         BasicPage basicPage = new BasicPage();
 
         //Создаём баннер
         BannerPage bannerPage = basicPage.navigateToSection_Banners();
         bannerPage.createNewAdvancedBannerWithProducts(
                 bannerName,
-                "grid_items",
-                "2",
-                null,
-                "afd8fd");
+                "small_items",
+                "1",
+                "0",
+                "ccffcc");
 
         //Работаем на странице "Макеты"
         LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
@@ -41,8 +41,8 @@ public class ProductsAtBanners_Grid_2Columns extends TestRunner {
         assertsBanners.setBlockID(blockID);         //Передаём blockID в класс с проверками
     }
 
-    @Test(priority = 2, dependsOnMethods = "setProductsAtBanners_Grid_2Columns")
-    public void checkProductsAtBanners_Grid_2Columns() {
+    @Test(priority = 2, dependsOnMethods = "setProductsAtBanners_SmallElements_1Column_UnlimitedRow")
+    public void checkProductsAtBanners_SmallElements_1Column_UnlimitedRow() {
         BasicPage basicPage = new BasicPage();
 
         By bannerLocator = By.cssSelector(
@@ -53,26 +53,26 @@ public class ProductsAtBanners_Grid_2Columns extends TestRunner {
         focusBrowserTab(1);
         stHomePage.cookie.click();
 
-        UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
+        UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(bannerLocator));
         takeScreenShot(bannerName + " 01");
 
-        //Проверяем, то шаблон у товаров "Сетка"
-        assertsBanners.assertElementPresence(assertsBanners.templateOfProducts_Grid);
+        //Проверяем, то шаблон у товаров "Мелкие элементы"
+        assertsBanners.assertElementPresence(assertsBanners.templateOfProducts_SmallElements);
 
-        //Проверяем, что у баннера 2 колонки
-        assertsBanners.assertNumberOfColumns(assertsBanners.columnsOfProducts_Grid, 2);
+        //Проверяем, что у баннера 1 колонка
+        assertsBanners.assertNumberOfColumns(assertsBanners.columnsOfProducts_SmallElements, 1);
 
         //Проверяем у баннера наличие названия
         assertsBanners.assertElementPresence(assertsBanners.bannerTitle);
 
         //Проверяем у баннера наличие 7 товаров
-        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Grid, 7);
+        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_SmallElements, 7);
 
         //Проверяем у баннера наличие скроллера
         assertsBanners.assertElementPresence(assertsBanners.productScroller);
 
         stHomePage.selectLanguage("ar");
-        UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
+        UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(bannerLocator));
         takeScreenShot(bannerName + " 02(RTL)");
     }
 }

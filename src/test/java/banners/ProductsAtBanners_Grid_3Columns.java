@@ -11,13 +11,13 @@ import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;
 import testRunner.TestRunner;
 
-public class ProductsAtBanners_Grid_1Column extends TestRunner {
-    String bannerName = "Auto banner with products - Grid_1Column";
+public class ProductsAtBanners_Grid_3Columns extends TestRunner {
+    String bannerName = "Auto banner with products - Grid_3Columns";
     String blockID;
     Asserts_Banners assertsBanners = new Asserts_Banners();
 
     @Test(priority = 1)
-    public void setProductsAtBanners_Grid_1Column() {
+    public void setProductsAtBanners_Grid_3Columns() {
         BasicPage basicPage = new BasicPage();
 
         //Создаём баннер
@@ -25,8 +25,8 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         bannerPage.createNewAdvancedBannerWithProducts(
                 bannerName,
                 "grid_items",
-                "1",
-                "ccffcc");
+                "3",
+                "ead1dc");
 
         //Работаем на странице "Макеты"
         LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
@@ -40,8 +40,8 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         assertsBanners.setBlockID(blockID);         //Передаём blockID в класс с проверками
     }
 
-    @Test(priority = 2, dependsOnMethods = "setProductsAtBanners_Grid_1Column")
-    public void checkProductsAtBanners_Grid_1Column() {
+    @Test(priority = 2, dependsOnMethods = "setProductsAtBanners_Grid_3Columns")
+    public void checkProductsAtBanners_Grid_3Columns() {
         BasicPage basicPage = new BasicPage();
 
         By bannerLocator = By.cssSelector(
@@ -55,8 +55,8 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
         takeScreenShot(bannerName + " 01");
 
-        //Проверяем, что у баннера 1 колонка
-        assertsBanners.assertElementPresence(assertsBanners.columnsOfProducts_1);
+        //Проверяем, что у баннера 3 колонки
+        assertsBanners.assertElementPresence(assertsBanners.columnsOfProducts_3);
 
         //Проверяем у баннера наличие названия
         assertsBanners.assertElementPresence(assertsBanners.bannerTitle);

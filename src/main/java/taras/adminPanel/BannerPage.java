@@ -81,7 +81,7 @@ public class BannerPage extends AbstractPage {
     WebElement button_BannerBackground_ChooseColor;
 
 
-    public void createNewAdvancedBannerWithProducts(String bannerName, String backgroundColor) {
+    public void createNewAdvancedBannerWithProducts(String bannerName, String template, String columns, String backgroundColor) {
         if (DriverProvider.getDriver().findElements(By.xpath("//a[text()='" + bannerName + "']")).isEmpty()) {
             UtilsAdm.closeAllNotifications();
             button_PlusBanner.click();
@@ -92,8 +92,8 @@ public class BannerPage extends AbstractPage {
             UtilsAdm.setCheckboxState(setting_ContentOnFullWidth, true);
             field_BannerTitle.sendKeys(bannerName);
             new Select(setting_ObjectInside_DisplayedObject).selectByValue("products");
-            new Select(setting_ObjectInside_Template).selectByValue("grid_items");
-            new Select(setting_ObjectInside_Columns).selectByValue("1");
+            new Select(setting_ObjectInside_Template).selectByValue(template);
+            new Select(setting_ObjectInside_Columns).selectByValue(columns);
             selectProductsForBanner();
             UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);
             UtilsAdm.setCheckboxState(checkbox_BannerBackground_BackgroundColor, true);

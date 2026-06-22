@@ -145,28 +145,26 @@ public class LayoutPage extends AbstractPage {
         WebElement myLayout = DriverProvider.getDriver()
                 .findElement(By.id(layoutID));
 
-        if (myLayout.findElements(By.cssSelector("div[title='" + bannerName + "']")).isEmpty()) {
         UtilsAdm.hoverNavigateAndClick(myLayout.findElement(By.cssSelector(".cs-icon--type-plus")));
         myLayout.findElement(By.cssSelector(".bm-action-add-block")).click();
         UtilsAdm.waitForPopUpWindow();
 
-            tab_CreateNewBlock.click();
-            UtilsAdm.scrollIntoCenter(newBlockTemplate_Banners);
-            newBlockTemplate_Banners.click();
-            UtilsAdm.waitForSpinnerDisappear();
-            UtilsAdm.clickAndType(field_BlockTitle, bannerName);
-            new Select(blockTemplate).selectByVisibleText("AB: Расширенный баннер");
-            UtilsAdm.makePause(1000);
-            tabOfBlock_Content.click();
-            blockButton_AddBanners.click();
-            UtilsAdm.waitForSpinnerDisappear();
-            UtilsAdm.clickAndType(searchBannerByName, bannerName);
-            blockButton_Search.click();
-            UtilsAdm.waitForSpinnerDisappear();
-            DriverProvider.getDriver().findElement(By.cssSelector("div[id*='pagination_objects'] input[name='block_items[]']")).click();
-            DriverProvider.getDriver().findElement(By.cssSelector("input[value='Добавить баннеры и закрыть']")).click();
-            blockButton_Create.click();
-            UtilsAdm.waitForSpinnerDisappear();
-        }
+        tab_CreateNewBlock.click();
+        UtilsAdm.scrollIntoCenter(newBlockTemplate_Banners);
+        newBlockTemplate_Banners.click();
+        UtilsAdm.waitForSpinnerDisappear();
+        UtilsAdm.clickAndType(field_BlockTitle, bannerName);
+        new Select(blockTemplate).selectByVisibleText("AB: Расширенный баннер");
+        UtilsAdm.makePause(1000);
+        tabOfBlock_Content.click();
+        blockButton_AddBanners.click();
+        UtilsAdm.waitForSpinnerDisappear();
+        UtilsAdm.clickAndType(searchBannerByName, bannerName);
+        blockButton_Search.click();
+        UtilsAdm.waitForSpinnerDisappear();
+        DriverProvider.getDriver().findElement(By.cssSelector("div[id*='pagination_objects'] input[name='block_items[]']")).click();
+        DriverProvider.getDriver().findElement(By.cssSelector("input[value='Добавить баннеры и закрыть']")).click();
+        blockButton_Create.click();
+        UtilsAdm.waitForSpinnerDisappear();
     }
 }

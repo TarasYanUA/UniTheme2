@@ -31,7 +31,7 @@ public class Asserts_Banners extends AbstractPage {
     public String columnsOfProducts_Grid = "//div[contains(@class, 'ty-column";
     public String columnsOfProducts_SmallElements = "//ul[contains(@style, '--si-columns: ";
     public String bannerTitle = "/..//div[contains(@class, 'ut2-a__title')]";
-    public String productScroller = "//div[contains(@class, 'ut2-scroll-container')]";
+    public String productScroller = "//button[contains(@class, 'ut2-scroll-right') and not(contains(@style, 'display: none'))]";
     public String quantityOfProducts_Grid = "//div[contains(@class, 'ty-column')]";
     public String quantityOfProducts_SmallElements = "//li[contains(@class, 'ut2-template-small__item')]";
 

@@ -48,11 +48,17 @@ public class BannerPage extends AbstractPage {
     WebElement setting_ObjectInside_Template;
 
     @FindBy(id = "elm_banner_abt__ut2_products_grid_columns")
-    WebElement setting_ObjectInside_Columns;
+    WebElement setting_ObjectInside_ColumnsForGrid;
+
+    @FindBy(id = "elm_banner_abt__ut2_products_small_items_columns")
+    WebElement setting_ObjectInside_ColumnsForSmallItems;
+
+    @FindBy(id = "elm_banner_abt__ut2_products_links_thumb_columns")
+    WebElement setting_ObjectInside_ColumnsForThumbnails;
 
     private final By setting_ObjectInside_Rows = By.id("elm_banner_abt__ut2_products_small_items_rows");
 
-    @FindBy(css = "a[data-ca-external-click-id=\"opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list\"]")
+    @FindBy(css = "a[data-ca-external-click-id='opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list']")
     WebElement setting_ObjectInside_ProductPicker;
 
     @FindBy(css = ".sidebar-field input[name='q']")
@@ -100,7 +106,15 @@ public class BannerPage extends AbstractPage {
             field_BannerTitle.sendKeys(bannerName);
             new Select(setting_ObjectInside_DisplayedObject).selectByValue("products");
             new Select(setting_ObjectInside_Template).selectByValue(template);
-            new Select(setting_ObjectInside_Columns).selectByValue(columns);
+            UtilsAdm.makePause(500);
+
+            WebElement select = switch (template) {
+                case "grid_items" -> setting_ObjectInside_ColumnsForGrid;
+                case "small_items" -> setting_ObjectInside_ColumnsForSmallItems;
+                case "links_thumb" -> setting_ObjectInside_ColumnsForThumbnails;
+                default -> throw new IllegalArgumentException("Unknown banner template: " + template);
+            };
+            new Select(select).selectByValue(columns);
 
             if (!DriverProvider.getDriver().findElements(setting_ObjectInside_Rows).isEmpty())
                 new Select(DriverProvider.getDriver().findElement(setting_ObjectInside_Rows)).selectByValue(rows);

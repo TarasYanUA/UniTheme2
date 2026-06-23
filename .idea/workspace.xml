@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Second test-case for banner template &quot;Small elements&quot; is ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_InOneRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_2Columns_InOneRow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,60 +113,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="9.522826968953535E-231" />
-      <entry key="S2" value="3.123859360941043E-58" />
-      <entry key="S5" value="9.951225995760233E-24" />
-      <entry key="S10" value="3.1545781151445035E-12" />
-      <entry key="S30" value="1.5501120128925955E-4" />
-      <entry key="S60" value="0.01980582889763276" />
-      <entry key="M2" value="0.3788802917366632" />
-      <entry key="M5" value="3.5416412219230713" />
-      <entry key="M10" value="10.742593316949563" />
-      <entry key="M15" value="18.208061733252997" />
-      <entry key="M30" value="36.96517754790037" />
-      <entry key="H1" value="64.24251646826634" />
-      <entry key="H2" value="107.96677458459574" />
-      <entry key="H4" value="169.32372583669212" />
-      <entry key="D1" value="293.2885284002248" />
-      <entry key="W1" value="328.5334638478861" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="9.474601350268794E-95" />
+      <entry key="S5" value="3.682719004772639E-38" />
+      <entry key="S10" value="2.711687136684187E-19" />
+      <entry key="S30" value="1.095485619338224E-6" />
+      <entry key="S60" value="0.0017370449702795402" />
+      <entry key="M2" value="0.08208977339391943" />
+      <entry key="M5" value="1.229593102562818" />
+      <entry key="M10" value="5.215424233517705" />
+      <entry key="M15" value="10.991289142530457" />
+      <entry key="M30" value="30.972146003906122" />
+      <entry key="H1" value="65.56071602002936" />
+      <entry key="H2" value="117.98552694938634" />
+      <entry key="H4" value="188.66150632150294" />
+      <entry key="D1" value="334.5489423136505" />
+      <entry key="W1" value="377.1355448496962" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.000000000001173" />
-      <entry key="S30" value="1.00011184739205" />
-      <entry key="S60" value="1.0153517547198592" />
-      <entry key="M2" value="1.2565803176100727" />
-      <entry key="M5" value="2.805878734463552" />
-      <entry key="M10" value="5.2715944654658555" />
-      <entry key="M15" value="7.285784665750413" />
-      <entry key="M30" value="11.693575126361248" />
-      <entry key="H1" value="18.424050312631913" />
-      <entry key="H2" value="32.86071212672792" />
-      <entry key="H4" value="58.583547219155264" />
-      <entry key="D1" value="118.01777152045355" />
-      <entry key="W1" value="135.72751859672044" />
+      <entry key="MS500" value="1.0003815077539904" />
+      <entry key="S2" value="1.1397577313707328" />
+      <entry key="S5" value="1.4551455877003243" />
+      <entry key="S10" value="1.674644786313749" />
+      <entry key="S30" value="1.877054736073419" />
+      <entry key="S60" value="1.9385244882031365" />
+      <entry key="M2" value="2.024657997608029" />
+      <entry key="M5" value="2.485778494564459" />
+      <entry key="M10" value="3.4265709659669747" />
+      <entry key="M15" value="4.661398884279042" />
+      <entry key="M30" value="9.045949772332811" />
+      <entry key="H1" value="17.100078532537143" />
+      <entry key="H2" value="32.36109188317708" />
+      <entry key="H4" value="59.08868811941532" />
+      <entry key="D1" value="124.75030678132039" />
+      <entry key="W1" value="145.1874046628667" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="5.998932124022964E-18" />
-      <entry key="MS500" value="3.594303862715279E-4" />
-      <entry key="S2" value="0.13769041135418916" />
-      <entry key="S5" value="0.45244050552156906" />
-      <entry key="S10" value="0.6726369790060184" />
-      <entry key="S30" value="0.8764327503608804" />
-      <entry key="S60" value="0.9703578042043519" />
-      <entry key="M2" value="1.5956087811813213" />
-      <entry key="M5" value="6.311139612040762" />
-      <entry key="M10" value="15.979611437196233" />
-      <entry key="M15" value="25.461913565578424" />
-      <entry key="M30" value="48.63221159803615" />
-      <entry key="H1" value="82.64477548043332" />
-      <entry key="H2" value="140.8083606535063" />
-      <entry key="H4" value="227.89094696687982" />
-      <entry key="D1" value="411.3010639131446" />
-      <entry key="W1" value="464.26012834067205" />
+      <entry key="MS100" value="6.487723701643124E-4" />
+      <entry key="MS500" value="0.23043128129035045" />
+      <entry key="S2" value="0.7826658301363507" />
+      <entry key="S5" value="1.2449182758248072" />
+      <entry key="S10" value="1.5468487727975024" />
+      <entry key="S30" value="1.8274442155041992" />
+      <entry key="S60" value="1.9143667948420406" />
+      <entry key="M2" value="2.092519642333149" />
+      <entry key="M5" value="3.70414780114303" />
+      <entry key="M10" value="8.627563565490103" />
+      <entry key="M15" value="15.634956583713121" />
+      <entry key="M30" value="39.99594316711252" />
+      <entry key="H1" value="82.63845546513994" />
+      <entry key="H2" value="150.3260750062295" />
+      <entry key="H4" value="247.73258372345921" />
+      <entry key="D1" value="459.293474552178" />
+      <entry key="W1" value="522.3220003851574" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -296,6 +297,11 @@
     "TestNG.ProductsAtBanners_SmallElements_2Columns_InOneRow.executor": "Run",
     "TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.executor": "Run",
     "TestNG.ProductsAtBanners_SmallItems_1Column_UnlimitedRow.executor": "Run",
+    "TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow.executor": "Run",
+    "TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow.executor": "Run",
+    "TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.executor": "Run",
+    "TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow.executor": "Run",
+    "TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.executor": "Run",
     "TestNG.Test01.executor": "Run",
     "TestNG.UniTheme2/TestNG.xml.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -336,8 +342,8 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow">
-    <configuration name="ProductsAtBanners_SmallElements_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow">
+    <configuration name="ProductsAtBanners_Thumbnails_2Columns_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -346,7 +352,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_InOneRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -354,7 +360,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_1Column_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -363,25 +369,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="banners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
-      <option name="METHOD_NAME" value="checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <option name="METHOD_NAME" value="setProductsAtBanners_SmallElements_1Column_InOneRow" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -389,7 +378,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_2Columns_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -398,15 +387,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_2Columns_InOneRow" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <option name="METHOD_NAME" value="setProductsAtBanners_Thumbnails_1Column_InOneRow" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -415,7 +405,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <option name="METHOD_NAME" value="setProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="banners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="banners" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -425,19 +433,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_InOneRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_InOneRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow" />
       </list>
     </recent_temporary>
   </component>
@@ -851,7 +859,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="317" />
+    <option name="localTasksCounter" value="318" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,7 +890,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Make a global work with asserts.&#10;Added new asserts and its methods." />
     <MESSAGE value="Continue a global work with asserts." />
     <MESSAGE value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
     <MESSAGE value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
@@ -907,7 +914,8 @@
     <MESSAGE value="Three test-cases for banner in &quot;Grid&quot; template are totally ready!" />
     <MESSAGE value="Added new asserts for banner.&#10;First test-case for banner template &quot;Small elements&quot; is ready!" />
     <MESSAGE value="Second test-case for banner template &quot;Small elements&quot; is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second test-case for banner template &quot;Small elements&quot; is ready!" />
+    <MESSAGE value="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

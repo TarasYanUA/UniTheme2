@@ -51,12 +51,20 @@ public class BannerPage extends AbstractPage {
     WebElement setting_ObjectInside_ColumnsForGrid;
 
     @FindBy(id = "elm_banner_abt__ut2_products_small_items_columns")
-    WebElement setting_ObjectInside_ColumnsForSmallItems;
+    WebElement setting_ObjectInside_ColumnsForSmallElements;
 
     @FindBy(id = "elm_banner_abt__ut2_products_links_thumb_columns")
     WebElement setting_ObjectInside_ColumnsForThumbnails;
 
-    private final By setting_ObjectInside_Rows = By.id("elm_banner_abt__ut2_products_small_items_rows");
+    @FindBy(id = "elm_banner_abt__ut2_products_small_items_rows")
+    WebElement setting_ObjectInside_RowsForSmallElements;
+
+    @FindBy(id = "elm_banner_abt__ut2_products_links_thumb_rows")
+    WebElement setting_ObjectInside_RowsForThumbnails;
+
+/*    private final By setting_ObjectInside_RowsForSmallElements = By.id("elm_banner_abt__ut2_products_small_items_rows");
+
+    private final By setting_ObjectInside_RowsForThumbnails = By.id("elm_banner_abt__ut2_products_links_thumb_rows");*/
 
     @FindBy(css = "a[data-ca-external-click-id='opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list']")
     WebElement setting_ObjectInside_ProductPicker;
@@ -108,16 +116,20 @@ public class BannerPage extends AbstractPage {
             new Select(setting_ObjectInside_Template).selectByValue(template);
             UtilsAdm.makePause(500);
 
-            WebElement select = switch (template) {
+            WebElement selectColumns = switch (template) {
                 case "grid_items" -> setting_ObjectInside_ColumnsForGrid;
-                case "small_items" -> setting_ObjectInside_ColumnsForSmallItems;
+                case "small_items" -> setting_ObjectInside_ColumnsForSmallElements;
                 case "links_thumb" -> setting_ObjectInside_ColumnsForThumbnails;
-                default -> throw new IllegalArgumentException("Unknown banner template: " + template);
+                default -> throw new IllegalArgumentException("Unknown banner template for columns: " + template);
             };
-            new Select(select).selectByValue(columns);
+            new Select(selectColumns).selectByValue(columns);
 
-            if (!DriverProvider.getDriver().findElements(setting_ObjectInside_Rows).isEmpty())
-                new Select(DriverProvider.getDriver().findElement(setting_ObjectInside_Rows)).selectByValue(rows);
+            WebElement selectRows = switch (template) {
+                case "small_items" -> setting_ObjectInside_RowsForSmallElements;
+                case "links_thumb" -> setting_ObjectInside_RowsForThumbnails;
+                default -> throw new IllegalArgumentException("Unknown banner template for rows: " + template);
+            };
+            new Select(selectRows).selectByValue(rows);
 
             selectProductsForBanner();
             UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);

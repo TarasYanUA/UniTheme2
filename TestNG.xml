@@ -70,6 +70,10 @@
             <class name="banners.ProductsAtBanners_Grid_2Columns"/>
             <class name="banners.ProductsAtBanners_Grid_3Columns"/>
             <class name="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow"/>
+            <class name="banners.ProductsAtBanners_SmallElements_2Columns_InOneRow"/>
+            <class name="banners.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow"/>
+            <class name="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow"/>
+            <class name="banners.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow"/>
 
         </classes>
     </test>

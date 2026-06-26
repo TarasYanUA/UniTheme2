@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_2Columns_InOneRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.java" afterDir="false" />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-cases for 'Thumbnails' template are ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,61 +108,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="9.474601350268794E-95" />
-      <entry key="S5" value="3.682719004772639E-38" />
-      <entry key="S10" value="2.711687136684187E-19" />
-      <entry key="S30" value="1.095485619338224E-6" />
-      <entry key="S60" value="0.0017370449702795402" />
-      <entry key="M2" value="0.08208977339391943" />
-      <entry key="M5" value="1.229593102562818" />
-      <entry key="M10" value="5.215424233517705" />
-      <entry key="M15" value="10.991289142530457" />
-      <entry key="M30" value="30.972146003906122" />
-      <entry key="H1" value="65.56071602002936" />
-      <entry key="H2" value="117.98552694938634" />
-      <entry key="H4" value="188.66150632150294" />
-      <entry key="D1" value="334.5489423136505" />
-      <entry key="W1" value="377.1355448496962" />
+      <entry key="MS100" value="1.0070899935545263" />
+      <entry key="MS500" value="1.3830942786066331" />
+      <entry key="S2" value="2.345075222089914" />
+      <entry key="S5" value="3.395035459815418" />
+      <entry key="S10" value="4.054147000721171" />
+      <entry key="S30" value="4.645239483424807" />
+      <entry key="S60" value="4.817111826467969" />
+      <entry key="M2" value="4.9083152388463285" />
+      <entry key="M5" value="5.188122453514414" />
+      <entry key="M10" value="7.21525883719099" />
+      <entry key="M15" value="11.233220988548524" />
+      <entry key="M30" value="28.341199164337894" />
+      <entry key="H1" value="61.918582664880674" />
+      <entry key="H2" value="114.93594424644384" />
+      <entry key="H4" value="187.11260845766927" />
+      <entry key="D1" value="337.58494686481555" />
+      <entry key="W1" value="381.81846247121774" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0003815077539904" />
-      <entry key="S2" value="1.1397577313707328" />
-      <entry key="S5" value="1.4551455877003243" />
-      <entry key="S10" value="1.674644786313749" />
-      <entry key="S30" value="1.877054736073419" />
-      <entry key="S60" value="1.9385244882031365" />
-      <entry key="M2" value="2.024657997608029" />
-      <entry key="M5" value="2.485778494564459" />
-      <entry key="M10" value="3.4265709659669747" />
-      <entry key="M15" value="4.661398884279042" />
-      <entry key="M30" value="9.045949772332811" />
-      <entry key="H1" value="17.100078532537143" />
-      <entry key="H2" value="32.36109188317708" />
-      <entry key="H4" value="59.08868811941532" />
-      <entry key="D1" value="124.75030678132039" />
-      <entry key="W1" value="145.1874046628667" />
+      <entry key="MS100" value="3.142526978995623E-307" />
+      <entry key="MS500" value="5.00561804554906E-62" />
+      <entry key="S2" value="4.983369930520372E-16" />
+      <entry key="S5" value="1.0634474343593878E-6" />
+      <entry key="S10" value="0.0016517050470384483" />
+      <entry key="S30" value="0.24141833044350097" />
+      <entry key="S60" value="0.8495032026399897" />
+      <entry key="M2" value="1.624326619602919" />
+      <entry key="M5" value="2.7859889429403526" />
+      <entry key="M10" value="4.111526606809143" />
+      <entry key="M15" value="5.406332840545169" />
+      <entry key="M30" value="9.69522563260847" />
+      <entry key="H1" value="17.784228156552565" />
+      <entry key="H2" value="33.122237393942505" />
+      <entry key="H4" value="60.02205897661626" />
+      <entry key="D1" value="127.0153662158257" />
+      <entry key="W1" value="148.06496707736707" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.487723701643124E-4" />
-      <entry key="MS500" value="0.23043128129035045" />
-      <entry key="S2" value="0.7826658301363507" />
-      <entry key="S5" value="1.2449182758248072" />
-      <entry key="S10" value="1.5468487727975024" />
-      <entry key="S30" value="1.8274442155041992" />
-      <entry key="S60" value="1.9143667948420406" />
-      <entry key="M2" value="2.092519642333149" />
-      <entry key="M5" value="3.70414780114303" />
-      <entry key="M10" value="8.627563565490103" />
-      <entry key="M15" value="15.634956583713121" />
-      <entry key="M30" value="39.99594316711252" />
-      <entry key="H1" value="82.63845546513994" />
-      <entry key="H2" value="150.3260750062295" />
-      <entry key="H4" value="247.73258372345921" />
-      <entry key="D1" value="459.293474552178" />
-      <entry key="W1" value="522.3220003851574" />
+      <entry key="MS100" value="0.9659716619458126" />
+      <entry key="MS500" value="1.3706302995294268" />
+      <entry key="S2" value="2.339622571436196" />
+      <entry key="S5" value="3.391857592079153" />
+      <entry key="S10" value="4.053767123216452" />
+      <entry key="S30" value="4.879504102472606" />
+      <entry key="S60" value="5.654833551311423" />
+      <entry key="M2" value="6.521490343703509" />
+      <entry key="M5" value="7.965674396740244" />
+      <entry key="M10" value="11.316987127600719" />
+      <entry key="M15" value="16.62696362719136" />
+      <entry key="M30" value="38.018414546762465" />
+      <entry key="H1" value="79.682745885516" />
+      <entry key="H2" value="148.03870086497213" />
+      <entry key="H4" value="247.11749792204617" />
+      <entry key="D1" value="464.5945439724059" />
+      <entry key="W1" value="529.8824771499163" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -184,145 +180,145 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Maven.UniTheme2 [clean].executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor": "Run",
-    "TestNG.ColorSchemeSettings_General_Var1.executor": "Run",
-    "TestNG.ColorSchemeSettings_General_Var2.checkColorSchemeSettings_General_Var2.executor": "Run",
-    "TestNG.ColorSchemeSettings_General_Var2.executor": "Run",
-    "TestNG.ColorSchemeSettings_Product_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.checkProductLists_CompactList_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.checkProductLists_CompactList_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_GridListView_Var2.setConfigurationsForProductLists_GridListView_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var1.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var2.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
-    "TestNG.GeneralSettings_ProductPage_Var3.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Cascade_Var1.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Cascade_Var2.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Cascade_Var3.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Var1.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Var2.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor": "Run",
-    "TestNG.GeneralSettings_St_ProductPage_Var3.executor": "Run",
-    "TestNG.Menu01_Horizontal_RowFilling_6columns.check_Menu01_Horizontal_RowFilling_6columns.executor": "Run",
-    "TestNG.Menu01_Horizontal_RowFilling_6columns.executor": "Run",
-    "TestNG.Menu02_Horizontal_RowFilling_5columns.executor": "Run",
-    "TestNG.Menu03_Horizontal_RowFilling_4columns.executor": "Run",
-    "TestNG.Menu04_Horizontal_RowFilling_2columns.executor": "Run",
-    "TestNG.Menu05_Horizontal_RowFilling_1column.executor": "Run",
-    "TestNG.Menu10_Horizontal_ColumnFilling_6columns.executor": "Run",
-    "TestNG.Menu11_Horizontal_ColumnFilling_5columns.executor": "Run",
-    "TestNG.Menu12_Horizontal_ColumnFilling_4columns.executor": "Run",
-    "TestNG.Menu13_Horizontal_ColumnFilling_2columns.executor": "Run",
-    "TestNG.Menu14_Horizontal_ColumnFilling_1column.executor": "Run",
-    "TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.executor": "Run",
-    "TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor": "Run",
-    "TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.executor": "Run",
-    "TestNG.Menu23_Vertical_ColumnFilling_1column_FullView.executor": "Run",
-    "TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView.executor": "Run",
-    "TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView.executor": "Run",
-    "TestNG.Menu30_Vertical_RowFilling_5columns_FullView.executor": "Run",
-    "TestNG.Menu31_Vertical_RowFilling_4columns_FullView.executor": "Run",
-    "TestNG.Menu32_Vertical_RowFilling_2columns_FullView.executor": "Run",
-    "TestNG.Menu33_Vertical_RowFilling_1column_FullView.executor": "Run",
-    "TestNG.Menu34_Vertical_RowFilling_3columns_CompactView.executor": "Run",
-    "TestNG.Menu35_Vertical_RowFilling_1column_CompactView.executor": "Run",
-    "TestNG.Menu40_3LevelMenu_Horizontal_RowFilling.executor": "Run",
-    "TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.executor": "Run",
-    "TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.executor": "Run",
-    "TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView.executor": "Run",
-    "TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.executor": "Run",
-    "TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor": "Run",
-    "TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor": "Run",
-    "TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor": "Run",
-    "TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.executor": "Run",
-    "TestNG.Menu50_FlyMenu.executor": "Run",
-    "TestNG.Menu50_FlyMenu_Var1.executor": "Run",
-    "TestNG.Menu51_FlyMenu.executor": "Run",
-    "TestNG.Menu51_FlyMenu_Var2.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var1.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var2.checkProductBlock_GridMore_Var2.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var2.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor": "Run",
-    "TestNG.ProductBlock_GridMore_Var3.executor": "Run",
-    "TestNG.ProductBlock_Scroller_Var1.executor": "Run",
-    "TestNG.ProductBlock_Scroller_Var2.executor": "Run",
-    "TestNG.ProductBlock_Scroller_Var3.executor": "Run",
-    "TestNG.ProductBlock_SmallItems_Var1.checkProductBlock_SmallElements_Var1.executor": "Run",
-    "TestNG.ProductBlock_SmallItems_Var1.executor": "Run",
-    "TestNG.ProductBlock_SmallItems_Var2.executor": "Run",
-    "TestNG.ProductBlock_SmallItems_Var3.executor": "Run",
-    "TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor": "Run",
-    "TestNG.ProductSection_GridMore_Var1.executor": "Run",
-    "TestNG.ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column.executor": "Run",
-    "TestNG.ProductsAtBanners_Grid_1Column.executor": "Run",
-    "TestNG.ProductsAtBanners_Grid_2Columns.executor": "Run",
-    "TestNG.ProductsAtBanners_Grid_3Columns.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallElements_2Columns_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.executor": "Run",
-    "TestNG.ProductsAtBanners_SmallItems_1Column_UnlimitedRow.executor": "Run",
-    "TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow.executor": "Run",
-    "TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.executor": "Run",
-    "TestNG.Test01.executor": "Run",
-    "TestNG.UniTheme2/TestNG.xml.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "UniTheme__4.20.1.a",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IdeaProjects/UniTheme2/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Maven.UniTheme2 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var1.checkColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var2.checkColorSchemeSettings_General_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_General_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ColorSchemeSettings_Product_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.checkProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.checkProductLists_AllCategoryLists_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var1.checkProductLists_CompactList_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.checkProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_CompactList_Var2.setConfigurationsForProductLists_CompactList_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.checkProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var1.setConfigurationsForProductLists_GridListView_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.checkProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_GridListView_Var2.setConfigurationsForProductLists_GridListView_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var1.checkSettingsOnProductPage_CascadeGallery_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var1.checkSettingsOnProductPage_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var2.checkSettingsOnProductPage_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Cascade_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Cascade_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Cascade_Var3.checkSettingsOnProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Cascade_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_St_ProductPage_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu01_Horizontal_RowFilling_6columns.check_Menu01_Horizontal_RowFilling_6columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu01_Horizontal_RowFilling_6columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu02_Horizontal_RowFilling_5columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu03_Horizontal_RowFilling_4columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu04_Horizontal_RowFilling_2columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu05_Horizontal_RowFilling_1column.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu10_Horizontal_ColumnFilling_6columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu11_Horizontal_ColumnFilling_5columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu12_Horizontal_ColumnFilling_4columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu13_Horizontal_ColumnFilling_2columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu14_Horizontal_ColumnFilling_1column.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu20_Vertical_ColumnFilling_4columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu21_Vertical_ColumnFilling_5columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu22_Vertical_ColumnFilling_2columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu23_Vertical_ColumnFilling_1column_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu24_Vertical_ColumnFilling_2columns_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu25_Vertical_ColumnFilling_1column_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu30_Vertical_RowFilling_5columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu31_Vertical_RowFilling_4columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu32_Vertical_RowFilling_2columns_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu33_Vertical_RowFilling_1column_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu34_Vertical_RowFilling_3columns_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu35_Vertical_RowFilling_1column_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu40_3LevelMenu_Horizontal_RowFilling.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu41_3LevelMenu_Horizontal_ColumnFilling.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu42_3LevelMenu_Vertical_ColumnFilling_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu43_3LevelMenu_Vertical_RowFilling_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu44_3LevelMenu_Vertical_RowFilling_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu45_3LevelMenu_Vertical_ColumnFilling_AddCategories_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu46_3LevelMenu_Vertical_ColumnFilling_AddCategories_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu47_3LevelMenu_Vertical_RowFilling_AddCategories_FullView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu48_3LevelMenu_Vertical_RowFilling_AddCategories_CompactView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu50_FlyMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu50_FlyMenu_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu51_FlyMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu51_FlyMenu_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var1.checkProductBlock_GridMore_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var2.checkProductBlock_GridMore_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var3.checkProductBlock_GridMore_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_GridMore_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_Scroller_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_Scroller_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_Scroller_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_SmallItems_Var1.checkProductBlock_SmallElements_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_SmallItems_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_SmallItems_Var2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductBlock_SmallItems_Var3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductSection_GridMore_Var1.checkProductBlock_GridMore_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductSection_GridMore_Var1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Grid_1Column.checkProductsAtBanners_Grid_1Column.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Grid_1Column.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Grid_2Columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Grid_3Columns.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.checkProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallElements_1Column_UnlimitedRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallElements_2Columns_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_SmallItems_1Column_UnlimitedRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_SmallElements_1Column_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Thumbnails_1Column_InOneRow.setProductsAtBanners_Thumbnails_1Column_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Thumbnails_2Columns_InOneRow.setProductsAtBanners_Thumbnails_2Columns_InOneRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Test01.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UniTheme2/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UniTheme__4.20.1.a&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IdeaProjects/UniTheme2/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\IDEA_Projects\UniTheme2\src\test\resources" />
@@ -859,7 +855,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="318" />
+    <option name="localTasksCounter" value="319" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -890,7 +886,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Continue a global work with asserts." />
     <MESSAGE value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
     <MESSAGE value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product." />
@@ -915,7 +910,8 @@
     <MESSAGE value="Added new asserts for banner.&#10;First test-case for banner template &quot;Small elements&quot; is ready!" />
     <MESSAGE value="Second test-case for banner template &quot;Small elements&quot; is ready!" />
     <MESSAGE value="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!" />
+    <MESSAGE value="Test-cases for 'Thumbnails' template are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-cases for 'Thumbnails' template are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

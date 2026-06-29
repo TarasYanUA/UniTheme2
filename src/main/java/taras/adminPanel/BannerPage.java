@@ -62,10 +62,6 @@ public class BannerPage extends AbstractPage {
     @FindBy(id = "elm_banner_abt__ut2_products_links_thumb_rows")
     WebElement setting_ObjectInside_RowsForThumbnails;
 
-/*    private final By setting_ObjectInside_RowsForSmallElements = By.id("elm_banner_abt__ut2_products_small_items_rows");
-
-    private final By setting_ObjectInside_RowsForThumbnails = By.id("elm_banner_abt__ut2_products_links_thumb_rows");*/
-
     @FindBy(css = "a[data-ca-external-click-id='opener_picker_object_picker_advanced_elm_banner_abt__ut2_products_list']")
     WebElement setting_ObjectInside_ProductPicker;
 
@@ -129,7 +125,8 @@ public class BannerPage extends AbstractPage {
                 case "links_thumb" -> setting_ObjectInside_RowsForThumbnails;
                 default -> throw new IllegalArgumentException("Unknown banner template for rows: " + template);
             };
-            new Select(selectRows).selectByValue(rows);
+            if (rows != null)
+                new Select(selectRows).selectByValue(rows);
 
             selectProductsForBanner();
             UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);

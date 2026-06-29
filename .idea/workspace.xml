@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Test-cases for 'Thumbnails' template are ready!">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Made a correct tree of packages with Classes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,61 +109,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0070899935545263" />
-      <entry key="MS500" value="1.3830942786066331" />
-      <entry key="S2" value="2.345075222089914" />
-      <entry key="S5" value="3.395035459815418" />
-      <entry key="S10" value="4.054147000721171" />
-      <entry key="S30" value="4.645239483424807" />
-      <entry key="S60" value="4.817111826467969" />
-      <entry key="M2" value="4.9083152388463285" />
-      <entry key="M5" value="5.188122453514414" />
-      <entry key="M10" value="7.21525883719099" />
-      <entry key="M15" value="11.233220988548524" />
-      <entry key="M30" value="28.341199164337894" />
-      <entry key="H1" value="61.918582664880674" />
-      <entry key="H2" value="114.93594424644384" />
-      <entry key="H4" value="187.11260845766927" />
-      <entry key="D1" value="337.58494686481555" />
-      <entry key="W1" value="381.81846247121774" />
+      <entry key="MS100" value="1.008728805767423" />
+      <entry key="MS500" value="1.3917376072159144" />
+      <entry key="S2" value="2.3164810934747093" />
+      <entry key="S5" value="4.775665323881824" />
+      <entry key="S10" value="8.106827431380308" />
+      <entry key="S30" value="12.968983135337602" />
+      <entry key="S60" value="14.805083575283312" />
+      <entry key="M2" value="15.854259086468668" />
+      <entry key="M5" value="16.74618068401228" />
+      <entry key="M10" value="18.955203239305494" />
+      <entry key="M15" value="23.00991851535324" />
+      <entry key="M30" value="40.12361337407482" />
+      <entry key="H1" value="73.7058195956194" />
+      <entry key="H2" value="126.7474632389787" />
+      <entry key="H4" value="198.96248086956993" />
+      <entry key="D1" value="349.54050514397056" />
+      <entry key="W1" value="393.8112980350878" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.142526978995623E-307" />
-      <entry key="MS500" value="5.00561804554906E-62" />
-      <entry key="S2" value="4.983369930520372E-16" />
-      <entry key="S5" value="1.0634474343593878E-6" />
-      <entry key="S10" value="0.0016517050470384483" />
-      <entry key="S30" value="0.24141833044350097" />
-      <entry key="S60" value="0.8495032026399897" />
-      <entry key="M2" value="1.624326619602919" />
-      <entry key="M5" value="2.7859889429403526" />
-      <entry key="M10" value="4.111526606809143" />
-      <entry key="M15" value="5.406332840545169" />
-      <entry key="M30" value="9.69522563260847" />
-      <entry key="H1" value="17.784228156552565" />
-      <entry key="H2" value="33.122237393942505" />
-      <entry key="H4" value="60.02205897661626" />
-      <entry key="D1" value="127.0153662158257" />
-      <entry key="W1" value="148.06496707736707" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.0402289281844367E-71" />
+      <entry key="S2" value="1.892086261149904E-18" />
+      <entry key="S5" value="1.1441504869614285E-7" />
+      <entry key="S10" value="5.417713773308535E-4" />
+      <entry key="S30" value="0.16649381158774612" />
+      <entry key="S60" value="0.7054706451404644" />
+      <entry key="M2" value="1.4802338281866194" />
+      <entry key="M5" value="2.6843687467723503" />
+      <entry key="M10" value="4.035845179189584" />
+      <entry key="M15" value="5.3397842243691995" />
+      <entry key="M30" value="9.63536974704979" />
+      <entry key="H1" value="17.72924548613691" />
+      <entry key="H2" value="33.070996518697065" />
+      <entry key="H4" value="59.97561324259153" />
+      <entry key="D1" value="126.99897994888815" />
+      <entry key="W1" value="148.06223808671245" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9659716619458126" />
-      <entry key="MS500" value="1.3706302995294268" />
-      <entry key="S2" value="2.339622571436196" />
-      <entry key="S5" value="3.391857592079153" />
-      <entry key="S10" value="4.053767123216452" />
-      <entry key="S30" value="4.879504102472606" />
-      <entry key="S60" value="5.654833551311423" />
-      <entry key="M2" value="6.521490343703509" />
-      <entry key="M5" value="7.965674396740244" />
-      <entry key="M10" value="11.316987127600719" />
-      <entry key="M15" value="16.62696362719136" />
-      <entry key="M30" value="38.018414546762465" />
-      <entry key="H1" value="79.682745885516" />
-      <entry key="H2" value="148.03870086497213" />
-      <entry key="H4" value="247.11749792204617" />
-      <entry key="D1" value="464.5945439724059" />
-      <entry key="W1" value="529.8824771499163" />
+      <entry key="MS100" value="0.9675795113768729" />
+      <entry key="MS500" value="1.3796820831685683" />
+      <entry key="S2" value="2.311280315831407" />
+      <entry key="S5" value="4.771181526607365" />
+      <entry key="S10" value="8.103450305461466" />
+      <entry key="S30" value="13.12895727491795" />
+      <entry key="S60" value="15.499889477957694" />
+      <entry key="M2" value="17.323865855661104" />
+      <entry key="M5" value="19.422228063920254" />
+      <entry key="M10" value="22.981333343173393" />
+      <entry key="M15" value="28.337202531778168" />
+      <entry key="M30" value="49.74105145009833" />
+      <entry key="H1" value="91.41504584381629" />
+      <entry key="H2" value="159.7990009440243" />
+      <entry key="H4" value="258.9209337962715" />
+      <entry key="D1" value="476.5337160470334" />
+      <entry key="W1" value="541.8725836432701" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -855,7 +856,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="320" />
+    <option name="localTasksCounter" value="321" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -886,7 +887,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Continue a global work with asserts.&#10;Finished with the class Asserts_ThemeSettings_ProductLists" />
     <MESSAGE value="Continue a global work with asserts:&#10;Improved the class Asserts_ThemeSettings_ProductLists;&#10;Started with the class Asserts_ThemeSettings_Product." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_CsCartSettings." />
@@ -911,7 +911,8 @@
     <MESSAGE value="Second test-case for banner template &quot;Small elements&quot; is ready!" />
     <MESSAGE value="Third and fourth test-cases for banner template &quot;Small elements&quot; are ready!" />
     <MESSAGE value="Test-cases for 'Thumbnails' template are ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-cases for 'Thumbnails' template are ready!" />
+    <MESSAGE value="Made a correct tree of packages with Classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made a correct tree of packages with Classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

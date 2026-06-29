@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.adminPanel.themeSettings.ThemeSettings_ProductLists;
+import taras.adminPanel.themeSettings.ThemeSettings_ShowMore;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.constants.DriverProvider;
 import taras.storefront.StCategoryPage;

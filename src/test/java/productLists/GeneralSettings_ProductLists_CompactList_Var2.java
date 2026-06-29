@@ -3,7 +3,7 @@ package productLists;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import taras.adminPanel.BasicPage;
-import taras.adminPanel.ThemeSettings_ProductLists;
+import taras.adminPanel.themeSettings.ThemeSettings_ProductLists;
 import taras.adminPanel.UtilsAdm;
 import taras.asserts.Asserts_ThemeSettings_ProductLists;
 import taras.storefront.StCategoryPage;

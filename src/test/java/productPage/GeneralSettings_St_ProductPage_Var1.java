@@ -3,6 +3,7 @@ package productPage;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import taras.adminPanel.*;
+import taras.adminPanel.themeSettings.ThemeSettings_Product;
 import taras.asserts.Asserts_CsCartSettings;
 import taras.asserts.Asserts_ProductPage;
 import taras.asserts.Asserts_ThemeSettings_Product;

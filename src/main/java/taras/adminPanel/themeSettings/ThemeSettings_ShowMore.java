@@ -1,7 +1,8 @@
-package taras.adminPanel;
+package taras.adminPanel.themeSettings;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import taras.adminPanel.UtilsAdm;
 import taras.constants.AbstractPage;
 
 public class ThemeSettings_ShowMore extends AbstractPage {

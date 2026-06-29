@@ -2,6 +2,8 @@ package taras.adminPanel;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import taras.adminPanel.themeSettings.ThemeSettings_Product;
+import taras.adminPanel.themeSettings.ThemeSettings_ProductLists;
 import taras.constants.AbstractPage;
 import taras.constants.DriverProvider;
 import taras.storefront.StHomePage;

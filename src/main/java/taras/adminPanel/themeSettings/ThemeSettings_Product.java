@@ -1,4 +1,4 @@
-package taras.adminPanel;
+package taras.adminPanel.themeSettings;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

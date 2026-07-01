@@ -54,7 +54,7 @@ public class LayoutPage extends AbstractPage {
     WebElement blockButton_Search;
 
     @FindBy(css = ".buttons-container-picker input[value='Создать']")
-    WebElement blockButton_Create;
+    WebElement blockButton_CreateNewBlock;
 
 
     public void setLayoutAsDefault() {
@@ -164,7 +164,7 @@ public class LayoutPage extends AbstractPage {
         UtilsAdm.waitForSpinnerDisappear();
         DriverProvider.getDriver().findElement(By.cssSelector("div[id*='pagination_objects'] input[name='block_items[]']")).click();
         DriverProvider.getDriver().findElement(By.cssSelector("input[value='Добавить баннеры и закрыть']")).click();
-        blockButton_Create.click();
+        blockButton_CreateNewBlock.click();
         UtilsAdm.waitForSpinnerDisappear();
     }
 }

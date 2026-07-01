@@ -120,13 +120,14 @@ public class BannerPage extends AbstractPage {
             };
             new Select(selectColumns).selectByValue(columns);
 
-            WebElement selectRows = switch (template) {
-                case "small_items" -> setting_ObjectInside_RowsForSmallElements;
-                case "links_thumb" -> setting_ObjectInside_RowsForThumbnails;
-                default -> throw new IllegalArgumentException("Unknown banner template for rows: " + template);
-            };
-            if (rows != null)
+            if (rows != null) {
+                WebElement selectRows = switch (template) {
+                    case "small_items" -> setting_ObjectInside_RowsForSmallElements;
+                    case "links_thumb" -> setting_ObjectInside_RowsForThumbnails;
+                    default -> throw new IllegalArgumentException("Unknown banner template for rows: " + template);
+                };
                 new Select(selectRows).selectByValue(rows);
+            }
 
             selectProductsForBanner();
             UtilsAdm.scrollIntoCenter(checkbox_BannerBackground_BackgroundColor);

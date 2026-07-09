@@ -32,10 +32,10 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         //Работаем на странице "Макеты"
         LayoutPage layoutPage = basicPage.navigateToSection_WebsiteLayouts();
         layoutPage.layout_TabHomePage.click();
-        String layoutID = layoutPage.getLayoutIDByBlockName("<mark>Возможно,</mark> вас это заинтересует");
+        String sectionID = layoutPage.getSectionIDByBlockName("<mark>Возможно,</mark> вас это заинтересует");
         if (DriverProvider.getDriver().findElements(By.cssSelector("div[title='" + bannerName + "']")).isEmpty()) {
-            layoutPage.switchOffAllBlocksAtLayout(layoutID);
-            layoutPage.createNewBlockWithBannerAtLayout(layoutID, bannerName);
+            layoutPage.switchOffAllBlocksAtSection(sectionID);
+            layoutPage.createNewBlockWithBannerAtSection(sectionID, bannerName);
         }
         blockID = getBlockID(bannerName);           //Получаем ID блока с баннером
         assertsBanners.setBlockID(blockID);         //Передаём blockID в класс с проверками
@@ -56,7 +56,7 @@ public class ProductsAtBanners_Grid_1Column extends TestRunner {
         UtilsAdm.scrollToElementAndScrollBelow(DriverProvider.getDriver().findElement(bannerLocator), 100);
         takeScreenShot(bannerName + " 01");
 
-        //Проверяем, то шаблон у товаров "Сетка"
+        //Проверяем, что шаблон у товаров "Сетка"
         assertsBanners.assertElementPresence(assertsBanners.templateOfProducts_Grid);
 
         //Проверяем, что у баннера 1 колонка

@@ -121,18 +121,18 @@ public class LayoutPage extends AbstractPage {
         UtilsAdm.waitForTitleBarWindow();
     }
 
-    public String getLayoutIDByBlockName(String blockName) {
-        String layoutID = DriverProvider.getDriver()
+    public String getSectionIDByBlockName(String blockName) {
+        String sectionID = DriverProvider.getDriver()
                 .findElement(By.xpath("//div[@title='" + blockName + "']/../.."))
                 .getAttribute("id");
 
-        System.out.println("ID макета: " + layoutID);
-        return layoutID;
+        System.out.println("ID макета: " + sectionID);
+        return sectionID;
     }
 
-    public void switchOffAllBlocksAtLayout(String layoutID) {
+    public void switchOffAllBlocksAtSection(String sectionID) {
         WebElement myLayout = DriverProvider.getDriver()
-                .findElement(By.id(layoutID));
+                .findElement(By.id(sectionID));
 
         List<WebElement> buttons_SwitchOff = myLayout.findElements(By
                 .cssSelector("div[data-ca-block-name] div.cm-tooltip.cm-action.bm-action-switch.action:not(.switch-off)"));
@@ -141,9 +141,9 @@ public class LayoutPage extends AbstractPage {
             button_SwitchOff.click();
     }
 
-    public void createNewBlockWithBannerAtLayout(String layoutID, String bannerName) {
+    public void createNewBlockWithBannerAtSection(String sectionID, String bannerName) {
         WebElement myLayout = DriverProvider.getDriver()
-                .findElement(By.id(layoutID));
+                .findElement(By.id(sectionID));
 
         UtilsAdm.hoverNavigateAndClick(myLayout.findElement(By.cssSelector(".cs-icon--type-plus")));
         myLayout.findElement(By.cssSelector(".bm-action-add-block")).click();

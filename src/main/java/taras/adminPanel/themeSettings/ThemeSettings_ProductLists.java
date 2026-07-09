@@ -79,9 +79,6 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(id = "settings.abt__ut2.product_list.products_multicolumns.show_brand.desktop")
     public WebElement setting_ShowBrand;
 
-    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand.desktop")
-    public WebElement setting_ShowBrandLogo_ListWithoutOptions;
-
     @FindBy(css = "select[id='settings.abt__ut2.product_list.products_multicolumns.enable_hover_gallery.desktop']")
     public WebElement setting_SwitchProductImageWhenHovering;
 
@@ -117,7 +114,7 @@ public class ThemeSettings_ProductLists extends AbstractPage {
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_options.desktop")
     public WebElement withoutOptions_ShowProductOptions;
 
-    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand_logo.desktop")
+    @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_brand.desktop")
     public WebElement withoutOptions_BrandLogo;
 
     @FindBy(id = "settings.abt__ut2.product_list.products_without_options.show_gallery.desktop")

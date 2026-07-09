@@ -50,7 +50,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         new Select(themeSettingsProductLists.withoutOptions_ShowButtonAddToCart).selectByValue("icon_button");
         new Select(themeSettingsProductLists.withoutOptions_ContentUnderDescription).selectByValue("variations");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowProductOptions, false);
-        new Select(themeSettingsProductLists.setting_ShowBrandLogo_ListWithoutOptions).selectByValue("name");
+        new Select(themeSettingsProductLists.withoutOptions_BrandLogo).selectByValue("name");
         new Select(themeSettingsProductLists.withoutOptions_ShowStandardImageGallery).selectByValue("N");
         new Select(themeSettingsProductLists.withoutOptions_SwitchProductImageWhenHovering).selectByValue("points");
         basicPage.clickSaveButtonOfSettings();

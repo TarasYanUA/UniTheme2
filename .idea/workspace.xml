@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Little fix for banners.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/LayoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_1Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_2Columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_2Columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_3Columns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Grid_3Columns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_InOneRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_InOneRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_UnlimitedRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_UnlimitedRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_InOneRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_InOneRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_2Columns_UnlimitedRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_2Columns_InOneRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_2Columns_InOneRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Renamed variable layoutID on sectionID." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,23 +106,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000051888857" />
-      <entry key="MS500" value="1.0349197239645094" />
-      <entry key="S2" value="1.4953484828707269" />
-      <entry key="S5" value="2.20928009492701" />
-      <entry key="S10" value="2.9691164488453987" />
-      <entry key="S30" value="5.357675555029326" />
-      <entry key="S60" value="8.793300732488483" />
-      <entry key="M2" value="13.289215988526573" />
-      <entry key="M5" value="18.17406633594647" />
-      <entry key="M10" value="20.392214427816025" />
-      <entry key="M15" value="21.216730681768983" />
-      <entry key="M30" value="22.450624260918215" />
-      <entry key="H1" value="29.588905115388744" />
-      <entry key="H2" value="61.97570564677687" />
-      <entry key="H4" value="133.54447449782336" />
-      <entry key="D1" value="339.96288430903013" />
-      <entry key="W1" value="411.3461501800363" />
+      <entry key="MS100" value="1.0000001550047888" />
+      <entry key="MS500" value="1.0607184338048998" />
+      <entry key="S2" value="2.3394307559410947" />
+      <entry key="S5" value="4.68311117485802" />
+      <entry key="S10" value="6.61258210005939" />
+      <entry key="S30" value="8.647222214602198" />
+      <entry key="S60" value="9.482746295626187" />
+      <entry key="M2" value="11.610013043548417" />
+      <entry key="M5" value="18.32901370298667" />
+      <entry key="M10" value="23.852710858633486" />
+      <entry key="M15" value="26.40449516792623" />
+      <entry key="M30" value="29.74605487988148" />
+      <entry key="H1" value="37.75450660630471" />
+      <entry key="H2" value="70.03107558742568" />
+      <entry key="H4" value="141.43634728129996" />
+      <entry key="D1" value="349.06332379268446" />
+      <entry key="W1" value="421.19049725319246" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -142,37 +130,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="8.515104444879857E-124" />
-      <entry key="S60" value="5.045159364030042E-62" />
-      <entry key="M2" value="3.958478549600725E-31" />
-      <entry key="M5" value="1.5838766712331197E-12" />
-      <entry key="M10" value="3.1000884988193428E-6" />
-      <entry key="M15" value="4.4786807290320466E-4" />
-      <entry key="M30" value="0.08824326791289508" />
-      <entry key="H1" value="1.6966679358897214" />
-      <entry key="H2" value="10.23058766358058" />
-      <entry key="H4" value="33.358103130674124" />
-      <entry key="D1" value="115.16963957069117" />
-      <entry key="W1" value="146.00854651674712" />
+      <entry key="S30" value="4.1506631215530475E-127" />
+      <entry key="S60" value="1.1138806064332489E-63" />
+      <entry key="M2" value="5.88179891171326E-32" />
+      <entry key="M5" value="7.387782700155889E-13" />
+      <entry key="M10" value="2.1172418376147984E-6" />
+      <entry key="M15" value="3.4733431176173387E-4" />
+      <entry key="M30" value="0.07771062014816088" />
+      <entry key="H1" value="1.592194972976518" />
+      <entry key="H2" value="9.910607554182313" />
+      <entry key="H4" value="32.8322915770381" />
+      <entry key="D1" value="114.86507024852237" />
+      <entry key="W1" value="145.95332337251455" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9526379980459555" />
-      <entry key="MS500" value="0.9949285178608545" />
-      <entry key="S2" value="1.3141960630948124" />
-      <entry key="S5" value="2.0432759512358554" />
-      <entry key="S10" value="2.842282571910807" />
-      <entry key="S30" value="5.276220874841241" />
-      <entry key="S60" value="8.730696703538099" />
-      <entry key="M2" value="13.24575762927652" />
-      <entry key="M5" value="18.151858789694998" />
-      <entry key="M10" value="20.380064414472603" />
-      <entry key="M15" value="21.2088196699362" />
-      <entry key="M30" value="22.53439035573741" />
-      <entry key="H1" value="31.281466044704" />
-      <entry key="H2" value="72.19916925390015" />
-      <entry key="H4" value="166.89247871368465" />
-      <entry key="D1" value="455.1271994743739" />
-      <entry key="W1" value="557.3537441764674" />
+      <entry key="MS100" value="0.9659364765882973" />
+      <entry key="MS500" value="1.0530288278257298" />
+      <entry key="S2" value="2.3107967153731015" />
+      <entry key="S5" value="4.646244147114229" />
+      <entry key="S10" value="6.5849155740498375" />
+      <entry key="S30" value="8.635049127421215" />
+      <entry key="S60" value="9.474863820435028" />
+      <entry key="M2" value="11.600191166129092" />
+      <entry key="M5" value="18.31728123442409" />
+      <entry key="M10" value="23.84372106186553" />
+      <entry key="M15" value="26.397897687222812" />
+      <entry key="M30" value="29.81959105029731" />
+      <entry key="H1" value="39.34273149504355" />
+      <entry key="H2" value="79.93472388532456" />
+      <entry key="H4" value="174.2586701118601" />
+      <entry key="D1" value="463.9230788790409" />
+      <entry key="W1" value="567.1428677745723" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -865,7 +853,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677168036961</updated>
     </task>
-    <option name="localTasksCounter" value="323" />
+    <option name="localTasksCounter" value="324" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -896,7 +884,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_ThemeSettings_Product." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_CsCartSettings." />
     <MESSAGE value="Continue a global work with asserts:&#10;Finished the class Asserts_ProductPage." />
     <MESSAGE value="Continue a global work with asserts:&#10;cleared, fixed classes that combined with productBlocks, productLists, productPage." />
@@ -921,7 +908,8 @@
     <MESSAGE value="Test-cases for 'Thumbnails' template are ready!" />
     <MESSAGE value="Made a correct tree of packages with Classes." />
     <MESSAGE value="Little fix for banners." />
-    <option name="LAST_COMMIT_MESSAGE" value="Little fix for banners." />
+    <MESSAGE value="Renamed variable layoutID on sectionID." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed variable layoutID on sectionID." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,6 +918,18 @@
           <url>file://$PROJECT_DIR$/src/main/java/taras/storefront/StHomePage.java</url>
           <line>111</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/themeSettings/ThemeSettings_ProductLists.java</url>
+          <line>120</line>
+          <properties field="withoutOptions_BrandLogo" class="taras.adminPanel.themeSettings.ThemeSettings_ProductLists" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/taras/adminPanel/themeSettings/ThemeSettings_ProductLists.java</url>
+          <line>82</line>
+          <properties field="setting_ShowBrandLogo_ListWithoutOptions" class="taras.adminPanel.themeSettings.ThemeSettings_ProductLists" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

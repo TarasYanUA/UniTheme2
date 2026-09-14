@@ -71,8 +71,8 @@ public class BannerPage extends AbstractPage {
     @FindBy(css = "input[value='Найти']")
     WebElement button_SearchProduct;
 
-    @FindBy(css = "input[name='check_all']")
-    List<WebElement> checkbox_CheckAllProducts;
+    @FindBy(css = "input[name='add_products_ids[]']")
+    List<WebElement> checkboxOfProduct;
 
     @FindBy(css = "input[value='Добавить товары']")
     WebElement button_AddSelectedProducts;
@@ -158,8 +158,8 @@ public class BannerPage extends AbstractPage {
             UtilsAdm.clickAndType(field_searchProduct, product);
             button_SearchProduct.click();
             UtilsAdm.makePause(500);
-            if (!checkbox_CheckAllProducts.isEmpty()) {
-                UtilsAdm.setCheckboxState(checkbox_CheckAllProducts.getFirst(), true);
+            if (!checkboxOfProduct.isEmpty()) {
+                UtilsAdm.setCheckboxState(checkboxOfProduct.getFirst(), true);
                 button_AddSelectedProducts.click();
             }
         }

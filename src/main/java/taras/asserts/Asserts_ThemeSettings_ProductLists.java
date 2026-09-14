@@ -28,7 +28,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     }
 
     public String getProductBlockSelector() {
-        return ".ut2-a__products-banner div[id*='" + blockID + "'] ";
+        return ".cm-tabs-content div[id*='" + blockID + "'] ";
     }
 
 

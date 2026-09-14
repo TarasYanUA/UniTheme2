@@ -45,7 +45,9 @@ public class StHomePage extends AbstractPage {
     }
 
     public void logOutOnStorefront() {
-        taras.adminPanel.UtilsAdm.hoverNavigateAndClick(accountOnTop);
+        UtilsAdm.closeAllNotifications();
+
+        UtilsAdm.hoverNavigateAndClick(accountOnTop);
         if (!DriverProvider.getDriver().findElements(By.cssSelector(".ty-account-info__buttons a[href*='auth.logout']")).isEmpty()) {
             button_LogOut.click();
         }
@@ -60,7 +62,7 @@ public class StHomePage extends AbstractPage {
     }
 
     public void scrollToBlockWithProducts() {
-        UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 800);
+        UtilsAdm.scrollToElementAndScrollBelow(blockWithProducts, 550);
     }
 
     public void openProductBlock(String blockName) {

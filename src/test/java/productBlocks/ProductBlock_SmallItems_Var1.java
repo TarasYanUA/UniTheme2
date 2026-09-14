@@ -74,7 +74,7 @@ public class ProductBlock_SmallItems_Var1 extends TestRunner implements DisableL
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col-rev");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("full");
         UtilsAdm.hoverOverElement(themeSettingsProductLists.smallItems_NumberOfLinesInProductName);

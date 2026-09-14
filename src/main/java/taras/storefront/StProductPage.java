@@ -48,6 +48,8 @@ public class StProductPage extends AbstractPage {
         DriverProvider.getDriver().findElement(By.cssSelector("a[data-ca-name='" + ruArEn + "']")).click();
         UtilsAdm.makePause(2000);
         UtilsAdm.hoverOverElement(gearwheel_Language);
+
+        UtilsAdm.clearPhpWarningIfExists();
     }
 
     public void scrollToAndClickTab_Features() {

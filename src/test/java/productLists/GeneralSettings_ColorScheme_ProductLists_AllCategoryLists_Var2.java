@@ -87,7 +87,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_OutOfStockProducts, false);
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, true);
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("counter");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayStatusesForButtons, true);

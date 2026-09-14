@@ -56,7 +56,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.grid_NumberOfLinesInProductName).selectByValue("2");
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("full");

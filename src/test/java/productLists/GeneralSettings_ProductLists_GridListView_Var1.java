@@ -66,7 +66,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
         UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconWidth, "200");
@@ -85,8 +85,8 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         UtilsAdm.setCheckboxState(themeSettings_showMore.setting_AllowForProductLists, false);
         basicPage.clickSaveButtonOfSettings();
     }
-
-    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var1")
+//(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var1")
+    @Test
     public void checkProductLists_GridListView_Var1() {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();

@@ -2,20 +2,20 @@
     <test name="Settings of UniTheme2">
         <classes>
             <!--Тест-кейсы для Общих настроек темы -->
-<!--            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"/>-->
-<!--            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2"/>-->
-            <class name="productLists.GeneralSettings_ProductLists_GridListView_Var1"/>
+            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1"/>
+            <class name="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2"/>
+<!--            <class name="productLists.GeneralSettings_ProductLists_GridListView_Var1"/>
             <class name="productLists.GeneralSettings_ProductLists_GridListView_Var2"/>
             <class name="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var1"/>
             <class name="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var2"/>
             <class name="productLists.GeneralSettings_ProductLists_CompactList_Var1"/>
-            <class name="productLists.GeneralSettings_ProductLists_CompactList_Var2"/>
-<!--            <class name="productPage.GeneralSettings_St_ProductPage_Var1"/>
+            <class name="productLists.GeneralSettings_ProductLists_CompactList_Var2"/>-->
+            <class name="productPage.GeneralSettings_St_ProductPage_Var1"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Var2"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Var3"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Cascade_Var1"/>
             <class name="productPage.GeneralSettings_St_ProductPage_Cascade_Var2"/>
-            <class name="productPage.GeneralSettings_St_ProductPage_Cascade_Var3"/>-->
+            <class name="productPage.GeneralSettings_St_ProductPage_Cascade_Var3"/>
 
             <!--Тест-кейсы для настроек Цветосхемы -->
 <!--            <class name="productPage.ColorSchemeSettings_Product_Var1"/>
@@ -66,6 +66,7 @@
             <class name="productBlocks.ProductBlock_SmallItems_Var3"/>-->
 
             <!--Тест-кейсы для Баннеров -->
+<!--
             <class name="banners.ProductsAtBanners_Grid_1Column"/>
             <class name="banners.ProductsAtBanners_Grid_2Columns"/>
             <class name="banners.ProductsAtBanners_Grid_3Columns"/>
@@ -74,6 +75,7 @@
             <class name="banners.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow"/>
             <class name="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow"/>
             <class name="banners.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow"/>
+-->
 
         </classes>
     </test>

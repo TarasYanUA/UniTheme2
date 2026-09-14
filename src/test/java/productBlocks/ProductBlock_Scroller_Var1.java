@@ -85,7 +85,7 @@ public class ProductBlock_Scroller_Var1 extends TestRunner implements DisableLaz
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col-rev-mix");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);

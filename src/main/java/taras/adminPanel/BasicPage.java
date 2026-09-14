@@ -61,7 +61,7 @@ public class BasicPage extends AbstractPage implements CheckMenuToBeActive {
 
     public void clickSaveButtonOfSettings() {
         saveButtonOfSettings.click();
-        UtilsAdm.makePause(1500);
+        UtilsAdm.makePause(2000);
     }
 
     public StHomePage navigateToStorefront() {

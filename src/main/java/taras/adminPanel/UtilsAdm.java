@@ -47,12 +47,12 @@ public class UtilsAdm extends AbstractPage {
     }
 
     public static void closeAllNotifications() {
-        List<WebElement> alertNotifications;
+        List<WebElement> notifications;
 
-        while (!(alertNotifications = DriverProvider.getDriver()
+        while (!(notifications = DriverProvider.getDriver()
                 .findElements(By.cssSelector(".close.cm-notification-close"))).isEmpty()) {
 
-            alertNotifications.getFirst().click();
+            notifications.getFirst().click();
             makePause(500);
         }
     }
@@ -92,20 +92,14 @@ public class UtilsAdm extends AbstractPage {
         webElement.click();
     }
 
-    public static void closeNotificationOnStorefront() {    //Пришлось это добавить из-за ошибки CS-Cart в 4.18.4
-        List<WebElement> notification = getDriver().findElements(By.cssSelector(".notification-body-extended"));
+    public static void clearPhpWarningIfExists() {
+        List<WebElement> phpWarning = getDriver().findElements(By.cssSelector(".notification-body-extended .cm-notification-close"));
 
-        if (!notification.isEmpty()) {
-            getDriver().findElement(By.cssSelector(".cm-notification-close bdi")).click();
-
-            new WebDriverWait(getDriver(), Duration.ofSeconds(2)).until(_ -> true);
-
-            List<WebElement> closeNotification_AlertSuccess = getDriver()
-                    .findElements(By.cssSelector(".close.cm-notification-close"));
-
-            if (!closeNotification_AlertSuccess.isEmpty())
-                closeNotification_AlertSuccess.getFirst().click();
+        if(!phpWarning.isEmpty()) {
+            phpWarning.getFirst().click();
         }
+
+        UtilsAdm.closeAllNotifications();
     }
 
     public static void waitForSpinnerDisappear() {

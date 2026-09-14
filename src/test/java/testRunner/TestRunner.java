@@ -61,6 +61,8 @@ public class TestRunner {
     public void focusBrowserTab(int tabNum) {
         ArrayList<String> tabs = new ArrayList<> (getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(tabNum));
+
+        UtilsAdm.clearPhpWarningIfExists();
     }
 
     public void takeScreenShot_withScroll(String screenshotName) {

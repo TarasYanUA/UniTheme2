@@ -50,7 +50,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_productCode, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_availabilityStatus, false);

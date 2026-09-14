@@ -58,24 +58,22 @@
             <class name="menu.Menu51_FlyMenu"/>-->
 
             <!--Тест-кейсы для Блоков товаров -->
-            <class name="productBlocks.ProductBlock_GridMore_Var1"/>
+<!--            <class name="productBlocks.ProductBlock_GridMore_Var1"/>
             <class name="productBlocks.ProductBlock_GridMore_Var2"/>
             <class name="productBlocks.ProductBlock_GridMore_Var3"/>
             <class name="productBlocks.ProductBlock_SmallItems_Var1"/>
             <class name="productBlocks.ProductBlock_SmallItems_Var2"/>
-            <class name="productBlocks.ProductBlock_SmallItems_Var3"/>
+            <class name="productBlocks.ProductBlock_SmallItems_Var3"/>-->
 
             <!--Тест-кейсы для Баннеров -->
-<!--
-            <class name="banners.ProductsAtBanners_Grid_1Column"/>
-            <class name="banners.ProductsAtBanners_Grid_2Columns"/>
-            <class name="banners.ProductsAtBanners_Grid_3Columns"/>
+<!--            <class name="banners.ProductsAtBanners_Grid_1Column"/>-->
+<!--            <class name="banners.ProductsAtBanners_Grid_2Columns"/>-->
+<!--            <class name="banners.ProductsAtBanners_Grid_3Columns"/>-->
             <class name="banners.ProductsAtBanners_SmallElements_1Column_UnlimitedRow"/>
             <class name="banners.ProductsAtBanners_SmallElements_2Columns_InOneRow"/>
             <class name="banners.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow"/>
             <class name="banners.ProductsAtBanners_Thumbnails_2Columns_InOneRow"/>
             <class name="banners.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow"/>
--->
 
         </classes>
     </test>

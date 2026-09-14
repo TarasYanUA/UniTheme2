@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Adapted to CS-Cart 4.21.1.&#10;Removed method for notifications on storefront, that was created because of CS-Cart error in v4.18.1.&#10;Added method for PHP warnings.">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed bug in assert, in selector for product block.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_ProductLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_ThemeSettings_ProductLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +342,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_SmallItems_Var2">
+  <component name="RunManager" selected="TestNG.UniTheme2/TestNG.xml">
     <configuration name="GeneralSettings_St_ProductPage_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -412,7 +412,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsAtBanners_Grid_3Columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -421,7 +421,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_InOneRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Grid_3Columns" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -435,15 +435,15 @@
       <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
       <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
       <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
+      <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns" />
         <item itemvalue="TestNG.ProductBlock_SmallItems_Var2" />
         <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
         <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3" />
         <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Var3.checkSettingsOnProductPage_Var3" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
       </list>
     </recent_temporary>
   </component>
@@ -888,7 +888,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed some asserts." />
     <MESSAGE value="Updated libraries in pom file.&#10;Updated all drivers." />
     <MESSAGE value="Fixed bug in three test-cases ProductBlock_Scroller" />
     <MESSAGE value="Fixed bugs in asserts in test-cases combined with product blocks." />
@@ -913,7 +912,8 @@
     <MESSAGE value="Deleted unused variable." />
     <MESSAGE value="Updated pom vocabularies and all browser drivers" />
     <MESSAGE value="Adapted to CS-Cart 4.21.1.&#10;Removed method for notifications on storefront, that was created because of CS-Cart error in v4.18.1.&#10;Added method for PHP warnings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted to CS-Cart 4.21.1.&#10;Removed method for notifications on storefront, that was created because of CS-Cart error in v4.18.1.&#10;Added method for PHP warnings." />
+    <MESSAGE value="Fixed bug in assert, in selector for product block." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in assert, in selector for product block." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

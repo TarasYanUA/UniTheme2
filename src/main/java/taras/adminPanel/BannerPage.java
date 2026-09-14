@@ -154,6 +154,7 @@ public class BannerPage extends AbstractPage {
                 "Samsung NX200"
         };
         for (String product : products) {
+            UtilsAdm.scrollIntoCenter(field_searchProduct);
             UtilsAdm.clickAndType(field_searchProduct, product);
             button_SearchProduct.click();
             UtilsAdm.makePause(500);

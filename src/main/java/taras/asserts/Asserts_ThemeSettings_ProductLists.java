@@ -42,7 +42,8 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public String decolorizeOutOfStockProducts = ".ut2-gl__body.decolorize";
 
     //Настройка "Отображать пустые звёзды рейтинга товара"
-    public String emptyStarsOfProductRating = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
+    public String emptyStarsOfProductRating_EmptyStars = "div[class*='ty-product-review-reviews-stars'][data-ca-product-review-reviews-stars-full='0']";
+    public String emptyStarsOfProductRating_WriteReview = ".ty-product-review-reviews-stars__link .ut2-icon-chat";
 
     //Настройка "Отображать общее значение рейтинга товара"
     public String commonValueOfProductRating = ".ut2-show-rating-num";
@@ -185,7 +186,8 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public void assertElementPresence(String list, String selector, String location, boolean elementExists) {
         Map<String, String> presenceMessages = Map.ofEntries(
                 Map.entry(decolorizeOutOfStockProducts, "There are no decolorized products "),
-                Map.entry(emptyStarsOfProductRating, "There are no empty stars "),
+                Map.entry(emptyStarsOfProductRating_EmptyStars, "There are no empty stars "),
+                Map.entry(emptyStarsOfProductRating_WriteReview, "There are no buttons 'Write review' "),
                 Map.entry(commonValueOfProductRating, "There are no common values of product rating "),
                 Map.entry(getStatusesForButtonAddToCartIcon(), "There is no status as 'Icon' for the button 'Add to cart' "),
                 Map.entry(statusesForButton_AddToCart_Number, "There is no status as 'Number of products' for the button 'Add to cart' "),
@@ -219,7 +221,8 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
 
         Map<String, String> absenceMessages = Map.ofEntries(
                 Map.entry(decolorizeOutOfStockProducts, "There are decolorized products but shouldn't "),
-                Map.entry(emptyStarsOfProductRating, "There are empty stars but shouldn't "),
+                Map.entry(emptyStarsOfProductRating_EmptyStars, "There are empty stars but shouldn't "),
+                Map.entry(emptyStarsOfProductRating_WriteReview, "There are buttons 'Write review' but shouldn't "),
                 Map.entry(commonValueOfProductRating, "There are common values of product rating but shouldn't "),
                 Map.entry(getStatusesForButtonAddToCartIcon(), "There is a status as 'Icon' for button 'Add to cart' but shouldn't "),
                 Map.entry(statusesForButton_AddToCart_Number, "There is a status as 'Number of products' for button 'Add to cart' but shouldn't "),

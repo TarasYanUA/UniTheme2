@@ -27,7 +27,7 @@ import java.util.List;
 2.1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Формат отображения цен                          -- Вариант 8
 Отображать цену вверху                          -- y
-Отображать пустые звёзды рейтинга товара        -- y
+Отображать пустые звёзды рейтинга товара        -- Написать отзыв
 Отображать общее значение рейтинга товара       -- y
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
@@ -99,7 +99,7 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-os-fill");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, true);
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("write-review");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
@@ -158,10 +158,10 @@ public class ProductBlock_GridMore_Var3 extends TestRunner implements DisableLaz
 
         clickButton_ShowMore("ProductBlock_GridMore_Var3 - ProductBlock ", "Распродажа");
 
-        //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
                 "in the product block!",
                 true);
 

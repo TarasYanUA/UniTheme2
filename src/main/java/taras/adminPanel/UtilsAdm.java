@@ -57,6 +57,16 @@ public class UtilsAdm extends AbstractPage {
         }
     }
 
+    public static void clearPhpWarningIfExists() {
+        List<WebElement> phpWarning = getDriver().findElements(By.cssSelector(".notification-body-extended .cm-notification-close"));
+
+        if(!phpWarning.isEmpty()) {
+            phpWarning.getFirst().click();
+        }
+
+        UtilsAdm.closeAllNotifications();
+    }
+
     public static void waitForPopUpWindow() {
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
@@ -90,16 +100,6 @@ public class UtilsAdm extends AbstractPage {
         hoverOverElement(webElement);
         makePause(500);
         webElement.click();
-    }
-
-    public static void clearPhpWarningIfExists() {
-        List<WebElement> phpWarning = getDriver().findElements(By.cssSelector(".notification-body-extended .cm-notification-close"));
-
-        if(!phpWarning.isEmpty()) {
-            phpWarning.getFirst().click();
-        }
-
-        UtilsAdm.closeAllNotifications();
     }
 
     public static void waitForSpinnerDisappear() {

@@ -21,7 +21,7 @@ import java.time.Duration;
 Включить быстрый просмотр   -- да
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
-Отображать пустые звёзды рейтинга товара	-- нет
+Отображать пустые звёзды рейтинга товара	-- Не отображать
 Отображать общее значение рейтинга товара	-- нет
 Отображать код товара	    -- нет
 Отображать статус наличия	-- нет
@@ -50,7 +50,7 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("not-show");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_productCode, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_availabilityStatus, false);
@@ -71,6 +71,18 @@ public class GeneralSettings_ProductLists_CompactList_Var1 extends TestRunner {
 
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
+
+        //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга и "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
+                "on the category page 'Game consoles', 'Compact list'!",
+                false);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category page 'Game consoles', 'Compact list'!",
+                false);
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(

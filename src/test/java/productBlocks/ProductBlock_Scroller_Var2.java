@@ -26,7 +26,7 @@ import testRunner.TestRunner;
 2.1. UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
 Формат отображения цен                          -- Вариант 3
 Отображать цену вверху                          -- n
-Отображать пустые звёзды рейтинга товара        -- n
+Отображать пустые звёзды рейтинга товара        -- Не отображать
 Отображать общее значение рейтинга товара       -- n
 Отображать кнопку "Добавить в избранное"        -- y
 Отображать кнопку "Добавить в список сравнения" -- y
@@ -87,7 +87,7 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("mix");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("not-show");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
@@ -150,11 +150,16 @@ public class ProductBlock_Scroller_Var2 extends TestRunner implements DisableLaz
                 3,
                 "in the product block!");
 
-        //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга
+        //Проверяем, что у товаров отсутствуют пустые звёздочки рейтинга и "Написать отзыв"
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.productBlock,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "in the product block!",
+                false);
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.productBlock,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "in the product block",
                 false);
 
         //Проверяем, что у товаров отсутствует общее значение рейтинга товара

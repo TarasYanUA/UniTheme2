@@ -12,6 +12,7 @@ import testRunner.TestRunner;
 
 /*
 UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
+Отображать пустые звёзды рейтинга товара -- Пустые звёзды
 Отображать код товара       -- нет
 Отображать статус наличия   -- нет
 Отображать модификатор количества   -- да
@@ -44,6 +45,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ProductCode, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_AmountStatus, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ShowQuantity, true);
@@ -70,6 +72,13 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var1 extends TestRu
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView); //Второе нажатие необходимо, чтобы на скриншоте увидеть нужные товары
 
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+
+        //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
 
         //Проверяем, что модификатор количества присутствует
         asserts_productLists.assertElementPresence(

@@ -19,7 +19,7 @@ import java.time.Duration;
 
 /*
 Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Отображать пустые звёзды рейтинга товара -- нет
+Отображать пустые звёзды рейтинга товара -- Написать отзыв
 Отображать общее значение рейтинга товара -- да
 Отображать "Вы экономите" -- Полный вид
 
@@ -56,7 +56,7 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("write-review");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.grid_NumberOfLinesInProductName).selectByValue("2");
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("full");
@@ -89,6 +89,13 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
         stHomePage.openProductBlock("Распродажа");
 
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "in the product block!",
+                true);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         asserts_productLists.assertElementPresence(
@@ -126,6 +133,13 @@ public class GeneralSettings_ProductLists_GridListView_Var2 extends TestRunner {
 
         //Категория "Мужская одежда"
         stHomePage.navigateToHorizontalMenu_MenCloth();
+
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category page 'Men cloth', 'Grid list'!",
+                true);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Полный вид"
         asserts_productLists.assertElementPresence(

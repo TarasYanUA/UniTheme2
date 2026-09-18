@@ -19,7 +19,7 @@ import java.time.Duration;
 
 /*
 Проверка настроек UniTheme2 -- Настройки темы -- вкладка "Списки товаров":
-Отображать пустые звёзды рейтинга товара    -- да
+Отображать пустые звёзды рейтинга товара    -- Пустые звёзды
 Отображать общее значение рейтинга товара   -- нет
 Отображать "Вы экономите"                   -- Сокращенный вид
 
@@ -66,7 +66,7 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_ShowYouSave).selectByValue("short");
         UtilsAdm.clickAndType(themeSettingsProductLists.setting_ProductIconWidth, "200");
@@ -85,8 +85,8 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         UtilsAdm.setCheckboxState(themeSettings_showMore.setting_AllowForProductLists, false);
         basicPage.clickSaveButtonOfSettings();
     }
-//(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var1")
-    @Test
+
+    @Test(priority = 2, dependsOnMethods = "setConfigurationsForProductLists_GridListView_Var1")
     public void checkProductLists_GridListView_Var1() {
         BasicPage basicPage = new BasicPage();
         StHomePage stHomePage = basicPage.navigateToStorefront();
@@ -98,6 +98,13 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
         DriverProvider.getDriver().findElement(By.xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")).click();
 
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+
+        //Проверяем, что пустые звезды рейтинга присутствуют
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
+                "in the product block!",
+                true);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         asserts_productLists.assertElementPresence(
@@ -156,6 +163,13 @@ public class GeneralSettings_ProductLists_GridListView_Var1 extends TestRunner {
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
+
+        //Проверяем, что пустые звезды рейтинга присутствуют
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
+                "on the category page 'Phones, 'Grid list'!",
+                true);
 
         //Проверяем, что текст "Вы экономите" присутствует и "Сокращенный вид"
         asserts_productLists.assertElementPresence(

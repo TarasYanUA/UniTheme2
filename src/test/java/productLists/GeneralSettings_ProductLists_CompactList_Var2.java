@@ -12,7 +12,7 @@ import testRunner.TestRunner;
 
 /*
 1) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Компактный список":
-Отображать пустые звёзды рейтинга товара	-- да
+Отображать пустые звёзды рейтинга товара	-- Пустые звёзды
 Отображать общее значение рейтинга товара	-- да
 Отображать код товара	    -- да
 Отображать статус наличия	-- да
@@ -29,7 +29,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         BasicPage basicPage = new BasicPage();
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_productCode, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.compactList_availabilityStatus, true);
@@ -53,7 +53,7 @@ public class GeneralSettings_ProductLists_CompactList_Var2 extends TestRunner {
         //Проверяем, что пустые звезды рейтинга присутствуют
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "on the category 'Compact list'!", true);
 
         //Проверяем, что общее значение рейтинга присутствует

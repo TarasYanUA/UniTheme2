@@ -28,7 +28,7 @@ import java.time.Duration;
 Обесцвечивать товары, которых нет в наличии --	n
 Формат отображения цен --	Вариант 1
 Отображать цену вверху --	y
-Отображать пустые звёзды рейтинга товара --	n
+Отображать пустые звёзды рейтинга товара --	Написать отзыв
 Отображать общее значение рейтинга товара -- y
 Отображать статусы для кнопок "Купить" -- Количество товаров
 Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- y
@@ -87,7 +87,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_OutOfStockProducts, false);
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("col");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, true);
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, false);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("write-review");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, true);
         new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("counter");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayStatusesForButtons, true);
@@ -142,6 +142,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
         Asserts_CsCartSettings asserts_csCartSettings = new Asserts_CsCartSettings();
 
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                "",
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "in the product block!",
+                true);
+
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
                 "",
@@ -194,6 +201,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.navigateToHorizontalMenu_WomanCloth();
         StCategoryPage stCategoryPage = new StCategoryPage();
 
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category 'Woman cloth', 'Grid list'!",
+                true);
+
         //Проверяем, что на странице отсутствует обесцвеченный товар
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
@@ -245,6 +259,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
 
         //Категория "Телефоны"
         stHomePage.navigateToHorizontalMenu_Phones();
+
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.gridList,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category 'Phones', 'Grid list'!",
+                true);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
@@ -347,6 +368,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         //Других два шаблона страницы категории
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
 
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category 'Phones', 'List without options'!",
+                true);
+
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
@@ -403,6 +431,13 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2 exte
         stHomePage.selectLanguage("ru");
         takeScreenShot_withScroll("245 GS_CS_ProductLists_AllCategoryLists_Var2 - ListWithoutOptions");
         stCategoryPage.selectProductListView(stCategoryPage.compactList_ProductListView);
+
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.compactList,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category 'Phones', 'Compact list'!",
+                true);
 
         //Проверяем, что у товаров присутствует общее значение рейтинга товара
         asserts_productLists.assertElementPresence(

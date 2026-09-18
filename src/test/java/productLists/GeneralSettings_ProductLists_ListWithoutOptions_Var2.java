@@ -17,6 +17,7 @@ import testRunner.TestRunner;
 - включаем "Показывать в списке товаров"
 
 2) UniTheme2 -- Настройки темы -- вкладка "Списки товаров" -- Настройки для вида списка товаров "Список без опций":
+Отображать пустые звёзды рейтинга товара -- Написать отзыв
 Ширина иконки товара    -- 400
 Высота иконки товара    -- 300
 Отображать код товара   -- да
@@ -47,6 +48,7 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         //Работаем с настройками темы
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         themeSettingsProductLists.tabProductLists.click();
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("write-review");
         UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconWidth, "400");
         UtilsAdm.clickAndType(themeSettingsProductLists.withoutOptions_IconHeight, "200");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.withoutOptions_ProductCode, true);
@@ -74,6 +76,13 @@ public class GeneralSettings_ProductLists_ListWithoutOptions_Var2 extends TestRu
         stCategoryPage.selectProductListView(stCategoryPage.listWithoutOptions_ProductListView);
 
         Asserts_ThemeSettings_ProductLists asserts_productLists = new Asserts_ThemeSettings_ProductLists();
+
+        //Проверяем, что у товаров на месте пустых звёздочек рейтинга присутствует кнопка "Написать отзыв"
+        asserts_productLists.assertElementPresence(
+                Asserts_ThemeSettings_ProductLists.listWO,
+                asserts_productLists.emptyStarsOfProductRating_WriteReview,
+                "on the category page 'Men cloth', 'List without options'!",
+                true);
 
         //Проверяем, что код товара присутствует
         asserts_productLists.assertElementPresence(

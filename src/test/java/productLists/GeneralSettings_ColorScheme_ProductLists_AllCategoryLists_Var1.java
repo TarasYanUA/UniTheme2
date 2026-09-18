@@ -23,7 +23,7 @@ import testRunner.TestRunner;
 Обесцвечивать товары, которых нет в наличии --	y
 Формат отображения цен --	Вариант 4
 Отображать цену вверху --	n
-Отображать пустые звёзды рейтинга товара --	y
+Отображать пустые звёзды рейтинга товара --	Пустые звёзды
 Отображать общее значение рейтинга товара -- n
 Отображать статусы для кнопок "Купить" -- Иконка
 Отображать статусы для кнопок "Добавить в избранное", "Добавить в список сравнения" -- n
@@ -82,7 +82,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_OutOfStockProducts, true);
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-mix");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        //UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_EmptyStarsOfProductRating, true);
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         new Select(themeSettingsProductLists.setting_DisplayCartStatus).selectByValue("check-icon");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayStatusesForButtons, false);
@@ -140,7 +140,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 "",
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "in the product block!",
                 true);
 
@@ -198,7 +198,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "on the category 'Woman cloth', 'Grid list'!",
                 true);
 
@@ -250,7 +250,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.gridList,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "on the category 'Phones', 'Grid list'!",
                 true);
 
@@ -330,7 +330,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.listWO,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "on the category 'Phones', 'List without options'!",
                 true);
 
@@ -400,7 +400,7 @@ public class GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var1 exte
         //Проверяем, что у товаров присутствуют пустые звёздочки рейтинга
         asserts_productLists.assertElementPresence(
                 Asserts_ThemeSettings_ProductLists.compactList,
-                asserts_productLists.emptyStarsOfProductRating,
+                asserts_productLists.emptyStarsOfProductRating_EmptyStars,
                 "on the category 'Phones', 'Compact list'!",
                 true);
 

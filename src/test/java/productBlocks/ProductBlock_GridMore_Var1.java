@@ -103,7 +103,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-mix");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
+        //new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);
@@ -306,6 +306,9 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
     }
 
     void clickButton_ShowMore(String screenName, String blockName) {
+        List<WebElement> block = DriverProvider.getDriver().findElements(By
+                .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']"));
+
         int num = 1;
         while (true) {
             List<WebElement> buttons = DriverProvider.getDriver().findElements(By.cssSelector("span[id*='ut2_load_more_block_" + blockID + "']"));
@@ -313,8 +316,11 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
                 WebElement button_ShowMore = buttons.getFirst();
                 UtilsAdm.scrollToElementAndScrollBelow(button_ShowMore, 30);
                 takeScreenShot(screenName + num);
-                UtilsAdm.hoverOverElement(DriverProvider.getDriver().findElement(By
-                        .xpath("//span[@class='ty-tabs__span'][text()='" + blockName + "']")));
+                UtilsAdm.hoverNavigateAndClick(!block.isEmpty()
+                        ? block.getFirst()
+                        : DriverProvider.getDriver().findElement(By
+                        .xpath("//span[@class='ty-tabs__span'][text()='Распродажа']")));
+                UtilsAdm.makePause(2000);
                 button_ShowMore.click();
                 UtilsAdm.waitForSpinnerDisappear();
                 num++;

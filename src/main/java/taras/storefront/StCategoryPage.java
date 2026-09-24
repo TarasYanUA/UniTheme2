@@ -115,6 +115,7 @@ public class StCategoryPage extends AbstractPage {
                 .findElements(By.cssSelector(asserts_productLists.statusesForButton_AddToWishList))
                 .isEmpty()) {
             button_AddToWishList.click();
+            UtilsAdm.makePause(2000);
             UtilsAdm.closeAllNotifications();
         }
     }
@@ -125,6 +126,7 @@ public class StCategoryPage extends AbstractPage {
                 .findElements(By.cssSelector(asserts_productLists.statusesForButton_AddToComparisonList))
                 .isEmpty()) {
             button_AddToComparisonList.click();
+            UtilsAdm.makePause(2000);
             UtilsAdm.closeAllNotifications();
         }
     }

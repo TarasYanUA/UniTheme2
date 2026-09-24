@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed method for clicking the button &quot;Show more&quot; in the product block.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -886,7 +883,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Deleted one TestRunner and matched menu tests to only one TestRunner." />
     <MESSAGE value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
     <MESSAGE value="Fixed some bugs in asserts." />
     <MESSAGE value="Updated chrome driver.&#10;Added condition for product block name on RTL language." />
@@ -911,7 +907,8 @@
     <MESSAGE value="Improved method for selecting products in banner." />
     <MESSAGE value="Changed the theme setting &quot;Отображать пустые звёзды рейтинга товара&quot;: added new setting value and changed asserts." />
     <MESSAGE value="Changed method for clicking the button &quot;Show more&quot; in the product block." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed method for clicking the button &quot;Show more&quot; in the product block." />
+    <MESSAGE value="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

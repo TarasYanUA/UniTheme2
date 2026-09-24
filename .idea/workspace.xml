@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed method for clicking the button &quot;Show more&quot; in the product block." />
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed method for clicking the button &quot;Show more&quot; in the product block.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -338,7 +341,7 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductBlock_GridMore_Var1">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2">
     <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
@@ -356,7 +359,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_CompactList_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_CompactList_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -365,7 +368,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_CompactList_Var1" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_CompactList_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -373,7 +376,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_GridMore_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productLists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productLists" />
+      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductBlock_Scroller_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -382,7 +402,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_GridMore_Var1" />
+      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -390,7 +410,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductBlock_Scroller_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductBlock_SmallItems_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -399,24 +419,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="productBlocks" />
-      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_Scroller_Var2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductsAtBanners_Grid_1Column" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="banners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Grid_1Column" />
+      <option name="MAIN_CLASS_NAME" value="productBlocks.ProductBlock_SmallItems_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -426,19 +429,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
+      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
+      <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
       <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-      <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-      <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
-      <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProductBlock_GridMore_Var1" />
         <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var1" />
-        <item itemvalue="TestNG.ProductBlock_Scroller_Var2" />
-        <item itemvalue="TestNG.ProductsAtBanners_Grid_1Column" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+        <item itemvalue="TestNG.GeneralSettings_ProductLists_CompactList_Var2" />
+        <item itemvalue="TestNG.ProductBlock_Scroller_Var3" />
+        <item itemvalue="TestNG.ProductBlock_SmallItems_Var1" />
       </list>
     </recent_temporary>
   </component>

@@ -147,7 +147,7 @@ public class Asserts_ThemeSettings_ProductLists extends AbstractPage {
     public String standardImageGallery_Dots = ".owl-pagination";
 
     //Настройка "Отображать стандартную галерею изображений -- Навигация стрелками"
-    public String standardImageGallery_Arrows = ".ut2-gl__image .icon-right-circle";
+    public String standardImageGallery_Arrows = ".icon-right-open-thin";
 
     //Настройка "Переключать изображение товара при движении мышки -- с полосками"
     public String switchProductImage_withStripes = "div[class='cm-ab-hover-gallery abt__ut2_hover_gallery lines']";

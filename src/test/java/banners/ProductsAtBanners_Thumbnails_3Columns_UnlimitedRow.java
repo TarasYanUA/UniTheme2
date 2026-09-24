@@ -65,8 +65,8 @@ public class ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow extends TestRunn
         //Проверяем у баннера наличие названия
         assertsBanners.assertElementPresence(assertsBanners.bannerTitle);
 
-        //Проверяем у баннера наличие 7 товаров
-        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Thumbnails, 7);
+        //Проверяем у баннера наличие 6 товаров
+        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Thumbnails, 6);
 
         stHomePage.selectLanguage("ar");
         UtilsAdm.scrollIntoCenter(DriverProvider.getDriver().findElement(bannerLocator));

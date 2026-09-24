@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixednumberofp roducts for quantityOfProducts_SmallElements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/adminPanel/BannerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/asserts/Asserts_Banners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_InOneRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/banners/ProductsAtBanners_SmallElements_1Column_InOneRow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,17 +341,17 @@
       <recent name="Menu" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow.checkProductsAtBanners_SmallElements_1Column_InOneRow">
-    <configuration name="GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ProductsAtBanners_Grid_3Columns.checkProductsAtBanners_Grid_3Columns">
+    <configuration name="ColorSchemeSettings_General_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productLists.*" />
+          <option name="PATTERN" value="colorSchemeSettings.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <option name="PACKAGE_NAME" value="colorSchemeSettings" />
+      <option name="MAIN_CLASS_NAME" value="colorSchemeSettings.ColorSchemeSettings_General_Var2" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -362,16 +359,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralSettings_ProductLists_ListWithoutOptions_Var2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorSchemeSettings_Product_Var1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="productLists.*" />
+          <option name="PATTERN" value="productPage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="productLists" />
-      <option name="MAIN_CLASS_NAME" value="productLists.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+      <option name="PACKAGE_NAME" value="productPage" />
+      <option name="MAIN_CLASS_NAME" value="productPage.ColorSchemeSettings_Product_Var1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -379,7 +376,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_St_ProductPage_Cascade_Var3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UniTheme2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="productPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="productPage" />
+      <option name="MAIN_CLASS_NAME" value="productPage.GeneralSettings_St_ProductPage_Cascade_Var3" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsAtBanners_Grid_3Columns.checkProductsAtBanners_Grid_3Columns" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -388,25 +402,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_1Column_InOneRow.checkProductsAtBanners_SmallElements_1Column_InOneRow" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UniTheme2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="banners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-      <option name="METHOD_NAME" value="checkProductsAtBanners_SmallElements_1Column_InOneRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Grid_3Columns" />
+      <option name="METHOD_NAME" value="checkProductsAtBanners_Grid_3Columns" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -414,7 +411,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UniTheme2" />
       <extension name="coverage">
         <pattern>
@@ -423,7 +420,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="banners" />
-      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
+      <option name="MAIN_CLASS_NAME" value="banners.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -433,19 +430,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.UniTheme2/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow.checkProductsAtBanners_SmallElements_1Column_InOneRow" />
-      <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
-      <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
+      <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
+      <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+      <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Cascade_Var3" />
+      <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns.checkProductsAtBanners_Grid_3Columns" />
+      <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow.checkProductsAtBanners_SmallElements_1Column_InOneRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_1Column_InOneRow" />
-        <item itemvalue="TestNG.ProductsAtBanners_SmallElements_2Columns_UnlimitedRow" />
-        <item itemvalue="TestNG.GeneralSettings_ColorScheme_ProductLists_AllCategoryLists_Var2" />
-        <item itemvalue="TestNG.GeneralSettings_ProductLists_ListWithoutOptions_Var2" />
+        <item itemvalue="TestNG.ProductsAtBanners_Grid_3Columns.checkProductsAtBanners_Grid_3Columns" />
+        <item itemvalue="TestNG.ProductsAtBanners_Thumbnails_3Columns_UnlimitedRow" />
+        <item itemvalue="TestNG.GeneralSettings_St_ProductPage_Cascade_Var3" />
+        <item itemvalue="TestNG.ColorSchemeSettings_Product_Var1" />
+        <item itemvalue="TestNG.ColorSchemeSettings_General_Var2" />
       </list>
     </recent_temporary>
   </component>
@@ -890,7 +887,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
     <MESSAGE value="Fixed some bugs in asserts." />
     <MESSAGE value="Updated chrome driver.&#10;Added condition for product block name on RTL language." />
     <MESSAGE value="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
@@ -915,7 +911,8 @@
     <MESSAGE value="Changed the theme setting &quot;Отображать пустые звёзды рейтинга товара&quot;: added new setting value and changed asserts." />
     <MESSAGE value="Changed method for clicking the button &quot;Show more&quot; in the product block." />
     <MESSAGE value="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
+    <MESSAGE value="Fixednumberofp roducts for quantityOfProducts_SmallElements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixednumberofp roducts for quantityOfProducts_SmallElements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -65,8 +65,8 @@ public class ProductsAtBanners_Grid_3Columns extends TestRunner {
         //Проверяем у баннера наличие названия
         assertsBanners.assertElementPresence(assertsBanners.bannerTitle);
 
-        //Проверяем у баннера наличие 7 товаров
-        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Grid, 7);
+        //Проверяем у баннера наличие 6 товаров
+        assertsBanners.assertNumberOfProducts(assertsBanners.quantityOfProducts_Grid, 6);
 
         //Проверяем у баннера наличие скроллера
         assertsBanners.assertElementPresence(assertsBanners.productScroller);

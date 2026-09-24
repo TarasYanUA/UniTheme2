@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed the theme setting &quot;Отображать пустые звёзды рейтинга товара&quot;: added new setting value and changed asserts.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/productBlocks/ProductBlock_GridMore_Var3.java" afterDir="false" />
-    </list>
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Changed method for clicking the button &quot;Show more&quot; in the product block." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -889,7 +883,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed bugs in asserts in test-cases combined with product blocks." />
     <MESSAGE value="Deleted one TestRunner and matched menu tests to only one TestRunner." />
     <MESSAGE value="* Made adaptation to CS-Cart 4.20.1.&#10;* Fixed some bugs in asserts." />
     <MESSAGE value="Fixed some bugs in asserts." />
@@ -914,7 +907,8 @@
     <MESSAGE value="Fixed bug in assert, in selector for product block." />
     <MESSAGE value="Improved method for selecting products in banner." />
     <MESSAGE value="Changed the theme setting &quot;Отображать пустые звёзды рейтинга товара&quot;: added new setting value and changed asserts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the theme setting &quot;Отображать пустые звёзды рейтинга товара&quot;: added new setting value and changed asserts." />
+    <MESSAGE value="Changed method for clicking the button &quot;Show more&quot; in the product block." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed method for clicking the button &quot;Show more&quot; in the product block." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

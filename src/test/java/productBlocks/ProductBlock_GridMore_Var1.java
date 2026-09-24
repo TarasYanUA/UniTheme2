@@ -103,7 +103,7 @@ public class ProductBlock_GridMore_Var1 extends TestRunner implements DisableLaz
         ThemeSettings_ProductLists themeSettingsProductLists = basicPage.navigateTo_ThemeSettings_tabProductLists();
         new Select(themeSettingsProductLists.setting_PriceDisplayFormat).selectByValue("row-mix");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_PriceAtTheTop, false);
-        //new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
+        new Select(themeSettingsProductLists.setting_EmptyStarsOfProductRating).selectByValue("empty-stars");
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_CommonValueOfProductRating, false);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonComparisonList, true);
         UtilsAdm.setCheckboxState(themeSettingsProductLists.setting_DisplayButtonWishList, true);

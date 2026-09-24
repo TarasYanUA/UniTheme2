@@ -157,7 +157,7 @@ public class BannerPage extends AbstractPage {
             UtilsAdm.scrollIntoCenter(field_searchProduct);
             UtilsAdm.clickAndType(field_searchProduct, product);
             button_SearchProduct.click();
-            UtilsAdm.makePause(500);
+            UtilsAdm.makePause(2000);   //если сделать паузу меньше, то часто не срабатывает
             if (!checkboxOfProduct.isEmpty()) {
                 UtilsAdm.setCheckboxState(checkboxOfProduct.getFirst(), true);
                 button_AddSelectedProducts.click();

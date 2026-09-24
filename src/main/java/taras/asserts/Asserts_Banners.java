@@ -94,6 +94,6 @@ public class Asserts_Banners extends AbstractPage {
             getSoftAssert().fail("No assert message found for selector: " + selector);
 
         getSoftAssert().assertEquals(finalSelector.size(), size,
-                finalMessage + size);
+                finalMessage);
     }
 }

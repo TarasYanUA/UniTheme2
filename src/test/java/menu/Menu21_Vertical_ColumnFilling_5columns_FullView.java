@@ -19,8 +19,6 @@ import testRunner.TestRunner;
 + Показывать иконки для пунктов меню второго уровня -- нет
 + Компактный вид отображения -- нет
 + Минимальная высота для меню -- 300
-
-БАГ https://abteam.planfix.com/task/52034
 */
 
 public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner {

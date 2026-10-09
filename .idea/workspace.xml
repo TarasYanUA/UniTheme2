@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Fixed number ofp roducts for banners">
+    <list default="true" id="030a501c-c952-4ae9-a5d7-881b11ddc710" name="Changes" comment="Updated libraries in pom file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/menu/Menu21_Vertical_ColumnFilling_5columns_FullView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -891,8 +890,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated chrome driver.&#10;Added condition for product block name on RTL language." />
-    <MESSAGE value="Adapted method closeNotification_AlertSuccess to CS-Cart 4.20.1." />
     <MESSAGE value="Fixed method closeAllNotifications." />
     <MESSAGE value="Made some little fixes." />
     <MESSAGE value="Class ProductsAtBanners_Grid_1Column - the first auto banner is created!" />
@@ -916,7 +913,9 @@
     <MESSAGE value="Changed selector for assert &quot;Gallery of mini icons is not with 'Arrows' navigation &quot;" />
     <MESSAGE value="Fixednumberofp roducts for quantityOfProducts_SmallElements" />
     <MESSAGE value="Fixed number ofp roducts for banners" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed number ofp roducts for banners" />
+    <MESSAGE value="Updated drivers" />
+    <MESSAGE value="Updated libraries in pom file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated libraries in pom file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

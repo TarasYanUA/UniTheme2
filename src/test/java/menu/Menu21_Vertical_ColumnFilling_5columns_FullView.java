@@ -67,7 +67,7 @@ public class Menu21_Vertical_ColumnFilling_5columns_FullView extends TestRunner 
         takeScreenShot("Menu21.02 Menu21_Vertical_ColumnFilling_5columns_FullView - Menu Electronic");
 
         //Проверяем, что у меню второго уровня отсутствуют иконки
-        asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, true);
+        asserts_menu.assertElementPresence(asserts_menu.iconsOfSecondLevel, false);
 
         //Проверяем, что Элементов второго уровня -- не меньше 7
         asserts_menu.assertMoreOrEqual(asserts_menu.numberOfElements_SecondLevel, 7);
